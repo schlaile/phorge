@@ -59,6 +59,7 @@ final class PhabricatorProject extends PhabricatorProjectDAO
   const ITEM_PROFILE = 'project.profile';
   const ITEM_POINTS = 'project.points';
   const ITEM_WORKBOARD = 'project.workboard';
+  const ITEM_CALENDAR = 'project.calendar';
   const ITEM_REPORTS = 'project.reports';
   const ITEM_MEMBERS = 'project.members';
   const ITEM_MANAGE = 'project.manage';
