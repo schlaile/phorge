@@ -102,6 +102,11 @@ final class PHUICalendarListView extends AphrontTagView {
       }
 
       $tip = $event->getDateTimeSummary();
+      $description = trim((string)$event->getDescription());
+      if (phutil_nonempty_string($description)) {
+        $tip = $tip.', '.$description;
+      }
+
       if ($this->getView() == 'day') {
         $tip_align = 'E';
       } else if ($this->getView() == 'month') {
