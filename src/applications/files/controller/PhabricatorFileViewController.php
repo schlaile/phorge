@@ -234,6 +234,10 @@ final class PhabricatorFileViewController extends PhabricatorFileController {
         ->appendChild($finfo));
 
     $finfo->addProperty(
+      pht('File Link'),
+      $file->getViewURI());
+
+    $finfo->addProperty(
       pht('Mime Type'),
       $file->getMimeType());
 
