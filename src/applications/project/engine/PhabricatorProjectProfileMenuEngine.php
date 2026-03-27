@@ -38,6 +38,10 @@ final class PhabricatorProjectProfileMenuEngine
       ->setMenuItemKey(PhabricatorProjectWorkboardProfileMenuItem::MENUITEMKEY);
 
     $items[] = $this->newItem()
+      ->setBuiltinKey(PhabricatorProject::ITEM_CALENDAR)
+      ->setMenuItemKey(PhabricatorProjectCalendarProfileMenuItem::MENUITEMKEY);
+
+    $items[] = $this->newItem()
       ->setBuiltinKey(PhabricatorProject::ITEM_REPORTS)
       ->setMenuItemKey(PhabricatorProjectReportsProfileMenuItem::MENUITEMKEY);
 
