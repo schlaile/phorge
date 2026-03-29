@@ -5,6 +5,7 @@ final class PhabricatorSearchRelationshipSourceController
 
   public function handleRequest(AphrontRequest $request) {
     $viewer = $request->getViewer();
+    $viewer_phid = $viewer->getPHID();
 
     $object = $this->loadRelationshipObject();
     if (!$object) {
@@ -33,11 +34,15 @@ final class PhabricatorSearchRelationshipSourceController
 
     switch ($filter) {
       case 'assigned':
-        $query->setParameter('ownerPHIDs', array($viewer->getPHID()));
+        if ($viewer_phid) {
+          $query->setParameter('ownerPHIDs', array($viewer_phid));
+        }
         $query->setParameter('statuses', array($status_open));
         break;
       case 'created':
-        $query->setParameter('authorPHIDs', array($viewer->getPHID()));
+        if ($viewer_phid) {
+          $query->setParameter('authorPHIDs', array($viewer_phid));
+        }
         $query->setParameter('statuses', array($status_open));
         break;
       case 'open':

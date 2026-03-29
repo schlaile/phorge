@@ -5,6 +5,7 @@ final class PhabricatorSearchDefaultController
 
   public function handleRequest(AphrontRequest $request) {
     $viewer = $this->getViewer();
+    $viewer_phid = $viewer->getPHID();
     $engine_class = $request->getURIData('engine');
 
     $base_class = PhabricatorApplicationSearchEngine::class;
@@ -17,15 +18,18 @@ final class PhabricatorSearchDefaultController
 
     $key = $request->getURIData('queryKey');
 
+    $user_phids = array(
+      PhabricatorNamedQuery::SCOPE_GLOBAL,
+    );
+    if ($viewer_phid) {
+      array_unshift($user_phids, $viewer_phid);
+    }
+
     $named_query = id(new PhabricatorNamedQueryQuery())
       ->setViewer($viewer)
       ->withEngineClassNames(array($engine_class))
       ->withQueryKeys(array($key))
-      ->withUserPHIDs(
-        array(
-          $viewer->getPHID(),
-          PhabricatorNamedQuery::SCOPE_GLOBAL,
-        ))
+      ->withUserPHIDs($user_phids)
       ->executeOne();
 
     if (!$named_query && $engine->isBuiltinQuery($key)) {
@@ -44,15 +48,19 @@ final class PhabricatorSearchDefaultController
     }
 
     if ($request->isFormPost()) {
+      if (!$viewer_phid) {
+        return new Aphront403Response();
+      }
+
       $config = id(new PhabricatorNamedQueryConfigQuery())
         ->setViewer($viewer)
         ->withEngineClassNames(array($engine_class))
-        ->withScopePHIDs(array($viewer->getPHID()))
+        ->withScopePHIDs(array($viewer_phid))
         ->executeOne();
       if (!$config) {
         $config = PhabricatorNamedQueryConfig::initializeNewQueryConfig()
           ->setEngineClassName($engine_class)
-          ->setScopePHID($viewer->getPHID());
+          ->setScopePHID($viewer_phid);
       }
 
       $config->setConfigProperty(
