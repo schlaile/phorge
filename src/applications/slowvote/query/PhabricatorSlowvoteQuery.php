@@ -68,6 +68,7 @@ final class PhabricatorSlowvoteQuery
 
     $ids = mpull($polls, 'getID');
     $viewer = $this->getViewer();
+    $viewer_phid = $viewer->getPHID();
 
     if ($this->needOptions) {
       $options = id(new PhabricatorSlowvoteOption())->loadAllWhere(
@@ -96,19 +97,24 @@ final class PhabricatorSlowvoteQuery
         foreach ($polls as $poll) {
           $poll->attachViewerChoices(
             $viewer,
-            idx(
-              mgroup($poll->getChoices(), 'getAuthorPHID'),
-              $viewer->getPHID(),
-              array()));
+            ($viewer_phid
+              ? idx(
+                  mgroup($poll->getChoices(), 'getAuthorPHID'),
+                  $viewer_phid,
+                  array())
+              : array()));
         }
       }
     } else if ($this->needViewerChoices) {
-      $choices = id(new PhabricatorSlowvoteChoice())->loadAllWhere(
-        'pollID IN (%Ld) AND authorPHID = %s',
-        $ids,
-        $viewer->getPHID());
+      $choices = array();
+      if ($viewer_phid) {
+        $choices = id(new PhabricatorSlowvoteChoice())->loadAllWhere(
+          'pollID IN (%Ld) AND authorPHID = %s',
+          $ids,
+          $viewer_phid);
 
-      $choices = mgroup($choices, 'getPollID');
+        $choices = mgroup($choices, 'getPollID');
+      }
       foreach ($polls as $poll) {
         $poll->attachViewerChoices(
           $viewer,
