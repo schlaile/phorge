@@ -43,7 +43,7 @@ class Stripe_ApiRequestor
   {
     if (is_string($value)
         && mb_detect_encoding($value, "UTF-8", TRUE) != "UTF-8") {
-      return mb_convert_encoding($value, 'UTF-8', 'ISO-8859-1');
+      return phutil_utf8_convert($value, 'UTF-8', 'ISO-8859-1');
     } else {
       return $value;
     }
