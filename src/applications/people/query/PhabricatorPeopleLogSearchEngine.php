@@ -24,8 +24,9 @@ final class PhabricatorPeopleLogSearchEngine
     // large numbers of logs that the user will not be able to see and filter
     // them in-process.
     $viewer = $this->requireViewer();
-    if (!$viewer->getIsAdmin()) {
-      $query->withRelatedPHIDs(array($viewer->getPHID()));
+    $viewer_phid = $viewer->getPHID();
+    if (!$viewer->getIsAdmin() && $viewer_phid) {
+      $query->withRelatedPHIDs(array($viewer_phid));
     }
 
     return $query;
