@@ -71,7 +71,7 @@ final class CalendarTimeUtil extends Phobject {
     $today = new DateTime('@'.$today_epoch);
     $today->setTimezone($timezone);
 
-    if (strtolower($start_day_str) == 'today' ||
+    if (strtolower((string)$start_day_str) == 'today' ||
         $today->format('l') == $start_day_str) {
       $start_day = clone $today;
     } else {
