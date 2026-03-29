@@ -67,13 +67,18 @@ final class PhabricatorCountdownSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
 
+    $viewer_phid = $this->requireViewer()->getPHID();
+
     switch ($query_key) {
       case 'all':
         return $query;
       case 'authored':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'authorPHIDs',
-          array($this->requireViewer()->getPHID()));
+          array($viewer_phid));
       case 'upcoming':
         return $query->setParameter('upcoming', array('upcoming'));
     }
