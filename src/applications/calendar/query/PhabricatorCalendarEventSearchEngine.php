@@ -20,9 +20,14 @@ final class PhabricatorCalendarEventSearchEngine
    */
   public function newQuery() {
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
-    return id(new PhabricatorCalendarEventQuery())
-      ->needRSVPs(array($viewer->getPHID()));
+    $query = new PhabricatorCalendarEventQuery();
+    if ($viewer_phid) {
+      $query->needRSVPs(array($viewer_phid));
+    }
+
+    return $query;
   }
 
   protected function shouldShowOrderField() {
