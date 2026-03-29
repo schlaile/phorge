@@ -14,6 +14,11 @@ abstract class PhabricatorProjectsBasePolicyRule
     array $values,
     array $objects) {
 
+    $viewer_phid = $viewer->getPHID();
+    if (!$viewer_phid) {
+      return;
+    }
+
     $values = array_unique(array_filter(array_mergev($values)));
     if (!$values) {
       return;
@@ -21,11 +26,11 @@ abstract class PhabricatorProjectsBasePolicyRule
 
     $projects = id(new PhabricatorProjectQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
-      ->withMemberPHIDs(array($viewer->getPHID()))
+      ->withMemberPHIDs(array($viewer_phid))
       ->withPHIDs($values)
       ->execute();
     foreach ($projects as $project) {
-      $this->memberships[$viewer->getPHID()][$project->getPHID()] = true;
+      $this->memberships[$viewer_phid][$project->getPHID()] = true;
     }
   }
 

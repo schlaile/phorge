@@ -18,9 +18,10 @@ final class PonderAddAnswerView extends AphrontView {
   public function render() {
     $question = $this->question;
     $viewer = $this->getViewer();
+    $viewer_phid = $viewer->getPHID();
 
     $authors = mpull($question->getAnswers(), null, 'getAuthorPHID');
-    if (isset($authors[$viewer->getPHID()])) {
+    if ($viewer_phid && isset($authors[$viewer_phid])) {
       $view = id(new PHUIInfoView())
         ->setSeverity(PHUIInfoView::SEVERITY_NOTICE)
         ->setTitle(pht('Already Answered'))

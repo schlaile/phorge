@@ -148,8 +148,13 @@ final class PhortuneMerchant extends PhortuneDAO
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {
+    $viewer_phid = $viewer->getPHID();
+    if (!$viewer_phid) {
+      return false;
+    }
+
     $members = array_fuse($this->getMemberPHIDs());
-    if (isset($members[$viewer->getPHID()])) {
+    if (isset($members[$viewer_phid])) {
       return true;
     }
 
