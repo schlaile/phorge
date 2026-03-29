@@ -151,18 +151,25 @@ final class DifferentialRevisionSearchEngine
     $query->setQueryKey($query_key);
 
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
     switch ($query_key) {
       case 'active':
+        if (!$viewer_phid) {
+          return $query;
+        }
         $bucket_key = DifferentialRevisionRequiredActionResultBucket::BUCKETKEY;
 
         return $query
-          ->setParameter('responsiblePHIDs', array($viewer->getPHID()))
+          ->setParameter('responsiblePHIDs', array($viewer_phid))
           ->setParameter('statuses', array('open()'))
           ->setParameter('bucket', $bucket_key);
       case 'authored':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query
-          ->setParameter('authorPHIDs', array($viewer->getPHID()));
+          ->setParameter('authorPHIDs', array($viewer_phid));
       case 'all':
         return $query;
     }
