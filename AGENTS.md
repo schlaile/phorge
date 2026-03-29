@@ -18,6 +18,7 @@ It is not intended to be proposed upstream as part of Phorge itself.
 
 ## Commit Message Rules
 
+- write commit messages in English
 - commits created in this repository should avoid internal task references like
   `T1234` if the change may later be proposed upstream
 - for branches or commits intended only for local experimentation, internal
