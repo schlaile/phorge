@@ -72,8 +72,11 @@ final class PhabricatorPhurlURLSearchEngine
   protected function getBuiltinQueryNames() {
     $names = array(
       'all' => pht('All URLs'),
-      'authored' => pht('Authored'),
     );
+
+    if ($this->requireViewer()->isLoggedIn()) {
+      $names['authored'] = pht('Authored');
+    }
 
     return $names;
   }
@@ -82,10 +85,14 @@ final class PhabricatorPhurlURLSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
     switch ($query_key) {
       case 'authored':
-        return $query->setParameter('authorPHIDs', array($viewer->getPHID()));
+        if (!$viewer_phid) {
+          return $query;
+        }
+        return $query->setParameter('authorPHIDs', array($viewer_phid));
       case 'all':
         return $query;
     }

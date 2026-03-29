@@ -96,10 +96,14 @@ final class LegalpadDocumentSearchEngine
     $query->setQueryKey($query_key);
 
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
     switch ($query_key) {
       case 'signed':
-        return $query->setParameter('signerPHIDs', array($viewer->getPHID()));
+        if (!$viewer_phid) {
+          return $query;
+        }
+        return $query->setParameter('signerPHIDs', array($viewer_phid));
       case 'all':
         return $query;
     }
