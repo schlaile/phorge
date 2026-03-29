@@ -5,6 +5,7 @@ final class PhabricatorSearchEditController
 
   public function handleRequest(AphrontRequest $request) {
     $viewer = $this->getViewer();
+    $viewer_phid = $viewer->getPHID();
 
     $id = $request->getURIData('id');
     if ($id) {
@@ -41,8 +42,12 @@ final class PhabricatorSearchEditController
     $cancel_uri = $complete_uri;
 
     if (!$named_query) {
+      if (!$viewer_phid) {
+        return new Aphront403Response();
+      }
+
       $named_query = id(new PhabricatorNamedQuery())
-        ->setUserPHID($viewer->getPHID())
+        ->setUserPHID($viewer_phid)
         ->setQueryKey($saved_query->getQueryKey())
         ->setEngineClassName($saved_query->getEngineClassName());
 
