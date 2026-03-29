@@ -58,6 +58,7 @@ final class PhortuneCartSearchEngine
       ->needPurchases(true);
 
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
     $merchant = $this->getMerchant();
     $account = $this->getAccount();
@@ -66,8 +67,12 @@ final class PhortuneCartSearchEngine
     } else if ($account) {
       $query->withAccountPHIDs(array($account->getPHID()));
     } else {
+      if (!$viewer_phid) {
+        throw new Exception(pht('You have no accounts!'));
+      }
+
       $accounts = id(new PhortuneAccountQuery())
-        ->withMemberPHIDs(array($viewer->getPHID()))
+        ->withMemberPHIDs(array($viewer_phid))
         ->execute();
       if ($accounts) {
         $query->withAccountPHIDs(mpull($accounts, 'getPHID'));

@@ -37,13 +37,18 @@ final class PhortuneChargeSearchEngine
     $query = new PhortuneChargeQuery();
 
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
     $account = $this->getAccount();
     if ($account) {
       $query->withAccountPHIDs(array($account->getPHID()));
     } else {
+      if (!$viewer_phid) {
+        throw new Exception(pht('You have no accounts!'));
+      }
+
       $accounts = id(new PhortuneAccountQuery())
-        ->withMemberPHIDs(array($viewer->getPHID()))
+        ->withMemberPHIDs(array($viewer_phid))
         ->execute();
       if ($accounts) {
         $query->withAccountPHIDs(mpull($accounts, 'getPHID'));
