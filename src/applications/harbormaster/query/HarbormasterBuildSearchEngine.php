@@ -81,23 +81,32 @@ final class HarbormasterBuildSearchEngine
   }
 
   protected function getBuiltinQueryNames() {
-    return array(
-      'initiated' => pht('My Builds'),
-      'all' => pht('All Builds'),
-      'waiting' => pht('Waiting'),
-      'active' => pht('Active'),
-      'completed' => pht('Completed'),
-    );
+    $names = array();
+
+    if ($this->requireViewer()->isLoggedIn()) {
+      $names['initiated'] = pht('My Builds');
+    }
+
+    $names['all'] = pht('All Builds');
+    $names['waiting'] = pht('Waiting');
+    $names['active'] = pht('Active');
+    $names['completed'] = pht('Completed');
+
+    return $names;
   }
 
   public function buildSavedQueryFromBuiltin($query_key) {
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
+    $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
     switch ($query_key) {
       case 'initiated':
-        $viewer = $this->requireViewer();
-        return $query->setParameter('initiators', array($viewer->getPHID()));
+        if (!$viewer_phid) {
+          return $query;
+        }
+        return $query->setParameter('initiators', array($viewer_phid));
       case 'all':
         return $query;
       case 'waiting':
