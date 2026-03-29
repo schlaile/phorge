@@ -103,6 +103,8 @@ final class PhabricatorOwnersPackageSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
 
+    $viewer_phid = $this->requireViewer()->getPHID();
+
     switch ($query_key) {
       case 'all':
         return $query;
@@ -113,9 +115,12 @@ final class PhabricatorOwnersPackageSearchEngine
             PhabricatorOwnersPackage::STATUS_ACTIVE,
           ));
       case 'authority':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'authorityPHIDs',
-          array($this->requireViewer()->getPHID()));
+          array($viewer_phid));
     }
 
     return parent::buildSavedQueryFromBuiltin($query_key);

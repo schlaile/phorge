@@ -86,15 +86,20 @@ final class PhabricatorSlowvoteSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
 
+    $viewer_phid = $this->requireViewer()->getPHID();
+
     switch ($query_key) {
       case 'open':
         return $query->setParameter('statuses', array('open'));
       case 'all':
         return $query;
       case 'authored':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'authorPHIDs',
-          array($this->requireViewer()->getPHID()));
+          array($viewer_phid));
       case 'voted':
         return $query->setParameter('voted', array('voted'));
     }
