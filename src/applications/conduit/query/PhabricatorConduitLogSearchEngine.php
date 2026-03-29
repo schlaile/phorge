@@ -117,9 +117,15 @@ final class PhabricatorConduitLogSearchEngine
 
     switch ($query_key) {
       case 'viewer':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query
           ->setParameter('callerPHIDs', array($viewer_phid));
       case 'viewerdeprecated':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query
           ->setParameter('callerPHIDs', array($viewer_phid))
           ->setParameter('statuses', $deprecated);
