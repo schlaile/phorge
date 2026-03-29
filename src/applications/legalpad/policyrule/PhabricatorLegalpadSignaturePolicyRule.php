@@ -14,6 +14,11 @@ final class PhabricatorLegalpadSignaturePolicyRule
     array $values,
     array $objects) {
 
+    $viewer_phid = $viewer->getPHID();
+    if (!$viewer_phid) {
+      return;
+    }
+
     $values = array_unique(array_filter(array_mergev($values)));
     if (!$values) {
       return;
@@ -25,7 +30,7 @@ final class PhabricatorLegalpadSignaturePolicyRule
     $documents = id(new LegalpadDocumentQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withPHIDs($values)
-      ->withSignerPHIDs(array($viewer->getPHID()))
+      ->withSignerPHIDs(array($viewer_phid))
       ->execute();
     $this->signatures = mpull($documents, 'getPHID', 'getPHID');
   }

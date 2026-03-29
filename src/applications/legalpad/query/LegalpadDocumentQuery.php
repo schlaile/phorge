@@ -85,6 +85,8 @@ final class LegalpadDocumentQuery
   }
 
   protected function willFilterPage(array $documents) {
+    $viewer_phid = $this->getViewer()->getPHID();
+
     if ($this->needDocumentBodies) {
       $documents = $this->loadDocumentBodies($documents);
     }
@@ -99,10 +101,10 @@ final class LegalpadDocumentQuery
 
     if ($this->needViewerSignatures) {
       if ($documents) {
-        if ($this->getViewer()->getPHID()) {
+        if ($viewer_phid) {
           $signatures = id(new LegalpadDocumentSignatureQuery())
             ->setViewer($this->getViewer())
-            ->withSignerPHIDs(array($this->getViewer()->getPHID()))
+            ->withSignerPHIDs(array($viewer_phid))
             ->withDocumentPHIDs(mpull($documents, 'getPHID'))
             ->execute();
           $signatures = mpull($signatures, null, 'getDocumentPHID');
@@ -110,11 +112,13 @@ final class LegalpadDocumentQuery
           $signatures = array();
         }
 
-        foreach ($documents as $document) {
-          $signature = idx($signatures, $document->getPHID());
-          $document->attachUserSignature(
-            $this->getViewer()->getPHID(),
-            $signature);
+        if ($viewer_phid) {
+          foreach ($documents as $document) {
+            $signature = idx($signatures, $document->getPHID());
+            $document->attachUserSignature(
+              $viewer_phid,
+              $signature);
+          }
         }
       }
     }
