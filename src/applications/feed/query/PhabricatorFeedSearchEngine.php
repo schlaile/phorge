@@ -66,11 +66,14 @@ final class PhabricatorFeedSearchEngine
     $viewer_projects = $map['viewerProjects'];
     if ($viewer_projects) {
       $viewer = $this->requireViewer();
-      $projects = id(new PhabricatorProjectQuery())
-        ->setViewer($viewer)
-        ->withMemberPHIDs(array($viewer->getPHID()))
-        ->execute();
-      $phids += array_fuse(mpull($projects, 'getPHID'));
+      $viewer_phid = $viewer->getPHID();
+      if ($viewer_phid) {
+        $projects = id(new PhabricatorProjectQuery())
+          ->setViewer($viewer)
+          ->withMemberPHIDs(array($viewer_phid))
+          ->execute();
+        $phids += array_fuse(mpull($projects, 'getPHID'));
+      }
     }
 
     if ($phids) {
