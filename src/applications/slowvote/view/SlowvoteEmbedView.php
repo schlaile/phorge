@@ -336,8 +336,13 @@ final class SlowvoteEmbedView extends AphrontView {
       return ($poll->getAuthorPHID() === $viewer->getPHID());
     }
 
+    $viewer_phid = $viewer->getPHID();
+    if (!$viewer_phid) {
+      return false;
+    }
+
     $choices = mgroup($poll->getChoices(), 'getAuthorPHID');
-    return (bool)idx($choices, $viewer->getPHID());
+    return (bool)idx($choices, $viewer_phid);
   }
 
 }
