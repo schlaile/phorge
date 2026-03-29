@@ -200,6 +200,9 @@ final class PhabricatorCommitSearchEngine
       case 'all':
         return $query;
       case 'active':
+        if (!$viewer_phid) {
+          return $query;
+        }
         $bucket_key = DiffusionCommitRequiredActionResultBucket::BUCKETKEY;
 
         $open = DiffusionCommitAuditStatus::getOpenStatusConstants();
@@ -211,10 +214,16 @@ final class PhabricatorCommitSearchEngine
           ->setParameter('unreachable', false);
         return $query;
       case 'authored':
+        if (!$viewer_phid) {
+          return $query;
+        }
         $query
           ->setParameter('authorPHIDs', array($viewer_phid));
         return $query;
       case 'audited':
+        if (!$viewer_phid) {
+          return $query;
+        }
         $query
           ->setParameter('auditorPHIDs', array($viewer_phid));
         return $query;
