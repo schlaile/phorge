@@ -109,7 +109,7 @@ final class PhabricatorConpherenceProfileMenuItem
     $participants = $room->getParticipants();
     $viewer_phid = $viewer->getPHID();
     $unread_count = null;
-    if (isset($participants[$viewer_phid])) {
+    if ($viewer_phid && isset($participants[$viewer_phid])) {
       $data = $room->getDisplayData($viewer);
       $unread_count = $data['unread_count'];
     }
