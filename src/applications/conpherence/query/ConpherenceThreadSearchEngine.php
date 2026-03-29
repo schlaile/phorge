@@ -79,13 +79,18 @@ final class ConpherenceThreadSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
 
+    $viewer_phid = $this->requireViewer()->getPHID();
+
     switch ($query_key) {
       case 'all':
         return $query;
       case 'participant':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'participants',
-          array($this->requireViewer()->getPHID()));
+          array($viewer_phid));
     }
 
     return parent::buildSavedQueryFromBuiltin($query_key);

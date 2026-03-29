@@ -62,14 +62,19 @@ final class FundInitiativeSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
 
+    $viewer_phid = $this->requireViewer()->getPHID();
+
     switch ($query_key) {
       case 'all':
         return $query;
       case 'owned':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'ownerPHIDs',
           array(
-            $this->requireViewer()->getPHID(),
+            $viewer_phid,
           ));
       case 'open':
         return $query->setParameter(

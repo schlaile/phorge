@@ -61,13 +61,18 @@ final class PhabricatorOAuthServerClientSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
 
+    $viewer_phid = $this->requireViewer()->getPHID();
+
     switch ($query_key) {
       case 'all':
         return $query;
       case 'created':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'creatorPHIDs',
-          array($this->requireViewer()->getPHID()));
+          array($viewer_phid));
     }
 
     return parent::buildSavedQueryFromBuiltin($query_key);

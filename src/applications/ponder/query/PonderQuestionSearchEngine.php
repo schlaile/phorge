@@ -75,6 +75,8 @@ final class PonderQuestionSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
 
+    $viewer_phid = $this->requireViewer()->getPHID();
+
     switch ($query_key) {
       case 'all':
         return $query;
@@ -91,13 +93,19 @@ final class PonderQuestionSearchEngine
         return $query->setParameter(
           'statuses', array(PonderQuestionStatus::STATUS_CLOSED_RESOLVED));
       case 'authored':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'authorPHIDs',
-          array($this->requireViewer()->getPHID()));
+          array($viewer_phid));
       case 'answered':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'answerers',
-          array($this->requireViewer()->getPHID()));
+          array($viewer_phid));
     }
 
     return parent::buildSavedQueryFromBuiltin($query_key);

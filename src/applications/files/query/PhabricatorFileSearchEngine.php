@@ -111,11 +111,16 @@ final class PhabricatorFileSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
 
+    $viewer_phid = $this->requireViewer()->getPHID();
+
     switch ($query_key) {
       case 'all':
         return $query;
       case 'authored':
-        $author_phid = array($this->requireViewer()->getPHID());
+        if (!$viewer_phid) {
+          return $query;
+        }
+        $author_phid = array($viewer_phid);
         return $query
           ->setParameter('authorPHIDs', $author_phid)
           ->setParameter('explicit', true);

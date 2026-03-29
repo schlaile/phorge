@@ -260,10 +260,16 @@ final class PhabricatorProjectSearchEngine
         return $query
           ->setParameter('status', $active);
       case 'joined':
+        if (!$viewer_phid) {
+          return $query->setParameter('status', $active);
+        }
         return $query
           ->setParameter('memberPHIDs', array($viewer_phid))
           ->setParameter('status', $active);
       case 'watching':
+        if (!$viewer_phid) {
+          return $query->setParameter('status', $active);
+        }
         return $query
           ->setParameter('watcherPHIDs', array($viewer_phid))
           ->setParameter('status', $active);

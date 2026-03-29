@@ -122,6 +122,9 @@ final class HeraldRuleSearchEngine extends PhabricatorApplicationSearchEngine {
         return $query
           ->setParameter('active', true);
       case 'authored':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query
           ->setParameter('authorPHIDs', array($viewer_phid))
           ->setParameter('disabled', false);

@@ -335,12 +335,18 @@ final class ManiphestTaskSearchEngine
       case 'all':
         return $query;
       case 'assigned':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query
           ->setParameter('assignedPHIDs', array($viewer_phid))
           ->setParameter(
             'statuses',
             ManiphestTaskStatus::getOpenStatusConstants());
       case 'subscribed':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query
           ->setParameter('subscriberPHIDs', array($viewer_phid))
           ->setParameter(
@@ -352,6 +358,9 @@ final class ManiphestTaskSearchEngine
             'statuses',
             ManiphestTaskStatus::getOpenStatusConstants());
       case 'authored':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query
           ->setParameter('authorPHIDs', array($viewer_phid))
           ->setParameter('order', 'created')
