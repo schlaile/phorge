@@ -161,7 +161,7 @@ abstract class PhabricatorCalendarImportEngine
     foreach ($node_map as $full_uid => $node) {
       $uid = $node->getUID();
       $matches = null;
-      if (preg_match('/^(PHID-.*)@(.*)\z/', $uid, $matches)) {
+      if (preg_match('/^(PHID-.*)@(.*)\z/', (string)$uid, $matches)) {
         $likely_phids[$full_uid] = $matches[1];
       }
     }
@@ -250,7 +250,7 @@ abstract class PhabricatorCalendarImportEngine
         // We avoid disclosing email addresses to be consistent with the rest
         // of the product.
         $name = $attendee->getName();
-        if (phutil_nonempty_string($name) && preg_match('/@/', $name)) {
+        if (phutil_nonempty_string($name) && preg_match('/@/', (string)$name)) {
           $attendee_mail = new PhutilEmailAddress($name);
           $name = $attendee_mail->getDisplayName();
           $address = $attendee_mail->getAddress();
@@ -265,7 +265,7 @@ abstract class PhabricatorCalendarImportEngine
 
         // If we don't have a name or the name still looks like it's an
         // email address, give them a dummy placeholder name.
-        if (!phutil_nonempty_string($name) || preg_match('/@/', $name)) {
+        if (!phutil_nonempty_string($name) || preg_match('/@/', (string)$name)) {
           $name = pht('Private User %d', $private_index);
           $private_index++;
         }
@@ -615,7 +615,7 @@ abstract class PhabricatorCalendarImportEngine
   }
 
   final protected function shouldQueueDataImport($data) {
-    return (strlen($data) > self::QUEUE_BYTE_LIMIT);
+    return (strlen((string)$data) > self::QUEUE_BYTE_LIMIT);
   }
 
   final protected function queueDataImport(
@@ -625,7 +625,7 @@ abstract class PhabricatorCalendarImportEngine
     $import->newLogMessage(
       PhabricatorCalendarImportQueueLogType::LOGTYPE,
       array(
-        'data.size' => strlen($data),
+        'data.size' => strlen((string)$data),
         'data.limit' => self::QUEUE_BYTE_LIMIT,
       ));
 

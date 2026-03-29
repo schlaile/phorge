@@ -62,7 +62,7 @@ final class PhabricatorCalendarEventPHIDType extends PhabricatorPHIDType {
 
     $id_map = array();
     foreach ($names as $name) {
-      $id = (int)substr($name, 1);
+      $id = (int)substr((string)$name, 1);
       $id_map[$id][] = $name;
     }
 
