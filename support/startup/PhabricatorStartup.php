@@ -394,7 +394,7 @@ final class PhabricatorStartup {
     // PHP 8 deprecates this function and disables this by default; remove once
     // PHP 7 is no longer supported or a future version has removed the function
     // entirely.
-    if (function_exists('libxml_disable_entity_loader')) {
+    if (PHP_VERSION_ID < 80000 && function_exists('libxml_disable_entity_loader')) {
       @libxml_disable_entity_loader(true);
     }
 
