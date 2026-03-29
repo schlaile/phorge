@@ -129,6 +129,7 @@ final class PhabricatorPeopleSearchEngine
     $query = $this->newQuery();
 
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
     // If the viewer can't browse the user directory, restrict the query to
     // just the user's own profile. This is a little bit silly, but serves to
@@ -138,8 +139,8 @@ final class PhabricatorPeopleSearchEngine
       $viewer,
       $this->getApplication(),
       PeopleBrowseUserDirectoryCapability::CAPABILITY);
-    if (!$can_browse) {
-      $query->withPHIDs(array($viewer->getPHID()));
+    if (!$can_browse && $viewer_phid) {
+      $query->withPHIDs(array($viewer_phid));
     }
 
     if ($map['usernames']) {
