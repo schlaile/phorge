@@ -51,9 +51,9 @@ final class PhutilICSParser extends Phobject {
     foreach ($lines as $key => $line) {
       $this->cursor = $key;
       $matches = null;
-      if (preg_match('(^BEGIN:(.*)\z)', $line, $matches)) {
+      if (preg_match('(^BEGIN:(.*)\z)', (string)$line, $matches)) {
         $this->beginParsingNode($matches[1]);
-      } else if (preg_match('(^END:(.*)\z)', $line, $matches)) {
+      } else if (preg_match('(^END:(.*)\z)', (string)$line, $matches)) {
         $this->endParsingNode($matches[1]);
       } else {
         if (count($this->stack) < 2) {
@@ -100,7 +100,7 @@ final class PhutilICSParser extends Phobject {
     $last = null;
     foreach ($lines as $idx => $line) {
       $this->cursor = $idx;
-      if (!preg_match('/^[ \t]/', $line)) {
+      if (!preg_match('/^[ \t]/', (string)$line)) {
         $last = $idx;
         continue;
       }
@@ -194,7 +194,7 @@ final class PhutilICSParser extends Phobject {
     // by either a ";" (to begin a list of parameters) or a ":" (to begin
     // the actual field body).
 
-    $ok = preg_match('(^([A-Za-z0-9-]+)([;:])(.*)\z)', $line, $matches);
+    $ok = preg_match('(^([A-Za-z0-9-]+)([;:])(.*)\z)', (string)$line, $matches);
     if (!$ok) {
       $this->raiseParseFailure(
         self::PARSE_MALFORMED_PROPERTY,
@@ -213,7 +213,7 @@ final class PhutilICSParser extends Phobject {
 
       while (true) {
         // We're going to get the first couple of parts first.
-        $ok = preg_match('(^([^=]+)=)', $body, $matches);
+        $ok = preg_match('(^([^=]+)=)', (string)$body, $matches);
         if (!$ok) {
           $this->raiseParseFailure(
             self::PARSE_MALFORMED_PARAMETER_NAME,
@@ -234,7 +234,7 @@ final class PhutilICSParser extends Phobject {
             $is_quoted = true;
             $ok = preg_match(
               '(^"([^\x00-\x08\x10-\x19"]*)")',
-              $body,
+              (string)$body,
               $matches);
             if (!$ok) {
               $this->raiseParseFailure(
@@ -248,7 +248,7 @@ final class PhutilICSParser extends Phobject {
 
             // It's impossible for this not to match since it can match
             // nothing, and it's valid for it to match nothing.
-            preg_match('(^([^\x00-\x08\x10-\x19";:,]*))', $body, $matches);
+            preg_match('(^([^\x00-\x08\x10-\x19";:,]*))', (string)$body, $matches);
           }
 
           // NOTE: RFC5545 says "Property parameter values that are not in
@@ -458,7 +458,7 @@ final class PhutilICSParser extends Phobject {
 
     switch ($value_type) {
       case 'BINARY':
-        $result = base64_decode($data, true);
+        $result = base64_decode((string)$data, true);
         if ($result === false) {
           $this->raiseParseFailure(
             self::PARSE_BAD_BASE64,
@@ -490,31 +490,31 @@ final class PhutilICSParser extends Phobject {
         break;
       case 'DATE':
         // This is a comma-separated list of "YYYYMMDD" values.
-        $result = explode(',', $data);
+        $result = explode(',', (string)$data);
         break;
       case 'DATE-TIME':
       case 'DURATION':
-        if (!strlen($data)) {
+        if (!strlen((string)$data)) {
           $result = array();
         } else {
-          $result = explode(',', $data);
+          $result = explode(',', (string)$data);
         }
         break;
       case 'FLOAT':
-        $result = explode(',', $data);
+        $result = explode(',', (string)$data);
         foreach ($result as $k => $v) {
           $result[$k] = (float)$v;
         }
         break;
       case 'INTEGER':
-        $result = explode(',', $data);
+        $result = explode(',', (string)$data);
         foreach ($result as $k => $v) {
           $result[$k] = (int)$v;
         }
         break;
       case 'PERIOD':
       case 'TIME':
-        $result = explode(',', $data);
+        $result = explode(',', (string)$data);
         break;
       case 'TEXT':
         $result = $this->unescapeTextValue($data);
@@ -865,7 +865,7 @@ final class PhutilICSParser extends Phobject {
       '/i';
 
     $matches = null;
-    if (preg_match($offset_pattern, $tzid, $matches)) {
+    if (preg_match($offset_pattern, (string)$tzid, $matches)) {
       $hours = (int)$matches['h'];
       $minutes = (int)idx($matches, 'm');
       $offset = ($hours * 60 * 60) + ($minutes * 60);

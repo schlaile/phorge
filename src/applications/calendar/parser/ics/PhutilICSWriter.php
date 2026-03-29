@@ -141,7 +141,7 @@ final class PhutilICSWriter extends Phobject {
     $properties = array();
 
     $uid = $event->getUID();
-    if (!strlen($uid)) {
+    if (!strlen((string)$uid)) {
       throw new Exception(
         pht(
           'Unable to write ICS document: event has no UID, but each event '.

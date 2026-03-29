@@ -70,7 +70,7 @@ final class PhutilCalendarDuration extends Phobject {
       '\z/';
 
     $matches = null;
-    $ok = preg_match($pattern, $value, $matches);
+    $ok = preg_match($pattern, (string)$value, $matches);
     if (!$ok) {
       throw new Exception(
         pht(
