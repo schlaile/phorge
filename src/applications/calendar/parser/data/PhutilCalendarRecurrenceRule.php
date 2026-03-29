@@ -235,11 +235,11 @@ final class PhutilCalendarRecurrenceRule
   }
 
   public static function newFromRRULE($rrule) {
-    $parts = explode(';', $rrule);
+    $parts = explode(';', (string)$rrule);
 
     $dict = array();
     foreach ($parts as $part) {
-      list($key, $value) = explode('=', $part, 2);
+      list($key, $value) = explode('=', (string)$part, 2);
       switch ($key) {
         case 'FREQ':
         case 'INTERVAL':
@@ -276,7 +276,7 @@ final class PhutilCalendarRecurrenceRule
     foreach ($dict as $key => $value) {
       if (isset($int_values[$key])) {
         // None of these values may be negative.
-        if (!preg_match('/^\d+\z/', $value)) {
+        if (!preg_match('/^\d+\z/', (string)$value)) {
           throw new Exception(
             pht(
               'Unexpected value "%s" in "%s" RULE property: expected an '.
@@ -289,7 +289,7 @@ final class PhutilCalendarRecurrenceRule
 
       if (isset($int_lists[$key])) {
         foreach ($value as $k => $v) {
-          if (!preg_match('/^-?\d+\z/', $v)) {
+          if (!preg_match('/^-?\d+\z/', (string)$v)) {
             throw new Exception(
               pht(
                 'Unexpected value "%s" in "%s" RRULE property: expected '.
@@ -466,7 +466,7 @@ final class PhutilCalendarRecurrenceRule
     $pattern = '/^(?:[+-]?([1-9]\d?))?('.$constants.')\z/';
     foreach ($by_day as $key => $value) {
       $matches = null;
-      if (!preg_match($pattern, $value, $matches)) {
+      if (!preg_match($pattern, (string)$value, $matches)) {
         throw new Exception(
           pht(
             'RRULE BYDAY value "%s" is invalid: rule part must be in the '.
@@ -490,7 +490,7 @@ final class PhutilCalendarRecurrenceRule
       }
 
       // Normalize "+3FR" into "3FR".
-      $by_day[$key] = ltrim($value, '+');
+      $by_day[$key] = ltrim((string)$value, '+');
     }
 
     $this->byDay = array_fuse($by_day);
