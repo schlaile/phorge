@@ -57,15 +57,19 @@ final class PhabricatorDashboardSearchEngine
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
     switch ($query_key) {
       case 'all':
         return $query;
       case 'authored':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'authorPHIDs',
           array(
-            $viewer->getPHID(),
+            $viewer_phid,
           ));
       case 'open':
         return $query->setParameter(
