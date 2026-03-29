@@ -17,9 +17,14 @@ final class PhabricatorCalendarExportSearchEngine
 
   public function newQuery() {
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
-    return id(new PhabricatorCalendarExportQuery())
-      ->withAuthorPHIDs(array($viewer->getPHID()));
+    $query = new PhabricatorCalendarExportQuery();
+    if ($viewer_phid) {
+      $query->withAuthorPHIDs(array($viewer_phid));
+    }
+
+    return $query;
   }
 
   protected function buildCustomSearchFields() {
