@@ -55,29 +55,38 @@ final class PhabricatorMetaMTAMailSearchEngine
   }
 
   protected function getBuiltinQueryNames() {
-    $names = array(
-      'inbox'  => pht('Inbox'),
-      'outbox' => pht('Outbox'),
-    );
+    $names = array();
+
+    if ($this->requireViewer()->isLoggedIn()) {
+      $names['inbox'] = pht('Inbox');
+      $names['outbox'] = pht('Outbox');
+    }
 
     return $names;
   }
 
   public function buildSavedQueryFromBuiltin($query_key) {
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
 
     $query = $this->newSavedQuery();
     $query->setQueryKey($query_key);
 
     switch ($query_key) {
       case 'inbox':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'recipientPHIDs',
-          array($viewer->getPHID()));
+          array($viewer_phid));
       case 'outbox':
+        if (!$viewer_phid) {
+          return $query;
+        }
         return $query->setParameter(
           'actorPHIDs',
-          array($viewer->getPHID()));
+          array($viewer_phid));
     }
 
     return parent::buildSavedQueryFromBuiltin($query_key);
