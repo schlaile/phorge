@@ -555,16 +555,20 @@ abstract class PhabricatorApplicationSearchEngine extends Phobject {
   public function loadAllNamedQueries() {
     $viewer = $this->requireViewer();
     $builtin = $this->getBuiltinQueries();
+    $viewer_phid = $viewer->getPHID();
 
     if ($this->namedQueries === null) {
+      $user_phids = array(
+        PhabricatorNamedQuery::SCOPE_GLOBAL,
+      );
+      if ($viewer_phid) {
+        array_unshift($user_phids, $viewer_phid);
+      }
+
       $named_queries = id(new PhabricatorNamedQueryQuery())
         ->setViewer($viewer)
         ->withEngineClassNames(array(get_class($this)))
-        ->withUserPHIDs(
-          array(
-            $viewer->getPHID(),
-            PhabricatorNamedQuery::SCOPE_GLOBAL,
-          ))
+        ->withUserPHIDs($user_phids)
         ->execute();
       $named_queries = mpull($named_queries, null, 'getQueryKey');
 
@@ -610,15 +614,19 @@ abstract class PhabricatorApplicationSearchEngine extends Phobject {
    */
   public function getDefaultQueryKey() {
     $viewer = $this->requireViewer();
+    $viewer_phid = $viewer->getPHID();
+
+    $scope_phids = array(
+      PhabricatorNamedQueryConfig::SCOPE_GLOBAL,
+    );
+    if ($viewer_phid) {
+      array_unshift($scope_phids, $viewer_phid);
+    }
 
     $configs = id(new PhabricatorNamedQueryConfigQuery())
       ->setViewer($viewer)
       ->withEngineClassNames(array(get_class($this)))
-      ->withScopePHIDs(
-        array(
-          $viewer->getPHID(),
-          PhabricatorNamedQueryConfig::SCOPE_GLOBAL,
-        ))
+      ->withScopePHIDs($scope_phids)
       ->execute();
     $configs = msortv($configs, 'getStrengthSortVector');
 
