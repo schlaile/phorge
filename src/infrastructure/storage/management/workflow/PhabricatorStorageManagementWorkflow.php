@@ -1184,6 +1184,7 @@ abstract class PhabricatorStorageManagementWorkflow
         // We applied this everywhere, so we're done with the patch.
         unset($patches[$key]);
         $applied_something = true;
+        break;
       }
 
       if (!$applied_something) {

@@ -1,4 +1,4 @@
 {
   "name": "pastebin",
-  "dead": true
+  "after": ["042.commentmetadata.sql"]
 }

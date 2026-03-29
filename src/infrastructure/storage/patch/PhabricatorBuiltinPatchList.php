@@ -233,6 +233,9 @@ final class PhabricatorBuiltinPatchList extends PhabricatorSQLPatchList {
       ),
       '043.pastebin.sql' => array(
         'legacy' => 43,
+        'after' => array(
+          '00.pastebin.0.db',
+        ),
       ),
       '044.countdown.sql' => array(
         'legacy' => 44,
@@ -584,7 +587,11 @@ final class PhabricatorBuiltinPatchList extends PhabricatorSQLPatchList {
       '20130201.revisionunsubscribed.php' => array(),
       '20130201.revisionunsubscribed.sql' => array(),
       '20130131.conpherencepics.sql' => array(),
-      '20130214.chatlogchannel.sql' => array(),
+      '20130214.chatlogchannel.sql' => array(
+        'after' => array(
+          '20130214.chatlog.0.db',
+        ),
+      ),
       '20130214.chatlogchannelid.sql' => array(),
       '20130214.token.sql' => array(),
       '20130215.phabricatorfileaddttl.sql' => array(),
@@ -597,7 +604,11 @@ final class PhabricatorBuiltinPatchList extends PhabricatorSQLPatchList {
       '20130226.commitkey.sql' => array(),
       '20131302.maniphestvalue.sql' => array(),
       '20130304.lintauthor.sql' => array(),
-      'releeph.sql' => array(),
+      'releeph.sql' => array(
+        'after' => array(
+          '20130304.releeph.0.db',
+        ),
+      ),
       '20130319.phabricatorfileexplicitupload.sql' => array(),
       '20130319.conpherence.sql' => array(),
       '20130320.phlux.sql' => array(),
@@ -747,7 +758,11 @@ final class PhabricatorBuiltinPatchList extends PhabricatorSQLPatchList {
       '20131204.pushlog.sql' => array(),
       '20131205.buildsteporder.sql' => array(),
       '20131205.buildstepordermig.php' => array(),
-      '20131206.phragment.sql' => array(),
+      '20131206.phragment.sql' => array(
+        'after' => array(
+          '20131206.phragment.0.db',
+        ),
+      ),
       '20131206.phragmentnull.sql' => array(),
       '20131208.phragmentsnapshot.sql' => array(),
       '20131211.phragmentedges.sql' => array(),

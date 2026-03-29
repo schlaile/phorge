@@ -1,0 +1,4 @@
+{
+  "name": "chatlog",
+  "after": ["20130131.conpherencepics.sql"]
+}
