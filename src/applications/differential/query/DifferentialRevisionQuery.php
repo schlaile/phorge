@@ -431,14 +431,18 @@ final class DifferentialRevisionQuery
 
   protected function didFilterPage(array $revisions) {
     $viewer = $this->getViewer();
+    $viewer_phid = $viewer->getPHID();
 
     if ($this->needFlags) {
-      $flags = id(new PhabricatorFlagQuery())
-        ->setViewer($viewer)
-        ->withOwnerPHIDs(array($viewer->getPHID()))
-        ->withObjectPHIDs(mpull($revisions, 'getPHID'))
-        ->execute();
-      $flags = mpull($flags, null, 'getObjectPHID');
+      $flags = array();
+      if ($viewer_phid) {
+        $flags = id(new PhabricatorFlagQuery())
+          ->setViewer($viewer)
+          ->withOwnerPHIDs(array($viewer_phid))
+          ->withObjectPHIDs(mpull($revisions, 'getPHID'))
+          ->execute();
+        $flags = mpull($flags, null, 'getObjectPHID');
+      }
       foreach ($revisions as $revision) {
         $revision->attachFlag(
           $viewer,
