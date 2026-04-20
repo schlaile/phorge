@@ -41,9 +41,9 @@ final class PhabricatorBuiltinPatchList extends PhabricatorSQLPatchList {
     $auto_root = $root.'/resources/sql/autopatches/';
     $autopatches = $this->buildPatchesFromDirectory($auto_root);
 
-    $autopatches['20170528.maniphestdupes.php']['after'] = array(
-      '20210122.queuecontainer.01.sql',
-    );
+    $autopatches['20210122.queuecontainer.01.sql']['type'] = 'php';
+    $autopatches['20210122.queuecontainer.01.sql']['name'] =
+      $this->getPatchPath('20210122.queuecontainer.php');
 
     $patches += $autopatches;
 
