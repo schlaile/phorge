@@ -297,9 +297,17 @@ final class PhrictionDocumentController
     $children = $this->renderDocumentChildren($slug);
     $children = phutil_tag_div('phui-document-view-pro-box', $children);
 
+    $action_list = null;
     $curtain = null;
     if ($document->getID()) {
       $curtain = $this->buildCurtain($document, $content);
+
+      $action_mode = PhabricatorEnv::getEnvConfig(
+        'phriction.document-actions');
+      if ($action_mode == 'dropdown') {
+        $action_list = $curtain->getActionList();
+        $curtain = null;
+      }
     }
 
     $crumbs = $this->buildApplicationCrumbs();
@@ -313,6 +321,10 @@ final class PhrictionDocumentController
       ->setViewer($viewer)
       ->setPolicyObject($document)
       ->setHeader($page_title);
+
+    if ($action_list) {
+      $header->setActionList($action_list);
+    }
 
     if ($is_draft) {
       $draft_tag = id(new PHUITagView())
