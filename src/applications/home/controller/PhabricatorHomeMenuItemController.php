@@ -14,6 +14,13 @@ final class PhabricatorHomeMenuItemController
   public function handleRequest(AphrontRequest $request) {
     $viewer = $this->getViewer();
 
+    $logged_out_mode = PhabricatorEnv::getEnvConfig('home.logged-out-mode');
+    if (!$viewer->isLoggedIn() && ($logged_out_mode === 'login')) {
+      $uri = id(new PhutilURI('/auth/start/'))
+        ->setQueryParam('next', (string)$request->getRequestURI());
+      return id(new AphrontRedirectResponse())->setURI($uri);
+    }
+
     // Test if we should show mobile users the menu or the page content:
     // if you visit "/", you just get the menu. If you visit "/home/", you
     // get the content.
