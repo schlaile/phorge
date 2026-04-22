@@ -10,6 +10,8 @@
  */
 JX.behavior('day-view', function(config) {
 
+  var tail_gap = 16;
+
   function findTodayClusters() {
     var events = today_events.sort(function(x, y){
       return (x.eventStartEpoch - y.eventStartEpoch);
@@ -66,6 +68,14 @@ JX.behavior('day-view', function(config) {
       var event_id = cluster_member.eventID;
       var offset = ((n / cluster_size) * 100) + '%';
       var width = ((1 / cluster_size) * 100) + '%';
+      var is_cluster_tail = (n === (cluster_size - 1));
+
+      // Leave a small amount of click-through space to the right of the last
+      // event in a cluster so users can still create overlapping events
+      // directly from the day view.
+      if (is_cluster_tail) {
+        width = 'calc(' + width + ' - ' + tail_gap + 'px)';
+      }
 
       for (var j=0; j < today_events.length; j++) {
         if (today_events[j].eventID == event_id) {
