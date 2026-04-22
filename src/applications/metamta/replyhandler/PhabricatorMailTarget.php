@@ -94,8 +94,8 @@ final class PhabricatorMailTarget extends Phobject {
     $mail->addPHIDHeaders('X-Phabricator-To', $this->rawToPHIDs);
     $mail->addPHIDHeaders('X-Phabricator-Cc', $this->rawCCPHIDs);
 
-    $to_handles = $viewer->loadHandles($this->rawToPHIDs);
-    $cc_handles = $viewer->loadHandles($this->rawCCPHIDs);
+    $to_handles = $viewer->loadHandles(array_keys($this->getToMap()));
+    $cc_handles = $viewer->loadHandles(array_keys($this->getCCMap()));
 
     $body .= "\n";
     $body .= $this->getRecipientsSummary($to_handles, $cc_handles);
