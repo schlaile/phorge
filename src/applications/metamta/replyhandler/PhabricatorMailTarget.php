@@ -110,8 +110,8 @@ final class PhabricatorMailTarget extends Phobject {
     // Also prepare readable names of involved recipients
     // for the recipients list (metamta.recipients.show-hints)
     // in the mail footer.
-    $to_handles = $viewer->loadHandles($this->rawToPHIDs);
-    $cc_handles = $viewer->loadHandles($this->rawCCPHIDs);
+    $to_handles = $viewer->loadHandles(array_keys($this->getToMap()));
+    $cc_handles = $viewer->loadHandles(array_keys($this->getCCMap()));
 
     // Early have simple arrays, because later we need
     // array functions, like mpull().
