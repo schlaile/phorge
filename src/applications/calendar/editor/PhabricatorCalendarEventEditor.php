@@ -321,6 +321,11 @@ final class PhabricatorCalendarEventEditor
     array $xactions) {
 
     $body = parent::buildMailBody($object, $xactions);
+    $actor = $this->getActor();
+
+    $body->addTextSection(
+      pht('WHEN'),
+      $object->renderEventDate($actor, true));
 
     $description = $object->getDescription();
     if ($this->getIsNewObject()) {
