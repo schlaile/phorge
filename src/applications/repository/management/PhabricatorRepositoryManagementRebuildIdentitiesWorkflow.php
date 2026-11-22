@@ -204,12 +204,18 @@ final class PhabricatorRepositoryManagementRebuildIdentitiesWorkflow
       $data = $commit->getCommitData();
       $author = $data->getAuthorString();
 
-      $author_identity = $this->getIdentityForCommit(
-        $commit,
-        $author);
-
+      // Commits which were never fully imported may have no author string.
+      // Treat them like commits without a committer instead of trying to
+      // create an identity with an empty name.
       $author_phid = $commit->getAuthorIdentityPHID();
-      $identity_phid = $author_identity->getPHID();
+      if (phutil_nonempty_string($author)) {
+        $author_identity = $this->getIdentityForCommit(
+          $commit,
+          $author);
+        $identity_phid = $author_identity->getPHID();
+      } else {
+        $identity_phid = null;
+      }
 
       $aidentity_phid = $identity_phid;
       if ($author_phid !== $identity_phid) {
@@ -220,7 +226,7 @@ final class PhabricatorRepositoryManagementRebuildIdentitiesWorkflow
 
       $committer_name = $data->getCommitterString();
       $committer_phid = $commit->getCommitterIdentityPHID();
-      if (strlen($committer_name)) {
+      if (phutil_nonempty_string($committer_name)) {
         $committer_identity = $this->getIdentityForCommit(
           $commit,
           $committer_name);
