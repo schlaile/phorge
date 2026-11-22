@@ -106,9 +106,39 @@ final class PhabricatorMetaMTAEmailBodyParser extends Phobject {
       }
     }
 
+    // German: "Am <date> schrieb <user>:". Like the English form above, this
+    // may be split across two lines, and we only strip it if the line with
+    // "schrieb" (or the line after it) ends with a colon and "schrieb" follows
+    // "Am" within one line break, so prose like "Am Montag schrieb ich dir
+    // ..." is not mistaken for a quote header.
+    $start = null;
+    $lines = phutil_split_lines($body);
+    $lines = array_values($lines);
+    foreach ($lines as $key => $line) {
+      if (preg_match('/^\s*>?\s*Am\b/u', $line)) {
+        $start = $key;
+      }
+      if ($start !== null && ($key - $start) <= 1 &&
+          preg_match('/\bschrieb\b/u', $line)) {
+        $next = idx($lines, $key + 1, '');
+        if (preg_match('/:\s*$/', $line) ||
+            (!preg_match('/^\s*$/', $next) && preg_match('/:\s*$/', $next))) {
+          $lines = array_slice($lines, 0, $start);
+          $body = implode('', $lines);
+          break;
+        }
+      }
+    }
+
     // Outlook english
     $body = preg_replace(
       '/^\s*(> )?-----Original Message-----.*?/imsU',
+      '',
+      $body);
+
+    // Outlook german
+    $body = preg_replace(
+      '/^\s*(> )?-----Urspr\x{00FC}ngliche Nachricht-----.*?/imsUu',
       '',
       $body);
 

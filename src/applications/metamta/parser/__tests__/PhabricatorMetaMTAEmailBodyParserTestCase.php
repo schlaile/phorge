@@ -85,6 +85,21 @@ EOEMAIL;
     $this->assertEqual('On which horse shall you ride?', $stripped);
   }
 
+  public function testFalsePositiveForAmSchrieb() {
+    $body = <<<EOEMAIL
+Am Montag schrieb ich dir schon, dass es klappt.
+
+Am 22.11.2026 um 20:21 schrieb Jean Claude:
+> Wann passt es dir?
+EOEMAIL;
+
+    $parser = new PhabricatorMetaMTAEmailBodyParser();
+    $stripped = $parser->stripTextBody($body);
+    $this->assertEqual(
+      'Am Montag schrieb ich dir schon, dass es klappt.',
+      $stripped);
+  }
+
   private function getEmailBodiesWithFullCommands() {
     $bodies = $this->getEmailBodies();
     $with_commands = array();
@@ -233,6 +248,43 @@ OKAY
 
 > On 17 Oct 2013, at 17:47, "Someone" <somebody@somewhere> wrote:
 > ...
+EOMAIL
+,
+<<<EOMAIL
+OKAY
+
+Am Sonntag, dem 22.11.2026 um 20:21 +0100 schrieb Jean (Jean Claude):
+> Aufgabe zeigen
+EOMAIL
+,
+<<<EOMAIL
+OKAY
+
+Am Sonntag, dem 22.11.2026 um 20:21 +0100 schrieb Jean (Jean
+Claude):
+> Aufgabe zeigen
+EOMAIL
+,
+<<<EOMAIL
+OKAY
+
+Am 22.11.2026 um 20:21 schrieb Peter Schlaile:
+> ...
+EOMAIL
+,
+<<<EOMAIL
+OKAY
+
+> Am 22.11.2026 um 20:21 schrieb "Peter" <peter@example.com>:
+> ...
+EOMAIL
+,
+<<<EOMAIL
+OKAY
+
+-----Urspr\u{00FC}ngliche Nachricht-----
+Von: Peter Schlaile
+Gesendet: Sonntag, 22. November 2026 20:21
 EOMAIL
 ,
 <<<EOMAIL
