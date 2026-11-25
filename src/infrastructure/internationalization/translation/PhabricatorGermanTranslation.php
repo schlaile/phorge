@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Generated from /home/peter/phorge-neu/phorge-patches/translation/de/work/phorge-de-work.po
- * Generated at 2026-04-22 16:07:53 UTC
+ * Generated from phorge-patches/translation/de/work/phorge-de-work.po
+ * Generated at 2026-11-25 15:25:40 UTC
  *
  * This file is machine-generated. Edit the PO source instead.
  */
@@ -33,17 +33,15 @@ final class PhabricatorGermanTranslation
       '"%s" date can not be parsed.' => '"%s": das Datum kann ich nicht verstehen. ',
       '"%s" is not a valid file PHID.' => '"%s" ist keine gültige Datei-PHID.',
       '"%s" must be a date before "%s".' => '"%s" muss zeitlich vor "%s" liegen.',
+      '"%s" must be a list of constraints.' => '"%s" muss eine Liste von Einschränkungen sein.',
+      '"%s" must be a non-empty list of author PHIDs.' => '"%s" muss eine nichtleere Liste von Autoren-PHIDs sein.',
+      '"%s" must be a non-empty list of transaction PHIDs.' => '"%s" muss eine nichtleere Liste von Transaktions-PHIDs sein.',
+      '"%s" must be a string (PHID or object monogram).' => '"%s" muss ein String sein (PHID oder Objekt-Monogramm).',
+      '"%s" must be a string.' => '"%s" muss ein String sein.',
       '"%s" token, awarded by %s.' => 'Trophäe „%s", vergeben von %s.',
       '"%s", at "%s"' => '"%s", bei "%s"',
       '"2022-12-25" or "7 days ago"...' => '"2022-12-25" oder "vor 7 Tagen"...',
       '"Delivered" shows email actually sent.' => '"Zugestellt" zeigt tatsächlich gesendete Emails.',
-      '"From" does not exclude recipients by default.' => '"Von" schließt Empfänger standardmäßig nicht aus.',
-      '"From" excludes recipients with no-mail set.' => '"Von" schließt Empfänger mit aktivierter Keine-Mail-Option aus.',
-      '"From" excludes recipients with no-self-mail set.' => '"Von" schließt Empfänger mit aktivierter Keine-Selbst-Mail-Option aus.',
-      '"From" includes no-mail recipients when forced.' => '"Von" schließt Keine-Mail-Empfänger ein, wenn erzwungen.',
-      '"Says/remarks" word edit smoothenss.' => '"Says/remarks"-Wortbearbeitungs-Glättung.',
-      '"Shark/cat" word edit smoothenss.' => '"Shark/cat"-Wortbearbeitungs-Glättung.',
-      '"To" is a recipient.' => '"An" ist ein Empfänger.',
       '"Unfiltered" is raw volume before rules applied.' => '"Ungefiltert" ist das Rohvolumen vor Anwendung der Regeln.',
       '"arc land" never warns that the build is still running or has failed.' => '"arc land" warnt nie, dass der Build noch läuft oder fehlgeschlagen ist.',
       '"arc land" warns if the build has failed, but ignores the build if it is still running.' => '"arc land" warnt, wenn der Build fehlgeschlagen ist, ignoriert ihn aber, wenn er noch läuft.',
@@ -71,7 +69,6 @@ final class PhabricatorGermanTranslation
       '# Service request failed, retrying (making attempt %s of %s).
 ' => '# Dienstanfrage fehlgeschlagen, Wiederholung (Versuch %s von %s).
 ',
-      '#%d' => '#%d',
       '#%d: %s' => '#%d: %s',
       '$ ./bin/drydock release-lease --id %d' => '$ ./bin/drydock release-lease --id %d',
       '%d / hour' => '%d / Stunde',
@@ -104,6 +101,8 @@ Verwende diese Einstellungen:
 Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secret** in die Felder oben.',
       '%s %s' => '%s %s',
       '%s %s %s' => '%s %s %s',
+      '%s \'%s\' defined on line #%d is not a valid UTF-8 string, it should contain only UTF-8 characters.' => '%s \'%s\' in Zeile #%d ist keine gültige UTF-8-Zeichenkette, sie sollte nur UTF-8-Zeichen enthalten.',
+      '%s \'%s\' defined on line #%d is too long, maximum %s length is %d characters.' => '%s \'%s\' in Zeile #%d ist zu lang, die maximale Länge für %s beträgt %d Zeichen.',
       '%s \'%s\' has a patch \'%s\' which duplicates an existing patch key.' => '%s \'%s\' hat einen Patch \'%s\', der einen vorhandenen Patch-Schlüssel dupliziert.',
       '%s \'%s\' has a patch \'%s\' which is not an array.' => '%s \'%s\' hat einen Patch \'%s\', der kein Array ist.',
       '%s \'%s\' has a patch with a colon in the key name, \'%s\'. Patch keys may not contain colons.' => '%s \'%s\' hat einen Patch mit einem Doppelpunkt im Schlüsselnamen \'%s\'. Patch-Schlüssel dürfen keine Doppelpunkte enthalten.',
@@ -133,12 +132,7 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s (remote: "%s", local: "%s")' => '%s (Remote: „%s", Lokal: „%s")',
       '%s - %s' => '%s - %s',
       '%s - %s, All Day' => '%s - %s, Ganze Tage',
-      '%s - is just an anchor' => '%s - ist nur ein Anker',
-      '%s - is starting with slash' => '%s - beginnt mit Slash',
-      '%s - points to myself' => '%s - verweist auf mich selbst',
       '%s / %s' => '%s / %s',
-      '%s / All' => '%s / Alle',
-      '%s / Any' => '%s / Beliebig',
       '%s <%s>' => '%s <%s>',
       '%s = 0' => '%s = 0',
       '%s Account' => '%s Konto',
@@ -182,7 +176,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s Queries' => '%s-Abfragen',
       '%s Query: %s' => '%s-Abfrage: %s',
       '%s Read [%s bytes]' => '%s Lesen [%s Byte]',
-      '%s Refunded' => '%s erstattet',
       '%s Req' => '%s Anf.',
       '%s Review Request' => '%s Review Anfrage',
       '%s Search' => '%s-Suche',
@@ -221,8 +214,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s added %d project member(s): %s.' => '%s hat %d Projektmitglied(er) hinzugefügt: %s.',
       '%s added %d subscriber(s): %s.' => '%s hat %d Mitleser hinzugefügt: %s.',
       '%s added %s JIRA issue(s): %s.' => '%s hat %s JIRA-Ticket(s) hinzugefügt: %s.',
-      '%s added %s account manager(s) to %s: %s.' => '%s hat %s Konto-Manager zu %s hinzugefügt: %s.',
-      '%s added %s account manager(s): %s.' => '%s hat %s Kontomanager hinzugefügt: %s.',
       '%s added %s auditor(s) for %s: %s.' => '%s hat %s Prüfer zu %s hinzugefügt: %s.',
       '%s added %s auditor(s): %s.' => '%s hat %s Prüfer hinzugefügt: %s.',
       '%s added %s automation blueprint(s): %s.' => '%s hat %s Automatisierungs-Blueprint(s) hinzugefügt: %s.',
@@ -239,8 +230,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s added %s edge(s): %s.' => '%s hat %s Verknüpfung(en) hinzugefügt: %s.',
       '%s added %s member(s) for %s: %s.' => '%s hat %s Mitglied(er) für %s hinzugefügt: %s.',
       '%s added %s member(s): %s.' => '%s hat %s Mitglied(er) hinzugefügt: %s.',
-      '%s added %s merchant manager(s) to %s: %s.' => '%s hat %s Händler-Manager zu %s hinzugefügt: %s.',
-      '%s added %s merchant manager(s): %s.' => '%s hat %s Händlermanager hinzugefügt: %s.',
       '%s added %s mock(s) for %s: %s.' => '%s hat %s Entwurf/Entwürfe zu %s hinzugefügt: %s.',
       '%s added %s mock(s): %s.' => '%s hat %s Entwurf/Entwürfe hinzugefügt: %s.',
       '%s added %s owner(s): %s.' => '%s hat %s Eigentümer hinzugefügt: %s.',
@@ -273,14 +262,12 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s added %s watcher(s) for %s: %s.' => '%s hat %s Beobachter für %s hinzugefügt: %s.',
       '%s added %s watcher(s): %s.' => '%s hat %s Beobachter hinzugefügt: %s.',
       '%s added %s.' => '%s hat %s hinzugefügt.',
-      '%s added CCs to this revision.' => '%s hat Mitleser zu dieser Version hinzugefügt.',
       '%s added a comment to %s.' => '%s hat %s kommentiert.',
       '%s added a comment.' => '%s hat einen Kommentar hinzugefügt.',
       '%s added a cover image to %s.' => '%s hat %s ein Titelbild hinzugefügt.',
       '%s added an answer to %s.' => '%s hat eine Antwort zu %s hinzugefügt.',
       '%s added an answer.' => '%s hat eine Antwort hinzugefügt.',
       '%s added an inline comment to %s.' => '%s hat einen Inline-Kommentar zu %s hinzugefügt.',
-      '%s added an inline comment.' => '%s hat einen Inline-Kommentar hinzugefügt.',
       '%s added auditors to %s...' => '%s hat Prüfer zu %s hinzugefügt...',
       '%s added auditors to %s: %s.' => '%s hat Prüfer zu %s hinzugefügt: %s.',
       '%s added auditors...' => '%s hat Prüfer hinzugefügt...',
@@ -288,7 +275,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s added inline comment(s).' => '%s hat Inline-Kommentare hinzugefügt.',
       '%s added inline comments to %s.' => '%s hat Inline-Kommentare zu %s hinzugefügt.',
       '%s added inline comments.' => '%s hat Inline-Kommentare hinzugefügt.',
-      '%s added reviewers to this revision.' => '%s hat Reviewer zu dieser Version hinzugefügt.',
       '%s added subscribers...' => '%s hat Mitleser hinzugefügt...',
       '%s added subscribers: %s.' => '%s hat Mitleser hinzugefügt: %s.',
       '%s added this answer.' => '%s hat diese Antwort hinzugefügt.',
@@ -333,8 +319,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s awarded %s to %s recipient(s): %s.' => '%s hat %s als Trophäe an %s Träger vergeben: %s.',
       '%s awarded a token.' => '%s hat eine Trophäe verliehen.',
       '%s awarded this badge to %s recipient(s): %s.' => '%s hat diese Trophäe an %s Träger vergeben: %s.',
-      '%s backed %s with %s.' => '%s hat %s mit %s unterstützt.',
-      '%s backed this initiative with %s.' => '%s hat diese Initiative mit %s unterstützt.',
       '%s bought a banana.' => '%s kaufte eine Banane.',
       '%s bought a cherry.' => '%s kaufte eine Kirsche.',
       '%s bought an apple.' => '%s kaufte einen Apfel.',
@@ -387,12 +371,10 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s changed the author of this revision from %s to %s.' => '%s hat den Autor dieser Version von %s auf %s geändert.',
       '%s changed the author of this revision to %s.' => '%s hat den Autor dieser Version auf %s geändert.',
       '%s changed the author of this revision to...' => '%s hat den Autor dieser Version geändert auf...',
-      '%s changed the automatic payment method for this subscription.' => '%s hat die automatische Zahlungsmethode für dieses Abonnement geändert.',
       '%s changed the automatic update frequency for this import.' => '%s hat die automatische Aktualisierungshäufigkeit dieses Imports geändert.',
       '%s changed the background color of the project workboard.' => '%s hat die Hintergrundfarbe der Projekt-Arbeitsfläche geändert.',
       '%s changed the badge icon for %s from %s to %s.' => '%s hat das Symbol der Trophäe für %s von %s auf %s geändert.',
       '%s changed the badge icon from %s to %s.' => '%s hat das Symbol der Trophäe von %s auf %s geändert.',
-      '%s changed the billing name for this account from %s to %s.' => '%s hat den Rechnungsnamen dieses Kontos von %s auf %s geändert.',
       '%s changed the blog for post %s.' => '%s hat den Blog für Beitrag %s geändert.',
       '%s changed the blog for this post.' => '%s hat den Blog für diesen Beitrag geändert.',
       '%s changed the callsign for this repository from %s to %s.' => '%s hat das Rufzeichen für dieses Repository von %s auf %s geändert.',
@@ -435,8 +417,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s changed the join policy for %s.' => '%s hat die Rechte zum Zusammenführen von %s verändert.',
       '%s changed the join policy from "%s" to "%s".' => '%s hat die Beitrittsrichtlinie von „%s" auf „%s" geändert.',
       '%s changed the layout mode for this dashboard from %s to %s.' => '%s hat den Layout-Modus dieses Dashboards von %s auf %s geändert.',
-      '%s changed the merchant receiving funds from %s from %s to %s.' => '%s hat den Händler, der Gelder aus %s erhält, von %s auf %s geändert.',
-      '%s changed the merchant receiving funds from this initiative from %s to %s.' => '%s hat den Händler, der Gelder aus dieser Initiative erhält, von %s auf %s geändert.',
       '%s changed the name of %s from %s to %s.' => '%s hat den Namen von %s von %s auf %s geändert.',
       '%s changed the name of the URL from %s to %s.' => '%s hat den Namen der URL von %s auf %s geändert.',
       '%s changed the name of this package from %s to %s.' => '%s hat den Namen dieses Pakets von %s auf %s geändert.',
@@ -465,19 +445,17 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s changed the staging area for this repository from %s to %s.' => '%s hat den Staging-Bereich für dieses Repository von %s auf %s geändert.',
       '%s changed the start date for %s from %s to %s.' => '%s hat den Beginn von %s von %s auf %s geändert.',
       '%s changed the start date for this event from %s to %s.' => '%s hat den Beginn dieses Termins von %s auf %s geändert.',
-      '%s changed the status for this address to %s.' => '%s hat den Status dieser Adresse auf %s geändert.',
       '%s changed the status of %s from %s to %s by committing %s.' => '%s hat den Status von %s von %s auf %s geändert, indem %s eingepflegt wurde.',
       '%s changed the status of %s from %s to %s.' => '%s hat den Status von %s von %s auf %s geändert.',
       '%s changed the status of %s, a subtask of %s, from %s to %s.' => '%s hat den Status von %s, einer Unteraufgabe von %s, von %s auf %s geändert.',
       '%s changed the status of subtask %s from %s to %s.' => '%s hat den Status von Unteraufgabe %s von %s auf %s geändert.',
       '%s changed the status of this device from %s to %s.' => '%s hat den Status dieses Geräts von %s auf %s geändert.',
       '%s changed the status of this item from %s to %s.' => '%s hat den Status dieses Elements von %s auf %s geändert.',
-      '%s changed the status of this payment method.' => '%s hat den Status dieser Zahlungsmethode geändert.',
       '%s changed the status of this poll from %s to %s.' => '%s hat den Status dieser Umfrage von %s auf %s geändert.',
       '%s changed the status of this provider from %s to %s.' => '%s hat den Status dieses Anbieters von %s auf %s geändert.',
       '%s changed the subtype of %s from "%s" to "%s".' => '%s hat den Aufgabentyp von %s von "%s" auf "%s" geändert.',
       '%s changed the subtype of this form from %s to %s.' => '%s hat den Untertyp dieses Formulars von %s auf %s geändert.',
-      '%s changed the subtype of this task from "%s" to "%s".' => '%s hat den Aufgabentyp dieser Aufgabe von "%s" auf "%s" geändert.',
+      '%s changed the subtype of this object from "%s" to "%s".' => '%s hat den Untertyp dieses Objekts von "%s" auf "%s" geändert.',
       '%s changed the task status from %s to %s by committing %s.' => '%s hat den Status der Aufgabe von %s auf %s geändert, indem %s eingepflegt wurde.',
       '%s changed the task status from %s to %s.' => '%s hat den Aufgaben-Status von %s auf %s geändert.',
       '%s changed the title from %s to %s.' => '%s hat den Titel von „%s" auf „%s" geändert.',
@@ -511,15 +489,12 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s closed %s as invalid.' => '%s hat %s als ungültig geschlossen.',
       '%s closed %s as obsolete.' => '%s hat %s als veraltet geschlossen.',
       '%s closed %s as resolved.' => '%s hat %s als gelöst geschlossen.',
-      '%s closed %s by committing %s (authored by %s).' => '%s hat %s geschlossen, indem %s (Autor: %s) eingepflegt wurde.',
-      '%s closed %s by committing %s.' => '%s hat %s geschlossen, indem %s eingepflegt wurde.',
       '%s closed %s, a subtask of %s, as %s.' => '%s hat %s, eine Unteraufgabe von %s, als %s geschlossen.',
       '%s closed %s.' => '%s hat %s geschlossen.',
       '%s closed mock %s.' => '%s hat Mock %s geschlossen.',
       '%s closed subtask %s as %s.' => '%s hat Unteraufgabe %s als %s geschlossen.',
       '%s closed the audit of %s.' => '%s hat die Prüfung von %s geschlossen.',
       '%s closed this audit.' => '%s hat diese Prüfung abgeschlossen.',
-      '%s closed this initiative.' => '%s hat diese Initiative geschlossen.',
       '%s closed this mock.' => '%s hat diesen Mock geschlossen.',
       '%s closed this question as invalid.' => '%s hat diese Frage als ungültig geschlossen.',
       '%s closed this question as obsolete.' => '%s hat diese Frage als veraltet geschlossen.',
@@ -534,7 +509,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s commandeered %s.' => '%s hat %s übernommen.',
       '%s commandeered this revision from %s.' => '%s hat diese Version von %s übernommen.',
       '%s commandeered this revision.' => '%s hat diese Version übernommen.',
-      '%s commented on this revision.' => '%s hat diese Version kommentiert.',
       '%s commit(s)' => '%s Commit(s)',
       '%s committed %s (authored by %s).' => '%s hat %s eingepflegt (Autor ist %s).',
       '%s committed %s.' => '%s hat %s eingepflegt.',
@@ -542,7 +516,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s completed building %s.' => '%s hat %s erfolgreich gebaut.',
       '%s completed remote builds in %s for %s.' => '%s hat Remote-Builds in %s für %s abgeschlossen.',
       '%s completed remote builds in %s.' => '%s hat Remote-Builds in %s abgeschlossen.',
-      '%s configured an automatic payment method for this subscription.' => '%s hat eine automatische Zahlungsmethode für dieses Abonnement konfiguriert.',
       '%s confirmed this job.' => '%s hat diesen Auftrag bestätigt.',
       '%s converted %s from an all day event.' => '%s hat %s aus einem Ganztagestermin erstellt.',
       '%s converted this from an all day event.' => '%s hat diesen Termin von einem Ganztagestermin zurückgeändert.',
@@ -552,14 +525,11 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s created %s in the %s space.' => '%s hat %s im Bereich %s erstellt.',
       '%s created %s.' => '%s hat %s erzeugt.',
       '%s created an object: %s.' => '%s hat ein Objekt erstellt: %s.',
-      '%s created initiative %s.' => '%s hat Initiative %s erstellt.',
       '%s created space %s.' => '%s hat den Bereich %s erstellt.',
       '%s created subtask %s.' => '%s hat Unteraufgabe %s erstellt.',
       '%s created this MFA provider.' => '%s hat diesen MFA-Anbieter erstellt.',
       '%s created this OAuth application.' => '%s hat diese OAuth-Anwendung erstellt.',
       '%s created this URL.' => '%s hat diese URL erstellt.',
-      '%s created this account email.' => '%s hat diese Konto-E-Mail erstellt.',
-      '%s created this account.' => '%s hat dieses Konto erstellt.',
       '%s created this badge.' => '%s hat diese Trophäe erstellt.',
       '%s created this binding.' => '%s hat diese Bindung erstellt.',
       '%s created this blog.' => '%s hat diesen Blog erstellt.',
@@ -579,11 +549,9 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s created this form.' => '%s hat dieses Formular erstellt.',
       '%s created this identity.' => '%s hat diese Identität erstellt.',
       '%s created this import.' => '%s hat diesen Import erstellt.',
-      '%s created this initiative.' => '%s hat diese Initiative erstellt.',
       '%s created this interface.' => '%s hat diese Schnittstelle erstellt.',
       '%s created this key.' => '%s hat diesen Schlüssel erstellt.',
       '%s created this macro.' => '%s hat dieses Makro erstellt.',
-      '%s created this merchant.' => '%s hat diesen Händler erstellt.',
       '%s created this message.' => '%s hat diese Nachricht erstellt.',
       '%s created this mock.' => '%s hat diesen Mock erstellt.',
       '%s created this namespace.' => '%s hat diesen Namensraum erstellt.',
@@ -597,9 +565,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s created this package.' => '%s hat dieses Paket erstellt.',
       '%s created this password.' => '%s hat dieses Passwort erstellt.',
       '%s created this paste.' => '%s hat diesen Paste erstellt.',
-      '%s created this payment account.' => '%s hat dieses Zahlungskonto erstellt.',
-      '%s created this payment method.' => '%s hat diese Zahlungsmethode erstellt.',
-      '%s created this payment provider.' => '%s hat diesen Zahlungsanbieter erstellt.',
       '%s created this poll.' => '%s hat diese Abstimmung erstellt.',
       '%s created this portal.' => '%s hat dieses Portal erstellt.',
       '%s created this post.' => '%s hat diesen Beitrag erstellt.',
@@ -610,7 +575,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s created this room.' => '%s hat diesen Raum erstellt.',
       '%s created this service.' => '%s hat diesen Dienst erstellt.',
       '%s created this space.' => '%s hat diese Zone erzeugt.',
-      '%s created this subscription.' => '%s hat dieses Abonnement erstellt.',
       '%s created this task.' => '%s hat diese Aufgabe erzeugt.',
       '%s created this trigger.' => '%s hat diesen Auslöser erstellt.',
       '%s created this variable.' => '%s hat diese Variable erstellt.',
@@ -632,7 +596,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s destroyed the secret for this credential.' => '%s hat das Geheimnis dieser Zugangsdaten vernichtet.',
       '%s detached %d file(s) of %s: %s' => '%s hat %d Datei(en) von %s getrennt: %s',
       '%s detached %s file(s): %s.' => '%s hat die Verknüpfung von %s Datei(en) gelöst: %s.',
-      '%s did not throw an exception when instructed to explicitly connect to an external database.' => '%s hat keine Ausnahme ausgelöst, als es angewiesen wurde, sich explizit mit einer externen Datenbank zu verbinden.',
       '%s disabled %s.' => '%s hat %s deaktiviert.',
       '%s disabled account linking.' => '%s hat die Kontoverknüpfung deaktiviert.',
       '%s disabled account unlinking.' => '%s hat die Kontotrennung deaktiviert.',
@@ -658,23 +621,18 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s disabled this form.' => '%s hat dieses Formular deaktiviert.',
       '%s disabled this import.' => '%s hat diesen Import deaktiviert.',
       '%s disabled this macro.' => '%s hat dieses Makro deaktiviert.',
-      '%s disabled this payment provider.' => '%s hat diesen Zahlungsanbieter deaktiviert.',
       '%s disabled this provider.' => '%s hat diesen Dienstleister deaktiviert.',
       '%s disabled this rule.' => '%s hat diese Regel deaktiviert.',
       '%s disabled this user.' => '%s hat diesen Benutzer deaktiviert.',
       '%s disallowed Conduit API access to credential %s.' => '%s hat den Conduit-API-Zugriff auf Zugangsdaten %s verweigert.',
       '%s disallowed Conduit API access to this credential.' => '%s hat den Conduit-API-Zugriff auf diese Zugangsdaten verweigert.',
       '%s document(s) are already signed: %s.' => '%s Dokument(e) wurden bereits unterschrieben: %s.',
-      '%s edited %s account manager(s) for %s, added %s: %s; removed %s: %s.' => '%s hat %s Konto-Manager für %s bearbeitet, hinzugefügt %s: %s; entfernt %s: %s.',
-      '%s edited %s account manager(s), added %s: %s; removed %s: %s.' => '%s hat %s Konto-Manager bearbeitet, hinzugefügt %s: %s; entfernt %s: %s.',
       '%s edited %s auditor(s) for %s, removed %s: %s; added %s: %s.' => '%s hat %s Prüfer für %s bearbeitet, %s entfernt: %s; %s hinzugefügt: %s.',
       '%s edited %s auditor(s), removed %s: %s; added %s: %s.' => '%s hat %s Prüfer bearbeitet, %s entfernt: %s; %s hinzugefügt: %s.',
       '%s edited %s commit(s) for %s, added %s: %s; removed %s: %s.' => '%s hat %s Commit(s) für %s bearbeitet, %s hinzugefügt: %s; %s entfernt: %s.',
       '%s edited %s commit(s), added %s: %s; removed %s: %s.' => '%s hat %s Commit(s) verändert, %s hinzugefügt: %s; %s entfernt: %s.',
       '%s edited %s edge(s) for %s, added %s: %s; removed %s: %s.' => '%s hat %s Edge(s) für %s bearbeitet, %s hinzugefügt: %s; %s entfernt: %s.',
       '%s edited %s edge(s), added %s: %s; removed %s: %s.' => '%s hat %s Edge(s) bearbeitet, %s hinzugefügt: %s; %s entfernt: %s.',
-      '%s edited %s merchant manager(s) for %s, added %s: %s; removed %s: %s.' => '%s hat %s Händler-Manager für %s bearbeitet, hinzugefügt %s: %s; entfernt %s: %s.',
-      '%s edited %s merchant manager(s), added %s: %s; removed %s: %s.' => '%s hat %s Händler-Manager bearbeitet, hinzugefügt %s: %s; entfernt %s: %s.',
       '%s edited %s on %s.' => '%s hat %s auf %s bearbeitet.',
       '%s edited %s project(s) for %s, added %s: %s; removed %s: %s.' => '%s hat %s Projekt(e) von %s geändert, %s hinzugefügt: %s; %s entfernt: %s.',
       '%s edited %s project(s), added %s: %s; removed %s: %s.' => '%s hat %s Projekte geändert: %s hinzugefügt: %s; %s removed: %s.',
@@ -690,7 +648,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s edited a custom field (with key "%s").' => '%s hat ein benutzerdefiniertes Feld (Schlüssel „%s") bearbeitet.',
       '%s edited a custom field on %s.' => '%s hat ein benutzerdefiniertes Feld von %s verändert.',
       '%s edited a custom field.' => '%s hat ein benutzerdefiniertes Feld verändert.',
-      '%s edited a property of this payment provider.' => '%s hat eine Eigenschaft dieses Zahlungsanbieters bearbeitet.',
       '%s edited a property of this provider.' => '%s hat eine Eigenschaft dieses Anbieters bearbeitet.',
       '%s edited an edge.' => '%s hat eine Verknüpfungskante bearbeitet.',
       '%s edited associated projects.' => '%s hat verknüpfte Projekte bearbeitet.',
@@ -768,14 +725,13 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s enabled this export.' => '%s hat diesen Export aktiviert.',
       '%s enabled this form.' => '%s hat dieses Formular aktiviert.',
       '%s enabled this import.' => '%s hat diesen Import aktiviert.',
-      '%s enabled this payment provider.' => '%s hat diesen Zahlungsanbieter aktiviert.',
       '%s enabled this provider.' => '%s hat diesen Dienstleister aktiviert.',
       '%s enabled this rule.' => '%s hat diese Regel aktiviert.',
       '%s enabled this user.' => '%s hat diesen Benutzer aktiviert.',
       '%s examined the secret plaintext for credential %s.' => '%s hat den geheimen Klartext der Zugangsdaten %s eingesehen.',
       '%s examined the secret plaintext for this credential.' => '%s hat den geheimen Klartext dieser Zugangsdaten eingesehen.',
       '%s exited with a zero exit code, but emitted output consistent with failure under OSX.' => '%s wurde mit Exit-Code 0 beendet, gab unter OSX aber eine Ausgabe aus, die auf einen Fehler hindeutet.',
-      '%s explained the test plan for this revision.' => '%s hat den Testplan für diese Version erklärt.',
+      '%s extension ("%s", of class "%s") returned a list of Remarkup actions from "%s" that contains an invalid value: a value (with key "%s") is not an object of class "%s". ' => '%s-Erweiterung ("%s", der Klasse "%s") hat aus "%s" eine Liste von Remarkup-Aktionen zurückgegeben, die einen ungültigen Wert enthält: Ein Wert (mit Schlüssel "%s") ist kein Objekt der Klasse "%s". ',
       '%s failed remote builds in %s for %s!' => '%s: Remote-Builds in %s für %s fehlgeschlagen!',
       '%s failed remote builds in %s!' => '%s: Remote-Builds in %s fehlgeschlagen!',
       '%s failed to build %s for %s!' => '%s: Build von %s für %s fehlgeschlagen!',
@@ -787,7 +743,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s has already been awarded this badge.' => '%s wurde diese Trophäe bereits verliehen.',
       '%s has already succeeded, and will not be repeated. Use "--repeat" to repeat successful tasks.' => '%s war bereits erfolgreich und wird nicht wiederholt. Verwende "--repeat", um erfolgreiche Aufgaben zu wiederholen.',
       '%s has already succeeded, and will not be retried. Use "--repeat" to repeat successful tasks.' => '%s war bereits erfolgreich und wird nicht erneut versucht. Verwende "--repeat", um erfolgreiche Aufgaben zu wiederholen.',
-      '%s has an effect' => '%s hat eine Wirkung',
       '%s has been successfully installed. These next guides will take you through configuration and new user orientation. These steps are optional, and you can go through them in any order. If you want to get back to this guide later on, you can find it in {icon globe} **Applications** under {icon map-o} **Guides**.' => '%s wurde erfolgreich installiert. Die folgenden Leitfäden führen durch Konfiguration und Einarbeitung für neue Benutzer. Diese Schritte sind optional und können in beliebiger Reihenfolge durchgeführt werden. Um später zu diesem Leitfaden zurückzukehren, ist er unter {icon globe} **Anwendungen** bei {icon map-o} **Leitfäden** zu finden.',
       '%s has invited you to join %s.' => '%s hat Dich eingeladen, %s beizutreten.',
       '%s has no active lease.' => '%s hat keinen aktiven Lease.',
@@ -881,7 +836,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s of %s %s' => '%s von %s %s',
       '%s of your actions have no effect:' => '%s Deiner Aktionen haben keine Wirkung:',
       '%s on %s.' => '%s auf %s.',
-      '%s on empty object' => '%s auf leerem Objekt',
       '%s opened mock %s.' => '%s hat Mock %s geöffnet.',
       '%s opened this mock.' => '%s hat diesen Mock geöffnet.',
       '%s paid for his goods.' => '%s bezahlte seine Waren.',
@@ -911,8 +865,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s reassigned this task from %s to %s.' => '%s hat diese Aufgabe von %s an %s neu zugewiesen.',
       '%s reclaimed %s.' => '%s hat %s wieder eingereicht.',
       '%s reclaimed this revision.' => '%s hat diese Version wieder eingereicht.',
-      '%s refunded %s to %s for %s.' => '%s hat %s an %s für %s zurückerstattet.',
-      '%s refunded %s to %s.' => '%s hat %s an %s zurückerstattet.',
       '%s reinstated %s.' => '%s hat %s reaktiviert.',
       '%s reinstated this event.' => '%s hat dieses Ereignis wiederhergestellt.',
       '%s reinstated this key.' => '%s hat diesen Schlüssel wiederhergestellt.',
@@ -926,8 +878,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s removed %d project member(s): %s.' => '%s hat %d Projektmitglied(er) entfernt: %s.',
       '%s removed %d subscriber(s): %s.' => '%s hat %d Mitleser entfernt: %s.',
       '%s removed %s JIRA issue(s): %s.' => '%s hat %s JIRA-Ticket(s) entfernt: %s.',
-      '%s removed %s account manager(s) from %s: %s.' => '%s hat %s Konto-Manager von %s entfernt: %s.',
-      '%s removed %s account manager(s): %s.' => '%s hat %s Kontomanager entfernt: %s.',
       '%s removed %s as %s.' => '%s hat %s als %s entfernt.',
       '%s removed %s as the "Import Only" path.' => '%s hat %s als „Nur importieren"-Pfad entfernt.',
       '%s removed %s as the assignee of this identity.' => '%s hat %s als Zugewiesenen dieser Identität entfernt.',
@@ -954,8 +904,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s removed %s edge(s): %s.' => '%s hat %s Verknüpfung(en) entfernt: %s.',
       '%s removed %s member(s) for %s: %s.' => '%s hat %s Mitglied(er) für %s entfernt: %s.',
       '%s removed %s member(s): %s.' => '%s hat %s Mitglied(er) entfernt: %s.',
-      '%s removed %s merchant manager(s) from %s: %s.' => '%s hat %s Händler-Manager von %s entfernt: %s.',
-      '%s removed %s merchant manager(s): %s.' => '%s hat %s Händlermanager entfernt: %s.',
       '%s removed %s mock(s) for %s: %s.' => '%s hat %s Entwurf/Entwürfe von %s entfernt: %s.',
       '%s removed %s mock(s): %s.' => '%s hat %s Entwurf/Entwürfe entfernt: %s.',
       '%s removed %s on %s.' => '%s hat %s aus %s entfernt.',
@@ -992,23 +940,23 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s removed %s.' => '%s hat %s entfernt.',
       '%s removed auditors from %s: %s.' => '%s hat Prüfer von %s entfernt: %s.',
       '%s removed auditors: %s.' => '%s hat Prüfer entfernt: %s.',
+      '%s removed mention from %s of %s.' => '%s hat in %s die Erwähnung von %s entfernt.',
+      '%s removed mention from %s.' => '%s hat die Erwähnung aus %s entfernt.',
+      '%s removed mention of %s from %s.' => '%s hat die Erwähnung von %s aus %s entfernt.',
+      '%s removed mention of %s.' => '%s hat die Erwähnung von %s entfernt.',
       '%s removed subscribers: %s.' => '%s hat Mitleser entfernt: %s.',
       '%s removed the %s encoding configured for this repository.' => '%s hat die für dieses Repository konfigurierte %s-Kodierung entfernt.',
       '%s removed the administrator role from %s.' => '%s hat die Administratorrolle von %s entfernt.',
       '%s removed the administrator role from this user.' => '%s hat die Administratorrolle von diesem Benutzer entfernt.',
       '%s removed the alternate text for %s (was %s).' => '%s hat den Alt-Text von %s entfernt (war %s).',
       '%s removed the alternate text for this file (was %s).' => '%s hat den Alt-Text dieser Datei entfernt (war %s).',
-      '%s removed the billing name for this account (was %s).' => '%s hat den Rechnungsnamen dieses Kontos entfernt (war %s).',
       '%s removed the callsign (%s) for this repository.' => '%s hat das Rufzeichen (%s) für dieses Repository entfernt.',
       '%s removed the custom name of this column.' => '%s hat den individuellen Namen dieser Spalte entfernt.',
       '%s removed the filesize limit (%s bytes) for this repository.' => '%s hat das Dateigrößenlimit (%s Bytes) für dieses Repository entfernt.',
       '%s removed the image for %s.' => '%s hat das Bild von %s entfernt.',
       '%s removed the interface for this binding.' => '%s hat die Schnittstelle dieser Bindung entfernt.',
-      '%s removed the invoice email for %s.' => '%s hat die Rechnungs-E-Mail für %s entfernt.',
-      '%s removed the invoice email.' => '%s hat die Rechnungs-E-Mail entfernt.',
       '%s removed the name (%s) of this provider.' => '%s hat den Namen (%s) dieses Anbieters entfernt.',
       '%s removed the name of this import (was: %s).' => '%s hat den Namen dieses Imports entfernt (war: %s).',
-      '%s removed the name of this payment method (was: %s).' => '%s hat den Namen dieser Zahlungsmethode entfernt (war: %s).',
       '%s removed the point limit for this column.' => '%s hat das Punktelimit dieser Spalte entfernt.',
       '%s removed the point value %s for this task.' => '%s hat den Punktewert %s dieser Aufgabe entfernt.',
       '%s removed the point value for %s.' => '%s hat den Punktewert von %s entfernt.',
@@ -1026,12 +974,10 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s renamed %s blog post from %s to %s.' => '%s hat den Blog-Beitrag %s von %s nach %s umbenannt.',
       '%s renamed %s credential %s to %s.' => '%s hat %s Zugangsdaten %s nach %s umbenannt.',
       '%s renamed %s from %s to %s.' => '%s hat %s von %s in %s umbenannt.',
-      '%s renamed %s merchant name from %s to %s.' => '%s hat den Händlernamen von %s von %s in %s umbenannt.',
       '%s renamed %s.' => '%s hat %s umbenannt.',
       '%s renamed an image (%s) from %s to %s.' => '%s hat ein Bild (%s) von %s in %s umbenannt.',
       '%s renamed space %s from %s to %s.' => '%s hat den Bereich %s von %s in %s umbenannt.',
       '%s renamed this %s from %s to %s.' => '%s hat %s von %s in %s umbenannt.',
-      '%s renamed this account from %s to %s.' => '%s hat dieses Konto von %s in %s umbenannt.',
       '%s renamed this application from "%s" to "%s".' => '%s hat diese Anwendung von "%s" nach "%s" umbenannt.',
       '%s renamed this blog post from %s to %s.' => '%s hat diesen Blog-Beitrag von %s nach %s umbenannt.',
       '%s renamed this blueprint from %s to %s.' => '%s hat diese Blaupause von %s in %s umbenannt.',
@@ -1044,16 +990,13 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s renamed this export from %s to %s.' => '%s hat diesen Export von „%s" in „%s" umbenannt.',
       '%s renamed this form from %s to %s.' => '%s hat dieses Formular von %s in %s umbenannt.',
       '%s renamed this import from %s to %s.' => '%s hat diesen Import von „%s" in „%s" umbenannt.',
-      '%s renamed this initiative from %s to %s.' => '%s hat diese Initiative von %s in %s umbenannt.',
       '%s renamed this key from "%s" to "%s".' => '%s hat diesen Schlüssel von „%s" in „%s" umbenannt.',
       '%s renamed this macro from %s to %s.' => '%s hat das Makro von %s in %s umbenannt.',
-      '%s renamed this merchant from %s to %s.' => '%s hat diesen Händler von %s in %s umbenannt.',
       '%s renamed this mock from %s to %s.' => '%s hat diesen Mock von %s in %s umbenannt.',
       '%s renamed this namespace from %s to %s.' => '%s hat diesen Namensraum von %s in %s umbenannt.',
       '%s renamed this network from %s to %s.' => '%s hat dieses Netzwerk von %s in %s umbenannt.',
       '%s renamed this package from %s to %s.' => '%s hat dieses Paket von %s nach %s umbenannt.',
       '%s renamed this panel from %s to %s.' => '%s hat dieses Panel von „%s" in „%s" umbenannt.',
-      '%s renamed this payment method from %s to %s.' => '%s hat diese Zahlungsmethode von %s in %s umbenannt.',
       '%s renamed this portal from %s to %s.' => '%s hat dieses Portal von „%s" in „%s" umbenannt.',
       '%s renamed this project from %s to %s.' => '%s hat dieses Projekt von %s in %s umbenannt.',
       '%s renamed this provider from %s to %s.' => '%s hat diesen Anbieter von %s in %s umbenannt.',
@@ -1073,14 +1016,12 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s reopened %s, a subtask of %s, as %s.' => '%s hat %s, eine Unteraufgabe von %s, als %s wieder geöffnet.',
       '%s reopened %s.' => '%s hat %s wieder geöffnet.',
       '%s reopened subtask %s as %s.' => '%s hat Unteraufgabe %s als %s wieder geöffnet.',
-      '%s reopened this initiative.' => '%s hat diese Initiative wieder geöffnet.',
       '%s reopened this question.' => '%s hat diese Frage wieder aufgeworfen.',
       '%s reopened this revision.' => '%s hat diese Version wieder geöffnet.',
       '%s reopened this task as %s by committing %s.' => '%s hat diese Aufgabe als %s wieder geöffnet, indem %s eingepflegt wurde.',
       '%s reopened this task as %s.' => '%s hat diese Aufgabe als %s wieder geöffnet.',
       '%s reordered the fields in this form.' => '%s hat die Felder in diesem Formular neu angeordnet.',
       '%s replaced %s with %s.' => '%s hat %s mit %s ersetzt.',
-      '%s requested a review of this revision.' => '%s hat einen Review dieser Version angefordert.',
       '%s requested changes to %s.' => '%s hat Änderungen für %s angefordert.',
       '%s requested changes to this revision.' => '%s hat Änderungen an dieser Version angefordert.',
       '%s requested review of %s.' => '%s hat Review von %s angefordert.',
@@ -1107,12 +1048,10 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s retitled this revision from %s to %s.' => '%s hat diese Version von %s auf %s umbenannt.',
       '%s returned home.' => '%s kehrte nach Hause zurück.',
       '%s returned this revision to the author for changes because remote builds failed.' => '%s hat diese Version wegen fehlgeschlagener Remote-Builds zur Überarbeitung an den Autor zurückgegeben.',
-      '%s returns %s' => '%s liefert %s zurück',
       '%s revoked %s from %s recipient(s): %s.' => '%s hat %s %s Trägern als Trophäe weggenommen: %s.',
       '%s revoked this badge from %s recipient(s): %s.' => '%s hat diese Trophäe %s Trägern weggenommen: %s.',
       '%s revoked this key.' => '%s hat diesen Schlüssel widerrufen.',
       '%s revoked this password.' => '%s hat dieses Passwort widerrufen.',
-      '%s rotated the access key for this email address.' => '%s hat den Zugriffsschlüssel für diese E-Mail-Adresse rotiert.',
       '%s s' => '%s s',
       '%s sent this user a test notification.' => '%s hat diesem Benutzer eine Test-Benachrichtigung gesendet.',
       '%s sent you a message.' => '%s hat Dir eine Nachricht geschickt',
@@ -1141,7 +1080,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s set the audio for %s to play once.' => '%s hat das Audio für %s auf einmaliges Abspielen gesetzt.',
       '%s set the audio to loop.' => '%s hat das Audio auf Schleifenwiedergabe gesetzt.',
       '%s set the audio to play once.' => '%s hat das Audio auf einmaliges Abspielen gesetzt.',
-      '%s set the billing name for this account to %s.' => '%s hat den Rechnungsnamen dieses Kontos auf %s gesetzt.',
       '%s set the callsign for this repository to %s.' => '%s hat das Rufzeichen für dieses Repository auf %s gesetzt.',
       '%s set the color for %s to %s.' => '%s hat die Farbe von %s auf %s gesetzt.',
       '%s set the column trigger to %s.' => '%s hat den Spalten-Auslöser auf %s gesetzt.',
@@ -1161,13 +1099,7 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s set the filesize limit for this repository to %s bytes.' => '%s hat das Dateigrößenlimit für dieses Repository auf %s Bytes gesetzt.',
       '%s set the icon for %s to %s.' => '%s hat das Symbol für %s auf %s gesetzt.',
       '%s set the image for %s to %s.' => '%s hat das Bild von %s auf %s gesetzt.',
-      '%s set the initiative description.' => '%s hat die Initiativenbeschreibung festgelegt.',
-      '%s set the initiative risks/challenges.' => '%s hat die Risiken/Herausforderungen der Initiative festgelegt.',
       '%s set the interface for this binding to %s.' => '%s hat die Schnittstelle dieser Bindung auf %s gesetzt.',
-      '%s set the invoice email for %s to %s.' => '%s hat die Rechnungs-E-Mail für %s auf %s gesetzt.',
-      '%s set the invoice email to %s.' => '%s hat die Rechnungs-E-Mail auf %s gesetzt.',
-      '%s set the merchant receiving funds from this initiative to %s.' => '%s hat den Händler, der Gelder aus dieser Initiative erhält, auf %s gesetzt.',
-      '%s set the name of this payment method to %s.' => '%s hat den Namen dieser Zahlungsmethode auf %s gesetzt.',
       '%s set the network for this interface to %s.' => '%s hat das Netzwerk dieser Schnittstelle auf %s gesetzt.',
       '%s set the permanent refs for this repository to: %s.' => '%s hat die permanenten Refs für dieses Repository auf %s gesetzt.',
       '%s set the point limit for this column to %s.' => '%s hat das Punktelimit dieser Spalte auf %s gesetzt.',
@@ -1202,15 +1134,10 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s set this revision to automatically submit once builds complete.' => '%s hat diese Version auf automatisches Einreichen nach Abschluss der Builds eingestellt.',
       '%s shifted %s from the %s space to the %s space.' => '%s hat %s vom Bereich %s in den Bereich %s verschoben.',
       '%s shifted this object from the %s space to the %s space.' => '%s hat dieses Objekt vom Bereich %s in den Bereich %s verschoben.',
-      '%s should prevent content-sniffing attacks.' => '%s sollte Content-Sniffing-Angriffe verhindern.',
-      '%s should raise exception for invalid %%d conversion.' => '%s sollte bei ungültiger %%d-Konvertierung eine Ausnahme auslösen.',
-      '%s should require authentication.' => '%s sollte Authentifizierung erfordern.',
       '%s signed these changes with MFA.' => '%s hat diese Änderungen mit MFA bestätigt.',
-      '%s stopped automatic payments for this subscription.' => '%s hat automatische Zahlungen für dieses Abonnement gestoppt.',
       '%s stripped the name %s from this trigger.' => '%s hat den Namen %s von diesem Auslöser entfernt.',
       '%s subprocess exited before emitting a protocol frame.' => 'Teilprozess %s wurde beendet, bevor ein Protokoll-Frame gesendet wurde.',
       '%s subscribed.' => '%s liest jetzt mit.',
-      '%s summarized this revision.' => '%s hat diese Version zusammengefasst.',
       '%s target(s) are invalid or of the wrong type: %s.' => '%s Ziel(e) sind ungültig oder vom falschen Typ: %s.',
       '%s target(s) could not be loaded: %s.' => '%s Ziel(e) konnten nicht geladen werden: %s.',
       '%s target(s) do not have permission to see this object: %s.' => '%s Ziel(e) haben keine Berechtigung, dieses Objekt anzusehen: %s.',
@@ -1240,7 +1167,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s updated %s for %s, added %s: %s; removed %s: %s.' => '%s hat %s für %s aktualisiert, %s hinzugefügt: %s; %s entfernt: %s.',
       '%s updated %s for %s, removed %s: %s.' => '%s hat %s für %s aktualisiert, %s entfernt: %s.',
       '%s updated %s from %s to %s.' => '%s hat %s von %s auf %s geändert.',
-      '%s updated %s invoice email from %s to %s.' => '%s hat die Rechnungs-E-Mail von %s von %s auf %s geändert.',
       '%s updated %s, added %s: %s.' => '%s hat %s aktualisiert, %s hinzugefügt: %s.',
       '%s updated %s, added %s: %s; removed %s: %s.' => '%s hat %s aktualisiert, %s hinzugefügt: %s; %s entfernt: %s.',
       '%s updated %s, removed %s: %s.' => '%s hat %s aktualisiert, %s entfernt: %s.',
@@ -1263,7 +1189,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s updated the OAuth application secret for this provider.' => '%s hat das OAuth-Anwendungs-Secret für diesen Anbieter aktualisiert.',
       '%s updated the OAuth consumer key for this provider from "%s" to "%s".' => '%s hat den OAuth-Consumer-Key für diesen Anbieter von "%s" auf "%s" geändert.',
       '%s updated the OAuth consumer secret for this provider.' => '%s hat das OAuth-Consumer-Secret für diesen Anbieter aktualisiert.',
-      '%s updated the account billing address.' => '%s hat die Rechnungsadresse des Kontos aktualisiert.',
       '%s updated the answer details for %s.' => '%s hat die Antwortdetails für %s aktualisiert.',
       '%s updated the answer details.' => '%s hat die Antwortdetails aktualisiert.',
       '%s updated the answer wiki for %s.' => '%s hat das Antwort-Wiki für %s aktualisiert.',
@@ -1300,20 +1225,9 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s updated the image for %s from %s to %s.' => '%s hat das Bild von %s von %s auf %s geändert.',
       '%s updated the image names of %s.' => '%s hat die Bildnamen von %s geändert.',
       '%s updated the import URI.' => '%s hat die Import-URI aktualisiert.',
-      '%s updated the initiative description for %s.' => '%s hat die Initiativenbeschreibung für %s aktualisiert.',
-      '%s updated the initiative description.' => '%s hat die Initiativenbeschreibung aktualisiert.',
-      '%s updated the initiative risks/challenges for %s.' => '%s hat die Risiken/Herausforderungen der Initiative für %s aktualisiert.',
-      '%s updated the initiative risks/challenges.' => '%s hat die Risiken/Herausforderungen der Initiative aktualisiert.',
       '%s updated the invite list for %s, invited %s: %s; uninvited %s: %s.' => '%s hat die Teilnehmerliste für %s aktualisiert; eingeladen %s: %s; ausgeladen %s: %s.',
-      '%s updated the invoice email from %s to %s.' => '%s hat die Rechnungs-E-Mail von %s auf %s geändert.',
       '%s updated the language for %s from %s to %s.' => '%s hat die Sprache für %s von %s auf %s geändert.',
       '%s updated the maintenance message for this repository.' => '%s hat die Wartungsmeldung für dieses Repository aktualisiert.',
-      '%s updated the merchant contact info for %s.' => '%s hat die Händler-Kontaktdaten für %s aktualisiert.',
-      '%s updated the merchant contact info.' => '%s hat die Händler-Kontaktdaten aktualisiert.',
-      '%s updated the merchant description for %s.' => '%s hat die Händlerbeschreibung für %s aktualisiert.',
-      '%s updated the merchant description.' => '%s hat die Händlerbeschreibung aktualisiert.',
-      '%s updated the merchant invoice footer for %s.' => '%s hat die Händler-Rechnungsfußzeile für %s aktualisiert.',
-      '%s updated the merchant invoice footer.' => '%s hat die Händler-Rechnungsfußzeile aktualisiert.',
       '%s updated the message text.' => '%s hat den Nachrichtentext aktualisiert.',
       '%s updated the mock\'s description.' => '%s hat die Entwurfsbeschreibung geändert.',
       '%s updated the name for %s from %s to %s.' => '%s hat den Namen von %s von %s auf %s geändert.',
@@ -1321,8 +1235,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s updated the name of %s from "%s" to "%s".' => '%s hat den Namen von %s von "%s" auf "%s" aktualisiert.',
       '%s updated the panel text.' => '%s hat den Panel-Text aktualisiert.',
       '%s updated the paste\'s language from %s to %s.' => '%s hat die Paste-Sprache von %s auf %s geändert.',
-      '%s updated the picture for merchant %s.' => '%s hat das Bild für Händler %s aktualisiert.',
-      '%s updated the picture.' => '%s hat das Bild aktualisiert.',
       '%s updated the post content for %s.' => '%s hat den Beitragsinhalt für %s aktualisiert.',
       '%s updated the post content.' => '%s hat den Beitragsinhalt aktualisiert.',
       '%s updated the post\'s subtitle to "%s".' => '%s hat den Untertitel des Beitrags auf "%s" aktualisiert.',
@@ -1356,7 +1268,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s updated this object.' => '%s hat das Objekt geändert.',
       '%s updated this project\'s image from %s to %s.' => '%s hat das Projektbild von %s auf %s geändert.',
       '%s updated this revision to %s.' => '%s hat diese Version auf %s aktualisiert.',
-      '%s updated this revision.' => '%s hat diese Version aktualisiert.',
       '%s updated this variable.' => '%s hat diese Variable aktualisiert.',
       '%s upgraded the hash algorithm for this password from "%s" to "%s".' => '%s hat den Hash-Algorithmus dieses Passworts von „%s" auf „%s" aktualisiert.',
       '%s us' => '%s µs',
@@ -1367,8 +1278,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s was reprioritized (from "%d" to "%d").' => '%s wurde neu priorisiert (von "%d" auf "%d").',
       '%s went to the store.' => '%s ging in den Laden.',
       '%s with bad key.' => '%s mit ungültigem Schlüssel.',
-      '%s with user %s should fail.' => '%s mit Benutzer %s sollte scheitern.',
-      '%s with user %s should succeed.' => '%s mit Benutzer %s sollte gelingen.',
       '%s wrote in %s' => '%s schrieb in %s',
       '%s wrote:' => '%s schrieb:',
       '%s μs' => '%s μs',
@@ -1378,7 +1287,6 @@ Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secr
       '%s, %s' => '%s, %s',
       '%s, %s, %s and %s' => '%s, %s, %s und %s',
       '%s, All Day' => '%s, Ganzer Tag',
-      '%s, exception=%s' => '%s, exception=%s',
       '%s, occurrences: %s' => '%s, Vorkommen: %s',
       '%s-%s' => '%s-%s',
       '%s.%s' => '%s.%s',
@@ -1519,7 +1427,6 @@ Du hast noch keine Diviner-Dokumentationsbücher generiert, daher gibt es hier n
       '(On Diff #%d)' => '(Auf Diff Nr. %d)',
       '(Owns No Changed Paths)' => '(Keine geänderten Pfade im Besitz)',
       '(Pool: %s)' => '(Pool: %s)',
-      '(Restricted Merchant)' => '(Eingeschränkter Händler)',
       '(Restricted/Invalid Application)' => '(Eingeschränkte/ungültige Anwendung)',
       '(Restricted/Invalid Conpherence)' => '(Eingeschränkte/ungültige Conpherence)',
       '(Restricted/Invalid Form)' => '(Eingeschränktes/ungültiges Formular)',
@@ -1549,6 +1456,7 @@ Du hast noch keine Diviner-Dokumentationsbücher generiert, daher gibt es hier n
       '(Up For Grabs)' => '(Zu vergeben)',
       '(Use --cursor to import only a particular cursor.)' => '(Verwende --cursor, um nur einen bestimmten Cursor zu importieren.)',
       '(Use Default)' => '(Vorgabe verwenden)',
+      '(Usually, you should run a command like "git clone" or "hg push" instead of connecting directly with SSH.)' => '(Normalerweise solltest Du einen Befehl wie "git clone" oder "hg push" ausführen, statt Dich direkt per SSH zu verbinden.)',
       '(WARNING) Examine the table below for information on how password hashes will be stored in the database.
 
 (NOTE) You can select a minimum password length by setting `%s` in configuration.' => '(WARNUNG) In der Tabelle unten findest Du Informationen dazu, wie Passwort-Hashes in der Datenbank gespeichert werden.
@@ -1561,6 +1469,7 @@ Du hast noch keine Diviner-Dokumentationsbücher generiert, daher gibt es hier n
       '(empty)' => '(leer)',
       '(null)' => '(null)',
       '(via %s)' => '(über %s)',
+      '*** PUSH REJECTED BY COMMIT HOOK ***' => '*** PUSH VOM COMMIT-HOOK ABGELEHNT ***',
       '**JIRA Instance Name**
 
 Choose a permanent name for this instance of JIRA. This name is used internally to keep track of this particular instance of JIRA, in case the URL changes later.
@@ -1571,6 +1480,19 @@ Wähle einen dauerhaften Namen für diese JIRA-Instanz. Dieser Name wird intern 
 
 Verwende Kleinbuchstaben, Ziffern und Punkte. Zum Beispiel sind `jira`, `jira.mycompany` oder `jira.engineering` sinnvolle Namen.',
       '**Legalpad** is a simple application for tracking signatures and legal agreements. At the moment, it is primarily intended to help open source projects keep track of Contributor License Agreements.' => '**Legalpad** ist eine einfache Anwendung zur Verfolgung von Unterschriften und rechtlichen Vereinbarungen. Derzeit dient es hauptsächlich dazu, Open-Source-Projekten bei der Verwaltung von Contributor License Agreements zu helfen.',
+      '**Locked** fields are visible in the form, but their values can not be changed
+by the user.
+
+**Hidden** fields are not visible in the form.
+
+Any assigned default values are still respected, even if the field is locked
+or hidden.' => '**Gesperrte** Felder sind im Formular sichtbar, ihre Werte können vom Benutzer aber
+nicht geändert werden.
+
+**Versteckte** Felder sind im Formular nicht sichtbar.
+
+Zugewiesene Standardwerte werden weiterhin berücksichtigt, auch wenn das Feld gesperrt
+oder versteckt ist.',
       '**Post a comment** in the JIRA task.' => '**Kommentar posten** in der JIRA-Aufgabe.',
       '**Step 1 of 2 - Name Remote Server**
 
@@ -1657,15 +1579,189 @@ Obwohl Bots normalerweise keine E-Mails empfangen, können sie mit anderen Syste
 
 
 Die Adresse wird automatisch verifiziert. Du musst unter dieser Adresse also keine E-Mails empfangen können und kannst auf Wunsch auch eine ungültige oder nicht existente, aber korrekt formatierte Adresse wie `bot@deinefirma.de` eingeben.',
+      '**add_macro.php** __image__ [--as __name__]
+    Add an image macro. This can be useful for importing a large number
+    of macros.' => '**add_macro.php** __image__ [--as __name__]
+    Ein Bildmakro hinzufügen. Das kann nützlich sein, um eine große Anzahl
+    von Makros zu importieren.',
+      '**almanac** __commmand__ [__options__]
+    Manage Almanac stuff. NEW AND EXPERIMENTAL.
+' => '**almanac** __Befehl__ [__Optionen__]
+    Almanac-Kram verwalten. NEU UND EXPERIMENTELL.
+',
+      '**aphlict** __command__ [__options__]
+    Manage the Aphlict server.
+' => '**aphlict** __Befehl__ [__Optionen__]
+    Den Aphlict-Server verwalten.
+',
+      '**audit** __command__ [__options__]
+    Manage Diffusion audits.
+' => '**audit** __Befehl__ [__Optionen__]
+    Diffusion-Prüfungen verwalten.
+',
+      '**auth** __command__ [__options__]
+    Manage authentication configuration.
+' => '**auth** __Befehl__ [__Optionen__]
+    Authentifizierungskonfiguration verwalten.
+',
+      '**bulk** __command__ [__options__]
+  Manage and debug bulk jobs.
+' => '**bulk** __Befehl__ [__Optionen__]
+  Massenaufgaben verwalten und debuggen.
+',
+      '**cache** __command__ [__options__]
+    Manage caches.
+' => '**cache** __Befehl__ [__Optionen__]
+    Caches verwalten.
+',
+      '**calendar** __command__ [__options__]
+    Manage Calendar.
+' => '**calendar** __Befehl__ [__Optionen__]
+    Calendar verwalten.
+',
+      '**celerity** __command__ [__options__]
+    Manage static resources.
+' => '**celerity** __Befehl__ [__Optionen__]
+    Statische Ressourcen verwalten.
+',
+      '**clear_repository_symbols.php** [__options__] __repository__
+
+  Clear repository symbols.' => '**clear_repository_symbols.php** [__Optionen__] __repository__
+
+  Repository-Symbole löschen.',
+      '**conduit** __command__ [__options__]
+    Manage Conduit.
+' => '**conduit** __Befehl__ [__Optionen__]
+    Conduit verwalten.
+',
+      '**config** __command__ [__options__]
+    Manage configurations.
+' => '**config** __Befehl__ [__Optionen__]
+    Konfigurationen verwalten.
+',
+      '**differential** __command__ [__options__]
+    Manage Differential.
+' => '**differential** __Befehl__ [__Optionen__]
+    Differential verwalten.
+',
+      '**diviner** __command__ [__options__]
+  Generate documentation.' => '**diviner** __Befehl__ [__Optionen__]
+  Dokumentation erzeugen.',
+      '**drydock** __commmand__ [__options__]
+    Manage Drydock stuff. NEW AND EXPERIMENTAL.
+' => '**drydock** __Befehl__ [__Optionen__]
+    Drydock-Kram verwalten. NEU UND EXPERIMENTELL.
+',
+      '**edges** __command__ [__options__]
+  Explore edges.
+' => '**edges** __Befehl__ [__Optionen__]
+  Verknüpfungen erkunden.
+',
+      '**emit_test_event.php** [--listen listener] ...
+  Emit a test event after installing any specified __listener__s.' => '**emit_test_event.php** [--listen listener] ...
+  Ein Testereignis auslösen, nachdem alle angegebenen __listener__ installiert wurden.',
+      '**emoji**
+    Rebuild Emoji data sheets.
+' => '**emoji**
+    Emoji-Datenblätter neu aufbauen.
+',
+      '**exec_daemon.php** [__options__] __daemon__ ...
+    Run an instance of __daemon__.' => '**exec_daemon.php** [__Optionen__] __daemon__ ...
+    Führe eine Instanz von __daemon__ aus.',
+      '**fact** __command__ [__options__]
+    Manage and debug data extraction, storage and
+    configuration used to compute statistics.
+' => '**fact** __Befehl__ [__Optionen__]
+    Datenextraktion, Speicherung und Konfiguration für die
+    Berechnung von Statistiken verwalten und debuggen.
+',
+      '**feed** __command__ [__options__]
+    Test and debug feed events.
+' => '**feed** __Befehl__ [__Optionen__]
+    Chronik-Ereignisse testen und debuggen.
+',
+      '**files** __command__ [__options__]
+    Manage file storage.
+' => '**files** __Befehl__ [__Optionen__]
+    Dateispeicher verwalten.
+',
+      '**garbage** __command__ [__options__]
+    Manage garbage collectors.
+' => '**garbage** __Befehl__ [__Optionen__]
+    Garbage-Collectoren verwalten.
+',
+      '**generate_ctags_symbols.php** [__options__]
+
+  Generate repository symbols using Exuberant Ctags. Paths are read from stdin.' => '**generate_ctags_symbols.php** [__Optionen__]
+
+  Repository-Symbole mit Exuberant Ctags erzeugen. Pfade werden von stdin gelesen.',
+      '**generate_php_symbols.php** [__options__]
+
+  Generate repository symbols using XHPAST. Paths are read from stdin.' => '**generate_php_symbols.php** [__Optionen__]
+
+  Repository-Symbole mit XHPAST erzeugen. Pfade werden von stdin gelesen.',
+      '**harbormaster** __command__ [__options__]
+  Manage and debug Harbormaster.
+' => '**harbormaster** __Befehl__ [__Optionen__]
+  Harbormaster verwalten und debuggen.
+',
+      '**herald** __command__ [__options__]
+  Manage and debug Herald.
+' => '**herald** __Befehl__ [__Optionen__]
+  Herald verwalten und debuggen.
+',
+      '**i18n** __command__ [__options__]
+    Manage translations and internationalization.
+' => '**i18n** __Befehl__ [__Optionen__]
+    Übersetzungen und Internationalisierung verwalten.
+',
+      '**import_repository_symbols.php** [__options__] __repository__ < symbols
+
+  Import repository symbols (symbols are read from stdin).' => '**import_repository_symbols.php** [__Optionen__] __repository__ < symbols
+
+  Repository-Symbole importieren (Symbole werden von stdin gelesen).',
       '**launch_daemon.php** [__options__] __daemon__
-    Launch and oversee an instance of __daemon__.
-EOHELP' => '**launch_daemon.php** [__Optionen__] __daemon__
-    Starte und überwache eine Instanz von __daemon__.
-EOHELP',
+    Launch and oversee an instance of __daemon__.' => '**launch_daemon.php** [__Optionen__] __daemon__
+    Starte und überwache eine Instanz von __daemon__.',
+      '**lipsum** __command__ [__options__]
+    Generate synthetic test data to make development easier.
+' => '**lipsum** __Befehl__ [__Optionen__]
+    Synthetische Testdaten erzeugen, um die Entwicklung zu erleichtern.
+',
+      '**lock** __command__ [__options__]
+  Manage locks.
+' => '**lock** __Befehl__ [__Optionen__]
+  Sperren verwalten.
+',
+      '**mail** __command__ [__options__]
+    Manage mail stuff.
+' => '**mail** __Befehl__ [__Optionen__]
+    Mail-Kram verwalten.
+',
+      '**nuance** __command__ [__options__]
+  Manage and debug Nuance.
+' => '**nuance** __Befehl__ [__Optionen__]
+  Nuance verwalten und debuggen.
+',
+      '**phd** __command__ [__options__]
+    Manage daemons.
+' => '**phd** __Befehl__ [__Optionen__]
+    Dämonen verwalten.
+',
+      '**policy** __command__ [__options__]
+    Administrative tool for reviewing and editing policies.
+' => '**policy** __Befehl__ [__Optionen__]
+    Administrationswerkzeug zum Prüfen und Bearbeiten von Richtlinien.
+',
       '**publish** __buildable__ ...' => '**publish** __buildable__ ...',
       '**rebuild-log** --id __id__ [__options__]
 **rebuild-log** --all' => '**rebuild-log** --id __id__ [__Optionen__]
 **rebuild-log** --all',
+      '**remove** __command__ [__options__]
+    Administrative tool for destroying objects permanently.
+' => '**remove** __Befehl__ [__Optionen__]
+    Administrationswerkzeug zum dauerhaften Vernichten von Objekten.
+',
       '**reparse** __what__ __which_parts__ [--trace] [--force]
 
 Rerun the Diffusion parser on specific commits and repositories. Mostly useful for debugging changes to Diffusion.
@@ -1685,7 +1781,114 @@ repository reparse --all TEST --change --min-date "today -1 day".
 
 z.B. dasselbe, aber alles vor dem 31.03.2013 ausschließen (lokale Zeit):
 repository reparse --all TEST --change --min-date "03/31/2013"',
+      '**repository** __command__ [__options__]
+    Manage and debug Diffusion repository configuration, tracking,
+    discovery and import.
+' => '**repository** __Befehl__ [__Optionen__]
+    Konfiguration, Verfolgung, Erkennung und Import von
+    Diffusion-Repositories verwalten und debuggen.
+',
+      '**save_lint.php**
+    Discover lint problems and save them to database so that they can
+    be displayed in Diffusion.
+' => '**save_lint.php**
+    Lint-Probleme ermitteln und in der Datenbank speichern, damit sie
+    in Diffusion angezeigt werden können.
+',
+      '**search** __command__ [__options__]
+    Manage search index.
+' => '**search** __Befehl__ [__Optionen__]
+    Suchindex verwalten.
+',
+      '**ssh-exec** --phabricator-ssh-user __user__ [--ssh-command __commmand__]
+**ssh-exec** --phabricator-ssh-device __device__ [--ssh-command __commmand__]
+    Execute authenticated SSH requests. This script is normally invoked
+    via SSHD, but can be invoked manually for testing.
+' => '**ssh-exec** --phabricator-ssh-user __user__ [--ssh-command __commmand__]
+**ssh-exec** --phabricator-ssh-device __device__ [--ssh-command __commmand__]
+    Authentifizierte SSH-Anfragen ausführen. Dieses Skript wird normalerweise
+    über SSHD aufgerufen, kann zum Testen aber auch manuell aufgerufen werden.
+',
+      '**storage** __workflow__ [__options__]
+Manage database storage and schema versioning.
+
+**storage** upgrade
+Initialize or upgrade storage.
+
+**storage** upgrade --user __root__ --password __hunter2__
+Use administrative credentials for schema changes.' => '**storage** __workflow__ [__Optionen__]
+Datenbankspeicher und Schema-Versionierung verwalten.
+
+**storage** upgrade
+Speicher initialisieren oder aktualisieren.
+
+**storage** upgrade --user __root__ --password __hunter2__
+Administrative Zugangsdaten für Schemaänderungen verwenden.',
+      '**transactions** __command__ [__options__]
+' => '**transactions** __Befehl__ [__Optionen__]
+',
+      '**trigger** __command__ [__options__]
+    Manage event triggers.
+' => '**trigger** __Befehl__ [__Optionen__]
+    Ereignisauslöser verwalten.
+',
+      '**user** __command__ [__options__]
+    Modify user accounts to regain access to an install.
+' => '**user** __Befehl__ [__Optionen__]
+    Benutzerkonten ändern, um wieder Zugriff auf eine Installation zu erhalten.
+',
+      '**webhook** __command__ [__options__]
+    Manage webhooks.
+' => '**webhook** __Befehl__ [__Optionen__]
+    Webhooks verwalten.
+',
+      '**worker** __command__ [__options__]
+    Manage the task queue.
+' => '**worker** __Befehl__ [__Optionen__]
+    Die Aufgabenwarteschlange verwalten.
+',
       '+%s ms' => '+%s ms',
+      '+---------------------------------------------------------------+
+|      * * * PUSH REJECTED BY EVIL DRAGON BUREAUCRATS * * *     |
++---------------------------------------------------------------+
+             \\
+              \\                    ^    /^
+               \\                  / \\  // \\
+                \\   |\\___/|      /   \\//  .\\
+                 \\  /V  V  \\__  /    //  | \\ \\           *----*
+                   /     /  \\/_/    //   |  \\  \\          \\   |
+                   @___@`    \\/_   //    |   \\   \\         \\/\\ \\
+                  0/0/|       \\/_ //     |    \\    \\         \\  \\
+              0/0/0/0/|        \\///      |     \\     \\       |  |
+           0/0/0/0/0/_|_ /   (  //       |      \\     _\\     |  /
+        0/0/0/0/0/0/`/,_ _ _/  ) ; -.    |    _ _\\.-~       /   /
+                    ,-}        _      *-.|.-~-.           .~    ~
+  *     \\__/         `/\\      /                 ~-. _ .-~      /
+   \\____(Oo)            *.   }            {                   /
+   (    (..)           .----~-.\\        \\-`                 .~
+   //___\\\\  \\ DENIED!  ///.----..<        \\             _ -~
+  //     \\\\                ///-._ _ _ _ _ _ _{^ - - - - ~
+' => '+---------------------------------------------------------------+
+|    * * * PUSH VON BÖSEN DRACHEN-BÜROKRATEN ABGELEHNT * * *    |
++---------------------------------------------------------------+
+             \\
+              \\                    ^    /^
+               \\                  / \\  // \\
+                \\   |\\___/|      /   \\//  .\\
+                 \\  /V  V  \\__  /    //  | \\ \\           *----*
+                   /     /  \\/_/    //   |  \\  \\          \\   |
+                   @___@`    \\/_   //    |   \\   \\         \\/\\ \\
+                  0/0/|       \\/_ //     |    \\    \\         \\  \\
+              0/0/0/0/|        \\///      |     \\     \\       |  |
+           0/0/0/0/0/_|_ /   (  //       |      \\     _\\     |  /
+        0/0/0/0/0/0/`/,_ _ _/  ) ; -.    |    _ _\\.-~       /   /
+                    ,-}        _      *-.|.-~-.           .~    ~
+  *     \\__/         `/\\      /                 ~-. _ .-~      /
+   \\____(Oo)            *.   }            {                   /
+   (    (..)           .----~-.\\        \\-`                 .~
+   //___\\\\  \\ NIX DA!  ///.----..<        \\             _ -~
+  //     \\\\                ///-._ _ _ _ _ _ _{^ - - - - ~
+',
       ', ...' => ', ...',
       '-' => '-',
       '...' => '...',
@@ -1695,11 +1898,13 @@ repository reparse --all TEST --change --min-date "03/31/2013"',
       '/settings/panel/contact/' => '/settings/panel/contact/',
       '1 of 99 Problems' => '1 von 99 Problemen',
       '1,113,377' => '1.113.377',
+      '1. download the extension the extension from url `%s` to location `%s` (using %s)' => '1. Die Erweiterung von der URL `%s` nach `%s` herunterladen (mit %s)',
       '100' => '100',
       '12 Hour, 2:34 PM' => '12-Stunden (2:34 PM)',
       '148' => '148',
       '2 Column Fixed' => '2-Spalten fix',
       '2 Column Fluid' => '2-Spalten fluid',
+      '2. Add the extension to `load-libraries` in %s, so it will be loaded into %s' => '2. Die Erweiterung zu `load-libraries` in %s hinzufügen, damit sie in %s geladen wird',
       '24 Hour, 14:34' => '24-Stunden (14:34)',
       '3 / 5 Comments' => '3 / 5 Kommentare',
       '4 Column Fixed' => '4-Spalten fix',
@@ -1711,7 +1916,6 @@ repository reparse --all TEST --change --min-date "03/31/2013"',
       '<%s>' => '<%s>',
       '<<Replace this line with your revision title>' => '<<Ersetze diese Zeile mit Deinem Versionstitel>',
       '<End of Session>' => '<Ende der Sitzung>',
-      '<Invalid Output>' => '<Ungültige Ausgabe>',
       '<Invalid URI>' => '<Ungültige URI>',
       '<Malformed> %s' => '<Fehlerhaft> %s',
       '<Rendering Exception>' => '<Rendering-Ausnahme>',
@@ -1738,6 +1942,7 @@ Konfiguriere, wie Revisionen in JIRA-Vorgängen erfasst werden.
 Beachte, dass Du die Daemons neu starten musst, damit dies wirksam wird.',
       '?' => '?',
       'A %s cannot be used as an effective policy for a %s' => 'Ein %s kann nicht als effektive Richtlinie für ein %s verwendet werden',
+      'A %s must have either an valid HREF url or an action-name. Extension %s built an action with neither (with key %s). ' => 'Eine %s muss entweder eine gültige HREF-URL oder einen Aktionsnamen haben. Erweiterung %s hat eine Aktion ohne beides erstellt (mit Schlüssel %s). ',
       'A Controller must implement %s before you can invoke %s or %s.' => 'Ein Controller muss %s implementieren, bevor %s oder %s aufgerufen werden kann.',
       'A JSON-encoded object.' => 'Ein JSON-kodiertes Objekt.',
       'A Modern Example' => 'Ein modernes Beispiel',
@@ -1747,7 +1952,6 @@ Beachte, dass Du die Daemons neu starten musst, damit dies wirksam wird.',
       'A URL\'s details change.' => 'Die Details einer URL werden geändert.',
       'A URL-encoded string.' => 'Eine URL-kodierte Zeichenkette.',
       'A Very Very Very Very Very Very Very Very Very Long Property Label' => 'Ein sehr sehr sehr sehr sehr sehr sehr sehr sehr langer Eigenschaftsname',
-      'A backer can always see what they have backed.' => 'Ein Unterstützer kann immer sehen, was er unterstützt hat.',
       'A binding inherits the policies of its service.' => 'Eine Bindung erbt die Richtlinien ihres Dienstes.',
       'A blog\'s details change.' => 'Die Details eines Blogs ändern sich.',
       'A blog\'s subscribers change.' => 'Die Abonnenten eines Blogs ändern sich.',
@@ -1788,12 +1992,13 @@ Passe entweder die Konfigurationseinstellung %s an oder starte die Dämonen neu.
       'A file containing the log data.' => 'Eine Datei mit den Protokolldaten.',
       'A file path was not provided.' => 'Es wurde kein Dateipfad angegeben.',
       'A flexible rules engine that can notify and act on other actions such as tasks, diffs, and commits.' => 'Eine flexible Regel-Engine, die bei Aktionen wie Aufgaben, Diffs und Commits benachrichtigen und handeln kann.',
+      'A four-letter object type.' => 'Ein Objekttyp aus vier Buchstaben.',
       'A gallery of modern art.' => 'Eine Gallerie der modernen Kunst.',
       'A keypair has been generated, and the public key has been added as a recognized key.' => 'Ein Schlüsselpaar wurde erzeugt, und der öffentliche Schlüssel wurde als bekannter Schlüssel hinzugefügt.',
       'A lipsum generator is registered with key "%s". This key is reserved.' => 'Ein Lipsum-Generator ist mit dem Schlüssel "%s" registriert. Dieser Schlüssel ist reserviert.',
+      'A macro already exists with the name \'%s\'!' => 'Es gibt bereits ein Makro mit dem Namen \'%s\'!',
       'A major event with no title.' => 'Ein wichtiges Ereignis ohne Titel.',
       'A major event.' => 'Ein wichtiges Ereignis.',
-      'A merchant\'s members can always view and edit it.' => 'Mitglieder eines Händlers können ihn immer einsehen und bearbeiten.',
       'A minimal UI for Buttons' => 'Eine minimale Oberfläche für Schaltflächen.',
       'A minor event.' => 'Ein kleineres Ereignis.',
       'A mock\'s status changes.' => 'Der Status eines Mocks ändert sich.',
@@ -1850,7 +2055,6 @@ Passe entweder die Konfigurationseinstellung %s an oder starte die Dämonen neu.
       'A valid email is required.' => 'Eine gültige Emailadresse ist erforderlich.',
       'A verification email has been sent. Click the link in the email to verify your address.' => 'Eine Bestätigungsemail ist verschickt worden. Bitte den Link in der Email anklicken, um zu bestätigen, daß es sich wirklich um Deine Email-Adresse handelt.',
       'ACCESS DENIED' => 'ZUGRIFF VERWEIGERT',
-      'ACCOUNT OVERVIEW' => 'KONTOÜBERSICHT',
       'ACTIVE' => 'AKTIV',
       'AFFECTED FILES' => 'BETROFFENE DATEIEN',
       'AM' => 'AM',
@@ -1886,14 +2090,16 @@ Passe entweder die Konfigurationseinstellung %s an oder starte die Dämonen neu.
       'Aborted workflow.' => 'Vorgang abgebrochen.',
       'Aborted, your objects are safe.' => 'Abgebrochen, Deine Objekte sind sicher.',
       'Aborting' => 'Wird abgebrochen',
+      'Aborting.' => 'Wird abgebrochen.',
+      'Aborting.
+' => 'Wird abgebrochen.
+',
       'About %s' => 'Über %s',
       'About to call new %s, but the PHP MySQLi extension is not available!' => 'Es soll new %s aufgerufen werden, aber die PHP-MySQLi-Erweiterung ist nicht verfügbar!',
       'Above' => 'Oben',
       'Absolute TTL must be in the present or future, but TTL "%s" is in the past.' => 'Die absolute TTL muss in der Gegenwart oder Zukunft liegen, aber TTL "%s" liegt in der Vergangenheit.',
       'Accept' => 'Annehmen',
       'Accept Commit' => 'Commit akzeptieren',
-      'Accept Order' => 'Bestellung annehmen',
-      'Accept Order?' => 'Bestellung annehmen?',
       'Accept Path' => 'Pfad Akzeptieren',
       'Accept Revision' => 'Version akzeptieren',
       'Accept a revision.' => 'Eine Version akzeptieren.',
@@ -1907,12 +2113,11 @@ Passe entweder die Konfigurationseinstellung %s an oder starte die Dämonen neu.
       'Accepted Prior Diff' => 'Vorherigen Diff akzeptiert',
       'Accepted Prior Diff (by %s)' => 'Vorherigen Diff akzeptiert (von %s)',
       'Accepting reviewers' => 'Annehmende Reviewer',
-      'Accepts Payments' => 'Akzeptiert Zahlungen',
       'Accepts are reset by updates' => 'Freigaben werden durch Updates zurückgesetzt',
       'Accepts persist across updates' => 'Freigaben bleiben nach Updates erhalten',
+      'Accepts the "%%k" parameter from "AuthorizedKeysCommand".' => 'Nimmt den Parameter "%%k" von "AuthorizedKeysCommand" entgegen.',
       'Access Denied' => 'Zugriff verweigert',
       'Access Denied: %s' => 'Zugriff verweigert: %s',
-      'Access Key' => 'Zugriffsschlüssel',
       'Access Logs' => 'Zugriffsprotokolle',
       'Access key for Amazon EC2.' => 'Zugriffsschlüssel für Amazon EC2.',
       'Access key for Amazon S3.' => 'Zugriffsschlüssel für Amazon S3.',
@@ -1924,39 +2129,21 @@ Passe entweder die Konfigurationseinstellung %s an oder starte die Dämonen neu.
       'Access token is invalid or expired.' => 'Zugriffstoken ist ungültig oder abgelaufen.',
       'Accessibility' => 'Barrierefreiheit',
       'Account' => 'Konto',
-      'Account %d' => 'Konto %d',
       'Account Activity' => 'Kontoaktivitäten',
       'Account Activity Logs' => 'Protokoll der Kontenaktivitäten',
       'Account Already Linked' => 'Konto bereits verknüpft',
       'Account Balance' => 'Kontostand',
-      'Account Details' => 'Kontodetails',
       'Account Disabled' => 'Konto gesperrt',
-      'Account Email' => 'Konto-E-Mail',
-      'Account Email %d' => 'Konto-E-Mail %d',
-      'Account Email: %s' => 'Konto-E-Mail: %s',
-      'Account Manager' => 'Konto-Manager',
-      'Account Managers' => 'Konto-Manager',
       'Account Menu' => 'Kontomenü',
-      'Account Name' => 'Kontoname',
       'Account Not Linkable' => 'Konto nicht verknüpfbar',
       'Account Not Refreshable' => 'Konto nicht aktualisierbar',
       'Account Recovery' => 'Kontowiederherstellung',
       'Account Settings' => 'Konteneinstellungen',
       'Account Setup Issues' => 'Probleme bei der Kontoeinrichtung',
       'Account Type' => 'Kontotyp',
-      'Account billing address.' => 'Rechnungsadresse des Kontos.',
       'Account does not match provider!' => 'Konto stimmt nicht mit dem Anbieter überein!',
-      'Account email addresses can not be edited once they are created. To change the billing address for an account, disable the old address and then add a new address.' => 'Konto-E-Mail-Adressen können nach ihrer Erstellung nicht mehr bearbeitet werden. Um die Rechnungsadresse eines Kontos zu ändern, deaktiviere die alte Adresse und füge dann eine neue hinzu.',
       'Account is already registered or linked.' => 'Konto ist bereits registriert oder verknüpft.',
-      'Account managers must be valid users, "%s" is not.' => 'Kontomanager müssen gültige Benutzer sein, "%s" ist es nicht.',
-      'Account members may view and edit payment methods.' => 'Kontomitglieder dürfen Zahlungsmethoden anzeigen und bearbeiten.',
-      'Account members may view and edit subscriptions.' => 'Kontomitglieder dürfen Abonnements anzeigen und bearbeiten.',
-      'Account name for billing purposes.' => 'Kontoname für Abrechnungszwecke.',
-      'Account name.' => 'Kontoname.',
       'Accounting' => 'Buchhaltung',
-      'Accounts' => 'Konten',
-      'Accounts and Billing' => 'Konten und Abrechnung',
-      'Accounts must have a name.' => 'Konten müssen einen Namen haben.',
       'Ace' => 'Ass',
       'Ace of Hearts' => 'Ass der Herzen',
       'Achievements' => 'Erfolge',
@@ -1980,7 +2167,10 @@ Passe entweder die Konfigurationseinstellung %s an oder starte die Dämonen neu.
       'Action Name' => 'Aktionsname',
       'Action Panel' => 'Aktions-Panel',
       'Action Story' => 'Aktions-Eintrag',
+      'Action repetition policy. Can be "every" => Run every time the conditions match, "first" => Run the first time the conditions match, or "change" => Run every time the conditions change from not matching to matching.' => 'Richtlinie für die Wiederholung der Aktionen. Mögliche Werte: "every" => bei jeder Erfüllung der Bedingungen ausführen, "first" => nur bei der ersten Erfüllung der Bedingungen ausführen, oder "change" => jedes Mal ausführen, wenn die Bedingungen von nicht erfüllt zu erfüllt wechseln.',
       'Action: %s' => 'Aktion: %s',
+      'ActionList extension ("%s", of class "%s") did not return a list of ActionView from method "%s". This method must return an array, and each value in the array must be a "%s" object.' => 'ActionList-Erweiterung ("%s", der Klasse "%s") hat aus der Methode "%s" keine Liste von ActionView zurückgegeben. Diese Methode muss ein Array zurückgeben, und jeder Wert im Array muss ein Objekt vom Typ "%s" sein.',
+      'ActionList extension ("%s", of class "%s") returned a list of ActionList extension from "%s" that contains an invalid value: a value (with key "%s") is not an object of class "%s". ' => 'ActionList-Erweiterung ("%s", der Klasse "%s") hat aus "%s" eine Liste von ActionList-Erweiterungen zurückgegeben, die einen ungültigen Wert enthält: Ein Wert (mit Schlüssel "%s") ist kein Objekt der Klasse "%s". ',
       'Actions' => 'Aktionen',
       'Actions performed to verify the behavior of the change.' => 'Maßnahmen zur Überprüfung des Verhaltens der Änderung.',
       'Activate' => 'Aktivieren',
@@ -2003,6 +2193,34 @@ Passe entweder die Konfigurationseinstellung %s an oder starte die Dämonen neu.
       'Activate this repository to begin or resume import.' => 'Dieses Repository aktivieren, um den Import zu starten oder fortzusetzen.',
       'Activated' => 'Aktiviert',
       'Activated on Acquisition' => 'Bei Erwerb aktiviert',
+      'Activates a points field on tasks. You can use points for estimation or
+planning. If configured, points will appear on workboards.
+
+To activate points, set this value to a map with these keys:
+
+  - `enabled` //Optional bool.// Use `true` to enable points, or
+    `false` to disable them.
+  - `label` //Optional string.// Label for points, like "Story Points" or
+    "Estimated Hours". If omitted, points will be called "Points".
+  - `action` //Optional string.// Label for the action which changes points
+    in Maniphest, like "Change Estimate". If omitted, the action will
+    be called "Change Points".
+
+See the example below for a starting point.' => 'Aktiviert ein Punktefeld für Aufgaben. Punkte kannst Du zur Schätzung oder
+Planung verwenden. Wenn konfiguriert, erscheinen Punkte auf Arbeitsflächen.
+
+Um Punkte zu aktivieren, setze diesen Wert auf eine Zuordnung mit diesen
+Schlüsseln:
+
+  - `enabled` //Optionaler Bool.// Verwende `true`, um Punkte zu aktivieren,
+    oder `false`, um sie zu deaktivieren.
+  - `label` //Optionaler String.// Bezeichnung für Punkte, z. B. "Story Points"
+    oder "Geschätzte Stunden". Ohne Angabe heißen Punkte "Punkte".
+  - `action` //Optionaler String.// Bezeichnung für die Aktion, mit der Punkte
+    in Maniphest geändert werden, z. B. "Schätzung ändern". Ohne Angabe heißt
+    die Aktion "Punkte ändern".
+
+Das Beispiel unten dient als Ausgangspunkt.',
       'Activates selected triggers, firing them immediately.' => 'Aktiviert ausgewählte Trigger und löst sie sofort aus.',
       'Activation Failed' => 'Aktivierung fehlgeschlagen',
       'Activation complete. Leases are permanent until manually released with:' => 'Aktivierung abgeschlossen. Leases sind dauerhaft, bis sie manuell freigegeben werden mit:',
@@ -2058,19 +2276,14 @@ Passe entweder die Konfigurationseinstellung %s an oder starte die Dämonen neu.
       'Actor' => 'Akteur',
       'Actor PHID' => 'Akteur-PHID',
       'Actors' => 'Akteure',
-      'Actual exception: %s' => 'Tatsächliche Ausnahme: %s',
-      'Ad-Hoc Product' => 'Ad-hoc-Produkt',
       'Adapter ("%s") is configured for medium "%s", but this is not a supported delivery medium. Supported media are: %s.' => 'Adapter ("%s") ist für Medium "%s" konfiguriert, aber dies ist kein unterstütztes Zustellungsmedium. Unterstützte Medien sind: %s.',
       'Adapter class to use to transmit mail to the MTA. The default uses
 PHPMailer, which will invoke "mail". This is appropriate if mail actually
 works on your host, but if you haven\'t configured mail it may not be so great.
 A number of other mailers are available (e.g., SES, SendGrid, SMTP, Sendmail,
-custom mailers). This option is deprecated in favor of \'cluster.mailers\'.
-EODOC' => 'Adapterklasse, die zum Senden von E-Mails an das MTA verwendet wird. Standardmäßig wird PHPMailer verwendet, das den Aufruf "mail" nutzt. Das passt, wenn Mail auf Deinem Host tatsächlich funktioniert; wenn Du Mail nicht eingerichtet hast, ist das möglicherweise keine gute Wahl. Es gibt verschiedene andere Mailer, etwa SES, SendGrid, SMTP, Sendmail oder eigene Mailer. Diese Option ist zugunsten von \'cluster.mailers\' veraltet.
-EODOC',
+custom mailers). This option is deprecated in favor of \'cluster.mailers\'.' => 'Adapterklasse, die zum Senden von E-Mails an den MTA verwendet wird. Standardmäßig wird PHPMailer verwendet, das den Aufruf "mail" nutzt. Das passt, wenn Mail auf Deinem Host tatsächlich funktioniert; wenn Du Mail nicht eingerichtet hast, ist das möglicherweise keine gute Wahl. Es gibt verschiedene andere Mailer (z.B. SES, SendGrid, SMTP, Sendmail oder eigene Mailer). Diese Option ist zugunsten von \'cluster.mailers\' veraltet.',
       'Add "Re:" Prefix' => '"Re:"-Präfix hinzufügen',
       'Add Action...' => 'Aktion hinzufügen...',
-      'Add Address' => 'Adresse hinzufügen',
       'Add Another Action' => 'Weitere Aktion hinzufügen',
       'Add Answer' => 'Neue Antwort',
       'Add Auth Factor' => 'Authentifizierungsfaktor hinzufügen',
@@ -2081,7 +2294,6 @@ EODOC',
       'Add Column' => 'Neue Spalte',
       'Add Comment' => 'Neuer Kommentar',
       'Add Contact Number' => 'Kontaktnummer hinzufügen',
-      'Add Credit or Debit Card (US and Canada)' => 'Kredit- oder Debitkarte hinzufügen (USA und Kanada)',
       'Add Dashboard to Favorites Menu' => 'Dashboard zum Favoritenmenü hinzufügen',
       'Add Dashboard to Global Favorites' => 'Dashboard zu globalen Favoriten hinzufügen',
       'Add Dashboard to Global Home Page' => 'Dashboard zur globalen Startseite hinzufügen',
@@ -2091,42 +2303,31 @@ EODOC',
       'Add Dashboard to Personal Home Page' => 'Dashboard zur persönlichen Startseite hinzufügen',
       'Add Dashboard to Portal Menu' => 'Dashboard zum Portalmenü hinzufügen',
       'Add Dashboard to Project Menu' => 'Dashboard zum Projektmenü hinzufügen',
-      'Add Email Address' => 'E-Mail-Adresse hinzufügen',
       'Add Exemption' => 'Ausnahme hinzufügen',
       'Add Existing Panel' => 'Ein verfügbares Panel hinzufügen',
       'Add External Account' => 'Neues externes Konto',
       'Add Interface' => 'Schnittstelle hinzufügen',
       'Add MFA Provider' => 'MFA-Anbieter hinzufügen',
-      'Add Manager' => 'Manager hinzufügen',
-      'Add Managers' => 'Manager hinzufügen',
       'Add Members' => 'Mitglieder hinzufügen',
-      'Add Mountain of Virtual Wealth' => 'Berg virtuellen Reichtums hinzufügen',
       'Add Multi-Factor Auth' => 'Multi-Faktor-Auth hinzufügen',
       'Add Multi-Factor Authentication' => 'Multi-Faktor-Authentifizierung hinzufügen',
       'Add Multi-Factor Authentication To Your Account' => 'Multi-Faktor-Authentifizierung zum Konto hinzufügen',
       'Add Multiple Paths' => 'Mehrere Pfade hinzufügen',
       'Add New Address' => 'Neue Adresse hinzufügen',
       'Add New Credential' => 'Neue Zugangsdaten hinzufügen',
-      'Add New Managers' => 'Neue Manager hinzufügen',
       'Add New Menu Item...' => 'Neuen Menüpunkt hinzufügen...',
       'Add New Path' => 'Neuer Pfad',
-      'Add New Payment Method' => 'Neue Zahlungsmethode hinzufügen',
       'Add New URI' => 'Neuen URI hinzufügen',
       'Add One Path' => 'Einen Pfad hinzufügen',
       'Add Panel' => 'Panel hinzufügen',
       'Add Panel to Dashboard' => 'Panel zum Dashboard hinzufügen',
-      'Add Paragraph' => 'Absatz hinzufügen',
       'Add Participants' => 'Teilnehmer hinzufügen',
-      'Add PayPal Payments Account' => 'PayPal-Zahlungskonto hinzufügen',
-      'Add Payment Method' => 'Neue Zahlungsmethode',
-      'Add Payment Provider' => 'Neuer Zahlungsdienstleister',
       'Add Project Tags' => 'Projekt-Tags hinzufügen',
       'Add Property' => 'Eigenschaft hinzufügen',
       'Add Provider' => 'Anbieter hinzufügen',
       'Add Recipients' => 'Träger hinzufügen',
       'Add Signature Exemption' => 'Unterschriftenausnahme hinzufügen',
       'Add Step' => 'Schritt hinzufügen',
-      'Add Stripe Payments Account' => 'Stripe-Zahlungskonto hinzufügen',
       'Add Tab...' => 'Tab hinzufügen...',
       'Add __--master-data__ to the __mysqldump__ command, generating a CHANGE MASTER statement in the output. This option also dumps all data, including caches.' => '__--master-data__ zum Befehl __mysqldump__ hinzufügen, sodass in der Ausgabe ein CHANGE-MASTER-Statement erzeugt wird. Diese Option dumpt auch alle Daten einschließlich Caches.',
       'Add a Comment' => 'Kommentar hinzufügen',
@@ -2216,37 +2417,31 @@ Benutzer, die direkt in der E-Mail auf CC stehen, werden ebenfalls automatisch a
       'Added a comment: %s' => 'Kommentar hinzugefügt: %s',
       'Added diff content' => 'Hinzugefügter Diff-Inhalt',
       'Added file content' => 'Hinzugefügter Dateiinhalt',
+      'Added macro \'%s\' (%s).' => 'Makro \'%s\' (%s) hinzugefügt.',
       'Adding Users' => 'Benutzer hinzufügen',
       'Adding a PKCS8 keyfile to the cache can be very dangerous. If the PKCS8 file really encodes a different public key than the one specified, an attacker could use it to gain unauthorized access.
 
 Generally, you should use this option only in a development environment where ssh-keygen is broken and it is inconvenient to fix it, and only if you are certain you understand the risks. You should never cache a PKCS8 file you did not generate yourself.' => 'Das Hinzufügen einer PKCS8-Schlüsseldatei zum Cache kann sehr gefährlich sein. Wenn die PKCS8-Datei tatsächlich einen anderen öffentlichen Schlüssel kodiert als den angegebenen, könnte ein Angreifer sie verwenden, um sich unbefugt Zugriff zu verschaffen.
 
 Im Allgemeinen solltest Du diese Option nur in einer Entwicklungsumgebung verwenden, in der ssh-keygen defekt ist und sich das Problem nur schwer beheben lässt, und auch dann nur, wenn Du die Risiken sicher verstehst. Du solltest niemals eine PKCS8-Datei zwischenspeichern, die Du nicht selbst erzeugt hast.',
-      'Adding initial and final lines to a large corpus.' => 'Anfangs- und Endzeilen zu einem großen Korpus hinzufügen.',
       'Adding many test tasks to worker queue. Use ^C to exit.' => 'Füge der Worker-Warteschlange viele Testaufgaben hinzu. Mit ^C beenden.',
       'Additional Hashtags' => 'Weitere Hashtags',
       'Additional configuration options to hide.' => 'Zusätzliche zu versteckende Konfigurationsoptionen.',
       'Additional configuration options to lock.' => 'Zusätzliche zu sperrende Konfigurationsoptionen.',
-      'Additional details about this error:' => 'Weitere Details zu diesem Fehler:',
       'Additional human-readable information about the failure.' => 'Zusätzliche lesbare Informationen über den Fehler.',
       'Additional project tags.' => 'Weitere Projekt-Tags.',
       'Address' => 'Adresse',
       'Address "%s" (owned by "%s") is already unverified.' => 'Adresse "%s" (im Besitz von "%s") ist bereits unbestätigt.',
       'Address "%s" belongs to invalid user "%s".' => 'Adresse "%s" gehört zu ungültigem Benutzer "%s".',
       'Address "%s" is unknown.' => 'Adresse "%s" ist unbekannt.',
-      'Address %s' => 'Adresse %s',
       'Address (or addresses) to unverify.' => 'Zu deverizierende Adresse(n).',
       'Address Already Verified' => 'Email-Adresse bereits bestätigt',
-      'Address Disabled' => 'Adresse deaktiviert',
       'Address Duplicated in Input' => 'Adresse in Eingabe doppelt vorhanden',
       'Address Error' => 'Adressfehler',
       'Address Not Verified' => 'Adresse nicht verifiziert',
       'Address Verified' => 'Emailadresse wurde verifiziert',
-      'Address after stripping %d layers from: %s' => 'Adresse nach Entfernen von %d Schicht(en) aus: %s',
       'Address of the service.' => 'Adresse des Dienstes.',
       'Address ranges of cluster hosts.' => 'Adressbereiche der Cluster-Hosts.',
-      'Address: %s' => 'Adresse: %s',
-      'Adds a test provider to allow you to test payments. This allows users to make purchases by clicking a button without actually paying any money.' => 'Fügt einen Testanbieter hinzu, mit dem du Zahlungen testen kannst. So können Benutzer Einkäufe tätigen, indem sie auf eine Schaltfläche klicken, ohne tatsächlich Geld zu bezahlen.',
       'Adjacent Tab Not Found' => 'Benachbarter Tab nicht gefunden',
       'Adjacent tab ("%s") was not found on this panel. It may have been removed.' => 'Benachbarter Tab („%s") wurde auf diesem Panel nicht gefunden. Er wurde möglicherweise entfernt.',
       'Adjust %s in your PHP configuration to at least 32MB. When set to smaller value, large file uploads may not work properly.' => 'Passe %s in Deiner PHP-Konfiguration auf mindestens 32 MB an. Bei kleineren Werten funktionieren große Dateiuploads möglicherweise nicht korrekt.',
@@ -2258,8 +2453,6 @@ Im Allgemeinen solltest Du diese Option nur in einer Entwicklungsumgebung verwen
       'Adjust project icons.' => 'Projektsymbole anpassen.',
       'Adjusted **%s** create statements and **%s** use statements.' => '**%s** CREATE-Statements und **%s** USE-Statements angepasst.',
       'Admin' => 'Admin',
-      'Admin Policy' => 'Administrator-Richtlinie',
-      'Admin Required' => 'Administrator erforderlich',
       'Admin Server' => 'Admin-Server',
       'Administration' => 'Administration',
       'Administrative Read-Only Mode' => 'Administrativer Nur-Lese-Modus',
@@ -2267,10 +2460,8 @@ Im Allgemeinen solltest Du diese Option nur in einer Entwicklungsumgebung verwen
       'Administrative approvals are enabled (in %s), so all new users must have their accounts approved by an administrator.' => 'Administrative Freigaben sind aktiviert (in %s), daher müssen alle neuen Benutzerkonten von einem Administrator freigegeben werden.',
       'Administrator' => 'Administrator',
       'Administrators' => 'Administratoren',
-      'Administrators are limited in their ability to access or edit these accounts after account creation.' => 'Administratoren sind in ihrer Möglichkeit, diese Konten nach der Erstellung zu bearbeiten, eingeschränkt.',
       'Administrators can always view all activity.' => 'Administratoren können immer alle Aktivitäten einsehen.',
       'Administrators can take this action.' => 'Administratoren können diese Aktion ausführen.',
-      'Administrators have greater access to edit these accounts.' => 'Administratoren haben größere Möglichkeiten, diese Konten zu bearbeiten.',
       'Adopt today!' => 'Jetzt adoptieren!',
       'Advanced' => 'Erweitert',
       'Advanced Filter' => 'Erweiterte Filter',
@@ -2351,12 +2542,13 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'After entering the key, the application should display a numeric code. Enter that code below to confirm that you have configured the authenticator correctly:' => 'Nachdem Du den Schlüssel eingegeben hast, sollte die App einen numerischen Code anzeigen. Gib diesen Code unten ein, um zu bestätigen, dass Du den Authenticator korrekt eingerichtet hast:',
       'After executing under these conditions, this event would never execute again.' => 'Nach der Ausführung unter diesen Bedingungen würde dieses Ereignis nie wieder ausgeführt.',
       'After executing under these conditions, this event would next execute at %s.' => 'Nach der Ausführung unter diesen Bedingungen würde dieses Ereignis als Nächstes um %s ausgeführt.',
-      'After installing new PHP extensions, <strong>restart everything for the changes to take effect</strong>. For help with restarting everything, see %s in the documentation.' => 'Nachdem Du neue PHP-Erweiterungen installiert hast, <strong>starte alles neu, damit die Änderungen wirksam werden</strong>. Hilfe zum Neustart findest Du unter %s in der Dokumentation.',
+      'After installing new PHP extensions, restart everything for the changes to take effect. For help with restarting everything, see %s in the documentation.' => 'Nachdem Du neue PHP-Erweiterungen installiert hast, starte alles neu, damit die Änderungen wirksam werden. Hilfe zum Neustart findest Du unter %s in der Dokumentation.',
       'After logging in you should set a password for your account, or link your account to an external account that you can use to authenticate in the future.' => 'Nach der Anmeldung solltest Du ein Passwort für Dein Konto festlegen oder Dein Konto mit einem externen Konto verknüpfen, das Du künftig zur Authentifizierung verwenden kannst.',
       'After logging in, you can use the "Auth" application to add or restore authentication providers and allow normal logins to succeed.' => 'Nach der Anmeldung kannst Du die Anwendung "Auth" verwenden, um Authentifizierungsanbieter hinzuzufügen oder wiederherzustellen, sodass normale Anmeldungen wieder funktionieren.',
       'After rebuilding repository identities, run this command to clear this setup warning:' => 'Führe nach dem Neuaufbau der Repository-Identitäten diesen Befehl aus, um diese Setup-Warnung zu entfernen:',
       'After rebuilding the index, run this command to clear this setup warning:' => 'Führe nach dem Neuaufbau des Index diesen Befehl aus, um diese Setup-Warnung zu entfernen:',
       'After running this command, reload this page to see the new setting.' => 'Nach dem Ausführen dieses Befehls die Seite neu laden, um die neue Einstellung zu sehen.',
+      'After running, you should run `%s` and restart the server.' => 'Danach solltest Du `%s` ausführen und den Server neu starten.',
       'After you copy and paste this token, `arc` will complete the certificate install process for you.' => 'Nachdem du dieses Token kopiert und eingefügt hast, schließt `arc` die Zertifikatsinstallation für dich ab.',
       'After you download the private key, it will be destroyed. You will not be able to retrieve it if you lose your copy.' => 'Nachdem Du den privaten Schlüssel heruntergeladen hast, wird er zerstört. Wenn Du Deine Kopie verlierst, kannst Du ihn nicht wiederherstellen.',
       'After you have set a password, you can log in again in the future by going here:' => 'Nachdem Du ein Passwort gesetzt hast, kannst Du Dich in Zukunft hier wieder anmelden:',
@@ -2371,6 +2563,53 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'Algorithm' => 'Algorithmus',
       'Alias' => 'Alias',
       'Aliases' => 'Aliase',
+      'Aliases
+-------
+
+Aliases are alternate recognized keys for a field. For example, a field with
+a complex key like `examplePHIDs` might be have a simple version of that key
+as an alias, like `example`.
+
+Aliases work just like the primary key when prefilling forms. They make it
+easier to remember and use HTTP parameters by providing more natural ways to do
+some prefilling.
+
+For example, if a field has `examplePHIDs` as a key but has aliases `example`
+and `examples`, these three URIs will all do the same thing:
+
+```
+%s?examplePHIDs=...
+%s?examples=...
+%s?example=...
+```
+
+If a URI specifies multiple default values for a field, the value using the
+primary key has precedence. Generally, you can not mix different aliases in
+a single URI.
+' => 'Aliase
+------
+
+Aliase sind alternative Schlüssel, die für ein Feld erkannt werden. Ein Feld mit einem
+komplexen Schlüssel wie `examplePHIDs` könnte zum Beispiel eine einfache Version dieses
+Schlüssels als Alias haben, etwa `example`.
+
+Aliase funktionieren beim Vorausfüllen von Formularen genau wie der Hauptschlüssel. Sie
+machen HTTP-Parameter leichter merkbar und benutzbar, weil sie natürlichere Wege zum
+Vorausfüllen bieten.
+
+Hat ein Feld zum Beispiel den Schlüssel `examplePHIDs` und die Aliase `example` und
+`examples`, bewirken diese drei URIs alle dasselbe:
+
+```
+%s?examplePHIDs=...
+%s?examples=...
+%s?example=...
+```
+
+Gibt eine URI mehrere Standardwerte für ein Feld an, hat der Wert mit dem
+Hauptschlüssel Vorrang. Grundsätzlich kannst Du verschiedene Aliase nicht in einer
+einzigen URI mischen.
+',
       'Align Bottom' => 'Unten ausrichten',
       'Align Middle' => 'Mittig ausrichten',
       'All' => 'Alle',
@@ -2380,7 +2619,6 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'All Artifacts' => 'Alle Artefakte',
       'All Atoms' => 'Alle Atome',
       'All Authorizations' => 'Alle Autorisierungen',
-      'All Backers' => 'Alle Unterstützer',
       'All Badges' => 'Alle Trophäen',
       'All Bindings' => 'Alle Bindungen',
       'All Blogs' => 'Alle Blogs',
@@ -2390,7 +2628,6 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'All Builds' => 'Alle Builds',
       'All Call Logs' => 'Alle Aufrufprotokolle',
       'All Changesets' => 'Alle Changesets',
-      'All Charges' => 'Alle Abbuchungen',
       'All Commits' => 'Alle Quellcode-Änderungen',
       'All Content' => 'Gesamter Inhalt',
       'All Context Shown' => 'Kompletter Kontext angezeigt',
@@ -2404,7 +2641,6 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'All Diffs' => 'Alle Diffs',
       'All Documents' => 'Alle Dokumente',
       'All Edit Engines' => 'Alle Bearbeitungs-Engines',
-      'All Engineering' => 'Alles aus Engineering',
       'All Events' => 'Alle Termine',
       'All Exports' => 'Alle Exporte',
       'All Forms' => 'Alle Formulare',
@@ -2412,7 +2648,6 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'All Icons' => 'Alle Symbole',
       'All Identities' => 'Alle Identitäten',
       'All Imports' => 'Alle Importe',
-      'All Initiatives' => 'Alle Initiativen',
       'All Interfaces' => 'Alle Schnittstellen',
       'All Items' => 'Alle Elemente',
       'All Jobs' => 'Alle Aufträge',
@@ -2421,7 +2656,6 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'All Lint' => 'Alle Lint-Meldungen',
       'All Logs' => 'Alle Protokolle',
       'All Matching Rules' => 'Alle passenden Regeln',
-      'All Merchants' => 'Alle Händler',
       'All Messages' => 'Alle Nachrichten',
       'All Methods' => 'Alle Methoden',
       'All Mocks' => 'Alle Entwürfe',
@@ -2451,7 +2685,6 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'All Revisions' => 'Alle Versionen',
       'All Rooms' => 'Alle Chats',
       'All Samples' => 'Alle Samples',
-      'All Scan' => 'Alles aus Scan',
       'All Services' => 'Alle Dienste',
       'All Settings' => 'Alle Einstellungen',
       'All Signatures' => 'Alle Unterschriften',
@@ -2459,7 +2692,6 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'All Spaces' => 'Alle Zonen',
       'All Steps' => 'Alle Schritte',
       'All Stories' => 'Alle Neuigkeiten',
-      'All Subscriptions' => 'Alle Abonnements',
       'All Sync Logs' => 'Alle Sync-Logs',
       'All Targets' => 'Alle Ziele',
       'All Tasks' => 'Alle Aufgaben',
@@ -2471,18 +2703,16 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'All URLs' => 'Alle URLs',
       'All Users' => 'Alle Benutzer',
       'All Versions' => 'Alle Versionen',
-      'All arguments to "%s(...)" must be integers, found "%s" in position %d.' => 'Alle Argumente für "%s(...)" müssen Ganzzahlen sein, "%s" wurde an Position %d gefunden.',
       'All blueprints failed to allocate a suitable new resource when trying to allocate lease ("%s").' => 'Alle Blaupausen haben beim Versuch, Lease ("%s") zuzuweisen, eine geeignete neue Ressource zu reservieren.',
       'All builds will restart.' => 'Alle Builds werden neu gestartet.',
       'All concerns with %s have now been addressed.' => 'Alle Bedenken zu %s wurden nun behoben.',
       'All concerns with this commit have now been addressed.' => 'Alle Bedenken zu diesem Commit wurden nun behoben.',
       'All conditions matched.' => 'Alle Bedingungen wurden erfüllt.',
-      'All members of the account ("%s") for this subscription ("%s") are disabled.' => 'Alle Mitglieder des Kontos ("%s") für dieses Abonnement ("%s") sind deaktiviert.',
       'All object types' => 'Alle Objekttypen',
       'All of the addresses appear to be valid invite recipients. Confirm the actions below to continue.' => 'Alle Adressen scheinen gültige Einladungsempfänger zu sein. Bestätige die Aktionen unten, um fortzufahren.',
       'All of the configured Fulltext Search services failed.' => 'Alle konfigurierten Volltextsuche-Dienste sind ausgefallen.',
-      'All of the payment providers for this merchant are disabled.' => 'Alle Zahlungsanbieter für diesen Händler sind deaktiviert.',
       'All publishing is disabled for this repository.' => 'Alle Veröffentlichungen sind für dieses Repository deaktiviert.',
+      'All settings (system and applications) are available under "%s" in the navigation menu.' => 'Alle Einstellungen (System und Anwendungen) findest Du im Navigationsmenü unter "%s".',
       'All sprites in a \'%s\' sheet must have the same height.' => 'Alle Sprites in einem \'%s\'-Sheet müssen die gleiche Höhe haben.',
       'All sprites in a \'%s\' sheet must have the same width.' => 'Alle Sprites in einem \'%s\'-Sheet müssen die gleiche Breite haben.',
       'All storage engines failed to write file:' => 'Alle Speicher-Engines konnten die Datei nicht schreiben:',
@@ -2499,7 +2729,6 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'Allow Conduit Access' => 'Conduit-Zugriff erlauben',
       'Allow Conduit access?' => 'Conduit-Zugriff erlauben?',
       'Allow Dangerous Changes' => 'Gefährliche Änderungen erlauben',
-      'Allow Disabled' => 'Deaktiviert erlauben',
       'Allow Enormous Changes' => 'Riesige Änderungen erlauben',
       'Allow Git LFS' => 'Git LFS erlauben',
       'Allow Git Large File Storage (LFS).' => 'Git Large File Storage (LFS) aktivieren.',
@@ -2529,7 +2758,7 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'Allow users to set object visibility to public.' => 'Benutzern erlauben, die Objektsichtbarkeit auf öffentlich zu setzen.Erlaube Benutzern, ein Objekt für die Öffentlichkeit zugänglich zu machen.',
       'Allow users to unlink account credentials for this provider from existing accounts. If you disable this, accounts will be permanently bound to provider accounts.' => 'Benutzern erlauben, Zugangsdaten für diesen Anbieter von bestehenden Konten zu lösen. Wenn Du das deaktivierst, bleiben Konten dauerhaft an Anbieterkonten gebunden.',
       'Allowed' => 'Erlaubt',
-      'Allowed editor "xyz://" template: %s.' => 'Erlaubte Vorlage für den Editor "xyz://": %s.',
+      'Allowed Extension Stores to use.' => 'Erlaubte Erweiterungs-Stores.',
       'Allows "Accepted" to act as a closed status.' => 'Erlaubt "Akzeptiert" als geschlossenen Status zu fungieren.',
       'Allows Drydock to check out working copies of repositories.' => 'Ermöglicht Drydock, Arbeitskopien von Repositories auszuchecken.',
       'Allows Drydock to lease existing hosts defined in an Almanac service pool.' => 'Ermöglicht Drydock, bestehende Hosts aus einem Almanac-Dienstpool zu mieten.',
@@ -2542,8 +2771,6 @@ Ich habe gerade mit @alincoln gesprochen, und er hat mir gezeigt, dass er das be
       'Allows easily alignment of left/right UI elements.' => 'Ermöglicht einfache Ausrichtung linker/rechter UI-Elemente.',
       'Allows the author of a commit to be an auditor and accept their own commits. Note that this behavior is different from the behavior implied by the name of the option: long ago, it did something else.' => 'Erlaubt es dem Autor eines Commits, Auditor zu sein und seine eigenen Commits zu akzeptieren. Beachte, dass dieses Verhalten von dem abweicht, was der Name der Option nahelegt: Vor langer Zeit tat sie etwas anderes.',
       'Allows users to accept their own revisions.' => 'Den Benutzern erlauben, ihre eigenen Versionen freizuschalten',
-      'Allows you to accept credit or debit card payments with a stripe.com account.' => 'Ermöglicht es dir, mit einem Konto bei stripe.com Kredit- oder Debitkartenzahlungen zu akzeptieren.',
-      'Allows you to accept various payment instruments with a paypal.com account.' => 'Ermöglicht es dir, mit einem Konto bei paypal.com verschiedene Zahlungsmittel zu akzeptieren.',
       'Allows you to add a footer with links in it to most pages. You might want to use these links to point at legal information or an about page.
 
 Specify a list of dictionaries. Each dictionary describes a footer item. These keys are supported:
@@ -2577,8 +2804,7 @@ a dictionary, which may contain these keys:
       selected as the milestone icon.
 
 You can look at the default configuration below for an example of a valid
-configuration.
-EOTEXT' => 'Erlaubt Dir, die verfügbaren Projektsymbole zu ändern und anzupassen.
+configuration.' => 'Erlaubt Dir, die verfügbaren Projektsymbole zu ändern und anzupassen.
 
 Eine Liste verfügbarer Symbole findest Du unter {nav UIExamples > Icons and Images}.
 
@@ -2593,12 +2819,450 @@ Konfiguriere eine Liste von Symbolspezifikationen. Jede Symbolspezifikation soll
   - `special` //Optionaler String.// Markiert ein Symbol als spezielles Symbol:
     - `milestone` Dies ist das Symbol für Meilensteine. Genau ein Symbol muss als Meilenstein-Symbol ausgewählt sein.
 
-Ein Beispiel für eine gültige Konfiguration findest Du in der Standardkonfiguration weiter unten.
-EOTEXT',
+Ein Beispiel für eine gültige Konfiguration findest Du in der Standardkonfiguration weiter unten.',
       'Allows you to define project subtypes. For a more detailed description of
-subtype configuration, see @{config:maniphest.subtypes}.
-EOTEXT' => 'Erlaubt Dir, Projekt-Subtypen zu definieren. Eine ausführlichere Beschreibung der Subtyp-Konfiguration findest Du unter @{config:maniphest.subtypes}.
-EOTEXT',
+subtype configuration, see @{config:maniphest.subtypes}.' => 'Erlaubt Dir, Projekt-Subtypen zu definieren. Eine ausführlichere Beschreibung der Subtyp-Konfiguration findest Du unter @{config:maniphest.subtypes}.',
+      'Allows you to define task subtypes. Subtypes let you hide fields you don\'t
+need to simplify the workflows for editing tasks.
+
+To define subtypes, provide a list of subtypes. Each subtype should be a
+dictionary with these keys:
+
+  - `key` //Required string.// Internal identifier for the subtype, like
+    "task", "feature", or "bug".
+  - `name` //Required string.// Human-readable name for this subtype, like
+    "Task", "Feature Request" or "Bug Report".
+  - `tag` //Optional string.// Tag text for this subtype.
+  - `color` //Optional string.// Display color for this subtype.
+  - `icon` //Optional string.// Icon for the subtype.
+  - `children` //Optional map.// Configure options shown to the user when
+     they "Create Subtask". See below.
+  - `fields` //Optional map.// Configure field behaviors. See below.
+  - `mutations` //Optional list.// Configure which subtypes this subtype
+    can easily be converted to by using the "Change Subtype" action. See below.
+
+Each subtype must have a unique key, and you must define a subtype with
+the key "%s", which is used as a default subtype.
+
+The tag text (`tag`) is used to set the text shown in the subtype tag on list
+views and workboards. If you do not configure it, the default subtype will have
+no subtype tag and other subtypes will use their name as tag text.
+
+The `children` key allows you to configure which options are presented to the
+user when they "Create Subtask" from a task of this subtype. You can specify
+these keys:
+
+  - `subtypes`: //Optional list<string>.// Show users creation forms for these
+    task subtypes.
+  - `forms`: //Optional list<string|int>.// Show users these specific forms,
+    in order.
+
+If you don\'t specify either constraint, users will be shown creation forms
+for the same subtype.
+
+For example, if you have a "quest" subtype and do not configure `children`,
+users who click "Create Subtask" will be presented with all create forms for
+"quest" tasks.
+
+If you want to present them with forms for a different task subtype or set of
+subtypes instead, use `subtypes`:
+
+```
+  {
+    ...
+    "children": {
+      "subtypes": ["objective", "boss", "reward"]
+    }
+    ...
+  }
+```
+
+If you want to present them with specific forms, use `forms` and specify form
+IDs:
+
+```
+  {
+    ...
+    "children": {
+      "forms": [12, 16]
+    }
+    ...
+  }
+```
+
+When specifying forms by ID explicitly, the order you specify the forms in will
+be used when presenting options to the user.
+
+If only one option would be presented, the user will be taken directly to the
+appropriate form instead of being prompted to choose a form.
+
+The `fields` key can configure the behavior of custom fields on specific
+task subtypes. For example:
+
+```
+  {
+    ...
+    "fields": {
+      "custom.some-field": {
+        "disabled": true
+      }
+    }
+    ...
+  }
+```
+
+Each field supports these options:
+
+  - `disabled` //Optional bool.// Allows you to disable fields on certain
+    subtypes.
+  - `name` //Optional string.// Custom name of this field for the subtype.
+
+
+The `mutations` key allows you to control the behavior of the "Change Subtype"
+action above the comment area. By default, this action allows users to change
+the task subtype into any other subtype.
+
+If you\'d prefer to make it more difficult to change subtypes or offer only a
+subset of subtypes, you can specify the list of subtypes that "Change Subtypes"
+offers. For example, if you have several similar subtypes and want to allow
+tasks to be converted between them but not easily converted to other types,
+you can make the "Change Subtypes" control show only these options like this:
+
+```
+  {
+    ...
+    "mutations": ["bug", "issue", "defect"]
+    ...
+  }
+```
+
+If you specify an empty list, the "Change Subtypes" action will be completely
+hidden.
+
+This mutation list is advisory and only configures the UI. Tasks may still be
+converted across subtypes freely by using the Bulk Editor or API.
+' => 'Erlaubt Dir, Aufgaben-Untertypen zu definieren. Mit Untertypen kannst Du
+Felder ausblenden, die Du nicht brauchst, um die Abläufe beim Bearbeiten von
+Aufgaben zu vereinfachen.
+
+Um Untertypen zu definieren, gib eine Liste von Untertypen an. Jeder Untertyp
+sollte ein Dictionary mit diesen Schlüsseln sein:
+
+  - `key` //Erforderlicher String.// Interner Bezeichner für den Untertyp, z. B.
+    "task", "feature" oder "bug".
+  - `name` //Erforderlicher String.// Menschenlesbarer Name für diesen
+    Untertyp, z. B. "Aufgabe", "Funktionswunsch" oder "Fehlerbericht".
+  - `tag` //Optionaler String.// Tag-Text für diesen Untertyp.
+  - `color` //Optionaler String.// Anzeigefarbe für diesen Untertyp.
+  - `icon` //Optionaler String.// Symbol für den Untertyp.
+  - `children` //Optionale Map.// Konfiguriert die Optionen, die dem Benutzer
+     bei "Neue Unteraufgabe" angezeigt werden. Siehe unten.
+  - `fields` //Optionale Map.// Konfiguriert das Verhalten von Feldern. Siehe
+    unten.
+  - `mutations` //Optionale Liste.// Konfiguriert, in welche Untertypen dieser
+    Untertyp über die Aktion "Untertyp ändern" einfach umgewandelt werden kann.
+    Siehe unten.
+
+Jeder Untertyp muss einen eindeutigen Schlüssel haben, und Du musst einen
+Untertyp mit dem Schlüssel "%s" definieren, der als Standard-Untertyp dient.
+
+Der Tag-Text (`tag`) legt den Text fest, der im Untertyp-Tag in Listenansichten
+und auf Arbeitsflächen angezeigt wird. Wenn Du ihn nicht konfigurierst, hat der
+Standard-Untertyp kein Untertyp-Tag, und andere Untertypen verwenden ihren
+Namen als Tag-Text.
+
+Mit dem Schlüssel `children` konfigurierst Du, welche Optionen dem Benutzer
+angeboten werden, wenn er bei einer Aufgabe dieses Untertyps "Neue
+Unteraufgabe" wählt. Du kannst diese Schlüssel angeben:
+
+  - `subtypes`: //Optionale list<string>.// Zeigt Benutzern
+    Erstellungsformulare für diese Aufgaben-Untertypen.
+  - `forms`: //Optionale list<string|int>.// Zeigt Benutzern genau diese
+    Formulare in dieser Reihenfolge.
+
+Wenn Du keine der beiden Einschränkungen angibst, bekommen Benutzer
+Erstellungsformulare für denselben Untertyp angezeigt.
+
+Wenn Du z. B. einen Untertyp "quest" hast und `children` nicht konfigurierst,
+bekommen Benutzer, die auf "Neue Unteraufgabe" klicken, alle
+Erstellungsformulare für "quest"-Aufgaben angeboten.
+
+Wenn Du ihnen stattdessen Formulare für einen anderen Aufgaben-Untertyp oder
+eine Gruppe von Untertypen anbieten willst, verwende `subtypes`:
+
+```
+  {
+    ...
+    "children": {
+      "subtypes": ["objective", "boss", "reward"]
+    }
+    ...
+  }
+```
+
+Wenn Du ihnen bestimmte Formulare anbieten willst, verwende `forms` und gib
+Formular-IDs an:
+
+```
+  {
+    ...
+    "children": {
+      "forms": [12, 16]
+    }
+    ...
+  }
+```
+
+Wenn Du Formulare explizit per ID angibst, werden die Optionen dem Benutzer in
+der von Dir angegebenen Reihenfolge angeboten.
+
+Wenn nur eine einzige Option angeboten würde, landet der Benutzer direkt im
+passenden Formular, statt erst ein Formular auswählen zu müssen.
+
+Mit dem Schlüssel `fields` kannst Du das Verhalten benutzerdefinierter Felder
+für bestimmte Aufgaben-Untertypen konfigurieren. Zum Beispiel:
+
+```
+  {
+    ...
+    "fields": {
+      "custom.some-field": {
+        "disabled": true
+      }
+    }
+    ...
+  }
+```
+
+Jedes Feld unterstützt diese Optionen:
+
+  - `disabled` //Optionaler Bool.// Erlaubt Dir, Felder für bestimmte
+    Untertypen zu deaktivieren.
+  - `name` //Optionaler String.// Eigener Name dieses Felds für den Untertyp.
+
+
+Mit dem Schlüssel `mutations` steuerst Du das Verhalten der Aktion "Untertyp
+ändern" über dem Kommentarbereich. Standardmäßig können Benutzer mit dieser
+Aktion den Aufgaben-Untertyp in jeden anderen Untertyp ändern.
+
+Wenn Du das Ändern von Untertypen erschweren oder nur eine Teilmenge von
+Untertypen anbieten möchtest, kannst Du die Liste der Untertypen angeben, die
+"Untertyp ändern" anbietet. Wenn Du z. B. mehrere ähnliche Untertypen hast und
+Aufgaben zwischen diesen, aber nicht so einfach in andere Typen umwandeln
+lassen willst, kannst Du das Steuerelement "Untertyp ändern" so nur diese
+Optionen anzeigen lassen:
+
+```
+  {
+    ...
+    "mutations": ["bug", "issue", "defect"]
+    ...
+  }
+```
+
+Wenn Du eine leere Liste angibst, wird die Aktion "Untertyp ändern" komplett
+ausgeblendet.
+
+Diese Umwandlungsliste ist nur eine Empfehlung und konfiguriert lediglich die
+Oberfläche. Über den Stapel-Editor oder die API lassen sich Aufgaben weiterhin
+beliebig zwischen Untertypen umwandeln.
+',
+      'Allows you to edit or override the default priorities available in Maniphest,
+like "High", "Normal" and "Low". The configuration should contain a map of
+numeric priority values (where larger numbers correspond to higher priorities)
+to priority specifications (see defaults below for examples).
+
+The keys you can define for a priority are:
+
+  - `name` //Required string.// Name of the priority.
+  - `keywords` //Required list<string>.// List of unique keywords which identify
+    this priority, like "high" or "low". Each priority must have at least one
+    keyword and two priorities may not share the same keyword.
+  - `short` //Optional string.// Alternate shorter name, used in UIs where
+    there is less space available.
+  - `color` //Optional string.// Color for this priority, like "red" or
+    "blue".
+  - `disabled` //Optional bool.// Set to true to prevent users from choosing
+    this priority when creating or editing tasks. Existing tasks will not be
+    affected, and can be batch edited to a different priority or left to
+    eventually die out.
+
+You can choose the default priority for newly created tasks with
+"maniphest.default-priority".' => 'Erlaubt Dir, die in Maniphest verfügbaren Standardprioritäten wie "Hoch",
+"Normal" und "Niedrig" zu bearbeiten oder zu überschreiben. Die Konfiguration
+sollte eine Zuordnung von numerischen Prioritätswerten (größere Zahlen
+entsprechen höheren Prioritäten) zu Prioritätsspezifikationen enthalten
+(Beispiele siehe Standardwerte unten).
+
+Folgende Schlüssel kannst Du für eine Priorität festlegen:
+
+  - `name` //Erforderlicher String.// Name der Priorität.
+  - `keywords` //Erforderliche list<string>.// Liste eindeutiger
+    Schlüsselwörter, die diese Priorität kennzeichnen, z. B. "high" oder
+    "low". Jede Priorität muss mindestens ein Schlüsselwort haben, und zwei
+    Prioritäten dürfen sich kein Schlüsselwort teilen.
+  - `short` //Optionaler String.// Alternativer, kürzerer Name, der in
+    Oberflächen mit weniger Platz verwendet wird.
+  - `color` //Optionaler String.// Farbe für diese Priorität, z. B. "red" oder
+    "blue".
+  - `disabled` //Optionaler Bool.// Auf true setzen, damit Benutzer diese
+    Priorität beim Erstellen oder Bearbeiten von Aufgaben nicht mehr auswählen
+    können. Bestehende Aufgaben sind nicht betroffen und können per
+    Stapelverarbeitung auf eine andere Priorität geändert oder dem
+    allmählichen Aussterben überlassen werden.
+
+Die Standardpriorität für neu erstellte Aufgaben legst Du mit
+"maniphest.default-priority" fest.',
+      'Allows you to edit, add, or remove the task statuses available in Maniphest,
+like "Open", "Resolved" and "Invalid". The configuration should contain a map
+of status constants to status specifications (see defaults below for examples).
+
+The constant for each status should be 1-12 characters long and  contain only
+lowercase letters and digits. Valid examples are "open", "closed", and
+"invalid". Users will not normally see these values.
+
+The keys you can provide in a specification are:
+
+  - `name` //Required string.// Name of the status, like "Invalid".
+  - `name.full` //Optional string.// Longer name, like "Closed, Invalid". This
+    appears on the task detail view in the header.
+  - `name.action` //Optional string.// Action name for email subjects, like
+    "Marked Invalid".
+  - `closed` //Optional bool.// Statuses are either "open" or "closed".
+    Specifying `true` here will mark the status as closed (like "Resolved" or
+    "Invalid"). By default, statuses are open.
+  - `special` //Optional string.// Mark this status as special. The special
+    statuses are:
+    - `default` This is the default status for newly created tasks. You must
+      designate one status as default, and it must be an open status.
+    - `closed` This is the default status for closed tasks (for example, tasks
+      closed via the "!close" action in email or via the quick close button in
+      Maniphest). You must designate one status as the default closed status,
+      and it must be a closed status.
+    - `duplicate` This is the status used when tasks are merged into one
+      another as duplicates. You must designate one status for duplicates,
+      and it must be a closed status.
+  - `transaction.icon` //Optional string.// Allows you to choose a different
+    icon to use for this status when showing status changes in the transaction
+    log. Please see UIExamples, Icons and Images for a list.
+  - `transaction.color` //Optional string.// Allows you to choose a different
+    color to use for this status when showing status changes in the transaction
+    log.
+  - `silly` //Optional bool.// Marks this status as silly, and thus wholly
+    inappropriate for use by serious businesses.
+  - `prefixes` //Optional list<string>.// Allows you to specify a list of
+    text prefixes which will trigger a task transition into this status
+    when mentioned in a commit message. For example, providing "closes" here
+    will allow users to move tasks to this status by writing `Closes T123` in
+    commit messages.
+  - `suffixes` //Optional list<string>.// Allows you to specify a list of
+    text suffixes which will trigger a task transition into this status
+    when mentioned in a commit message, after a valid prefix. For example,
+    providing "as invalid" here will allow users to move tasks
+    to this status by writing `Closes T123 as invalid`, even if another status
+    is selected by the "Closes" prefix.
+  - `keywords` //Optional list<string>.// Allows you to specify a list
+    of keywords which can be used with `!status` commands in email to select
+    this status.
+  - `disabled` //Optional bool.// Marks this status as no longer in use so
+    tasks can not be created or edited to have this status. Existing tasks with
+    this status will not be affected, but you can batch edit them or let them
+    die out on their own.
+  - `claim` //Optional bool.// By default, closing an unassigned task claims
+    it. You can set this to `false` to disable this behavior for a particular
+    status.
+  - `locked` //Optional string.// Lock tasks in this status. Specify "comments"
+    to lock comments (users who can edit the task may override this lock).
+    Specify "edits" to prevent anyone except the task owner from making edits.
+  - `mfa` //Optional bool.// Require all edits to this task to be signed with
+    multi-factor authentication.
+
+Statuses will appear in the UI in the order specified. Note the status marked
+`special` as `duplicate` is not settable directly and will not appear in UI
+elements, and that any status marked `silly` does not appear if the software
+is configured with `phabricator.serious-business` set to true.
+
+Examining the default configuration and examples below will probably be helpful
+in understanding these options.
+' => 'Erlaubt Dir, die in Maniphest verfügbaren Aufgabenstatus wie "Offen",
+"Gelöst" und "Ungültig" zu bearbeiten, hinzuzufügen oder zu entfernen. Die
+Konfiguration sollte eine Zuordnung von Statuskonstanten zu
+Statusspezifikationen enthalten (Beispiele siehe Standardwerte unten).
+
+Die Konstante für jeden Status sollte 1-12 Zeichen lang sein und nur
+Kleinbuchstaben und Ziffern enthalten. Gültige Beispiele sind "open", "closed"
+und "invalid". Benutzer bekommen diese Werte normalerweise nicht zu sehen.
+
+Folgende Schlüssel kannst Du in einer Spezifikation angeben:
+
+  - `name` //Erforderlicher String.// Name des Status, z. B. "Ungültig".
+  - `name.full` //Optionaler String.// Längerer Name, z. B. "Geschlossen, Ungültig".
+    Er erscheint in der Detailansicht der Aufgabe in der Kopfzeile.
+  - `name.action` //Optionaler String.// Aktionsname für E-Mail-Betreffzeilen,
+    z. B. "Als ungültig markiert".
+  - `closed` //Optionaler Bool.// Status sind entweder "offen" oder
+    "geschlossen". Mit `true` wird der Status als geschlossen markiert (wie
+    "Gelöst" oder "Ungültig"). Standardmäßig sind Status offen.
+  - `special` //Optionaler String.// Markiert diesen Status als speziell. Die
+    speziellen Status sind:
+    - `default` Dies ist der Standardstatus für neu erstellte Aufgaben. Du
+      musst einen Status als Standard festlegen, und es muss ein offener
+      Status sein.
+    - `closed` Dies ist der Standardstatus für geschlossene Aufgaben (z. B.
+      Aufgaben, die über die Aktion "!close" per E-Mail oder über die
+      Schnellschließen-Schaltfläche in Maniphest geschlossen werden). Du musst
+      einen Status als Standard-Schließstatus festlegen, und es muss ein
+      geschlossener Status sein.
+    - `duplicate` Dies ist der Status, der verwendet wird, wenn Aufgaben als
+      Duplikate zusammengeführt werden. Du musst einen Status für Duplikate
+      festlegen, und es muss ein geschlossener Status sein.
+  - `transaction.icon` //Optionaler String.// Erlaubt Dir, ein anderes Symbol
+    für diesen Status festzulegen, das bei Statusänderungen im
+    Transaktionsprotokoll angezeigt wird. Eine Liste findest Du unter
+    UIExamples, Icons and Images.
+  - `transaction.color` //Optionaler String.// Erlaubt Dir, eine andere Farbe
+    für diesen Status festzulegen, die bei Statusänderungen im
+    Transaktionsprotokoll verwendet wird.
+  - `silly` //Optionaler Bool.// Markiert diesen Status als albern und damit
+    als völlig ungeeignet für ernsthafte Unternehmen.
+  - `prefixes` //Optionale list<string>.// Erlaubt Dir, eine Liste von
+    Textpräfixen anzugeben, die eine Aufgabe in diesen Status überführen,
+    wenn sie in einer Commit-Nachricht erwähnt werden. Wenn Du hier z. B.
+    "closes" angibst, können Benutzer Aufgaben in diesen Status versetzen,
+    indem sie `Closes T123` in Commit-Nachrichten schreiben.
+  - `suffixes` //Optionale list<string>.// Erlaubt Dir, eine Liste von
+    Textsuffixen anzugeben, die eine Aufgabe in diesen Status überführen,
+    wenn sie in einer Commit-Nachricht nach einem gültigen Präfix erwähnt
+    werden. Wenn Du hier z. B. "as invalid" angibst, können Benutzer Aufgaben
+    in diesen Status versetzen, indem sie `Closes T123 as invalid` schreiben,
+    auch wenn durch das Präfix "Closes" ein anderer Status ausgewählt wird.
+  - `keywords` //Optionale list<string>.// Erlaubt Dir, eine Liste von
+    Schlüsselwörtern anzugeben, mit denen dieser Status über `!status`-Befehle
+    per E-Mail ausgewählt werden kann.
+  - `disabled` //Optionaler Bool.// Markiert diesen Status als nicht mehr in
+    Gebrauch, sodass Aufgaben nicht mehr mit diesem Status erstellt oder auf
+    ihn geändert werden können. Bestehende Aufgaben mit diesem Status sind
+    nicht betroffen, Du kannst sie aber per Stapelverarbeitung bearbeiten oder
+    sie von selbst aussterben lassen.
+  - `claim` //Optionaler Bool.// Standardmäßig übernimmt man eine nicht
+    zugewiesene Aufgabe, wenn man sie schließt. Mit `false` kannst Du dieses
+    Verhalten für einen bestimmten Status abschalten.
+  - `locked` //Optionaler String.// Sperrt Aufgaben in diesem Status. Gib
+    "comments" an, um Kommentare zu sperren (Benutzer, die die Aufgabe
+    bearbeiten dürfen, können diese Sperre übergehen). Gib "edits" an, um
+    Bearbeitungen durch alle außer dem Eigentümer der Aufgabe zu verhindern.
+  - `mfa` //Optionaler Bool.// Verlangt, dass alle Bearbeitungen dieser Aufgabe
+    mit Multi-Faktor-Authentifizierung signiert werden.
+
+Die Status erscheinen in der Oberfläche in der angegebenen Reihenfolge. Beachte,
+dass der als `special` `duplicate` markierte Status nicht direkt gesetzt werden
+kann und nicht in Oberflächenelementen erscheint, und dass ein als `silly`
+markierter Status nicht erscheint, wenn die Software mit
+`phabricator.serious-business` auf true konfiguriert ist.
+
+Ein Blick auf die Standardkonfiguration und die Beispiele unten hilft
+vermutlich beim Verständnis dieser Optionen.
+',
       'Allows you to relabel project colors.
 
 The list of available colors can not be expanded, but the existing colors may
@@ -2613,8 +3277,7 @@ dictionary, which may contain these keys:
     new projects. Exactly one color must be selected as the default.
 
 You can look at the default configuration below for an example of a valid
-configuration.
-EOTEXT' => 'Erlaubt Dir, Projektfarben neu zu benennen.
+configuration.' => 'Erlaubt Dir, Projektfarben neu zu benennen.
 
 Die Liste der verfügbaren Farben kann nicht erweitert werden, aber die vorhandenen Farben können neue Bezeichnungen erhalten.
 
@@ -2622,10 +3285,10 @@ Konfiguriere eine Liste von Farbspezifikationen. Jede Farbspezifikation sollte e
 
   - `key` //Erforderlicher String.// Der interne Schlüssel der Farbe.
   - `name` //Erforderlicher String.// Menschenlesbare Bezeichnung der Farbe.
-  - `default` //Optionaler Bool.// Wählt die Standardfarbe aus, die beim Erstellen neuer Projekte verwendet wird. Genau eine Farbe muss als Standard ausgewählt sein.
+  - `default` //Optionaler Bool.// Wählt die Standardfarbe aus, die beim Erstellen
+    neuer Projekte verwendet wird. Genau eine Farbe muss als Standard ausgewählt sein.
 
-Ein Beispiel für eine gültige Konfiguration findest Du in der Standardkonfiguration weiter unten.
-EOTEXT',
+Ein Beispiel für eine gültige Konfiguration findest Du in der Standardkonfiguration weiter unten.',
       'Allows you to remove levity and jokes from the UI.' => 'Ermöglicht das Entfernen von Humor und Witzen aus der Benutzeroberfläche.',
       'Almanac' => 'Almanac',
       'Almanac Binding' => 'Almanac-Bindung',
@@ -2670,10 +3333,8 @@ EOTEXT',
       'Already Complete' => 'Bereits abgeschlossen',
       'Already Declined' => 'Bereits abgelehnt',
       'Already Default' => 'Bereits Vorgabe',
-      'Already Disabled' => 'Bereits deaktiviert',
       'Already Dismissed' => 'Bereits ausgeblendet',
       'Already Editable' => 'Bereits bearbeitbar',
-      'Already Enabled' => 'Bereits aktiviert',
       'Already In Flight' => 'Bereits in Bearbeitung',
       'Already Marked' => 'Bereits markiert',
       'Already Published' => 'Bereits veröffentlicht',
@@ -2686,7 +3347,6 @@ EOTEXT',
       'Alt Text' => 'Alt-Text',
       'Alternate' => 'Alternativ',
       'Alternate File Domain Not Configured' => 'Alternative Dateidomain nicht konfiguriert',
-      'Alternate Space' => 'Alternativer Bereich',
       'Alternate domain to serve files from.' => 'Alternative Domain für das Bereitstellen von Dateien.',
       'Alternative URIs that can access this service.' => 'Alternative URIs, die auf diesen Dienst zugreifen können.',
       'Although this may be the result of a misconfiguration or operational error, this is also the state you reach if a meteor recently obliterated a datacenter.' => 'Auch wenn dies das Ergebnis einer Fehlkonfiguration oder eines Betriebsfehlers sein kann, ist dies auch der Zustand, den du erreichst, wenn kürzlich ein Meteorit ein Rechenzentrum ausgelöscht hat.',
@@ -2700,12 +3360,9 @@ EOTEXT',
       'Amazon S3 bucket.' => 'Amazon-S3-Bucket.',
       'Amazon S3 is Only Partially Configured' => 'Amazon S3 ist nur teilweise konfiguriert',
       'Amazon S3 region where your S3 bucket is located. When you specify a region, you should also specify a corresponding endpoint with `amazon-s3.endpoint`. You can find a list of available regions and endpoints in the AWS documentation.' => 'Amazon-S3-Region, in der sich Dein S3-Bucket befindet. Wenn Du eine Region angibst, solltest Du auch den passenden Endpoint mit `amazon-s3.endpoint` angeben. Eine Liste verfügbarer Regionen und Endpoints findest Du in der AWS-Dokumentation.',
-      'Amazon SES' => 'Amazon SES',
       'Amazon Web Services' => 'Amazon Web Services',
       'Ambiguous Commit' => 'Mehrdeutiger Commit',
       'Ambiguous Leader' => 'Mehrdeutiger Leader',
-      'Amend paragraph, and add paragraph starting with punctuation' => 'Absatz ändern und Absatz hinzufügen, der mit Satzzeichen beginnt',
-      'Amount' => 'Betrag',
       'An %s already exists. Dispose of the previous guard before creating a new one.' => 'Es existiert bereits ein %s. Gib den vorherigen Guard frei, bevor du einen neuen erzeugst.',
       'An %s is being created in a context which permits unguarded writes unconditionally. This is not allowed and indicates a serious error.' => 'Ein %s wird in einem Kontext erzeugt, der ungeschützte Schreibzugriffe bedingungslos erlaubt. Das ist nicht zulässig und weist auf einen schwerwiegenden Fehler hin.',
       'An Administrator has placed this server into read-only mode.' => 'Ein Administrator hat diesen Server in den Nur-Lese-Modus versetzt.',
@@ -2723,7 +3380,6 @@ EOTEXT',
       'An event\'s start and end date and cancellation status changes.' => 'Beginn, Ende oder Absagestatus eines Termins ändern sich.',
       'An exception occurred executing Herald rule %s: "%s" Review the Herald transcripts and correct or disable the problematic rule.' => 'Beim Ausführen von Herald-Regel %s ist eine Ausnahme aufgetreten: "%s" Die Herald-Ablaufprotokolle prüfen und die fehlerhafte Regel korrigieren oder deaktivieren.',
       'An exception occurred executing Herald rule %s: Unknown action: "%s". Review the Herald transcripts and correct or disable the problematic rule.' => 'Beim Ausführen von Herald-Regel %s ist eine Ausnahme aufgetreten: Unbekannte Aktion: "%s". Die Herald-Ablaufprotokolle prüfen und die fehlerhafte Regel korrigieren oder deaktivieren.',
-      'An initiative\'s status changes.' => 'Der Status einer Initiative ändert sich.',
       'An integer.' => 'Eine ganze Zahl.',
       'An interface inherits the policies of the device it belongs to.' => 'Eine Schnittstelle erbt die Richtlinien des Geräts, zu dem sie gehört.',
       'An object name is required.' => 'Benötige einen Objektnamen.',
@@ -2743,9 +3399,6 @@ EOTEXT',
       'Ancestor Paths' => 'Vorfahren-Pfade',
       'Ancestor Projects' => 'Vorfahren-Projekte',
       'Ancestors Of' => 'Vorfahren von',
-      'Ancestry of \'%s\'' => 'Vorfahren von „%s"',
-      'Anchor digest of "%s".' => 'Anker-Digest von „%s".',
-      'Anchor for "%s".' => 'Anker für "%s".',
       'Anchors Away' => 'Anker lichten',
       'Animal' => 'Tier',
       'Announcement' => 'Ankündigung',
@@ -2764,7 +3417,6 @@ EOTEXT',
       'Another user made changes to this document after you began editing it. Do you want to overwrite their changes? (If you choose to overwrite their changes, you should review the document edit history to see what you overwrote, and then make another edit to merge the changes if necessary.)' => 'Ein anderer Benutzer hat dieses Dokument bearbeitet, nachdem du mit der Bearbeitung begonnen hast. Sollen seine Änderungen überschrieben werden? (Falls ja, bitte anschließend die Dokumentenhistorie prüfen und ggf. eine weitere Bearbeitung vornehmen, um die Änderungen zusammenzuführen.)',
       'Another verification email was sent to %s.' => 'Eine weitere Bestätigungsmail wurde an %s gesendet.',
       'Answer' => 'Antwort',
-      'Answer Comment' => 'Kommentar beantworten',
       'Answer History' => 'Fragen-Historie',
       'Answer Preview' => 'Vorschau der Antwort',
       'Answer Summary' => 'Antwortzusammenfassung',
@@ -2782,7 +3434,6 @@ EOTEXT',
       'Anyone' => 'Jeder',
       'Anyone can see the responses' => 'Alle können die Antworten sehen',
       'Anyone who can browse to this server will be able to register an account. To add email domain restrictions, configure %s.' => 'Jeder, der diesen Server aufrufen kann, kann ein Konto registrieren. Um E-Mail-Domain-Einschränkungen hinzuzufügen, konfiguriere %s.',
-      'Anyone who has a link to this page can view order history for this payment account.' => 'Jeder, der einen Link zu dieser Seite hat, kann die Bestellhistorie für dieses Zahlungskonto ansehen.',
       'Anyone who knows the URI for this export can view all event details as though they were logged in with your account.' => 'Jeder, der die URI dieses Exports kennt, kann alle Termindetails so ansehen, als wäre er mit deinem Konto angemeldet.',
       'Aphlict (%s) is running.' => 'Aphlict (%s) läuft.',
       'Aphlict Server (%s) exited normally.' => 'Aphlict-Server (%s) wurde normal beendet.',
@@ -2798,19 +3449,18 @@ EOTEXT',
       'Application "%s" is not a valid application which you have permission to see.' => 'Anwendung "%s" ist keine gültige Anwendung, die du anzeigen darfst.',
       'Application "%s" is not enabled!' => 'Anwendung „%s" ist nicht aktiviert!',
       'Application %d' => 'Anwendung %d',
-      'Application Controller' => 'Anwendungs-Controller',
-      'Application Controller, No Login Required' => 'Anwendungscontroller, kein Login erforderlich',
       'Application Disabled' => 'Anwendung deaktiviert',
       'Application Email' => 'Anwendungs-E-Mail',
       'Application Emails' => 'Anwendungs-Emails',
       'Application ID is required.' => 'Eine Anwendungs-ID ist erforderlich.',
       'Application Secret' => 'Anwendungs-Geheimnis',
       'Application Settings' => 'Anwendungseinstellungen',
-      'Application class \'%s\' for query \'%s\'.' => 'Anwendungsklasse \'%s\' für Abfrage \'%s\'.',
       'Application email ("%s") has an invalid default author ("%s").' => 'Anwendungs-Email ("%s") hat einen ungültigen Standard-Autor ("%s").',
       'Application search engine class "%s" is unknown. Query panels must use a known search engine class.' => 'Suchanbieter-Klasse „%s" ist unbekannt. Abfrage-Panele müssen eine bekannte Suchanbieter-Klasse verwenden.',
       'Application search engines of class "%s" can not be used to build dashboard panels.' => 'Suchanbieter der Klasse „%s" können nicht zum Erstellen von Dashboard-Panelen verwendet werden.',
       'Application secret is required.' => 'Ein Anwendungs-Secret ist erforderlich.',
+      'Application source' => 'Anwendungsquelle',
+      'Application-specific settings are moved into dedicated pages found under %s > %s.' => 'Anwendungsspezifische Einstellungen befinden sich jetzt auf eigenen Seiten unter %s > %s.',
       'Applications' => 'Anwendungen',
       'Applications and Extensions' => 'Anwendungen und Erweiterungen',
       'Applications application' => 'Anwendungen-Anwendung',
@@ -2878,7 +3528,6 @@ EOTEXT',
       'Approves a user.' => 'Gibt einen Benutzer frei.',
       'April' => 'April',
       'Arbitrarily large files are now supported. Consult the documentation for configuration details.' => 'Beliebig große Dateien werden jetzt unterstützt. Einzelheiten zur Konfiguration findest Du in der Dokumentation.',
-      'Arbitrary user not member of project.' => 'Beliebiger Benutzer ist kein Mitglied des Projektes.',
       'Arcanist Lint Results' => 'Arcanist-Lint-Ergebnisse',
       'Arcanist Unit Results' => 'Arcanist-Unit-Ergebnisse',
       'Archive' => 'Archivieren',
@@ -2908,7 +3557,7 @@ EOTEXT',
       'Archived post by %s.' => 'Archivierter Beitrag von %s.',
       'Are you absolutely certain you want to destroy these %s object(s)?' => 'Bist Du absolut sicher, dass Du diese %s Objekt(e) vernichten möchtest?',
       'Are you absolutely certain you want to disable the Home application?' => 'Bist Du absolut sicher, dass Du die Home-Anwendung deaktivieren möchtest?',
-      'Are you completely sure you really want to destroy all unit test fixure data on host "%s"? This operation can not be undone.' => 'Bist du absolut sicher, dass du wirklich alle Unit-Test-Fixture-Daten auf Host "%s" zerstören willst? Dieser Vorgang kann nicht rückgängig gemacht werden.',
+      'Are you completely sure you really want to destroy all unit test fixture data on host "%s"? This operation can not be undone.' => 'Bist Du absolut sicher, dass Du wirklich alle Unit-Test-Fixture-Daten auf Host "%s" zerstören willst? Dieser Vorgang kann nicht rückgängig gemacht werden.',
       'Are you completely sure you really want to permanently destroy all storage for %s data on host "%s"? This operation can not be undone and your data will not be recoverable if you proceed.' => 'Bist du absolut sicher, dass du wirklich den gesamten Storage für %s-Daten auf Host "%s" dauerhaft zerstören willst? Dieser Vorgang kann nicht rückgängig gemacht werden, und deine Daten sind nicht wiederherstellbar, wenn du fortfährst.',
       'Are you ready to continue?' => 'Bist du bereit, fortzufahren?',
       'Are you sure you want to close the poll?' => 'Bist Du sicher, daß Du die Abstimmung schließen möchtest?',
@@ -2936,7 +3585,6 @@ EOTEXT',
       'Artifact Name' => 'Artefaktname',
       'Artifact Type' => 'Artefakttyp',
       'Artifacts' => 'Artefakte',
-      'Artificial SVN root should fail.' => 'Künstliches SVN-Stammverzeichnis sollte fehlschlagen.',
       'As an Administrator, you can review status information from the %s control panel. This may provide more information about the current state of affairs.' => 'Als Administrator kannst du Statusinformationen im Kontrollpanel %s prüfen. Dort findest du möglicherweise weitere Informationen über den aktuellen Zustand.',
       'Asana' => 'Asana',
       'Asana Task %s' => 'Asana-Aufgabe %s',
@@ -2951,6 +3599,7 @@ EOTEXT',
       'Asked by %s on %s.' => 'Gefragt von %s am %s.',
       'Assign / Claim' => 'Neu zuweisen / an sich reißen',
       'Assign a task to a specific user.' => 'Weise eine Aufgabe einem bestimmten Benutzer zu.',
+      'Assign lint errors to authors who last modified the line.' => 'Lint-Fehler den Autoren zuweisen, die die Zeile zuletzt geändert haben.',
       'Assign task to' => 'Aufgabe zuweisen an',
       'Assign task to %s.' => 'Aufgabe %s zuweisen.',
       'Assign task to me' => 'Mir die Aufgabe zuweisen',
@@ -2980,7 +3629,6 @@ Ungültige oder unbekannte Projekte werden ignoriert. Ohne Angabe von Projekt-Ta
       'Associated repository PHID.' => 'Zugehörige Repository-PHID.',
       'Associated revision PHID.' => 'Zugehörige Versions-PHID.',
       'Associates a revision with a repository.' => 'Verknüpft eine Version mit einem Repository.',
-      'Assumption that projects are default visible to any user when created.' => 'Annahme, dass Projekte bei der Erstellung standardmäßig für jeden Benutzer sichtbar sind.',
       'Async queries are not supported.' => 'Asynchrone Abfragen werden nicht unterstützt.',
       'At least one daemon is currently running as the wrong user.' => 'Mindestens ein Dämon läuft derzeit als falscher Benutzer.',
       'Atom "%s" is preceded by a comment containing `%s`, but the comment is not a documentation comment. Documentation comments must begin with `%s`, followed by a newline. Did you mean to use a documentation comment? (As the comment is not a documentation comment, it will be ignored.)' => 'Atom „%s“ wird von einem Kommentar mit `%s` eingeleitet, aber der Kommentar ist kein Dokumentationskommentar. Dokumentationskommentare müssen mit `%s` beginnen, gefolgt von einem Zeilenumbruch. Meintest du einen Dokumentationskommentar? (Da es kein Dokumentationskommentar ist, wird er ignoriert.)',
@@ -3004,11 +3652,8 @@ Ungültige oder unbekannte Projekte werden ignoriert. Ohne Angabe von Projekt-Ta
       'Attach properties to Differential diffs.' => 'Eigenschaften an Differential-Diffs anhängen.',
       'Attached' => 'Verknüpft',
       'Attached "%s" to "%s".' => '"%s" wurde an "%s" angehängt.',
-      'Attached File Visibility' => 'Sichtbarkeit verknüpfter Dateien',
       'Attached Files' => 'Angehängte Dateien',
-      'Attached Thumbnail Visibility' => 'Sichtbarkeit verknüpfter Miniaturbilder',
       'Attached To' => 'Verknüpft mit',
-      'Attachment key "%s" is not a valid attachment for this query.' => 'Schlüssel für Zusatzdaten „%s" ist für diese Abfrage ungültig.',
       'Attachments' => 'Zusatzdaten',
       'Attempt to connect to %s@%s failed with error #%d: %s.' => 'Verbindungsversuch zu %s@%s ist mit Fehler #%d fehlgeschlagen: %s.',
       'Attempt to load log bytes (%d - %d) failed: failed to load a single contiguous range. Actual ranges: %s.' => 'Versuch, Log-Bytes (%d - %d) zu laden, fehlgeschlagen: Es konnte kein zusammenhängender Bereich geladen werden. Tatsächliche Bereiche: %s.',
@@ -3024,7 +3669,6 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Attempting to access unknown buildable status property ("%s").' => 'Versuch, auf unbekannte Statuseigenschaft eines Build-Kandidaten ("%s") zuzugreifen.',
       'Attempting to access unknown status property ("%s").' => 'Es wird versucht, auf die unbekannte Status-Eigenschaft ("%s") zuzugreifen.',
       'Attempting to add more metadata after metadata has been locked.' => 'Es wird versucht, nach dem Sperren weitere Metadaten hinzuzufügen.',
-      'Attempting to apply a charge using an inactive payment method ("%s")!' => 'Versuch, eine Abbuchung mit einer inaktiven Zahlungsmethode ("%s") durchzuführen!',
       'Attempting to apply a range constraint to a field with index type "%s", expected type "%s".' => 'Versuch, eine Bereichseinschränkung auf ein Feld mit Indextyp „%s" anzuwenden, erwartet wurde Typ „%s".',
       'Attempting to apply a transaction (of class "%s", with type "%s") which has not been constructed correctly: %s' => 'Es wird versucht, eine Transaktion (der Klasse "%s", vom Typ "%s") anzuwenden, die nicht korrekt konstruiert wurde: %s',
       'Attempting to archive a task which hasn\'t been saved!' => 'Es wird versucht, eine Aufgabe zu archivieren, die noch nicht gespeichert wurde!',
@@ -3036,10 +3680,12 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Attempting to compare a password saved with the "%s" hash. No such hasher is known.' => 'Versuch, ein mit dem Hash „%s" gespeichertes Passwort zu vergleichen. Kein solcher Hasher ist bekannt.',
       'Attempting to compare a password saved with the "%s" hash. The hasher exists, but is not currently usable. %s' => 'Versuch, ein mit dem Hash „%s" gespeichertes Passwort zu vergleichen. Der Hasher ist vorhanden, aber derzeit nicht verwendbar. %s',
       'Attempting to construct a query using a non-utf8 string when utf8 is expected. Use the `%%B` conversion to escape binary strings data.' => 'Es wird versucht, eine Abfrage mit einer Nicht-UTF-8-Zeichenkette zu konstruieren, obwohl UTF-8 erwartet wird. Verwende die Konvertierung `%%B`, um binäre Stringdaten zu escapen.',
+      'Attempting to create an SSH connection that authenticates with the current device, but this host is not configured as a cluster device.' => 'Versuch, eine SSH-Verbindung herzustellen, die sich mit dem aktuellen Gerät authentifiziert, aber dieser Host ist nicht als Cluster-Gerät konfiguriert.',
       'Attempting to dispose of write guard, but no write guard is active!' => 'Versuch, Write-Guard zu beenden, aber kein Write-Guard ist aktiv!',
       'Attempting to emit a response with an unsafe source ("%s") in the Content-Security-Policy header.' => 'Es wird versucht, eine Antwort mit einer unsicheren Quelle ("%s") im Content-Security-Policy-Header auszugeben.',
       'Attempting to issue a write query on a read-only connection (to database "%s")!' => 'Es wird versucht, auf einer schreibgeschützten Verbindung (zur Datenbank "%s") eine Schreibabfrage auszuführen!',
       'Attempting to load PHID "%s", but it was not requested by any handle list.' => 'Es wird versucht, die PHID "%s" zu laden, aber sie wurde von keiner Handle-Liste angefordert.',
+      'Attempting to proxy an SSH connection that authenticates with both the current device and a specific credential. These options are mutually exclusive.' => 'Versuch, eine SSH-Verbindung weiterzuleiten, die sich sowohl mit dem aktuellen Gerät als auch mit bestimmten Zugangsdaten authentifiziert. Diese Optionen schließen sich gegenseitig aus.',
       'Attempting to render a tag with an \'%s\' attribute that begins with \'%s\'. This is either a serious security concern or a serious architecture concern. Seek urgent remedy.' => 'Es wird versucht, ein Tag mit einem Attribut \'%s\' zu rendern, das mit \'%s\' beginnt. Das ist entweder ein ernstes Sicherheitsproblem oder ein ernstes Architekturproblem. Dringende Abhilfe ist erforderlich.',
       'Attempting to resolve unknown resource, "%s".' => 'Es wird versucht, eine unbekannte Ressource "%s" aufzulösen.',
       'Attempting to set an empty password!' => 'Es wird versucht, ein leeres Passwort zu setzen!',
@@ -3163,7 +3809,6 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Automatic Updates' => 'Automatische Aktualisierungen',
       'Automatic `arc lint` step.' => 'Automatischer `arc lint`-Schritt.',
       'Automatic `arc unit` step.' => 'Automatischer `arc unit`-Schritt.',
-      'Automatic billing failed: %s' => 'Automatische Abbuchung fehlgeschlagen: %s',
       'Automatically Detected User' => 'Automatisch erkannter Benutzer',
       'Automatically Subscribed' => 'Als Mitleser automatisch hinzugefügt',
       'Automatically log in with this provider if it is the only available provider.' => 'Automatisch mit diesem Anbieter anmelden, wenn er der einzige verfügbare Anbieter ist.',
@@ -3171,14 +3816,9 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Automatically sample some fraction of requests.' => 'Automatisch einen Bruchteil der Anfragen samplen.',
       'Automatically trigger audits for commits affecting files in this package.' => 'Automatisch Überprüfungen für Commits auslösen, die Dateien in diesem Paket betreffen.',
       'Automatically trigger reviews for commits affecting files in this package.' => 'Automatisch Reviews für Commits auslösen, die Dateien in diesem Paket betreffen.',
-      'Automatically use the current billing period.' => 'Automatisch den aktuellen Abrechnungszeitraum verwenden.',
       'Automation' => 'Automatisierung',
       'Automation Not Configured' => 'Automatisierung nicht konfiguriert',
       'Automation blueprints.' => 'Automatisierungs-Blaupausen.',
-      'Autopay' => 'Automatische Zahlung',
-      'Autopay Subscriptions' => 'Autopay-Abonnements',
-      'Autopay is configured using %s.' => 'Automatische Zahlung ist mit %s konfiguriert.',
-      'Autopay is not currently configured for this subscription.' => 'Automatische Zahlung ist für dieses Abonnement derzeit nicht konfiguriert.',
       'Autoplan' => 'Autoplan',
       'Autoreview setting "%s" is not valid. Valid settings are: %s.' => 'Automatische-Überprüfungs-Einstellung "%s" ist ungültig. Gültige Einstellungen: %s.',
       'Autoscale pool "%s" already at maximum size (%s of %s).' => 'Autoscale-Pool "%s" ist bereits auf maximaler Größe (%s von %s).',
@@ -3222,25 +3862,20 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'BUILDING GRAPH CACHE' => 'GRAPH-CACHE ERSTELLEN',
       'Baby Tequila' => 'Mini-Tequila',
       'Back' => 'Zurück',
-      'Back %s %s' => '%s %s unterstützen',
-      'Back Initiative' => 'Initiative unterstützen',
       'Back to Content Types' => 'Zurück zu Inhaltstypen',
       'Back to HEAD' => 'Zurück zu HEAD',
       'Back to Revision' => 'Zurück zur Version',
-      'Backer' => 'Unterstützer',
-      'Backers' => 'Unterstützer',
       'Background Color' => 'Hintergrundfarbe',
       'Backlog' => 'Rückstand',
       'Bad "Host" Header' => 'Ungültiger "Host"-Header',
       'Bad Address' => 'Ungültige Adresse',
+      'Bad Administrative Credentials' => 'Ungültige administrative Zugangsdaten',
       'Bad Guys' => 'Die Bösen',
       'Bad Host Header' => 'Ungültiger Host-Header',
       'Bad Input Type' => 'Ungültiger Eingabetyp',
       'Bad Invite Code' => 'Ungültiger Einladungscode',
-      'Bad Key' => 'Ungültiger Schlüssel',
       'Bad Object' => 'Kaputtes Objekt',
       'Bad Recipient' => 'Ungültiger Empfänger',
-      'Bad Value Type' => 'Ungültiger Werttyp',
       'Bad build target ID "%d".' => 'Ungültige Build-Ziel-ID "%d".',
       'Bad diff ID, or diff does not belong to revision.' => 'Ungültige Diff-ID oder Diff gehört nicht zur Version.',
       'Bad diff ID.' => 'Ungültige Diff-ID.',
@@ -3248,7 +3883,6 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Bad frame length character in Git protocol ("%s"), expected a 4-digit hexadecimal value encoded as ASCII text.' => 'Ungültiges Frame-Längen-Zeichen im Git-Protokoll ("%s"), erwartet wurde ein 4-stelliger hexadezimaler Wert als ASCII-Text.',
       'Bad getter call: %s' => 'Ungültiger Getter-Aufruf: %s',
       'Bad parser state \'%s\'!' => 'Ungültiger Parser-Zustand \'%s\'!',
-      'Bad password should not match.' => 'Falsches Passwort sollte nicht übereinstimmen.',
       'Bad revision ID.' => 'Ungültige Versions-ID.',
       'Bad setter call: %s' => 'Ungültiger Setter-Aufruf: %s',
       'Badge' => 'Trophäe',
@@ -3278,6 +3912,7 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Basicly Basic' => 'Eigentlich ganz einfach',
       'Basics' => 'Grundeinstellungen',
       'Batch Task Editor' => 'Stapelverarbeitung für Aufgaben',
+      'Batch editing tasks is not available in read-only mode.' => 'Die Stapelbearbeitung von Aufgaben ist im Nur-Lese-Modus nicht verfügbar.',
       'Because the algorithm implementation is missing, your password can not be used or updated.' => 'Weil die Implementierung des Algorithmuses fehlt, kann Dein Passwort nicht verwendet oder aktualisiert werden.',
       'Because the algorithm implementation is missing, your password can not be used.' => 'Da die Algorithmus-Implementierung fehlt, kann Dein Passwort nicht verwendet werden.',
       'Before running storage upgrades, you should take down the web interface and stop any running daemons (you can disable this warning with %s).' => 'Bevor du Storage-Upgrades ausführst, solltest du die Weboberfläche deaktivieren und alle laufenden Daemons stoppen (du kannst diese Warnung mit %s deaktivieren).',
@@ -3297,12 +3932,6 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Better Table Engine Available' => 'Bessere Tabellen-Engine verfügbar',
       'Big Icon Buttons' => 'Große Icon-Schaltflächen',
       'Big Info View' => 'Große Info-Ansicht',
-      'Bill To:' => 'Rechnung an:',
-      'Bill as though the current time is a specific time.' => 'Abrechnen, als wäre die aktuelle Zeit ein bestimmter Zeitpunkt.',
-      'Billing Address' => 'Rechnungsadresse',
-      'Billing Cycle' => 'Abrechnungszeitraum',
-      'Billing Email Addresses' => 'Rechnungs-E-Mail-Adressen',
-      'Billing Name' => 'Rechnungsname',
       'Binary' => 'Binär',
       'Binary file' => 'Binärdatei',
       'Binding' => 'Bindung',
@@ -3454,7 +4083,6 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Browse No Reviewers' => 'Ohne Reviewer durchsuchen',
       'Browse No Value' => 'Ohne Wert durchsuchen',
       'Browse Not Tagged With Any Projects' => 'Ohne Projekt-Tag suchen',
-      'Browse Numbers' => 'Zahlen durchsuchen',
       'Browse Objects' => 'Objekte durchsuchen',
       'Browse Only' => 'Nur durchsuchen',
       'Browse Owners' => 'Eigentümer durchsuchen',
@@ -3535,6 +4163,7 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Build self esteem through gamification.' => 'Poliere Dein Selbstwertgefühl mit einer Prise Gamification auf.',
       'Build step "%s" has step group key "%s", but no step group with that key exists.' => 'Build-Schritt "%s" hat den Schrittgruppen-Schlüssel "%s", aber es existiert keine Schrittgruppe mit diesem Schlüssel.',
       'Build storage patch-by-patch from scratch, even if it could be loaded from the quickstart template.' => 'Storage Patch für Patch von Grund auf aufbauen, auch wenn es aus der Quickstart-Vorlage geladen werden könnte.',
+      'Build successful!' => 'Build erfolgreich!',
       'Build target ("%s") has the wrong type of build step. Only CircleCI build steps may be updated via the CircleCI webhook.' => 'Build-Ziel ("%s") hat den falschen Build-Schritt-Typ. Nur CircleCI-Build-Schritte können über den CircleCI-Webhook aktualisiert werden.',
       'Build target this log is attached to.' => 'Das Build-Ziel, an das dieses Protokoll angehängt ist.',
       'Build will abort.' => 'Build wird abgebrochen.',
@@ -3570,7 +4199,6 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'Builtin URI' => 'Integrierter URI',
       'Builtin URIs Do Not Use Credentials' => 'Integrierte URIs verwenden keine Zugangsdaten',
       'Builtin URIs do not use credentials.' => 'Integrierte URIs verwenden keine Zugangsdaten.',
-      'Builtin classnames should not be marked as linkable symbols.' => 'Eingebaute Klassennamen sollten nicht als verlinkbare Symbole markiert werden.',
       'Builtin item ("%s") specifies a bad item key ("%s"); there is no corresponding item implementation available.' => 'Der Systemeintrag („%s") verwendet einen ungültigen Eintragsschlüssel („%s"); es gibt keine passende Implementierung für diesen Eintrag.',
       'Builtins' => 'Eingebaut',
       'Bulk Edit' => 'Stapelbearbeitung',
@@ -3607,6 +4235,104 @@ Daten werden normalerweise angehängt, indem beim Laden des Objekts die entsprec
       'By Viewer' => 'Nach Betrachter',
       'By default, **%s** will free all task leases held by the daemons. With this flag, this step will be skipped.' => 'Standardmäßig gibt **%s** alle Aufgaben-Leases frei, die von den Dämonen gehalten werden. Mit diesem Flag wird dieser Schritt übersprungen.',
       'By default, no one can take this action.' => 'Standardmäßig kann niemand diese Aktion ausführen.',
+      'By default, only basic information about objects is returned. If you want
+more extensive information, you can use available `attachments` to get more
+information in the results (like subscribers and projects).
+
+Generally, requesting more information means the query executes more slowly
+and returns more data (in some cases, much more data). You should normally
+request only the data you need.
+
+To request extra data, specify which attachments you want in the `attachments`
+parameter:
+
+```lang=json, name="Example Attachments Request"
+{
+  ...
+  "attachments": {
+    "subscribers": true
+  },
+  ...
+}
+```
+
+This example specifies that results should include information about
+subscribers. In the return value, each object will now have this information
+filled out in the corresponding `attachments` value:
+
+```lang=json, name="Example Attachments Result"
+{
+  ...
+  "data": [
+    {
+      ...
+      "attachments": {
+        "subscribers": {
+          "subscriberPHIDs": [
+            "PHID-WXYZ-2222",
+          ],
+          "subscriberCount": 1,
+          "viewerIsSubscribed": false
+        }
+      },
+      ...
+    },
+    ...
+  ],
+  ...
+}
+```
+
+These attachments are available:' => 'Standardmäßig werden nur grundlegende Informationen über Objekte zurückgegeben. Wenn
+Du ausführlichere Informationen möchtest, kannst Du verfügbare `attachments`
+verwenden, um zusätzliche Informationen in den Ergebnissen zu erhalten (etwa
+Abonnenten und Projekte).
+
+Mehr Informationen anzufordern bedeutet in der Regel, dass die Abfrage langsamer läuft
+und mehr Daten zurückgibt (in manchen Fällen sehr viel mehr Daten). Normalerweise
+solltest Du nur die Daten anfordern, die Du brauchst.
+
+Um zusätzliche Daten anzufordern, gib im Parameter `attachments` an, welche
+Zusatzdaten Du möchtest:
+
+```lang=json, name="Example Attachments Request"
+{
+  ...
+  "attachments": {
+    "subscribers": true
+  },
+  ...
+}
+```
+
+Dieses Beispiel legt fest, dass die Ergebnisse Informationen über Abonnenten enthalten
+sollen. Im Rückgabewert enthält nun jedes Objekt diese Informationen im
+entsprechenden Wert unter `attachments`:
+
+```lang=json, name="Example Attachments Result"
+{
+  ...
+  "data": [
+    {
+      ...
+      "attachments": {
+        "subscribers": {
+          "subscriberPHIDs": [
+            "PHID-WXYZ-2222",
+          ],
+          "subscriberCount": 1,
+          "viewerIsSubscribed": false
+        }
+      },
+      ...
+    },
+    ...
+  ],
+  ...
+}
+```
+
+Diese Zusatzdaten sind verfügbar:',
       'By default, this software allows users to add multi-factor authentication to
 their accounts, but does not require it. By enabling this option, you can
 force all users to add at least one authentication factor before they can use
@@ -3615,13 +4341,11 @@ their accounts.
 Administrators can query a list of users who do not have MFA configured in
 {nav People}:
 
-  - **[[ %s | %s ]]**
-EOTEXT' => 'Standardmäßig erlaubt diese Software Benutzern, ihren Konten Multi-Faktor-Authentifizierung hinzuzufügen, verlangt sie aber nicht. Wenn Du diese Option aktivierst, kannst Du alle Benutzer dazu verpflichten, mindestens einen Authentifizierungsfaktor hinzuzufügen, bevor sie ihre Konten nutzen können.
+  - **[[ %s | %s ]]**' => 'Standardmäßig erlaubt diese Software Benutzern, ihren Konten Multi-Faktor-Authentifizierung hinzuzufügen, verlangt sie aber nicht. Wenn Du diese Option aktivierst, kannst Du alle Benutzer dazu verpflichten, mindestens einen Authentifizierungsfaktor hinzuzufügen, bevor sie ihre Konten nutzen können.
 
 Administratoren können in {nav People} eine Liste der Benutzer abfragen, die noch keine MFA konfiguriert haben:
 
-  - **[[ %s | %s ]]**
-EOTEXT',
+  - **[[ %s | %s ]]**',
       'By default, this software generates unique reply-to addresses and sends a
 separate email to each recipient when you enable reply handling. This is more
 secure than using "From" to establish user identity, but can mean users may
@@ -3630,9 +4354,7 @@ single, non-unique reply to address and authenticate users based on the "From"
 address by setting this to \'true\'. This trades away a little bit of security
 for convenience, but it\'s reasonable in many installs. Object interactions are
 still protected using hashes in the single public email address, so objects
-can not be replied to blindly.
-EODOC' => 'Standardmäßig erzeugt diese Software eindeutige Reply-To-Adressen und sendet beim Aktivieren der Antwortverarbeitung für jeden Empfänger eine separate E-Mail. Das ist sicherer, als "From" zur Feststellung der Benutzeridentität zu verwenden, kann aber dazu führen, dass Benutzer auf Mailinglisten mehrere E-Mails erhalten. Alternativ kannst Du eine einzige, nicht eindeutige Reply-To-Adresse verwenden und Benutzer anhand der "From"-Adresse authentifizieren, indem Du diese Option auf \'true\' setzt. Das tauscht ein wenig Sicherheit gegen Komfort, ist aber für viele Installationen vertretbar. Objektinteraktionen bleiben trotzdem durch Hashes in der öffentlichen E-Mail-Adresse geschützt, daher kann auf Objekte nicht blind geantwortet werden.
-EODOC',
+can not be replied to blindly.' => 'Standardmäßig erzeugt diese Software eindeutige Reply-To-Adressen und sendet beim Aktivieren der Antwortverarbeitung für jeden Empfänger eine separate E-Mail. Das ist sicherer, als "From" zur Feststellung der Benutzeridentität zu verwenden, kann aber dazu führen, dass Benutzer auf Mailinglisten mehrere E-Mails erhalten. Alternativ kannst Du eine einzige, nicht eindeutige Reply-To-Adresse verwenden und Benutzer anhand der "From"-Adresse authentifizieren, indem Du diese Option auf \'true\' setzt. Das tauscht ein wenig Sicherheit gegen Komfort, ist aber für viele Installationen vertretbar. Objektinteraktionen bleiben trotzdem durch Hashes in der öffentlichen E-Mail-Adresse geschützt, daher kann auf Objekte nicht blind geantwortet werden.',
       'By default, this software includes some flavor text in the UI, like a prompt to "Weigh In" rather than "Add Comment" in Maniphest. If you\'d prefer more traditional UI strings like "Add Comment", you can set this flag to disable most of the extra flavor.' => 'Standardmäßig enthält diese Software etwas stilisierte UI-Texte, etwa "Weigh In" statt "Add Comment" in Maniphest. Wenn Du lieber traditionellere Oberflächentexte wie "Add Comment" möchtest, kannst Du mit dieser Option den meisten zusätzlichen Zierrat deaktivieren.',
       'By default, this software links object names in Remarkup fields to the corresponding object. This regex can be used to modify this behavior; object names that match this regex will not be linked.' => 'Standardmäßig verlinkt diese Software Objektnamen in Remarkup-Feldern mit dem entsprechenden Objekt. Mit diesem regulären Ausdruck kann dieses Verhalten geändert werden; Objektnamen, die diesem Ausdruck entsprechen, werden nicht verlinkt.',
       'By default, this software serves files from the same domain the application is served from. This is convenient, but presents a security risk.
@@ -3651,18 +4373,12 @@ Du solltest ein CDN oder eine alternative Dateidomain konfigurieren, um dieses R
       'CHANGES TO %s DESCRIPTION' => 'ÄNDERUNGEN AN DER %s BESCHREIBUNG',
       'CHANGES TO ANSWER DETAILS' => 'ÄNDERUNGEN AN DEN ANTWORTDETAILS',
       'CHANGES TO ANSWER WIKI' => 'ÄNDERUNGEN AM ANTWORT-WIKI',
-      'CHANGES TO BILLING ADDRESS' => 'ÄNDERUNGEN AN DER RECHNUNGSADRESSE',
       'CHANGES TO COUNTDOWN DESCRIPTION' => 'ÄNDERUNGEN AN DER COUNTDOWN-BESCHREIBUNG',
       'CHANGES TO CREDENTIAL DESCRIPTION' => 'ÄNDERUNGEN AN DER BESCHREIBUNG DER ZUGANGSDATEN',
       'CHANGES TO DOCUMENT CONTENT' => 'ÄNDERUNGEN AM DOKUMENTINHALT',
       'CHANGES TO DOCUMENT PREAMBLE' => 'ÄNDERUNGEN AN DER DOKUMENTENPRÄAMBEL',
       'CHANGES TO DOCUMENT TEXT' => 'ÄNDERUNGEN AM DOKUMENTENTEXT',
       'CHANGES TO ENROLL MESSAGE' => 'ÄNDERUNGEN AN DER REGISTRIERUNGSNACHRICHT',
-      'CHANGES TO INITIATIVE DESCRIPTION' => 'ÄNDERUNGEN AN DER INITIATIVENBESCHREIBUNG',
-      'CHANGES TO INITIATIVE RISKS/CHALLENGES' => 'ÄNDERUNGEN AN DEN RISIKEN/HERAUSFORDERUNGEN DER INITIATIVE',
-      'CHANGES TO MERCHANT CONTACT INFO' => 'ÄNDERUNGEN AN DEN HÄNDLERKONTAKTINFORMATIONEN',
-      'CHANGES TO MERCHANT DESCRIPTION' => 'ÄNDERUNGEN AN DER HÄNDLERBESCHREIBUNG',
-      'CHANGES TO MERCHANT INVOICE FOOTER' => 'ÄNDERUNGEN AN DER HÄNDLER-RECHNUNGSFUSSZEILE',
       'CHANGES TO MESSAGE' => 'ÄNDERUNGEN AN DER NACHRICHT',
       'CHANGES TO PACKAGE DESCRIPTION' => 'ÄNDERUNGEN AN DER PAKETBESCHREIBUNG',
       'CHANGES TO PASTE CONTENT' => 'ÄNDERUNGEN AM PASTE-INHALT',
@@ -3689,7 +4405,6 @@ Dieses Repository ("%s") ist mit einem Limit für berührte Dateien konfiguriert
       'CRITICAL. Failed to release cluster write lock!' => 'KRITISCH. Cluster-Schreibsperre konnte nicht freigegeben werden!',
       'CSRF HMAC keys are now managed automatically.' => 'CSRF-HMAC-Schlüssel werden jetzt automatisch verwaltet.',
       'CSS file \'%s\' has unknown variable \'%s\'.' => 'CSS-Datei \'%s\' enthält unbekannte Variable \'%s\'.',
-      'CVC' => 'CVC',
       'Cache' => 'Cache',
       'Cache Entries' => 'Cache-Einträge',
       'Cache Status' => 'Cache-Status',
@@ -3697,7 +4412,6 @@ Dieses Repository ("%s") ist mit einem Limit für berührte Dateien konfiguriert
       'Cache engine extension "%s" did not return a list of linked objects.' => 'Die Cache-Engine-Erweiterung "%s" hat keine Liste verknüpfter Objekte zurückgegeben.',
       'Cache engine extension "%s" returned object (of class "%s") with no PHID.' => 'Die Cache-Engine-Erweiterung "%s" hat ein Objekt der Klasse "%s" ohne PHID zurückgegeben.',
       'Cache namespace.' => 'Cache-Namensraum.',
-      'Cache not available.' => 'Cache nicht verfügbar.',
       'Cache purger "%s" is not recognized. Available caches are: %s.' => 'Cache-Bereiniger "%s" wird nicht erkannt. Verfügbare Caches: %s.',
       'Cache returned bogus result!' => 'Cache hat ein ungültiges Ergebnis zurückgegeben!',
       'Cache the PKCS8 format of a public key. When developing on OSX, this can be used to work around issues with ssh-keygen. Use `%s` to generate a PKCS8 key to feed to this command.' => 'Das PKCS8-Format eines öffentlichen Schlüssels zwischenspeichern. Bei der Entwicklung unter OSX kann das verwendet werden, um Probleme mit ssh-keygen zu umgehen. Verwende `%s`, um einen PKCS8-Schlüssel zu erzeugen, der an diesen Befehl übergeben werden kann.',
@@ -3750,8 +4464,6 @@ Dieses Repository ("%s") ist mit einem Limit für berührte Dateien konfiguriert
       'Caller is trying to access raw row property "%s", but the row does not have this property.' => 'Zugriff auf Rohzeileneigenschaft „%s" nicht möglich: Die Zeile hat diese Eigenschaft nicht.',
       'Callers' => 'Aufrufer',
       'Calling webhook...' => 'Webhook wird aufgerufen...',
-      'Calls to "transaction.search" must not specify both an "objectType" and an "objectIdentifier".' => 'Aufrufe von "transaction.search" dürfen nicht gleichzeitig einen "objectType" und einen "objectIdentifier" angeben.',
-      'Calls to "transaction.search" must specify either an "objectType" or an "objectIdentifier".' => 'Aufrufe von "transaction.search" müssen entweder einen "objectType" oder einen "objectIdentifier" angeben.',
       'Calls to External Services' => 'Aufrufe externer Dienste',
       'Callsign' => 'Rufzeichen',
       'Callsign is the monogram rXXXX for this repository. It cannot contain spaces.' => 'Das Rufzeichen ist das Monogramm rXXXX für dieses Repository. Es darf keine Leerzeichen enthalten.',
@@ -3769,8 +4481,6 @@ Dieses Repository ("%s") ist mit einem Limit für berührte Dateien konfiguriert
       'Can Create Dashboards' => 'Dashboards erstellen',
       'Can Create Devices' => 'Geräte anlegen',
       'Can Create Documents' => 'Darf Dokumente erstellen',
-      'Can Create Initiatives' => 'Kann Initiativen erstellen',
-      'Can Create Merchants' => 'Händler anlegen',
       'Can Create Named Policies' => 'Darf Benannte Richtlinien erstellen',
       'Can Create Namespaces' => 'Kann Namensräume erstellen',
       'Can Create Networks' => 'Netzwerke anlegen',
@@ -3789,6 +4499,7 @@ Dieses Repository ("%s") ist mit einem Limit für berührte Dateien konfiguriert
       'Can Interact' => 'Kann interagieren',
       'Can Join' => 'Darf mitlesen',
       'Can Lock Project Membership' => 'Kann Projektmitgliedschaft sperren',
+      'Can Login?' => 'Anmeldung möglich?',
       'Can Manage Auth Providers' => 'Auth-Provider verwalten',
       'Can Manage Cluster Services' => 'Kann Cluster-Dienste verwalten',
       'Can Manage Global Rules' => 'Darf globale Regeln verändern',
@@ -3818,6 +4529,8 @@ Dieses Repository ("%s") ist mit einem Limit für berührte Dateien konfiguriert
       'Can not materialize an event stub: this event is not a stub.' => 'Ereignis-Stub kann nicht materialisiert werden: Dieses Ereignis ist kein Stub.',
       'Can not merge parts of dissimilar types!' => 'Teile unterschiedlicher Typen können nicht zusammengeführt werden!',
       'Can not move document because the parent document with slug %s does not exist!' => 'Das Dokument kann nicht verschoben werden, weil das übergeordnete Dokument mit dem Slug %s nicht existiert!',
+      'Can only install one extension at a time.' => 'Es kann jeweils nur eine Erweiterung installiert werden.',
+      'Can only remove one extension at a time.' => 'Es kann jeweils nur eine Erweiterung entfernt werden.',
       'Can\'t Analyze' => 'Analyse nicht möglich',
       'Can\'t remove primary email!' => 'Primäre E-Mail-Adresse kann nicht entfernt werden!',
       'Can\'t set non-public capabilities to public.' => 'Nicht-öffentliche Berechtigungen können nicht auf öffentlich gesetzt werden.',
@@ -3825,8 +4538,6 @@ Dieses Repository ("%s") ist mit einem Limit für berührte Dateien konfiguriert
       'Cancel' => 'Abbrechen',
       'Cancel Event' => 'Termin absagen',
       'Cancel Only This Event' => 'Nur diesen Termin absagen',
-      'Cancel Order' => 'Auftrag stornieren',
-      'Cancel Order?' => 'Auftrag stornieren?',
       'Cancel This And All Later Events' => 'Diesen und alle späteren Termine absagen',
       'Cancel only the event which occurs on %s.' => 'Nur das Ereignis am %s absagen.',
       'Cancel or restore the event.' => 'Ereignis absagen oder wiederherstellen.',
@@ -3845,8 +4556,6 @@ sudo git config --system --add safe.directory %s' => 'Die Version des Repositori
 Versuche diese systemweite Lösung:
 sudo git config --system --add safe.directory %s',
       'Cannot retrieve image information.' => 'Bildinformationen können nicht abgerufen werden.',
-      'Canonical Path (ID, Callsign): %s' => 'Kanonischer Pfad (ID, Rufzeichen): %s',
-      'Canonical Path (ID, No Callsign): %s' => 'Kanonischer Pfad (ID, kein Rufzeichen): %s',
       'Capability "%s"' => 'Berechtigung "%s"',
       'Capability "%s" does not exist.' => 'Fähigkeit "%s" existiert nicht.',
       'Capability "%s" does not support public policy.' => 'Fähigkeit "%s" unterstützt keine öffentliche Richtlinie.',
@@ -3859,18 +4568,9 @@ sudo git config --system --add safe.directory %s',
       'Captcha' => 'Captcha',
       'Captcha response is incorrect, try again.' => 'Die Captcha-Antwort ist falsch, bitte erneut versuchen.',
       'Car Company' => 'Autohersteller',
-      'Card CVC is invalid or incorrect.' => 'Karten-CVC ist ungültig oder falsch.',
-      'Card Number' => 'Kartennummer',
-      'Card expiration date is invalid or incorrect.' => 'Ablaufdatum der Karte ist ungültig oder falsch.',
       'Cardamom' => 'Kardamom',
       'Cardboard Box' => 'Pappkarton',
       'Cardigan' => 'Cardigan',
-      'Cart' => 'Warenkorb',
-      'Cart has wrong status ("%s") to call %s!' => 'Warenkorb hat falschen Status ("%s") für den Aufruf von %s!',
-      'Cart has wrong status ("%s") to call %s, expected "%s".' => 'Warenkorb hat falschen Status ("%s") für den Aufruf von %s, erwartet "%s".',
-      'Cart has wrong status ("%s") to call %s.' => 'Warenkorb hat falschen Status ("%s") für den Aufruf von %s.',
-      'Cart is already charging!' => 'Warenkorb wird bereits abgebucht!',
-      'Cart is not charging yet!' => 'Warenkorb wird noch nicht abgebucht!',
       'Cartoon Captions' => 'Cartoon-Untertitel',
       'Cat Facts' => 'Katzenfakten',
       'Cat tails are flexible because they contain thousands of tiny bones.' => 'Katzenschwänze sind so beweglich, weil sie tausende winzige Knochen enthalten.',
@@ -4006,6 +4706,7 @@ sudo git config --system --add safe.directory %s',
       'Change the subtasks of this task.' => 'Unteraufgaben dieser Aufgabe ändern.',
       'Change the task point value.' => 'Punktewert der Aufgabe ändern.',
       'Change the task status.' => 'Aufgabenstatus ändern.',
+      'Change the theme to high contrast or dark colors.' => 'Wechsle zu einem Design mit hohem Kontrast oder dunklen Farben.',
       'Change the touch limit.' => 'Berührungslimit ändern.',
       'Change the view policy of an object so that the specified user may view it.' => 'Die Anzeigerichtlinie eines Objekts ändern, sodass der angegebene Benutzer es einsehen kann.',
       'Change the view policy of the object.' => 'Die Anzeigerichtlinie des Objekts ändern.',
@@ -4039,19 +4740,8 @@ sudo git config --system --add safe.directory %s',
       'Changeset attribute "%s" is not valid. Valid changeset attributes are: %s.' => 'Changeset-Attribut "%s" ist ungültig. Gültige Changeset-Attribute sind: %s.',
       'Changeset has no path vectors!' => 'Changeset hat keine Pfadvektoren!',
       'Changing Status Failed' => 'Statusänderung fehlgeschlagen',
-      'Changing attached object view policy should scramble secret.' => 'Änderung der Anzeigerichtlinie des angehängten Objekts sollte das Geheimnis durchmischen.',
-      'Changing connection while locked is forbidden.' => 'Verbindungswechsel bei gehaltenem Lock ist nicht erlaubt.',
-      'Changing file view policy should scramble secret.' => 'Änderung der Datei-Anzeigerichtlinie sollte das Geheimnis durchmischen.',
       'Changing your password will terminate any other outstanding login sessions.' => 'Das Ändern Deines Passworts beendet alle anderen noch aktiven Anmeldesitzungen.',
       'Character Set' => 'Zeichensatz',
-      'Charge %d' => 'Abbuchung %d',
-      'Charge Failed' => 'Abbuchung fehlgeschlagen',
-      'Charge On Hold' => 'Abbuchung in der Warteschleife',
-      'Charge has no transaction ID!' => 'Abbuchung hat keine Transaktions-ID!',
-      'Charge is in the wrong refunding state!' => 'Abbuchung befindet sich im falschen Erstattungsstatus!',
-      'Charged' => 'Abgebucht',
-      'Charges' => 'Abbuchungen',
-      'Charging' => 'Wird abgebucht',
       'Charset' => 'Zeichensatz',
       'Chart' => 'Diagramm',
       'Chart Panel' => 'Diagramm-Panel',
@@ -4067,7 +4757,6 @@ sudo git config --system --add safe.directory %s',
       'Chart with this key does not exist. A chart must be specified by its %d character long key.' => 'Ein Diagramm mit diesem Schlüssel existiert nicht. Ein Diagramm muss über seinen %d Zeichen langen Schlüssel angegeben werden.',
       'Chat Messages' => 'Chat-Nachrichten',
       'Chat with Others' => 'Mit anderen Benutzern chatten',
-      'Check Attach Low-Level Validation' => 'Anhänge-Validierung auf niedriger Ebene prüfen',
       'Check Your Email' => 'Bitte in Dein Emailpostfach schauen',
       'Checkered' => 'Gescheckt',
       'Checkout' => 'Checkout',
@@ -4076,7 +4765,6 @@ sudo git config --system --add safe.directory %s',
       'Child hashes have already been computed!' => 'Kind-Hashes wurden bereits berechnet!',
       'Child revisions of this revision.' => 'Unterversionen dieser Version.',
       'Choose "%s" Icon' => '"%s"-Symbol wählen',
-      'Choose Account' => 'Konto auswählen',
       'Choose Background Color' => 'Die Hintergrundfarbe wählen',
       'Choose Badge Icon' => 'Symbol für Trophäe wählen',
       'Choose Build Statuses' => 'Build-Status auswählen',
@@ -4094,17 +4782,13 @@ sudo git config --system --add safe.directory %s',
       'Choose Item Icon' => 'Eintragssymbol auswählen',
       'Choose Object' => 'Objekt wählen',
       'Choose Panel Type' => 'Panel-Typ auswählen',
-      'Choose Payment Method' => 'Zahlungsmethode auswählen',
       'Choose Project Icon' => 'Projekt-Symbol wählen',
       'Choose Provider Type' => 'Anbietertyp wählen',
       'Choose Repository Type' => 'Repository-Typ auswählen',
       'Choose Service Type' => 'Diensttyp auswählen',
       'Choose Source Type' => 'Quellentyp auswählen',
       'Choose Subtype' => 'Aufgabentyp wählen',
-      'Choose User' => 'Benutzer auswählen',
       'Choose User Icon' => 'Benutzer-Icon wählen',
-      'Choose a Merchant' => 'Händler auswählen',
-      'Choose a Payment Method' => 'Zahlungsmethode auswählen',
       'Choose a blog to create a post on (or move a post to).' => 'Blog auswählen, in dem ein Beitrag erstellt (oder in den ein Beitrag verschoben) werden soll.',
       'Choose a build log to rebuild with "--id", or rebuild all logs with "--all".' => 'Ein neu aufzubauendes Build-Protokoll mit "--id" auswählen oder alle Protokolle mit "--all" neu aufbauen.',
       'Choose a build plan behavior for "%s".' => 'Build-Plan-Verhalten für "%s" wählen.',
@@ -4120,23 +4804,23 @@ sudo git config --system --add safe.directory %s',
       'Choose a project to move tasks to.' => 'Projekt auswählen, in das Aufgaben verschoben werden sollen.',
       'Choose a syntax highlighting to use.' => 'Syntaxhervorhebung auswählen.',
       'Choose a text encoding to use.' => 'Zeichenkodierung auswählen.',
-      'Choose a user to invoice.' => 'Einen zu fakturierenden Benutzer auswählen.',
       'Choose a valid export format.' => 'Wähle ein gültiges Exportformat.',
       'Choose a valid object.' => 'Ein gültiges Objekt auswählen.',
       'Choose a valid project to move tasks to.' => 'Gültiges Projekt auswählen, in das Aufgaben verschoben werden sollen.',
       'Choose an archival mode with --mode.' => 'Einen Archivierungsmodus mit --mode auswählen.',
       'Choose an object to install this dashboard on.' => 'Ein Objekt auswählen, auf dem dieses Dashboard installiert werden soll.',
-      'Choose one or more users to add as account managers. Managers have full control of the account.' => 'Wähle einen oder mehrere Benutzer aus, die als Kontomanager hinzugefügt werden sollen. Manager haben die volle Kontrolle über das Konto.',
+      'Choose how Phriction document actions are displayed.' => 'Lege fest, wie Aktionen für Phriction-Dokumente angezeigt werden.',
+      'Choose how actions like edit, history, move, and delete are presented on Phriction document pages. Use the visible side menu to keep actions always on the page, or use the header dropdown to keep the document layout more compact.' => 'Lege fest, wie Aktionen wie Bearbeiten, Verlauf, Verschieben und Löschen auf Phriction-Dokumentseiten dargestellt werden. Mit dem sichtbaren Seitenmenü bleiben die Aktionen immer auf der Seite, mit dem Dropdown-Menü in der Kopfzeile bleibt das Dokumentlayout kompakter.',
       'Choose subscribers.' => 'Mitleser auswählen.',
       'Choose the default behavior of the global search in the main menu.' => 'Standardverhalten der globalen Suche im Hauptmenü festlegen.',
       'Choose the default notification behavior for Conpherence rooms.' => 'Standard-Benachrichtigungsverhalten für Conpherence-Räume festlegen.',
       'Choose the default sound behavior for new Conpherence rooms.' => 'Standard-Töneverhalten für neue Conpherence-Räume festlegen.',
-      'Choose the merchant you want to pay.' => 'Den Händler auswählen, an den du zahlen möchtest.',
+      'Choose the object **subtype** that this form should create and edit.' => 'Wähle den **Untertyp** der Objekte, die dieses Formular erstellen und bearbeiten soll.',
       'Choose the object this rule will act on (for example, enter `rX` to act on the `rX` repository, or `#project` to act on a project).' => 'Das Objekt auswählen, auf das diese Regel wirken soll (z.B. `rX` für das Repository `rX` oder `#projekt` für ein Projekt).',
       'Choose the pronoun you prefer.' => 'Bevorzugtes Pronomen auswählen.',
-      'Choose the type of payment provider to add:' => 'Den Typ des hinzuzufügenden Zahlungsanbieters auswählen:',
       'Choose the type of user account to create. For a detailed explanation of user account types, see [[ %s | User Guide: Account Roles ]].' => 'Wähle den Typ des Benutzerkontos aus, das erstellt werden soll. Eine ausführliche Erläuterung der Kontotypen findest Du unter [[ %s | Benutzerhandbuch: Kontorollen ]].',
-      'Choose which account to invoice.' => 'Das zu fakturierende Konto auswählen.',
+      'Choose what logged-out visitors see at the home URI.' => 'Lege fest, was abgemeldete Besucher unter der Startseiten-URI sehen.',
+      'Choose whether logged-out visitors who navigate to the home URI should see the home page or be redirected to the login screen. Use the home page for public installs, or the login screen for private installs where the home page is not useful before login.' => 'Lege fest, ob abgemeldete Besucher, die die Startseiten-URI aufrufen, die Startseite sehen oder zum Anmeldebildschirm weitergeleitet werden. Verwende die Startseite für öffentliche Installationen oder den Anmeldebildschirm für private Installationen, bei denen die Startseite vor der Anmeldung nicht nützlich ist.',
       'Choose which capabilities to unlock with "--view", "--edit", or "--owner".' => 'Mit „--view", „--edit" oder „--owner" auswählen, welche Fähigkeiten entsperrt werden sollen.',
       'Choose which day a calendar week should begin on.' => 'Ersten Wochentag im Kalender festlegen.',
       'Choose which item to route.' => 'Weiterzuleitendes Element auswählen.',
@@ -4154,13 +4838,12 @@ sudo git config --system --add safe.directory %s',
       'CircleCI did not return a "%s"!' => 'CircleCI hat kein "%s" zurückgegeben!',
       'Circles' => 'Kreise',
       'Circular Dependency' => 'Zirkuläre Abhängigkeit',
-      'City/State' => 'Stadt/Bundesland',
       'Claimed' => 'An sich gerissen',
       'Class' => 'Klasse',
+      'Class "%s" is not a subclass of "%s".' => 'Klasse "%s" ist keine Unterklasse von "%s".',
       'Classes must match to compare schemata!' => 'Klassen müssen übereinstimmen, um Schemata zu vergleichen!',
       'Cleanup' => 'Aufräumen',
       'Clear Cache' => 'Cache leeren',
-      'Clear Connection Pool' => 'Verbindungspool leeren',
       'Clear Selection' => 'Auswahl aufheben',
       'Clear a flag.' => 'Ein Fähnchen entfernen.',
       'Clear sailing ahead.' => 'Bereit für gute Taten.',
@@ -4185,8 +4868,6 @@ sudo git config --system --add safe.directory %s',
       'Clone/Fetch Timeout' => 'Clone/Fetch-Zeitlimit',
       'Close' => 'Schließen',
       'Close As Duplicate' => 'Als Duplikat schließen',
-      'Close Initiative' => 'Initiative schließen',
-      'Close Initiative?' => 'Initiative schließen?',
       'Close Mock' => 'Mock schließen',
       'Close Pholio Mock' => 'Pholio-Mock schließen',
       'Close Poll' => 'Abstimmung schließen',
@@ -4200,7 +4881,6 @@ sudo git config --system --add safe.directory %s',
       'Closed After' => 'Abgeschlossen nach',
       'Closed Before' => 'Abgeschlossen vor',
       'Closed By' => 'Abgeschlossen von',
-      'Closed Default' => 'Geschlossener Standard',
       'Closed Status' => 'Geschlossener Status',
       'Closed Tasks' => 'Geschlossene Aufgaben',
       'Closed after %s' => 'Abgeschlossen nach %s',
@@ -4252,7 +4932,7 @@ sudo git config --system --add safe.directory %s',
       'Collided mid-air when generating builtin file "%s", but then failed to load the object we collided with.' => 'Kollision beim Generieren der integrierten Datei "%s", aber das Objekt, mit dem kollidiert wurde, konnte nicht geladen werden.',
       'Color' => 'Farbe',
       'Color \'%s\'' => 'Farbe \'%s\'',
-      'Color Palette' => 'Farbpalette',
+      'Color Theme' => 'Farbschema',
       'Color and rarity of the badge.' => 'Farbe und Seltenheit der Trophäe.',
       'Color key "%s" is not a valid color key. The supported color keys are: %s.' => 'Der Farbschlüssel "%s" ist kein gültiger Farbschlüssel. Unterstützte Farbschlüssel sind: %s.',
       'Colorless' => 'Farblos',
@@ -4290,6 +4970,7 @@ sudo git config --system --add safe.directory %s',
       'Command Line API Token' => 'Kommandozeilen-API-Token',
       'Command Not Supported' => 'Befehl nicht unterstützt',
       'Command to execute.' => 'Auszuführender Befehl.',
+      'Command was `%s` at `%s`' => 'Befehl war `%s` in `%s`',
       'Commandeer Revision' => 'Version übernehmen',
       'Commandeer a revision.' => 'Eine Version übernehmen.',
       'Commandeered' => 'Übernommen',
@@ -4332,7 +5013,6 @@ sudo git config --system --add safe.directory %s',
       'Commit Date (Newest First)' => 'Commit-Datum (Neueste zuerst)',
       'Commit Date (Oldest First)' => 'Commit-Datum (Älteste zuerst)',
       'Commit Detail' => 'Commit-Details',
-      'Commit Epochs' => 'Commit-Epochen',
       'Commit Fields' => 'Commit Felder',
       'Commit Has Revision' => 'Commit hat Version',
       'Commit Has Task' => 'Commit hat Aufgabe',
@@ -4358,6 +5038,9 @@ sudo git config --system --add safe.directory %s',
       'Committer' => 'Committer',
       'Committer\'s packages' => 'Pakete des Committers',
       'Committer\'s projects' => 'Projekte des Committers',
+      'Committing %s symbols...
+' => '%s Symbole werden committet...
+',
       'Committing configured partition map to databases...' => 'Konfigurierte Partitionszuordnung wird in Datenbanken übernommen...',
       'Committing this change failed. It may already have been merged.' => 'Der Commit dieser Änderung ist fehlgeschlagen. Sie wurde möglicherweise bereits zusammengeführt.',
       'Common' => 'Gewöhnlich',
@@ -4372,13 +5055,11 @@ sudo git config --system --add safe.directory %s',
       'Compare' => 'Vergleichen',
       'Compare Against' => 'Vergleichen mit',
       'Compare Against...' => 'Vergleichen mit...',
-      'Compilation of query: %s' => 'Kompilierung der Abfrage: %s',
       'Complaint' => 'Beschwerde',
       'Complaint Form' => 'Beschwerdeformular',
       'Complete' => 'Abgeschlossen',
       'Complete Setup and Activate Repository' => 'Einrichtung abschließen und Repository aktivieren',
       'Complete enrolling your phone with Duo:' => 'Registrierung deines Telefons bei Duo abschließen:',
-      'Complete paragraph rewrite.' => 'Vollständige Umschreibung des Absatzes.',
       'Completed' => 'Abgeschlossen',
       'Completed After' => 'Abgeschlossen nach',
       'Completed Before' => 'Abgeschlossen vor',
@@ -4433,8 +5114,6 @@ Beste Grüße,
       'Config option "%s" is invalid. The URI must start with "%s" or "%s".' => 'Die Konfigurationsoption "%s" ist ungültig. Die URI muss mit "%s" oder "%s" beginnen.',
       'Config option "%s" is invalid. The timezone identifier must be a valid timezone identifier recognized by PHP, like "%s".' => 'Die Konfigurationsoption "%s" ist ungültig. Die Zeitzonenkennung muss eine von PHP erkannte gültige Zeitzonenkennung sein, etwa "%s".',
       'Config option "phd.user" is not set. You must set this option so the private key can be stored with the correct permissions.' => 'Die Konfigurationsoption "phd.user" ist nicht gesetzt. Du musst diese Option setzen, damit der private Schlüssel mit den korrekten Berechtigungen gespeichert werden kann.',
-      'Config option \'%s\' is invalid. The URI must NOT have a path, e.g. \'%s\' is OK, but \'%s\' is not. This software must be \'.
-            \'installed on an entire domain; it can not be installed on a path.' => 'Die Konfigurationsoption \'%s\' ist ungültig. Die URI darf KEINEN Pfad enthalten; \'%s\' ist zum Beispiel gültig, \'%s\' jedoch nicht. Diese Software muss auf einer vollständigen Domain installiert werden und kann nicht auf einem Pfad installiert werden.',
       'Config option \'%s\' is invalid. The URI must NOT have a path, e.g. \'%s\' is OK, but \'%s\' is not. This software must be installed on an entire domain; it can not be installed on a path.' => 'Die Konfigurationsoption \'%s\' ist ungültig. Die URI darf KEINEN Pfad enthalten; \'%s\' ist zum Beispiel gültig, \'%s\' jedoch nicht. Diese Software muss auf einer vollständigen Domain installiert werden und kann nicht auf einem Pfad installiert werden.',
       'Config option \'%s\' is invalid. The URI must contain a dot (\'.\'), like \'%s\', not just a bare name like \'%s\'. Some web browsers will not set cookies on domains with no TLD.' => 'Die Konfigurationsoption \'%s\' ist ungültig. Die URI muss einen Punkt (\'.\') enthalten, etwa \'%s\', und darf nicht nur ein bloßer Name wie \'%s\' sein. Einige Webbrowser setzen auf Domains ohne TLD keine Cookies.',
       'Config option \'%s\' is invalid. The URI must start with \'%s\' or \'%s\'.' => 'Konfigurationsoption \'%s\' ist ungültig. Die URI muss mit \'%s\' oder \'%s\' beginnen.',
@@ -4483,7 +5162,6 @@ WICHTIG: Dieses Feature ist neu, experimentell und nicht offiziell unterstützt.
       'Configure Files Forms' => 'Dateiformulare konfigurieren',
       'Configure Form' => 'Formular konfigurieren',
       'Configure Forms for Configuring Forms' => 'Formulare zur Formularkonfiguration konfigurieren',
-      'Configure Fund Forms' => 'Fund-Formulare konfigurieren',
       'Configure Global Search' => 'Globale Suche konfigurieren',
       'Configure JIRA OAuth. NOTE: Only supports JIRA 6.' => 'JIRA OAuth konfigurieren. HINWEIS: Nur JIRA 6 wird unterstützt.',
       'Configure Legalpad Forms' => 'Legalpad-Formulare konfigurieren',
@@ -4494,13 +5172,12 @@ WICHTIG: Dieses Feature ist neu, experimentell und nicht offiziell unterstützt.
       'Configure Maniphest task statuses.' => 'Konfiguration des Maniphest-Aufgaben-Status-Feldes.',
       'Configure Maniphest.' => 'Maniphest konfigurieren',
       'Configure Menu' => 'Menü konfigurieren',
+      'Configure Named Policy Forms' => 'Formulare für benannte Richtlinien konfigurieren',
       'Configure Owners Package Forms' => 'Owners-Paket-Formulare konfigurieren.',
       'Configure Owners.' => 'Besitzer konfigurieren.',
       'Configure Paste Forms' => 'Paste-Formulare konfigurieren',
       'Configure Phame Blog Forms' => 'Phame-Blog-Formulare konfigurieren',
-      'Configure Phortune Account Email Forms' => 'Phortune-Konto-E-Mail-Formulare konfigurieren',
-      'Configure Phortune Account Forms' => 'Phortune-Kontoformulare konfigurieren',
-      'Configure Phortune Merchant Forms' => 'Phortune-Händlerformulare konfigurieren',
+      'Configure Phriction.' => 'Phriction konfigurieren.',
       'Configure Phurl Forms' => 'Phurl-Formulare konfigurieren',
       'Configure Ponder Question Forms' => 'Ponder-Frageformulare konfigurieren',
       'Configure Project Forms' => 'Projektformulare konfigurieren',
@@ -4515,18 +5192,15 @@ WICHTIG: Dieses Feature ist neu, experimentell und nicht offiziell unterstützt.
       'Configure blueprints so Drydock can build resources, like hosts and working copies.' => 'Blueprints so konfigurieren, dass Drydock Ressourcen wie Hosts und Working Copies erstellen kann.',
       'Configure bulk job __id__ to run silently (without sending mail or publishing notifications).' => 'Stapeljob __id__ so konfigurieren, dass er still ausgeführt wird (ohne E-Mails zu senden oder Benachrichtigungen zu veröffentlichen).',
       'Configure core options, including URIs.' => 'Kernoptionen einschließlich URIs konfigurieren.',
+      'Configure creating and editing Named Policies.' => 'Erstellen und Bearbeiten benannter Richtlinien konfigurieren.',
       'Configure creation and editing blog posts in Phame.' => 'Erstellung und Bearbeitung von Blog-Beiträgen in Phame konfigurieren.',
       'Configure creation and editing documents in Legalpad.' => 'Erstellen und Bearbeiten von Dokumenten in Legalpad konfigurieren.',
-      'Configure creation and editing forms for Phortune Account Email Addresses.' => 'Erstellungs- und Bearbeitungsformulare für Phortune-Konto-E-Mail-Adressen konfigurieren.',
-      'Configure creation and editing forms for Phortune Merchants.' => 'Erstellungs- und Bearbeitungsformulare für Phortune-Händler konfigurieren.',
       'Configure creation and editing forms for users.' => 'Erstellungs- und Bearbeitungsformulare für Benutzer konfigurieren.',
       'Configure creation and editing forms in Applications.' => 'Erstellen und Bearbeiten von Formularen in Anwendungen konfigurieren.',
       'Configure creation and editing forms in Badges.' => 'Formulare zum Erstellen und Bearbeiten von Trophäen konfigurieren.',
       'Configure creation and editing forms in Conpherence.' => 'Erstellungs- und Bearbeitungsformulare in Conpherence konfigurieren.',
       'Configure creation and editing forms in Files.' => 'Erstellungs- und Bearbeitungsformulare in Dateien konfigurieren.',
-      'Configure creation and editing forms in Fund.' => 'Erstellungs- und Bearbeitungsformulare in Fund konfigurieren.',
       'Configure creation and editing forms in Paste.' => 'Erstellungs- und Bearbeitungsformulare in Paste konfigurieren.',
-      'Configure creation and editing forms in Phortune Accounts.' => 'Erstellungs- und Bearbeitungsformulare in Phortune-Konten konfigurieren.',
       'Configure creation and editing forms in Phurl.' => 'Erstellungs- und Bearbeitungsformulare in Phurl konfigurieren.',
       'Configure creation and editing forms in Ponder Questions.' => 'Erstellungs- und Bearbeitungsformulare für Ponder-Fragen konfigurieren.',
       'Configure creation and editing of Macro images.' => 'Erstellen und Bearbeiten von Makrobildern konfigurieren.',
@@ -4551,6 +5225,7 @@ WICHTIG: Dieses Feature ist neu, experimentell und nicht offiziell unterstützt.
       'Configure the UI, including colors.' => 'Die Benutzeroberfläche einschließlich Farben konfigurieren.',
       'Configure the access logs, which log HTTP/SSH requests.' => 'Zugriffsprotokolle konfigurieren, die HTTP/SSH-Anfragen protokollieren.',
       'Configure the cutoff for the "Recently Closed" column.' => 'Den Zeitraum für die Spalte "Vor kurzem abgeschlossen" konfigurieren.',
+      'Configure the home page.' => 'Die Startseite konfigurieren.',
       'Configure the largest file which will be put into the MySQL storage engine.' => 'Die maximale Dateigröße konfigurieren, die in die MySQL-Speicher-Engine gelegt wird.',
       'Configure which MIME types are audio.' => 'Konfigurieren, welche MIME-Typen Audio sind.',
       'Configure which MIME types are images.' => 'Konfigurieren, welche MIME-Typen Bilder sind.',
@@ -4592,18 +5267,12 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Conflicts' => 'Konflikte',
       'Connect a session-based client.' => 'Einen sitzungsbasierten Client verbinden.',
       'Connect to Other Software' => 'Mit anderer Software verbinden',
+      'Connect with __username__ instead of the configured default.' => 'Mit __username__ statt mit dem konfigurierten Standard verbinden.',
       'Connected' => 'Verbunden',
       'Connecting to LDAP...' => 'Verbindung zu LDAP wird hergestellt...',
       'Connecting...' => 'Verbinde...',
       'Connection' => 'Verbindung',
       'Connection Error' => 'Verbindungsfehler',
-      'Connection Pool + Specific, With Lock' => 'Verbindungspool + spezifisch, mit Lock',
-      'Connection Pool + Specific, With Lock Released' => 'Verbindungspool + spezifisch, Lock freigegeben',
-      'Connection Pool After External Lock Failure' => 'Verbindungspool nach externem Lock-Fehler',
-      'Connection Pool After Lock Failure' => 'Verbindungspool nach Lock-Fehler',
-      'Connection Pool With Lock' => 'Verbindungspool mit Lock',
-      'Connection Pool With Lock Released' => 'Verbindungspool mit freigegebenem Lock',
-      'Connection Pool with Held Lock' => 'Verbindungspool mit gehaltenem Lock',
       'Conpherence' => 'Conpherence',
       'Conpherence Column Minimize' => 'Conpherence-Spalte minimieren',
       'Conpherence Column Visible' => 'Conpherence-Spalte sichtbar',
@@ -4621,19 +5290,13 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Constant identifying the garbage collector.' => 'Konstante, die den Garbage Collector identifiziert.',
       'Constants supported by the `%s` constraint:' => 'Von der Einschränkung `%s` unterstützte Konstanten:',
       'Constants: Differential' => 'Differential-Konstanten',
-      'Constraint "%s" is not a valid constraint for this query.' => 'Einschränkung „%s" ist keine gültige Einschränkung für diese Abfrage.',
-      'Constraint "authorPHIDs" to "transaction.search" requires nonempty list, empty list provided.' => 'Die Einschränkung "authorPHIDs" für "transaction.search" erfordert eine nicht leere Liste, es wurde aber eine leere Liste angegeben.',
-      'Constraint "phids" to "transaction.search" requires nonempty list, empty list provided.' => 'Die Einschränkung "phids" für "transaction.search" erfordert eine nicht leere Liste, es wurde aber eine leere Liste angegeben.',
       'Constraints' => 'Einschränkungen',
-      'Constraints for input "%s".' => 'Einschränkungen für Eingabe „%s".',
       'Construction of a DateTime() with epoch \'%s\' raised an exception.' => 'Das Erzeugen eines DateTime()-Objekts mit Epoch-Wert \'%s\' hat eine Ausnahme ausgelöst.',
       'Consumed' => 'Verbraucht',
       'Consumer Key' => 'Consumer Key',
       'Consumer key is required.' => 'Consumer Key ist erforderlich.',
       'Consumer secret is required.' => 'Consumer Secret ist erforderlich.',
       'Contact Email' => 'Email Ansprechpartner',
-      'Contact Info' => 'Kontaktdaten',
-      'Contact Information' => 'Kontaktdaten',
       'Contact Name' => 'Ansprechpartner',
       'Contact Number' => 'Kontaktnummer',
       'Contact Number %d' => 'Kontaktnummer %d',
@@ -4677,11 +5340,9 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Context object ("%s") has unsupported type. Panels should be rendered from the context of a dashboard or another panel.' => 'Kontextobjekt („%s") hat einen nicht unterstützten Typ. Panele sollten aus dem Kontext eines Dashboards oder eines anderen Panels heraus dargestellt werden.',
       'Continue' => 'Fortsetzen',
       'Continue Build Normally' => 'Build normal fortsetzen',
-      'Continue Checkout' => 'Kasse fortsetzen',
       'Continue anyway?' => 'Trotzdem fortfahren?',
+      'Continue installing whatever that is?' => 'Mit der Installation von was auch immer das ist fortfahren?',
       'Continue to Application' => 'Weiter zur Anwendung',
-      'Continue to Updated Link' => 'Zum aktualisierten Link weiter',
-      'Continue with old MySQL version?' => 'Mit alter MySQL-Version fortfahren?',
       'Contributor' => 'Beitragende/r',
       'Contributors' => 'Mitwirkende',
       'Control' => 'Strg',
@@ -4691,8 +5352,6 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Control who can create new named services and devices.' => 'Steuern, wer neue benannte Dienste und Geräte erstellen darf.',
       'Controller' => 'Controller',
       'Controller "%s" returned an invalid response from call to "%s". This method must return an object of class "%s", or an object which implements the "%s" interface.' => 'Controller "%s" hat aus dem Aufruf von "%s" eine ungültige Antwort zurückgegeben. Diese Methode muss ein Objekt der Klasse "%s" oder ein Objekt zurückgeben, das das Interface "%s" implementiert.',
-      'Controller ("%s") extends controller "%s", but is reachable with no "accountID" in URI.' => 'Controller ("%s") erweitert Controller "%s", ist aber ohne "accountID" in der URI erreichbar.',
-      'Controller ("%s") extends controller "%s", but is reachable with no "merchantID" in URI.' => 'Controller ("%s") erweitert Controller "%s", ist aber ohne "merchantID" in der URI erreichbar.',
       'Controllers must implement either %s (recommended) or %s (deprecated).' => 'Controller müssen entweder %s (empfohlen) oder %s (veraltet) implementieren.',
       'Controls whether email for multiple recipients is sent by creating one message with everyone in the "To:" line, or multiple messages that each have a single recipient in the "To:" line.' => 'Steuert, ob E-Mail für mehrere Empfänger als eine Nachricht mit allen Empfängern in der Zeile "To:" gesendet wird oder als mehrere Nachrichten, die jeweils nur einen Empfänger in der Zeile "To:" haben.',
       'Controls whether email is sent "From" users.' => 'Steuert, ob E-Mail "Von" Benutzern gesendet wird.',
@@ -4709,9 +5368,6 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Cookies set for x.com are also sent for y.x.com. Assuming instances are running on both domains, this will create a collision preventing you from logging in.' => 'Für x.com gesetzte Cookies werden auch an y.x.com gesendet. Wenn auf beiden Domains Instanzen laufen, erzeugt das einen Konflikt, der die Anmeldung verhindern kann.',
       'Copied Away' => 'Wegkopiert',
       'Copied Here' => 'Herkopiert',
-      'Copied from %s' => 'Kopiert von %s',
-      'Copied to %s' => 'Kopiert nach %s',
-      'Copied to multiple locations:' => 'An mehrere Stellen kopiert:',
       'Copy "Quack" to Clipboard' => '„Quack“ in die Zwischenablage kopieren',
       'Copy %s' => 'Kopie von %s',
       'Copy and paste this token into the prompt given to you by `arc install-certificate`' => 'Kopiere dieses Token und füge es in die Eingabeaufforderung ein, die dir `arc install-certificate` anzeigt.',
@@ -4722,18 +5378,18 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Copy text' => 'Text kopieren',
       'Copy-paste the API Token below to grant access to your account.' => 'Den nachstehenden API-Token kopieren und einfügen, um Zugriff auf dein Konto zu gewähren.',
       'Copy/paste to make design maintenance twice as difficult.' => 'Kopieren/Einfügen, um die Design-Pflege doppelt so schwer zu machen.',
+      'Copying `%s` to `%s`' => 'Kopiere `%s` nach `%s`',
       'Copying failed.' => 'Kopieren fehlgeschlagen.',
       'Core' => 'Kern',
       'Core Applications' => 'Kern-Anwendungen',
       'Core Settings' => 'Grundeinstellungen',
       'Corned Beef' => 'Corned Beef',
       'Corporations' => 'Firmen',
-      'Corpus stem of: %s' => 'Wortstamm im Korpus von: %s',
-      'Correct event indexes with start date.' => 'Terminindizes mit Startdatum korrigieren.',
       'Corrupt integrity hashes for given files. This is intended for debugging.' => 'Integritäts-Hashes für bestimmte Dateien korrumpieren. Dies ist für Debugging-Zwecke gedacht.',
       'Corrupted integrity hash for file "%s".' => 'Integritäts-Hash für Datei "%s" korrumpiert.',
       'Corrupting integrity hashes will prevent files from being accessed. This mode is intended only for development and debugging.' => 'Das Korrumpieren von Integritäts-Hashes verhindert den Zugriff auf Dateien. Dieser Modus ist nur für Entwicklung und Debugging gedacht.',
       'Cost' => 'Kosten',
+      'Could not find Exuberant Ctags. Make sure it is installed and available in executable path.' => 'Exuberant Ctags wurde nicht gefunden. Stelle sicher, dass es installiert und im Suchpfad für ausführbare Dateien verfügbar ist.',
       'Could not find any garbage to collect.' => 'Es konnte keine Garbage zum Einsammeln gefunden werden.',
       'Could not parse attachment %s; only attachments (and mail bodies) generated via "diff" commands can be parsed.' => 'Anhang %s konnte nicht geparst werden; nur Anhänge (und E-Mail-Texte), die mit "diff"-Befehlen erzeugt wurden, können verarbeitet werden.',
       'Could not parse file %s; only files with mimetype text/plain can be parsed via email.' => 'Datei %s konnte nicht geparst werden; nur Dateien mit dem MIME-Typ text/plain können per E-Mail verarbeitet werden.',
@@ -4745,15 +5401,14 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Countdown to Events' => 'Countdown zu Ereignissen',
       'Countdowns' => 'Countdowns',
       'Countdowns must have a title.' => 'Countdowns müssen einen Titel haben.',
-      'Country' => 'Land',
       'Coverage (All)' => 'Übersicht (Alles)',
       'Coverage (Touched)' => 'Übersicht (Verändert)',
       'Coverage information for this test.' => 'Abdeckungsinformationen für diesen Test.',
       'Covered' => 'Abgedeckt',
+      'Cowsay' => 'Cowsay',
       'Create' => 'Mach einfach',
       'Create %s' => '%s erstellen',
       'Create **Issue Link** to the Revision, as an "implemented in" relationship.' => 'Einen **Issue Link** zur Revision als Beziehung "implemented in" erstellen.',
-      'Create Account' => 'Konto erstellen',
       'Create Accounts' => 'Konten erstellen',
       'Create Admin Account' => 'Neues Administratorkonto',
       'Create Application' => 'Anwendung erstellen',
@@ -4790,14 +5445,12 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Create Herald Rule: %s' => 'Herald-Regel erstellen: %s',
       'Create Identity' => 'Identität erstellen',
       'Create Import' => 'Import anlegen',
-      'Create Initiative' => 'Initiative erstellen',
       'Create Interface' => 'Schnittstelle erstellen',
       'Create MFA Provider' => 'MFA-Anbieter erstellen',
       'Create Macro' => 'Makro erstellen',
       'Create Mailing List User' => 'Neuer Mailing-Listen Benutzer',
       'Create Meme' => 'Meme erstellen',
       'Create Menu Item' => 'Menüpunkt erstellen',
-      'Create Merchant' => 'Händler erstellen',
       'Create Mercurial Repository' => 'Mercurial-Repository erstellen',
       'Create Milestone' => 'Meilenstein erstellen',
       'Create Mock' => 'Neuer Entwurf',
@@ -4817,10 +5470,8 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Create New File' => 'Neue Datei erstellen',
       'Create New Form' => 'Neues Formular erstellen',
       'Create New Import' => 'Neuen Import anlegen',
-      'Create New Initiative' => 'Neue Initiative erstellen',
       'Create New Macro' => 'Neues Makro erstellen',
       'Create New Mailing List' => 'Neue Mailing-Liste erstellen',
-      'Create New Merchant' => 'Neuen Händler erstellen',
       'Create New Package' => 'Neues Paket erstellen',
       'Create New Paste' => 'Neuen Paste erstellen',
       'Create New Post' => 'Neuen Beitrag erstellen',
@@ -4837,15 +5488,11 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Create Package' => 'Paket erstellen',
       'Create Panel' => 'Neues Panel',
       'Create Paste' => 'Paste erstellen',
-      'Create Payment Account' => 'Neues Zahlungskonto ',
-      'Create Payment Provider' => 'Neuer Zahlungsdienstleister',
       'Create Poll' => 'Neue Umfrage',
       'Create Portal' => 'Portal erstellen',
       'Create Post' => 'Neuer Beitrag',
-      'Create Product' => 'Neues Produkt',
       'Create Project' => 'Neues Projekt',
       'Create Property' => 'Eigenschaft erstellen',
-      'Create Provider' => 'Neuer Dienstleister',
       'Create Publisher' => 'Softwareanbieter erstellen',
       'Create Queue' => 'Warteschlange erstellen',
       'Create Repository' => 'Neues Repository',
@@ -4894,7 +5541,7 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Create a Space' => 'Neuen Bereich erstellen',
       'Create a Task' => 'Eine Aufgabe erstellen',
       'Create a URI in a given repository. This transaction type must be present when creating a new URI and must not be present when editing an existing URI.' => 'Einen URI in einem bestimmten Repository erstellen. Dieser Transaktionstyp muss beim Erstellen einer neuen URI vorhanden sein, beim Bearbeiten einer vorhandenen URI jedoch nicht.',
-      'Create a bot/script user account, to automate interactions with other systems. These users can not use the web interface, but can use the API.' => 'Ein Bot-/Skript-Benutzerkonto erstellen, um Interaktionen mit anderen Systemen zu automatisieren. Diese Benutzer können die Web-Oberfläche nicht nutzen, aber die API.',
+      'Create a bot/script user account, to automate interactions with other systems. These users can not use the web interface, but can use the Conduit API.' => 'Ein Bot-/Skript-Benutzerkonto erstellen, um Interaktionen mit anderen Systemen zu automatisieren. Diese Benutzer können die Web-Oberfläche nicht nutzen, aber die Conduit-API.',
       'Create a build artifact.' => 'Ein Build-Artefakt erstellen.',
       'Create a fanciful list of objects and prismatic donuts.' => 'Eine fantasievolle Liste aus Objekten und prismatischen Donuts erstellen.',
       'Create a mailing list user to represent an existing, external mailing list like a Google Group or a Mailman list.' => 'Einen Mailing-Listen-Benutzer erstellen, um eine bestehende externe Mailing-Liste wie eine Google-Gruppe oder eine Mailman-Liste darzustellen.',
@@ -4910,9 +5557,7 @@ Die Schlüssel dieser Zuordnung sind anzeigbare MIME-Typen; die Werte sind die M
       'Create a new conpherence thread.' => 'Neuer Conpherence Thread',
       'Create a new document at' => 'Neues Dokument erstellen unter',
       'Create a new paste.' => 'Einen neuen Paste erstellen.',
-      'Create a new user for use with automated scripts.' => 'Neuen Benutzer für automatisierte Skripte erstellen.Erstelle einen neuen Benutzer, der ausschließlich für Skripte verwendet wird.',
       'Create a project.' => 'Neues Projekt erstellen.',
-      'Create a standard user account.' => 'Neues Standard-Benutzer Konto.',
       'Create a standard user account. These users can log in, use the web interface and API, and receive email.' => 'Ein Standard-Benutzerkonto erstellen. Diese Benutzer können sich anmelden, die Web-Oberfläche und API nutzen und E-Mails empfangen.',
       'Create a subproject of an existing project.' => 'Teilprojekt eines bestehenden Projektes erstellen.',
       'Create a task in a workboard column.' => 'Aufgabe in einer Arbeitsflächen-Spalte erstellen.',
@@ -4953,7 +5598,6 @@ See [[ %s | Projects User Guide ]] in the documentation for details. This proces
 Einzelheiten sind im [[ %s | Projekthandbuch ]] zu finden. Dieser Vorgang kann nicht rückgängig gemacht werden.',
       'Creation (Newest First)' => 'Erstellungsdatum (Neueste zuerst)',
       'Creation (Oldest First)' => 'Erstellungsdatum (Älteste zuerst)',
-      'Creation of default account for users with no accounts.' => 'Erstellung eines Standardkontos für Benutzer ohne Konten.',
       'Creation of this diff was rejected by Herald rule %s.
   Rule: %s
 Reason: %s' => 'Die Erstellung dieses Diffs wurde von Herald-Regel %s abgelehnt.
@@ -4980,8 +5624,6 @@ Grund: %s',
       'Credential type "%s" is not valid. Valid credential types are: %s.' => 'Zugangsdatentyp "%s" ist ungültig. Gültige Typen: %s.',
       'Credentials' => 'Zugangsdaten',
       'Credentials must have a name.' => 'Zugangsdaten müssen einen Namen haben.',
-      'Credit Card or PayPal Account' => 'Kreditkarte oder PayPal-Konto',
-      'Credit/Debit Card' => 'Kredit-/Debitkarte',
       'Crowded Eastern Edge' => 'Überfüllter Ostrand',
       'Cup of Joe' => 'Tasse Kaffee',
       'Current' => 'Aktiv',
@@ -4990,7 +5632,7 @@ Grund: %s',
       'Current Commits' => 'Aktuelle Commits',
       'Current Configuration' => 'Aktuelle Konfiguration',
       'Current Default' => 'Aktuelle Vorgabe',
-      'Current Logo' => 'Aktuelles Logo',
+      'Current Mentions' => 'Aktuelle Erwähnungen',
       'Current Menu Items' => 'Aktuelle Menüpunkte',
       'Current Mocks' => 'Aktuelle Entwürfe',
       'Current Parent Revisions' => 'Aktuelle Elternversionen',
@@ -5013,7 +5655,6 @@ Grund: %s',
       'Cursor "%s" does not identify a valid object in query "%s".' => 'Cursor „%s" identifiziert kein gültiges Objekt in Abfrage „%s".',
       'Cursor %s does not exist or is already reset.' => 'Cursor %s existiert nicht oder ist bereits zurückgesetzt.',
       'Curtain extension ("%s", of class "%s") did not return a list of curtain panels from method "%s". This method must return an array, and each value in the array must be a "%s" object.' => 'Curtain-Erweiterung ("%s", der Klasse "%s") hat aus der Methode "%s" keine Liste von Curtain-Panels zurückgegeben. Diese Methode muss ein Array zurückgeben, und jeder Wert im Array muss ein Objekt vom Typ "%s" sein.',
-      'Curtain extension ("%s", of class "%s") did not return an application from method "%s". This method must return an object of class "%s".' => 'Curtain-Erweiterung ("%s", der Klasse "%s") hat aus der Methode "%s" keine Anwendung zurückgegeben. Diese Methode muss ein Objekt der Klasse "%s" zurückgeben.',
       'Curtain extension ("%s", of class "%s") returned a list of curtain panels from "%s" that contains an invalid value: a value (with key "%s") is not an object of class "%s". Each item in the returned array must be a panel.' => 'Curtain-Erweiterung ("%s", der Klasse "%s") hat aus "%s" eine Liste von Curtain-Panels zurückgegeben, die einen ungültigen Wert enthält: Ein Wert (mit Schlüssel "%s") ist kein Objekt der Klasse "%s". Jeder Eintrag im zurückgegebenen Array muss ein Panel sein.',
       'Custom' => 'Benutzerdefiniert',
       'Custom "%s" Policy' => 'Benutzerdefinierte "%s"-Richtlinie',
@@ -5042,7 +5683,6 @@ Grund: %s',
       'Custom instructions included in "Welcome" mail when an administrator creates a user account.' => 'Benutzerdefinierte Hinweise, die in die "Willkommen"-E-Mail aufgenommen werden, wenn ein Administrator ein Benutzerkonto erstellt.',
       'Custom remarkup rules are now added by subclassing %s or %s.' => 'Benutzerdefinierte Remarkup-Regeln werden jetzt durch Unterklassen von %s oder %s hinzugefügt.',
       'Custom text for the message.' => 'Benutzerdefinierter Text für die Nachricht.',
-      'Customer Account' => 'Kundenkonto',
       'Customize Enroll Message' => 'Einschreibenachricht anpassen',
       'Customize Message' => 'Nachricht anpassen',
       'Customize Messages' => 'Nachrichten anpassen',
@@ -5075,6 +5715,9 @@ Dangerous change protection is enabled for this repository.
 Edit the repository configuration before making dangerous changes.' => 'GEFÄHRLICHE ÄNDERUNG: %s
 Der Schutz vor gefährlichen Änderungen ist für dieses Repository aktiviert.
 Repository-Konfiguration bearbeiten, bevor gefährliche Änderungen vorgenommen werden.',
+      'DANGEROUS CHANGE: Dangerous change protection is enabled for this repository, so you can not change revision properties (you are attempting to edit "%s").
+Edit the repository configuration before making dangerous changes.' => 'GEFÄHRLICHE ÄNDERUNG: Der Schutz vor gefährlichen Änderungen ist für dieses Repository aktiviert, daher kannst Du keine Revisionseigenschaften ändern (Du versuchst, "%s" zu bearbeiten).
+Bearbeite die Repository-Konfiguration, bevor Du gefährliche Änderungen vornimmst.',
       'DANGEROUS. Attempt to salvage file content even if the integrity check fails. If an adversary has tampered with the file, the content may be unsafe.' => 'GEFÄHRLICH. Dateiinhalt auch bei fehlgeschlagener Integritätsprüfung zu retten versuchen. Wenn ein Angreifer die Datei manipuliert hat, kann der Inhalt unsicher sein.',
       'DANGEROUS. Recompute and update integrity hashes, overwriting invalid hashes. This may mark corrupt or dangerous files as valid.' => 'GEFÄHRLICH. Integritäts-Hashes neu berechnen und aktualisieren, ungültige Hashes überschreiben. Dies könnte beschädigte oder gefährliche Dateien als gültig markieren.',
       'DANGEROUS. Strip integrity hashes from files. This makes files vulnerable to corruption or tampering.' => 'GEFÄHRLICH. Integritäts-Hashes von Dateien entfernen. Dies macht Dateien anfällig für Beschädigung oder Manipulation.',
@@ -5122,14 +5765,10 @@ Repository-Konfiguration bearbeiten, bevor gefährliche Änderungen vorgenommen 
       'Daemons in library __%s__:' => 'Dämonen in Bibliothek __%s__:',
       'Daemons no longer use PID files.' => 'Dämonen verwenden keine PID-Dateien mehr.',
       'Daily' => 'Täglich',
-      'Daily Routine (Leap)' => 'Tägliche Routine (Schaltsekunde)',
-      'Daily Routine (PST)' => 'Tägliche Routine (PST)',
-      'Daily Routine (Post-Adjust)' => 'Tägliche Routine (nach Anpassung)',
-      'Daily Routine (Pre-Adjust)' => 'Tägliche Routine (vor Anpassung)',
       'Dangerous' => 'Gefährlich',
       'Dangerous Changes' => 'Gefährliche Änderungen',
       'Dark' => 'Dunkel',
-      'Dark Mode (Experimental)' => 'Dunkelmodus (experimentell)',
+      'Dark Mode' => 'Dunkelmodus',
       'DarkConsole' => 'Dunkle™-Konsole',
       'DarkConsole Tab' => 'Dunkle™-Konsole-Tab',
       'DarkConsole Visible' => 'Dunkle™-Konsole sichtbar',
@@ -5163,6 +5802,36 @@ DarkConsole legt potenziell sensible Daten wie Abfragen, Stack-Traces und Konfig
       'Data Export' => 'Datenexport',
       'Data Hash' => 'Daten-Hash',
       'Data Type' => 'Datentyp',
+      'Data can not be exported to Excel because the "zip" PHP extension is not
+installed. Consult the setup issue in the Config application for guidance on
+installing the extension.' => 'Daten können nicht nach Excel exportiert werden, weil die PHP-Erweiterung "zip" nicht
+installiert ist. Hinweise zur Installation der Erweiterung findest Du im
+entsprechenden Setup-Problem in der Anwendung Config.',
+      'Data can not be exported to Excel because the PHPExcel library is not
+installed. This software component is required to create Excel files.
+
+You can install PHPExcel from GitHub:
+
+> https://github.com/PHPOffice/PHPExcel
+
+Briefly:
+
+  - Clone that repository somewhere on the sever
+    (like `/path/to/example/PHPExcel`).
+  - Update your PHP `%s` setting (in `php.ini`) to include the PHPExcel
+    `Classes` directory (like `/path/to/example/PHPExcel/Classes`).' => 'Daten können nicht nach Excel exportiert werden, weil die Bibliothek PHPExcel nicht
+installiert ist. Diese Softwarekomponente wird zum Erstellen von Excel-Dateien benötigt.
+
+Du kannst PHPExcel von GitHub installieren:
+
+> https://github.com/PHPOffice/PHPExcel
+
+Kurz gesagt:
+
+  - Klone dieses Repository irgendwo auf den Server
+    (etwa nach `/path/to/example/PHPExcel`).
+  - Ergänze Deine PHP-Einstellung `%s` (in `php.ini`) um das Verzeichnis `Classes`
+    von PHPExcel (etwa `/path/to/example/PHPExcel/Classes`).',
       'Database' => 'Datenbank',
       'Database "%s" is configured as a replica and specifies a master ("%s"), but that master is not a valid master. Valid masters are: %s.' => 'Datenbank „%s" ist als Replica konfiguriert und gibt Master „%s" an, aber dieser ist kein gültiger Master. Gültige Master sind: %s.',
       'Database "%s" is configured as a replica, but does not specify which "master" it follows in configuration. Valid masters are: %s.' => 'Datenbank „%s" ist als Replica konfiguriert, gibt aber keinen „master" an, dem sie folgt. Gültige Master sind: %s.',
@@ -5249,6 +5918,9 @@ Um eine andere Stoppwortdatei zu wählen, füge dies Deiner Datei %s im Abschnit
       'Database records for repository "%s" were destroyed, but this script does not remove working copies on disk. If you also want to destroy the repository working copy, manually remove "%s".' => 'Die Datenbankeinträge für Repository "%s" wurden gelöscht, aber dieses Skript entfernt keine Arbeitskopien auf dem Datenträger. Wenn Du auch die Arbeitskopie des Repositorys löschen möchtest, entferne "%s" manuell.',
       'Database replica "%s" is listed as a replica, but is not currently replicating. You are vulnerable to data loss if the master fails.' => 'Das Datenbankreplikat "%s" ist als Replikat eingetragen, repliziert derzeit aber nicht. Wenn der Master ausfällt, droht Datenverlust.',
       'Database source is not configured properly' => 'Datenbankquelle ist nicht korrekt konfiguriert',
+      'Database write (to database "%s") though the connection is supposed to be read-only. Please file a bug report after carefully reviewing the query below for any private data.
+First 256 characters of the query: %s' => 'Schreibzugriff (auf Datenbank "%s"), obwohl die Verbindung nur lesend sein sollte. Bitte melde einen Fehler, nachdem Du die folgende Abfrage sorgfältig auf private Daten geprüft hast.
+Erste 256 Zeichen der Abfrage: %s',
       'Databases' => 'Datenbanken',
       'Databases are created in a namespace, which defaults to \'phabricator\' -- for instance, the Differential database is named \'phabricator_differential\' by default. You can change this namespace if you want. Normally, you should not do this unless you are developing extensions and using namespaces to separate multiple sandbox datasets.' => 'Datenbanken werden in einem Namensraum angelegt, der standardmäßig \'phabricator\' ist. Die Differential-Datenbank heißt standardmäßig zum Beispiel \'phabricator_differential\'. Du kannst diesen Namensraum ändern, wenn Du möchtest. Normalerweise solltest Du das aber nur tun, wenn Du Erweiterungen entwickelst und Namensräume verwendest, um mehrere Sandbox-Datensätze zu trennen.',
       'Date' => 'Datum',
@@ -5259,10 +5931,8 @@ Um eine andere Stoppwortdatei zu wählen, füge dies Deiner Datei %s im Abschnit
       'Date Updated (Latest First)' => 'Aktualisierungsdatum (Neueste zuerst)',
       'Date Updated (Oldest First)' => 'Aktualisierungsdatum (Älteste zuerst)',
       'Date and Time' => 'Datum und Uhrzeit',
-      'Date formatting' => 'Datumsformatierung',
       'Date value for "%s" can not be parsed.' => '"%s": der Datumswert kann nicht verarbeitet werden.',
       'Date when the countdown ends.' => 'Datum, an dem der Countdown endet.',
-      'Datetime formatting' => 'Datums- und Zeitformatierung',
       'Datetime has no timezone or viewer timezone.' => 'Datum/Uhrzeit hat keine Zeitzone, und die Benutzer-Zeitzone ist nicht gesetzt.',
       'Day View' => 'Tageskalender',
       'Day is out of query range' => 'Der Tag liegt außerhalb des Abfragebereichs.',
@@ -5278,7 +5948,6 @@ Um eine andere Stoppwortdatei zu wählen, füge dies Deiner Datei %s im Abschnit
       'December' => 'Dezember',
       'Decline' => 'Teilnahme absagen',
       'Decline Authorization' => 'Autorisierung ablehnen',
-      'Decline Code' => 'Ablehnungscode',
       'Decline Event' => 'Teilnahme absagen',
       'Decline this authorization? The object will not be able to lease or allocate resources created by this blueprint.' => 'Diese Autorisierung ablehnen? Das Objekt kann dann keine Ressourcen dieser Blaupause mieten oder zuweisen.',
       'Declined' => 'Abgelehnt',
@@ -5289,14 +5958,12 @@ Um eine andere Stoppwortdatei zu wählen, füge dies Deiner Datei %s im Abschnit
       'Declining to apply storage adjustments.' => 'Anwenden von Storage-Anpassungen wird abgelehnt.',
       'Declining to emit response with malformed HTTP header name: %s' => 'Antwort mit fehlerhaftem HTTP-Headernamen wird nicht gesendet: %s',
       'Declining to emit response with unsafe HTTP header: %s' => 'Antwort mit unsicherem HTTP-Header wird nicht gesendet: %s',
-      'Declining to invoice.' => 'Fakturierung wird abgelehnt.',
       'Declining to make service call because `phabricator.silent` is enabled in configuration.' => 'Service-Aufruf wird abgelehnt, weil `phabricator.silent` in der Konfiguration aktiviert ist.',
       'Declining to synchronize static tables.' => 'Synchronisierung statischer Tabellen wird abgelehnt.',
       'Default' => 'Vorgabe',
       'Default (%s Seconds)' => 'Vorgabe (%s Sekunden)',
       'Default (%s)' => 'Standard (%s)',
       'Default (Unknown, "%s")' => 'Standard (Unbekannt, „%s")',
-      'Default Account' => 'Standardkonto',
       'Default Alt Text' => 'Standard-Alt-Text',
       'Default Author' => 'Standard-Autor',
       'Default Blueprint Edit Policy' => 'Standard-Bearbeitungsrichtlinie für Blaupausen',
@@ -5320,7 +5987,6 @@ Um eine andere Stoppwortdatei zu wählen, füge dies Deiner Datei %s im Abschnit
       'Default Source Edit Policy' => 'Standard-Bearbeitungsberechtigung für Quellen',
       'Default Source View Policy' => 'Standard-Anzeigeberechtigung für Quellen',
       'Default Space' => 'Vorgabezone',
-      'Default Space #2' => 'Vorgabezone #2',
       'Default User Profile Image' => 'Standard-Benutzerprofil-Bild',
       'Default User-Agent for outgoing HTTP requests made by this software.' => 'Standard-User-Agent für ausgehende HTTP-Anfragen dieser Software.',
       'Default View Policy' => 'Vorgabe Rechte für die Anzeige',
@@ -5336,15 +6002,13 @@ discards all mail sent to it. If you point it at an invalid mailbox, mail sent
 by the software and some mail sent by users will bounce. If you point it at a
 real user mailbox, that user will get a lot of mail they don\'t want.
 
-For further guidance, see **[[ %s | %s ]]** in the documentation.
-EODOC' => 'Standardadresse, die als "From"- oder "To"-Adresse verwendet wird, wenn eine Adresse benötigt wird, aber keine sinnvolle Adresse verfügbar ist.
+For further guidance, see **[[ %s | %s ]]** in the documentation.' => 'Standardadresse, die als "From"- oder "To"-Adresse verwendet wird, wenn eine Adresse benötigt wird, aber keine sinnvolle Adresse verfügbar ist.
 
 Wenn Du eingehende E-Mail konfigurierst, musst Du diese Option normalerweise nicht setzen: Die Software erzeugt dann automatisch ein passendes Postfach in der Domain für eingehende E-Mail.
 
 Andernfalls sollte diese Option auf ein gültiges Postfach zeigen, das alle ankommenden E-Mails verwirft. Wenn Du auf ein ungültiges Postfach zeigst, werden von der Software gesendete und einige von Benutzern gesendete E-Mails zurückgewiesen. Wenn Du auf ein echtes Benutzerpostfach zeigst, bekommt dieser Benutzer viele unerwünschte E-Mails.
 
-Weitere Hinweise findest Du in der Dokumentation unter **[[ %s | %s ]]**.
-EODOC',
+Weitere Hinweise findest Du in der Dokumentation unter **[[ %s | %s ]]**.',
       'Default address used when generating mail.' => 'Standardadresse für ausgehende E-Mails.',
       'Default branch name.' => 'Standard-Branch-Name.',
       'Default create policy for Dashboards.' => 'Standard-Erstellungsrichtlinie für Dashboards.',
@@ -5374,7 +6038,6 @@ EODOC',
       'Default view policy for newly created credentials.' => 'Standard-Anzeigerichtlinie für neu erstellte Zugangsdaten.',
       'Default view policy for newly created events.' => 'Standard-Ansichtsrichtlinie für neu erstellte Termine.',
       'Default view policy for newly created files.' => 'Standard-Anzeigerichtlinie für neu erstellte Dateien.',
-      'Default view policy for newly created initiatives.' => 'Standard-Anzeigerichtlinie für neu erstellte Initiativen.',
       'Default view policy for newly created packages.' => 'Standard-Anzeigerichtlinie für neu erstellte Pakete.',
       'Default view policy for newly created pastes.' => 'Standard-Anzeigerichtlinie für neu erstellte Pastes.',
       'Default view policy for newly created projects.' => 'Standardanzeigerichtlinie für neu erstellte Projekte.',
@@ -5399,13 +6062,9 @@ Wenn Cluster-Adressen definiert sind, lehnen Hosts außerdem Anfragen an Schnitt
       'Define one or more fulltext storage services. Here you can configure which
 hosts will handle fulltext search queries and indexing. For help with
 configuring fulltext search clusters, see **[[ %s | %s ]]** in the
-documentation.
-EOTEXT' => 'Definiere einen oder mehrere Volltext-Speicherdienste. Hier kannst Du festlegen, welche Hosts Volltext-Suchanfragen und die Indexierung übernehmen. Hilfe zur Konfiguration von Volltext-Suchclustern findest Du in der Dokumentation unter **[[ %s | %s ]]**.
-EOTEXT',
+documentation.' => 'Definiere einen oder mehrere Volltext-Speicherdienste. Hier kannst Du festlegen, welche Hosts Volltext-Suchanfragen und die Indexierung übernehmen. Hilfe zur Konfiguration von Volltext-Suchclustern findest Du in der Dokumentation unter **[[ %s | %s ]]**.',
       'Define one or more mail transmission services. For help with configuring
-mailers, see **[[ %s | %s ]]** in the documentation.
-EODOC' => 'Definiere einen oder mehrere Mail-Übertragungsdienste. Hilfe zur Konfiguration von Mailern findest Du in der Dokumentation unter **[[ %s | %s ]]**.
-EODOC',
+mailers, see **[[ %s | %s ]]** in the documentation.' => 'Definiere einen oder mehrere Mail-Übertragungsdienste. Hilfe zur Konfiguration von Mailern findest Du in der Dokumentation unter **[[ %s | %s ]]**.',
       'Define project subtypes.' => 'Projektuntertypen definieren.',
       'Define task subtypes.' => 'Aufgabentypen definieren.',
       'Defined' => 'Definiert',
@@ -5445,7 +6104,6 @@ EODOC',
       'Deleted \'%s\' from %s configuration.' => '\'%s\' aus der %s-Konfiguration gelöscht.',
       'Deleted After Multiple Copy' => 'Gelöscht Nach dem Kopieren',
       'Deleted Event' => 'Gelöschter Termin',
-      'Deleted after being copied to multiple locations:' => 'Gelöscht, nachdem es an mehrere Stellen kopiert wurde:',
       'Deleted event "%s" which is no longer present in the source.' => 'Ereignis "%s" gelöscht, das in der Quelle nicht mehr vorhanden ist.',
       'Deleting %s document(s).' => '%s Dokument(e) werden gelöscht.',
       'Deleting audit %d...' => 'Audit %d wird gelöscht...',
@@ -5474,11 +6132,9 @@ EODOC',
       'Deprecated Methods' => 'Veraltete Methoden',
       'Deprecated alias for "%s".' => 'Veralteter Alias für „%s".',
       'Deprecated call to setIcon(), use setImageIcon() instead.' => 'Veralteter Aufruf von setIcon(), verwende stattdessen setImageIcon().',
-      'Deprecated call to setShade(), use setColor() instead.' => 'Veralteter Aufruf von setShade(), verwende stattdessen setColor().',
       'Deprecated mysql.host Format' => 'Veraltetes mysql.host-Format',
       'Deprecated.' => 'Veraltet.',
       'Depth' => 'Tiefe',
-      'Depth of \'%s\'' => 'Tiefe von „%s"',
       'Depths' => 'Tiefsee',
       'Describe the updates you have made to the diff.' => 'Beschreibe die Änderungen, die Du am Diff vorgenommen hast.',
       'Description' => 'Beschreibung',
@@ -5491,6 +6147,7 @@ EODOC',
       'Designer' => 'Designer',
       'Desired database namespace for output.' => 'Gewünschter Datenbank-Namespace für die Ausgabe.',
       'Desktop Only' => 'Nur Desktop',
+      'Destination' => 'Ziel',
       'Destination Beacon' => 'Ziel-Leuchtfeuer',
       'Destroy Credential' => 'Zugangsdaten vernichten',
       'Destroy all facts.' => 'Alle Fakten löschen.',
@@ -5504,7 +6161,6 @@ EODOC',
       'Destroying %s **%s**...
 ' => '%s **%s** wird vernichtet …
 ',
-      'Destroying a scoped environment which is not on the top of the stack should throw.' => 'Das Beenden eines Scoped Environment außerhalb der Stack-Spitze muss eine Exception auslösen.',
       'Destroying objects may cause related objects to stop working, and may leave scattered references to objects which no longer exist. In most cases, it is much better to disable or archive objects instead of destroying them. This risk is greatest when deleting complex or highly connected objects like repositories, projects and users.
 
 These tattered edges are an expected consequence of destroying objects, and the upstream will not help you fix them. We strongly recommend disabling or archiving objects instead.' => 'Das Vernichten von Objekten kann dazu führen, dass verwandte Objekte nicht mehr funktionieren, und verstreute Verweise auf Objekte hinterlassen, die nicht mehr existieren. In den meisten Fällen ist es viel besser, Objekte zu deaktivieren oder zu archivieren, statt sie zu vernichten. Dieses Risiko ist am größten, wenn komplexe oder stark vernetzte Objekte wie Repositories, Projekte und Benutzer gelöscht werden.
@@ -5516,6 +6172,7 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Detach File' => 'Datei trennen',
       'Detach the file %s from the object %s?' => 'Datei %s vom Objekt %s trennen?',
       'Detached' => 'Getrennt',
+      'Detailed view of a transaction.' => 'Detailansicht einer Transaktion.',
       'Details' => 'Details',
       'Details of this transcript have been garbage collected.' => 'Details dieses Ablaufprotokolls wurden durch die Speicherbereinigung entfernt.',
       'Detected %s serious issue(s) with the schemata.' => '%s schwerwiegendes/e Problem(e) mit den Schemata erkannt.',
@@ -5531,6 +6188,7 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Developer API' => 'Entwickler-API',
       'Developer Settings' => 'Entwicklereinstellungen',
       'Developer Tools' => 'Entwicklerwerkzeuge',
+      'Developer Tools show more tools that are mostly useful for %s developers and advanced administrators.' => 'Die Entwicklerwerkzeuge zeigen weitere Werkzeuge an, die vor allem für %s-Entwickler und fortgeschrittene Administratoren nützlich sind.',
       'Developer UI Examples' => 'Entwickler-UI-Beispiele',
       'Developer/Test Translations' => 'Entwickler-/Test-Übersetzungen',
       'Device' => 'Gerät',
@@ -5545,12 +6203,14 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Device PHID.' => 'Gerät-PHID.',
       'Device Version' => 'Geräte-Version',
       'Device name is required.' => 'Ein Gerätename ist erforderlich.',
+      'Device request identifies an acting user with an invalid username ("%s"). There is no user with this username.' => 'Die Geräteanfrage nennt einen handelnden Benutzer mit ungültigem Benutzernamen ("%s"). Es gibt keinen Benutzer mit diesem Benutzernamen.',
       'Device status information.' => 'Gerätestatusinformationen.',
       'Device status.' => 'Gerätestatus.',
       'Devices' => 'Geräte',
       'Dictionary with various data of the story' => 'Dictionary mit verschiedenen Daten des Beitrags',
       'Did Not Remove Flag' => 'Fähnchen nicht entfernt',
       'Did Nothing' => 'Nichts getan',
+      'Did not find an extension with %s "%s".' => 'Keine Erweiterung mit %s "%s" gefunden.',
       'Did nothing.' => 'Nichts getan.',
       'Diff' => 'Diff',
       'Diff "%s" does not exist!' => 'Diff "%s" existiert nicht!',
@@ -5565,8 +6225,6 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Diff Preferences' => 'Diff Einstellungen',
       'Diff Required' => 'Diff erforderlich',
       'Diff View' => 'Diff Ansehen',
-      'Diff adding a tickmark to a checkbox list.' => 'Diff, das einer Checkbox-Liste ein Häkchen hinzufügt.',
-      'Diff changing a remarkup wiki link target.' => 'Diff, das das Ziel eines Remarkup-Wiki-Links ändert.',
       'Diff content' => 'Diff Inhalt',
       'Diff content added' => 'Diff Inhalt hinzugefügt',
       'Diff content removed' => 'Diff Inhalt entfernt',
@@ -5575,9 +6233,6 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Diff may not be empty.' => 'Der Diff darf nicht leer sein.',
       'Diff not found.' => 'Diff nicht gefunden.',
       'Diff was not found.' => 'Diff wurde nicht gefunden.',
-      'Diff with a removed comma and new trailing content.' => 'Diff mit entferntem Komma und neuem nachgestelltem Inhalt.',
-      'Diff with a removed comma.' => 'Diff mit entferntem Komma.',
-      'Diff with new trailing content.' => 'Diff mit neuem nachgestelltem Inhalt.',
       'Differential' => 'Differential',
       'Differential Changeset' => 'Differential-Changeset',
       'Differential Changesets' => 'Differential-Changesets',
@@ -5611,10 +6266,10 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Diffusion URI action "%s" requires commit!' => 'Diffusion-URI-Aktion „%s" erfordert einen Commit!',
       'Diffusion URIs' => 'Diffusion-URIs',
       'Diffusion User Guide' => 'Diffusion-Benutzerhandbuch',
+      'Diffusion User Guide: Managing Repositories' => 'Diffusion-Benutzerhandbuch: Repositories verwalten',
       'Dimension' => 'Dimension',
       'Dimensions' => 'Abmessungen',
       'Ding Ding' => 'Ding Ding',
-      'Diplomatic Meeting' => 'Diplomatisches Treffen',
       'Direct Award' => 'Direkte Auszeichnung',
       'Direct Parent' => 'Direkter Elterntask',
       'Direct Subtask' => 'Direkter Untertask',
@@ -5624,13 +6279,13 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Disable "Re:" Prefix' => '"Re:"-Präfix deaktivieren',
       'Disable %s? They will no longer be able to access this server or receive email.' => '%s deaktivieren? Sie werden dann nicht mehr auf diesen Server zugreifen oder E-Mails empfangen können.',
       'Disable Account' => 'Konto deaktivieren',
-      'Disable Address' => 'Adresse deaktivieren',
       'Disable Application' => 'Anwendung deaktivieren',
       'Disable Binding' => 'Bindung deaktivieren',
       'Disable Blueprint' => 'Blaupause deaktivieren',
       'Disable Build Plan' => 'Build-Plan deaktivieren',
       'Disable Contact Number' => 'Kontaktnummer deaktivieren',
       'Disable DarkConsole' => 'DarkConsole deaktivieren',
+      'Disable Developer Tools' => 'Entwicklerwerkzeuge deaktivieren',
       'Disable Email "!accept" Action' => 'Die Email "!accept" Methode deaktivieren',
       'Disable Email Notifications' => 'E-Mail-Benachrichtigungen deaktivieren',
       'Disable Export' => 'Export deaktivieren',
@@ -5685,6 +6340,7 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Disable unsafe option "%s" in PHP configuration.' => 'Unsichere Option "%s" in der PHP-Konfiguration deaktivieren.',
       'Disabled' => 'Deaktiviert',
       'Disabled (an administrator has disabled login for this account provider).' => 'Deaktiviert (ein Administrator hat die Anmeldung für diesen Kontoanbieter deaktiviert).',
+      'Disabled Application' => 'Deaktivierte Anwendung',
       'Disabled Macros' => 'Deaktivierte Makros',
       'Disabled Object' => 'Deaktiviertes Objekt',
       'Disabled Recipient' => 'Deaktivierter Empfänger',
@@ -5696,10 +6352,12 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Disallow HTTP Basic Auth' => 'HTTP-Basic-Auth verbieten',
       'Disallow self-accept' => 'Selbstfreischalten von Versionen verbieten',
       'Disallowed' => 'Nicht erlaubt',
+      'Disallowed ssh option "%s" given with "-o". Allowed options are: %s.' => 'Unzulässige SSH-Option "%s" mit "-o" angegeben. Zulässige Optionen sind: %s.',
       'Discard Edit' => 'Bearbeitung verwerfen',
       'Disconnected' => 'Getrennt',
       'Discover all commits, even if they are ancestors of known commits. This can repair gaps in repository history.' => 'Alle Commits ermitteln, auch wenn sie Vorfahren bereits bekannter Commits sind. Dadurch können Lücken in der Repository-Historie repariert werden.',
       'Discover commits in __repository__.' => 'Commits in Repository __repository__ ermitteln.',
+      'Discover problems in the whole repository instead of just changes since the last run.' => 'Probleme im gesamten Repository ermitteln statt nur in den Änderungen seit dem letzten Lauf.',
       'Discovered more than %s commits in an empty repository, marking repository as importing.' => 'In einem leeren Repository wurden mehr als %s Commits gefunden; Repository wird als importierend markiert.',
       'Discovering "%s"...' => '„%s" wird ermittelt...',
       'Discovering commits in repository "%s".' => 'Commits in Repository „%s" werden ermittelt.',
@@ -5716,11 +6374,12 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Display Type' => 'Anzeigetyp',
       'Display events in a certain display format.' => 'Ereignisse in einem bestimmten Anzeigeformat anzeigen.',
       'Display images with crops.' => 'Bilder mit Ausschnitt anzeigen.',
+      'Display information about a selected tasks.' => 'Informationen zu ausgewählten Aufgaben anzeigen.',
+      'Display login information of a user.' => 'Anmeldeinformationen eines Benutzers anzeigen.',
       'Display name for the MFA provider.' => 'Anzeigename für den MFA-Anbieter.',
       'Display project reviewers.' => 'Zeigt Projekt-Reviewer an.',
       'Display required legal agreements.' => 'Zeigt erforderliche rechtliche Vereinbarungen an.',
       'Disqus' => 'Disqus',
-      'Distinct characters in hash of: %s' => 'Verschiedene Zeichen im Hash von: %s',
       'Divider' => 'Trenner',
       'Diviner' => 'Diviner',
       'Diviner Atom' => 'Diviner-Atom',
@@ -5730,12 +6389,13 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Diviner User Guide' => 'Diviner-Benutzerhandbuch',
       'Do Not Attach Patches' => 'Keine Patches anhängen.',
       'Do Not Authorize' => 'Nicht autorisieren',
-      'Do Not Cancel Order' => 'Auftrag nicht stornieren',
       'Do Not Play' => 'Nicht abspielen',
       'Do Not Use HSTS' => 'HSTS nicht verwenden',
       'Do Not Use Pygments' => 'Pygments nicht verwenden',
       'Do an implicit string extraction before validating. If this is not set, it will validate based on the last extracted strings.' => 'Vor der Validierung implizit eine String-Extraktion durchführen. Wenn dies nicht gesetzt ist, wird auf Basis der zuletzt extrahierten Strings validiert.',
+      'Do not actually change anything, just show what would be changed.' => 'Nichts tatsächlich ändern, nur anzeigen, was geändert würde.',
       'Do not apply storage adjustments after storage upgrades.' => 'Nach Storage-Upgrades keine Storage-Anpassungen anwenden.',
+      'Do not clear all symbols for this repository before uploading new symbols. Useful for incremental updating.' => 'Vor dem Hochladen neuer Symbole nicht alle Symbole dieses Repositorys löschen. Nützlich für inkrementelle Aktualisierungen.',
       'Do not dump data in rebuildable index tables. This means backups are smaller and faster, but you will need to manually rebuild indexes after performing a restore.' => 'Keine Daten aus neu aufbaubaren Indextabellen dumpen. Dadurch sind Backups kleiner und schneller, aber du musst Indizes nach einem Restore manuell neu aufbauen.',
       'Do not install this software on an instance class with burstable CPU.' => 'Diese Software nicht auf einer Instanz mit Burst-CPU installieren.',
       'Do not invoke `%s` after updating sprites' => '`%s` nach dem Aktualisieren von Sprites nicht aufrufen',
@@ -5745,10 +6405,10 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Do not perform any writes.' => 'Keine Schreibvorgänge durchführen.',
       'Do not perform discovery.' => 'Keine Ermittlung durchführen.',
       'Do not play audio.' => 'Audio nicht abspielen.',
+      'Do not prompt before performing dangerous operations.' => 'Vor gefährlichen Operationen nicht nachfragen.',
       'Do not prompt for confirmation.' => 'Keine Bestätigung anfordern.',
       'Do not pull __repository__.' => 'Repository __repository__ nicht pullen.',
       'Do not show as a clone URI.' => 'Nicht als Klon-URI anzeigen.',
-      'Do not track unlisted branches.' => 'Nicht aufgelistete Branches nicht verfolgen.',
       'Do nothing' => 'Nichts tun',
       'Do nothing.' => 'Nichts tun.',
       'Do you want to attach the file %s to the object %s?' => 'Datei %s mit Objekt %s verknüpfen?',
@@ -5792,7 +6452,6 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Don\'t embed YouTube videos' => 'Keine YouTube Videos einbinden',
       'Don\'t let go!' => 'Nicht loslassen!',
       'Don\'t require email verification' => 'E-Mail-Verifizierung nicht erforderlich',
-      'Donate' => 'Spenden',
       'Done' => 'Erledigt',
       'Done generating sprites - updating map...' => 'Sprites generiert - Karte wird aktualisiert...',
       'Done, compacted %s edge transactions.' => 'Fertig, %s Edge-Transaktionen wurden komprimiert.',
@@ -5819,6 +6478,9 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Download a file from the server.' => 'Eine Datei vom Server herunterladen.',
       'Download file %s (%s)?' => 'Datei %s (%s) herunterladen?',
       'Download from Git LFS' => 'Von Git LFS herunterladen',
+      'Downloading %s to %s
+' => 'Lade %s nach %s herunter
+',
       'Draft' => 'Entwurf',
       'Draft %d' => 'Entwurf %d',
       'Draft Post' => 'Beitrags-Entwurf',
@@ -5841,6 +6503,7 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Drop data from readthrough caches.' => 'Daten aus Readthrough-Caches löschen.',
       'Dropping database "%s" on host "%s"...' => 'Lösche Datenbank "%s" auf Host "%s"...',
       'Dry Run' => 'Testlauf',
+      'Dry-run.' => 'Testlauf.',
       'Drydock' => 'Drydock',
       'Drydock Authorization' => 'Drydock-Autorisierung',
       'Drydock Authorization %d' => 'Drydock-Autorisierung %d',
@@ -5887,14 +6550,12 @@ Diese ausgefransten Kanten sind eine erwartbare Folge der Objektvernichtung, und
       'Duplicate' => 'Duplikat',
       'Duplicate Event' => 'Doppelter Termin',
       'Duplicate Message' => 'Doppelte Nachricht',
-      'Duplicate Special' => 'Doppeltes Sonderattribut',
       'Duplicates' => 'Duplikate',
       'Duplicates Merged Here' => 'Duplikate zusammengeführt',
       'Duration' => 'Dauer',
       'During the last %s second(s) spent waiting for the lock, %s other process(es) acquired it, so this is likely a bottleneck. Use "bin/lock log --name %s" to review log activity.' => 'In den letzten %s Sekunde(n) Wartezeit auf den Lock haben %s andere Prozess(e) ihn erworben – das deutet auf einen Engpass hin. Verwende „bin/lock log --name %s", um die Log-Aktivität zu prüfen.',
       'During the last %s second(s) spent waiting for the lock, more than %s other process(es) acquired it, so this is likely a bottleneck. Use "bin/lock log --name %s" to review log activity.' => 'In den letzten %s Sekunde(n) Wartezeit auf den Lock haben mehr als %s andere Prozess(e) ihn erworben – das deutet auf einen Engpass hin. Verwende „bin/lock log --name %s", um die Log-Aktivität zu prüfen.',
       'Dust Detector' => 'Staubdetektor',
-      'E164 of: %s' => 'E164 von: %s',
       'EDIT DETAILS' => 'BEARBEITUNGSDETAILS',
       'EDIT NOTES' => 'BEARBEITUNGSNOTIZEN',
       'EMAIL' => 'E-MAIL',
@@ -5922,6 +6583,7 @@ Inhaltsausnahme: %s',
       'EUC-JP' => 'EUC-JP',
       'EVENT DESCRIPTION' => 'TERMIN BESCHREIBUNG',
       'EVENT DETAIL' => 'TERMIN DETAILS',
+      'EXCEPTION: %s' => 'AUSNAHME: %s',
       'EXECUTE' => 'AUSFÜHREN',
       'EXTRACT' => 'EXTRAHIEREN',
       'Each artifact also needs an `artifactKey`, which names the artifact. Finally, you will provide some `artifactData` to fill in the content of the artifact. The data you provide depends on what type of artifact you are creating.' => 'Jedes Artefakt benötigt auch einen `artifactKey`, der das Artefakt benennt. Schließlich werden einige `artifactData` angegeben, um den Inhalt des Artefakts zu füllen. Die anzugebenden Daten hängen vom Artefakttyp ab.',
@@ -5932,20 +6594,18 @@ Inhaltsausnahme: %s',
       'Easily render icons or images with links and sprites.' => 'Icons oder Bilder mit Links und Sprites einfach rendern.',
       'Easter' => 'Ostern',
       'Easter Bunny' => 'Osterhase',
-      'Eat Paste' => 'Paste essen',
       'Edge Masked' => 'Rand maskiert',
+      'Edge Type' => 'Edge-Typ',
       'Edge Types' => 'Edge-Typen',
       'Edge change record is not configured with any change data.' => 'Edge-Änderungsdatensatz ist mit keinen Änderungsdaten konfiguriert.',
       'Edge list passed to "withSourcePHIDs(...)" is empty, but it must be nonempty.' => 'Die an "withSourcePHIDs(...)" übergebene Edge-Liste ist leer, muss aber nichtleer sein.',
       'Edge object query must be executed with a nonempty list of source PHIDs.' => 'Eine Edge-Objektabfrage muss mit einer nichtleeren Liste von Quell-PHIDs ausgeführt werden.',
-      'Edge search must specify a nonempty list of edge types.' => 'Die Edge-Suche muss eine nichtleere Liste von Edge-Typen angeben.',
       'Edge transaction has no \'%s\'!' => 'Verknüpfungstransaktion hat kein „%s"!',
       'Edge transaction includes edge of type \'%s\', but transaction is of type \'%s\'. Each edge transaction must alter edges of only one type.' => 'Die Edge-Transaktion enthält eine Edge vom Typ \'%s\', die Transaktion selbst ist aber vom Typ \'%s\'. Jede Edge-Transaktion darf nur Edges eines einzigen Typs verändern.',
       'Edge transactions must have PHIDs or edge specs as values (found value "%s" on transaction of type "%s").' => 'Edge-Transaktionen müssen PHIDs oder Edge-Spezifikationen als Werte haben (gefunden wurde der Wert "%s" in einer Transaktion vom Typ "%s").',
       'Edge transactions must have destination PHIDs as in edge lists (found key "%s" on transaction of type "%s").' => 'Edge-Transaktionen müssen Ziel-PHIDs wie in Edge-Listen haben (gefunden wurde der Schlüssel "%s" in einer Transaktion vom Typ "%s").',
       'Edge type "%s" ("%d") defines an inverse type ("%d") which does not exist.' => 'Edge-Typ "%s" ("%d") definiert einen inversen Typ ("%d"), der nicht existiert.',
       'Edge type "%s" ("%d") defines an inverse type ("%d"), but that inverse type defines a different type ("%d") as its inverse.' => 'Edge-Typ "%s" ("%d") definiert einen inversen Typ ("%d"), aber dieser inverse Typ definiert einen anderen Typ ("%d") als Inversen.',
-      'Edge type "%s" is not a recognized edge type.' => 'Edge-Typ "%s" ist kein erkannter Edge-Typ.',
       'Edges' => 'Verknüpfungen',
       'Edges already exist; transaction has no effect.' => 'Verknüpfungskanten existieren bereits; Transaktion hat keine Wirkung.',
       'Edges are not available for objects of type \'%s\'!' => 'Edges sind für Objekte des Typs \'%s\' nicht verfügbar!',
@@ -5954,9 +6614,6 @@ Inhaltsausnahme: %s',
       'Edit %s' => '%s bearbeiten',
       'Edit %s: %s' => '%s bearbeiten: %s',
       'Edit API Token' => 'API-Token bearbeiten',
-      'Edit Account' => 'Konto editieren',
-      'Edit Account Email: %s' => 'Konto-E-Mail bearbeiten: %s',
-      'Edit Account: %s' => 'Konto bearbeiten: %s',
       'Edit Address' => 'Adresse bearbeiten',
       'Edit Almanac Binding Configurations' => 'Almanac-Bindungskonfigurationen bearbeiten',
       'Edit Almanac Device Configurations' => 'Almanac-Gerätekonfigurationen bearbeiten',
@@ -6058,24 +6715,20 @@ Inhaltsausnahme: %s',
       'Edit Identity: %s' => 'Identität bearbeiten: %s',
       'Edit Import' => 'Import bearbeiten',
       'Edit Import: %s' => 'Import bearbeiten: %s',
-      'Edit Initiative' => 'Initiative bearbeiten',
-      'Edit Initiative: %s' => 'Initiative bearbeiten: %s',
       'Edit Inline Comment' => 'Inline-Kommentar bearbeiten',
       'Edit Interface' => 'Schnittstelle bearbeiten',
       'Edit Limits' => 'Limits bearbeiten',
       'Edit Locked Object' => 'Gesperrtes Objekt bearbeiten',
       'Edit Locked Post' => 'Gesperrten Beitrag bearbeiten',
       'Edit Locked Task' => 'Gesperrte Aufgabe bearbeiten',
-      'Edit Logo' => 'Logo bearbeiten',
       'Edit MFA Provider' => 'MFA-Anbieter bearbeiten',
       'Edit MFA Providers' => 'MFA-Anbieter bearbeiten',
       'Edit Macro' => 'Makro bearbeiten',
       'Edit Macro %s' => 'Makro %s bearbeiten',
+      'Edit Mentions' => 'Erwähnungen bearbeiten',
       'Edit Menu' => 'Menü bearbeiten',
       'Edit Menu Item' => 'Menüpunkt bearbeiten',
       'Edit Menu Item: %s' => 'Menüpunkt bearbeiten: %s',
-      'Edit Merchant' => 'Händler bearbeiten',
-      'Edit Merchant: %s' => 'Händler bearbeiten: %s',
       'Edit Message' => 'Nachricht bearbeiten',
       'Edit Mock' => 'Entwurf ändern',
       'Edit Mock: %s' => 'Mock bearbeiten: %s',
@@ -6086,6 +6739,7 @@ Inhaltsausnahme: %s',
       'Edit Network' => 'Netzwerk bearbeiten',
       'Edit Network: %s' => 'Netzwerk bearbeiten: %s',
       'Edit Notes' => 'Notizen zur Änderung',
+      'Edit Notes of the version.' => 'Notizen zur Änderung dieser Version.',
       'Edit Nuance Queue Configurations' => 'Nuance-Warteschlangenkonfigurationen bearbeiten',
       'Edit Nuance Source Configurations' => 'Nuance-Quellenkonfigurationen bearbeiten',
       'Edit OAuth Applications' => 'OAuth-Anwendungen bearbeiten',
@@ -6106,8 +6760,6 @@ Inhaltsausnahme: %s',
       'Edit Paste: %s' => 'Paste bearbeiten: %s',
       'Edit Paths' => 'Pfade bearbeiten',
       'Edit Paths: %s' => 'Pfade bearbeiten: %s',
-      'Edit Payment Method' => 'Zahlungsart ändern',
-      'Edit Payment Provider %d %s' => 'Zahlungsdienstleister %d %s ändern',
       'Edit Phriction Document Configurations' => 'Wiki-Dokumentkonfigurationen bearbeiten',
       'Edit Phurl' => 'Phurl bearbeiten',
       'Edit Picture' => 'Bild ändern',
@@ -6132,7 +6784,6 @@ Inhaltsausnahme: %s',
       'Edit Property' => 'Eigenschaft bearbeiten',
       'Edit Property: %s' => 'Eigenschaft bearbeiten: %s',
       'Edit Provider' => 'Anbieter bearbeiten',
-      'Edit Provider %d' => 'Zahlungsdienstleister %d ändern',
       'Edit Publisher' => 'Softwareanbieter bearbeiten',
       'Edit Publisher: %s' => 'Softwareanbieter bearbeiten: %s',
       'Edit Queries...' => 'Abfragen ändern...',
@@ -6201,6 +6852,7 @@ Inhaltsausnahme: %s',
       'Edit only the event which occurs at %s.' => 'Nur das Ereignis um %s bearbeiten.',
       'Edit selected inline comment.' => 'Ausgewählten Inline-Kommentar bearbeiten.',
       'Edit settings for your personal account.' => 'Einstellungen für Dein persönliches Konto bearbeiten.',
+      'Edit the description of the policy.' => 'Die Beschreibung der Richtlinie bearbeiten.',
       'Edit the global default menu for all users.' => 'Globales Standardmenü für alle Benutzer bearbeiten.',
       'Edit the menu for your personal account.' => 'Menü für Dein persönliches Konto bearbeiten.',
       'Edit this Document' => 'Dieses Dokument bearbeiten',
@@ -6256,11 +6908,10 @@ Inhaltsausnahme: %s',
       'Element' => 'Element',
       'Emacs' => 'Emacs',
       'Email' => 'E-Mail',
-      'Email Access Link Out of Date' => 'E-Mail-Zugriffslink veraltet',
       'Email Address' => 'E-Mail-Adresse',
       'Email Address Already in Use' => 'E-Mail-Adresse bereits in Verwendung',
-      'Email Address Details' => 'E-Mail-Adress-Details',
       'Email Addresses' => 'Emailadressen',
+      'Email Addresses:' => 'E-Mail-Adressen:',
       'Email Body Text' => 'E-Mail-Nachrichtentext',
       'Email Commands: Commits' => 'E-Mail-Befehle: Commits',
       'Email Commands: Events' => 'E-Mail-Befehle: Ereignisse',
@@ -6282,13 +6933,9 @@ Inhaltsausnahme: %s',
       'Email Paste' => 'Paste per E-Mail',
       'Email Preferences' => 'Emaileinstellungen',
       'Email Sent' => 'Email verschickt',
-      'Email Verification Required' => 'E-Mail-Verifizierung erforderlich',
-      'Email Verification Required, With Exception' => 'E-Mail-Verifizierung erforderlich, mit Ausnahme',
-      'Email address invoices are sent from.' => 'E-Mail-Adresse, von der Rechnungen gesendet werden.',
       'Email address is not formatted properly.' => 'Email-Adresse ist nicht korrekt formatiert.',
       'Email address must be @%s' => 'E-Mail-Adresse muss @%s sein',
       'Email address must be at one of: %s' => 'E-Mail-Adresse muss eine der folgenden sein: %s',
-      'Email address.' => 'E-Mail-Adresse.',
       'Email addresses should be in the form "user@domain.com". The maximum length of an email address is %s characters.' => 'E-Mail-Adressen sollten im Format "user@domain.com" sein. Die maximale Länge einer E-Mail-Adresse beträgt %s Zeichen.',
       'Email field is required.' => 'Eine Email ist erforderlich.',
       'Email has already been created!' => 'E-Mail wurde bereits erstellt!',
@@ -6308,6 +6955,7 @@ Inhaltsausnahme: %s',
       'Emails' => 'E-Mails',
       'Embed YouTube videos' => 'YouTube-Videos einbinden',
       'Emit gzipped output instead of plain text.' => 'Statt Klartext gzip-komprimierte Ausgabe erzeugen.',
+      'Emitting event...' => 'Ereignis wird ausgelöst...',
       'Emoji' => 'Emoji',
       'Emojis' => 'Emojis',
       'Empower %s as an administrator? They will be able to create users, approve users, make and remove administrators, delete accounts, and perform other administrative functions on this server.' => '%s zum Administrator machen? Sie können dann Benutzer erstellen, freigeben, Administratoren hinzufügen und entfernen, Konten löschen und andere administrative Funktionen auf diesem Server ausführen.',
@@ -6328,13 +6976,13 @@ Inhaltsausnahme: %s',
       'Enable %s application?' => 'Anwendung %s aktivieren?',
       'Enable %s? They will be able to access this server and receive email again.' => '%s aktivieren? Sie werden dann wieder auf diesen Server zugreifen und E-Mails empfangen können.',
       'Enable Account' => 'Konto aktivieren',
-      'Enable Address' => 'Adresse aktivieren',
       'Enable Application' => 'Anwendung aktivieren',
       'Enable Binding' => 'Bindung aktivieren',
       'Enable Blueprint' => 'Blaupause aktivieren',
       'Enable Build Plan' => 'Build-Plan aktivieren',
       'Enable Contact Number' => 'Kontaktnummer aktivieren',
       'Enable DarkConsole' => 'DarkConsole aktivieren',
+      'Enable Developer Tools' => 'Entwicklerwerkzeuge aktivieren',
       'Enable Email "!accept" Action' => 'Die Email "!accept" Methode aktivieren',
       'Enable Email Notifications' => 'E-Mail-Benachrichtigungen aktivieren',
       'Enable Export' => 'Export aktivieren',
@@ -6369,6 +7017,7 @@ Inhaltsausnahme: %s',
       'Enable applications which are still under development.' => 'Anwendungen aktivieren, die sich noch in der Entwicklung befinden.',
       'Enable captchas with Recaptcha.' => 'Captchas mit Recaptcha aktivieren.',
       'Enable debug memory tracing.' => 'Debug-Speicherverfolgung aktivieren.',
+      'Enable debug tracing.' => 'Debug-Tracing aktivieren.',
       'Enable developer mode' => 'Entwicklermodus aktivieren',
       'Enable or disable "!accept" action via email.' => '"!accept" Methode per Email an- oder abschalten.',
       'Enable recaptcha to require users solve captchas after a few failed login attempts. This hinders brute-force attacks against user passwords. For more information, see https://www.google.com/recaptcha' => 'Aktiviere Recaptcha, damit Benutzer nach einigen fehlgeschlagenen Anmeldeversuchen Captchas lösen müssen. Das erschwert Brute-Force-Angriffe auf Benutzerpasswörter. Weitere Informationen findest Du unter https://www.google.com/recaptcha',
@@ -6398,6 +7047,7 @@ Inhaltsausnahme: %s',
       'Encoding' => 'Kodierung',
       'Encountered Git protocol frame with unexpected frame length (%s)!' => 'Git-Protokoll-Frame mit unerwarteter Frame-Länge gefunden (%s)!',
       'Encountered a processing exception, then another exception when trying to build a response for the first exception.' => 'Beim Verarbeiten ist eine Ausnahme aufgetreten und dann noch eine weitere Ausnahme, als versucht wurde, eine Antwort für die erste Ausnahme zu erstellen.',
+      'Encountered an error trying to verify the downloaded package: %s' => 'Beim Überprüfen des heruntergeladenen Pakets ist ein Fehler aufgetreten: %s',
       'Encountered loop while following redirects.' => 'Schleife beim Folgen von Weiterleitungen festgestellt.',
       'Encountered multiple exceptions while transmitting mail.' => 'Beim Übertragen der Mail sind mehrere Ausnahmen aufgetreten.',
       'Encrypted (AES-256-CBC)' => 'Verschlüsselt (AES-256-CBC)',
@@ -6426,16 +7076,12 @@ Inhaltsausnahme: %s',
       'Engine: Search' => 'Engine: Suche',
       'Engine: Session' => 'Engine: Sitzung',
       'Engineering' => 'Technik',
-      'Engineering + Exploration' => 'Engineering + Exploration',
-      'Engineering + Scan' => 'Engineering + Scan',
-      'Engineering Only' => 'Nur Engineering',
       'Enormous' => 'Riesig',
       'Enormous Changes' => 'Riesige Änderungen',
       'Enormous changes are commits which are too large to process with content rules because: the diff text for the change is larger than %s bytes; or the diff text takes more than %s seconds to extract.' => 'Riesige Änderungen sind Commits, die zu groß sind, um mit Inhaltsregeln verarbeitet zu werden, weil: der Diff-Text der Änderung größer als %s Bytes ist; oder das Extrahieren des Diff-Texts mehr als %s Sekunden dauert.',
       'Enroll Duo Account: %s' => 'Duo-Konto registrieren: %s',
       'Enroll in MFA' => 'MFA einrichten',
       'Enter' => 'Enter',
-      'Enter Deliberations' => 'Das Problem zu Tode diskutieren',
       'Enter High Security' => 'Erhöhte Sicherheit aktivieren',
       'Enter LDAP Credentials' => 'LDAP-Zugangsdaten eingeben',
       'Enter an object to test rules for, like a Diffusion commit (e.g., `rX123`) or a Differential revision (e.g., `D123`). You will be shown the results of a dry run on the object.' => 'Ein Objekt eingeben, für das Regeln getestet werden sollen, wie einen Diffusion-Commit (z.B. `rX123`) oder eine Differential-Revision (z.B. `D123`). Die Ergebnisse eines Testlaufs auf dem Objekt werden angezeigt.',
@@ -6468,13 +7114,9 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Epoch timestamp.' => 'Epoch-Zeitstempel.',
       'Error' => 'Fehler',
       'Error %d: %s' => 'Fehler %d: %s',
-      'Error Adding Payment Method' => 'Es gab einen Fehler beim Anlegen der Zahlungsmethode',
-      'Error Code' => 'Fehlercode',
       'Error Log' => 'Fehlerprotokoll',
       'Error Log (%d)' => 'Fehlerprotokoll (%d)',
-      'Error Param' => 'Fehlerparameter',
       'Error Processing Mail (%s)' => 'Fehler beim Verarbeiten Deiner Mail (%s)',
-      'Error Type' => 'Fehlertyp',
       'Error While Fetching Changes' => 'Fehler beim Abrufen von Änderungen',
       'Error While Initializing Repository' => 'Fehler beim Initialisieren des Repositorys',
       'Error extracting field transactions from "%s": %s' => 'Fehler beim Extrahieren von Feld-Transaktionen aus "%s": %s',
@@ -6490,7 +7132,6 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Errors' => 'Fehler',
       'Escape' => 'Escape',
       'Escape Route' => 'Fluchtweg',
-      'Establish Raw Lock' => 'Einfachen Lock einrichten',
       'Estimated Hours' => 'Geschätzte Stunden',
       'Estimated number of hours this will take.' => 'Geschätzte Anzahl der Stunden, die dies dauern wird.',
       'Europe: 28-02-2000' => 'Europäisch (28-02-2000)',
@@ -6531,12 +7172,8 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Exception' => 'Ausnahme',
       'Exception Handlers' => 'Ausnahmehandler',
       'Exception handler "%s" returned an invalid response from call to "%s". This method must return an object of class "%s", or an object which implements the "%s" interface.' => 'Exception-Handler "%s" hat aus dem Aufruf von "%s" eine ungültige Antwort zurückgegeben. Diese Methode muss ein Objekt der Klasse "%s" oder ein Objekt zurückgeben, das das Interface "%s" implementiert.',
-      'Exception on unparseable hash format.' => 'Exception bei nicht parsbarem Hash-Format.',
-      'Exception raised by: %s' => 'Ausnahme ausgelöst von: %s',
       'Exception when processing transaction of type "%s": %s' => 'Ausnahme beim Verarbeiten der Transaktion vom Typ „%s": %s',
-      'Exception while decoding test data for test "%s".' => 'Ausnahme beim Dekodieren von Testdaten für Test "%s".',
       'Exceptions occurred while mirroring the "%s" repository.' => 'Beim Spiegeln des Repositorys „%s" sind Ausnahmen aufgetreten.',
-      'Exclaim' => 'Ausruf',
       'Exclude' => 'Ausschließen',
       'Exclude results tagged with this project.' => 'Ergebnisse ausschließen, die mit diesem Projekt getaggt sind.',
       'Excluding Search' => 'Ausschließende Suche',
@@ -6559,37 +7196,16 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Exempt User' => 'Benutzer befreien',
       'Exemption' => 'Ausnahme',
       'Exemption By' => 'Ausnahme durch',
-      'Existing access links which have been sent to this email address will stop working.' => 'Bereits an diese E-Mail-Adresse gesendete Zugriffslinks funktionieren dann nicht mehr.',
       'Existing objects in this Space will be hidden from query results by default.' => 'Bestehende Objekte in dieser Zone werden standardmäßig in Abfrageergebnissen ausgeblendet.',
       'Existing objects will no longer be hidden from query results.' => 'Bestehende Objekte werden zukünftig nicht mehr in Suchergebnissen unterdrückt.',
+      'Existing policy PHID or constant.' => 'Bestehende Richtlinien-PHID oder Konstante.',
       'Exited' => 'Beendet',
       'Exiting' => 'Beendet sich',
       'Expand' => 'Ausklappen',
       'Expand All Files' => 'Alle Dateien ausklappen',
       'Expand File' => 'Datei ausklappen',
-      'Expect %s to exist as a foreign stub.' => 'Erwartet %s als externen Stub vorhanden.',
-      'Expect ID generated.' => 'Erwarte, dass eine ID generiert wird.',
-      'Expect ID unchanged.' => 'Erwarte unveränderte ID.',
-      'Expect PHID generated.' => 'Erwarte, dass eine PHID generiert wird.',
-      'Expect PHID unchanged.' => 'Erwarte unveränderte PHID.',
-      'Expect Thread-Index header for case %s.' => 'Thread-Index-Header für Fall %s erwartet.',
-      'Expect exception for header pairs of: %s' => 'Erwartete Ausnahme für Header-Paare von: %s',
-      'Expect fake row to exist only in isolation.' => 'Erwarte, dass die Fake-Zeile nur isoliert existiert.',
-      'Expect multiple locks on the same connection to fail.' => 'Mehrere Locks auf derselben Verbindung sollten fehlschlagen.',
-      'Expect no ID.' => 'Erwarte keine ID.',
-      'Expect no PHID.' => 'Erwarte keine PHID.',
-      'Expect scope for line %s to start on line %s (actual: %s) in "%s".' => 'Erwarte, dass der Scope für Zeile %s in "%s" bei Zeile %s beginnt (tatsächlich: %s).',
-      'Expect user \'%s\' to be allowed access to \'%s\'.' => 'Benutzer \'%s\' sollte Zugriff auf \'%s\' erlaubt sein.',
-      'Expect user \'%s\' to be denied access to \'%s\'.' => 'Benutzer \'%s\' sollte der Zugriff auf \'%s\' verweigert sein.',
-      'Expectation about existence of In-Reply-To header for case %s.' => 'Erwartung über Existenz des In-Reply-To-Headers für Fall %s.',
-      'Expectation about existence of Message-ID header for case %s.' => 'Erwartung über Existenz des Message-ID-Headers für Fall %s.',
-      'Expectation about existence of References header for case %s.' => 'Erwartung über Existenz des References-Headers für Fall %s.',
       'Expected "%s" node but found "%s" (on line %d:%d).' => '„%s“-Knoten erwartet, aber „%s“ gefunden (in Zeile %d:%d).',
       'Expected "%s" property to contain a dictionary.' => 'Eigenschaft "%s" sollte ein Dictionary enthalten.',
-      'Expected "%s" to be a valid repository short name.' => 'Erwartet, dass „%s" ein gültiger Repository-Kurzname ist.',
-      'Expected "%s" to be rejected as an invalid repository short name.' => 'Erwartet, dass „%s" als ungültiger Repository-Kurzname abgelehnt wird.',
-      'Expected "--config" injection in Mercurial to throw.' => '"--config"-Injektion in Mercurial sollte eine Ausnahme werfen.',
-      'Expected "--debugger" injection in Mercurial to throw.' => '"--debugger"-Injektion in Mercurial sollte eine Ausnahme werfen.',
       'Expected ":" after parameters in ICS document property.' => '":" nach Parametern in ICS-Dokumenteigenschaft erwartet.',
       'Expected "<mode> <type> <hash> <size>\\t<name>", for ls-tree of "%s:%s", got: %s' => 'Erwartet: "<mode> <type> <hash> <size>\\t<name>", für ls-tree von "%s:%s", erhalten: %s',
       'Expected "PhutilCalendarDuration" object or ISO8601 duration string.' => '"PhutilCalendarDuration"-Objekt oder ISO8601-Dauerzeichenkette erwartet.',
@@ -6620,7 +7236,6 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Expected \'%s\' in response!' => '\'%s\' in der Antwort erwartet!',
       'Expected \'%s\' to be \'%s\'!' => 'Erwartet, dass \'%s\' gleich \'%s\' ist!',
       'Expected \'%s\', got %s.' => 'Erwartet \'%s\', erhalten %s.',
-      'Expected 1 changeset for \'%s\'!' => '1 Changeset für \'%s\' erwartet!',
       'Expected Autoincrement' => 'Erwartetes Auto-Inkrement',
       'Expected Character Set' => 'Erwarteter Zeichensatz',
       'Expected Collation' => 'Erwartete Sortierung',
@@ -6661,34 +7276,21 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Expected boolean (true or false), got something else.' => 'Boolean (true oder false) erwartet, etwas anderes erhalten.',
       'Expected condition value to be an array.' => 'Bedingungswert wird als Array erwartet.',
       'Expected edge cursor in the form "0123_6789", got "%s".' => 'Edge-Cursor im Format "0123_6789" erwartet, erhalten wurde "%s".',
-      'Expected email address reassignment (%s).' => 'E-Mail-Adresszuweisung erwartet (%s).',
-      'Expected exactly one archive matching callsign \'%s\', found too many: %s' => 'Es wurde genau ein Archiv erwartet, das zum Rufzeichen \'%s\' passt, aber es wurden zu viele gefunden: %s',
       'Expected exactly one atom from file atomizer.' => 'Genau ein Atom vom Datei-Atomizer erwartet.',
-      'Expected exactly one changeset from "%s".' => 'Genau ein Changeset von "%s" erwartet.',
-      'Expected exactly one hunk from "%s".' => 'Genau ein Hunk von "%s" erwartet.',
-      'Expected exception for floating time with no viewer timezone.' => 'Ausnahme für ungebundene Zeit ohne Betrachter-Zeitzone erwartet.',
-      'Expected exception parsing "%s", got none.' => 'Ausnahme beim Parsen von "%s" erwartet, keine erhalten.',
       'Expected external Asana account to have exactly one external account identifier, found %s.' => 'Erwartet, dass das externe Asana-Konto genau eine externe Kontokennung hat, aber %s gefunden.',
       'Expected file \'%s\' in \'%s\' to be a sprite source ending in \'%s\'.' => 'Datei \'%s\' in \'%s\' sollte eine Sprite-Quelle sein, die auf \'%s\' endet.',
       'Expected four elements in icon emblem list. To omit an emblem, pass "null".' => 'Vier Elemente in der Symbol-Emblem-Liste erwartet. Um ein Emblem auszulassen, "null" übergeben.',
       'Expected fulltext engine extension ("%s") to return a list of "FerretSearchFunction" objects from "newFerretSearchFunctions()", but found something else ("%s") at index "%s".' => 'Von der Volltext-Engine-Erweiterung ("%s") wurde erwartet, dass sie aus "newFerretSearchFunctions()" eine Liste von Objekten vom Typ "FerretSearchFunction" zurückgibt, aber am Index "%s" wurde etwas anderes gefunden ("%s").',
       'Expected fulltext engine extension ("%s") to return a list of functions from "newFerretSearchFunctions()", got "%s".' => 'Von der Volltext-Engine-Erweiterung ("%s") wurde erwartet, dass sie aus "newFerretSearchFunctions()" eine Funktionsliste zurückgibt, erhalten wurde jedoch "%s".',
       'Expected integer, got something else.' => 'Ganzzahl erwartet, etwas anderes erhalten.',
-      'Expected invite accepted (%s).' => 'Einladungsannahme erwartet (%s).',
       'Expected key "%s" in datetime dictionary.' => 'Schlüssel "%s" im Datums-/Zeitwörterbuch erwartet.',
       'Expected key "%s" with value "%s" in datetime dictionary.' => 'Schlüssel "%s" mit Wert "%s" im Datums-/Zeitwörterbuch erwartet.',
-      'Expected no exception parsing "%s", got: %s' => 'Keine Ausnahme beim Parsen von "%s" erwartet, erhalten: %s',
       'Expected nonempty \'%s\' specification!' => 'Nicht-leere \'%s\'-Angabe erwartet!',
       'Expected numeric points value, got something else.' => 'Numerischen Punktewert erwartet, etwas anderes erhalten.',
       'Expected object (of class "%s") to return a transaction template (of class "%s"), but it returned something else ("%s").' => 'Von Objekt (der Klasse "%s") wurde eine Transaktionsvorlage (der Klasse "%s") erwartet, aber es wurde etwas anderes zurückgegeben ("%s").',
-      'Expected one exception parsing "%s", got a different one: %s' => 'Beim Parsen von "%s" eine Ausnahme erwartet, eine andere erhalten: %s',
       'Expected parameter "%s" to have at most one value, but found more than one.' => 'Es wurde erwartet, dass der Parameter "%s" höchstens einen Wert hat, aber es wurde mehr als einer gefunden.',
-      'Expected quoted "--config" injection in Mercurial to throw.' => 'Zitierte "--config"-Injektion in Mercurial sollte eine Ausnahme werfen.',
       'Expected string, got something else.' => 'Zeichenkette erwartet, etwas anderes erhalten.',
       'Expected task data to be a dictionary.' => 'Es wurde erwartet, dass die Aufgabendaten ein Dictionary sind.',
-      'Expected test file "%s" to contain an input section in JSON, then an expected result section in JSON, with the two sections separated by a line of "~~~~~", but the divider is not present in the file.' => 'Es wurde erwartet, dass die Testdatei "%s" einen Eingabeabschnitt in JSON und danach einen Abschnitt mit dem erwarteten Ergebnis in JSON enthält, wobei die beiden Abschnitte durch eine Zeile mit "~~~~~" getrennt sind, aber diese Trennzeile ist in der Datei nicht vorhanden.',
-      'Expected test file "%s" to contain exactly two sections, but it has more than two sections.' => 'Es wurde erwartet, dass die Testdatei "%s" genau zwei Abschnitte enthält, aber sie hat mehr als zwei Abschnitte.',
-      'Expected test file "%s" to contain four parts (message, fields, output, errors) divided by "%s".' => 'Testdatei "%s" sollte vier Teile enthalten (Nachricht, Felder, Ausgabe, Fehler), getrennt durch "%s".',
       'Expected to be passed a result object of class "LiskDAO" in "newExternalCursorStringForResult()", actually passed "%s". Return storage objects from "loadPage()" or override "newExternalCursorStringForResult()".' => 'In „newExternalCursorStringForResult()" wurde ein Ergebnisobjekt der Klasse „LiskDAO" erwartet, erhalten wurde „%s". Gib Speicherobjekte aus „loadPage()" zurück oder überschreibe „newExternalCursorStringForResult()".',
       'Expected to find a Git repository at "%s", but the actual Git repository root for this directory is "%s". Something is misconfigured. This directory should be writable by the daemons and not inside another Git repository.' => 'Es wurde erwartet, unter "%s" ein Git-Repository zu finden, aber das tatsächliche Stammverzeichnis des Git-Repositorys für dieses Verzeichnis ist "%s". Etwas ist falsch konfiguriert. Dieses Verzeichnis sollte für die Daemons beschreibbar sein und sich nicht innerhalb eines anderen Git-Repositorys befinden.',
       'Expected to find a Git repository at "%s", but there is a file there instead. Move or remove this file. A daemon will construct the working copy for you.' => 'Es wurde erwartet, unter "%s" ein Git-Repository zu finden, dort befindet sich aber stattdessen eine Datei. Verschiebe oder entferne diese Datei. Ein Daemon erstellt die Arbeitskopie für Dich.',
@@ -6698,7 +7300,6 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Expected to find atom while disambiguating!' => 'Atom bei der Disambiguierung erwartet, aber nicht gefunden!',
       'Expected token to finish OAuth handshake!' => 'Token zum Abschluss des OAuth-Handshakes erwartet!',
       'Expected trigger rule (of class "%s") to return a list of transactions from "newDropTransactions()", but got "%s".' => 'Auslöser-Regel (Klasse „%s") sollte eine Transaktionsliste von „newDropTransactions()" zurückgeben, aber es kam „%s".',
-      'Expected valid JSON response from "user.whoami" request.' => 'Gültige JSON-Antwort auf "user.whoami"-Anfrage erwartet.',
       'Expected valid JSON response from Amazon account data request.' => 'Gültige JSON-Antwort auf Amazon-Kontodatenanfrage erwartet.',
       'Expected valid JSON response from Disqus account data request.' => 'Gültige JSON-Antwort auf Disqus-Kontodatenanfrage erwartet.',
       'Expected valid JSON response from Facebook account data request.' => 'Gültige JSON-Antwort auf Facebook-Kontodatenanfrage erwartet.',
@@ -6706,16 +7307,12 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Expected valid JSON response from Google account data request.' => 'Gültige JSON-Antwort auf Google-Kontodatenanfrage erwartet.',
       'Expected verifier to finish OAuth handshake!' => 'Verifier zum Abschluss des OAuth-Handshakes erwartet!',
       'Experimental' => 'Experimentell',
-      'Expiration' => 'Ablaufdatum',
       'Expired' => 'Abgelaufen',
       'Expires' => 'Läuft ab',
-      'Expires %s · %s' => 'Läuft ab %s · %s',
       'Explain Why' => 'Begründung angeben',
       'Explicit S3 endpoint to use. This should be the endpoint which corresponds to the region you have selected in `amazon-s3.region`. This software can not determine the correct endpoint automatically because some endpoint locations are irregular.' => 'Expliziter S3-Endpoint, der verwendet werden soll. Das sollte der Endpoint sein, der zur in `amazon-s3.region` gewählten Region gehört. Diese Software kann den korrekten Endpoint nicht automatisch bestimmen, weil einige Endpoint-Adressen unregelmäßig aufgebaut sind.',
-      'Explicit exclude excludes recipients.' => 'Expliziter Ausschluss schließt Empfänger aus.',
       'Explicitly Unassigned' => 'Explizit nicht zugewiesen',
       'Explicitly update the builds for __buildable__.' => 'Die Builds für __buildable__ explizit aktualisieren.',
-      'Exploration Only' => 'Nur Exploration',
       'Explore Applications' => 'Anwendungen erkunden',
       'Explore More Applications' => 'Alle Anwendungen anzeigen',
       'Export' => 'Export',
@@ -6740,17 +7337,25 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Exporting Events' => 'Termine exportieren',
       'Exports' => 'Exporte',
       'Expression "%s" is not a valid regular expression. Note that you must include delimiters.' => 'Der Ausdruck "%s" ist kein gültiger regulärer Ausdruck. Beachte, dass Du Begrenzer angeben musst.',
-      'Extended Policy with Cycle' => 'Erweiterte Richtlinie mit Zyklus',
       'Extends' => 'Erweitert',
       'Extension' => 'Erweiterung',
       'Extension "%s" defines a bulk edit group with the same key ("%s") as the main editor or another extension. Each bulk edit group must have a unique key.' => 'Die Erweiterung "%s" definiert eine Stapelbearbeitungsgruppe mit demselben Schlüssel ("%s") wie der Haupteditor oder eine andere Erweiterung. Jede Stapelbearbeitungsgruppe muss einen eindeutigen Schlüssel haben.',
+      'Extension %s found in store %s.' => 'Erweiterung %s im Store %s gefunden.',
+      'Extension %s is already up-to-date' => 'Erweiterung %s ist bereits aktuell',
+      'Extension %s not found in store %s - maybe it was deleted?. \'.
+          \'Unable to upgrade.' => 'Erweiterung %s im Store %s nicht gefunden - wurde sie vielleicht gelöscht?. \'.
+          \'Aktualisierung nicht möglich.',
+      'Extension %s not found.
+' => 'Erweiterung %s nicht gefunden.
+',
+      'Extension with key %s not found in any store.' => 'Erweiterung mit dem Schlüssel %s in keinem Store gefunden.',
       'Extensions' => 'Erweiterungen',
       'Extensions/Modules' => 'Erweiterungen/Module',
       'External' => 'Extern',
       'External Account' => 'Externes Konto',
       'External Account Identifier' => 'Externe Konto-Kennung',
-      'External Account View' => 'Externe Kontoansicht',
       'External Accounts' => 'Externe Konten',
+      'External Accounts:' => 'Externe Konten:',
       'External Editor' => 'Externer Editor',
       'External Editor URI Variables' => 'URI-Variablen für externen Editor',
       'External Interface' => 'Externe Schnittstelle',
@@ -6761,20 +7366,18 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'External Requests (TTL)' => 'Externe Anfragen (TTL)',
       'External accounts can only be edited by the account owner.' => 'Externe Konten können nur vom Kontoinhaber bearbeitet werden.',
       'External loaders have been replaced. Extend `%s` to implement new PHID and handle types.' => 'Externe Loader wurden ersetzt. Erweitere `%s`, um neue PHID- und Handle-Typen zu implementieren.',
-      'Extra Attribute' => 'Zusätzliches Attribut',
       'Extra Settings' => 'Zusätzliche Einstellungen',
       'Extract a diff from a commit.' => 'Einen Diff aus einem Commit extrahieren.',
       'Extract translatable strings.' => 'Übersetzbare Strings extrahieren.',
       'Extracted diff from "%s":' => 'Diff aus "%s" extrahiert:',
       'Extracting "%s"...' => 'Extrahiere "%s"...',
-      'Extras' => 'Extras',
+      'Exuberant Ctags project page: %s' => 'Projektseite von Exuberant Ctags: %s',
       'Eye See You' => 'Ich seh Dich',
       'FAIL' => 'STOP',
       'FILE DETAIL' => 'DATEI DETAILS',
       'FILE LINKS' => 'DATEI VERKNÜPFUNGEN',
       'FINDING DOCUMENTATION BOOKS' => 'DOKUMENTATIONSBÜCHER SUCHEN',
       'FREE' => 'FREIGEBEN',
-      'FULL ORDER HISTORY' => 'VOLLSTÄNDIGE BESTELLHISTORIE',
       'Facebook' => 'Facebook',
       'Fact' => 'Fakt',
       'Fact "%s"' => 'Fakt "%s"',
@@ -6797,7 +7400,6 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Failed to adjust SORT columns!' => 'SORT-Spalten konnten nicht angepasst werden!',
       'Failed to append filter "%s" to input stream while processing a request with "%s" encoding.' => 'Filter "%s" konnte beim Verarbeiten einer Anfrage mit Kodierung "%s" nicht an den Eingabestream angehängt werden.',
       'Failed to apply hack to adjust %s search column!' => 'Hack zum Anpassen der Suchspalte %s konnte nicht angewendet werden!',
-      'Failed to base64 encode value for key "%s".' => 'Fehler beim Base64-Kodieren des Wertes für Schlüssel „%s".',
       'Failed to base64_decode() value for key "%s".' => 'Fehler beim Base64-Dekodieren des Wertes für Schlüssel „%s".',
       'Failed to bind to LDAP server (as user "%s").' => 'Anmeldung am LDAP-Server (als Benutzer "%s") fehlgeschlagen.',
       'Failed to bind to LDAP server (without username).' => 'Anmeldung am LDAP-Server (ohne Benutzernamen) fehlgeschlagen.',
@@ -6813,13 +7415,13 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Failed to decode OAuth access token response: %s' => 'OAuth-Zugriffstoken-Antwort konnte nicht dekodiert werden: %s',
       'Failed to decode rule data.' => 'Regeldaten konnten nicht dekodiert werden.',
       'Failed to digest password: object ("%s") did not return an opaque envelope with a password digest.' => 'Das Passwort konnte nicht gehasht werden: Das Objekt ("%s") hat keinen Opaque-Envelope mit einem Passwort-Hash zurückgegeben.',
+      'Failed to evaluate pht() call on line %d in "%s": %s' => 'pht()-Aufruf in Zeile %d in "%s" konnte nicht ausgewertet werden: %s',
       'Failed to fetch remote URI "%s" after following %s redirect(s) (%s): %s' => 'Remote-URI "%s" konnte nach %s Weiterleitung(en) (%s) nicht abgerufen werden: %s',
       'Failed to find an OAuth client with ID %s.' => 'Kein OAuth-Client mit der ID %s gefunden.',
       'Failed to find an OAuth client with id %s.' => 'Kein OAuth-Client mit der ID %s gefunden.',
       'Failed to generate an intracluster proxy URI even though this request was routed as a proxy request.' => 'Intracluster-Proxy-URI konnte nicht generiert werden, obwohl die Anfrage als Proxy-Anfrage weitergeleitet wurde.',
       'Failed to get LDAP entries from search result.' => 'LDAP-Einträge aus dem Suchergebnis konnten nicht abgerufen werden.',
       'Failed to gzdeflate() log data!' => 'gzdeflate() der Protokolldaten fehlgeschlagen!',
-      'Failed to imagecopyresampled() image: %s' => 'imagecopyresampled() für Bild fehlgeschlagen: %s',
       'Failed to imagecreatefromstring() image template data.' => 'imagecreatefromstring() für Bildvorlagendaten ist fehlgeschlagen.',
       'Failed to inflate data!' => 'Daten konnten nicht aufgeblasen werden!',
       'Failed to load UserCacheType to manage key "%s". This cache type is required.' => 'UserCacheType zum Verwalten des Schlüssels "%s" konnte nicht geladen werden. Dieser Cache-Typ ist erforderlich.',
@@ -6851,12 +7453,9 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Failed to load revision for Herald adapter construction!' => 'Version für Herald-Adapter-Konstruktion konnte nicht geladen werden!',
       'Failed to load revision from transaction finalization.' => 'Version konnte beim Abschluss der Transaktion nicht geladen werden.',
       'Failed to load saved query ("%s").' => 'Gespeicherte Abfrage ("%s") konnte nicht geladen werden.',
-      'Failed to load subscription with PHID "%s".' => 'Abonnement mit PHID "%s" konnte nicht geladen werden.',
       'Failed to load the commit because the commit has not been parsed yet.' => 'Der Commit konnte nicht geladen werden, da er noch nicht geparst wurde.',
       'Failed to make progress during 1up diff layout.' => 'Beim 1-up-Diff-Layout konnte kein Fortschritt erzielt werden.',
       'Failed to make some schema adjustments, detailed above.' => 'Einige Schema-Anpassungen konnten nicht vorgenommen werden, Details siehe oben.',
-      'Failed to markup HTML in file \'%s\'.' => 'HTML in Datei \'%s\' konnte nicht mit Markup verarbeitet werden.',
-      'Failed to markup text in file \'%s\'.' => 'Text in Datei \'%s\' konnte nicht mit Markup verarbeitet werden.',
       'Failed to migrate hunk %d: %s' => 'Migration von Hunk %d fehlgeschlagen: %s',
       'Failed to open file "%s" for writing.' => 'Datei "%s" konnte nicht zum Schreiben geöffnet werden.',
       'Failed to open output file "%s" for writing.' => 'Ausgabedatei "%s" konnte nicht zum Schreiben geöffnet werden.',
@@ -6872,6 +7471,7 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Failed to parse remote branch \'%s\'!' => 'Remote-Branch \'%s\' konnte nicht geparst werden!',
       'Failed to poll mysqli connection!' => 'Abfrage des mysqli-Verbindungsstatus ist fehlgeschlagen!',
       'Failed to read configuration file. %s' => 'Konfigurationsdatei konnte nicht gelesen werden. %s',
+      'Failed to read stdin!' => 'Stdin konnte nicht gelesen werden!',
       'Failed to read stdin.' => 'Stdin konnte nicht gelesen werden.',
       'Failed to rebuild search index for any documents.' => 'Der Suchindex konnte für kein Dokument neu aufgebaut werden.',
       'Failed to reconnect to master database and release held write lock ("%s") on device "%s" for repository "%s" after trying for %s seconds. This repository will be frozen.' => 'Verbindung zur Master-Datenbank und Freigabe der gehaltenen Schreibsperre ("%s") auf Gerät "%s" für Repository "%s" nach %s Sekunden Versuch fehlgeschlagen. Dieses Repository wird eingefroren.',
@@ -6881,15 +7481,11 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Failed to reload object identified by monogram "%s" when querying by PHID.' => 'Das durch Monogramm "%s" bezeichnete Objekt konnte bei der Abfrage nach PHID nicht erneut geladen werden.',
       'Failed to reload revision ("%s").' => 'Version "%s" konnte nicht neu geladen werden.',
       'Failed to run i18n extractor: %s' => 'i18n-Extractor konnte nicht ausgeführt werden: %s',
-      'Failed to save builtin avatar image data (imagecopy).' => 'Internes Avatar-Bild konnte nicht gespeichert werden (imagecopy).',
-      'Failed to save builtin avatar image data (imagefill).' => 'Internes Avatar-Bild konnte nicht gespeichert werden (imagefill).',
-      'Failed to save builtin avatar image data (imagerectangle).' => 'Internes Avatar-Bild konnte nicht gespeichert werden (imagerectangle).',
-      'Failed to save builtin avatar image data (imagesetthickness).' => 'Internes Avatar-Bild konnte nicht gespeichert werden (imagesetthickness).',
       'Failed to save image data into any format.' => 'Bilddaten konnten in keinem Format gespeichert werden.',
-      'Failed to serialize() value for key "%s".' => 'Fehler beim Serialisieren des Wertes für Schlüssel „%s".',
       'Failed to unserialize XHProf profile!' => 'XHProf-Profil konnte nicht deserialisiert werden!',
       'Failed to update object %s using user %s.' => 'Objekt %s konnte mit Benutzer %s nicht aktualisiert werden.',
       'Failed to update search index for document "%s": %s' => 'Suchindex für Dokument „%s" konnte nicht aktualisiert werden: %s',
+      'Failed to upgrade git library. Try fixing manually. Error: %s' => 'Aktualisierung der Git-Bibliothek fehlgeschlagen. Versuche, das Problem manuell zu beheben. Fehler: %s',
       'Failed to write %s byte(s) to "%s".' => '%s Byte konnten nicht nach "%s" geschrieben werden.',
       'Failed to write %s byte(s) to file "%s".' => '%s Byte konnten nicht in Datei "%s" geschrieben werden.',
       'Failed while trying to read schema status: the database "%s" exists, but the current user ("%s") does not have permission to access it. GRANT the current user more permissions, or use a different user.' => 'Fehler beim Lesen des Schemastatus: Die Datenbank "%s" existiert, aber der aktuelle Benutzer ("%s") hat keine Berechtigung, darauf zuzugreifen. Gib dem aktuellen Benutzer per GRANT mehr Berechtigungen oder verwende einen anderen Benutzer.',
@@ -6933,7 +7529,6 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Fetch rules must be a list of strings, got "%s".' => 'Fetch-Regeln müssen eine Stringliste sein, erhalten: „%s".',
       'Fetched Calendar' => 'Kalender abgerufen',
       'Fetched event "%s".' => 'Ereignis "%s" abgerufen.',
-      'Fictional hasher unavailable.' => 'Fiktiver Hasher nicht verfügbar.',
       'Field' => 'Feld',
       'Field "%s" expects a list of strings, but received a value of type "%s".' => 'Das Feld "%s" erwartet eine Liste von Strings, hat aber einen Wert vom Typ "%s" erhalten.',
       'Field "%s" expects a string value, but received a value of type "%s".' => 'Das Feld "%s" erwartet einen String-Wert, hat aber einen Wert vom Typ "%s" erhalten.',
@@ -6944,9 +7539,17 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Field Absent: %s' => 'Feld nicht vorhanden: %s',
       'Field Present: %s' => 'Feld vorhanden: %s',
       'Field Trip' => 'Aussentermin',
+      'Field Types
+-----------
+
+Fields in this form have the types described in the table below. This table
+shows how to format values for each field type.' => 'Feldtypen
+---------
+
+Die Felder dieses Formulars haben die in der folgenden Tabelle beschriebenen Typen. Die
+Tabelle zeigt, wie Werte für jeden Feldtyp formatiert werden.',
       'Field Values' => 'Feldwerte',
       'Field label "%s" is parsed by two custom fields: "%s" and "%s". Each label must be parsed by only one field.' => 'Die Feldbezeichnung "%s" wird von zwei benutzerdefinierten Feldern geparst: "%s" und "%s". Jede Bezeichnung darf nur von einem Feld geparst werden.',
-      'Field normalization of label "%s".' => 'Feldnormalisierung der Bezeichnung "%s".',
       'Field: %s' => 'Feld: %s',
       'File' => 'Datei',
       'File "%s" already has an integrity hash.' => 'Datei "%s" hat bereits einen Integritäts-Hash.',
@@ -6974,18 +7577,12 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'File PHID.' => 'Datei-PHID.',
       'File PHID: %s' => 'Datei-PHID: %s',
       'File Renamed' => 'Datei umbenannt',
-      'File Scramble Test Task' => 'Test-Aufgabe für Datei-Durchmischung',
       'File Size' => 'Dateigröße',
       'File Sources' => 'Dateiquellen',
-      'File Visibility' => 'Dateisichtbarkeit',
-      'File Visibility After Being Attached' => 'Dateisichtbarkeit nach dem Anhängen',
-      'File Visibility Before Being Attached' => 'Dateisichtbarkeit vor dem Anhängen',
-      'File Visibility Test Task' => 'Test-Aufgabe für Dateisichtbarkeit',
       'File alternate text must not be longer than %s character(s).' => 'Der Alt-Text der Datei darf nicht länger als %s Zeichen sein.',
       'File attachment mode "%s" (for file "%s") is invalid. Valid modes are: %s.' => 'Der Datei-Anhangsmodus "%s" (für Datei "%s") ist ungültig. Gültige Modi sind: %s.',
       'File attachment mode (for file "%s") is invalid. Expected a string, found "%s".' => 'Der Datei-Anhangsmodus (für Datei "%s") ist ungültig. Erwartet wurde ein String, gefunden wurde "%s".',
       'File attachment transaction must have a map of files to attachment modes, found "%s".' => 'Eine Transaktion zum Anhängen von Dateien muss eine Zuordnung von Dateien zu Anhangsmodi enthalten; gefunden wurde "%s".',
-      'File content hashing is not available.' => 'Dateiinhalt-Hashing ist nicht verfügbar.',
       'File content matching "%s" under "%s"' => 'Dateiinhalt mit "%s" unter "%s"',
       'File data integrity check failed. Dark forces have corrupted or tampered with this file. The file data can not be read.' => 'Integritätsprüfung der Dateidaten fehlgeschlagen. Dunkle Mächte haben diese Datei beschädigt oder manipuliert. Die Dateidaten können nicht gelesen werden.',
       'File data integrity check failed. Use "--salvage" to bypass integrity checks. This flag is dangerous, use it at your own risk. Underlying error: %s' => 'Integritätsprüfung der Dateidaten fehlgeschlagen. "--salvage" verwenden, um Integritätsprüfungen zu umgehen. Dieses Flag ist gefährlich, auf eigene Gefahr verwenden. Zugrunde liegender Fehler: %s',
@@ -6996,7 +7593,6 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'File mime type of "%s" is not a valid viewable image.' => 'Der MIME-Typ der Datei "%s" ist kein gültiges anzeigbares Bild.',
       'File names must not be longer than %s character(s).' => 'Dateinamen dürfen nicht länger als %s Zeichen sein.',
       'File path copied.' => 'Dateipfad kopiert.',
-      'File policy should not scramble when attached to newly created object.' => 'Dateirichtlinie sollte beim Anhängen an ein neu erstelltes Objekt nicht durchgemischt werden.',
       'File regexps to treat as automatically generated.' => 'Datei Regexe, die als automatisch generiert zu behandeln sind.',
       'File size disagrees with uploaded size.' => 'Dateigröße stimmt nicht mit der hochgeladenen Größe überein.',
       'File size, in bytes.' => 'Dateigröße in Bytes.',
@@ -7016,10 +7612,11 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Filter' => 'Filter',
       'Filter By Project' => 'Nach Projekt filtern',
       'Filter IP' => 'IP filtern',
-      'Filter bundle does not affect Mercurial 2.6.2' => 'Filter-Bundle betrifft Mercurial 2.6.2 nicht',
-      'Filter bundle2 from Mercurial 3.5.1' => 'Bundle2 aus Mercurial 3.5.1 herausfiltern',
+      'Filter by transaction type' => 'Nach Transaktionstyp filtern',
+      'Filter edges by Destination.' => 'Edges nach Ziel filtern.',
+      'Filter edges by Edge Type.' => 'Edges nach Edge-Typ filtern.',
+      'Filter edges by Source' => 'Edges nach Quelle filtern',
       'Find' => 'Suchen',
-      'Find Backers' => 'Unterstützer suchen',
       'Find Document:' => 'Dokument suchen:',
       'Find Emoji:' => 'Emoji suchen:',
       'Find Phurl:' => 'Phurl suchen:',
@@ -7086,8 +7683,8 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Find user accounts created before a given time.' => 'Benutzerkonten finden, die vor einem bestimmten Zeitpunkt erstellt wurden.',
       'Find users by exact username.' => 'Benutzer nach exaktem Benutzernamen finden.',
       'Find users whose usernames or real names contain a substring.' => 'Benutzer suchen, deren Benutzername oder Echtname eine Teilzeichenkette enthält.',
+      'Finding extension by %s is not yet implemented.' => 'Das Finden einer Erweiterung über %s ist noch nicht implementiert.',
       'Finish editing inline comments before changing display modes.' => 'Beende das Bearbeiten von Inline-Kommentaren, bevor Du den Anzeigemodus wechselst.',
-      'Finished' => 'Abgeschlossen',
       'Finished collecting all the garbage.' => 'Das Sammeln der gesamten Garbage ist abgeschlossen.',
       'Fire' => 'Feuer',
       'Fire the trigger as though the current time is a given time. This allows you to test how a trigger would behave if activated in the past or future. Defaults to the actual current time.' => 'Den Trigger so auslösen, als wäre die aktuelle Zeit ein angegebener Zeitpunkt. Damit kannst du testen, wie sich ein Trigger verhalten würde, wenn er in der Vergangenheit oder Zukunft aktiviert würde. Standard ist die tatsächliche aktuelle Zeit.',
@@ -7106,6 +7703,7 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Flag For Later' => 'Mittels Flagge markieren',
       'Flag Names' => 'Flag-Namen',
       'Flagged' => 'Markiert',
+      'Flagged as %s' => 'Markiert als %s',
       'Flags' => 'Flags',
       'Flags "--all-identities" and "--raw" are not compatible.' => 'Die Flags "--all-identities" und "--raw" sind nicht kompatibel.',
       'Flags "--all-repositories" and "--repository" are not compatible.' => 'Die Flags "--all-repositories" und "--repository" sind nicht kompatibel.',
@@ -7116,12 +7714,11 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Foam Circle' => 'Schaumring',
       'Folder' => 'Ordner',
       'Follow Log' => 'Protokoll verfolgen',
-      'Follow referrals. Disable this for Windows AD 2003.' => 'Referrals folgen. Für Windows AD 2003 deaktivieren.',
+      'Follow referrals. Disable this if you have known issues with referrals in Windows Active Directory.' => 'Referrals folgen. Deaktiviere dies, wenn bekannte Probleme mit Referrals im Windows Active Directory auftreten.',
       'Font Awesome by Dave Gandy - %s' => 'Font Awesome von Dave Gandy - %s',
       'Footer configuration is not valid: value must be a list of items.' => 'Fußzeilen-Konfiguration ist ungültig: Wert muss eine Listelemente sein.',
       'Footer item with index "%s" is invalid: %s' => 'Fußzeilenelement mit Index "%s" ist ungültig: %s',
       'Footer item with index "%s" is invalid: each item must be a dictionary describing a footer item.' => 'Das Fußzeilenelement mit Index "%s" ist ungültig: Jedes Element muss ein Wörterbuch sein, das ein Fußzeilenelement beschreibt.',
-      'Footer on invoice forms.' => 'Fußzeile auf Rechnungsformularen.',
       'For columns that proxy another object (like a subproject or milestone), the PHID of the object they proxy.' => 'Für Spalten, die ein anderes Objekt repräsentieren (z. B. Teilprojekt oder Meilenstein): die PHID des repräsentierten Objektes.',
       'For conduit, the Conduit method which was invoked.' => 'Bei Conduit die aufgerufene Conduit-Methode.',
       'For custom domains to work, the blog must have a view policy of public. This blog is currently set to "%s".' => 'Damit benutzerdefinierte Domains funktionieren, muss der Blog eine öffentliche Anzeigerichtlinie haben. Dieser Blog ist derzeit auf "%s" eingestellt.',
@@ -7138,6 +7735,7 @@ Für ausführlichere Ausgaben können manuelle Builds auch über die Kommandozei
       'Force a complete rebuild of the entire index instead of an incremental update.' => 'Einen vollständigen Neuaufbau des gesamten Index erzwingen statt einer inkrementellen Aktualisierung.',
       'Force accept as %s' => 'Als %s erzwungen akzeptieren',
       'Force logs to rebuild even if they appear to be in good shape already.' => 'Protokolle auch dann neu aufbauen, wenn sie bereits in Ordnung zu sein scheinen.',
+      'Force regeneration even if sources have not changed.' => 'Neuaufbau erzwingen, auch wenn sich die Quellen nicht geändert haben.',
       'Force regeneration even no sources have changed.' => 'Neuaufbau erzwingen, auch wenn keine Quellen geändert wurden.',
       'Force the buildable to update even if no build status changes occur during normal update.' => 'Den Build-Kandidaten zur Aktualisierung zwingen, auch wenn sich beim normalen Update kein Build-Status ändert.',
       'Force the request to execute in this process, rather than proxying to another host in the cluster.' => 'Die Anfrage in diesem Prozess ausführen erzwingen, statt sie an einen anderen Host im Cluster weiterzuleiten.',
@@ -7227,7 +7825,6 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
       'From Device Version' => 'Von Geräte-Version',
       'From Email' => 'Aus Email',
       'From Version' => 'Ab Version',
-      'From:' => 'Von:',
       'Frozen' => 'Eingefroren',
       'Frozen Method' => 'Eingefrorene Methode',
       'Fruit Exploration' => 'Früchteforschung',
@@ -7245,7 +7842,6 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
       'Fulltext Search' => 'Volltextsuche',
       'Fulltext Search Results' => 'Volltext-Suchergebnisse',
       'Fully Imported' => 'Vollständig importiert',
-      'Fully Refunded' => 'Vollständig erstattet',
       'Function' => 'Funktion',
       'Function "%s" expects %s argument(s), but %s argument(s) were provided.' => 'Funktion "%s" erwartet %s Argument(e), aber es wurden %s Argument(e) übergeben.',
       'Function "%s" expects %s or more argument(s), but only %s argument(s) were provided.' => 'Funktion "%s" erwartet %s oder mehr Argument(e), aber es wurden nur %s Argument(e) übergeben.',
@@ -7255,15 +7851,6 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
       'Function Help' => 'Funktionshilfe',
       'Function Quick Reference' => 'Funktionsübersicht',
       'Function Token' => 'Funktions-Token',
-      'Function compilation of query: %s' => 'Funktionskompilierung der Abfrage: %s',
-      'Fund' => 'Fund',
-      'Fund %s %s' => '%s %s finanzieren',
-      'Fund <Unknown Initiative>' => 'Fund <Unbekannte Initiative>',
-      'Fund Backers' => 'Fund-Unterstützer',
-      'Fund Backing' => 'Fund-Unterstützung',
-      'Fund Initiative' => 'Initiative finanzieren',
-      'Fund Initiatives' => 'Fund-Initiativen',
-      'Funder' => 'Geldgeber/in',
       'GENERATORS' => 'GENERATOREN',
       'GZip Compression May Not Be Enabled' => 'GZip-Komprimierung möglicherweise nicht aktiviert',
       'Garbage' => 'Müll',
@@ -7306,6 +7893,7 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
 %s',
       'Get a list of associated URIs for each repository.' => 'Liste der zugehörigen URIs für jedes Repository abrufen.',
       'Get a local configuration value.' => 'Lokalen Konfigurationswert abrufen.',
+      'Get all hashtags for the project.' => 'Alle Hashtags des Projekts abrufen.',
       'Get availability information for users.' => 'Verfügbarkeitsinformationen für Benutzer abrufen.',
       'Get blame information for a list of paths.' => 'Blame-Informationen für eine Liste von Pfaden abrufen.',
       'Get commit identifiers for recent commits affecting a given path.' => 'Commit-Bezeichner für aktuelle Commits abrufen, die einen bestimmten Pfad betreffen.',
@@ -7317,6 +7905,8 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
       'Get lint messages for existing code.' => 'Lint-Meldungen für bestehenden Code abrufen.',
       'Get metrics (like commit count and most recent commit) for each repository.' => 'Metriken (wie Commit-Anzahl und neuester Commit) für jedes Repository abrufen.',
       'Get raw diff information from a repository for a specific commit at an (optional) path.' => 'Roh-Diff-Informationen aus einem Repository für einen bestimmten Commit an einem (optionalen) Pfad abrufen.',
+      'Get tasks on which a task depends.' => 'Aufgaben abrufen, von denen eine Aufgabe abhängt.',
+      'Get tasks which depend on a task.' => 'Aufgaben abrufen, die von einer Aufgabe abhängen.',
       'Get the auditors for each commit.' => 'Prüfer für jeden Commit abrufen.',
       'Get the commit identifiers for a commit\'s parent or parents.' => 'Commit-Bezeichner für den oder die Eltern-Commits eines Commits abrufen.',
       'Get the commits at which paths were last modified.' => 'Commits abrufen, bei denen Pfade zuletzt geändert wurden.',
@@ -7332,7 +7922,6 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
       'Get the watcher list for the project.' => 'Beobachterliste des Projektes abrufen.',
       'Get the workboard columns where an object appears.' => 'Arbeitsflächen-Spalten abrufen, in denen ein Objekt erscheint.',
       'Getting Started' => 'Erste Schritte',
-      'Ghosts happened to this revision.' => 'Diese Version wird von Geistern heimgesucht. Wen rufst Du an?',
       'Git' => 'Git',
       'Git LFS Token' => 'Git-LFS-Token',
       'Git LFS batch operation "%s" is not supported by this server.' => 'Die Git-LFS-Batch-Operation "%s" wird von diesem Server nicht unterstützt.',
@@ -7353,7 +7942,7 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
       'GitHub User %s' => 'GitHub-Benutzer %s',
       'Give Token' => 'Trophäe vergeben',
       'Give keyboard focus to the search box.' => 'Suchfeld fokussieren.',
-      'Give or change a token.' => 'Eine Trophäe verleihen oder ändern.',
+      'Give or change or remove a token.' => 'Eine Trophäe verleihen, ändern oder entfernen.',
       'Given by %s on %s' => 'Von %s verliehen für %s',
       'Glass' => 'Glas',
       'Global' => 'Global',
@@ -7365,6 +7954,7 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
       'Global Queries' => 'Globale Abfragen',
       'Global Rule' => 'Globale Regel',
       'Global Search' => 'Globale Suche',
+      'Global Search Results For %s Term(s):' => 'Globale Suchergebnisse für %s Begriff(e):',
       'Global Shortcuts' => 'Globale Kurztasten',
       'Global access controls now exist, see `%s`.' => 'Globale Zugriffskontrollen existieren jetzt, siehe `%s`.',
       'Global cap for size of generated emails (bytes).' => 'Globale Größenbegrenzung für generierte E-Mails (Bytes).',
@@ -7377,7 +7967,6 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
       'Goal' => 'Ziel',
       'Good' => 'Gut',
       'Good Guys' => 'Die Guten',
-      'Good password should match.' => 'Ein gültiges Passwort sollte übereinstimmen.',
       'Google' => 'Google',
       'Got HTTP 200, but expected HTTP 501 (WebSocket Upgrade)!' => 'HTTP 200 erhalten, aber HTTP 501 (WebSocket Upgrade) erwartet!',
       'Got a complaint? Complain here! We love complaints.' => 'Eine Beschwerde? Beschwer Dich hier! Wir lieben Beschwerden.',
@@ -7408,6 +7997,7 @@ MySQL muss für einige Anpassungen Tabellendaten kopieren, daher können diese M
       'Group' => 'Gruppe',
       'Group Auditors' => 'Prüfer gruppieren',
       'Group By' => 'Gruppieren nach',
+      'Group ID' => 'Gruppen-ID',
       'Group PHID ("%s") component of cursor ("%s") is not valid.' => 'Die Gruppen-PHID ("%s") des Cursors ("%s") ist nicht gültig.',
       'Group Reviewers' => 'Reviewer gruppieren',
       'Group by Author' => 'Nach Autor gruppieren',
@@ -7441,7 +8031,6 @@ Bei Installationen ohne aktivierte Passwortauthentifizierung erreichen Benutzer 
       'HMAC-SHA256 requires a nonempty key.' => 'HMAC-SHA256 erfordert einen nicht leeren Schlüssel.',
       'HOST REGISTERED' => 'HOST REGISTRIERT',
       'HTML BODY' => 'HTML-INHALT',
-      'HTML Body Removed' => 'HTML-Inhalt entfernt',
       'HTML Email' => 'HTML-E-Mail',
       'HTTP' => 'HTTP',
       'HTTP Basic Auth Not Configured' => 'HTTP Basic Auth nicht konfiguriert',
@@ -7460,6 +8049,7 @@ Do not enable this option if you serve (or plan to ever serve) unsecured content
 Aktiviere diese Option nicht, wenn Du ungesicherte Inhalte über reines HTTP auslieferst oder jemals ausliefern möchtest. Sobald Browser die Einstellung akzeptiert haben, lässt sich diese Änderung nur sehr schwer rückgängig machen.',
       'HTTPS' => 'HTTPS',
       'HTTPS Required' => 'HTTPS erforderlich',
+      'Had issues verifying this download:' => 'Bei der Überprüfung dieses Downloads gab es Probleme:',
       'Haiku About Pasta' => 'Haiku über Pasta',
       'Half-Life 3 Confirmed' => 'Half-Life 3 bestätigt',
       'Halloween' => 'Halloween',
@@ -7470,7 +8060,6 @@ Aktiviere diese Option nicht, wenn Du ungesicherte Inhalte über reines HTTP aus
       'Handles high security exceptions which occur when a user needs to present MFA credentials to take an action.' => 'Behandelt Ausnahmen mit erhöhter Sicherheit, die auftreten, wenn ein Benutzer MFA-Zugangsdaten vorlegen muss, um eine Aktion auszuführen.',
       'Handles policy exceptions which occur when a user tries to do something they do not have permission to do.' => 'Behandelt Richtlinien-Ausnahmen, die auftreten, wenn ein Benutzer etwas tun möchte, wofür er keine Berechtigung hat.',
       'Handles runtime problems with cluster configuration.' => 'Behandelt Laufzeitprobleme mit der Cluster-Konfiguration.',
-      'Handles should use viewer handle pool cache.' => 'Handles sollten den Viewer-Handle-Pool-Cache verwenden.',
       'Hang detected. Restarting process.' => 'Hänger erkannt. Prozess wird neu gestartet.',
       'Harbormaster' => 'Harbormaster',
       'Harbormaster Artifacts' => 'Harbormaster-Artefakte',
@@ -7531,10 +8120,15 @@ API method can send messages to multiple types of objects:
   </tr>
 </table>
 
-See below for specifics on sending messages to different object types.
-EOREMARKUP' => 'Harbormaster-Build-Objekte funktionieren etwas anders als Objekte in vielen anderen Anwendungen. Die meisten Anwendungsobjekte können direkt über synchrone APIs bearbeitet werden. Builds hingegen erfordern langwierige Hintergrundverarbeitung und Harbormaster-Objekte haben einen komplexeren Lebenszyklus. Für eine Bearbeitung wird diese API (`harbormaster.sendmessage`) verwendet, um eine Nachricht mit der gewünschten Bearbeitung oder zusätzlichen Informationen zu senden. Die Nachricht wird von den Daemons verarbeitet, sobald der Build oder das Ziel einen geeigneten Zustand erreicht, um Nachrichten zu empfangen.
+See below for specifics on sending messages to different object types.' => 'Harbormaster-Build-Objekte funktionieren etwas anders als Objekte in vielen anderen Anwendungen. Die meisten Anwendungsobjekte können direkt über synchrone APIs bearbeitet werden (etwa `maniphest.edit`, `differential.revision.edit` usw.).
 
-Ein Objekt zum Senden einer Nachricht mit dem `receiver`-Parameter auswählen. Diese API-Methode kann Nachrichten an mehrere Objekttypen senden:
+Builds erfordern jedoch lang laufende Hintergrundverarbeitung, und Harbormaster-Objekte haben einen komplexeren Lebenszyklus als die meisten anderen Anwendungsobjekte. Während der Build-Ausführung können sie für längere Zeit von Daemon-Prozessen gesperrt sein. Eine synchrone Bearbeitung müsste unter Umständen beliebig lange warten, bis diese Sperre frei wird und die Bearbeitung angewendet werden kann.
+
+Außerdem können manche Bearbeitungen beliebig lange brauchen, bis sie //abgeschlossen// sind. Das Abbrechen eines Builds kann zum Beispiel Aufräumschritte auslösen, die Minuten (oder sogar Stunden) dauern.
+
+Da eine synchrone API nicht garantieren könnte, dem Aufrufer in angemessener Zeit ein Ergebnis zu liefern, ist die Bearbeitungs-API für Harbormaster-Build-Objekte asynchron: Um einen Harbormaster-Build oder ein Build-Ziel zu aktualisieren, sende ihm über diese API (`harbormaster.sendmessage`) eine Nachricht, die die gewünschte Bearbeitung oder die zusätzlichen Informationen beschreibt, die Du übermitteln möchtest. Die Nachricht wird von den Daemons verarbeitet, sobald der Build oder das Ziel einen Zustand erreicht, in dem es Nachrichten empfangen kann.
+
+Wähle mit dem Parameter `receiver` das Objekt aus, an das die Nachricht gesendet werden soll. Diese API-Methode kann Nachrichten an mehrere Objekttypen senden:
 
 <table>
   <tr>
@@ -7543,34 +8137,34 @@ Ein Objekt zum Senden einer Nachricht mit dem `receiver`-Parameter auswählen. D
     <th>Beschreibung</th>
   </tr>
   <tr>
-    <td>Harbormaster Buildable</td>
+    <td>Harbormaster-Build-Kandidat</td>
     <td>`PHID-HMBB-...`</td>
     <td>%s</td>
   </tr>
   <tr>
-    <td>Harbormaster Build</td>
+    <td>Harbormaster-Build</td>
     <td>`PHID-HMBD-...`</td>
     <td>%s</td>
   </tr>
   <tr>
-    <td>Harbormaster Build Target</td>
+    <td>Harbormaster-Build-Ziel</td>
     <td>`PHID-HMBT-...`</td>
     <td>%s</td>
   </tr>
 </table>
 
-Siehe unten für Details zum Senden von Nachrichten an verschiedene Objekttypen.
-EOREMARKUP',
+Einzelheiten zum Senden von Nachrichten an die verschiedenen Objekttypen findest Du weiter unten.',
       'Harbormaster build target "%s" does not exist.' => 'Harbormaster-Build-Ziel "%s" existiert nicht.',
       'Harbormaster build target "%s" is not a Buildkite build step. Only Buildkite steps may be updated via the Buildkite hook.' => 'Harbormaster-Build-Ziel "%s" ist kein Buildkite-Build-Schritt. Nur Buildkite-Schritte können über den Buildkite-Hook aktualisiert werden.',
       'Hard byte limit on including patches in email.' => 'Absolute Byte-Obergrenze für das Einbetten von Patches in E-Mails.',
       'Hard time limit on generating patches.' => 'Absolute Zeitobergrenze für die Patch-Generierung.',
+      'Has Comment?' => 'Hat Kommentar?',
+      'Has Data?' => 'Hat Daten?',
       'Has MFA' => 'Hat MFA',
       'Has Matching User' => 'Hat passenden Benutzer',
       'Has Peel' => 'Hat eine Schale',
       'Hash' => 'Hash',
       'Hasher "%s" may produce hashes which are too long to fit in storage. %d characters are available, but its hashes may be up to %d characters in length.' => 'Hasher „%s" könnte Hashes erzeugen, die zu lang für den Speicher sind. Es stehen %d Zeichen zur Verfügung, aber seine Hashes können bis zu %d Zeichen lang sein.',
-      'Hashtag normalization of "%s"' => 'Hashtag-Normalisierung von „%s"',
       'Hashtags' => 'Hashtags',
       'Hashtags must contain at least one letter or number. %s project hashtag(s) are invalid: %s.' => 'Hashtags müssen mindestens einen Buchstaben oder eine Ziffer enthalten. %s Projekt-Hashtag(s) sind ungültig: %s.',
       'Having trouble coming up with a good password? Try this artisanal password, hand made in small batches by our expert craftspeople: 
@@ -7586,10 +8180,8 @@ EOREMARKUP',
       'Haypence' => 'Pfennig',
       'Head' => 'Head',
       'Header' => 'Kopfzeile',
-      'Header content for: %s' => 'Header-Inhalt für: %s',
+      'Header Dropdown' => 'Dropdown-Menü in der Kopfzeile',
       'Header has unterminated double quote for key "%s".' => 'Header enthält ein nicht abgeschlossenes doppeltes Anführungszeichen für Schlüssel "%s".',
-      'Header name for: %s' => 'Headername für: %s',
-      'Header pairs for: %s' => 'Header-Paare für: %s',
       'Headers' => 'Header',
       'Health' => 'Zustand',
       'Health / Appointment' => 'Arzt-Termin',
@@ -7603,6 +8195,8 @@ EOREMARKUP',
       'Herald Actions' => 'Herald-Aktionen',
       'Herald Rule' => 'Herald Regel',
       'Herald Rules' => 'Herald Regeln',
+      'Herald Rules With Deprecated Conditions' => 'Herald-Regeln mit veralteten Bedingungen',
+      'Herald Rules with deprecated conditions require updating.' => 'Herald-Regeln mit veralteten Bedingungen müssen aktualisiert werden.',
       'Herald Transcript' => 'Herald-Ablaufprotokoll',
       'Herald Transcript %s' => 'Herald-Transkript %s',
       'Herald Transcripts' => 'Herald Ablaufprotokoll',
@@ -7665,9 +8259,7 @@ EOREMARKUP',
       'Hisec: Exit' => 'High Security: Verlassen',
       'Hisec: Failed Attempt' => 'High Security: Fehlgeschlagener Versuch',
       'History' => 'Historie',
-      'History Beckons' => 'Die Geschichte ruft',
       'Hit duplicate key collision when saving proxied image, but failed to load duplicate row (for URI "%s").' => 'Beim Speichern des Proxy-Bildes ist eine Schlüsselkollision aufgetreten, aber die doppelte Zeile konnte nicht geladen werden (für URI "%s").',
-      'Hold' => 'Warteschleife',
       'Hold Drafts' => 'Entwürfe zurückhalten',
       'Hold as Draft' => 'Als Entwurf zurückhalten',
       'Hold on tight!' => 'Festhalten!',
@@ -7680,7 +8272,9 @@ EOREMARKUP',
       'Hook Error' => 'Hook-Fehler',
       'Hook Wait' => 'Hook-Wartezeit',
       'Hook Wait (us)' => 'Hook-Wartezeit (µs)',
+      'Hook execution mode.' => 'Hook-Ausführungsmodus.',
       'Host' => 'Gastgeber',
+      'Host "%s" identifies more than one database. Use "--ref" to select a specific database.' => 'Host "%s" bezeichnet mehr als eine Datenbank. Verwende "--ref", um eine bestimmte Datenbank auszuwählen.',
       'Host (%s)' => 'Host (%s)',
       'Host Artifact' => 'Host-Artefakt',
       'Host PHID "%s" is not a valid user PHID.' => 'Gastgeber-PHID „%s" ist keine gültige Benutzer-PHID.',
@@ -7694,10 +8288,9 @@ EOREMARKUP',
       'Hosted Repositories' => 'Gehostete Repositories',
       'Hosted and Remote Repositories' => 'Gehostete und Remote-Repositories',
       'Hosted by %s' => 'Gastgeber: %s',
-      'Hosted by %s on %s.' => 'Veranstaltet von %s am %s.',
+      'Hosted by %s on %s (time in %s).' => 'Veranstaltet von %s am %s (Zeitangabe in %s).',
       'Hostname' => 'Hostname',
       'Hosts' => 'Gastgeber',
-      'Hourly event with BYHOUR.' => 'Stündliches Ereignis mit BYHOUR.',
       'Hours' => 'Stunden',
       'Hours Config' => 'Stunden-Konfiguration',
       'House of Cards' => 'Ein Kartenhaus',
@@ -7733,18 +8326,14 @@ EOREMARKUP',
       'ICS URI' => 'ICS-URI',
       'ICS document contains TEXT value ending with unescaped backslash.' => 'ICS-Dokument enthält TEXT-Wert, der mit einem nicht-escapen Backslash endet.',
       'ICS file to import.' => 'Zu importierende ICS-Datei.',
-      'ICS: %s' => 'ICS: %s',
       'ID' => 'ID',
       'ID of build plan to run.' => 'ID des auszuführenden Build-Plans.',
       'ID of the SSH key used to authenticate the request.' => 'ID des SSH-Schlüssels, der zur Authentifizierung der Anfrage verwendet wurde.',
       'ID of the key to revoke trust for.' => 'ID des Schlüssels, dessen Vertrauen widerrufen werden soll.',
       'ID of the key to trust.' => 'ID des als vertrauenswürdig einzustufenden Schlüssels.',
-      'ID1 exists.' => 'ID1 existiert.',
-      'ID2 exists.' => 'ID2 existiert.',
       'ID: %d' => 'ID: %d',
       'IDENTITY' => 'IDENTITÄT',
       'IDs' => 'IDs',
-      'IDs \'%s\' and \'%s\' are distinct.' => 'IDs \'%s\' und \'%s\' sind unterschiedlich.',
       'IDs must be a list.' => 'IDs müssen eine Liste sein.',
       'IGNORED' => 'IGNORIERT',
       'IMPORTANT' => 'WICHTIG',
@@ -7755,15 +8344,13 @@ You can configure Webhooks in Herald. This configuration option will be removed
 in a future version of the software.
 
 (This legacy option may be configured with a list of URIs; feed stories will
-send to these URIs.)
-EODOC' => 'WICHTIG: Feed-Hooks sind veraltet und wurden durch Webhooks ersetzt.
+send to these URIs.)' => 'WICHTIG: Feed-Hooks sind veraltet und wurden durch Webhooks ersetzt.
 
 Webhooks können in Herald konfiguriert werden. Diese Konfigurationsoption wird
 in einer zukünftigen Version der Software entfernt.
 
 (Diese veraltete Option kann mit einer Liste von URIs konfiguriert werden; Feed-Beiträge
-werden an diese URIs gesendet.)
-EODOC',
+werden an diese URIs gesendet.)',
       'IMPORTANT: The upstream does not provide support for prototype applications.
 
 This platform includes prototype applications which are in an **early stage of development**. By default, prototype applications are disabled, because they are often not yet developed enough to be generally usable. You can enable this option to enable them if you\'re developing applications or are interested in previewing upcoming features.
@@ -7779,10 +8366,8 @@ Mehr über Prototypen findest Du unter [[ %s | %s ]].
 Nachdem Du Prototypen aktiviert hast, kannst Du sie gezielt wieder deaktivieren, so wie normale Anwendungen auch.',
       'IMPORTANT: This is a very rough prototype.' => 'WICHTIG: Dies ist ein sehr grober Prototyp.',
       'INDEXING' => 'INDIZIERUNG',
-      'INITIATIVE DETAIL' => 'INITIATIVENDETAIL',
       'INLINE COMMENTS' => 'INLINE KOMMENTARE',
       'INVALID' => 'UNGÜLTIG',
-      'INVOICE DETAIL' => 'RECHNUNGSDETAILS',
       'IP' => 'IP',
       'ISO 8601: 2000-02-28' => 'ISO 8601: 2000-02-28',
       'ISO-8859-1 (Latin 1)' => 'ISO-8859-1 (Latin 1)',
@@ -7802,6 +8387,9 @@ Not every type of object has an editable view policy, edit policy, or owner, so 
 
 Nicht jeder Objekttyp hat eine bearbeitbare Anzeigerichtlinie, Bearbeitungsrichtlinie oder einen Eigentümer – daher funktionieren nicht alle Modi mit allen Objekten.',
       'Identify the component in your webserver configuration which is decompressing or mangling requests and disable it. This software will not work properly until you do.' => 'Identifiziere die Komponente in Deiner Webserver-Konfiguration, die Anfragen dekomprimiert oder verfälscht, und deaktiviere sie. Diese Software wird nicht korrekt funktionieren, bis Du das getan hast.',
+      'Identify the extension by its Extension Key' => 'Erweiterung über ihren Erweiterungsschlüssel identifizieren',
+      'Identify the extension by its extension name' => 'Erweiterung über ihren Erweiterungsnamen identifizieren',
+      'Identify the extension by its local path' => 'Erweiterung über ihren lokalen Pfad identifizieren',
       'Identities' => 'Identitäten',
       'Identity' => 'Identität',
       'Identity "%s" has already been rebuilt.' => 'Identität „%s" wurde bereits neu aufgebaut.',
@@ -7815,6 +8403,7 @@ Nicht jeder Objekttyp hat eine bearbeitbare Anzeigerichtlinie, Bearbeitungsricht
       'If Failed' => 'Wenn fehlgeschlagen',
       'If No Rules Match' => 'Wenn keine der Regeln zutrifft',
       'If Viewable' => 'Wenn sichtbar',
+      'If a line can\'t be parsed, ignore that line and continue instead of exiting.' => 'Wenn eine Zeile nicht geparst werden kann, diese Zeile ignorieren und fortfahren, statt abzubrechen.',
       'If a revision belongs to a repository, other users must be able to view the repository in order to view the revision.' => 'Wenn eine Version an ein Repository gebunden ist, müssen andere Benutzer die Rechte haben, das Repository anzuschauen, wenn Sie die Version ansehen möchten.',
       'If a variable isn\'t available (for example, %%m appears in the file format but the request is not a Conduit request), it will be rendered as \'-\'' => 'Wenn eine Variable nicht verfügbar ist, etwa weil %%m im Dateiformat vorkommt, die Anfrage aber keine Conduit-Anfrage ist, wird sie als \'-\' dargestellt.',
       'If activated now, this repository will become a new hosted repository. To observe an existing repository instead, configure it in the %s panel.' => 'Wenn jetzt aktiviert, wird dieses Repository zu einem neuen gehosteten Repository. Um stattdessen ein bestehendes Repository zu beobachten, im Bereich %s konfigurieren.',
@@ -7824,6 +8413,8 @@ Nicht jeder Objekttyp hat eine bearbeitbare Anzeigerichtlinie, Bearbeitungsricht
       'If no rules match, %s all other users.' => 'Wenn keine Regel zutrifft, %s alle anderen Benutzer.',
       'If the audio does not play, you may need to reload the page and interact with it (for example, click somewhere), or check your web permissions as modern browsers may block audio autoplay.' => 'Wenn das Audio nicht abgespielt wird, musst Du möglicherweise die Seite neu laden und mit ihr interagieren (z. B. irgendwo klicken), oder überprüfe Deine Browser-Berechtigungen, da moderne Browser die automatische Audiowiedergabe blockieren könnten.',
       'If the output file already exists, overwrite it instead of raising an error.' => 'Wenn die Ausgabedatei bereits existiert, wird sie überschrieben statt einen Fehler zu melden.',
+      'If the request authenticated with a device key, the name of the device.' => 'Falls sich die Anfrage mit einem Geräteschlüssel authentifiziert hat: der Name des Geräts.',
+      'If the request authenticated with a user key, the name of the user.' => 'Falls sich die Anfrage mit einem Benutzerschlüssel authentifiziert hat: der Name des Benutzers.',
       'If the web server responds to both HTTP and HTTPS requests but you want users to connect with only HTTPS, you can set this to `true` to make this service redirect HTTP requests to HTTPS.
 
 Normally, you should just configure your server not to accept HTTP traffic, but this setting may be useful if you originally used HTTP and have now switched to HTTPS but don\'t want to break old links, or if your webserver sits behind a load balancer which terminates HTTPS connections and you can not reasonably configure more granular behavior there.
@@ -7837,13 +8428,11 @@ Normalerweise solltest Du den Server einfach so konfigurieren, dass er gar keine
 WICHTIG: Ob eine Anfrage HTTP oder HTTPS ist, wird anhand der PHP-Variable `%s` bestimmt. Wenn Du Apache/mod_php verwendest, ist das wahrscheinlich automatisch korrekt gesetzt. Wenn Du jedoch CGI/FCGI verwendest, etwa über nginx oder lighttpd, musst Du den Webserver so konfigurieren, dass dieser Wert abhängig vom Verbindungstyp korrekt übergeben wird.
 
 Wenn Du Clustering konfigurierst, beachte, dass diese Einstellung für Intra-Cluster-Anfragen ignoriert wird.',
-      'If those commands don\'t work, try Google. The process of installing PHP extensions is not specific to this software, and any instructions you can find for installing them on your system should work. On Mac OS X, you might want to try Homebrew.' => 'Wenn diese Befehle nicht funktionieren, versuche es mit Google. Die Installation von PHP-Erweiterungen ist nichts Spezifisches für diese Software, und Anleitungen für Dein System sollten in der Regel funktionieren. Unter Mac OS X könntest Du Homebrew ausprobieren.',
+      'If those commands don\'t work, run an internet search. The process of installing PHP extensions is not specific to this software, and any instructions you can find for installing them on your system should work. On Mac OS X, you might want to try Homebrew.' => 'Wenn diese Befehle nicht funktionieren, suche im Internet danach. Die Installation von PHP-Erweiterungen ist nichts Spezifisches für diese Software, und Anleitungen für Dein System sollten in der Regel funktionieren. Unter Mac OS X könntest Du Homebrew ausprobieren.',
       'If true, allow MetaMTA to change mail subjects to put text like \'[Accepted]\' and
 \'[Commented]\' in them. This makes subjects more useful, but might break
 threading on some clients. If you\'ve set \'%s\', users can override this setting
-in their preferences.
-EODOC' => 'Wenn diese Option aktiv ist, darf MetaMTA Betreffzeilen von E-Mails ändern und Texte wie \'[Accepted]\' oder \'[Commented]\' einfügen. Das macht Betreffe nützlicher, kann aber bei manchen Clients das Threading stören. Wenn Du \'%s\' gesetzt hast, können Benutzer diese Einstellung in ihren Präferenzen überschreiben.
-EODOC',
+in their preferences.' => 'Wenn diese Option aktiv ist, darf MetaMTA Betreffzeilen von E-Mails ändern und Texte wie \'[Accepted]\' oder \'[Commented]\' einfügen. Das macht Betreffe nützlicher, kann aber bei manchen Clients das Threading stören. Wenn Du \'%s\' gesetzt hast, können Benutzer diese Einstellung in ihren Präferenzen überschreiben.',
       'If true, display this URI in the UI as an link to additional build details in an external build system.' => 'Falls wahr, diese URI in der Oberfläche als Link zu weiteren Build-Details in einem externen Build-System anzeigen.',
       'If true, email addresses must be verified (by clicking a link in an email) before a user can login. By default, verification is optional unless @{config:auth.email-domains} is nonempty.' => 'Wenn diese Option auf true gesetzt ist, müssen E-Mail-Adressen bestätigt werden, etwa durch Klick auf einen Link in einer E-Mail, bevor sich ein Benutzer anmelden kann. Standardmäßig ist die Bestätigung optional, sofern @{config:auth.email-domains} nicht gesetzt ist.',
       'If updating generates tasks, queue them for the daemons instead of executing them in this process.' => 'Wenn die Aktualisierung Tasks erzeugt, diese für die Daemons in die Warteschlange stellen, anstatt sie in diesem Prozess auszuführen.',
@@ -7876,7 +8465,6 @@ EODOC',
       'If you disable **Self Actions**, this server will not notify you about actions you take.' => 'Wenn **Eigene Aktionen** deaktiviert sind, wirst Du nicht mehr über Aktionen benachrichtigt, die Du selbst durchgeführt hast.',
       'If you disable publishing for this repository, new commits will not: send email, publish feed stories, trigger audits, or trigger Herald.' => 'Wenn Du die Veröffentlichung für dieses Repository deaktivierst, werden neue Commits keine E-Mails senden, keine Feed-Einträge veröffentlichen, keine Prüfungen auslösen und Herald nicht auslösen.',
       'If you disable this blueprint, Drydock will no longer use it to allocate new resources. Existing resources will not be affected.' => 'Wenn du diese Blaupause deaktivierst, wird Drydock sie nicht mehr zur Zuweisung neuer Ressourcen verwenden. Bestehende Ressourcen sind davon nicht betroffen.',
-      'If you disable this payment provider, users will no longer be able to use it to make new payments.' => 'Wenn du diesen Zahlungsanbieter deaktivierst, können Benutzer ihn nicht mehr für neue Zahlungen verwenden.',
       'If you do not recognize this change, it may indicate your account has been compromised.' => 'Wenn Du diese Änderung nicht wiedererkennst, könnte das darauf hindeuten, dass Dein Konto kompromittiert wurde.',
       'If you enable `%s`, this software uses "From" to authenticate users. You can
 additionally enable this setting to try to authenticate with \'Reply-To\'. Note
@@ -7884,13 +8472,9 @@ that this is completely spoofable and insecure (any user can set any \'Reply-To\
 address) but depending on the nature of your install or other deliverability
 conditions this might be okay. Generally, you can\'t do much more by spoofing
 Reply-To than be annoying (you can write but not read content). But this is
-still **COMPLETELY INSECURE**.
-EODOC' => 'Wenn Du `%s` aktivierst, verwendet diese Software "From", um Benutzer zu authentifizieren. Zusätzlich kannst Du diese Einstellung aktivieren, um stattdessen auch \'Reply-To\' zur Authentifizierung zu versuchen. Beachte, dass das vollständig fälschbar und unsicher ist, da jeder Benutzer jede \'Reply-To\'-Adresse setzen kann. Je nach Art Deiner Installation oder Zustellbedingungen kann das trotzdem akzeptabel sein. Im Allgemeinen kann man durch gefälschte Reply-To-Adressen nicht viel mehr als Störungen verursachen, man kann also schreiben, aber keine Inhalte lesen. Trotzdem ist das **VOLLSTÄNDIG UNSICHER**.
-EODOC',
+still **COMPLETELY INSECURE**.' => 'Wenn Du `%s` aktivierst, verwendet diese Software "From", um Benutzer zu authentifizieren. Zusätzlich kannst Du diese Einstellung aktivieren, um stattdessen auch \'Reply-To\' zur Authentifizierung zu versuchen. Beachte, dass das vollständig fälschbar und unsicher ist, da jeder Benutzer jede \'Reply-To\'-Adresse setzen kann. Je nach Art Deiner Installation oder Zustellbedingungen kann das trotzdem akzeptabel sein. Im Allgemeinen kann man durch gefälschte Reply-To-Adressen nicht viel mehr als Störungen verursachen, man kann also schreiben, aber keine Inhalte lesen. Trotzdem ist das **VOLLSTÄNDIG UNSICHER**.',
       'If you enable this blueprint, Drydock will start using it to allocate new resources.' => 'Wenn du diese Blaupause aktivierst, wird Drydock sie zur Zuweisung neuer Ressourcen verwenden.',
-      'If you enable this payment provider, users will be able to use it to make new payments.' => 'Wenn du diesen Zahlungsanbieter aktivierst, können Benutzer ihn für neue Zahlungen verwenden.',
       'If you enable this, linked YouTube videos will be embedded inline. This has mild security implications (you\'ll leak referrers to YouTube) and is pretty silly (but sort of awesome).' => 'Wenn Du diese Option aktivierst, werden verlinkte YouTube-Videos inline eingebettet. Das hat geringe Sicherheitsauswirkungen, weil Referrer an YouTube geleakt werden, und ist ziemlich albern, aber irgendwie auch ganz nett.',
-      'If you have difficulty reading the UI, this setting may help.' => 'Wenn die Benutzeroberfläche schwer lesbar ist, kann diese Einstellung helfen.',
       'If you have multiple %s environments (like a development/staging environment and a production environment), set the production environment URI here so that emails and other durable URIs will always generate with links pointing at the production environment. If unset, defaults to `%s`. Most installs do not need to set this option.' => 'Wenn Du mehrere %s-Umgebungen hast, etwa Entwicklung/Staging und Produktion, setze hier die URI der Produktionsumgebung, damit E-Mails und andere dauerhafte URIs immer Links auf die Produktionsumgebung erzeugen. Wenn die Option nicht gesetzt ist, wird standardmäßig `%s` verwendet. Die meisten Installationen benötigen diese Option nicht.',
       'If you leave high security, you will need to authenticate again the next time you try to take a high security action.' => 'Wenn Du die erhöhte Sicherheit verlässt, musst Du Dich beim nächsten Versuch, eine Aktion mit erhöhter Sicherheit auszuführen, erneut authentifizieren.',
       'If you lock this project, members will be prevented from leaving it.' => 'Wenn Du dieses Projekt sperrst, können Mitglieder es nicht mehr verlassen.',
@@ -7917,7 +8501,7 @@ and result messages:
     <th>Description</th>
   </tr>
   <tr>
-    <td>Harbormaster Build-Kandidat</td>
+    <td>Harbormaster Buildable</td>
     <td>`PHID-HMBB-...`</td>
     <td>{icon times color=red}</td>
     <td>Buildables may **NOT** receive status or result messages.</td>
@@ -7958,10 +8542,9 @@ completed successfully.
 Supported message types are:
 
 %s
+' => 'Wenn Du externe Builds ausführst, kannst Du mit dieser Methode Build-Ergebnisse an Harbormaster zurückmelden, nachdem das externe System seine Arbeit beendet hat (oder während es Fortschritte macht).
 
-EOREMARKUP' => 'Bei externen Builds diese Methode verwenden, um Build-Ergebnisse nach Abschluss in Harbormaster zurückzumelden oder Zwischenstände zu übermitteln.
-
-Build-Status und Ergebnisse müssen an das passende Build-Ziel gesendet werden. Diese Tabelle fasst zusammen, welche Objekttypen Status- und Ergebnisnachrichten empfangen können:
+Um Build-Status oder -Ergebnisse zu melden, musst Du eine Nachricht an das passende Build-Ziel senden. Diese Tabelle fasst zusammen, welche Objekttypen Status- und Ergebnisnachrichten empfangen können:
 
 <table>
   <tr>
@@ -7971,32 +8554,37 @@ Build-Status und Ergebnisse müssen an das passende Build-Ziel gesendet werden. 
     <th>Beschreibung</th>
   </tr>
   <tr>
-    <td>Harbormaster Buildable</td>
+    <td>Harbormaster-Build-Kandidat</td>
     <td>`PHID-HMBB-...`</td>
     <td>{icon times color=red}</td>
     <td>Build-Kandidaten können **KEINE** Status- oder Ergebnisnachrichten empfangen.</td>
   </tr>
   <tr>
-    <td>Harbormaster Build</td>
+    <td>Harbormaster-Build</td>
     <td>`PHID-HMBD-...`</td>
     <td>{icon times color=red}</td>
     <td>Builds können **KEINE** Status- oder Ergebnisnachrichten empfangen.</td>
   </tr>
   <tr>
-    <td>Harbormaster Build Target</td>
+    <td>Harbormaster-Build-Ziel</td>
     <td>`PHID-HMBT-...`</td>
     <td>{icon check color=green}</td>
-    <td>Build-Status und Ergebnisse werden an Build-Ziele gemeldet.</td>
+    <td>Melde Build-Status und -Ergebnisse an Build-Ziele.</td>
   </tr>
 </table>
 
-Am einfachsten wird das Ergebnis gemeldet, indem diese Methode nach Abschluss des Builds einmal mit `pass` oder `fail` aufgerufen wird. Für Zwischenstände kann die `work`-Nachricht verwendet werden.
+Am einfachsten meldest Du Build-Ergebnisse mit dieser Methode, indem Du sie nach Abschluss des Builds einmal mit einer `pass`- oder `fail`-Nachricht aufrufst. Dadurch wird das Build-Ergebnis gespeichert, und der Build fährt mit dem nächsten Schritt fort, falls er auf ein Ergebnis gewartet hat.
+
+Wenn Du eine Statusnachricht zu einem Build-Ziel sendest, kannst Du optional detaillierte `lint`- oder `unit`-Ergebnisse mitschicken. Details siehe unten.
+
+Wenn Du Zwischenergebnisse melden möchtest, der Build aber noch nicht abgeschlossen ist, kannst Du die Nachricht `work` verwenden. Diese Nachricht hat keine direkte Wirkung, erlaubt Dir aber, zusätzliche Daten zu senden, um den Fortschritt des Build-Ziels zu aktualisieren. Das Ziel wartet weiterhin auf eine Abschlussnachricht, die Oberfläche zeigt aber den bisherigen Fortschritt an.
+
+Wenn Du eine Nachricht an ein Build-Ziel sendest, um den Status oder die Ergebnisse eines Builds zu melden, muss Deine Nachricht einen `type` enthalten, der den Gesamtzustand des Builds beschreibt. Verwende zum Beispiel `pass`, um Harbormaster mitzuteilen, dass ein Build-Ziel erfolgreich abgeschlossen wurde.
 
 Unterstützte Nachrichtentypen sind:
 
 %s
-
-EOREMARKUP',
+',
       'If you run into write failures despite passing this test, it suggests that your setup is nearly correct but authentication is probably not fully configured.' => 'Wenn trotz bestandenem Test Schreibfehler auftreten, deutet das darauf hin, dass die Konfiguration fast korrekt ist, die Authentifizierung aber wahrscheinlich noch nicht vollständig eingerichtet ist.',
       'If you set one of the Play options, audio volume will automatically increase when scrolling closer to the Macro, and decrease when scrolling away.' => 'Wenn Du eine der Wiedergabe-Optionen aktivierst, wird die Lautstärke beim Scrollen zum Makro automatisch erhöht und beim Scrollen weg davon verringert.',
       'If you set this to true, any user can abandon any revision. If false, only the submitter can abandon a revision.' => 'Wenn Du diesen Wert auf \'true\' setzt, kann jeder Benutzer eine Version aufgeben. Wenn false, kann nur der Einreicher eine Version aufgeben.',
@@ -8019,11 +8607,9 @@ user\'s mailbox. Set this to the left part of the email address and it will be
 prepended to all generated reply addresses.
 
 For example, if you want to use `devtools@example.com`, this should be set
-to `devtools`.
-EODOC' => 'Wenn Du ein einziges Postfach für Antwort-E-Mails verwenden möchtest, kannst Du hier ein gemeinsames Präfix für erzeugte Reply-To-Adressen setzen. Dabei wird genutzt, dass eine Adresse wie `devtools+D123+1hjk213h@example.com` an das Postfach des Benutzers `devtools` zugestellt wird. Setze diese Option auf den linken Teil der E-Mail-Adresse; er wird dann allen erzeugten Antwortadressen vorangestellt.
+to `devtools`.' => 'Wenn Du ein einziges Postfach für Antwort-E-Mails verwenden möchtest, kannst Du hier ein gemeinsames Präfix für erzeugte Reply-To-Adressen setzen. Dabei wird genutzt, dass eine Adresse wie `devtools+D123+1hjk213h@example.com` an das Postfach des Benutzers `devtools` zugestellt wird. Setze diese Option auf den linken Teil der E-Mail-Adresse; er wird dann allen erzeugten Antwortadressen vorangestellt.
 
-Wenn Du zum Beispiel `devtools@example.com` verwenden willst, sollte dieser Wert auf `devtools` gesetzt werden.
-EODOC',
+Wenn Du zum Beispiel `devtools@example.com` verwenden willst, sollte dieser Wert auf `devtools` gesetzt werden.',
       'If you\'re new to %s, these optional steps can help you learn the basics. Feel free to set things up for how you work best and explore these features at your own pace.' => 'Wenn du neu bei %s bist, können diese optionalen Schritte dir helfen, die Grundlagen zu erlernen. Richte alles nach deinen Bedürfnissen ein und erkunde die Funktionen in deinem eigenen Tempo.',
       'Ignore' => 'Ignorieren',
       'Ignore Conflict' => 'Konflikt ignorieren',
@@ -8031,11 +8617,10 @@ EODOC',
       'Ignore generated files (review only).' => 'Generierte Dateien ignorieren (nur Review).',
       'Ignore new setting and keep %s' => 'Neue Einstellung ignorieren und %s beibehalten',
       'Ignore paths with any of these attributes.' => 'Pfade mit diesen Attributen ignorieren.',
+      'Ignore these issues and continue with installation?' => 'Diese Probleme ignorieren und mit der Installation fortfahren?',
       'Ignored Attributes' => 'Ignorierte Attribute',
-      'Ignored Common Word' => 'Ignoriertes häufiges Wort',
       'Ignored Empty Mail' => 'Leere Email ignoriert',
       'Ignored Node' => 'Ignorierter Knoten',
-      'Ignored Short Word' => 'Ignoriertes kurzes Wort',
       'Ignored an event (%s) because the original version of this event was created here.' => 'Ein Termin (%s) wurde ignoriert, weil die ursprüngliche Version dieses Termins hier erstellt wurde.',
       'Ignored an event with an out-of-range date. Only dates between 1970 and 2037 are supported.' => 'Ein Termin mit einem Datum außerhalb des unterstützten Bereichs wurde ignoriert. Nur Daten zwischen 1970 und 2037 werden unterstützt.',
       'Ignored an event with an unsupported frequency rule ("%s"). Events which repeat more frequently than daily are not supported.' => 'Ein Termin mit einer nicht unterstützten Häufigkeitsregel („%s") wurde ignoriert. Termine, die häufiger als täglich wiederkehren, werden nicht unterstützt.',
@@ -8061,6 +8646,7 @@ EODOC',
       'Images' => 'Bilder',
       'Imbalanced %s: more %s calls than %s calls.' => 'Unausgeglichenes %s: mehr %s-Aufrufe als %s-Aufrufe.',
       'Impersonating users over the API is no longer supported.' => 'Benutzerverkörperung über die API wird nicht mehr unterstützt.',
+      'Implement either `%s` or `%s` in class %s!' => 'Implementiere entweder `%s` oder `%s` in Klasse %s!',
       'Implementation' => 'Implementierung',
       'Implementation of the Global rules' => 'Implementierung der globalen Regeln',
       'Implementations of %s should not override method %s. This method would eventually become final. Use individual implementations of %s to provide each transaction type\'s behavior.' => 'Implementierungen von %s sollten die Methode %s nicht überschreiben. Diese Methode wird später final. Verwende individuelle Implementierungen von %s, um das Verhalten jedes Transaktionstyps bereitzustellen.',
@@ -8152,14 +8738,11 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'In ancient Egypt, the cat-god Horus watched over all cats.' => 'Im alten Ägypten wachte der Katzengott Horus über alle Katzen.',
       'In call to "%s", specified "%s" ("%s") is not supported because it does not implement "%s". Valid object types are: %s.' => 'Im Aufruf von "%s" wird "%s" ("%s") nicht unterstützt, weil es "%s" nicht implementiert. Gültige Objekttypen sind: %s.',
       'In call to "transaction.search", selected object (of type "%s") does not implement "%s", so transactions can not be loaded for it.' => 'Im Aufruf von "transaction.search" implementiert das ausgewählte Objekt (vom Typ "%s") "%s" nicht, daher können dafür keine Transaktionen geladen werden.',
-      'In call to "transaction.search", specified "objectIdentifier" ("%s") does not exist.' => 'Im Aufruf von "transaction.search" existiert der angegebene "objectIdentifier" ("%s") nicht.',
-      'In call to "transaction.search", specified "objectType" ("%s") is unknown. Valid object types are: %s.' => 'Im Aufruf von "transaction.search" ist der angegebene "objectType" ("%s") unbekannt. Gültige Objekttypen sind: %s.',
       'In detail, this means that these users can take this action, provided they pass all of the checks described above first:' => 'Im Einzelnen bedeutet das, dass diese Benutzer die Aktion ausführen können, sofern sie alle zuvor beschriebenen Prüfungen bestehen:',
       'In development, OPcache should be configured to always reload code so nothing needs to be restarted after making changes. To do this, enable "%s" and set "%s" to 0.' => 'In der Entwicklung sollte OPcache so konfiguriert sein, dass Code immer neu geladen wird, damit nach Änderungen nichts neu gestartet werden muss. Aktiviere dazu "%s" und setze "%s" auf 0.',
       'In places that we display a dropdown to syntax-highlight code, this is where that list is defined.' => 'An den Stellen, an denen eine Auswahlliste für Syntax-Highlighting angezeigt wird, ist hier festgelegt, welche Liste verwendet wird.',
       'In production, OPcache should be configured to never revalidate code. This will slightly improve performance. To do this, disable "%s" in your PHP configuration.' => 'In Produktionsumgebungen sollte OPcache so konfiguriert sein, dass Code nie erneut validiert wird. Das verbessert die Leistung leicht. Deaktiviere dazu "%s" in Deiner PHP-Konfiguration.',
       'In read-only mode you can read existing information, but you will not be able to edit objects or create new objects until this mode is disabled.' => 'Im Nur-Lese-Modus kannst du vorhandene Informationen lesen, aber keine Objekte bearbeiten oder neue Objekte erstellen, bis dieser Modus deaktiviert wird.',
-      'In test cases, all applications should default to installed.' => 'In Testfällen sollten alle Anwendungen standardmäßig als installiert gelten.',
       'In the wild, cats and raccoons sometimes hunt together in packs.' => 'In freier Wildbahn jagen Katzen und Waschbären gelegentlich gemeinsam im Rudel.',
       'In this poll, you may only vote for one option.' => 'In dieser Umfrage kannst Du nur für eine Option abstimmen.',
       'In-process task "%s" yielded for %s seconds, sleeping...' => 'In-Process-Aufgabe "%s" hat für %s Sekunden abgegeben, schlafe...',
@@ -8176,18 +8759,15 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Include results tagged with this project.' => 'Ergebnisse einschließen, die mit diesem Projekt getaggt sind.',
       'Include stories about projects I am a member of.' => 'Neuigkeiten aller meiner Projekt-Mitgliedschaften mit einbeziehen.',
       'Included Paths' => 'Enthaltene Pfade',
-      'Incomplete Cart' => 'Unvollständiger Warenkorb',
       'Incorrect Property Passed' => 'Falsche Eigenschaft übergeben',
       'Indefinite' => 'Unbegrenzt',
       'Index' => 'Index',
       'Index Path' => 'Indexpfad',
-      'Index digest of "%s".' => 'Index-Digest von „%s".',
       'Indexing %s object(s).' => '%s Objekt(e) werden indiziert.',
       'Indigo' => 'Indigo',
       'Individual' => 'Einzelperson',
       'Individual application reply handler domains have been removed. Configure a reply domain with "%s".' => 'Individuelle Reply-Handler-Domains pro Anwendung wurden entfernt. Konfiguriere eine Reply-Domain mit "%s".',
       'Individuals' => 'Einzelpersonen',
-      'Infinite Free Money' => 'Unendlich viel kostenloses Geld',
       'Info View' => 'Info-Ansicht',
       'Information' => 'Information',
       'Information about %s and %s.' => 'Informationen über %s und %s.',
@@ -8208,21 +8788,12 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Inherited' => 'Geerbt',
       'Initial Members' => 'Anfangsmitglieder',
       'Initial Participants' => 'Anfangsteilnehmer',
-      'Initial account managers.' => 'Initiale Kontomanager.',
-      'Initial merchant managers.' => 'Initiale Händlermanager.',
       'Initial project members.' => 'Anfangsmitglieder des Projektes.',
       'Initialization Error' => 'Initialisierungsfehler',
       'Initialize or repair a search service.' => 'Einen Suchdienst initialisieren oder reparieren.',
       'Initialize storage only; do not apply patches or adjustments.' => 'Nur Storage initialisieren; keine Patches oder Anpassungen anwenden.',
       'Initializing Working Copy' => 'Arbeitskopie wird initialisiert',
       'Initializing search service "%s".' => 'Suchdienst „%s" wird initialisiert.',
-      'Initiative' => 'Initiative',
-      'Initiative Closed' => 'Initiative geschlossen',
-      'Initiative long description.' => 'Ausführliche Beschreibung der Initiative.',
-      'Initiative name.' => 'Name der Initiative.',
-      'Initiative risks and challenges.' => 'Risiken und Herausforderungen der Initiative.',
-      'Initiatives must have a name.' => 'Initiativen müssen einen Namen haben.',
-      'Initiatives must have a payable merchant.' => 'Initiativen müssen einen zahlbaren Händler haben.',
       'Initiators' => 'Auslöser',
       'Inline' => 'Inline',
       'Inline Actions' => 'Inline-Aktionen',
@@ -8232,19 +8803,26 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Inline comments are now always rendered with a limited amount of context.' => 'Inline-Kommentare werden jetzt immer mit einem begrenzten Umfang an Kontext dargestellt.',
       'Inline patches in email, as body text.' => 'Patches in E-Mail einbetten, als Textkörper.Patches an die Emails anfügen, allerdings direkt in die Email nicht als Anhang.',
       'Inlines' => 'Inline-Kommentare',
+      'Input' => 'Eingabe',
       'Input Artifacts' => 'Eingabe-Artefakte',
-      'Input: %s' => 'Eingabe: %s',
+      'Input `%s` looks like an extension key
+' => 'Eingabe `%s` sieht nach einem Erweiterungsschlüssel aus
+',
       'Insert mode verb "%s" is not recognized, use INSERT or REPLACE.' => 'Insert-Mode-Verb "%s" wird nicht erkannt, verwende INSERT oder REPLACE.',
       'Install' => 'Installieren',
       'Install Certificate' => 'Zertifikat installieren',
       'Install Instructions' => 'Installationsanweisungen',
       'Install Pygments to Improve Syntax Highlighting' => 'Pygments installieren, um Syntax-Highlighting zu verbessern',
+      'Install a phar extension' => 'Eine Phar-Erweiterung installieren',
+      'Install extension by specifying its git URI.' => 'Erweiterung über ihre Git-URI installieren.',
+      'Install new extensions.' => 'Neue Erweiterungen installieren.',
       'Install these %d PHP extension(s):' => 'Diese %d PHP-Erweiterung(en) installieren:',
       'Installation' => 'Installation',
       'Installation Guide' => 'Installationsanleitung',
       'Installation is complete. Register your administrator account below to log in. You will be able to configure options and add authentication mechanisms later on.' => 'Die Installation ist abgeschlossen. Registriere unten ein Administrator-Konto, um Dich anzumelden. Danach gibt es die Möglichkeit, weitere Einstellungen vorzunehmen und zusätzliche Authentisierungsmechanismen zu aktivieren (so wie LDAP oder OAuth).',
       'Installed' => 'Installiert',
       'Installed on Burstable CPU Instance' => 'Auf Burst-CPU-Instanz installiert',
+      'Installing \'%s\'...' => '\'%s\' wird installiert...',
       'Installing commit hook config to "%s"...' => 'Commit-Hook-Konfiguration in „%s" wird installiert...',
       'Installing commit hook to "%s"...' => 'Commit-Hook in „%s" wird installiert...',
       'Installing device %s...' => 'Gerät %s wird installiert...',
@@ -8252,6 +8830,7 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Installing public key...' => 'Öffentlicher Schlüssel wird installiert...',
       'Installing the "APCu" PHP extension will improve performance. This extension is strongly recommended. Without it, this software must rely on a very inefficient disk-based cache.' => 'Die Installation der PHP-Erweiterung "APCu" verbessert die Leistung. Diese Erweiterung wird dringend empfohlen. Ohne sie muss diese Software auf einen sehr ineffizienten festplattenbasierten Cache zurückgreifen.',
       'Installing the "Zend OPcache" extension will dramatically improve performance.' => 'Die Installation der Erweiterung "Zend OPcache" verbessert die Leistung erheblich.',
+      'Installing this would require copying to location %s, but that file already exists.' => 'Für die Installation müsste nach %s kopiert werden, aber diese Datei existiert bereits.',
       'Instance Users' => 'Instanz-Benutzer',
       'Instance identifier for multi-tenant clusters.' => 'Instanzkennung für Multi-Tenant-Cluster.',
       'Instead of indexing in this process, queue tasks for the daemons. This can improve performance, but makes it more difficult to debug search indexing.' => 'Statt in diesem Prozess zu indizieren, Aufgaben für die Daemons in die Warteschlange stellen. Das kann die Leistung verbessern, erschwert aber das Debuggen der Suchindizierung.',
@@ -8316,15 +8895,17 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Invalid DURATION: %s' => 'Ungültige DURATION: %s',
       'Invalid Dashboard' => 'Ungültiges Dashboard',
       'Invalid Function: %s' => 'Ungültige Funktion: %s',
+      'Invalid Hook Mode: This hook was invoked in "%s" mode, but this is not a recognized hook mode. Valid modes are: %s.' => 'Ungültiger Hook-Modus: Dieser Hook wurde im Modus "%s" aufgerufen, aber das ist kein bekannter Hook-Modus. Gültige Modi sind: %s.',
       'Invalid Implementation ("%s")!' => 'Ungültige Implementierung ("%s")!',
       'Invalid JSON input.' => 'Ungültige JSON-Eingabe.',
+      'Invalid JSON response from "user.whoami" request: %s' => 'Ungültige JSON-Antwort auf "user.whoami"-Anfrage: %s',
       'Invalid JSON: %s' => 'Ungültiges JSON: %s',
-      'Invalid Key' => 'Ungültiger Schlüssel',
+      'Invalid Named HMAC Key %s' => 'Ungültiger benannter HMAC-Schlüssel %s',
       'Invalid OAuth Access Token' => 'Ungültiges OAuth-Zugriffstoken',
       'Invalid Object' => 'Ungültiges Objekt',
+      'Invalid PHID(s) included for parameter "%s".' => 'Ungültige PHID(s) in Parameter "%s" enthalten.',
       'Invalid Panel' => 'Ungültiges Panel',
       'Invalid Parameters' => 'Ungültige Parameter',
-      'Invalid Policy' => 'Ungültige Richtlinie',
       'Invalid Property' => 'Ungültige Eigenschaft',
       'Invalid Redirect URI' => 'Ungültige Weiterleitungs-URI',
       'Invalid Relationship' => 'Ungültige Beziehung.',
@@ -8332,6 +8913,7 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Invalid Response Type' => 'Ungültiger Antworttyp',
       'Invalid Rule' => 'Ungültige Regel',
       'Invalid Rule Type' => 'Ungültiger Regeltyp',
+      'Invalid Target Object Type. Valid types are: %s.' => 'Ungültiger Zielobjekttyp. Gültige Typen sind: %s.',
       'Invalid Targets' => 'Ungültige Ziele',
       'Invalid Token' => 'Ungültiger Token',
       'Invalid Trigger' => 'Ungültiger Auslöser',
@@ -8345,21 +8927,22 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Invalid changeset ID "%s"!' => 'Ungültige Changeset-ID "%s"!',
       'Invalid commit PHID "%s"!' => 'Ungültige Commit-PHID "%s"!',
       'Invalid credentials.' => 'Ungültige Zugangsdaten.',
-      'Invalid currency format (\'%s\').' => 'Ungültiges Währungsformat (\'%s\').',
       'Invalid database escaper.' => 'Ungültige Datenbank-Escape-Funktion.',
       'Invalid date or time value set as query value.' => 'Ungültiger Datums- oder Zeitwert als Abfragewert festgelegt.',
+      'Invalid device name ("%s"). There is no device with this name.' => 'Ungültiger Gerätename ("%s"). Es gibt kein Gerät mit diesem Namen.',
+      'Invalid edge type(s) included for parameter "%s".' => 'Ungültige(r) Edge-Typ(en) in Parameter "%s" enthalten.',
       'Invalid effect!' => 'Ungültiger Effekt!',
+      'Invalid filename `%s`' => 'Ungültiger Dateiname `%s`',
       'Invalid iteration interval ("%d"), must be at least 1.' => 'Ungültiges Iterationsintervall ("%d"), muss mindestens 1 sein.',
       'Invalid key \'%s\': directory caches may only contain letters, numbers, hyphen, colon and slash.' => 'Ungültiger Schlüssel \'%s\': Verzeichnis-Caches dürfen nur Buchstaben, Zahlen, Bindestrich, Doppelpunkt und Slash enthalten.',
       'Invalid markup engine.' => 'Ungültige Markup-Engine.',
       'Invalid mode "%s".' => 'Ungültiger Modus "%s".',
-      'Invalid options file: %s.' => 'Ungültige Optionsdatei: %s.',
-      'Invalid or incorrect credit card number.' => 'Ungültige oder falsche Kreditkartennummer.',
       'Invalid or missing field "%s": %s' => 'Ungültiges oder fehlendes Feld "%s": %s',
       'Invalid or unknown object ("%s") for land operation, expected Differential Revision.' => 'Ungültiges oder unbekanntes Objekt ("%s") für den Land-Vorgang, Differential-Revision erwartet.',
-      'Invalid parameter information was passed to method \'%s\'.' => 'Ungültige Parameterinformationen wurden an Methode \'%s\' übergeben.',
+      'Invalid parameter information was passed to method \'%s\': %s.' => 'Ungültige Parameterinformationen wurden an Methode \'%s\' übergeben: %s.',
       'Invalid path ID!' => 'Ungültige Pfad-ID!',
       'Invalid path URI.' => 'Ungültige Pfad-URI.',
+      'Invalid query for parameter "%s".' => 'Ungültige Abfrage für Parameter "%s".',
       'Invalid response token for this challenge: token digest does not match stored digest.' => 'Ungültiges Antwort-Token für diese Challenge: Der Token-Hash stimmt nicht mit dem gespeicherten Hash überein.',
       'Invalid revision ID "%s".' => 'Ungültige Versions-ID "%s".',
       'Invalid rule class \'%s\'!' => 'Ungültige Regelklasse \'%s\'!',
@@ -8367,9 +8950,9 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Invalid state \'%s\'!' => 'Ungültiger Zustand \'%s\'!',
       'Invalid timezone \'%s\'!' => 'Ungültige Zeitzone \'%s\'!',
       'Invalid token \'%s\' in grammar.' => 'Ungültiges Token \'%s\' in der Grammatik.',
+      'Invalid username ("%s"). There is no user with this username.' => 'Ungültiger Benutzername ("%s"). Es gibt keinen Benutzer mit diesem Benutzernamen.',
       'Invalid value `%s`' => 'Ungültiger Wert `%s`',
       'Inverse' => 'Invertiert',
-      'Invisible objects are ignored.' => 'Unsichtbare Objekte werden ignoriert.',
       'Invite Collaborators' => 'Mitarbeiter einladen',
       'Invite Users' => 'Benutzer einladen',
       'Invite action is not a send action!' => 'Einladungsaktion ist keine Sendeaktion!',
@@ -8381,23 +8964,8 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Invitees' => 'Teilnehmer',
       'Invites' => 'Einladungen',
       'Invites are visible to administrators, the inviting user, users with an invite code, and the user who accepts the invite.' => 'Einladungen sind für Administratoren, den einladenden Benutzer, Benutzer mit einem Einladungscode und den Benutzer sichtbar, der die Einladung annimmt.',
-      'Invoice' => 'Rechnung',
-      'Invoice Date' => 'Rechnungsdatum',
-      'Invoice Description' => 'Rechnungsbeschreibung',
-      'Invoice Footer' => 'Rechnungsfußzeile',
-      'Invoice From' => 'Rechnung von',
-      'Invoice From Email' => 'Rechnungs-E-Mail-Absender',
-      'Invoice Title' => 'Rechnungstitel',
-      'Invoice email "%s" must be a valid email.' => 'Rechnungs-E-Mail "%s" muss eine gültige E-Mail sein.',
-      'Invoices' => 'Rechnungen',
-      'Invoices Due' => 'Fällige Rechnungen',
-      'Invoices a subscription for a given billing period. This can charge payment accounts twice.' => 'Stellt für ein Abonnement für einen bestimmten Abrechnungszeitraum eine Rechnung aus. Dadurch können Zahlungskonten doppelt belastet werden.',
-      'Invoices and Receipts' => 'Rechnungen und Quittungen',
-      'Invoices and Receipts: %s' => 'Rechnungen und Quittungen: %s',
       'Is merge commit' => 'Ist Merge-Commit',
       'Is newly created' => 'Ist neu erstellt worden',
-      'Is self URI? %s' => 'Eigene URI? %s',
-      'Isolation failure! DAO is attempting to connect to an external resource!' => 'Isolationsfehler! DAO versucht, sich mit einer externen Ressource zu verbinden!',
       'Isometric-Hexoctahedral' => 'Isometrisch-Hexooktaedrisch',
       'Issue' => 'Problem',
       'Issue #%d' => 'Issue #%d',
@@ -8406,6 +8974,7 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Issue Resolved' => 'Problem gelöst',
       'Issued' => 'Ausgegeben',
       'Issues' => 'Probleme',
+      'It appears that this is not a valid library.' => 'Das scheint keine gültige Bibliothek zu sein.',
       'It is generally safe to rename users, but changing usernames may create occasional minor complications or confusion with text that contains the old username.' => 'Es ist im Allgemeinen sicher, Benutzer umzubenennen, aber das Ändern von Benutzernamen kann gelegentlich kleinere Komplikationen oder Verwirrungen mit Texten verursachen, die den alten Benutzernamen enthalten.',
       'It looks amazing, good work. Home Sweet Home.' => 'Sieht toll aus, gute Arbeit. Schön hier.',
       'It will no longer be possible to delete branches from this repository, or %s push to this repository.' => 'Es wird nicht mehr möglich sein, Branches aus diesem Repository zu löschen oder %s in dieses Repository zu pushen.',
@@ -8420,7 +8989,7 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Item Types' => 'Elementtypen',
       'Items' => 'Elemente',
       'Iterated MD5' => 'Iteriertes MD5',
-      'Iterator \'%s\' does not exist.' => 'Iterator \'%s\' existiert nicht.',
+      'Iterator \'%s\' does not exist. Valid iterators are: %s.' => 'Iterator \'%s\' existiert nicht. Gültige Iteratoren: %s.',
       'JIRA' => 'JIRA',
       'JIRA %s' => 'JIRA %s',
       'JIRA %s %s' => 'JIRA %s %s',
@@ -8447,17 +9016,13 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Join Project' => 'An Projekt teilnehmen',
       'Join Room' => 'Raum beitreten',
       'Join a Room' => 'An einem Chat teilnehmen',
-      'Join allowed with edit permission.' => 'Beitreten mit Bearbeitungsberechtigung erlaubt.',
-      'Join allowed with join permission.' => 'Beitreten mit Beitrittsberechtigung erlaubt.',
       'Join this project? You will become a member and enjoy whatever benefits membership may confer.' => 'Diesem Projekt beitreten? Du wirst Mitglied und genießt alle Vorteile der Mitgliedschaft.',
-      'Join works.' => 'Beitreten funktioniert.',
       'Joinable By' => 'Teilnehmer dürfen sein',
       'Joinable Rooms' => 'Beitrittbare Räume',
       'Joined' => 'Meine',
       'Joined After' => 'Registriert nach',
       'Joined Before' => 'Registriert vor',
       'Joined Rooms' => 'Verbundene Chats',
-      'Joining an already-joined project is a no-op.' => 'Erneutes Beitreten eines Projektes hat keine Wirkung.',
       'July' => 'Juli',
       'Jump to next change.' => 'Zur nächsten Änderung springen.',
       'Jump to next file.' => 'Zur nächsten Datei springen.',
@@ -8498,6 +9063,7 @@ Wenn diese Abfrage tatsächlich im Steuerelement angezeigt wird, sieht sie eher 
       'Keyring specifies an invalid key ("%s"): key material should be 32 bytes (256 bits) but has length %s.' => 'Der Schlüsselbund enthält einen ungültigen Schlüssel ("%s"): Das Schlüsselmaterial sollte 32 Bytes (256 Bit) lang sein, hat aber die Länge %s.',
       'Keyring specifies an invalid key ("%s"): key material should be base64 encoded.' => 'Der Schlüsselbund enthält einen ungültigen Schlüssel ("%s"): Das Schlüsselmaterial sollte base64-kodiert sein.',
       'Keys' => 'Schlüssel',
+      'Keystrokes' => 'Tastenanschläge',
       'Keywords' => 'Schlüsselwörter',
       'Killing process %d...' => 'Prozess %d wird abgebrochen...',
       'Knowledge' => 'Wissen',
@@ -8526,7 +9092,6 @@ LDAP-Fehler #%d: %s',
       'Landed 1,000 Commits' => '1.000 Commits gelandet',
       'Landing revision into %s on %s...' => 'Revision wird in %s auf %s gelandet...',
       'Language' => 'Sprache',
-      'Language detect for %s' => 'Spracherkennung für %s',
       'Language to use for syntax highlighting.' => 'Sprache für die Syntaxhervorhebung.',
       'Language used for syntax highlighting. By default, inferred from the title.' => 'Sprache für die Syntaxhervorhebung. Standardmäßig aus dem Titel abgeleitet.',
       'Languages' => 'Sprachen',
@@ -8542,7 +9107,6 @@ LDAP-Fehler #%d: %s',
       'Last Change' => 'Letzte Änderung',
       'Last Edited' => 'Zuletzt bearbeitet',
       'Last Updated' => 'Letzte Änderung',
-      'Last Words' => 'Letzte Worte',
       'Last Write At' => 'Letzter Schreibvorgang um',
       'Last Writer' => 'Letzter Schreiber',
       'Last instance of the event.' => 'Letzte Instanz des Ereignisses.',
@@ -8609,15 +9173,11 @@ LDAP-Fehler #%d: %s',
       'Leases can not be released after they are destroyed.' => 'Leases können nach ihrer Zerstörung nicht mehr freigegeben werden.',
       'Leases inherit policies from the resources they lease.' => 'Leases erben die Richtlinien der Ressourcen, die sie mieten.',
       'Leases queued for activation:' => 'Leases zur Aktivierung in der Warteschlange:',
-      'Leasing should work.' => 'Leasing sollte funktionieren.',
       'Leave High Security' => 'Erhöhte Sicherheit verlassen',
       'Leave Project' => 'Projekt verlassen',
       'Leave Room' => 'Chat verlassen',
-      'Leave allowed without any permission.' => 'Verlassen ohne besondere Berechtigung erlaubt.',
       'Leave high security and return your session to normal security levels?' => 'Erhöhte Sicherheit verlassen und Sitzung auf normale Sicherheitsstufe zurücksetzen?',
-      'Leave works.' => 'Verlassen funktioniert.',
       'Leaving High Security' => 'Erhöhte Sicherheit verlassen',
-      'Leaving an already-left project is a no-op.' => 'Erneutes Verlassen eines Projektes hat keine Wirkung.',
       'Left' => 'Links',
       'Legacy Value' => 'Veralteter Wert',
       'Legalpad' => 'Legalpad',
@@ -8631,8 +9191,8 @@ LDAP-Fehler #%d: %s',
       'Leica Enthusiast' => 'Leica-Enthusiast',
       'Length of the log in bytes.' => 'Länge des Protokolls in Bytes.',
       'Length parameter in %s must be at least %s, but %s was provided.' => 'Längenparameter in %s muss mindestens %s betragen, aber es wurde %s angegeben.',
-      'Let\'s Go Shopping' => 'Auf zum Einkaufen',
       'Library' => 'Bibliothek',
+      'Library was already at latest version.' => 'Die Bibliothek war bereits auf dem neuesten Stand.',
       'Light' => 'Hell',
       'Like' => 'Mögen',
       'Like fractions, but more horizontal.' => 'Wie Brüche, nur horizontaler.',
@@ -8652,33 +9212,41 @@ and one warning:
 ```lang=json
 %s
 ```
-
-EOREMARKUP' => 'Wie Unit-Testergebnisse können auch Lint-Ergebnisse beim Aktualisieren eines Build-Ziels gemeldet werden. Der `lint`-Parameter enthält Ergebnisse als Liste von Dictionaries mit diesen Schlüsseln:
-
-%s
-
-Der `severity`-Parameter erkennt folgende Schweregrade:
+' => 'Wie Unit-Testergebnisse kannst Du auch Lint-Ergebnisse melden, wenn Du den Zustand eines Build-Ziels aktualisierst. Der Parameter `lint` sollte die Ergebnisse als Liste von Dictionaries mit diesen Schlüsseln enthalten:
 
 %s
 
-Dies ist ein einfaches, gültiges Beispiel für den `lint`-Parameter. Es meldet einen Fehler und eine Warnung:
+Der Parameter `severity` erkennt folgende Schweregrade:
+
+%s
+
+Dies ist ein einfacher, gültiger Wert für den Parameter `lint`. Er meldet einen Fehler und eine Warnung:
 
 ```lang=json
 %s
 ```
-
-EOREMARKUP',
+',
       'Limit' => 'Limit',
-      'Limit + offset work.' => 'Limit + Versatz funktionieren.',
       'Limit 3 actions per item.' => 'Maximal 3 Aktionen pro Eintrag.',
       'Limit page execution time to debug hangs.' => 'Seitenausführungszeit begrenzen, um Hänger zu debuggen.',
       'Limit selection to a maximum number of tasks.' => 'Auswahl auf eine maximale Anzahl an Aufgaben begrenzen.',
       'Limit the rate at which the log is written, to test live log streaming.' => 'Die Schreibrate des Protokolls begrenzen, um Live-Log-Streaming zu testen.',
       'Limited Translations' => 'Eingeschränkte Übersetzungen',
       'Limits' => 'Limits',
-      'Limits work.' => 'Limits funktionieren.',
       'Line' => 'Zeile',
-      'Line Map for "%s"' => 'Zeilenkarte für "%s"',
+      'Line #%d of input is invalid. Expected five or six space-delimited fields: maybe symbol context, symbol name, symbol type, symbol language, line number, path. For example:
+
+%s
+
+Actual line was:
+
+%s' => 'Zeile #%d der Eingabe ist ungültig. Erwartet werden fünf oder sechs durch Leerzeichen getrennte Felder: optional Symbolkontext, Symbolname, Symboltyp, Symbolsprache, Zeilennummer, Pfad. Zum Beispiel:
+
+%s
+
+Tatsächliche Zeile war:
+
+%s',
       'Line Number' => 'Zeilennummer',
       'Line number in the file where the text which triggered the message first appears. The first line of the file is line 1, not line 0.' => 'Zeilennummer in der Datei, in der der Text, der die Nachricht ausgelöst hat, zuerst erscheint. Die erste Zeile der Datei ist Zeile 1, nicht Zeile 0.',
       'Lines' => 'Zeilen',
@@ -8720,6 +9288,7 @@ EOREMARKUP',
       'List available storage engines.' => 'Verfügbare Speicher-Engines auflisten.',
       'List capabilities, wire formats, and authentication protocols available on this server.' => 'Die auf diesem Server verfügbaren Fähigkeiten, Wire-Formate und Authentifizierungsprotokolle auflisten.',
       'List databases.' => 'Datenbanken auflisten.',
+      'List edges relating to an object' => 'Edges zu einem Objekt auflisten',
       'List inbound messages.' => 'Eingehende Nachrichten auflisten.',
       'List information about available credential revokers.' => 'Informationen über verfügbare Zugangsdaten-Widerrufer auflisten.',
       'List of MIME types which can be rendered with a `%s` tag.' => 'Liste der MIME-Typen, die mit einem `%s`-Tag gerendert werden können.',
@@ -8732,32 +9301,28 @@ EOREMARKUP',
       'List of PHIDs.' => 'Liste von PHIDs.',
       'List of Users Without MFA' => 'Liste der Benutzer ohne MFA',
       'List of account roles.' => 'Liste der Kontorollen.',
+      'List of actions that this rule will trigger.' => 'Liste der Aktionen, die diese Regel auslöst.',
       'List of column PHIDs.' => 'Liste von Spalten-PHIDs.',
       'List of columns to move the task to.' => 'Liste der Zielspalten.',
+      'List of conditions which this Herald rule must match in order to trigger.' => 'Liste der Bedingungen, die erfüllt sein müssen, damit diese Herald-Regel ausgelöst wird.',
       'List of custom fields for Maniphest tasks.
 
 For details on adding custom fields to Maniphest, see [[ %s | %s ]] in the
-documentation.
-EOTEXT' => 'Liste der benutzerdefinierten Felder für Maniphest-Aufgaben.
+documentation.' => 'Liste der benutzerdefinierten Felder für Maniphest-Aufgaben.
 
-Details zum Hinzufügen benutzerdefinierter Felder zu Maniphest findest Du in der Dokumentation unter [[ %s | %s ]].
-EOTEXT',
+Details zum Hinzufügen benutzerdefinierter Felder zu Maniphest findest Du in der Dokumentation unter [[ %s | %s ]].',
       'List of custom fields for project tags.
 
 For details on adding new fields, see [[ %s | %s ]] in the
-documentation.
-EOTEXT' => 'Liste der benutzerdefinierten Felder für Projekttags.
+documentation.' => 'Liste der benutzerdefinierten Felder für Projekttags.
 
-Details zum Hinzufügen neuer Felder findest Du in der Dokumentation unter [[ %s | %s ]].
-EOTEXT',
+Details zum Hinzufügen neuer Felder findest Du in der Dokumentation unter [[ %s | %s ]].',
       'List of custom fields for user profiles.
 
 For details on adding new fields, see [[ %s | %s ]] in the
-documentation.
-EOTEXT' => 'Liste der benutzerdefinierten Felder für Benutzerprofile.
+documentation.' => 'Liste der benutzerdefinierten Felder für Benutzerprofile.
 
-Details zum Hinzufügen neuer Felder findest Du in der Dokumentation unter [[ %s | %s ]].
-EOTEXT',
+Details zum Hinzufügen neuer Felder findest Du in der Dokumentation unter [[ %s | %s ]].',
       'List of dictionaries, each describing a path.' => 'Liste von Dictionaries, die jeweils einen Pfad beschreiben.',
       'List of file regexps that should be treated as if they are generated by an automatic process, and thus be hidden by default in Differential.
 
@@ -8798,18 +9363,18 @@ HINWEIS: Diese Eigenschaft wird gecacht. Nach Änderungen muss der Cache geleert
       'Lists' => 'Listen',
       'Lists associated JIRA issues.' => 'Listet zugehörige JIRA-Tickets auf.',
       'Lists associated tasks.' => 'Listet zugehörige Aufgaben auf.',
+      'Lists installed extensions.' => 'Listet installierte Erweiterungen auf.',
       'Literal %s is not allowed inside inline script.' => 'Literal %s ist in Inline-Skripts nicht erlaubt.',
       'Literal Percent Symbol' => 'Literales Prozentzeichen',
       'Literal null.' => 'Literales Null.',
-      'Live Mode' => 'Live-Modus',
       'Llama Diorama' => 'Llama Diorama',
       'Load Changes' => 'Änderungen laden',
       'Load File' => 'Datei laden',
       'Load all diffs for given revisions from Differential.' => 'Alle Diffs für angegebene Versionen aus Differential laden.',
-      'Load balancing between two mail servers did not select both servers after an absurd number of attempts.' => 'Der Lastausgleich zwischen zwei Mail-Servern hat nach einer absurden Anzahl von Versuchen nicht beide Server ausgewählt.',
       'Load or create build autotargets.' => 'Build-Auto-Ziele laden oder erstellen.',
       'Load the content of a diff from Differential by revision ID or diff ID.' => 'Den Inhalt eines Diffs aus Differential per Versions-ID oder Diff-ID laden.',
       'Load the content of a revision from Differential.' => 'Den Inhalt einer Version aus Differential laden.',
+      'Loading %s symbols...' => '%s Symbole werden geladen...',
       'Loading preview...' => 'Lade Vorschau...',
       'Loading quickstart template onto "%s"...' => 'Lade Quickstart-Vorlage nach "%s"...',
       'Loading...' => 'Lade...',
@@ -8821,12 +9386,13 @@ HINWEIS: Diese Eigenschaft wird gecacht. Nach Änderungen muss der Cache geleert
       'Local Maniphest URL' => 'Lokale Maniphest-URL',
       'Local Name' => 'Lokaler Name',
       'Local disk filesystem handle \'%s\' is malformed!' => 'Lokaler Dateisystem-Handle \'%s\' ist fehlerhaft!',
+      'Local path "%s" is not writable.' => 'Lokaler Pfad "%s" ist nicht beschreibbar.',
       'Local path "%s" is not writable. This file must be writable so that "bin/config" can store configuration.' => 'Der lokale Pfad "%s" ist nicht schreibbar. Diese Datei muss schreibbar sein, damit "bin/config" Konfiguration speichern kann.',
       'Local storage disk path.' => 'Lokaler Speicherpfad auf der Festplatte.',
       'Locale code of command-line locale.' => 'Sprachcode der Kommandozeilen-Locale.',
-      'Localization' => 'Lokalisierung',
       'Locate File' => 'Datei suchen',
       'Location' => 'Fundstelle',
+      'Location to download and install extensions to.' => 'Ort, an den Erweiterungen heruntergeladen und installiert werden.',
       'Lock' => 'Sperre',
       'Lock / Hide Fields' => 'Felder sperren/ausblenden',
       'Lock Create User Policy To Admins' => 'Benutzer-Erstellen-Richtlinie auf Administratoren beschränken',
@@ -8905,6 +9471,7 @@ HINWEIS: Diese Eigenschaft wird gecacht. Nach Änderungen muss der Cache geleert
       'Long explanation of the lint message.' => 'Ausführliche Erklärung der Lint-Nachricht.',
       'Look up objects by name.' => 'Objekte nach Namen suchen.',
       'Looking for new commits.' => 'Suche nach neuen Commits.',
+      'Looking up path IDs...' => 'Pfad-IDs werden nachgeschlagen...',
       'Looks Like' => 'Erscheinungsbild',
       'Lookup PHIDs by username. Obsoleted by "%s".' => 'PHIDs nach Benutzername nachschlagen. Veraltet durch "%s".',
       'Loop' => 'Schleife',
@@ -8950,7 +9517,6 @@ HINWEIS: Diese Eigenschaft wird gecacht. Nach Änderungen muss der Cache geleert
       'Macros' => 'Makros',
       'Macros must have a name.' => 'Makros müssen einen Namen haben.',
       'Made it a requirement that mail content be transmitted only over secure channels.' => 'Es wurde zur Anforderung gemacht, dass Mail-Inhalt nur über sichere Kanäle übermittelt wird.',
-      'Made up method should throw.' => 'Eine ausgedachte Methode sollte eine Ausnahme auslösen.',
       'Mail' => 'Mail',
       'Mail %d' => 'Mail %d',
       'Mail (Received)' => 'Mail (Empfangen)',
@@ -8969,14 +9535,12 @@ HINWEIS: Diese Eigenschaft wird gecacht. Nach Änderungen muss der Cache geleert
       'Mail commands "%s" and "%s" both respond to keyword "%s". Keywords must be uniquely associated with commands.' => 'Email-Befehle "%s" und "%s" antworten beide auf das Schlüsselwort "%s". Schlüsselwörter müssen eindeutig mit Befehlen verknüpft sein.',
       'Mail extension ("%s") defines a stamp template with the same key ("%s") as another template. Each stamp template must have a unique key.' => 'Die Mail-Erweiterung ("%s") definiert eine Stempelvorlage mit demselben Schlüssel ("%s") wie eine andere Vorlage. Jede Stempelvorlage muss einen eindeutigen Schlüssel haben.',
       'Mail is now always delivered by the daemons.' => 'Mail wird jetzt immer von den Dämonen zugestellt.',
-      'Mail not sent to unverified address.' => 'Mail nicht an unbestätigte Adresse gesendet.',
       'Mail object address hash keys are now generated automatically.' => 'Mail-Objekt-Adress-Hash-Schlüssel werden jetzt automatisch generiert.',
       'Mail received! You can view details by running this command:' => 'Mail empfangen! Details können mit diesem Befehl angezeigt werden:',
       'Mail receiver is not a %s!' => 'Mailempfänger ist kein %s!',
       'Mail receiver is not a %s.' => 'Mail-Empfänger ist kein %s.',
       'Mail receiver is not a LegalpadDocument!' => 'Der Mail-Empfänger ist kein Legalpad-Dokument!',
       'Mail sent in the last %s day(s).' => 'In den letzten %s Tag(en) gesendete Mail.',
-      'Mail sent to verified address.' => 'Mail an bestätigte Adresse gesendet.',
       'Mail sent! You can view details by running this command:' => 'Mail gesendet! Details können mit diesem Befehl angezeigt werden:',
       'Mail signature is not valid. Check your Mailgun API key.' => 'Mail-Signatur ist ungültig. Überprüfe Deinen Mailgun API-Schlüssel.',
       'Mail thread IDs are now generated automatically.' => 'Mail-Thread-IDs werden jetzt automatisch generiert.',
@@ -8984,9 +9548,7 @@ HINWEIS: Diese Eigenschaft wird gecacht. Nach Änderungen muss der Cache geleert
 prefixed with "Re:". If you enable this option, this software will add "Re:" to
 the subject line of all mail which is expected to thread. If you\'ve set
 \'metamta.one-mail-per-recipient\', users can override this setting in their
-preferences.
-EODOC' => 'Mail.app unter OS X Lion berücksichtigt Threading-Header nicht, wenn der Betreff nicht mit "Re:" beginnt. Wenn Du diese Option aktivierst, fügt diese Software allen E-Mails, die in Threads laufen sollen, "Re:" zum Betreff hinzu. Wenn Du \'metamta.one-mail-per-recipient\' gesetzt hast, können Benutzer diese Einstellung in ihren Präferenzen überschreiben.
-EODOC',
+preferences.' => 'Mail.app unter OS X Lion berücksichtigt Threading-Header nicht, wenn der Betreff nicht mit "Re:" beginnt. Wenn Du diese Option aktivierst, fügt diese Software allen E-Mails, die in Threads laufen sollen, "Re:" zum Betreff hinzu. Wenn Du \'metamta.one-mail-per-recipient\' gesetzt hast, können Benutzer diese Einstellung in ihren Präferenzen überschreiben.',
       'Mailer ("%s") is attempting to access unknown option ("%s").' => 'Mailer ("%s") versucht auf unbekannte Option ("%s") zuzugreifen.',
       'Mailer cluster configuration is not valid: each entry in the list must be a dictionary describing a mailer, but the value with index "%s" is not a dictionary.' => 'Die Mailer-Cluster-Konfiguration ist ungültig: Jeder Eintrag in der Liste muss eine Zuordnung sein, die einen Mailer beschreibt, aber der Wert mit Index „%s" ist keine Zuordnung.',
       'Mailer cluster configuration is not valid: it should be a list of mailer configurations.' => 'Die Mailer-Cluster-Konfiguration ist ungültig: Sie muss eine Liste von Mailer-Konfigurationen sein.',
@@ -8997,7 +9559,6 @@ EODOC',
       'Mailer configuration is invalid: multiple mailers have the same key ("%s"). Each mailer must have a unique key.' => 'Die Mailer-Konfiguration ist ungültig: Mehrere Mailer haben denselben Schlüssel („%s"). Jeder Mailer muss einen eindeutigen Schlüssel haben.',
       'Mailer key ("%s") is not configured, or does not support outbound messages of type "%s". Available mailers are: %s.' => 'Mailer-Schlüssel ("%s") ist nicht konfiguriert oder unterstützt keine ausgehenden Nachrichten vom Typ "%s". Verfügbare Mailer sind: %s.',
       'Mailers Not Configured' => 'Mailer nicht konfiguriert',
-      'Mailgun' => 'Mailgun',
       'Mailing List' => 'Mailing-Liste',
       'Mailing Lists' => 'Mailing-Listen',
       'Main Request' => 'Hauptanfrage',
@@ -9039,6 +9600,8 @@ EODOC',
       'Malformed local disk storage root. You must provide an absolute path, and can not use \'%s\' as the root.' => 'Ungültiger lokaler Festplatten-Speicher-Stammverzeichnis. Es muss ein absoluter Pfad angegeben werden, und \'%s\' kann nicht als Stammverzeichnis verwendet werden.',
       'Malformed password hash, expected "name:hash".' => 'Ungültiger Passwort-Hash, erwartet wurde das Format „Name:Hash".',
       'Manage' => 'Editieren',
+      'Manage "%s"' => '"%s" verwalten',
+      'Manage %s Extensions' => '%s-Erweiterungen verwalten',
       'Manage Blog' => 'Blog verwalten',
       'Manage Blogs' => 'Blogs verwalten',
       'Manage Build Plans' => 'Build-Pläne verwalten',
@@ -9064,8 +9627,8 @@ EODOC',
       'Manage reviewers.' => 'Reviewer verwalten.',
       'Manage software publishers.' => 'Softwareanbieter verwalten.',
       'Manage the repository graph cache.' => 'Repository-Graph-Cache verwalten.',
-      'Managers' => 'Manager',
       'Managing Daemons with phd' => 'Dämonen mit phd verwalten',
+      'Managing and installing extensions' => 'Erweiterungen verwalten und installieren',
       'Mandatory Item' => 'Pflichteintrag',
       'Mangled Webserver Response' => 'Beschädigte Webserver-Antwort',
       'Maniphest' => 'Maniphest',
@@ -9080,7 +9643,6 @@ EODOC',
       'Manual Buildable' => 'Manuell angelegter Build-Kandidat',
       'Manual Run' => 'Manueller Lauf',
       'Manual at php.net' => 'Handbuch auf php.net',
-      'Manually invoicing will double bill payment accounts if the range overlaps an existing or future invoice. This script is intended for testing and development, and should not be part of routine billing operations. If you continue, you may incorrectly overcharge customers.' => 'Eine manuelle Rechnungsstellung belastet Zahlungskonten doppelt, wenn sich der Zeitraum mit einer bestehenden oder künftigen Rechnung überschneidet. Dieses Skript ist für Tests und Entwicklung gedacht und sollte nicht Teil des regulären Abrechnungsbetriebs sein. Wenn du fortfährst, können Kunden versehentlich zu viel berechnet bekommen.',
       'Manually invoke fact analyzers.' => 'Faktenanalysatoren manuell aufrufen.',
       'Manufacturing Defect?' => 'Fehler ab Werk?',
       'Many cats appear black in low light, suffering a -2 modifier to luck rolls.' => 'Viele Katzen wirken bei schwachem Licht schwarz und erhalten einen Malus von -2 auf Glückswürfe.',
@@ -9157,11 +9719,11 @@ Die untenstehenden Tabellen enthalten die unterstützten Variablen und Protokoll
       'Matching rules are listed from weakest to strongest.' => 'Passende Regeln werden vom schwächsten zum stärksten aufgeführt.',
       'Maximum Depth' => 'Maximaltiefe',
       'Maximum Retries' => 'Maximale Wiederholungsversuche',
-      'Maximum allowed amount is %s.' => 'Höchstbetrag ist %s.',
       'Maximum image dimensions: %s pixels.' => 'Maximale Bildabmessungen: %s Pixel.',
       'Maximum must be larger than minimum.' => 'Maximum muss größer als Minimum sein.',
       'Maximum number of points of tasks allowed in the column.' => 'Maximale Gesamtpunktzahl der Aufgaben in dieser Spalte.',
       'Maximum number of resources this blueprint can have active concurrently.' => 'Maximale Anzahl von Ressourcen, die diese Blaupause gleichzeitig aktiv haben kann.',
+      'Maximum number of symbols that should be part of a single transaction.' => 'Maximale Anzahl von Symbolen, die Teil einer einzelnen Transaktion sein sollen.',
       'Maximum number of taskmaster daemons to run at once. Raising this can increase the maximum throughput of the task queue. The pool will automatically scale down when unutilized.
 
 If you are running a cluster, this limit applies separately to each instance of `phd`. For example, if this limit is set to `4` and you have three hosts running daemons, the effective global limit will be 12.
@@ -9179,7 +9741,7 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Maximum pool size.' => 'Maximale Poolgröße.',
       'Maximum taskmaster daemon pool size.' => 'Maximale Poolgröße des Taskmaster-Dämons.',
       'Maximum tick window must not be smaller than minimum tick window.' => 'Das maximale Taktfenster darf nicht kleiner als das minimale Taktfenster sein.',
-      'Maximum token name length is %d characters.' => 'Maximale Tokennamenslänge beträgt %d Zeichen.',
+      'Maximum token name length is %s characters.' => 'Maximale Tokennamenslänge beträgt %s Zeichen.',
       'May' => 'Mai',
       'Maybe this is what you\'re likely here for.' => 'Vielleicht ist das der Grund, warum Du hier bist.',
       'Meal' => 'Essen',
@@ -9195,7 +9757,6 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Members of a particular project can take this action. (You can not see this object, so the name of this project is restricted.)' => 'Mitglieder eines bestimmten Projekts können diese Aktion ausführen. (Das Objekt ist nicht sichtbar, daher ist der Projektname eingeschränkt.)',
       'Members of a project can always view it.' => 'Mitglieder eines Projektes können es immer ansehen.',
       'Members of all subprojects are members of this project.' => 'Mitglieder aller Teilprojekte sind automatisch Mitglieder dieses Projektes.',
-      'Members of an account can always view and edit it.' => 'Mitglieder eines Kontos können es immer anzeigen und bearbeiten.',
       'Members of the parent project are members of this project.' => 'Mitglieder des übergeordneten Projektes sind automatisch Mitglieder dieses Projektes.',
       'Members of the project "%s" can take this action.' => 'Mitglieder des Projekts "%s" können diese Aktion ausführen.',
       'Members: %s' => 'Teilnehmer: %s',
@@ -9214,28 +9775,13 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Mentioned In' => 'Erwähnt in',
       'Mentioned User' => 'Erwähnter Benutzer',
       'Mentioned or subscribed users will not be notified.' => 'Erwähnte oder abonnierte Benutzer werden nicht benachrichtigt.',
+      'Mentioning and Embedding objects' => 'Objekte erwähnen und einbetten',
       'Mentions' => 'Erwähnungen',
       'Menu' => 'Menü',
       'Menu Item' => 'Menüpunkt',
       'Menu Items' => 'Menüpunkte',
       'Menu contains duplicate items with key \'%s\'!' => 'Menü enthält doppelte Einträge mit Schlüssel \'%s\'!',
       'Menu item \'%s\' is not a label!' => 'Menüpunkt \'%s\' ist kein Label!',
-      'Merchant' => 'Händler',
-      'Merchant %d' => 'Händler %d',
-      'Merchant %d %s' => 'Händler %d %s',
-      'Merchant Account Managers' => 'Händler-Konto-Manager',
-      'Merchant Accounts' => 'Händlerkonto',
-      'Merchant Manager' => 'Händler-Manager',
-      'Merchant accounts can receive payments.' => 'Händlerkonten können Zahlungen empfangen.',
-      'Merchant contact information.' => 'Händler-Kontaktdaten.',
-      'Merchant description.' => 'Händlerbeschreibung.',
-      'Merchant name.' => 'Name des Händlers.',
-      'Merchant operating the initiative.' => 'Händler, der die Initiative betreibt.',
-      'Merchants' => 'Händler',
-      'Merchants an account has established a relationship can view it.' => 'Händler, mit denen ein Konto eine Beziehung aufgebaut hat, können es anzeigen.',
-      'Merchants must have a name.' => 'Händler müssen einen Namen haben.',
-      'Merchants you have a relationship with may view associated payment methods.' => 'Händler, zu denen du eine Geschäftsbeziehung hast, können zugeordnete Zahlungsmethoden einsehen.',
-      'Merchants you have a relationship with may view associated subscriptions.' => 'Händler, zu denen du eine Geschäftsbeziehung hast, können zugeordnete Abonnements einsehen.',
       'Mercurial' => 'Mercurial',
       'Mercurial command appears to contain unsafe injected "--config" or "--debugger": %s' => 'Der Mercurial-Befehl scheint ein unsicher eingeschleustes "--config" oder "--debugger" zu enthalten: %s',
       'Mercurial does not currently support searching for ancestors of a particular ref.' => 'Mercurial unterstützt derzeit keine Suche nach Vorfahren eines bestimmten Refs.',
@@ -9268,7 +9814,6 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Message to send.' => 'Zu sendende Nachricht.',
       'Message type "%s" is not supported.' => 'Nachrichtentyp "%s" wird nicht unterstützt.',
       'Message type "%s" is unknown, supported message types are: %s.' => 'Nachrichtentyp "%s" ist unbekannt, unterstützte Nachrichtentypen sind: %s.',
-      'Message-ID: %s' => 'Nachrichten-ID: %s',
       'Message: %s' => 'Nachricht: %s',
       'Messages' => 'Nachrichten',
       'Messages: %d' => '%d Nachrichten',
@@ -9292,6 +9837,7 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Metronome frequency must be an integer.' => 'Die Metronom-Frequenz muss eine Ganzzahl sein.',
       'Metronome offset must be 0 or more.' => 'Metronom-Versatz muss 0 oder größer sein.',
       'Metronome offset must be an integer.' => 'Metronom-Versatz muss eine ganze Zahl sein.',
+      'Might not exist' => 'Existiert möglicherweise nicht',
       'Migrate From "feed.http-hooks" to Webhooks' => 'Von "feed.http-hooks" zu Webhooks migrieren',
       'Migrate all hunks.' => 'Alle Hunks migrieren.',
       'Migrate file-based configuration to more modern storage.' => 'Dateibasierte Konfiguration zu modernerer Speicherung migrieren.',
@@ -9312,23 +9858,23 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Minimal Valid Config' => 'Minimale, gültige Konfiguration',
       'Minimize Window' => 'Fenster minimieren',
       'Minimum Depth' => 'Mindesttiefe',
-      'Minimum allowed amount is %s.' => 'Mindestbetrag ist %s.',
       'Minimum length of %d characters.' => 'Sollte mindestens %d Zeichen lang sein.',
-      'Minimum page size for API searches is 1, but this call specified %s.' => 'Die minimale Seitengröße für API-Suchen beträgt 1, dieser Aufruf hat jedoch %s angegeben.',
+      'Minimum page size for Conduit API method calls is 1, but this call specified %s.' => 'Die minimale Seitengröße für Aufrufe von Conduit-API-Methoden beträgt 1, dieser Aufruf hat jedoch %s angegeben.',
       'Minimum password length.' => 'Mindestlänge des Passworts.',
       'Minimum password length: %d characters.' => 'Minimale Passwort-Länge: %d Zeichen.',
+      'Minimum severity, one of %s constants.' => 'Mindest-Schweregrad, eine der %s-Konstanten.',
       'Minor Not-Red Event' => 'Kleines nicht-rotes Ereignis',
       'Minor Red Event' => 'Kleines rotes Ereignis',
       'Minus' => 'Minus',
       'Minutes' => 'Minuten',
       'Mirror' => 'Spiegel',
       'Missing' => 'Fehlend',
+      'Missing "sudo" Binary' => 'Programm "sudo" fehlt',
       'Missing "zip" Extension' => '"zip"-Erweiterung fehlt',
       'Missing \'%s\' Binary' => 'Programm \'%s\' fehlt',
       'Missing \'%s\' Extension' => 'Erweiterung \'%s\' fehlt',
       'Missing Ancestor' => 'Fehlender Vorfahre',
       'Missing Binary %s' => 'Programm %s fehlt',
-      'Missing Class' => 'Fehlende Klasse',
       'Missing Client ID Cookie' => 'Client-ID-Cookie fehlt',
       'Missing Dependency' => 'Fehlende Abhängigkeit',
       'Missing Javelin Dependency' => 'Fehlende Javelin-Abhängigkeit',
@@ -9336,9 +9882,7 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Missing Permission' => 'Fehlende Berechtigung',
       'Missing Repository Local Path' => 'Lokaler Pfad des Repositories fehlt',
       'Missing Required Extensions' => 'Erforderliche Erweiterungen fehlen',
-      'Missing Special' => 'Fehlendes Sonderattribut',
       'Missing commits (%s) in a SVN repository which is not configured for subdirectory-only parsing!' => 'Fehlende Commits (%s) in einem SVN-Repository, das nicht für Parsing nur eines Unterverzeichnisses konfiguriert ist!',
-      'Missing epoch should fail gracefully' => 'Ein fehlender Epoch-Wert sollte sauber fehlschlagen',
       'Missing or malformed parameter.' => 'Fehlender oder fehlerhafter Parameter.',
       'Missing path, expected "{src path ...}" in: %s' => 'Fehlender Pfad, "{src path ...}" erwartet in: %s',
       'Missing repository, expected "{src repository:path ...}" or "{src path repository=...}" in: %s' => 'Fehlendes Repository, "{src repository:path ...}" oder "{src path repository=...}" erwartet in: %s',
@@ -9358,7 +9902,7 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Mocks must have a name.' => 'Mocks müssen einen Namen haben.',
       'Mode' => 'Modus',
       'Mode "%s" is not a valid policy mode. Valid modes are: %s.' => 'Modus "%s" ist kein gültiger Richtlinienmodus. Gültige Modi: %s.',
-      'Mode is required.' => 'Modus ist erforderlich.',
+      'Mode Data' => 'Weitere Daten',
       'Moderate Policy' => 'Moderationsrichtlinie',
       'Modern Methods' => 'Moderne Methoden',
       'Modified' => 'Verändert',
@@ -9386,6 +9930,7 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'More Results' => 'Weitere Ergebnisse',
       'More Stuff' => 'Mehr Zeug',
       'More Tags…' => 'Weitere Tags…',
+      'More than one external account provider of the type "%s" detected for this user account. This is not supported by this workflow.' => 'Für dieses Benutzerkonto wurde mehr als ein externer Kontoanbieter vom Typ "%s" gefunden. Das wird von diesem Workflow nicht unterstützt.',
       'More than one result from %s!' => 'Mehr als ein Ergebnis von %s!',
       'More than one source matches "%s". Choose a narrower query, or use an ID or PHID to select a source. Matching sources: %s.' => 'Mehr als eine Quelle entspricht "%s". Wähle eine engere Abfrage oder verwende eine ID oder PHID, um eine Quelle auszuwählen. Passende Quellen: %s.',
       'More...' => 'Weiter...',
@@ -9435,7 +9980,6 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Multi-Factor Required' => 'Multi-Faktor erforderlich',
       'Multi-Factor: Add Factor' => 'Multi-Faktor: Faktor hinzufügen',
       'Multi-Factor: Remove Factor' => 'Multi-Faktor: Faktor entfernen',
-      'Multi-line tokens should be split across lines.' => 'Mehrzeilige Tokens sollten über Zeilen hinweg aufgeteilt werden.',
       'Multimeter' => 'Multimeter',
       'Multimeter Events' => 'Multimeter-Ereignisse',
       'Multimeter User Guide' => 'Multimeter-Benutzerhandbuch',
@@ -9446,12 +9990,8 @@ Nach einer Änderung dieses Werts musst Du die Dämonen neu starten. Die meisten
       'Multiple behavior options (for behavior "%s") are marked as default options ("%s" and "%s"). Exactly one option must be marked as the default option.' => 'Mehrere Verhaltensoptionen (für Verhalten "%s") sind als Standardoptionen markiert ("%s" und "%s"). Genau eine Option muss als Standardoption markiert sein.',
       'Multiple behavior options (for behavior "%s") have the same key ("%s"). Each option must have a unique key.' => 'Mehrere Verhaltensoptionen (für Verhalten "%s") haben denselben Schlüssel ("%s"). Jede Option muss einen eindeutigen Schlüssel haben.',
       'Multiple configured databases have the same internal key, "%s". You may have listed a database multiple times.' => 'Mehrere konfigurierte Datenbanken haben denselben internen Schlüssel „%s". Möglicherweise wurde eine Datenbank mehrfach aufgeführt.',
-      'Multiple date lists.' => 'Mehrere Datumslisten.',
-      'Multiple lists, one result.' => 'Mehrere Listen, ein Ergebnis.',
-      'Multiple lists, time window.' => 'Mehrere Listen, Zeitfenster.',
       'Multiple masters (databases "%s" and "%s") specify that they are the "default" partition. Only one master may be the default.' => 'Mehrere Master (Datenbanken „%s" und „%s") geben an, die „default"-Partition zu sein. Nur ein Master darf der Standard sein.',
       'Multiple masters (databases "%s" and "%s") specify that they are the partition for application "%s". Each application may be allocated to only one partition.' => 'Mehrere Master (Datenbanken „%s" und „%s") geben an, die Partition für Anwendung „%s" zu sein. Jede Anwendung darf nur einer Partition zugeordnet werden.',
-      'Multiple password hashers of different strengths are not available, so hash upgrading can not be tested.' => 'Mehrere Passwort-Hasher mit unterschiedlicher Stärke sind nicht verfügbar, daher kann das Aktualisieren von Hashes nicht getestet werden.',
       'Multiple search engines match "%s": %s.' => 'Mehrere Suchmaschinen passen zu „%s": %s.',
       'Multiple status definitions share the same key ("%s").' => 'Mehrere Statusdefinitionen verwenden denselben Schlüssel ("%s").',
       'Multiple user identifiers (%s) correspond to the same user. Identify each user exactly once.' => 'Mehrere Benutzerkennungen (%s) entsprechen demselben Benutzer. Identifiziere jeden Benutzer genau einmal.',
@@ -9472,11 +10012,16 @@ Gültige Beispiele:
   \'last Monday\', \'last Monday 14:00\', \'last Monday 2pm\',
   \'31 March 2013\', \'31 Mar\', \'03/31\', \'03/31/2013\',
 Siehe __%s__ für weitere Informationen.',
+      'Must not specify both parameter "%s" and parameter "%s".' => 'Parameter "%s" und Parameter "%s" dürfen nicht beide angegeben werden.',
       'Must pass PHIDs.' => 'PHIDs müssen übergeben werden.',
-      'Must pass a PHID for parameter "%s".' => 'Für Parameter „%s" muss eine PHID übergeben werden.',
       'Must pass a PHID.' => 'Eine PHID muss übergeben werden.',
+      'Must pass a valid PHID for parameter "%s".' => 'Für Parameter "%s" muss eine gültige PHID übergeben werden.',
+      'Must pass an array of PHIDs for parameter "%s".' => 'Für Parameter "%s" muss ein Array von PHIDs übergeben werden.',
+      'Must pass an array of edge types for parameter "%s".' => 'Für Parameter "%s" muss ein Array von Edge-Typen übergeben werden.',
+      'Must pass an array of integer task IDs for parameter "%s".' => 'Für Parameter "%s" muss ein Array aus ganzzahligen Aufgaben-IDs übergeben werden.',
       'Must pass an id or an objectPHID.' => 'Eine ID oder eine objectPHID muss übergeben werden.',
       'Must pass names.' => 'Namen müssen übergeben werden.',
+      'Must specify either parameter "%s" or parameter "%s".' => 'Entweder Parameter "%s" oder Parameter "%s" muss angegeben werden.',
       'Mute' => 'Stummschalten',
       'Mute Notifications' => 'Benachrichtigungen stummschalten',
       'Mute this object? You will no longer receive notifications or email about it.' => 'Dieses Objekt stummschalten? Du erhältst dann keine Benachrichtigungen oder E-Mails mehr dazu.',
@@ -9489,6 +10034,7 @@ Siehe __%s__ für weitere Informationen.',
       'MySQL %s Not Supported' => 'MySQL %s nicht unterstützt',
       'MySQL (on host "%s") is configured with a very small innodb_buffer_pool_size, which may impact performance.' => 'MySQL ist auf dem Host "%s" mit einem sehr kleinen innodb_buffer_pool_size konfiguriert. Das kann die Leistung beeinträchtigen.',
       'MySQL (on host "%s") is using a default stopword file, which will prevent searching for many common words.' => 'MySQL verwendet auf dem Host "%s" die Standard-Stoppwortdatei, wodurch die Suche nach vielen häufigen Wörtern verhindert wird.',
+      'MySQL Credentials Not Configured' => 'MySQL-Zugangsdaten nicht konfiguriert',
       'MySQL InnoDB Engine Not Available' => 'MySQL InnoDB-Engine nicht verfügbar',
       'MySQL May Run Slowly' => 'MySQL könnte langsam laufen',
       'MySQL database hostname.' => 'MySQL-Datenbank-Hostname.',
@@ -9518,7 +10064,6 @@ Siehe __%s__ für weitere Informationen.',
       'NOTE: You already have an Auth Factor configured. Adding another factor will require you to always provide all Auth Factors instead of selecting one of your Auth Factors.' => 'HINWEIS: Du hast bereits einen Authentifizierungsfaktor konfiguriert. Das Hinzufügen eines weiteren Faktors erfordert, dass künftig immer alle Faktoren angegeben werden, statt einen auszuwählen.',
       'NOTE: You are creating the **default space**. All existing objects will be put into this space. You must create a default space before you can create other spaces.' => 'HINWEIS: Du erstellst die **Standardzone**. Alle bestehenden Objekte werden in diese Zone verschoben. Du musst eine Standardzone erstellen, bevor Du andere Zonen erstellen kannst.',
       'NOTE: You can only see your own signatures and signatures on documents you have permission to edit.' => 'HINWEIS: Du kannst nur Deine eigenen Unterschriften und Unterschriften auf Dokumenten sehen, die Du bearbeiten darfst.',
-      'NOTE: You do not control any merchant accounts which can receive payments from this initiative. When you create an initiative, you need to specify a merchant account where funds will be paid to. Create a merchant account in the Phortune application before creating an initiative in Fund.' => 'HINWEIS: Du kontrollierst kein Händlerkonto, das Zahlungen aus dieser Initiative empfangen kann. Beim Erstellen einer Initiative musst du ein Händlerkonto angeben, auf das die Gelder überwiesen werden. Erstelle ein Händlerkonto in der Phortune-Anwendung, bevor du eine Initiative in Fund erstellst.',
       'NULL' => 'NULL',
       'NULL value "%s" is invalid. Valid values are "head" and "tail".' => 'NULL-Wert „%s" ist ungültig. Gültige Werte sind „head" und „tail".',
       'Name' => 'Name',
@@ -9527,6 +10072,7 @@ Siehe __%s__ für weitere Informationen.',
       'Name field is required.' => 'Eine Name ist erforderlich.',
       'Name for a %s can be no longer than %s characters.' => 'Ein Name für %s darf maximal %s Zeichen lang sein.',
       'Name is required.' => 'Ein Name ist zwingend erforderlich.',
+      'Name of the Herald rule.' => 'Name der Herald-Regel.',
       'Name of the Policy.' => 'Name der Richtlinie.',
       'Name of the blueprint.' => 'Name der Blaupause.',
       'Name of the dashboard.' => 'Name des Dashboards.',
@@ -9566,7 +10112,6 @@ Siehe __%s__ für weitere Informationen.',
       'Namespace not set.' => 'Kein Namespace gesetzt.',
       'Namespaces' => 'Namensräume',
       'Natural' => 'Standard',
-      'Natural SVN root should work properly.' => 'Natürliches SVN-Stammverzeichnis sollte korrekt funktionieren.',
       'Navel Orange' => 'Navelorange',
       'Need a backup of all your kitten memes?' => 'Brauchst Du ein Backup all Deiner Katzenbild-Memes?',
       'Need translation for \'%s\'.' => 'Übersetzung für „%s“ fehlt.',
@@ -9601,10 +10146,6 @@ Siehe __%s__ für weitere Informationen.',
       'New I/O behavior.' => 'Neues E/A-Verhalten.',
       'New Import' => 'Neuer Import',
       'New Inline Comment' => 'Neuer Inline-Kommentar',
-      'New Invoice' => 'Neue Rechnung',
-      'New Manager' => 'Neuer Manager',
-      'New Managers' => 'Neue Manager',
-      'New Merchant name.' => 'Neuer Händlername.',
       'New Message' => 'Neue Nachricht',
       'New Mode' => 'Neuer Modus',
       'New OAuth application redirect URI.' => 'Neue Umleitungs-URI der OAuth-Anwendung.',
@@ -9633,9 +10174,6 @@ Siehe __%s__ für weitere Informationen.',
       'New VCS Password' => 'Neues VCS-Passwort',
       'New Value' => 'Neuer Wert',
       'New View (Prototype)' => 'Neue Ansicht (Prototyp)',
-      'New account billing address.' => 'Neue Rechnungsadresse des Kontos.',
-      'New account billing name.' => 'Neuer Abrechnungsname des Kontos.',
-      'New account name.' => 'Neuer Kontoname.',
       'New alias.' => 'Neuer Kurzname.',
       'New alt text.' => 'Neuer Alt-Text.',
       'New application name.' => 'Neuer Anwendungsname.',
@@ -9663,6 +10201,7 @@ Siehe __%s__ für weitere Informationen.',
       'New dashboard layout mode.' => 'Neuer Dashboard-Layout-Modus.',
       'New dashboard name.' => 'Neuer Dashboard-Name.',
       'New default branch name.' => 'Neuer Standard-Branch-Name.',
+      'New description of the policy.' => 'Neue Beschreibung der Richtlinie.',
       'New description.' => 'Neue Beschreibung.',
       'New diff to create or update the revision with.' => 'Neuer Diff zum Erstellen oder Aktualisieren der Version.',
       'New display behavior.' => 'Neues Anzeigeverhalten.',
@@ -9670,7 +10209,6 @@ Siehe __%s__ für weitere Informationen.',
       'New document preamble.' => 'Neue Dokumentenpräambel.',
       'New document signature type.' => 'Neuer Unterschriftentyp.',
       'New document title.' => 'Neuer Dokumententitel.',
-      'New email address.' => 'Neue E-Mail-Adresse.',
       'New event description.' => 'Neue Ereignisbeschreibung.',
       'New event end time.' => 'Neues Terminende.',
       'New event frequency.' => 'Neue Häufigkeit des Termins.',
@@ -9687,14 +10225,9 @@ Siehe __%s__ für weitere Informationen.',
       'New final event time.' => 'Neuer Endzeitpunkt des Ereignisses.',
       'New highlighting language.' => 'Neue Hervorhebungssprache.',
       'New import name.' => 'Neuer Import-Name.',
-      'New initiative description.' => 'Neue Beschreibung der Initiative.',
-      'New initiative merchant.' => 'Neuer Händler der Initiative.',
-      'New initiative name.' => 'Neuer Name der Initiative.',
       'New list of hashtags.' => 'Neue Hashtag-Liste.',
-      'New list of managers.' => 'Neue Managerliste.',
       'New list of members.' => 'Neue Mitgliederliste.',
       'New macro name.' => 'Neuer Makroname.',
-      'New merchant description.' => 'Neue Händlerbeschreibung.',
       'New notification setting.' => 'Neue Benachrichtigungseinstellung.',
       'New object subtype key.' => 'Neuer Objekt-Untertyp-Schlüssel.',
       'New panel name.' => 'Neuer Panel-Name.',
@@ -9703,6 +10236,7 @@ Siehe __%s__ für weitere Informationen.',
       'New permanent ref rules.' => 'Neue permanente Ref-Regeln.',
       'New plan name.' => 'Neuer Plan-Name.',
       'New policy PHID or constant.' => 'Neue Richtlinien-PHID oder Konstante.',
+      'New policy name.' => 'Neuer Name der Richtlinie.',
       'New portal name.' => 'Neuer Portal-Name.',
       'New post body.' => 'Neuer Beitragsinhalt.',
       'New post subtitle.' => 'Neuer Beitrags-Untertitel.',
@@ -9761,7 +10295,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'Next Change »' => 'Nächste Änderung »',
       'Next Day' => 'Nächster Tag',
       'Next In Queue' => 'Nächste in der Warteschlange',
-      'Next Invoice' => 'Nächste Rechnung',
       'Next Maintenance Window' => 'Nächstes Wartungsfenster',
       'Next Month' => 'Nächster Monat',
       'Next Post' => 'Nächster Beitrag',
@@ -9814,17 +10347,16 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No Data' => 'Keine Daten',
       'No Default Branch' => 'Kein Standard-Branch',
       'No Default Create Forms' => 'Keine Standard-Erstellungsformulare',
+      'No Direct Pushes: You are pushing directly to a hosted repository. This will not work. See "No Direct Pushes" in the documentation for more information.' => 'Keine direkten Pushes: Du pushst direkt in ein gehostetes Repository. Das funktioniert nicht. Weitere Informationen findest Du in der Dokumentation unter "No Direct Pushes".',
       'No Document Here' => 'Kein Dokument vorhanden',
       'No Edit Forms' => 'Keine Bearbeitungsformulare',
       'No Editable Tasks' => 'Keine bearbeitbaren Aufgaben',
       'No Effect' => 'Keine Wirkung',
       'No Email Preferences Link' => 'Kein Link zu E-Mail-Präferenzen',
-      'No Enabled Providers' => 'Keine aktivierten Anbieter',
       'No Encoding Support' => 'Keine Kodierungsunterstützung',
       'No Engines' => 'Keine Engines',
       'No Events Imported' => 'Keine Termine importiert.',
       'No Exports Configured' => 'Keine Exporte konfiguriert',
-      'No Extended Policy' => 'Keine erweiterte Richtlinie',
       'No Forms' => 'Keine Formulare',
       'No Herald rules applied to this object.' => 'Keine Herald-Regeln auf dieses Objekt angewendet.',
       'No I/O' => 'Kein I/O',
@@ -9836,13 +10368,11 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No Linkable External Providers' => 'Keine verknüpfbaren externen Anbieter',
       'No Lint Coverage' => 'Keine Lint-Abdeckung',
       'No Local Working Copy' => 'Kein lokales Arbeitsverzeichnis',
-      'No Login Required' => 'Keine Anmeldung erforderlich',
       'No MFA' => 'Kein MFA',
       'No MFA Providers' => 'Keine MFA-Anbieter',
       'No Manage Permission' => 'Keine Verwaltungsberechtigung',
       'No Matching Sessions' => 'Keine passenden Sitzungen',
       'No Matching Tokens' => 'Keine passenden Token',
-      'No Merchants' => 'Keine Händler',
       'No Messages' => 'Keine Nachrichten',
       'No Milestones' => 'Keine Meilensteine',
       'No More Retries' => 'Keine weiteren Versuche',
@@ -9851,8 +10381,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No OAuth Access Token' => 'Kein OAuth-Zugriffstoken',
       'No Object URI' => 'Keine Objekt-URI',
       'No One' => 'Niemand',
-      'No One Policy' => 'Niemand-Richtlinie',
-      'No OpenSSL extension available.' => 'Keine OpenSSL-Erweiterung verfügbar.',
       'No Outbound Requests' => 'Keine ausgehenden Anfragen',
       'No Owner' => 'Kein Inhaber',
       'No Owners' => 'Keine Eigentümer',
@@ -9861,7 +10389,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No Permission' => 'Keine Berechtigung',
       'No Portal Content' => 'Kein Portal-Inhalt',
       'No Projects' => 'Keine Projekte',
-      'No Providers' => 'Keine Anbieter',
       'No Providers Configured:' => 'Keine Anbieter konfiguriert:',
       'No Public Mail' => 'Keine öffentliche Mail',
       'No REMOTE_ADDR available' => 'Keine REMOTE_ADDR verfügbar',
@@ -9909,6 +10436,7 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No active Herald rules add this package as an auditor, reviewer, or subscriber.' => 'Keine aktiven Herald-Regeln fügen dieses Paket als Prüfer, Reviewer oder Abonnent hinzu.',
       'No active Herald rules call this webhook.' => 'Keine aktiven Herald-Regeln rufen diesen Webhook auf.',
       'No active Herald rules trigger this build.' => 'Keine aktiven Herald-Regeln lösen diesen Build aus.',
+      'No active auth provider exists with name "%s".' => 'Kein aktiver Auth-Anbieter mit dem Namen "%s" vorhanden.',
       'No active repositories have outstanding errors.' => 'Keine aktiven Repositories haben ausstehende Fehler.',
       'No adapter exists for Herald content type "%s".' => 'Kein Adapter für Herald-Inhaltstyp "%s" vorhanden.',
       'No allowed editor protocols are configured.' => 'Keine erlaubten Editor-Protokolle konfiguriert.',
@@ -9919,9 +10447,9 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No artifacts found.' => 'Keine Artefakte gefunden.',
       'No attachments.' => 'Keine Anhänge.',
       'No audits match the query.' => 'Keine Audits entsprechen der Abfrage.',
+      'No auth provider exists with name "%s". Valid providers are: %s.' => 'Kein Auth-Anbieter mit dem Namen "%s" vorhanden. Gültige Anbieter sind: %s.',
       'No authored tasks.' => 'Keine erstellten Aufgaben.',
       'No authorized blueprints.' => 'Keine autorisierten Blueprints.',
-      'No backers found.' => 'Keine Unterstützer gefunden.',
       'No badges found.' => 'Keine Trophäen gefunden.',
       'No behavior option is marked as the default option (for behavior "%s"). Exactly one option must be marked as the default option.' => 'Keine Verhaltensoptionen ist als Standardoption markiert (für Verhalten "%s"). Genau eine Option muss als Standardoption markiert sein.',
       'No behavior with key "%s" exists. Valid keys are: %s.' => 'Kein Verhalten mit dem Schlüssel "%s" vorhanden. Gültige Schlüssel sind: %s.',
@@ -9939,7 +10467,7 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No changes for commit "%s".' => 'Keine Änderungen für Commit „%s".',
       'No changes to identity.' => 'Keine Änderungen an der Identität.',
       'No changes will be pushed or pulled from this URI.' => 'Es werden keine Änderungen von dieser URI gepusht oder gepullt.',
-      'No charges found.' => 'Keine Abbuchungen gefunden.',
+      'No class "%s" exists in any known library.' => 'Keine Klasse "%s" in einer bekannten Bibliothek vorhanden.',
       'No clients found.' => 'Keine Clients gefunden.',
       'No column ordering exists with key "%s".' => 'Es existiert keine Spaltensortierung mit dem Schlüssel „%s".',
       'No commands issued.' => 'Keine Befehle ausgegeben.',
@@ -9969,6 +10497,7 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No data available.' => 'Keine Daten verfügbar.',
       'No data.' => 'Keine Daten.',
       'No database connection with connection key "%s" exists!' => 'Es existiert keine Datenbankverbindung mit dem Verbindungsschlüssel "%s"!',
+      'No databases are configured.' => 'Keine Datenbanken konfiguriert.',
       'No databases have any issues.' => 'Alle Datenbanken sind in Ordnung.',
       'No default edit engine configuration for bulk edit.' => 'Keine Standard-EditEngine-Konfiguration für die Stapelbearbeitung.',
       'No description.' => 'Keine Beschreibung.',
@@ -9976,7 +10505,7 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No device or service named "%s" exists.' => 'Kein Gerät oder Dienst mit dem Namen „%s" vorhanden.',
       'No document engine can render the contents of this file.' => 'Kein Dokumentmodul kann den Inhalt dieser Datei rendern.',
       'No documents found.' => 'Keine Dokumente gefunden.',
-      'No email address set' => 'Keine E-Mail-Adresse festgelegt',
+      'No email addresses found.' => 'Keine E-Mail-Adressen gefunden.',
       'No email exists with address "%s"!' => 'Keine E-Mail mit der Adresse "%s" vorhanden!',
       'No enabled blueprints exist with a blueprint class that can plausibly allocate resources to satisfy the requested lease.' => 'Es gibt keine aktivierten Blaupausen mit einer Blaupausenklasse, die plausiblerweise Ressourcen zur Erfüllung des angeforderten Leases zuweisen kann.',
       'No errors.' => 'Keine Fehler',
@@ -9986,7 +10515,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No exports found.' => 'Keine Exporte gefunden.',
       'No external domain' => 'Keine externe Domain',
       'No external editor is configured.' => 'Kein externer Editor konfiguriert.',
-      'No extra messages for \'%s\'.' => 'Keine zusätzlichen Meldungen für \'%s\'.',
       'No fact engines support generating facts for this object.' => 'Keine Fakten-Engine unterstützt das Generieren von Fakten für dieses Objekt.',
       'No field with field key "%s" exists for objects of class "%s" with custom field role "%s".' => 'Es existiert kein Feld mit dem Feldschlüssel "%s" für Objekte der Klasse "%s" mit der Rolle für benutzerdefinierte Felder "%s".',
       'No field with key "%s" is available to Herald adapter "%s".' => 'Kein Feld mit dem Schlüssel "%s" ist für den Herald-Adapter "%s" verfügbar.',
@@ -10009,7 +10537,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No imported events.' => 'Keine importierten Ereignisse.',
       'No importing commits found.' => 'Keine importierenden Commits gefunden.',
       'No imports found.' => 'Keine Importe gefunden.',
-      'No initiatives found.' => 'Keine Initiativen gefunden.',
       'No interpreter found: %s' => 'Kein Interpreter gefunden: %s',
       'No issues.' => 'Keine Probleme.',
       'No item exists with ID "%s".' => 'Kein Element mit der ID "%s" vorhanden.',
@@ -10017,12 +10544,14 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No items found.' => 'Keine Elemente gefunden.',
       'No key "%s" exists in keyring.' => 'Kein Schlüssel "%s" im Schlüsselbund vorhanden.',
       'No key type "%s" exists.' => 'Kein Schlüsseltyp "%s" vorhanden.',
+      'No keys found.' => 'Keine Schlüssel gefunden.',
       'No known blueprint class can ever allocate the specified lease. Check that the resource type is spelled correctly.' => 'Keine bekannte Blaupausenklasse kann den angegebenen Lease je zuweisen. Prüfen, ob der Ressourcentyp korrekt geschrieben ist.',
       'No leases selected for release.' => 'Keine Leases zur Freigabe ausgewählt.',
       'No line map.' => 'Keine Zeilenkarte.',
       'No local path is configured for repository "%s".' => 'Für Repository „%s" ist kein lokaler Pfad konfiguriert.',
       'No log record exists for a daemon with ID "%s".' => 'Kein Protokolleintrag für Dämon mit ID "%s" vorhanden.',
       'No log records exist for any daemons.' => 'Keine Protokolleinträge für Dämonen vorhanden.',
+      'No macros found.' => 'Keine Makros gefunden.',
       'No mailers are configured.' => 'Keine Mailer konfiguriert.',
       'No matching SSH keys.' => 'Keine passenden SSH-Schlüssel.',
       'No matching calls in log.' => 'Keine passenden Aufrufe im Protokoll.',
@@ -10032,11 +10561,11 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No matching repositories.' => 'Keine passenden Repositories.',
       'No matching symbol could be found in any indexed repository.' => 'In keinem indizierten Repository wurde ein passendes Symbol gefunden.',
       'No menu item with key \'%s\' exists!' => 'Es gibt keinen Menüpunkt mit Schlüssel \'%s\'!',
-      'No merchants found.' => 'Keine Händler gefunden.',
       'No message type exists with key "%s".' => 'Kein Nachrichtentyp mit dem Schlüssel "%s" vorhanden.',
       'No messages for this build target.' => 'Keine Nachrichten für dieses Build-Ziel.',
       'No messages.' => 'Keine Nachrichten.',
       'No methods for this task.' => 'Keine Methoden für diese Aufgabe.',
+      'No mocks found.' => 'Keine Entwürfe gefunden.',
       'No more than 7 columns per view.' => 'Nicht mehr als 7 Spalten pro Ansicht.',
       'No new common ngrams exist for "%s".' => 'Für „%s" gibt es keine neuen häufigen N-Gramme.',
       'No notification servers are configured.' => 'Es sind keine Benachrichtigungsserver konfiguriert.',
@@ -10046,6 +10575,7 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No object exists with ID "%s".' => 'Es existiert kein Objekt mit der ID „%s".',
       'No object exists with PHID "%s".' => 'Es existiert kein Objekt mit der PHID „%s".',
       'No object exists with that name.' => 'Es existiert kein Objekt mit diesem Namen.',
+      'No object exists with this "%s".' => 'Es existiert kein Objekt mit dieser "%s".',
       'No object relationship of type "%s" exists.' => 'Es gibt keine Objektbeziehung vom Typ „%s".',
       'No object with name "%s" could be loaded.' => 'Es konnte kein Objekt mit dem Namen "%s" geladen werden.',
       'No objects found.' => 'Keine Objekte gefunden.',
@@ -10053,7 +10583,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No objects selected to index.' => 'Es wurden keine Objekte zum Indizieren ausgewählt.',
       'No one has written any blog posts yet.' => 'Noch niemand hat Blog-Beiträge geschrieben.',
       'No open, assigned tasks.' => 'Keine offenen, zugewiesenen Aufgaben.',
-      'No orders match the query.' => 'Keine Bestellungen entsprechen der Abfrage.',
       'No outbound mailer which can deliver SMS messages is configured.' => 'Kein ausgehender Mailer für SMS-Nachrichten konfiguriert.',
       'No packages found.' => 'Keine Pakete gefunden.',
       'No panels found.' => 'Keine Panels gefunden.',
@@ -10061,13 +10590,11 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No parent site' => 'Keine übergeordnete Website',
       'No parent/ancestor paths specified.' => 'Keine übergeordneten Pfade angegeben.',
       'No pastes found.' => 'Keine Pastes gefunden.',
-      'No payment methods configured.' => 'Keine Zahlungsmethoden konfiguriert',
       'No performance sampling.' => 'Kein Performance-Sampling.',
       'No permission to run "SHOW REPLICA STATUS". Grant this user "REPLICATION CLIENT" permission to allow this server to monitor replica health.' => 'Keine Berechtigung, „SHOW REPLICA STATUS" auszuführen. Erteile diesem Benutzer die Berechtigung „REPLICATION CLIENT", damit der Server den Replica-Status überwachen kann.',
       'No polls found.' => 'Eine Umfragen gefunden.',
       'No portals found.' => 'Keine Portale gefunden.',
       'No private key exists at path "%s"!' => 'Kein privater Schlüssel unter Pfad "%s" vorhanden!',
-      'No products.' => 'Keine Produkte',
       'No profiling' => 'Kein Profiling',
       'No projects found.' => 'Keine Projekte gefunden.',
       'No properties.' => 'Keine Eigenschaften.',
@@ -10075,7 +10602,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No public key exists with ID "%s".' => 'Kein öffentlicher Schlüssel mit der ID "%s" vorhanden.',
       'No public key was provided.' => 'Es wurde kein öffentlicher Schlüssel angegeben.',
       'No publishers found.' => 'Keine Softwareanbieter gefunden.',
-      'No purchase history.' => 'Keine Kaufhistorie.',
       'No query result to fetch from!' => 'Kein Abfrageergebnis vorhanden, aus dem gelesen werden könnte!',
       'No questions found.' => 'Keine Fragen gefunden.',
       'No queues found.' => 'Keine Warteschlangen gefunden.',
@@ -10115,19 +10641,19 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No search engines available.' => 'Keine Such-Engines verfügbar.',
       'No search engines match "%s". Available engines which support data export are: %s.' => 'Keine SearchEngines passen zu "%s". Verfügbare Engines, die den Datenexport unterstützen, sind: %s.',
       'No search servers are configured.' => 'Es sind keine Suchserver konfiguriert.',
-      'No secret scramble on non-policy edit.' => 'Kein geheimes Durchmischen bei Nicht-Richtlinien-Bearbeitung.',
       'No sent mail.' => 'Keine gesendete Mail.',
       'No services are bound to this device.' => 'Diesem Gerät sind keine Dienste zugeordnet.',
       'No services need initialization.' => 'Keine Dienste müssen initialisiert werden.',
+      'No settings available.' => 'Keine Einstellungen verfügbar.',
       'No settings panel group with key "%s" exists!' => 'Keine Einstellungsgruppe mit dem Schlüssel „%s" vorhanden!',
       'No settings panels are available.' => 'Keine Einstellungsseiten verfügbar.',
       'No signatures match the query.' => 'Keine Unterschriften entsprechen der Suchanfrage.',
-      'No sites define any routing rules.' => 'Keine Website hat Routing-Regeln definiert.',
       'No slot locks held.' => 'Keine Slot-Sperren aktiv.',
       'No source exists with ID "%s".' => 'Keine Quelle mit der ID "%s" vorhanden.',
       'No source exists with PHID "%s".' => 'Keine Quelle mit der PHID "%s" vorhanden.',
       'No source exists with a name matching "%s".' => 'Keine Quelle mit einem Namen, der "%s" entspricht, vorhanden.',
       'No source file for scale \'%s\'!' => 'Keine Quelldatei für Skalierung \'%s\'!',
+      'No source name was resolved to a phid! A source destination is required.' => 'Kein Quellname konnte zu einer PHID aufgelöst werden! Eine Quelle ist erforderlich.',
       'No sources found.' => 'Keine Quellen gefunden.',
       'No spaces found.' => 'Keine Zonen gefunden.',
       'No special rules affected this mail.' => 'Keine besonderen Regeln haben diese Mail beeinflusst.',
@@ -10142,6 +10668,7 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No such atom with node hash \'%s\'!' => 'Kein Atom mit Node-Hash \'%s\' gefunden!',
       'No such build target "%s"!' => 'Build-Ziel "%s" existiert nicht!',
       'No such buildable "%s"!' => 'Kein solcher Build-Kandidat "%s"!',
+      'No such capability exists. This is a logic error which should be reported as a bug.' => 'Diese Fähigkeit existiert nicht. Das ist ein Logikfehler, der als Bug gemeldet werden sollte.',
       'No such collector "%s". Choose a valid collector: %s.' => 'Es gibt keinen Collector "%s". Wähle einen gültigen Collector: %s.',
       'No such commit "%s"!' => 'Änderung "%s" existiert nicht!',
       'No such configuration key \'%s\'! Use `%s` to list all keys.' => 'Kein Konfigurationsschlüssel \'%s\'! `%s` verwenden, um alle Schlüssel aufzulisten.',
@@ -10158,7 +10685,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No such lease "%s"!' => 'Lease "%s" existiert nicht!',
       'No such macro.' => 'Dieses Makro existiert nicht.',
       'No such object "%s" exists!' => 'Kein Objekt „%s" gefunden!',
-      'No such object "%s" exists.' => 'Objekt "%s" existiert nicht.',
       'No such object "%s"!' => 'Kein Objekt „%s" gefunden!',
       'No such object \'%s\'!' => 'Objekt \'%s\' nicht gefunden!',
       'No such object exists.' => 'Kein solches Objekt vorhanden.',
@@ -10177,7 +10703,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No such user with username "%s"!' => 'Benutzer mit dem Namen "%s" existiert nicht!',
       'No such variable \'%s\'!' => 'Variable \'%s\' existiert nicht!',
       'No support for applying operator "%s" against index of type "%s".' => 'Operator „%s" kann nicht auf Index vom Typ „%s" angewendet werden.',
-      'No support yet.' => 'Noch keine Unterstützung.',
       'No supported transforms are available for this file format.' => 'Für dieses Dateiformat sind keine unterstützten Umwandlungen verfügbar.',
       'No synchronization changes for "%s".' => 'Keine Synchronisierungsänderungen für "%s".',
       'No task with ID "%s" matches the constraints!' => 'Keine Aufgabe mit ID "%s" entspricht den Einschränkungen!',
@@ -10188,15 +10713,16 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'No tasks have positive points.' => 'Keine Aufgaben haben positive Punkte.',
       'No tasks selected to cancel.' => 'Keine Aufgaben zum Abbrechen ausgewählt.',
       'No tasks selected to delay.' => 'Keine Aufgaben zum Verzögern ausgewählt.',
+      'No tasks selected to describe.' => 'Keine Aufgaben zum Beschreiben ausgewählt.',
       'No tasks selected to execute.' => 'Keine Aufgaben zum Ausführen ausgewählt.',
       'No tasks selected to free leases on.' => 'Keine Aufgaben zum Freigeben von Leases ausgewählt.',
       'No tasks selected to reprioritize.' => 'Keine Aufgaben zur Neuprioritisierung ausgewählt.',
       'No tasks selected to retry.' => 'Keine Aufgaben zum erneuten Ausführen ausgewählt.',
       'No tasks.' => 'Keine Aufgaben.',
-      'No test data for callsign \'%s\'. Expected an archive like \'%s\' in \'%s\'.' => 'Keine Testdaten für Rufzeichen \'%s\'. Erwartet wurde ein Archiv wie \'%s\' in \'%s\'.',
-      'No test entry for commit "%s" in repository "%s"!' => 'Kein Testeintrag für Commit „%s" im Repository „%s"!',
       'No time specified.' => 'Keine Zeit angegeben.',
       'No topic set' => 'Kein Thema gesetzt',
+      'No transaction quey implementation matches phid type "%s"' => 'Keine Transaktionsabfrage-Implementierung passt zum PHID-Typ "%s"',
+      'No transactions found.' => 'Keine Transaktionen gefunden.',
       'No transcripts found.' => 'Keine Ablaufprotokolle gefunden.',
       'No trigger exists with id "%s"!' => 'Es gibt keinen Trigger mit der ID "%s"!',
       'No triggers found.' => 'Keine Auslöser gefunden.',
@@ -10221,6 +10747,7 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'Non existent user PHID.' => 'Nicht existenter Benutzer-PHID.',
       'Non-cluster Devices Only' => 'Nur Nicht-Cluster-Geräte',
       'None' => 'Keine',
+      'None found.' => 'Keine gefunden.',
       'None of the caches on this page can be cleared.' => 'Keiner der Caches auf dieser Seite kann geleert werden.',
       'None of the fields on this object support templating.' => 'Keines der Felder dieses Objektes unterstützt Vorlagen.',
       'None of the provided addresses are valid invite recipients. Review the table below for details. Revise the address list to continue.' => 'Keine der angegebenen Adressen sind gültige Einladungsempfänger. Überprüfe die Tabelle unten für Details. Überarbeite die Adressliste, um fortzufahren.',
@@ -10237,7 +10764,6 @@ HINWEIS: Bevor Du die Warteschlange deaktivierst, stelle sicher, dass @{config:a
       'Normal Object' => 'Normales Objekt',
       'Normal Project' => 'Normales Projekt',
       'Normal Security Restored' => 'Normale Sicherheitsstufe wiederhergestellt',
-      'Normalization of \'%s\'' => 'Normalisierung von „%s"',
       'Normally, Differential revisions remain on the dashboard when they are "Accepted", and the author then commits the changes to "Close" the revision and move it off the dashboard.
 
 If you have an unusual workflow where Differential is used for post-commit review (normally called "Audit", elsewhere), you can set this flag to treat the "Accepted" state as a "Closed" state and end the review workflow early.
@@ -10327,6 +10853,10 @@ Wenn Updates stets eine erneute Überprüfung erfordern sollen, kannst Du die "K
       'Not an Administrator' => 'Kein Administrator',
       'Not an Edit Form' => 'Kein Bearbeitungsformular',
       'Not an action menu event!' => 'Kein Aktionsmenü-Ereignis!',
+      'Not an ext key? %s
+' => 'Kein Erweiterungsschlüssel? %s
+',
+      'Not deleting library from disk, as it\'s a git repository and might have local changes. To remove, run `%s` .' => 'Die Bibliothek wird nicht von der Festplatte gelöscht, da sie ein Git-Repository ist und lokale Änderungen enthalten könnte. Zum Entfernen führe `%s` aus.',
       'Not enough process slots to schedule the other %s repository(s) for updates yet.' => 'Noch nicht genug Prozess-Slots verfügbar, um die übrigen %s Repository(s) für Aktualisierungen einzuplanen.',
       'Not found in graph cache.' => 'Nicht im Graph-Cache gefunden.',
       'Not in Queue' => 'Nicht in Warteschlange',
@@ -10340,6 +10870,7 @@ Wenn Updates stets eine erneute Überprüfung erfordern sollen, kannst Du die "K
       'Note: Removing an email address from your account will invalidate any outstanding password reset links.' => 'Hinweis: Das Entfernen einer E-Mail-Adresse macht alle offenen Links zum Zurücksetzen des Passworts ungültig.',
       'Note: Unlinking an authentication provider will terminate any other active login sessions.' => 'Hinweis: Wenn Du die Verknüpfung mit einem Authentifizierungsanbieter aufhebst, werden alle anderen aktiven Anmeldesitzungen beendet.',
       'Notes' => 'Notizen',
+      'Notes and Warnings' => 'Notizen und Warnungen',
       'Nothing Uploaded' => 'Nichts hochgeladen',
       'Nothing specified to rebuild. Use flags to choose which identities to rebuild, or "--help" for help.' => 'Es wurde nichts zum Neuaufbau angegeben. Verwende Flags, um auszuwählen, welche Identitäten neu aufgebaut werden sollen, oder "--help" für Hilfe.',
       'Notice' => 'Hinweis',
@@ -10371,11 +10902,13 @@ Wenn Updates stets eine erneute Überprüfung erfordern sollen, kannst Du die "K
       'Nuance Items' => 'Nuance-Elemente',
       'Nuance Queues' => 'Nuance-Warteschlangen',
       'Nuance Sources' => 'Nuance-Quellen',
+      'Null policy' => 'Null-Richtlinie',
       'Nullable' => 'Nullable',
       'Number' => 'Nummer',
       'Number Already Primary' => 'Nummer bereits primär',
       'Number Disabled' => 'Nummer deaktiviert',
       'Number of days back (default 30).' => 'Anzahl der zurückliegenden Tage (Standard 30).',
+      'Number of paths passed to `%s` at once.' => 'Anzahl der Pfade, die auf einmal an `%s` übergeben werden.',
       'Numbered List' => 'Numerierte Liste',
       'OAuth Access Token' => 'OAuth-Zugriffstoken',
       'OAuth App ID' => 'OAuth-App-ID',
@@ -10416,7 +10949,6 @@ Wenn Updates stets eine erneute Überprüfung erfordern sollen, kannst Du die "K
       'OK: Ignored event.' => 'OK: Ereignis ignoriert.',
       'OK: No Harbormaster target PHID.' => 'OK: Keine Harbormaster-Ziel-PHID.',
       'OK: Processed event.' => 'OK: Ereignis verarbeitet.',
-      'OLD MySQL VERSION' => 'ALTE MySQL-VERSION',
       'OOPS' => 'OOPS',
       'OPTIMIZE' => 'OPTIMIEREN',
       'OPTIMIZED' => 'OPTIMIERT',
@@ -10427,8 +10959,6 @@ Wenn Updates stets eine erneute Überprüfung erfordern sollen, kannst Du die "K
       'OPcache Not Configured for Production' => 'OPcache nicht für Produktion konfiguriert',
       'OPcache is not configured ideally for production.' => 'OPcache ist für die Produktion nicht optimal konfiguriert.',
       'OPcache is not configured properly for development.' => 'OPcache ist für die Entwicklung nicht richtig konfiguriert.',
-      'ORDER CONTENTS' => 'BESTELLINHALT',
-      'ORDER DETAIL' => 'BESTELLDETAIL',
       'OVERRIDDEN' => 'ÜBERSCHRIEBEN',
       'OVERSIZED FILE
 This repository ("%s") is configured with a maximum individual file size limit, but you are pushing a change ("%s") which causes the size of a file ("%s") to exceed the limit. The commit makes the file %s bytes long, but the limit for this repository is %s bytes.' => 'ÜBERDIMENSIONIERTE DATEI
@@ -10436,7 +10966,6 @@ Dieses Repository ("%s") ist mit einem maximalen Dateigrößenlimit konfiguriert
       'OVERWRITE' => 'ÜBERSCHREIBEN',
       'Object' => 'Objekt',
       'Object "%s" can not be destroyed (it does not implement %s).' => 'Objekt „%s" kann nicht vernichtet werden (implementiert %s nicht).',
-      'Object "%s" does not implement interface "%s". Autotargets may only be queried for buildable objects.' => 'Objekt "%s" implementiert Schnittstelle "%s" nicht. Auto-Ziele können nur für buildbare Objekte abgefragt werden.',
       'Object "%s" exists, but does not have a URI to redirect to.' => 'Objekt „%s" existiert, hat aber keine URI für eine Weiterleitung.',
       'Object "%s" is not a Harbormaster Buildable!' => 'Objekt "%s" ist kein Harbormaster-Build-Kandidat!',
       'Object "%s" is not a HarbormasterBuildable (it is a "%s"). Name one or more buildables to publish, like "B123".' => 'Objekt "%s" ist kein Harbormaster-Build-Kandidat (es ist ein "%s"). Einen oder mehrere zu veröffentlichende Build-Kandidaten angeben, z.B. "B123".',
@@ -10446,6 +10975,7 @@ Dieses Repository ("%s") ist mit einem maximalen Dateigrößenlimit konfiguriert
       'Object "%s" is specified more than once. Specify only unique objects.' => 'Objekt "%s" wurde mehr als einmal angegeben. Gib nur eindeutige Objekte an.',
       'Object "%s" must be a Differential revision.' => 'Objekt "%s" muss eine Differential-Version sein.',
       'Object "%s" specified by "--revision" must be a Differential revision.' => 'Objekt "%s", angegeben mit "--revision", muss eine Differential-Version sein.',
+      'Object "%s" was not found' => 'Objekt "%s" wurde nicht gefunden',
       'Object "%s" was previously uploaded, but no longer exists on this server.' => 'Objekt "%s" wurde zuvor hochgeladen, existiert aber nicht mehr auf diesem Server.',
       'Object ("%s") claims "%s" is a GitHub repository URI, but the domain does not appear to be GitHub.' => 'Objekt ("%s") gibt an, "%s" sei eine GitHub-Repository-URI, aber die Domain scheint kein GitHub zu sein.',
       'Object ("%s") claims "%s" is a GitHub repository URI, but the path ("%s") does not have enough components (expected at least two).' => 'Objekt ("%s") gibt an, "%s" sei eine GitHub-Repository-URI, aber der Pfad ("%s") hat zu wenige Bestandteile (mindestens zwei erwartet).',
@@ -10473,8 +11003,6 @@ Dieses Repository ("%s") ist mit einem maximalen Dateigrößenlimit konfiguriert
       'Object Types' => 'Objekttypen',
       'Object URI' => 'Objekt-URI',
       'Object Updated' => 'Objekt aktualisiert',
-      'Object Visible to Author' => 'Objekt für Autor sichtbar',
-      'Object Visible to Others' => 'Objekt für andere sichtbar',
       'Object edit policy can not be unlocked because this object does not have a mutable edit policy.' => 'Die Bearbeitungsrichtlinie des Objekts kann nicht entsperrt werden, weil dieses Objekt keine änderbare Bearbeitungsrichtlinie hat.',
       'Object has no followers or active/passive users.' => 'Objekt hat keine Follower oder aktive/passive Benutzer.',
       'Object is of wrong type for adapter!' => 'Objekt hat den falschen Typ für den Adapter!',
@@ -10485,40 +11013,108 @@ Dieses Repository ("%s") ist mit einem maximalen Dateigrößenlimit konfiguriert
       'Object rules inherit the edit policies of their objects.' => 'Objektregeln erben die Bearbeitungsrichtlinien ihrer Objekte.',
       'Object rules notify anyone about events. They are bound to an object (like a repository) and can only act on that object. You must be able to edit an object to create object rules for it. Other users who can edit the object can edit its rules.' => 'Objektregeln benachrichtigen jeden über Ereignisse. Sie sind an ein Objekt (z.B. ein Repository) gebunden und können nur auf dieses Objekt wirken. Um Objektregeln für ein Objekt erstellen zu können, muss es bearbeitbar sein. Andere Benutzer, die das Objekt bearbeiten können, können auch dessen Regeln bearbeiten.',
       'Object state prevented rule evaluation.' => 'Objektzustand hat die Regelauswertung verhindert.',
+      'Object to show transactions for.' => 'Objekt, dessen Transaktionen angezeigt werden sollen.',
       'Object types to reindex, like "task", "commit" or "revision".' => 'Objekttypen zum Neuindizieren, etwa „task“, „commit“ oder „revision“.',
       'Object view policy can not be unlocked because this object does not have a mutable view policy.' => 'Die Ansichtsrichtlinie des Objekts kann nicht entsperrt werden, weil dieses Objekt keine änderbare Ansichtsrichtlinie hat.',
       'Object with Color' => 'Objekt mit Farbe',
+      'Object with this "%s" does not implement interface "%s". Autotargets may only be queried for buildable objects.' => 'Das Objekt mit dieser "%s" implementiert die Schnittstelle "%s" nicht. Auto-Ziele können nur für buildbare Objekte abgefragt werden.',
       'Objects' => 'Objekte',
+      'Objects matching your query are returned as a list of dictionaries in the
+`data` property of the results. Each dictionary has some metadata and a
+`fields` key, which contains the information about the object that most callers
+will be interested in.
+
+For example, the results may look something like this:
+
+```lang=json, name="Example Results"
+{
+  ...
+  "data": [
+    {
+      "id": 123,
+      "phid": "PHID-WXYZ-1111",
+      "fields": {
+        "name": "First Example Object",
+        "authorPHID": "PHID-USER-2222"
+      }
+    },
+    {
+      "id": 124,
+      "phid": "PHID-WXYZ-3333",
+      "fields": {
+        "name": "Second Example Object",
+        "authorPHID": "PHID-USER-4444"
+      }
+    },
+    ...
+  ]
+  ...
+}
+```
+
+This result structure is standardized across all search methods, but the
+available fields differ from application to application.
+
+These are the fields available on this object type:' => 'Objekte, die zu Deiner Abfrage passen, werden als Liste von Dictionaries in der
+Eigenschaft `data` der Ergebnisse zurückgegeben. Jedes Dictionary enthält einige
+Metadaten und einen Schlüssel `fields` mit den Informationen über das Objekt, die
+für die meisten Aufrufer interessant sind.
+
+Die Ergebnisse könnten zum Beispiel etwa so aussehen:
+
+```lang=json, name="Example Results"
+{
+  ...
+  "data": [
+    {
+      "id": 123,
+      "phid": "PHID-WXYZ-1111",
+      "fields": {
+        "name": "First Example Object",
+        "authorPHID": "PHID-USER-2222"
+      }
+    },
+    {
+      "id": 124,
+      "phid": "PHID-WXYZ-3333",
+      "fields": {
+        "name": "Second Example Object",
+        "authorPHID": "PHID-USER-4444"
+      }
+    },
+    ...
+  ]
+  ...
+}
+```
+
+Diese Ergebnisstruktur ist bei allen Suchmethoden einheitlich, die verfügbaren Felder
+unterscheiden sich aber von Anwendung zu Anwendung.
+
+Diese Felder sind für diesen Objekttyp verfügbar:',
       'Objects will be permanently destroyed. There is no way to undo this operation or ever retrieve this data unless you maintain external backups.' => 'Objekte werden dauerhaft vernichtet. Es gibt keine Möglichkeit, diesen Vorgang rückgängig zu machen oder diese Daten jemals wiederherzustellen, sofern du keine externen Sicherungen pflegst.',
       'Observe' => 'Beobachten',
       'Obsolete' => 'Veraltet',
       'Obsolete Config' => 'Veraltete Konfiguration',
       'Obsolete Configuration Option "%s"' => 'Veraltete Konfigurationsoption "%s"',
       'Obsolete and doomed since 02/2014, see T2222.' => 'Veraltet und zum Scheitern verurteilt seit 02/2014, siehe T2222.',
-      'Obsolete. Has no effect.' => 'Veraltet. Hat keine Wirkung.',
       'Obsolete; use standard rendering events instead.' => 'Veraltet; stattdessen Standard-Rendering-Ereignisse verwenden.',
       'Occurs After' => 'Termine nach',
       'Occurs Before' => 'Termine vor',
       'October' => 'Oktober',
       'Official Business' => 'Geschäftstermin',
       'Offset' => 'Versatz',
-      'Offset for: %s' => 'Offset für: %s',
-      'Offset pages through visible objects only.' => 'Seitenversatz nur durch sichtbare Objekte.',
-      'Offset with no limit works.' => 'Versatz ohne Limit funktioniert.',
-      'Offsets work correctly.' => 'Versätze funktionieren korrekt.',
       'Oink' => 'Oink',
       'Okaaaaaaaaaaaaaay...' => 'Okaaaaaaaaaaaaaaaay...',
       'Okay' => 'Okay',
       'Old' => 'Alt',
       'Old Mode' => 'Alter Modus',
-      'Old MySQL Version' => 'Alte MySQL-Version',
       'Old Password' => 'Altes Passwort',
       'Old Transcript' => 'Alte Ablaufprotokolle',
       'Old Username' => 'Alter Benutzername',
       'Old Username: %s' => 'Alter Benutzername: %s',
       'Old Value' => 'Alter Wert',
       'Old World' => 'Altbestand',
-      'Older tasks should lease first, all else being equal.' => 'Ältere Aufgaben sollten zuerst geleast werden, wenn sonst alles gleich ist.',
       'Oldest (All)' => 'Älteste (Alle)',
       'Oldest (Pri)' => 'Älteste (Prio)',
       'Oldest open task, excluding those with priority %s' => 'Älteste offene Aufgabe, ohne Aufgaben mit Priorität %s',
@@ -10602,11 +11198,8 @@ Wenn Du "STRICT_ALL_TABLES" nicht aktivieren kannst oder willst, kannst Du diese
       'Opcode' => 'Opcode',
       'Opcode Cache' => 'Opcode-Cache',
       'Open' => 'Offen',
-      'Open Closed' => 'Offener Status als Abschluss',
       'Open Dependencies' => 'Offene Abhängigkeiten',
-      'Open Duplicate' => 'Offenes Duplikat',
       'Open File' => 'Datei öffnen',
-      'Open Initiatives' => 'Offene Initiativen',
       'Open Items' => 'Offene Elemente',
       'Open Mock' => 'Mock öffnen',
       'Open Mocks' => 'Offene Mocks',
@@ -10626,13 +11219,14 @@ Wenn Du "STRICT_ALL_TABLES" nicht aktivieren kannst oder willst, kannst Du diese
       'Opening %s failed! %s.' => 'Das Öffnen von %s ist fehlgeschlagen! %s.',
       'Operate on all files.' => 'Auf alle Dateien anwenden.',
       'Operate on files stored in a specified engine.' => 'Auf Dateien anwenden, die in einer bestimmten Engine gespeichert sind.',
+      'Operate on the database identified by __ref__.' => 'Auf der durch __ref__ bezeichneten Datenbank arbeiten.',
+      'Operate on the database server identified by __hostname__.' => 'Auf dem durch __hostname__ bezeichneten Datenbankserver arbeiten.',
       'Operation' => 'Operation',
       'Operation %d' => 'Operation %d',
       'Operation Status' => 'Operationsstatus',
       'Operation encountered an error while performing repository operations.' => 'Während der Repository-Operationen ist ein Fehler aufgetreten.',
       'Operation encountered an error.' => 'Die Operation ist auf einen Fehler gestoßen.',
       'Operations' => 'Operationen',
-      'Operator extension not available.' => 'Operatorerweiterung nicht verfügbar.',
       'Optimized table (in %sms) but it had little effect.' => 'Tabelle wurde optimiert (in %sms), hatte aber kaum Wirkung.',
       'Optimizing table "%s"."%s"...' => 'Optimiere Tabelle "%s"."%s"...',
       'Optimizing...' => 'Optimiere …',
@@ -10675,18 +11269,10 @@ Wenn Du "STRICT_ALL_TABLES" nicht aktivieren kannst oder willst, kannst Du diese
       'Orange' => 'Orange',
       'Orange Medal' => 'Orangene Medaille',
       'Order' => 'Reihenfolge',
-      'Order %d' => 'Bestellung %d',
-      'Order %d: %s' => 'Bestellung %d: %s',
       'Order By' => 'Sortierung',
-      'Order History' => 'Bestellhistorie',
-      'Order Name' => 'Auftragsname',
-      'Order Not in Review' => 'Bestellung nicht in Überprüfung',
-      'Order Status' => 'Auftragsstatus',
       'Order vector "%s" is invalid: only the last column in an order may be unique, but "%s" is a unique column and not the last column in the order.' => 'Sortiervektor „%s" ist ungültig: Nur die letzte Spalte einer Sortierung darf eindeutig sein, aber „%s" ist eine eindeutige Spalte und nicht die letzte.',
       'Order vector "%s" is invalid: the last column in an order must be a column with unique values, but "%s" is not unique.' => 'Sortiervektor „%s" ist ungültig: Die letzte Spalte einer Sortierung muss eindeutige Werte haben, aber „%s" ist nicht eindeutig.',
       'Order vector "%s" specifies order "%s" twice. Each component of an ordering must be unique.' => 'Sortiervektor „%s" gibt Sortierung „%s" zweimal an. Jede Komponente einer Sortierung muss eindeutig sein.',
-      'Orders' => 'Aufträge',
-      'Orders for %s' => 'Bestellungen für %s',
       'Organization' => 'Organisation',
       'Organization Name' => 'Organisationsname',
       'Origin' => 'Ursprung',
@@ -10711,7 +11297,6 @@ Wenn Du "STRICT_ALL_TABLES" nicht aktivieren kannst oder willst, kannst Du diese
       'Other countdown activity not listed above occurs.' => 'Andere, oben nicht aufgeführte Countdown-Aktivitäten treten auf.',
       'Other document activity not listed above occurs.' => 'Andere, oben nicht aufgeführte Dokumentaktivitäten treten auf.',
       'Other event activity not listed above occurs.' => 'Andere, oben nicht aufgeführte Ereignisaktivitäten treten auf.',
-      'Other initiative activity not listed above occurs.' => 'Andere nicht oben aufgeführte Initiativenaktivität tritt auf.',
       'Other mock activity not listed above occurs.' => 'Andere, oben nicht aufgeführte Mock-Aktivitäten treten auf.',
       'Other paste activity not listed above occurs.' => 'Andere Paste-Aktivitäten, die oben nicht aufgeführt sind, treten auf.',
       'Other poll activity not listed above occurs.' => 'Andere Umfrageaktivitäten, die oben nicht aufgeführt sind, treten auf.',
@@ -10724,16 +11309,32 @@ Wenn Du "STRICT_ALL_TABLES" nicht aktivieren kannst oder willst, kannst Du diese
       'Out of Range' => 'Außerhalb des Bereichs',
       'Outbound Mail' => 'Ausgehende Mail',
       'Outbox' => 'Postausgang',
+      'Outgoing mail is stamped with labels like `actor(alice)` which can be used to
+write client mail rules to organize mail. By default, these stamps are sent
+in an `X-Phabricator-Stamps` header.
+
+If you use a client which can not use headers to route mail (like Gmail),
+you can also include the stamps in the message body so mail rules based on
+body content can route messages.' => 'Ausgehende Mails werden mit Stempeln wie `actor(alice)` versehen, mit denen Du in
+Deinem Mailprogramm Regeln zum Sortieren der Mails schreiben kannst. Standardmäßig
+werden diese Stempel im Header `X-Phabricator-Stamps` gesendet.
+
+Wenn Du ein Mailprogramm verwendest, das Mails nicht anhand von Headern sortieren kann
+(wie Gmail), kannst Du die Stempel auch in den Nachrichtentext aufnehmen lassen,
+damit Mailregeln auf Basis des Nachrichteninhalts die Nachrichten einsortieren können.',
       'Outlines' => 'Umrisse',
       'Output Artifacts' => 'Ausgabe-Artefakte',
       'Output Format' => 'Ausgabeformat',
       'Output file "%s" already exists. Use "--overwrite" to overwrite.' => 'Ausgabedatei "%s" existiert bereits. Verwende "--overwrite", um sie zu überschreiben.',
+      'Output format. `json` or `table`.' => 'Ausgabeformat. `json` oder `table`.',
       'Output path already exists. Use "--overwrite" to overwrite it.' => 'Der Ausgabepfad existiert bereits. „--overwrite" verwenden, um zu überschreiben.',
       'Outside of the CAT scan, cats have made almost no contributions to modern medicine.' => 'Abgesehen vom CAT-Scan haben Katzen zur modernen Medizin bislang kaum etwas beigetragen.',
       'Overcooked.' => 'Übergekocht.',
       'Overridden Config' => 'Ersetzte Konfiguration',
       'Override Lock' => 'Sperre übergehen',
       'Override Task Lock' => 'Aufgabensperre übergehen',
+      'Override the default branch name for all Git repositories.' => 'Überschreibt den Standard-Branch-Namen für alle Git-Repositories.',
+      'Override the default branch name for all Mercurial repositories.' => 'Überschreibt den Standard-Branch-Namen für alle Mercurial-Repositories.',
       'Override this identity\'s assignment.' => 'Zuweisung dieser Identität überschreiben.',
       'Override translations.' => 'Übersetzungen überschreiben.',
       'Override what language files (based on filename) highlight as.' => 'Festlegen, als welche Sprache Dateien (basierend auf dem Dateinamen) hervorgehoben werden.',
@@ -10747,7 +11348,6 @@ Wenn Du "STRICT_ALL_TABLES" nicht aktivieren kannst oder willst, kannst Du diese
       'Overwrote integrity hash for file "%s".' => 'Integritäts-Hash für Datei "%s" überschrieben.',
       'Own Source Code' => 'Quellcode-Eigentümerschaft',
       'Owned' => 'Eigentum',
-      'Owned Initiatives' => 'Eigene Initiativen',
       'Owner' => 'Eigentümer',
       'Owner PHID' => 'PHID des Bearbeiters',
       'Owner Packages' => 'Eigentümer-Pakete',
@@ -10767,8 +11367,6 @@ Wenn Du "STRICT_ALL_TABLES" nicht aktivieren kannst oder willst, kannst Du diese
       'PARAMETERS' => 'PARAMETER',
       'PASTE DETAIL' => 'PASTE-DETAIL',
       'PASTE LINK' => 'PASTE-LINK',
-      'PAY NOW' => 'JETZT BEZAHLEN',
-      'PDF iterators may not be rewound. Create a new iterator to emit another PDF.' => 'PDF-Iteratoren können nicht zurückgesetzt werden. Erstelle einen neuen Iterator, um ein weiteres PDF auszugeben.',
       'PHID' => 'PHID',
       'PHID Type' => 'PHID-Typ',
       'PHID Types' => 'PHID-Typen',
@@ -10786,6 +11384,7 @@ Wenn Du "STRICT_ALL_TABLES" nicht aktivieren kannst oder willst, kannst Du diese
       'PHID of the parent project.' => 'PHID des übergeordneten Projektes.',
       'PHID of the parent task.' => 'PHID der übergeordneten Aufgabe.',
       'PHID of the policy space this object is part of.' => 'PHID des Richtlinienbereichs, zu dem dieses Objekt gehört.',
+      'PHID of the user who authored this Herald rule.' => 'PHID des Benutzers, der diese Herald-Regel erstellt hat.',
       'PHIDs' => 'PHIDs',
       'PHIDs must be a list.' => 'PHIDs müssen eine Liste sein.',
       'PHP' => 'PHP',
@@ -10805,13 +11404,11 @@ configuration value `date.timezone`.
 
 If you prefer, you can configure a default timezone here instead. To configure
 a default timezone, select a timezone from the
-[[ %s | PHP List of Supported Timezones ]].
-EOREMARKUP' => 'PHP-Datumsfunktionen geben eine Warnung aus, wenn sie aufgerufen werden, ohne dass eine Standard-Zeitzone für den Server konfiguriert ist.
+[[ %s | PHP List of Supported Timezones ]].' => 'PHP-Datumsfunktionen geben eine Warnung aus, wenn sie aufgerufen werden, ohne dass eine Standard-Zeitzone für den Server konfiguriert ist.
 
 Normalerweise konfigurierst Du eine Standard-Zeitzone in `php.ini`, indem Du den Wert `date.timezone` setzt.
 
-Wenn Du möchtest, kannst Du stattdessen hier eine Standard-Zeitzone konfigurieren. Wähle dazu eine Zeitzone aus der [[ %s | PHP-Liste der unterstützten Zeitzonen ]] aus.
-EOREMARKUP',
+Wenn Du möchtest, kannst Du stattdessen hier eine Standard-Zeitzone konfigurieren. Wähle dazu eine Zeitzone aus der [[ %s | PHP-Liste der unterstützten Zeitzonen ]] aus.',
       'PHP is Life' => 'PHP ist Leben',
       'PHP is currently configured to honor requests from any MySQL server it connects to for the content of any local file.
 
@@ -10826,9 +11423,9 @@ Diese Fähigkeit unterstützt MySQL-Abfragen vom Typ "LOAD DATA LOCAL INFILE", e
 Obwohl es normalerweise schwierig ist, diese Software dazu zu bringen, sich mit einem bösartigen MySQL-Server zu verbinden, solltest Du diese Option deaktivieren: Diese Fähigkeit ist unnötig und von Natur aus gefährlich.
 
 Um diese Option zu deaktivieren, setze: %s',
-      'PHP mailparse extension is not installed' => 'PHP mailparse-Erweiterung ist nicht installiert',
       'PHP post_max_size Not Configured' => 'PHP post_max_size nicht konfiguriert',
       'PHP version: %s' => 'PHP-Version: %s',
+      'PHP versions older then %s have known security vulnerabilities when considering PHAR files; Installing extensions from PHAR files and from the Store is therefore disabled. See %s' => 'PHP-Versionen älter als %s haben bekannte Sicherheitslücken im Umgang mit PHAR-Dateien; die Installation von Erweiterungen aus PHAR-Dateien und aus dem Store ist daher deaktiviert. Siehe %s',
       'PHPAST' => 'PHPAST',
       'PHPAST View' => 'PHPAST-Ansicht',
       'PHUIBadgeMiniView' => 'PHUIBadgeMiniView',
@@ -10876,6 +11473,7 @@ Um diese Option zu deaktivieren, setze: %s',
       'Page Saver' => 'Lesezeichen',
       'Page Shortcuts' => 'Seitenverknüpfungen',
       'Page Size' => 'Seitenformat',
+      'Page Size Limited' => 'Seitengröße begrenzt',
       'Page Titles' => 'Seitentitel',
       'Page Weight' => 'Seitengewicht',
       'Pager' => 'Seitennavigation',
@@ -10896,16 +11494,19 @@ Um diese Option zu deaktivieren, setze: %s',
       'Panels must have a title.' => 'Panele müssen einen Titel haben.',
       'Panels show queries, charts, and other information to provide insight on a particular topic.' => 'Panele zeigen Abfragen, Diagramme und andere Informationen zu einem bestimmten Thema.',
       'Panic!' => 'Panik!',
+      'Parameter "%s" includes an invalid key.' => 'Parameter "%s" enthält einen ungültigen Schlüssel.',
+      'Parameter "%s" is invalid.' => 'Parameter "%s" ist ungültig.',
       'Parameter "%s" is named "%s" in the documentation. The documentation may be out of date.' => 'Parameter „%s“ heißt in der Dokumentation „%s“. Die Dokumentation könnte veraltet sein.',
+      'Parameter "%s" is no longer supported. Use method "%s" with the "%s" constraint instead.' => 'Der Parameter "%s" wird nicht mehr unterstützt. Verwende stattdessen die Methode "%s" mit der "%s"-Einschränkung.',
       'Parameter "%s" is not a list of transactions.' => 'Parameter „%s" ist keine Transaktionsliste.',
       'Parameter "%s" is required if "%s" is provided.' => 'Parameter "%s" ist erforderlich, wenn "%s" angegeben wird.',
+      'Parameter "%s" must be a map of attachments.' => 'Parameter "%s" muss eine Map von Zusatzdaten sein.',
+      'Parameter "%s" must be a map of constraints.' => 'Parameter "%s" muss eine Map von Einschränkungen sein.',
       'Parameter "%s" must contain a list of transaction descriptions, but item with key "%s" is missing a "type" field. Each transaction must have a type field.' => 'Parameter "%s" muss eine Liste von Transaktionsbeschreibungen enthalten, aber dem Element mit dem Schlüssel "%s" fehlt ein Feld "type". Jede Transaktion muss ein Feld vom Typ "type" haben.',
       'Parameter "%s" must contain a list of transaction descriptions, but item with key "%s" is missing a "value" field. Each transaction must have a value field.' => 'Parameter "%s" muss eine Liste von Transaktionsbeschreibungen enthalten, aber dem Element mit dem Schlüssel "%s" fehlt ein Feld "value". Jede Transaktion muss ein Feld "value" haben.',
       'Parameter "%s" must contain a list of transaction descriptions, but item with key "%s" is not a dictionary.' => 'Parameter "%s" muss eine Liste von Transaktionsbeschreibungen enthalten, aber das Element mit dem Schlüssel "%s" ist kein Dictionary.',
-      'Parameter "attachments" must be a map of attachments, got "%s".' => 'Parameter „attachments" muss eine Map von Zusatzdaten sein, erhalten: „%s".',
-      'Parameter "constraints" must be a map of constraints, got "%s".' => 'Parameter „constraints" muss eine Map von Einschränkungen sein, erhalten: „%s".',
-      'Parameter "fullText" is no longer supported. Use method "maniphest.search" with the "query" constraint instead.' => 'Der Parameter "fullText" wird nicht mehr unterstützt. Verwende stattdessen die Methode "maniphest.search" mit der "query"-Einschränkung.',
       'Parameter "paths" to Conduit API method "differential.query" is no longer supported. Use the "paths" constraint to "differential.revision.search" instead. See T13639.' => 'Der Parameter "paths" der Conduit-API-Methode "differential.query" wird nicht mehr unterstützt. Verwende stattdessen die "paths"-Einschränkung von "differential.revision.search". Siehe T13639.',
+      'Parameter \'%s\' must be a valid JSON dictionary.' => 'Parameter \'%s\' muss ein gültiges JSON-Dictionary sein.',
       'Parameter to "%s" conversion in "qsprintf(...)" is not an instance of AphrontDatabaseTableRefInterface.' => 'Parameter für die Konvertierung "%s" in "qsprintf(...)" ist keine Instanz von AphrontDatabaseTableRefInterface.',
       'Parameter to "%s" conversion in "qsprintf(...)" is not an instance of PhutilOpaqueEnvelope.' => 'Parameter für die Konvertierung "%s" in "qsprintf(...)" ist keine Instanz von PhutilOpaqueEnvelope.',
       'Parameters' => 'Parameter',
@@ -10923,22 +11524,21 @@ Um diese Option zu deaktivieren, setze: %s',
       'Parent Site URI' => 'URI der übergeordneten Website',
       'Parent Task' => 'Übergeordnete Aufgabe',
       'Parent hash has already been computed!' => 'Eltern-Hash wurde bereits berechnet!',
-      'Parent of %s' => 'Elternteil von %s',
       'Parent or milestone project PHID ("%s") must be the PHID of a valid, visible project which you have permission to edit.' => 'Die PHID des übergeordneten Projekts oder Meilensteinprojekts („%s") muss die PHID eines gültigen, sichtbaren Projektes sein, das Du bearbeiten darfst.',
       'Parent or milestone project PHID ("%s") must not be a milestone. Milestones may not have subprojects or milestones.' => 'Die PHID des übergeordneten Projekts oder Meilensteinprojekts („%s") darf kein Meilenstein sein. Meilensteine können keine Teilprojekte oder Meilensteine haben.',
       'Parent project to create a milestone for.' => 'Übergeordnetes Projekt, für das ein Meilenstein erstellt werden soll.',
       'Parent projects and milestones do not support adding members. You can add members directly to any non-parent subproject.' => 'Übergeordnete Projekte und Meilensteine unterstützen das Hinzufügen von Mitgliedern nicht. Du kannst Mitglieder direkt zu jedem Teilprojekt hinzufügen, das kein übergeordnetes Projekt ist.',
       'Parent revisions of this revision.' => 'Elternversionen dieser Version.',
       'Parent task identifier "%s" does not identify a visible task.' => 'Der Bezeichner der übergeordneten Aufgabe "%s" identifiziert keine sichtbare Aufgabe.',
+      'Parent tasks' => 'Übergeordnete Aufgaben',
       'Parent tasks.' => 'Übergeordnete Aufgaben.',
       'Parents' => 'Elternknoten',
       'Parse' => 'Parsen',
       'Parse commit messages for Differential fields.' => 'Commit-Nachrichten für Differential-Felder parsen.',
-      'Parse of: %s' => 'Parse von: %s',
       'Parsed Address' => 'Geparste Adresse',
       'Parser emitted a field with key "%s", but no corresponding field definition exists.' => 'Der Parser hat ein Feld mit dem Schlüssel "%s" ausgegeben, aber es existiert keine entsprechende Felddefinition.',
       'Parsing "%s"...' => 'Verarbeite „%s"...',
-      'Parsing \'%s\'' => 'Parsing \'%s\'',
+      'Parsing input from stdin...' => 'Eingabe von stdin wird geparst...',
       'Part of the day is out of range' => 'Ein Teil des Tages liegt außerhalb des zulässigen Bereichs',
       'Part of the month is out of range' => 'Ein Teil des Monats liegt außerhalb des zulässigen Bereichs',
       'Partial' => 'Partiell',
@@ -10979,7 +11579,6 @@ Um diese Option zu deaktivieren, setze: %s',
       'Password hash \'%s\' produced a hash of length %s, but a maximum length of %s was expected.' => 'Passwort-Hash „%s" hat einen Hash der Länge %s erzeugt, aber maximal %s wurde erwartet.',
       'Password providers can\'t be linked.' => 'Passwort-Anbieter können nicht verknüpft werden.',
       'Passwords' => 'Passwörter',
-      'Past Invoices' => 'Vergangene Rechnungen',
       'Pasta Haiku' => 'Pasta-Haiku',
       'Paste' => 'Paste',
       'Paste Content' => 'Paste-Inhalt',
@@ -10998,6 +11597,8 @@ Um diese Option zu deaktivieren, setze: %s',
       'Path "%s" contains no libraries.' => 'Pfad "%s" enthält keine Bibliotheken.',
       'Path "%s" does not exist, or is not a directory.' => 'Pfad "%s" existiert nicht oder ist kein Verzeichnis.',
       'Path "%s" is not unknown.' => 'Pfad „%s" ist nicht unbekannt.',
+      'Path %s not exist.' => 'Pfad %s existiert nicht.',
+      'Path \'%s\' defined on line #%d is invalid. Paths should begin with \'%s\' and specify a path from the root of the project, like \'%s\'.' => 'Pfad \'%s\' in Zeile #%d ist ungültig. Pfade sollten mit \'%s\' beginnen und einen Pfad ab der Wurzel des Projekts angeben, etwa \'%s\'.',
       'Path Does Not Exist' => 'Pfad existiert nicht',
       'Path Exists in Repository' => 'Pfad im Repository vorhanden',
       'Path ID' => 'Pfad-ID',
@@ -11008,6 +11609,7 @@ Um diese Option zu deaktivieren, setze: %s',
       'Path specification list contains invalid value in key "%s": %s.' => 'Die Pfadangabeliste enthält einen ungültigen Wert im Schlüssel "%s": %s.',
       'Path specification list references repository PHID "%s", but that is not a valid, visible repository.' => 'Die Pfadangabeliste verweist auf Repository-PHID "%s", aber das ist kein gültiges, sichtbares Repository.',
       'Path specification must be a list of paths.' => 'Die Pfadangabe muss eine Liste von Pfaden sein.',
+      'Path to Arcanist executable.' => 'Pfad zur ausführbaren Arcanist-Datei.',
       'Path to a Diviner book configuration.' => 'Pfad zu einer Diviner-Buchkonfiguration.',
       'Path to a private key for the host.' => 'Pfad zu einem privaten Schlüssel für den Host.',
       'Path to corresponding PKCS8 key.' => 'Pfad zum entsprechenden PKCS8-Schlüssel.',
@@ -11024,43 +11626,9 @@ Um diese Option zu deaktivieren, setze: %s',
       'Pause Build' => 'Build anhalten',
       'Pause Builds' => 'Builds anhalten',
       'Pause the build.' => 'Den Build anhalten.',
-      'Pause, abort, restart, and report results for builds.
-EOREMARKUP' => 'Builds anhalten, abbrechen, neu starten und Ergebnisse melden.
-EOREMARKUP',
+      'Pause, abort, restart, and report results for builds.' => 'Builds anhalten, abbrechen, neu starten und Ergebnisse melden.',
       'Paused' => 'Angehalten',
       'Pausing' => 'Wird angehalten',
-      'Pay Now' => 'Jetzt bezahlen',
-      'Pay With' => 'Bezahlen mit',
-      'PayPal' => 'PayPal',
-      'PayPal API Password is required.' => 'PayPal-API-Passwort ist erforderlich.',
-      'PayPal API Signature is required.' => 'PayPal-API-Signatur ist erforderlich.',
-      'PayPal API Username is required.' => 'PayPal-API-Benutzername ist erforderlich.',
-      'Payable to Merchant' => 'Zahlbar an Händler',
-      'Payment Account' => 'Zahlungskonto',
-      'Payment Account: %s' => 'Zahlungskonto: %s',
-      'Payment Accounts' => 'Zahlungskonten',
-      'Payment Already Processed' => 'Zahlung bereits verarbeitet',
-      'Payment Information' => 'Zahlungsinformationen',
-      'Payment Method' => 'Zahlungsmethode',
-      'Payment Method %d' => 'Zahlungsmethode %d',
-      'Payment Method Details' => 'Details zur Zahlungsmethode',
-      'Payment Methods' => 'Zahlungsmethoden',
-      'Payment Provider Details' => 'Zahlungsanbieter-Details',
-      'Payment Provider: %s' => 'Zahlungsanbieter: %s',
-      'Payment Providers' => 'Zahlungsdienstleister',
-      'Payment for this invoice could not be processed automatically:
-
-%s' => 'Die Zahlung für diese Rechnung konnte nicht automatisch verarbeitet werden:
-
-%s',
-      'Payment for this order is on hold. You can click %s to check for updates, cancel the order, or contact the merchant for assistance.' => 'Die Zahlung für diese Bestellung ist zurückgestellt. Du kannst auf %s klicken, um nach Aktualisierungen zu suchen, die Bestellung stornieren oder den Händler um Hilfe bitten.',
-      'Payment for this order was completed.' => 'Die Zahlung für diese Bestellung wurde abgeschlossen.',
-      'Payments' => 'Zahlungen',
-      'Payments are processed securely by Stripe.' => 'Zahlungen werden sicher von Stripe verarbeitet.',
-      'Paypal API Password' => 'PayPal-API-Passwort',
-      'Paypal API Signature' => 'PayPal-API-Signatur',
-      'Paypal API Username' => 'PayPal-API-Benutzername',
-      'Paypal checkout does not match Phortune charge!' => 'PayPal-Checkout stimmt nicht mit Phortune-Abbuchung überein!',
       'Peace' => 'Frieden',
       'Peach' => 'Peach',
       'Pending' => 'Ausstehend',
@@ -11081,12 +11649,8 @@ EOREMARKUP',
       'Permanent Refs' => 'Permanente Refs',
       'Permanent failure while activating lease ("%s"): %s' => 'Dauerhafter Fehler beim Aktivieren von Lease ("%s"): %s',
       'Permanent failure while activating resource ("%s"): %s' => 'Dauerhafter Fehler beim Aktivieren von Ressource ("%s"): %s',
-      'Permanent failure!' => 'Permanenter Fehler!',
       'Permanently Destroying Data' => 'Daten dauerhaft löschen',
       'Permanently Linked' => 'Dauerhaft verknüpft',
-      'Permanently Unsubscribe' => 'Dauerhaft abmelden',
-      'Permanently Unsubscribe (%s)' => 'Dauerhaft abmelden (%s)',
-      'Permanently Unsubscribed' => 'Dauerhaft abgemeldet',
       'Permanently delete "%s"? This action can not be undone.' => '"%s" endgültig löschen? Diese Aktion kann nicht rückgängig gemacht werden.',
       'Permanently destroy all data?' => 'Alle Daten dauerhaft zerstören?',
       'Permanently destroy all storage and data.' => 'Sämtlichen Storage und alle Daten dauerhaft zerstören.',
@@ -11094,7 +11658,6 @@ EOREMARKUP',
       'Permanently destroyed %s object(s).' => '%s Objekt(e) dauerhaft vernichtet.',
       'Permanently disable specified users (admin only).' => 'Angegebene Benutzer dauerhaft deaktivieren (nur Admins).',
       'Permanently unpublish "%s"?' => '„%s" dauerhaft zurückziehen?',
-      'Permanently unsubscribe this email address (%s) from this payment account (%s)?' => 'Diese E-Mail-Adresse (%s) für dieses Zahlungskonto (%s) dauerhaft abmelden?',
       'Permission for desktop notifications was denied. Only application notifications will be sent.' => 'Die Berechtigung für Desktop-Benachrichtigungen wurde verweigert. Es werden nur Anwendungsbenachrichtigungen gesendet.',
       'Permit adjustments which truncate data. This option may destroy some data, but the lost data is usually not important (most commonly, the ends of very long object titles).' => 'Anpassungen erlauben, die Daten abschneiden. Diese Option kann einige Daten zerstören, aber die verlorenen Daten sind normalerweise nicht wichtig (meistens die Enden sehr langer Objekttitel).',
       'Permit dangerous changes to be made.' => 'Gefährliche Änderungen zulassen.',
@@ -11104,13 +11667,13 @@ EOREMARKUP',
       'Personal' => 'Persönlich',
       'Personal Account Settings' => 'Persönliche Kontoeinstellungen',
       'Personal Bookmarks' => 'Persönliche Lesezeichen',
+      'Personal Flag color' => 'Persönliche Flaggenfarbe',
       'Personal Menu Items' => 'Persönliche Menüpunkte',
       'Personal Rule' => 'Persönliche Regel',
       'Personal Saved Queries' => 'Persönlich gespeicherte Abfragen',
       'Personal Settings' => 'Persönliche Einstellungen',
       'Personal rules notify you about events. You own them, but they can only affect you. Personal rules only trigger for objects you have permission to see.' => 'Persönliche Regeln benachrichtigen Dich über Ereignisse. Sie gehören Dir, aber Sie können auch nur Dich betreffende Aktionen auslösen. Persönliche Regeln lösen nur für Objekte aus, die Du auch ansehen darfst.',
       'Personalize your Install' => 'Deine Installation personalisieren',
-      'Personnel' => 'Personal',
       'Pet Activity' => 'Hund Gassi führen',
       'Phame' => 'Phame',
       'Phame Blog' => 'Phame Blog',
@@ -11125,26 +11688,7 @@ EOREMARKUP',
       'Pholio Mock' => 'Pholio-Mock',
       'Pholio Mocks' => 'Pholio-Mocks',
       'Phone number ("%s") is not in a recognized format: expected a US number like "(555) 555-5555", or an international number like "+55 5555 555555".' => 'Telefonnummer ("%s") hat kein erkanntes Format: erwartet wird eine US-Nummer wie "(555) 555-5555" oder eine internationale Nummer wie "+55 5555 555555".',
-      'Phortune' => 'Phortune',
-      'Phortune Account' => 'Phortune-Konto',
-      'Phortune Account Email' => 'Phortune-Konto-E-Mail',
-      'Phortune Account Emails' => 'Phortune-Konto-E-Mails',
-      'Phortune Accounts' => 'Phortune-Konten',
-      'Phortune Cart' => 'Phortune-Warenkorb',
-      'Phortune Carts' => 'Phortune-Warenkörbe',
-      'Phortune Charge' => 'Phortune-Abbuchung',
-      'Phortune Charges' => 'Phortune-Abbuchungen',
-      'Phortune Merchant' => 'Phortune-Händler',
-      'Phortune Merchants' => 'Phortune-Händler',
-      'Phortune Orders' => 'Phortune-Bestellungen',
-      'Phortune Payment Method' => 'Phortune-Zahlungsmethode',
-      'Phortune Payment Methods' => 'Phortune-Zahlungsmethoden',
-      'Phortune Payment Provider' => 'Phortune-Zahlungsanbieter',
-      'Phortune Payment Providers' => 'Phortune-Zahlungsanbieter',
-      'Phortune Product' => 'Phortune-Produkt',
-      'Phortune Purchase' => 'Phortune-Kauf',
-      'Phortune Subscription' => 'Phortune-Abonnement',
-      'Phortune Subscriptions' => 'Phortune-Abonnements',
+      'PhpMimeMailParser for handling incoming mail requires the PHP mailparse extension to be installed.' => 'PhpMimeMailParser benötigt zur Verarbeitung eingehender E-Mails die PHP-Erweiterung mailparse.',
       'Phrequent' => 'Zeiterfassung',
       'Phrequent Time' => 'Phrequent-Zeit',
       'Phriction' => 'Wiki',
@@ -11181,7 +11725,6 @@ EOREMARKUP',
       'Plan Changes' => 'Änderungen planen',
       'Plan changes to a revision.' => 'Änderungen für eine Version planen.',
       'Planned Changes' => 'Änderungen geplant',
-      'Planned Changes To' => 'Änderungen geplant für',
       'Plastic Debt' => 'Plastikschuld',
       'Play Continuously' => 'Dauerhaft abspielen',
       'Play Once' => 'Einmal abspielen',
@@ -11234,6 +11777,7 @@ EOREMARKUP',
       'Popping an empty %s!' => '%s: Stack ist leer.',
       'Port' => 'Port',
       'Port for SSH connections to repositories.' => 'Port für SSH-Verbindungen zu Repositories.',
+      'Port number to connect to.' => 'Portnummer für die Verbindung.',
       'Port numbers must be between 1 and 65535, inclusive.' => 'Portnummern müssen zwischen 1 und 65535 (einschließlich) liegen.',
       'Port of the service.' => 'Port des Dienstes.',
       'Portal' => 'Portal',
@@ -11255,7 +11799,6 @@ EOREMARKUP',
       'Post title.' => 'Beiragstitel.',
       'Post visibility.' => 'Beitragssichtbarkeit.',
       'Post-commit code review and auditing. Audits you are assigned to will appear here.' => 'Code-Review und Audit nach dem Commit. Audits, denen Du zugewiesen bist, erscheinen hier.',
-      'Postal Code' => 'Postleitzahl',
       'Posts must be attached to a blog.' => 'Beiträge müssen einem Blog zugeordnet sein.',
       'Posts must have a title.' => 'Beiträge müssen einen Titel haben.',
       'Pre-Commit Review' => 'Vorab-Review',
@@ -11266,8 +11809,8 @@ EOREMARKUP',
       'Preflight' => 'Vorflug-Prüfung',
       'Prepare to upload a file.' => 'Einen Datei-Upload vorbereiten.',
       'Preparing' => 'Wird vorbereitet',
+      'Preparing queries...' => 'Abfragen werden vorbereitet...',
       'Preparing to hibernate for %s second(s).' => 'Bereite Schlafzustand für %s Sekunde(n) vor.',
-      'Preparing to invoice subscription "%s" from %s to %s.' => 'Abonnement "%s" wird von %s bis %s vorbereitet für Fakturierung.',
       'Prev' => 'Zurück',
       'Prevent' => 'Verhindern',
       'Prevent Conduit Access' => 'Conduit-Zugriff verhindern',
@@ -11287,7 +11830,6 @@ EOREMARKUP',
       'Previous Post' => 'Vorheriger Beitrag',
       'Previously Invited' => 'Bereits eingeladen',
       'Previously Unsubscribed' => 'Zuvor abgemeldet',
-      'Price' => 'Preis',
       'Prim Goldenrod' => 'Sittsames Goldgelb',
       'Primary' => 'Primäre Adresse',
       'Primary Email Unverified' => 'Primäre E-Mail-Adresse nicht bestätigt',
@@ -11296,11 +11838,11 @@ EOREMARKUP',
       'Primary email addresses can not be reassigned.' => 'Primäre E-Mail-Adressen können nicht neu zugewiesen werden.',
       'Primary hashtag.' => 'Primärer Hashtag.',
       'Primary install URI, for multi-environment installs.' => 'Primäre Installations-URI für Multi-Umgebungs-Installationen.',
+      'Primary?' => 'Primär?',
       'Primitive Security' => 'Primitive Sicherheit',
       'Print the contents of a file.' => 'Den Inhalt einer Datei ausgeben.',
       'Print the logs for all daemons, or some daemon(s) identified by ID. You can get the ID for a daemon from the Daemon Console in the web interface.' => 'Die Protokolle für alle Dämonen oder für per ID angegebene Dämon(en) ausgeben. Die ID eines Dämons findest Du in der Dämonenkonsole der Weboberfläche.',
       'Printable Page' => 'Druckbare Seite',
-      'Printable Version' => 'Druckbare Version',
       'Priorities' => 'Prioritäten',
       'Prioritized' => 'Priorisiert',
       'Priority' => 'Priorität',
@@ -11328,19 +11870,16 @@ EOREMARKUP',
       'Process is preparing to hibernate for %s second(s).' => 'Prozess bereitet sich darauf vor, für %s Sekunde(n) in den Ruhezustand zu wechseln.',
       'Process only iterator __name__.' => 'Nur Iterator __name__ verarbeiten.',
       'Process text through remarkup.' => 'Text durch Remarkup verarbeiten.',
+      'Process this message, even if it\'s a duplicate of another message. This is mostly useful when debugging issues with mail routing.' => 'Diese Nachricht verarbeiten, auch wenn sie ein Duplikat einer anderen Nachricht ist. Das ist vor allem bei der Fehlersuche im Mail-Routing nützlich.',
+      'Processed %d files.' => '%d Dateien verarbeitet.',
       'Processed %s file(s) with no errors.' => '%s Datei(en) ohne Fehler verarbeitet.',
       'Processed %s file(s), encountered %s error(s).' => '%s Datei(en) verarbeitet, %s Fehler aufgetreten.',
-      'Processed by Stripe' => 'Verarbeitet von Stripe',
       'Processing %s...' => 'Verarbeite %s...',
       'Processing Exception' => 'Verarbeitungsfehler',
       'Processing Harbormaster build log #%d...' => 'Harbormaster-Build-Protokoll #%d wird verarbeitet...',
       'Processing cursor \'%s\'.' => 'Verarbeite Cursor \'%s\'.',
       'Produce ugly (but faster) output.' => 'Hässliche (aber schnellere) Ausgabe erzeugen.',
       'Producer "%s" returned an invalid response from call to "%s". This method must return an object of class "%s", or an object which implements the "%s" interface.' => 'Producer "%s" hat aus dem Aufruf von "%s" eine ungültige Antwort zurückgegeben. Diese Methode muss ein Objekt der Klasse "%s" oder ein Objekt zurückgeben, das das Interface "%s" implementiert.',
-      'Product %d' => 'Produkt %d',
-      'Product List' => 'Produktangebot',
-      'Product: %s' => 'Produkt: %s',
-      'Products' => 'Produkte',
       'Profile' => 'Profil',
       'Profile (400px × 400px) (Image will be Public)' => 'Profil (400 px × 400 px) (Bild wird öffentlich)',
       'Profile 0.1%% of all requests' => '0,1%% aller Anfragen profilieren',
@@ -11351,6 +11890,7 @@ EOREMARKUP',
       'Profile Page' => 'Profilseite',
       'Profile Permalink' => 'Profil-Permalink',
       'Profile every request (slow)' => 'Jede Anfrage profilieren (langsam)',
+      'Profile image' => 'Profilbild',
       'Profile menu items can not be generated without an object context.' => 'Profilmenüeinträge können nicht ohne Objektkontext erzeugt werden.',
       'Profile picture' => 'Profilbild',
       'Profiler' => 'Profiler',
@@ -11393,9 +11933,6 @@ EOREMARKUP',
       'Project name.' => 'Projektname.',
       'Project names must contain at least one letter or number.' => 'Projektnamen müssen mindestens einen Buchstaben oder eine Ziffer enthalten.',
       'Project names must not be longer than %s character(s).' => 'Projektnamen dürfen nicht länger als %s Zeichen sein.',
-      'Project policy rule; user in all projects' => 'Projektrichtlinienregel; Benutzer in allen Projekten',
-      'Project policy rule; user in no projects' => 'Projektrichtlinienregel; Benutzer in keinem Projekt',
-      'Project policy rule; user in some projects' => 'Projektrichtlinienregel; Benutzer in einigen Projekten',
       'Project tag color.' => 'Farbe des Projekt-Tags.',
       'Project tags' => 'Projekt-Tags',
       'Project tags added' => 'Projekt-Tags hinzugefügt',
@@ -11421,7 +11958,6 @@ EOREMARKUP',
       'Property List' => 'Eigenschaftsliste',
       'Proto' => 'Proto',
       'Protocol' => 'Protokoll',
-      'Protocol for \'%s\'.' => 'Protokoll für \'%s\'.',
       'Protocol for URI "%s" MUST be "%s".' => 'Protokoll für URI "%s" MUSS "%s" sein.',
       'Prototype' => 'Prototyp',
       'Prototypes' => 'Prototypen',
@@ -11429,17 +11965,18 @@ EOREMARKUP',
       'Provenance' => 'Herkunft',
       'Provide MFA Credentials' => 'MFA-Zugangsdaten eingeben',
       'Provide Multi-Factor Credentials' => 'Multi-Faktor-Zugangsdaten eingeben',
+      'Provide a command to execute. This makes testing this script easier. When running normally, the command is read from the environment (%s), which is populated by sshd.' => 'Einen auszuführenden Befehl angeben. Das erleichtert das Testen dieses Skripts. Im Normalbetrieb wird der Befehl aus der Umgebung (%s) gelesen, die von sshd befüllt wird.',
       'Provide a list of notification servers to enable real-time notifications.
 
 For help setting up notification servers, see **[[ %s | %s ]]** in the
-documentation.
-EOTEXT' => 'Gib eine Liste von Benachrichtigungsservern an, um Echtzeit-Benachrichtigungen zu aktivieren.
+documentation.' => 'Gib eine Liste von Benachrichtigungsservern an, um Echtzeit-Benachrichtigungen zu aktivieren.
 
 Hilfe bei der Einrichtung von Benachrichtigungsservern findest Du in der
-Dokumentation unter **[[ %s | %s ]]**.
-EOTEXT',
+Dokumentation unter **[[ %s | %s ]]**.',
       'Provide a list of objects to index (like "D123"), or a set of query constraint flags (like "--type"), or "--all" to index all objects.' => 'Gib eine Liste zu indizierender Objekte an (etwa "D123"), oder einen Satz von Abfrage-Einschränkungsflags (wie "--type"), oder "--all", um alle Objekte zu indizieren.',
+      'Provide a name or extension id to remove' => 'Gib einen Namen oder eine Erweiterungs-ID zum Entfernen an',
       'Provide a public key, not a private key!' => 'Einen öffentlichen Schlüssel angeben, keinen privaten!',
+      'Provide a uri or extension key to install' => 'Gib eine URI oder einen Erweiterungsschlüssel zum Installieren an',
       'Provide the **Repository Root** of a Subversion repository. You can identify this by running `svn info` in a working copy. It should usually look like one of these examples:
 
 | Example Subversion URIs
@@ -11485,27 +12022,21 @@ Es **MUSS** der Root des Repositorys angegeben werden, kein Unterverzeichnis.',
       'Provided public key is not properly formatted.' => 'Der angegebene Public Key ist nicht richtig formatiert / beschädigt.',
       'Provided view is not one of the views in the list: you can only select a view which appears in the list.' => 'Die angegebene Ansicht ist keine der Ansichten in der Liste. Du kannst nur eine Ansicht auswählen, die in der Liste erscheint.',
       'Provider' => 'Anbieter',
-      'Provider %d' => 'Anbieter %d',
       'Provider Already Configured' => 'Anbieter bereits konfiguriert',
       'Provider Enabled' => 'Anbieter aktiviert',
       'Provider Type' => 'Anbietertyp',
       'Provider names can not be longer than %s characters.' => 'Anbieternamen dürfen nicht länger als %s Zeichen sein.',
       'Provider: %s' => 'Anbieter: %s',
       'Providers' => 'Anbieter',
-      'Providers have the policies of their merchant.' => 'Anbieter erben die Richtlinien ihres Händlers.',
       'Provides detailed PHP profiling information through XHProf.' => 'Bietet detaillierte PHP-Profiling-Informationen durch XHProf.',
       'Provides: %s' => 'Bietet: %s',
       'Prune ngrams present in more than this fraction of documents. Provide a value between 0.0 and 1.0.' => 'N-Gramme entfernen, die in mehr als diesem Anteil der Dokumente vorkommen. Gib einen Wert zwischen 0.0 und 1.0 an.',
       'Pterodactyl' => 'Pterodactylus',
       'Public' => 'Öffentlich',
       'Public (No Login Required)' => 'Öffentlich (Ohne Login zugänglich!)',
-      'Public + configured' => 'Öffentlich + konfiguriert',
-      'Public Access' => 'Öffentlicher Zugriff',
       'Public Key' => 'Öffentlicher Schlüssel',
       'Public Key (%s)' => 'Öffentlicher Schlüssel (%s)',
       'Public Key Error: This error usually indicates that the keypair you have configured does not have permission to access the repository.' => 'Public-Key-Fehler: Dieser Fehler deutet meist darauf hin, dass das konfigurierte Schlüsselpaar keine Berechtigung hat, auf das Repository zuzugreifen.',
-      'Public Policy (Disabled in Config)' => 'Öffentliche Richtlinie (in der Konfiguration deaktiviert)',
-      'Public Policy (Enabled in Config)' => 'Öffentliche Richtlinie (in der Konfiguration aktiviert)',
       'Public SSH Key' => 'Öffentlicher SSH-Schlüssel',
       'Public and authenticated HTTP access are both forbidden.' => 'Öffentlicher und authentifizierter HTTP-Zugriff sind beide verboten.',
       'Public email is now accepted if the associated address has a default author, and rejected otherwise.' => 'Öffentliche E-Mail wird jetzt akzeptiert, wenn die zugehörige Adresse einen Standardautor hat, und andernfalls abgelehnt.',
@@ -11564,16 +12095,11 @@ Es **MUSS** der Root des Repositorys angegeben werden, kein Unterverzeichnis.',
       'Puller PHID' => 'Pull-Benutzer-PHID',
       'Pullers' => 'Pull-Benutzer',
       'Pulling "%s"...' => '„%s" wird gepullt...',
-      'Purchase' => 'Kaufen',
-      'Purchase Cost' => 'Kaufpreis',
-      'Purchase Name' => 'Kaufname',
-      'Purchased' => 'Gekauft',
-      'Purchases have the policies of their cart.' => 'Käufe erben die Richtlinien ihres Warenkorbs.',
-      'Purchasing' => 'Wird gekauft',
       'Purge Caches' => 'Caches leeren',
       'Purge a specific set of caches.' => 'Eine bestimmte Menge von Caches leeren.',
       'Purge all caches.' => 'Alle Caches leeren.',
       'Purging "%s" cache...' => '"%s"-Cache wird geleert...',
+      'Purging old symbols...' => 'Alte Symbole werden entfernt...',
       'Purple' => 'Lila',
       'Push' => 'Push',
       'Push %d' => 'Push %d',
@@ -11606,16 +12132,123 @@ Es **MUSS** der Root des Repositorys angegeben werden, kein Unterverzeichnis.',
       'Put repositories into maintenance mode.' => 'Repositories in den Wartungsmodus versetzen.',
       'Put repository "%s" into maintenance mode.' => 'Repository „%s" in den Wartungsmodus versetzen.',
       'Put your secrets in a lockbox.' => 'Lege Deine Geheimnisse in eine sichere Box.',
-      'Pygmentize Parser: %s' => 'Pygmentize-Parser: %s',
       'Pygments should be installed and enabled to provide advanced syntax highlighting.' => 'Pygments sollte installiert und aktiviert werden, um erweitertes Syntax-Highlighting bereitzustellen.',
       'QUESTION DETAIL' => 'FRAGE DETAILS',
       'QUEUED' => 'IN WARTESCHLANGE',
-      'Qty.' => 'Menge',
       'Quack' => 'Quack',
       'Quality' => 'Qualität',
-      'Quantity' => 'Menge',
-      'Quantity must be a positive integer.' => 'Menge muss eine positive Ganzzahl sein.',
       'Queries' => 'Abfragen',
+      'Queries are limited to returning 100 results at a time. If you want fewer
+results than this, you can use `limit` to specify a smaller limit.
+
+If you want more results, you\'ll need to make additional queries to retrieve
+more pages of results.
+
+The result structure contains a `cursor` key with information you\'ll need in
+order to fetch the next page of results. After an initial query, it will
+usually look something like this:
+
+```lang=json, name="Example Cursor Result"
+{
+  ...
+  "cursor": {
+    "limit": 100,
+    "after": "1234",
+    "before": null,
+    "order": null
+  }
+  ...
+}
+```
+
+The `limit` and `order` fields are describing the effective limit and order the
+query was executed with, and are usually not of much interest. The `after` and
+`before` fields give you cursors which you can pass when making another API
+call in order to get the next (or previous) page of results.
+
+To get the next page of results, repeat your API call with all the same
+parameters as the original call, but pass the `after` cursor you received from
+the first call in the `after` parameter when making the second call.
+
+If you do things correctly, you should get the second page of results, and
+a cursor structure like this:
+
+```lang=json, name="Second Result Page"
+{
+  ...
+  "cursor": {
+    "limit": 5,
+    "after": "4567",
+    "before": "7890",
+    "order": null
+  }
+  ...
+}
+```
+
+You can now continue to the third page of results by passing the new `after`
+cursor to the `after` parameter in your third call, or return to the previous
+page of results by passing the `before` cursor to the `before` parameter. This
+might be useful if you are rendering a web UI for a user and want to provide
+"Next Page" and "Previous Page" links.
+
+If `after` is `null`, there is no next page of results available. Likewise,
+if `before` is `null`, there are no previous results available.' => 'Abfragen liefern höchstens 100 Ergebnisse auf einmal. Wenn Du weniger Ergebnisse
+möchtest, kannst Du mit `limit` eine kleinere Grenze angeben.
+
+Wenn Du mehr Ergebnisse möchtest, musst Du weitere Abfragen stellen, um weitere
+Ergebnisseiten abzurufen.
+
+Die Ergebnisstruktur enthält einen Schlüssel `cursor` mit Informationen, die Du
+brauchst, um die nächste Ergebnisseite abzurufen. Nach einer ersten Abfrage sieht er
+normalerweise etwa so aus:
+
+```lang=json, name="Example Cursor Result"
+{
+  ...
+  "cursor": {
+    "limit": 100,
+    "after": "1234",
+    "before": null,
+    "order": null
+  }
+  ...
+}
+```
+
+Die Felder `limit` und `order` beschreiben die tatsächliche Grenze und Sortierung, mit
+der die Abfrage ausgeführt wurde, und sind meist nicht sonderlich interessant. Die
+Felder `after` und `before` liefern Dir Cursor, die Du bei einem weiteren API-Aufruf
+übergeben kannst, um die nächste (oder vorherige) Ergebnisseite zu erhalten.
+
+Um die nächste Ergebnisseite zu erhalten, wiederhole Deinen API-Aufruf mit genau
+denselben Parametern wie beim ursprünglichen Aufruf, übergib beim zweiten Aufruf aber
+den `after`-Cursor aus dem ersten Aufruf im Parameter `after`.
+
+Wenn Du alles richtig machst, solltest Du die zweite Ergebnisseite erhalten und eine
+Cursor-Struktur wie diese:
+
+```lang=json, name="Second Result Page"
+{
+  ...
+  "cursor": {
+    "limit": 5,
+    "after": "4567",
+    "before": "7890",
+    "order": null
+  }
+  ...
+}
+```
+
+Du kannst nun zur dritten Ergebnisseite weitergehen, indem Du in Deinem dritten Aufruf
+den neuen `after`-Cursor im Parameter `after` übergibst, oder zur vorherigen
+Ergebnisseite zurückkehren, indem Du den `before`-Cursor im Parameter `before`
+übergibst. Das kann nützlich sein, wenn Du eine Weboberfläche für einen Benutzer
+darstellst und Links für "Nächste Seite" und "Vorherige Seite" anbieten möchtest.
+
+Wenn `after` den Wert `null` hat, gibt es keine nächste Ergebnisseite. Ebenso gibt es
+keine vorherigen Ergebnisse, wenn `before` den Wert `null` hat.',
       'Query' => 'Abfrage',
       'Query "%s" does not support a builtin order "%s". Supported orders are: %s.' => 'Abfrage „%s" unterstützt keine vordefinierte Sortierung „%s". Unterstützte Sortierungen sind: %s.',
       'Query "%s" is not a recognized query for class "%s".' => 'Abfrage „%s" ist keine bekannte Abfrage für Klasse „%s".',
@@ -11633,7 +12266,6 @@ Es **MUSS** der Root des Repositorys angegeben werden, kein Unterverzeichnis.',
       'Query Overheated' => 'Abfrage überhitzt',
       'Query Panel' => 'Abfrage Panel',
       'Query Pastes.' => 'Pastes abfragen.',
-      'Query Test Package' => 'Abfrage-Testpaket',
       'Query a git repository for ref information at a specific commit.' => 'Ein Git-Repository nach Ref-Informationen bei einem bestimmten Commit abfragen.',
       'Query audit requests.' => 'Audit-Anfragen abfragen.',
       'Query class ("%s") did not return the correct type of object from "newResultObject()" (expected a subclass of "PhabricatorLiskDAO", found "%s"). Return an object of the expected type (this is common), or implement a custom "loadPage()" method (this is unusual in modern code).' => 'Abfrageklasse „%s" hat in „newResultObject()" keinen korrekten Objekttyp zurückgegeben (erwartet: Unterklasse von „PhabricatorLiskDAO", gefunden: „%s"). Gib ein Objekt des erwarteten Typs zurück (üblich) oder implementiere eine eigene „loadPage()"-Methode (in modernem Code ungewöhnlich).',
@@ -11652,7 +12284,6 @@ Es **MUSS** der Root des Repositorys angegeben werden, kein Unterverzeichnis.',
       'Query has too many search tokens (%s tokens, maximum is %s tokens). Please use more specific search criteria.' => 'Die Abfrage enthält zu viele Such-Tokens (%s Tokens, maximal sind %s Tokens). Bitte verwende spezifischere Suchkriterien.',
       'Query information about build artifacts.' => 'Informationen über Build-Artefakte abfragen.',
       'Query is too long (%s bytes, maximum is %s bytes). Please use more specific search criteria.' => 'Die Abfrage ist zu lang (%s Byte, maximal sind %s Byte). Bitte verwende spezifischere Suchkriterien.',
-      'Query key "%s" does not correspond to a valid query.' => 'Abfrageschlüssel „%s" entspricht keiner gültigen Abfrage.',
       'Query key "%s" does not identify a valid event query.' => 'Abfrageschlüssel "%s" identifiziert keine gültige Ereignisabfrage.',
       'Query may not have multiple fulltext constraints.' => 'Eine Abfrage darf nicht mehrere Volltext-Einschränkungen haben.',
       'Query offset is too large. offset+limit=%s (max=%s)' => 'Der Abfrage-Offset ist zu groß. offset+limit=%s (max=%s)',
@@ -11733,14 +12364,12 @@ Es **MUSS** der Root des Repositorys angegeben werden, kein Unterverzeichnis.',
       'Raise Concern' => 'Bedenken melden',
       'Raised Concern' => 'Problem gemeldet',
       'Raised Priority' => 'Priorität erhöht',
-      'Range (%s - %s) is not valid!' => 'Bereich (%s - %s) ist ungültig!',
       'Rank: Ace' => 'Rang: Ass',
       'Rare' => 'Selten',
       'Rarity (Most Common First)' => 'Seltenheit (gewöhnlichste zuerst)',
       'Rarity (Rarest First)' => 'Seltenheit (seltenste zuerst)',
       'Rate' => 'Rate',
       'Rate Limiting Actions' => 'Aktionen mit Ratenbegrenzung',
-      'Rats' => 'Mist!',
       'Rats!' => 'Ihr Ratten!',
       'Raw' => 'Rohdaten',
       'Raw Address' => 'Rohe Adresse',
@@ -11754,12 +12383,12 @@ Es **MUSS** der Root des Repositorys angegeben werden, kein Unterverzeichnis.',
       'Raw Error' => 'Rohfehler',
       'Raw Event' => 'Rohereignis',
       'Raw File' => 'Rohdatei',
+      'Raw MySQL Error' => 'MySQL-Rohfehler',
       'Raw Query' => 'Rohabfrage',
       'Raw query to execute.' => 'Rohabfrage, die ausgeführt werden soll.',
       'Re-enable specified users (admin only).' => 'Angegebene Benutzer wieder aktivieren (nur Admins).',
       'Re-encode files which are already stored in the target encoding.' => 'Dateien, die bereits in der Zielkodierung gespeichert sind, neu kodieren.',
       'Reached TOTP challenge validation with an unexpected number of unexpired challenges (%s), expected exactly one.' => 'Bei der Validierung der TOTP-Challenge wurde eine unerwartete Anzahl nicht abgelaufener Challenges erreicht (%s), erwartet wurde genau eine.',
-      'Reached an unreachable place.' => 'Einen unerreichbaren Ort erreicht.',
       'Reacquiring Resource' => 'Ressource wird erneut erworben',
       'React to Herald rules being created or updated.' => 'Auf erstellte oder aktualisierte Herald-Regeln reagieren.',
       'React to Phame Blogs being created or updated.' => 'Auf Erstellung oder Aktualisierung von Phame-Blogs reagieren.',
@@ -11832,7 +12461,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Read more...' => 'Weiter...',
       'Read option value from stdin.' => 'Optionswert von stdin lesen.',
       'Read raw information about commits.' => 'Rohinformationen über Commits lesen.',
-      'Read the header \'%s\' from the test email %s' => 'Header \'%s\' aus der Test-Email %s gelesen',
       'Read transactions and comments for a particular object or an entire object type.' => 'Transaktionen und Kommentare für ein bestimmtes Objekt oder einen ganzen Objekttyp lesen.',
       'Read-Only' => 'Nur lesen',
       'Read-only mode was enabled by the explicit action of a human administrator, so you can get more information about why it has been turned on by rolling your chair away from your desk and yelling "Hey! Why is %s in read-only mode??!" using your very loudest outside voice.' => 'Der Nur-Lese-Modus wurde ausdrücklich von einem menschlichen Administrator aktiviert. Du kannst also mehr darüber erfahren, warum er eingeschaltet wurde, indem du deinen Stuhl vom Schreibtisch wegrollst und mit deiner lautesten Außenstimme "Hey! Warum ist %s im Nur-Lese-Modus??!" rufst.',
@@ -11848,8 +12476,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Reading log content from stdin...' => 'Protokollinhalt von stdin wird gelesen...',
       'Reading message body from stdin...' => 'Nachrichteninhalt von stdin lesen...',
       'Reading value from stdin...' => 'Wert wird von stdin gelesen...',
-      'Reads inside transactions should have transaction visibility.' => 'Lesezugriffe innerhalb von Transaktionen sollten Transaktionssichtbarkeit haben.',
-      'Ready' => 'Bereit',
       'Ready to Audit' => 'Bereit zur Überprüfung',
       'Ready to Land' => 'Bereit zum Einbringen',
       'Ready to Review' => 'Bereit zur Überprüfung',
@@ -11857,6 +12483,7 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Real' => 'Echter Name',
       'Real Name' => 'Voller Name',
       'Real Name must have no more than %s characters.' => 'Echtname darf nicht mehr als %s Zeichen haben.',
+      'Real name' => 'Voller Name',
       'Real name is required.' => 'Ohne Angabe des vollen Namens geht es nicht.',
       'Real-Time Updates and Alerts' => 'Echtzeit-Aktualisierungen und Benachrichtigungen',
       'Real-time notifications can be delivered with WebSockets.' => 'Echtzeit-Benachrichtigungen können mit WebSockets übermittelt werden.',
@@ -11871,8 +12498,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Really activate project?' => 'Projekt wirklich aktivieren?',
       'Really archive project?' => 'Wirklich das Projekt archivieren?',
       'Really attach the file %s to the object %s, allowing any user who can view the object to view and download the file?' => 'Datei %s wirklich mit Objekt %s verknüpfen und damit jedem Benutzer, der das Objekt sehen kann, erlauben, die Datei anzusehen und herunterzuladen?',
-      'Really cancel this order? Any payment will be refunded.' => 'Diese Bestellung wirklich stornieren? Alle Zahlungen werden erstattet.Wirklich diesen Auftrag stornieren? Etwaige Zahlungen werden rückerstattet.',
-      'Really close this initiative? Users will no longer be able to back it.' => 'Diese Initiative wirklich schließen? Benutzer werden sie nicht mehr unterstützen können.',
       'Really delete address \'%s\'?' => 'Wirklich die Adresse \'%s\' löschen?',
       'Really delete comment?' => 'Kommentar wirklich löschen?',
       'Really delete file?' => 'Diese Datei wirklich löschen?',
@@ -11891,17 +12516,14 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Really enable the %s OAuth application? Users will be able to authenticate against it, and existing tokens will become usable again.' => 'Die OAuth-Anwendung %s wirklich aktivieren? Benutzer können sich dann damit authentifizieren, und bestehende Tokens werden wieder verwendbar.',
       'Really enable this rule?' => 'Wirklich diese Regel aktivieren?',
       'Really ignore this setup issue?' => 'Dieses Setup-Problem wirklich ignorieren?',
-      'Really invoice this subscription?' => 'Dieses Abonnement wirklich fakturieren?',
       'Really mark all notifications as read?' => 'Wirklich alle Benachrichtigungen als Gelesen markieren?',
       'Really pause %s build(s)?' => '%s Build(s) wirklich anhalten?',
       'Really pause build?' => 'Build wirklich anhalten?',
-      'Really refund this order?' => 'Wirklich diesen Auftrag rückabwickeln?',
       'Really release resource?' => 'Ressource wirklich freigeben?',
       'Really remove the authentication factor %s from your account?' => 'Den Authentifizierungsfaktor %s wirklich aus Deinem Konto entfernen?',
       'Really remove the trigger from this column?' => 'Auslöser wirklich von dieser Spalte entfernen?',
       'Really remove this comment?' => 'Diesen Kommentar wirklich entfernen?',
       'Really remove this tab?' => 'Diesen Tab wirklich entfernen?',
-      'Really reopen this initiative?' => 'Diese Initiative wirklich wieder öffnen?',
       'Really rescind this lovely token?' => 'Diese wunderschöne Trophäe wirklich zurücknehmen?',
       'Really restart %s build(s)?' => '%s Build(s) wirklich neu starten?',
       'Really restart build?' => 'Build wirklich neu starten?',
@@ -11918,7 +12540,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Really terminate this token? Any system using this token will no longer be able to make API requests.' => 'Dieses Token wirklich beenden? Jedes System, das dieses Token verwendet, kann danach keine API-Anfragen mehr ausführen.',
       'Really trust this PKCS8 keyfile?' => 'Diese PKCS8-Schlüsseldatei wirklich als vertrauenswürdig einstufen?',
       'Really trust this key?' => 'Diesen Schlüssel wirklich als vertrauenswürdig einstufen?',
-      'Really void this invoice? The customer will no longer be asked to submit payment for it.' => 'Diese Rechnung wirklich stornieren? Der Kunde wird dann nicht mehr aufgefordert, sie zu bezahlen.',
       'Realname Attributes' => 'Klarname-Attribute',
       'Realtime' => 'Echtzeit',
       'Reasons' => 'Gründe',
@@ -11961,7 +12582,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Rebuilt identities for "%s".' => 'Identitäten für „%s" neu aufgebaut.',
       'Recaptcha private key, obtained by signing up for Recaptcha.' => 'Recaptcha-privater Schlüssel, durch Anmeldung bei Recaptcha erhalten.',
       'Recaptcha public key, obtained by signing up for Recaptcha.' => 'Recaptcha-öffentlicher Schlüssel, durch Anmeldung bei Recaptcha erhalten.',
-      'Receipts' => 'Quittungen',
       'Received' => 'Empfangen',
       'Received "multipart/form-data" request with no "boundary".' => '"multipart/form-data"-Anfrage ohne "boundary" empfangen.',
       'Received Badges' => 'Erhaltene Abzeichen',
@@ -11972,15 +12592,12 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Receiving email addresses' => 'Empfangende Email-Adressen',
       'Recent Activity' => 'Neueste Änderungen',
       'Recent Builds' => 'Neuere Builds',
-      'Recent Charges' => 'Aktuelle Abbuchungen',
       'Recent Commits' => 'Neueste Commits',
       'Recent Open Revisions' => 'Kürzlich offene Versionen',
-      'Recent Orders' => 'Neueste Aufträge',
       'Recent Posts' => 'Neueste Beiträge',
       'Recent Questions' => 'Aktuelle Fragen',
       'Recent Requests' => 'Neuere Anfragen',
       'Recent Revisions' => 'Neueste Revisionen',
-      'Recent Similar Revisions' => 'Ähnliche kürzliche Versionen',
       'Recently Closed' => 'Vor kurzem abgeschlossen',
       'Recently Completed Tasks (Last 15m)' => 'Kürzlich abgeschlossene Aufgaben (letzte 15 Min)',
       'Recently Means' => '„Kürzlich“ bedeutet',
@@ -12011,6 +12628,7 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Redirect URI' => 'Umleitungs-URI',
       'Redirect URI in request and no redirect URI in authorization code. The two must exactly match.' => 'Umleitungs-URI in der Anfrage und keine Umleitungs-URI im Autorisierungscode. Die beiden müssen genau übereinstimmen.',
       'Redirect URI in request must exactly match redirect URI from authorization code.' => 'Die Umleitungs-URI in der Anfrage muss genau mit der Umleitungs-URI aus dem Autorisierungscode übereinstimmen.',
+      'Redirect logged-out users to login.' => 'Abgemeldete Benutzer zur Anmeldung weiterleiten.',
       'Reef' => 'Riff',
       'Ref' => 'Ref',
       'Ref "%s"' => 'Ref "%s"',
@@ -12031,7 +12649,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Reference' => 'Referenz',
       'Reference: Advanced Functions' => 'Referenz: Erweiterte Funktionen',
       'Referenced' => 'Referenziert',
-      'Referenced File Visibility' => 'Sichtbarkeit referenzierter Dateien',
       'Referenced Files' => 'Referenzierte Dateien',
       'References' => 'Referenzen',
       'References a host lease from Drydock.' => 'Referenziert eine Host-Lease aus Drydock.',
@@ -12047,13 +12664,8 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Refreshing account #%d.' => 'Konto #%d wird aktualisiert.',
       'Refreshing token, current token expires in %s seconds.' => 'Token wird erneuert, aktueller Token läuft in %s Sekunden ab.',
       'Refs' => 'Refs',
-      'Refund' => 'Erstattung',
-      'Refund Order' => 'Bestellung erstatten',
-      'Refund Order?' => 'Auftrag rückabwickeln?',
-      'Refunded' => 'Erstattet',
       'Refusing to assess image dimensions of chunked file.' => 'Bilddimensionen einer gesplitteten Datei werden nicht bewertet.',
       'Refusing to assess image dimensions of file chunk.' => 'Bilddimensionen eines Datei-Chunks werden nicht bewertet.',
-      'Refusing to generate a subscription invoice for a billing period which ends in the future.' => 'Es wird keine Abonnementrechnung für einen Abrechnungszeitraum erzeugt, der in der Zukunft endet.',
       'Refusing to list potentially dangerous ref ("%s") beginning with "-".' => 'Potenziell gefährlicher Ref ("%s"), der mit "-" beginnt, wird nicht aufgelistet.',
       'Refusing to proxy a request to IP address ("%s") which is not in the cluster address block (this address was derived by resolving the domain "%s").' => 'Das Proxying einer Anfrage an die IP-Adresse ("%s") wird verweigert, weil sie nicht im Cluster-Adressblock liegt (diese Adresse wurde durch Auflösung der Domain "%s" ermittelt).',
       'Refusing to redirect to external URI "%s". This URI is not a valid remote web resource.' => 'Weiterleitung zu externer URI "%s" wird verweigert. Diese URI ist keine gültige entfernte Web-Ressource.',
@@ -12130,6 +12742,7 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Reloading process %d...' => 'Prozess %d wird neu geladen...',
       'Remarkup' => 'Remarkup',
       'Remarkup Example' => 'Remarkup-Beispiel',
+      'Remarkup Reference' => 'Remarkup-Referenz',
       'Remarkup rule precedence is dangerous: rendering text with tokens as flat text!' => 'Die Priorität der Remarkup-Regeln ist gefährlich: Text mit Tokens wird als Flachtext gerendert!',
       'Remarkup text.' => 'Remarkup-Text.',
       'Remote Address' => 'Remote-Adresse',
@@ -12140,7 +12753,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Remove %s as a project member of %s?' => '%s wirklich als Projektmitglied von %s entfernen?',
       'Remove %s as a watcher of %s?' => '%s wirklich als Beobachter von %s entfernen?',
       'Remove %s as an administrator? They will no longer be able to perform administrative functions on this server.' => '%s als Administrator entfernen? Sie werden dann keine administrativen Funktionen mehr auf diesem Server ausführen können.',
-      'Remove %s as the automatic payment method for subscription %s?' => '%s als automatische Zahlungsmethode für Abonnement %s entfernen?',
       'Remove %s flag.' => '%s-Fähnchen entfernen.',
       'Remove %s from this room?' => '%s aus diesem Raum entfernen?',
       'Remove Action: %s' => 'Aktion entfernen: %s',
@@ -12153,15 +12765,14 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Remove Member' => 'Mitglied entfernen',
       'Remove PHP %s' => 'PHP %s entfernen',
       'Remove Panel' => 'Panel entfernen',
-      'Remove Paragraph' => 'Absatz entfernen',
       'Remove Participant' => 'Teilnehmer entfernen',
       'Remove Password' => 'Passwort entfernen',
-      'Remove Payment Method' => 'Zahlungsmethode entfernen',
       'Remove Project Tags' => 'Projekt-Tags entfernen',
       'Remove Tab' => 'Tab entfernen',
       'Remove Trigger' => 'Auslöser entfernen',
       'Remove VCS Password' => 'VCS-Passwort entfernen',
       'Remove Watcher' => 'Beobachter entfernen',
+      'Remove an installed extensions.' => 'Eine installierte Erweiterung entfernen.',
       'Remove as Administrator?' => 'Als Administrator entfernen?',
       'Remove flag' => 'Fähnchen entfernen',
       'Remove interface %s on device %s?' => 'Schnittstelle %s auf Gerät %s entfernen?',
@@ -12182,7 +12793,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Remove subscribers: %s.' => 'Mitleser entfernt: %s.',
       'Remove tab?' => 'Tab entfernen?',
       'Remove task assignee.' => 'Aufgaben-Verantwortlichen entfernen.',
-      'Remove the payment method %s from your account?' => 'Zahlungsmethode %s von Deinem Konto entfernen?',
       'Remove trust from an OAuth client. Users must manually confirm reauthorization of untrusted OAuth clients.' => 'Einem OAuth-Client das Vertrauen entziehen. Benutzer müssen die erneute Autorisierung nicht vertrauenswürdiger OAuth-Clients manuell bestätigen.',
       'Remove yourself as a subscriber.' => 'Dich selbst als Mitleser entfernen.',
       'Removed "%s" flag.' => 'Fähnchen "%s" entfernt.',
@@ -12195,6 +12805,7 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Removed Subscribers' => 'Entfernte Mitleser',
       'Removed diff content' => 'Entfernter Diff-Inhalt',
       'Removed file content' => 'Entfernter Dateiinhalt',
+      'Removed library file %s' => 'Bibliotheksdatei %s entfernt',
       'Removed repository "%s" from cluster service.' => 'Repository „%s" aus Cluster-Dienst entfernt.',
       'Removing a comment prevents anyone (including you) from reading it. Removing a comment also hides the comment\'s edit history and prevents it from being edited.' => 'Das Entfernen eines Kommentars verhindert, dass irgendjemand (einschließlich Dir selbst) ihn lesen kann. Das Entfernen eines Kommentars blendet außerdem seine Bearbeitungshistorie aus und verhindert weitere Bearbeitungen.',
       'Removing subtask edge to %s, foreign object is not visible.' => 'Unteraufgaben-Verknüpfung zu %s wird entfernt, fremdes Objekt ist nicht sichtbar.',
@@ -12216,11 +12827,8 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Rename the repository.' => 'Das Repository umbenennen.',
       'Rename the task.' => 'Aufgabe umbenennen.',
       'Renamed' => 'Umbenannt',
-      'Render Honors' => 'Ehrerbietung erweisen',
       'Rendering Jupyter Notebook...' => 'Jupyter-Notebook wird gerendert...',
       'Reopen' => 'Wieder öffnen',
-      'Reopen Initiative' => 'Initiative wieder öffnen',
-      'Reopen Initiative?' => 'Initiative wieder öffnen?',
       'Reopen Poll' => 'Abstimmung wieder öffnen',
       'Reopen Revision' => 'Version wieder öffnen',
       'Reopened' => 'Neu geöffnet',
@@ -12268,6 +12876,8 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Repositories can not be permanently destroyed from the web interface. See %s in the documentation for more information.' => 'Repositories können über das Webinterface nicht dauerhaft gelöscht werden. Weitere Informationen findest Du unter %s in der Dokumentation.',
       'Repositories must have a name.' => 'Repositories müssen einen Namen haben.',
       'Repositories to link symbols from.' => 'Repositories, aus denen Symbole verlinkt werden.',
+      'Repositories with "Track Only" branches' => 'Repositories mit "Nur verfolgen"-Branches',
+      'Repositories with "Track Only" branches require updating.' => 'Repositories mit "Nur verfolgen"-Branches müssen aktualisiert werden.',
       'Repositories: ...' => 'Repositories: ...',
       'Repositories: Invalid Project' => 'Repositories: ungültiges Projekt',
       'Repository' => 'Repository',
@@ -12322,7 +12932,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Repository Pull Events' => 'Repository-Pull-Ereignisse',
       'Repository Ref' => 'Repository-Ref',
       'Repository Servers' => 'Repository-Server',
-      'Repository Services' => 'Repository-Dienste',
       'Repository Short Name' => 'Repository-Kurzname',
       'Repository Status' => 'Repository-Status',
       'Repository URI' => 'Repository-URI',
@@ -12330,6 +12939,7 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Repository URIs' => 'Repository-URIs',
       'Repository Unconfigured' => 'Repository nicht konfiguriert.',
       'Repository Unsupported' => 'Repository nicht unterstützt.',
+      'Repository commands need "sudo" to run as "phd.user".' => 'Repository-Befehle benötigen "sudo", um als "phd.user" ausgeführt zu werden.',
       'Repository description.' => 'Repository-Beschreibung.',
       'Repository encoding "%s" is not valid: %s' => 'Repository-Kodierung „%s" ist ungültig: %s',
       'Repository has no URIs set.' => 'Für dieses Repository sind keine URIs konfiguriert.',
@@ -12362,18 +12972,14 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Request input, in bytes.' => 'Anfrage-Eingabe in Bytes.',
       'Request is missing required "%s" parameter.' => 'Der Anfrage fehlt der erforderliche Parameter "%s".',
       'Request output, in bytes.' => 'Anfrage-Ausgabe in Bytes.',
-      'Request parameter "%s" is not formatted properly. Expected a JSON object, but encountered a syntax error: %s.' => 'Anfrageparameter "%s" ist nicht korrekt formatiert. Es wurde ein JSON-Objekt erwartet, aber es ist ein Syntaxfehler aufgetreten: %s.',
-      'Request parameter "%s" is not formatted properly. Expected a JSON object, but value does not start with "{".' => 'Anfrageparameter "%s" ist nicht korrekt formatiert. Es wurde ein JSON-Objekt erwartet, aber der Wert beginnt nicht mit "{".',
       'Request parameter %s does not specify a valid client application.' => 'Anfrageparameter %s gibt keine gültige Client-Anwendung an.',
       'Request parameter %s specifies an invalid redirect URI. The redirect URI must be a fully-qualified domain with no fragments, and must have the same domain and at least the same query parameters as the redirect URI the client registered.' => 'Der Anfrageparameter %s gibt eine ungültige Weiterleitungs-URI an. Die Weiterleitungs-URI muss eine vollständig qualifizierte Domain ohne Fragmente sein und dieselbe Domain sowie mindestens dieselben Abfrageparameter haben wie die Weiterleitungs-URI, die der Client registriert hat.',
       'Request parameter %s specifies an unsupported response type. Valid response types are: %s.' => 'Der Anfrageparameter %s gibt einen nicht unterstützten Antworttyp an. Gültige Antworttypen sind: %s.',
       'Request to "%s" failed: %s' => 'Anfrage an "%s" ist fehlgeschlagen: %s',
       'Requested' => 'Angefragt',
-      'Requested A Review Of' => 'Review angefordert für',
       'Requested At' => 'Angefragt am',
       'Requested Changes' => 'Änderungen angefordert',
       'Requested Changes (by %s)' => 'Änderungen angefordert (von %s)',
-      'Requested Changes To' => 'Änderungen angefordert für',
       'Requested Changes to Prior Diff' => 'Änderungen zu vorherigem Diff angefordert',
       'Requested Changes to Prior Diff (by %s)' => 'Änderungen zu vorherigem Diff angefordert (von %s)',
       'Requested Review' => 'Review angefordert',
@@ -12417,7 +13023,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Research' => 'Forschung',
       'Reserved' => 'Reserviert',
       'Reserved Recipient' => 'Reservierter Empfänger',
-      'Reserved: %s' => 'Reserviert: %s',
       'Reset' => 'Zurücksetzen',
       'Reset %s action(s).' => '%s Aktion(en) zurücksetzen.',
       'Reset Password' => 'Passwort zurücksetzen',
@@ -12434,7 +13039,6 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Resign as Reviewer' => 'Als Reviewer hinschmeißen',
       'Resign from a revision.' => 'Als Reviewer einer Version hinschmeißen.',
       'Resigned' => 'Hingeschmissen',
-      'Resigned From' => 'Kapituliert',
       'Resolve Issue' => 'Problem lösen',
       'Resolve Setup Issues' => 'Setup-Probleme lösen',
       'Resolve issues with frozen cluster repositories. Very advanced and dangerous.' => 'Probleme mit eingefrorenen Cluster-Repositories beheben. Sehr fortgeschritten und gefährlich.',
@@ -12531,6 +13135,7 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Retrieve information about Harbormaster build plans.' => 'Informationen über Harbormaster-Build-Pläne abrufen.',
       'Retrieve information about Harbormaster build steps.' => 'Informationen über Harbormaster-Build-Schritte abrufen.',
       'Retrieve information about Harbormaster build targets.' => 'Informationen über Harbormaster-Build-Ziele abrufen.',
+      'Retrieve information about Herald rules.' => 'Informationen über Herald-Regeln abrufen.',
       'Retrieve information about a Maniphest task, given its ID.' => 'Informationen über eine Maniphest-Aufgabe anhand ihrer ID abrufen.',
       'Retrieve information about a Phriction document.' => 'Informationen über ein Phriction-Dokument abrufen.',
       'Retrieve information about an arbitrary PHID.' => 'Informationen über eine beliebige PHID abrufen.',
@@ -12543,11 +13148,8 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Retry selected tasks which previously failed permanently or were cancelled. Only archived tasks can be retried.' => 'Ausgewählte Aufgaben erneut versuchen, die zuvor permanent fehlgeschlagen oder abgebrochen wurden. Nur archivierte Aufgaben können erneut versucht werden.',
       'Retrying database connection to "%s" after connection failure (attempt %d; "%s"; error #%d): %s' => 'Datenbankverbindung zu "%s" wird nach Verbindungsfehler erneut versucht (Versuch %d; "%s"; Fehler #%d): %s',
       'Return' => 'Rückgabe',
-      'Return to Application' => 'Zurück zur Anwendung',
       'Return to Charted Waters' => 'Zurück zu sicherem Fahrwasser',
-      'Return to Initiative' => 'Zurück zur Initiative',
       'Return to Open Issue List' => 'Zur Liste offener Probleme zurückkehren',
-      'Return to Subscription' => 'Zurück zum Abonnement',
       'Returns' => 'Gibt zurück',
       'Returns current objects being tracked in Phrequent.' => 'Gibt aktuell in Phrequent erfasste Objekte zurück.',
       'Returns history information for a repository at a specific commit and path.' => 'Verlaufsinformationen für ein Repository bei einem bestimmten Commit und Pfad zurückgeben.',
@@ -12556,13 +13158,11 @@ Versionsregeln können E-Mails senden, Versionen markieren, Reviewer hinzufügen
       'Returns the parameters of the Conduit methods.' => 'Gibt die Parameter der Conduit-Methoden zurück.',
       'Reverse Comparison' => 'Vergleich umkehren',
       'Reverse Time' => 'Rückwärts in der Zeit',
-      'Reverse Tree' => 'Umgekehrter Baum',
       'Revert' => 'Zurücksetzen',
       'Revert Plan' => 'Rücknahmeplan',
       'Revert the published version of this document to an older version?' => 'Die veröffentlichte Version dieses Dokuments auf eine ältere Version zurücksetzen?',
       'Reverted By' => 'Zurückgerollt von',
       'Reverts' => 'Rollt zurück',
-      'Review' => 'Überprüfung',
       'Review Actions' => 'Review-Aktionen',
       'Review All Changes' => 'Alle Änderungen überprüfen',
       'Review All Changes (Blocking)' => 'Alle Änderungen überprüfen (blockierend)',
@@ -12687,7 +13287,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Ripe Mango' => 'Reife Mango',
       'Ripe Orange' => 'Reife Orange',
       'Ripe Peach' => 'Reifer Pfirsich',
-      'Risks/Challenges' => 'Risiken/Herausforderungen',
       'Role list \'%s\' is not available!' => 'Rollenliste \'%s\' ist nicht verfügbar!',
       'Roles' => 'Rollen',
       'Room' => 'Chat',
@@ -12704,8 +13303,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Rooms' => 'Chats',
       'Rooms must have a title.' => 'Räume müssen einen Titel haben.',
       'Root Projects' => 'Hauptprojekte',
-      'Rotate Access Key' => 'Zugriffsschlüssel rotieren',
-      'Rotate the access key for email address %s?' => 'Den Zugriffsschlüssel für E-Mail-Adresse %s rotieren?',
       'Route as Mail' => 'Als E-Mail weiterleiten',
       'Route as Notification' => 'Als Benachrichtigung weiterleiten',
       'Route outbound email.' => 'Ausgehende E-Mails weiterleiten.',
@@ -12714,10 +13311,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Routing' => 'Weiterleitung',
       'Routing Rules' => 'Weiterleitungsregeln',
       'Routing fragment "%s" is not a valid regular expression.' => 'Routing-Fragment "%s" ist kein gültiger regulärer Ausdruck.',
-      'Routing rule ("%s", for site "%s") does not compile into a valid regular expression.' => 'Routing-Regel ("%s", für Website "%s") lässt sich nicht in einen gültigen regulären Ausdruck kompilieren.',
-      'Routing rule ("%s", for site "%s") does not have any targets.' => 'Routing-Regel ("%s", für Website "%s") hat keine Ziele.',
-      'Routing rule ("%s", for site "%s") points at controller ("%s") which does not exist.' => 'Routing-Regel ("%s", für Website "%s") verweist auf Controller ("%s"), der nicht existiert.',
-      'Routing rule ("%s", for site "%s") points at unknown value (of type "%s"), expected a controller class name string.' => 'Routing-Regel ("%s", für Website "%s") verweist auf einen unbekannten Wert (vom Typ "%s"); erwartet wurde ein String mit einem Controller-Klassennamen.',
       'Rows passed to "loadAllFromArray(...)" include two or more rows with the same ID ("%s"). Rows must have unique IDs. An underlying query may be missing a GROUP BY.' => 'An "loadAllFromArray(...)" übergebene Zeilen enthalten zwei oder mehr Zeilen mit derselben ID ("%s"). Zeilen müssen eindeutige IDs haben. Möglicherweise fehlt in der zugrunde liegenden Abfrage ein GROUP BY.',
       'Royal Flush!' => 'Royal Flush!',
       'Rule' => 'Regel',
@@ -12741,7 +13334,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Rule type' => 'Regeltyp',
       'Rule/Content Mismatch' => 'Regel/Inhalt-Konflikt',
       'Rules' => 'Regeln',
-      'Ruleset "%s" for Identical Ownership' => 'Regelwerk "%s" für identische Eigentümerschaft',
       'Ruleset specification is not valid. %s' => 'Die Regelwerk-Spezifikation ist ungültig. %s',
       'Run "ANALYZE TABLE" on tables to improve performance.' => '"ANALYZE TABLE" auf Tabellen ausführen, um die Performance zu verbessern.',
       'Run "OPTIMIZE TABLE" on tables to reclaim space.' => '"OPTIMIZE TABLE" auf Tabellen ausführen, um Speicherplatz zurückzugewinnen.',
@@ -12791,12 +13383,9 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'SMS' => 'SMS',
       'SMS Code' => 'SMS-Code',
       'SMS is weak, and relatively easy for attackers to compromise. Strongly consider using a different MFA provider.' => 'SMS ist schwach und für Angreifer vergleichsweise leicht zu kompromittieren. Ziehe dringend in Betracht, einen anderen MFA-Anbieter zu verwenden.',
-      'SMTP (AWS + Explicit)' => 'SMTP (AWS + Explizit)',
-      'SMTP (AWS)' => 'SMTP (AWS)',
-      'SMTP (Local + Explicit)' => 'SMTP (Lokal + Explizit)',
-      'SMTP (Local)' => 'SMTP (Lokal)',
       'SQL dumpfile to process.' => 'Zu verarbeitende SQL-Dumpdatei.',
       'SSH' => 'SSH',
+      'SSH Error Log' => 'SSH-Fehlerprotokoll',
       'SSH KEY DETAIL' => 'SSH-SCHLÜSSEL-DETAILS',
       'SSH Key' => 'SSH-Schlüssel',
       'SSH Key %d' => 'SSH-Schlüssel %d',
@@ -12815,11 +13404,11 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'SSH keys inherit the policies of the user or object they authenticate.' => 'SSH-Schlüssel erben die Richtlinien des Benutzers oder Objekts, das sie authentifizieren.',
       'SSH log format.' => 'Format des SSH-Protokolls.',
       'SSH log location.' => 'Speicherort des SSH-Protokolls.',
+      'SSH options.' => 'SSH-Optionen.',
       'STAMPS' => 'STAMPS',
       'STOP' => 'STOPP',
       'STOPPED' => 'GESTOPPT',
       'STRIPPED' => 'ENTFERNT',
-      'SUBSCRIPTION' => 'ABONNEMENT',
       'SUCCEEDED' => 'ERFOLGREICH',
       'SUCCESS' => 'ERFOLG',
       'SURPLUS SCHEMATA' => 'ÜBERSCHÜSSIGE SCHEMATA',
@@ -12850,6 +13439,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Save Edit Order' => 'Bearbeiten-Reihenfolge speichern',
       'Save Image' => 'Bild speichern',
       'Save Inlines and Continue' => 'Inlines speichern und fortfahren',
+      'Save Mentions' => 'Erwähnungen speichern',
       'Save Parent Revisions' => 'Elternversionen speichern',
       'Save Parent Tasks' => 'Übergeordnete Aufgaben speichern',
       'Save Paths' => 'Pfade speichern',
@@ -12872,9 +13462,8 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Save this query as a global query, making it visible to all users.' => 'Diese Abfrage als globale Abfrage speichern und damit für alle Benutzer sichtbar machen.',
       'Saved Global Queries' => 'Gespeicherte globale Abfragen',
       'Saved Queries' => 'Gespeicherte Abfragen',
+      'Saving lint errors to database...' => 'Lint-Fehler werden in der Datenbank gespeichert...',
       'Scaling pool "%s" up to %s daemon(s).' => 'Pool "%s" auf %s Dämon(en) hochskalieren.',
-      'Scan Diplomat' => 'Diplomaten scannen',
-      'Scan Warp Drives' => 'Warpantriebe scannen',
       'Scan the QR code or manually enter the key shown below into the application.' => 'Scanne den QR-Code oder gib den unten angezeigten Schlüssel manuell in die App ein.',
       'Scan this QR code with the Duo application on your mobile phone:' => 'Diesen QR-Code mit der Duo-App auf deinem Mobiltelefon scannen:',
       'Schedule Update' => 'Aktualisierung planen',
@@ -12896,9 +13485,11 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Search Engines' => 'Such-Engines',
       'Search For' => 'Suche nach',
       'Search Index Versions' => 'Versionen des Suchindex',
+      'Search Messages' => 'Nachrichten durchsuchen',
       'Search Ngram' => 'Such-N-Gramm',
       'Search Parent Tasks' => 'Übergeordnete Aufgaben durchsuchen',
       'Search Posts' => 'Beiträge durchsuchen',
+      'Search Results for %s' => 'Suchergebnisse für %s',
       'Search Rooms' => 'Räume suchen',
       'Search Scope' => 'Suchbereich',
       'Search Servers' => 'Suchserver',
@@ -12918,6 +13509,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Search for Phurl URLs by name substring.' => 'Phurl-URLs anhand eines Namensausschnitts suchen.',
       'Search for Phurl URLs by the non-shortened URL.' => 'Phurl-URLs nach der nicht gekürzten URL durchsuchen.',
       'Search for Phurl URLs created by specific authors.' => 'Phurl-URLs bestimmter Autoren suchen.',
+      'Search for SVN repositories by UUID.' => 'SVN-Repositories nach UUID suchen.',
       'Search for actions by remote address.' => 'Nach Aktionen nach Remote-Adresse suchen.',
       'Search for active or archived badges.' => 'Nach aktiven oder archivierten Trophäen suchen.',
       'Search for active or archived packages.' => 'Nach aktiven oder archivierten Paketen suchen.',
@@ -12940,6 +13532,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Search for builds running against particular buildables.' => 'Nach Builds suchen, die gegen bestimmte Build-Kandidaten laufen.',
       'Search for builds started by someone or something in particular.' => 'Nach Builds suchen, die von einer bestimmten Person oder Sache gestartet wurden.',
       'Search for builds with given statuses.' => 'Nach Builds mit bestimmten Status suchen.',
+      'Search for credentials with given authors.' => 'Nach Zugangsdaten mit bestimmten Autoren suchen.',
       'Search for devices by name substring.' => 'Geräte anhand eines Namensausschnitts suchen.',
       'Search for devices with given statuses.' => 'Geräte mit bestimmten Status suchen.',
       'Search for devices with specific names.' => 'Geräte mit bestimmten Namen suchen.',
@@ -12989,7 +13582,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Search for posts within certain blogs.' => 'Nach Beiträgen in bestimmten Blogs suchen.',
       'Search for projects with given subtypes.' => 'Nach Projekten mit bestimmten Untertypen suchen.',
       'Search for projects with particular colors.' => 'Nach Projekten mit bestimmten Farben suchen.',
-      'Search for projects with particular hashtags.)' => 'Nach Projekten mit bestimmten Hashtags suchen.',
+      'Search for projects with particular hashtags.' => 'Nach Projekten mit bestimmten Hashtags suchen.',
       'Search for projects with particular icons.' => 'Nach Projekten mit bestimmten Symbolen suchen.',
       'Search for projects with particular members.' => 'Nach Projekten mit bestimmten Mitgliedern suchen.',
       'Search for projects with particular watchers.' => 'Nach Projekten mit bestimmten Beobachtern suchen.',
@@ -13056,9 +13649,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'SearchEngine class to export data from.' => 'SearchEngine-Klasse, aus der Daten exportiert werden sollen.',
       'SearchEngines must render a "%s" object, but this engine (of class "%s") rendered something else ("%s").' => 'SearchEngines müssen ein Objekt vom Typ "%s" rendern, aber diese Engine (der Klasse "%s") hat etwas anderes gerendert ("%s").',
       'SearchFields "%s" (of class "%s") and "%s" (of class "%s") both define the same Conduit key ("%s"). Keys must be unique.' => 'Die SearchFields „%s" (der Klasse „%s") und „%s" (der Klasse „%s") definieren beide denselben Conduit-Schlüssel („%s"). Schlüssel müssen eindeutig sein.',
-      'Searched For:' => 'Gesucht nach:',
       'Second regular expression is invalid!' => 'Zweiter regulärer Ausdruck ist ungültig!',
-      'Secondly event with many constraints.' => 'Sekundliches Ereignis mit vielen Einschränkungen.',
       'Seconds' => 'Sekunden',
       'Secret key for Amazon EC2.' => 'Geheimschlüssel für Amazon EC2.',
       'Secret key for Amazon S3.' => 'Geheimschlüssel für Amazon S3.',
@@ -13080,6 +13671,19 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Select All' => 'Alle auswählen',
       'Select Character Encoding' => 'Zeichenkodierung wählen',
       'Select Document Engine' => 'Document-Engine wählen',
+      'Select Fields
+-------------
+
+Some fields support selection from a specific set of values. When prefilling
+these fields, use the value in the **Value** column to select the appropriate
+setting.
+' => 'Auswahlfelder
+-------------
+
+Manche Felder erlauben die Auswahl aus einer festen Menge von Werten. Verwende beim
+Vorausfüllen dieser Felder den Wert aus der Spalte **Wert**, um die passende Einstellung
+auszuwählen.
+',
       'Select Named Policy' => 'Benannte Richtlinie auswählen',
       'Select Project' => 'Projekt auswählen',
       'Select Syntax Highlighting' => 'Syntaxhervorhebung wählen',
@@ -13155,7 +13759,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Send Email' => 'Email senden',
       'Send HTML Email' => 'HTML-E-Mail senden',
       'Send Invitations' => 'Einladungen senden',
-      'Send Invoice' => 'Rechnung senden',
       'Send Mail To All Recipients' => 'Mail an alle Empfänger senden',
       'Send Mail To Each Recipient' => 'Mail an jeden Empfänger senden',
       'Send Notifications' => 'Benachrichtigungen senden',
@@ -13196,8 +13799,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Sending %s a SIGKILL.' => 'Sende SIGKILL an %s.',
       'Sending Messages' => 'Nachrichten senden',
       'Sending a message will also join the room.' => 'Das Senden einer Nachricht tritt dem Raum ebenfalls bei.',
-      'Sendmail' => 'Sendmail',
-      'Sendmail (Explicit Config)' => 'Sendmail (explizite Konfiguration)',
       'Sent' => 'Gesendet',
       'Sent By' => 'Gesendet von',
       'Sent Mail' => 'Gesendete Mail',
@@ -13254,13 +13855,11 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Session has already signed required legalpad documents!' => 'Sitzung hat die erforderlichen Legalpad-Dokumente bereits unterzeichnet!',
       'Session is not partial!' => 'Sitzung ist nicht partiell!',
       'Session key is invalid.' => 'Sitzungsschlüssel ist ungültig.',
-      'Session key is not present.' => 'Sitzungsschlüssel ist nicht vorhanden.',
       'Sessions' => 'Sitzungen',
       'Sessions and Logs' => 'Sitzungen und Protokolle',
       'Sessions now expire and are garbage collected rather than having an arbitrary concurrency limit.' => 'Sitzungen laufen jetzt ab und werden durch die Speicherbereinigung entfernt, statt eine willkürliche Grenze gleichzeitiger Sitzungen zu haben.',
       'Set "%s" to' => '"%s" setzen auf',
       'Set "%s" to: %s.' => '"%s" setzen auf: %s.',
-      'Set %s as the automatic payment method for subscription %s?' => '%s als automatische Zahlungsmethode für Abonnement %s festlegen?',
       'Set %s in your PHP configuration to at least 32MB to support large file uploads.' => 'Setze %s in Deiner PHP-Konfiguration auf mindestens 32 MB, um große Dateiuploads zu unterstützen.',
       'Set API poll TTL to +%s second(s) (%s second(s) from now).' => 'API-Abfrage-TTL auf +%s Sekunde(n) gesetzt (%s Sekunde(n) ab jetzt).',
       'Set Account Password' => 'Konto-Passwort festlegen',
@@ -13279,7 +13878,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Set a command channel before calling %s!' => 'Setze vor dem Aufruf von %s einen Befehlskanal!',
       'Set a local configuration value.' => 'Lokalen Konfigurationswert setzen.',
       'Set a string this software should use to prefix cookie names.' => 'Eine Zeichenkette festlegen, die diese Software als Präfix für Cookie-Namen verwenden soll.',
-      'Set account managers.' => 'Konto-Manager festlegen.',
       'Set an IO channel before calling %s!' => 'Setze vor dem Aufruf von %s einen IO-Kanal!',
       'Set an error channel before calling %s!' => 'Setze vor dem Aufruf von %s einen Fehlerkanal!',
       'Set an indefinite retention policy.' => 'Eine unbefristete Aufbewahrungsrichtlinie festlegen.',
@@ -13289,8 +13887,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Set edge type before loading graph!' => 'Edge-Typ vor dem Laden des Graphen festlegen!',
       'Set lease expiration time.' => 'Lease-Ablaufzeit festlegen.',
       'Set members, overwriting the current value.' => 'Mitglieder festlegen und aktuellen Wert überschreiben.',
-      'Set merchant managers.' => 'Händlermanager festlegen.',
-      'Set of all results in multiple lists with exclusions.' => 'Menge aller Ergebnisse aus mehreren Listen mit Ausschlüssen.',
       'Set or clear read-only mode for repository maintenance.' => 'Nur-Lese-Modus für Repository-Wartung setzen oder aufheben.',
       'Set priority to' => 'Priorität setzen auf',
       'Set project members.' => 'Projektmitglieder festlegen.',
@@ -13308,7 +13904,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Set the blueprint type.' => 'Blaupausentyp festlegen.',
       'Set the default branch name.' => 'Standard-Branch-Name festlegen.',
       'Set the device.' => 'Gerät festlegen.',
-      'Set the end of the billing period.' => 'Ende des Abrechnungszeitraums festlegen.',
       'Set the fetched refs.' => 'Zu fetchende Refs festlegen.',
       'Set the file alt text.' => 'Den Alt-Text der Datei setzen.',
       'Set the interface to bind.' => 'Zu bindende Schnittstelle festlegen.',
@@ -13316,15 +13911,13 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Set the permanent refs.' => 'Permanente Refs festlegen.',
       'Set the service type.' => 'Diensttyp festlegen.',
       'Set the staging area URI.' => 'URI der Staging-Area festlegen.',
-      'Set the start of the billing period.' => 'Beginn des Abrechnungszeitraums festlegen.',
       'Set the subpath to import.' => 'Zu importierenden Unterpfad festlegen.',
       'Set the tracked branches.' => 'Die verfolgten Branches festlegen.',
+      'Set the type of object this policy can apply to.' => 'Den Objekttyp festlegen, auf den diese Richtlinie angewendet werden kann.',
       'Set this item as the default for this menu? Users arriving on this page will be shown the content of this item by default.' => 'Diesen Eintrag als Vorgabe für dieses Menü festlegen? Benutzern, die diese Seite aufrufen, wird dann standardmäßig der Inhalt dieses Eintrags angezeigt.',
       'Set this to a valid Amazon S3 bucket to store files there. You must also configure S3 access keys in the \'Amazon Web Services\' group.' => 'Auf einen gültigen Amazon-S3-Bucket setzen, um Dateien dort zu speichern. S3-Zugriffsschlüssel müssen auch in der Gruppe \'Amazon Web Services\' konfiguriert werden.',
       'Set this to true if you want patches to be attached to commit notifications from Diffusion.' => 'Auf \'true\' setzen, wenn Patches als Anhang an Commit-Benachrichtigungen aus Diffusion hinzugefügt werden sollen.',
       'Set title to' => 'Titel setzen auf',
-      'Set with empty list source.' => 'Menge mit leerer Listenquelle.',
-      'Set with no sources.' => 'Menge ohne Quellen.',
       'Sets the default color scheme.' => 'Legt das Standard-Farbschema fest.',
       'Setting "%s" is misconfigured: %s' => 'Einstellung „%s" ist falsch konfiguriert: %s',
       'Setting "%s" to be retained indefinitely.' => '"%s" wird auf unbefristete Aufbewahrung gesetzt.',
@@ -13333,6 +13926,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Settings' => 'Einstellungen',
       'Settings %d' => 'Einstellungen %d',
       'Settings History' => 'Einstellungsverlauf',
+      'Settings are only shown to Administrators.' => 'Einstellungen werden nur Administratoren angezeigt.',
       'Setup Admin Account' => 'Administrator-Konto anlegen',
       'Setup Checks' => 'Einrichtungsprüfungen',
       'Setup Error' => 'Einrichtungsfehler',
@@ -13342,7 +13936,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Setup errors and warnings.' => 'Einrichtungsfehler und -warnungen.',
       'Setup issues to ignore.' => 'Zu ignorierende Setup-Probleme.',
       'Several issues were encountered.' => 'Es sind mehrere Probleme aufgetreten.',
-      'Severe Security Vulnerability: Unpatched Bash' => 'Schwerwiegende Sicherheitslücke: Nicht gepatchtes Bash',
       'Severed From Master' => 'Vom Master getrennt',
       'Severity' => 'Dringlichkeit',
       'Severity of the message.' => 'Schweregrad der Nachricht.',
@@ -13357,7 +13950,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Shiny' => 'Glänzend',
       'Shiny happy people holding hands.' => 'Glänzende glückliche Menschen, die Händchen halten.',
       'Ship Some Freight' => 'Etwas Fracht verschiffen',
-      'Shipping Address' => 'Lieferadresse',
       'Short' => 'Kurz',
       'Short Name' => 'Kurzname',
       'Short Name is part of the URI paths for this repository. It cannot contain spaces.' => 'Der Kurzname ist Teil der URI-Pfade für dieses Repository. Er darf keine Leerzeichen enthalten.',
@@ -13373,10 +13965,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Shorten a URL' => 'URL kürzen',
       'Shorten your favorite URL.' => 'Lieblingslink kürzen.',
       'Should "Accepted" revisions remain "Accepted" after updates?' => 'Sollen "akzeptierte" Versionen nach Updates "akzeptiert" bleiben?',
-      'Should never trigger.' => 'Soll nie auslösen.',
       'Should not override' => 'Sollte nicht überschrieben werden',
-      'Should trigger at specified epoch.' => 'Soll zur angegebenen Epoche auslösen.',
-      'Should trigger only once.' => 'Soll nur einmal auslösen.',
       'Show "To:" and "Cc:" footer hints in email.' => '"An:"- und "Cc:"-Fußnotenhinweise in E-Mails anzeigen.',
       'Show %s Comment(s)' => 'Zeige %s Kommentar(e)',
       'Show All' => 'Alles Zeigen',
@@ -13399,17 +13988,19 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Show Disabled Applications' => 'Deaktivierte Anwendungen anzeigen',
       'Show Email Preferences Link' => 'Link zu E-Mail-Präferenzen anzeigen',
       'Show Enabled Applications' => 'Aktivierte Anwendungen anzeigen',
-      'Show External View' => 'Externe Ansicht anzeigen',
       'Show File Contents' => 'Dateiinhalt zeigen',
       'Show First %s Block(s)' => 'Erste %s Block(s) anzeigen',
       'Show First %s Line(s)' => 'Erste %s Zeile(n) anzeigen',
       'Show First-Party Applications' => 'Eigene Anwendungen anzeigen',
-      'Show Hidden Columns' => 'Ausgeblendete Spalten anzeigen',
+      'Show Group ID column (table only).' => 'Spalte Gruppen-ID anzeigen (nur Tabelle).',
+      'Show Hidden Columns (%d)' => 'Ausgeblendete Spalten anzeigen (%d)',
+      'Show Home Page' => 'Startseite anzeigen',
       'Show Identities With Matching Users' => 'Identitäten mit passenden Benutzern anzeigen',
       'Show Identities Without Matching Users' => 'Identitäten ohne passende Benutzer anzeigen',
       'Show Last %s Block(s)' => 'Letzte %s Block(s) anzeigen',
       'Show Last %s Line(s)' => 'Letzte %s Zeile(n) anzeigen',
       'Show Launchable Applications' => 'Zeige verwendbar Anwendungen',
+      'Show Login Screen' => 'Anmeldebildschirm anzeigen',
       'Show More' => 'Mehr anzeigen',
       'Show More (%s Bytes)' => 'Mehr anzeigen (%s Bytes)',
       'Show More Above' => 'Mehr darüber anzeigen',
@@ -13471,6 +14062,8 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Show a specific number of log messages (default 100).' => 'Eine bestimmte Anzahl von Protokollnachrichten anzeigen (Standard: 100).',
       'Show a specific number of messages (default 100).' => 'Eine bestimmte Anzahl von Nachrichten anzeigen (Standard 100).',
       'Show a warning about draft revisions.' => 'Zeigt eine Warnung zu Entwurfsversionen an.',
+      'Show actions in a header dropdown.' => 'Aktionen in einem Dropdown-Menü in der Kopfzeile anzeigen.',
+      'Show actions in a visible side menu.' => 'Aktionen in einem sichtbaren Seitenmenü anzeigen.',
       'Show additional debugging information.' => 'Zusätzliche Debugging-Informationen anzeigen.',
       'Show all logs.' => 'Alle Protokolle anzeigen.',
       'Show approximate table sizes.' => 'Ungefähre Tabellengrößen anzeigen.',
@@ -13479,6 +14072,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Show choices in random order.' => 'Zeige Wahlmöglichkeiten in zufälliger Reihenfolge.',
       'Show commits in __repository__ which are still importing.' => 'Commits in Repository __repository__ anzeigen, die noch importiert werden.',
       'Show daemon processes on this host.' => 'Dämonenprozesse auf diesem Host anzeigen.',
+      'Show dates in `epoch` format (table only).' => 'Datumsangaben im `epoch`-Format anzeigen (nur Tabelle).',
       'Show details about inbound mail with given ID.' => 'Details über eingehende Mail mit der angegebenen ID anzeigen.',
       'Show details about outbound mail with given ID.' => 'Details über ausgehende Mail mit der angegebenen ID anzeigen.',
       'Show diagnostic details about inbound mail.' => 'Diagnosedetails über eingehende Mail anzeigen.',
@@ -13486,6 +14080,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Show directory in repository.' => 'Verzeichnis im Repository anzeigen.',
       'Show email preferences link in email.' => 'Link zu E-Mail-Präferenzen in E-Mails anzeigen.',
       'Show established API methods with stable interfaces.' => 'Etablierte API-Methoden mit stabilen Schnittstellen anzeigen.',
+      'Show external account, but do not unlink it.' => 'Externes Konto anzeigen, aber nicht trennen.',
       'Show factors, but do not strip them.' => 'Faktoren anzeigen, aber nicht entfernen.',
       'Show how much mail users have received recently.' => 'Anzeigen, wie viel Mail Benutzer kürzlich erhalten haben.',
       'Show installed extensions and modules.' => 'Installierte Erweiterungen und Module anzeigen.',
@@ -13506,12 +14101,15 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Show results of a search query, like the most recently filed tasks or revisions you need to review.' => 'Ergebnisse einer Suchabfrage anzeigen, z. B. zuletzt erstellte Aufgaben oder zur Überprüfung anstehende Revisionen.',
       'Show revisions the current viewer is responsible for. This function includes revisions the viewer is responsible for through membership in projects and packages.' => 'Versionen anzeigen, für die der aktuelle Betrachter verantwortlich ist. Diese Funktion enthält Versionen, für die der Betrachter durch Mitgliedschaft in Projekten und Paketen verantwortlich ist.',
       'Show simpler output.' => 'Einfachere Ausgabe anzeigen.',
+      'Show the home page to logged-out users.' => 'Abgemeldeten Benutzern die Startseite anzeigen.',
       'Show the status of the notification server.' => 'Status des Benachrichtigungsservers anzeigen.',
+      'Show transaction history by a user' => 'Transaktionsprotokoll eines Benutzers anzeigen',
       'Show unresolved issues with setup and configuration.' => 'Ungelöste Probleme mit Setup und Konfiguration anzeigen.',
       'Show what would be compacted.' => 'Anzeigen, was kompaktiert werden würde.',
       'Show what would be deleted, but do not actually delete anything.' => 'Anzeigen, was gelöscht würde, ohne tatsächlich etwas zu löschen.',
       'Show what would be migrated.' => 'Anzeigen, was migriert werden würde.',
       'Show what would be updated.' => 'Anzeigen, was aktualisiert werden würde.',
+      'Show/Hide Participants' => 'Teilnehmer ein-/ausblenden',
       'Showing Only Differences' => 'Nur Unterschiede angezeigt',
       'Showing all changes because the diff for this revision has not been updated since your last action.' => 'Alle Änderungen werden angezeigt, da der Diff dieser Version seit Deiner letzten Aktion nicht aktualisiert wurde.',
       'Showing all changes because you have never taken an action on this revision.' => 'Alle Änderungen werden angezeigt, da Du noch keine Aktion zu dieser Version ausgeführt hast.',
@@ -13520,6 +14118,7 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Shows branches a commit appears on in email.' => 'Zeigt Branches, auf denen ein Commit erscheint, in der E-Mail.',
       'Shows commit tags in email.' => 'Zeigt Commit-Tags in der E-Mail.',
       'Shows errors and warnings.' => 'Zeigt Fehler und Warnungen.',
+      'Shows information about a prospective Extension.' => 'Zeigt Informationen über eine in Frage kommende Erweiterung an.',
       'Shows lint results.' => 'Zeigt Lint-Ergebnisse an.',
       'Shows repository in email.' => 'Zeigt das Repository in der E-Mail.',
       'Shows revision representation in Asana.' => 'Zeigt die Darstellung der Version in Asana.',
@@ -13561,13 +14160,9 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Similar' => 'Ähnliche Versionen',
       'Similar Reply' => 'Ähnliche Antwort',
       'Similar Symbols' => 'Ähnliche Symbole',
-      'Simple' => 'Einfach',
       'Simple Buttons' => 'Einfache Schaltflächen',
       'Simple Example' => 'Einfaches Beispiel',
       'Simple Subtypes' => 'Einfache Aufgabentypen',
-      'Simple daily event.' => 'Einfaches tägliches Ereignis.',
-      'Simple date list.' => 'Einfache Datumsliste.',
-      'Simple move' => 'Einfaches Verschieben',
       'Simple one-line plain text representation of story' => 'Einfache einzeilige Klartextdarstellung des Beitrags',
       'Simply Slim' => 'Schlank und einfach',
       'Simulate a mail delivery "Cc:" address.' => 'Eine Mail-Zustellungs-"Cc:"-Adresse simulieren.',
@@ -13588,12 +14183,12 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Skip This Step' => 'Diesen Schritt überspringen',
       'Skip analysis of aggregate facts.' => 'Analyse aggregierter Fakten überspringen.',
       'Skip email verification for accounts registered through this provider.' => 'E-Mail-Verifizierung für über diesen Anbieter registrierte Konten überspringen.',
-      'Skip the prompt warning you that this operation is potentially dangerous.' => 'Die Warnabfrage überspringen, die dich darauf hinweist, dass dieser Vorgang potenziell gefährlich ist.',
       'Skipped' => 'Übersprungen',
       'Skipped %s document(s) which have not updated since they were last indexed.' => '%s Dokument(e) wurden übersprungen, weil sie seit der letzten Indizierung nicht aktualisiert wurden.',
       'Skipping "%s": Subversion repositories do not require this cache to be built.' => '"%s" wird übersprungen: Subversion-Repositories benötigen diesen Cache nicht.',
       'Skipping %s...' => '%s wird übersprungen...',
       'Skipping config of source type %s...' => 'Konfiguration vom Quellentyp %s wird übersprungen...',
+      'Skipping core library `%s`.' => 'Kernbibliothek `%s` wird übersprungen.',
       'Skipping fetch because local and remote refs are already identical.' => 'Fetch wird übersprungen, weil lokale und Remote-Refs bereits identisch sind.',
       'Skipping forced out-of-sync update because the last update was too recent (%s seconds ago).' => 'Erzwungene Out-of-Sync-Aktualisierung wird übersprungen, weil die letzte Aktualisierung zu kürzlich war (vor %s Sekunden).',
       'Skipping import step; this step was previously completed for this commit.' => 'Importschritt wird übersprungen; dieser Schritt wurde für diesen Commit bereits zuvor abgeschlossen.',
@@ -13637,10 +14232,17 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Small Table Scan' => 'Kleiner Tabellen-Scan',
       'Smaller Change' => 'Kleinere Änderung',
       'Smith' => 'Mustermann',
-      'Snippets with leading whitespace should be preserved.' => 'Snippets mit führendem Leerraum sollten erhalten bleiben.',
-      'Snippets with no leading whitespace should be preserved.' => 'Snippets ohne führenden Leerraum sollten erhalten bleiben.',
       'Solid Colors' => 'Volltonfarben',
       'Some Bad Examples' => 'Einige schlechte Beispiele',
+      'Some Herald rules for commits use the deprecated "Commit Autocloses" or "Reviewer" conditions. These conditions have been deprecated since 2019 and will be removed in a future version of this software.
+
+Edit the rules to remove all deprecated conditions.
+Remove any "Commit Autocloses" conditions; they have no effect anymore.
+Replace any "Reviewer" conditions with "Accepting Reviewers".%sTo learn more about Herald rules, see %s.' => 'Einige Herald-Regeln für Commits verwenden die veralteten Bedingungen "Commit schließt automatisch" oder "Reviewer". Diese Bedingungen sind seit 2019 veraltet und werden in einer zukünftigen Version dieser Software entfernt.
+
+Bearbeite die Regeln, um alle veralteten Bedingungen zu entfernen.
+Entferne alle Bedingungen "Commit schließt automatisch"; sie haben keine Wirkung mehr.
+Ersetze alle Bedingungen "Reviewer" durch "Annehmende Reviewer".%sWeitere Informationen zu Herald-Regeln findest Du unter %s.',
       'Some JIRA issues could not be loaded. They may not exist, or you may not have permission to view them: %s' => 'Einige der JIRA Tickets konnten nicht geladen werden. Möglicherweise existieren sie nicht, oder Du hast keine Berechtigung, sie Dir anzusehen: %s',
       'Some applications use unicode glyphs in page titles to provide a compact representation of the current application. You can substitute plain text instead if these glyphs do not display on your system.' => 'Einige Anwendungen verwenden Unicode-Symbole in Seitentiteln als kompakte Darstellung der aktuellen Anwendung. Falls diese Symbole auf Deinem System nicht korrekt angezeigt werden, kann stattdessen reiner Text verwendet werden.',
       'Some of the Almanac Services defined by this blueprint could not be loaded. They may be invalid, no longer exist, or be of the wrong type: %s.' => 'Einige der von dieser Blaupause definierten Almanac-Services konnten nicht geladen werden. Sie sind möglicherweise ungültig, nicht mehr vorhanden oder vom falschen Typ: %s.',
@@ -13650,10 +14252,14 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Some of these errors are caused by access control problems. The user you are connecting with does not have permission to see all of the database or tables that this software uses. You need to GRANT the user more permission, or use a different user.' => 'Einige dieser Fehler werden durch Probleme mit der Zugriffskontrolle verursacht. Der Benutzer, mit dem du dich verbindest, hat keine Berechtigung, alle Datenbanken oder Tabellen zu sehen, die diese Software verwendet. Du musst dem Benutzer per GRANT mehr Berechtigungen geben oder einen anderen Benutzer verwenden.',
       'Some of these errors are caused by surplus schemata (extra tables or columns which this software does not expect). These are not serious. For information on resolving these issues, see the "Surplus Schemata" section in the "Managing Storage Adjustments" article in the documentation.' => 'Einige dieser Fehler werden durch überschüssige Schemata verursacht (zusätzliche Tabellen oder Spalten, die diese Software nicht erwartet). Diese Probleme sind nicht schwerwiegend. Informationen zur Behebung findest du im Abschnitt "Surplus Schemata" des Artikels "Managing Storage Adjustments" in der Dokumentation.',
       'Some patches could not be applied: %s' => 'Einige Patches konnten nicht angewendet werden: %s',
+      'Some repositories are configured to use the deprecated "Track Only" feature. This feature has been deprecated since 2019 and will be removed in a future version of this software. 
+
+Edit the repositories to remove the "Track Only" setting and use the "Fetch Refs" and "Permanent Refs" features instead:%sTo learn more about repository branch configuration, see %s.' => 'Einige Repositories sind für die veraltete Funktion "Nur verfolgen" konfiguriert. Diese Funktion ist seit 2019 veraltet und wird in einer zukünftigen Version dieser Software entfernt. 
+
+Bearbeite die Repositories, um die Einstellung "Nur verfolgen" zu entfernen, und verwende stattdessen die Funktionen "Fetch-Refs" und "Permanente Refs":%sWeitere Informationen zur Branch-Konfiguration von Repositories findest Du unter %s.',
       'Some specified messages do not exist: %s' => 'Einige angegebene Nachrichten existieren nicht: %s',
       'Some test called %s, but is still holding a reference to the scoped environment!' => 'Ein Test hat %s aufgerufen, hält aber noch immer eine Referenz auf die Scoped Environment!',
       'Someone adds a new answer.' => 'Jemand fügt eine neue Antwort hinzu.',
-      'Someone backs an initiative.' => 'Jemand unterstützt eine Initiative.',
       'Someone changes the badge\'s details.' => 'Jemand ändert die Details der Trophäe.',
       'Someone changes the countdown details.' => 'Jemand ändert die Details des Countdowns.',
       'Someone changes the poll details.' => 'Jemand ändert die Details der Umfrage.',
@@ -13703,8 +14309,9 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Spain' => 'Spanien',
       'Special Rules' => 'Besondere Regeln',
       'Special users like daemons and mailing lists are not permitted to log in via the web. Log in as a normal user instead.' => 'Spezielle Benutzer wie Daemons und Mailinglisten dürfen sich nicht über das Web anmelden. Melde Dich stattdessen als normaler Benutzer an.',
-      'Specific Connection, Holding Lock' => 'Spezifische Verbindung, Lock wird gehalten',
-      'Specific Connection, No Lock' => 'Spezifische Verbindung, kein Lock',
+      'Specialized Syntax' => 'Spezielle Syntax',
+      'Specified "%s" does not exist.' => 'Das angegebene "%s" existiert nicht.',
+      'Specified "%s" does not exist. See the endpoint documentation for valid object types.' => 'Das angegebene "%s" existiert nicht. Gültige Objekttypen findest Du in der Dokumentation des Endpunkts.',
       'Specified "--count" must be larger than 0.' => 'Der angegebene "--count"-Wert muss größer als 0 sein.',
       'Specified "--limit" must be a positive integer.' => 'Der angegebene Wert für "--limit" muss eine positive Ganzzahl sein.',
       'Specified "--min-failures" must not be larger than specified "--max-failures".' => 'Der angegebene Wert für "--min-failures" darf nicht größer sein als der angegebene Wert für "--max-failures".',
@@ -13717,6 +14324,8 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Specified public keyfile "%s" does not exist!' => 'Angegebene öffentliche Schlüsseldatei "%s" existiert nicht!',
       'Specified queries use different engines: query "%s" uses engine "%s", not "%s". All queries must run on the same engine.' => 'Die angegebenen Abfragen verwenden unterschiedliche Engines: Abfrage "%s" verwendet Engine "%s", nicht "%s". Alle Abfragen müssen auf derselben Engine laufen.',
       'Specified version control system must be a VCS recognized by this software. Valid systems are: %s.' => 'Das angegebene Versionsverwaltungssystem muss ein von dieser Software erkanntes VCS sein. Gültige Systeme sind: %s.',
+      'Specifies the default branch name to use for Git repositories.' => 'Legt den Standard-Branch-Namen für Git-Repositories fest.',
+      'Specifies the default branch name to use for Mercurial repositories.' => 'Legt den Standard-Branch-Namen für Mercurial-Repositories fest.',
       'Specify "%s" or "%s", but not both.' => '"%s" oder "%s" angeben, aber nicht beides.',
       'Specify "--all" to affect everything, or a list of specific commits or repositories to affect.' => 'Gib "--all" an, um alles zu betreffen, oder eine Liste bestimmter Commits oder Repositories, die betroffen sein sollen.',
       'Specify "--enable" or "--disable", but not both.' => 'Entweder "--enable" oder "--disable" angeben, aber nicht beides.',
@@ -13724,7 +14333,6 @@ Temporäre Tokens werden in Passwort-Zurücksetzungs-E-Mails, Willkommens-E-Mail
       'Specify --service or --remove-service, but not both.' => '„--service" oder „--remove-service" angeben, aber nicht beides.',
       'Specify --service or --remove-service.' => '„--service" oder „--remove-service" angeben.',
       'Specify a Diviner book configuration file with %s.' => 'Eine Diviner-Buchkonfigurationsdatei mit %s angeben.',
-      'Specify a billing range with %s and %s, or use %s.' => 'Abrechnungszeitraum mit %s und %s angeben oder %s verwenden.',
       'Specify a collector with "%s". Valid collectors are: %s.' => 'Gib mit "%s" einen Collector an. Gültige Collectors sind: %s.',
       'Specify a command to run.' => 'Einen auszuführenden Befehl angeben.',
       'Specify a commit and a revision to attach it to.' => 'Gib einen Commit und eine Version an, an die er angehängt werden soll.',
@@ -13768,6 +14376,7 @@ Zu reparsende Commit(s): %s',
       'Specify a subclass of %s.' => 'Eine Unterklasse von %s angeben.',
       'Specify a system user to run the daemons as. Primarily, this user will own the working copies of any repositories that this software imports or manages. This option is new and experimental.' => 'Gib einen Systembenutzer an, unter dem die Dämonen laufen sollen. Dieser Benutzer besitzt vor allem die Arbeitskopien aller Repositories, die diese Software importiert oder verwaltet. Diese Option ist neu und experimentell.',
       'Specify a user to notify with "--user".' => 'Einen zu benachrichtigenden Benutzer mit "--user" angeben.',
+      'Specify a username.' => 'Gib einen Benutzernamen an.',
       'Specify a value to set the configuration key "%s" to, or use "--stdin" to read a value from stdin.' => 'Gib einen Wert an, auf den der Konfigurationsschlüssel "%s" gesetzt werden soll, oder verwende "--stdin", um einen Wert von stdin zu lesen.',
       'Specify a webhook to call with "--id".' => 'Einen aufzurufenden Webhook mit "--id" angeben.',
       'Specify an OAuth client ID with %s.' => 'Eine OAuth-Client-ID mit %s angeben.',
@@ -13778,6 +14387,7 @@ Zu reparsende Commit(s): %s',
       'Specify an atomizer class with %s.' => 'Eine Atomizer-Klasse mit %s angeben.',
       'Specify an engine to migrate to with `%s`. Use `%s` to get a list of engines.' => 'Eine Ziel-Engine mit `%s` angeben. `%s` verwenden, um eine Liste der Engines abzurufen.',
       'Specify an export format with "--format".' => 'Ein Exportformat mit „--format" angeben.',
+      'Specify an external auth provider.' => 'Gib einen externen Authentifizierungsanbieter an.',
       'Specify an object to test rules for with "--object".' => 'Ein Objekt zum Testen von Regeln mit "--object" angeben.',
       'Specify at least one import ID to reload.' => 'Mindestens eine neu zu ladende Import-ID angeben.',
       'Specify either "--all" or "--caches", not both.' => 'Entweder "--all" oder "--caches" angeben, aber nicht beides.',
@@ -13792,6 +14402,7 @@ Zu reparsende Commit(s): %s',
       'Specify exactly one buildable object, by object name.' => 'Genau ein Build-Kandidaten-Objekt per Objektname angeben.',
       'Specify exactly one buildable, by object name.' => 'Genau einen Build-Kandidaten per Objektname angeben.',
       'Specify exactly one commit to extract.' => 'Gib genau einen Commit zur Extraktion an.',
+      'Specify exactly one daemon to start.' => 'Gib genau einen zu startenden Daemon an.',
       'Specify exactly one file to print, like "%s".' => 'Genau eine auszugebende Datei angeben, z.B. "%s".',
       'Specify exactly one of \'%s\' and \'%s\'.' => 'Gib genau eines von \'%s\' und \'%s\' an.',
       'Specify exactly one repository to unpublish.' => 'Genau ein Repository zum Zurückziehen angeben.',
@@ -13800,6 +14411,7 @@ Zu reparsende Commit(s): %s',
       'Specify how long to delay tasks for with "--until".' => 'Gib mit "--until" an, wie lange Aufgaben verzögert werden sollen.',
       'Specify namespace to rename from with %s.' => 'Mit %s den Namespace angeben, von dem umbenannt werden soll.',
       'Specify namespace to rename to with %s.' => 'Mit %s den Namespace angeben, in den umbenannt werden soll.',
+      'Specify object to inspect' => 'Zu untersuchendes Objekt angeben',
       'Specify one or more email addresses to unverify.' => 'Eine oder mehrere zu deverizierende Email-Adressen angeben.',
       'Specify one or more files to atomize.' => 'Eine oder mehrere zu atomisierende Dateien angeben.',
       'Specify one or more lease IDs to update with "%s".' => 'Eine oder mehrere zu aktualisierende Lease-IDs mit "%s" angeben.',
@@ -13832,10 +14444,11 @@ Zu reparsende Commit(s): %s',
       'Specify the target to revoke credentials from with "--from" or specify "--everywhere", but not both.' => 'Gib das Ziel, von dem Zugangsdaten widerrufen werden sollen, mit "--from" oder mit "--everywhere" an, aber nicht beides.',
       'Specify the target to revoke credentials from with "--from" or specify "--everywhere".' => 'Gib das Ziel, von dem Zugangsdaten widerrufen werden sollen, mit "--from" an oder verwende "--everywhere".',
       'Specify the type of key to generate with --type.' => 'Den Typ des zu generierenden Schlüssels mit --type angeben.',
+      'Specify transaction PHID to show.' => 'Anzuzeigende Transaktions-PHID angeben.',
+      'Specify which class of daemon to start.' => 'Gib an, welche Daemon-Klasse gestartet werden soll.',
       'Specify which files to operate on, or use "--all" to operate on all files.' => 'Angeben, auf welche Dateien operiert werden soll, oder "--all" verwenden, um auf alle Dateien zu operieren.',
       'Specify which resources you want to release. See "--help" for guidance.' => 'Angeben, welche Ressourcen freigegeben werden sollen. Siehe "--help" für Hinweise.',
       'Specify which steps to reparse with "--message", "--change", and/or "--publish"; or "--importing" to run all missing steps.' => 'Gib mit "--message", "--change" und/oder "--publish" an, welche Schritte erneut verarbeitet werden sollen, oder verwende "--importing", um alle fehlenden Schritte auszuführen.',
-      'Specify which subscription to invoice with %s.' => 'Mit %s angeben, welches Abonnement fakturiert werden soll.',
       'Spite' => 'Kein Bock',
       'Spited' => 'Aus Trotz geschlossen',
       'Sports' => 'Sport',
@@ -13866,8 +14479,6 @@ Zu reparsende Commit(s): %s',
       'Standard Library' => 'Standardbibliothek',
       'Star Ship' => 'Sternenschiff',
       'Start' => 'Anfang',
-      'Start Autopay' => 'Automatische Zahlung starten',
-      'Start TLS after binding to the LDAP server.' => 'TLS nach der Bindung an den LDAP-Server starten.',
       'Start Test' => 'Test starten',
       'Start Time' => 'Anfangszeit',
       'Start Timer' => 'Uhr starten',
@@ -13933,14 +14544,12 @@ Zu reparsende Commit(s): %s',
       'Staycation' => 'Ferien auf Balkonien',
       'Stderr' => 'Fehlerausgabe',
       'Stdout' => 'Standardausgabe',
-      'Stemmed compilation of query: %s' => 'Auf Wortstämme reduzierte Abfrage: %s',
       'Step' => 'Schritt',
       'Step %d' => 'Schritt %d',
       'Step %d.%d' => 'Schritt %d.%d',
       'Step Type' => 'Schritttyp',
       'Still Importing...' => 'Wird noch importiert...',
       'Stop' => 'Stoppen',
-      'Stop Autopay' => 'Automatische Zahlung stoppen',
       'Stop Before HTTP Redirect' => 'Vor HTTP-Weiterleitung anhalten',
       'Stop Following Log' => 'Protokoll nicht mehr verfolgen',
       'Stop Time' => 'Endzeit',
@@ -13995,6 +14604,9 @@ Zu reparsende Commit(s): %s',
       'Store and Share Files' => 'Dateien ablegen und teilen',
       'Store the path on disk to an SSH private key.' => 'Den Pfad auf der Festplatte zu einem privaten SSH-Schlüssel speichern.',
       'Store the plaintext of an SSH private key.' => 'Einen privaten SSH-Schlüssel im Klartext speichern.',
+      'Store to query when removing by Key (Ignoring configuration).' => 'Store, der beim Entfernen über den Schlüssel abgefragt wird (ignoriert die Konfiguration).',
+      'Store to search in and download from (Ignoring configuration).' => 'Store, in dem gesucht und aus dem heruntergeladen wird (ignoriert die Konfiguration).',
+      'Store to search in and query (Ignoring configuration).' => 'Store, in dem gesucht und der abgefragt wird (ignoriert die Konfiguration).',
       'Store, share, and embed snippets of code.' => 'Code-Schnipsel speichern, teilen und einbetten.',
       'Stored Bytes' => 'Gespeicherte Bytes',
       'Stored Chunks' => 'Gespeicherte Chunks',
@@ -14022,7 +14634,7 @@ Mit `ui.external` kann dieser Artefakttyp verwendet werden, um Links zu Build-Er
       'String' => 'Zeichenkette',
       'String "%s" is invalid in path specification "%s".' => 'Zeichenkette "%s" ist in der Pfadangabe "%s" ungültig.',
       'Strings for this library are already up to date.' => 'Strings für diese Bibliothek sind bereits aktuell.',
-      'Strings have not yet been extracted for library %s. Run `%s` for that library first to extract them or re-run with `%s` to automatically extract missing strngs.' => 'Für Bibliothek %s wurden noch keine Strings extrahiert. Führe zuerst `%s` für diese Bibliothek aus, um sie zu extrahieren, oder starte mit `%s` erneut, um fehlende Strings automatisch zu extrahieren.',
+      'Strings have not yet been extracted for library %s. Run `%s` for that library first to extract them or re-run with `%s` to automatically extract missing strings.' => 'Für Bibliothek %s wurden noch keine Strings extrahiert. Führe zuerst `%s` für diese Bibliothek aus, um sie zu extrahieren, oder starte mit `%s` erneut, um fehlende Strings automatisch zu extrahieren.',
       'Strip a specific factor type. Use `bin/auth list-factors` for a list of factor types.' => 'Einen bestimmten Faktor-Typ entfernen. Verwende `bin/auth list-factors`, um eine Liste der Faktor-Typen anzuzeigen.',
       'Strip all factors, regardless of type.' => 'Alle Faktoren unabhängig vom Typ entfernen.',
       'Strip factors for a specific provider. Use `bin/auth list-mfa-providers` for a list of providers.' => 'Faktoren für einen bestimmten Anbieter entfernen. Verwende `bin/auth list-mfa-providers`, um eine Liste der Anbieter anzuzeigen.',
@@ -14030,13 +14642,6 @@ Mit `ui.external` kann dieser Artefakttyp verwendet werden, um Links zu Build-Er
       'Strip factors from specified users.' => 'Faktoren von bestimmten Benutzern entfernen.',
       'Strip factors without prompting.' => 'Faktoren ohne Rückfrage entfernen.',
       'Strip these authentication factors?' => 'Diese Authentifizierungsfaktoren wirklich entfernen?',
-      'Stripe' => 'Stripe',
-      'Stripe Publishable Key' => 'Stripe-öffentlicher Schlüssel',
-      'Stripe Publishable Key is required.' => 'Stripe-öffentlicher Schlüssel ist erforderlich.',
-      'Stripe Secret Key' => 'Stripe-Geheimschlüssel',
-      'Stripe Secret Key is required.' => 'Stripe-Geheimschlüssel ist erforderlich.',
-      'Stripe charge call did not return an ID!' => 'Stripe-Abbuchungsaufruf hat keine ID zurückgegeben!',
-      'Stripe refund call did not return an ID!' => 'Stripe-Erstattungsaufruf hat keine ID zurückgegeben!',
       'Stripped integrity hash for "%s".' => 'Integritäts-Hash für "%s" entfernt.',
       'Stripping authentication factors...' => 'Authentifizierungsfaktoren werden entfernt...',
       'Stripping integrity hashes is dangerous and makes files vulnerable to corruption or tampering.' => 'Das Entfernen von Integritäts-Hashes ist gefährlich und macht Dateien anfällig für Beschädigung oder Manipulation.',
@@ -14051,7 +14656,6 @@ Mit `ui.external` kann dieser Artefakttyp verwendet werden, um Links zu Build-Er
       'Sublime Text' => 'Sublime Text',
       'Submit' => 'Abschicken',
       'Submit Complaint' => 'Beschwerde einreichen',
-      'Submit Payment' => 'Zahlung abschicken',
       'Submit Quietly' => 'Still einreichen',
       'Submit builds into the build queue normally instead of running them in the foreground.' => 'Builds normal in die Build-Warteschlange einreihen, anstatt sie im Vordergrund auszuführen.',
       'Submit transactions for a particular object.' => 'Transaktionen für ein bestimmtes Objekt einreichen.',
@@ -14073,13 +14677,7 @@ Mit `ui.external` kann dieser Artefakttyp verwendet werden, um Links zu Build-Er
       'Subscriber PHIDs' => 'Abonnenten-PHIDs',
       'Subscribers' => 'Mitleser',
       'Subscribers can take this action.' => 'Mitleser können diese Aktion ausführen.',
-      'Subscription' => 'Abonnement',
-      'Subscription Details' => 'Abonnementdetails',
-      'Subscription has invalid billing period.' => 'Abonnement hat einen ungültigen Abrechnungszeitraum.',
-      'Subscription is missing billing period information.' => 'Abonnement fehlen Abrechnungszeitrauminformationen.',
-      'Subscription to invoice.' => 'Zu fakturierendes Abonnement.',
       'Subscriptions' => 'Abonnements',
-      'Subscriptions for %s' => 'Abonnements für %s',
       'Substring Search' => 'Teilstringsuche',
       'Subtask' => 'Unteraufgabe',
       'Subtask IDs' => 'Unteraufgaben-IDs',
@@ -14091,7 +14689,6 @@ Mit `ui.external` kann dieser Artefakttyp verwendet werden, um Links zu Build-Er
       'Subtype "%s" is not valid: subtype keys may only contain lowercase latin letters ("a" through "z").' => 'Untertyp "%s" ist ungültig: Untertyp-Schlüssel dürfen nur lateinische Kleinbuchstaben ("a" bis "z") enthalten.',
       'Subtype "%s" is not valid: subtype keys must be no longer than 64 bytes.' => 'Untertyp "%s" ist ungültig: Untertyp-Schlüssel dürfen nicht länger als 64 Byte sein.',
       'Subtype "%s" is not valid: subtype keys must have a minimum length of 3 bytes.' => 'Untertyp "%s" ist ungültig: Untertyp-Schlüssel müssen mindestens 3 Byte lang sein.',
-      'Subtype Key "%s"' => 'Untertyp-Schlüssel „%s"',
       'Subtype configuration is invalid: it must be a list of subtype specifications.' => 'Die Untertyp-Konfiguration ist ungültig: Sie muss eine Liste von Untertyp-Spezifikationen sein.',
       'Subtype configuration is invalid: subtype with key "%s" has no name. Subtypes must have a name.' => 'Die Untertyp-Konfiguration ist ungültig: Der Untertyp mit dem Schlüssel "%s" hat keinen Namen. Untertypen müssen einen Namen haben.',
       'Subtype configuration is invalid: subtype with key "%s" specifies both child subtypes and child forms. Specify one or the other, but not both.' => 'Die Untertyp-Konfiguration ist ungültig: Der Untertyp mit dem Schlüssel "%s" gibt sowohl Kind-Untertypen als auch Kind-Formulare an. Gib das eine oder das andere an, aber nicht beides.',
@@ -14113,10 +14710,6 @@ Mit `ui.external` kann dieser Artefakttyp verwendet werden, um Links zu Build-Er
       'Suggest Edit' => 'Bearbeitung vorschlagen',
       'Suit: Hearts' => 'Farbe: Herz',
       'Summary' => 'Zusammenfassung',
-      'Summary diff with head change.' => 'Zusammenfassungs-Diff mit Änderung am Anfang.',
-      'Summary diff with last change.' => 'Zusammenfassungs-Diff mit Änderung am Ende.',
-      'Summary diff with middle change.' => 'Zusammenfassungs-Diff mit Änderung in der Mitte.',
-      'Summary of: %s' => 'Zusammenfassung von: %s',
       'Sun' => 'So',
       'Sunday' => 'Sonntag',
       'Superstar' => 'Superstar',
@@ -14135,13 +14728,21 @@ Angegebener Wert: \'%s\'
       'Support for Subscriptions' => 'Unterstützung für Abonnements',
       'Supported Editor Protocols' => 'Unterstützte Editor-Protokolle',
       'Supported Protocol' => 'Unterstütztes Protokoll',
+      'Supported commands are: %s.' => 'Unterstützte Befehle sind: %s.',
       'Supported image formats: %s.' => 'Unterstützte Bildformate: %s.',
+      'Supported values:' => 'Unterstützte Werte:',
+      'Supporter' => 'Unterstützer',
       'Supporting Applications' => 'Unterstützende Anwendungen',
       'Supports ID/PHID Queries' => 'Unterstützt ID-/PHID-Abfragen',
       'Surplus' => 'Überschuss',
       'Surplus Key' => 'Überschuss-Schlüssel',
-      'Switch Accounts' => 'Konten wechseln',
+      'Switch the service to read-only mode. In this mode, users will be unable to write new data. Normally, the cluster degrades into this mode automatically when it detects that the database master is unreachable, but you can activate it manually in order to perform maintenance or test configuration.' => 'Schalte den Dienst in den Nur-Lese-Modus. In diesem Modus können Benutzer keine neuen Daten schreiben. Normalerweise wechselt der Cluster automatisch in diesen Modus, wenn er erkennt, dass der Datenbank-Master nicht erreichbar ist, aber Du kannst ihn auch manuell aktivieren, um Wartungen durchzuführen oder die Konfiguration zu testen.',
       'Symbol' => 'Symbol',
+      'Symbol \'%s\' is not a method!' => 'Symbol \'%s\' ist keine Methode!',
+      'Symbol context' => 'Symbolkontext',
+      'Symbol language' => 'Symbolsprache',
+      'Symbol name' => 'Symbolname',
+      'Symbol type' => 'Symboltyp',
       'Symbols' => 'Symbole',
       'Sync' => 'Sync',
       'Sync Event' => 'Synchronisierungsereignis',
@@ -14176,7 +14777,6 @@ Nachdem Du Pygments installiert und aktiviert hast, sollte neu erzeugter Quellco
       'System Saved Queries' => 'Systemweit gespeicherte Abfragen',
       'System user to run daemons as.' => 'Systembenutzer, unter dem Dämonen ausgeführt werden sollen.',
       'S|M|T|W|T|F|S' => 'So|Mo|Di|Mi|Do|Fr|Sa',
-      'T6185 "Shellshock" Bash Vulnerability' => 'T6185 "Shellshock"-Bash-Sicherheitslücke',
       'TABLE SCAN!' => 'TABELLEN-SCAN!',
       'TAGS' => 'TAGS',
       'TASK DESCRIPTION' => 'AUFGABEN-BESCHREIBUNG',
@@ -14196,19 +14796,16 @@ Nachdem Du Pygments installiert und aktiviert hast, sollte neu erzeugter Quellco
       'Tab Panel' => 'Reiter-Panel',
       'Table' => 'Tabelle',
       'Table of Contents' => 'Inhaltsverzeichnis',
-      'Tabs to Spaces: %s' => 'Tabs zu Leerzeichen: %s',
       'Taco cat spelled backwards is taco cat.' => '„Taco Cat“ ist vorwärts wie rückwärts „Taco Cat“.',
       'Tag' => 'Tag',
       'Tag %s' => 'Tag %s',
       'Tag Color' => 'Tag-Farbe',
       'Tag Content' => 'Tag-Inhalt',
       'Tag PHIDs' => 'Tag-PHIDs',
-      'Tag preference excludes recipients.' => 'Tag-Einstellung schließt Empfänger aus.',
       'Tagged with Project' => 'Mit Projekt getaggt',
       'Tagged: %s' => 'Markiert mit: %s',
       'Tags' => 'Tags',
       'Tags for %s' => 'Tags für %s',
-      'Take Action' => 'Aktion ausführen',
       'Take repositories out of a cluster.' => 'Repositories aus einem Cluster entfernen.',
       'Take repositories out of maintenance mode, returning them to normal service.' => 'Repositories aus dem Wartungsmodus nehmen und in den normalen Betrieb zurückführen.',
       'Take these actions %s' => 'Diese Aktionen ausführen %s',
@@ -14274,16 +14871,52 @@ Nachdem Du Pygments installiert und aktiviert hast, sollte neu erzeugter Quellco
       'Tasks and Bugs' => 'Aufgaben und Probleme',
       'Tasks associated with this revision.' => 'Mit dieser Version verknüpfte Aufgaben.',
       'Tasks must have a title.' => 'Aufgaben müssen einen Titel haben.',
-      'Tasks not previously leased should lease before previously leased tasks.' => 'Aufgaben, die zuvor nicht geleast waren, sollten vor zuvor geleasten Aufgaben geleast werden.',
       'Tasks to Close and Merge' => 'Zusammenzuführende Aufgaben',
-      'Tasks which expired earlier should lease first, all else being equal.' => 'Aufgaben, deren Lease früher abgelaufen ist, sollten zuerst geleast werden, wenn sonst alles gleich ist.',
-      'Tasks with a lower priority should be scheduled first.' => 'Aufgaben mit niedrigerer Priorität sollten zuerst eingeplant werden.',
       'Tasks with edits locked may only be edited by their assignee.' => 'Aufgaben mit gesperrter Bearbeitung dürfen nur vom Bearbeiter geändert werden.',
-      'Tasks with the same priority should be FIFO.' => 'Aufgaben mit derselben Priorität sollten FIFO sein.',
       'Team' => 'Team',
       'Technical' => 'Technisch',
       'Tell No One' => 'Niemanden informieren',
       'Template "%s" is not a valid template.' => 'Vorlage "%s" ist keine gültige Vorlage.',
+      'Template Objects
+----------------
+
+Instead of specifying each field value individually, you can specify another
+object to use as a template. Some of the initial fields will be copied from the
+template object.
+
+Specify a template object with the `template` parameter. You can use an ID,
+PHID, or monogram (for objects which have monograms). For example, you might
+use URIs like these:
+
+```
+%s?template=123
+%s?template=PHID-WXYZ-abcdef...
+%s?template=T123
+```
+
+You can combine the `template` parameter with HTTP parameters: the template
+object will be copied first, then any HTTP parameters will be read.
+
+When using `template`, these fields will be copied:' => 'Vorlagenobjekte
+---------------
+
+Statt jeden Feldwert einzeln anzugeben, kannst Du ein anderes Objekt als Vorlage
+angeben. Einige der Anfangsfelder werden dann aus dem Vorlagenobjekt kopiert.
+
+Gib ein Vorlagenobjekt mit dem Parameter `template` an. Du kannst eine ID, eine PHID
+oder ein Monogramm (bei Objekten mit Monogramm) verwenden. Du könntest zum Beispiel
+URIs wie diese verwenden:
+
+```
+%s?template=123
+%s?template=PHID-WXYZ-abcdef...
+%s?template=T123
+```
+
+Du kannst den Parameter `template` mit HTTP-Parametern kombinieren: Zuerst wird das
+Vorlagenobjekt kopiert, danach werden alle HTTP-Parameter gelesen.
+
+Bei Verwendung von `template` werden diese Felder kopiert:',
       'Temporarily lock clustered repositories to perform maintenance.' => 'Geclusterte Repositories vorübergehend für Wartung sperren.',
       'Temporary' => 'Temporär',
       'Temporary Failures' => 'Vorübergehende Fehler',
@@ -14291,8 +14924,6 @@ Nachdem Du Pygments installiert und aktiviert hast, sollte neu erzeugter Quellco
       'Temporary Object' => 'Temporäres Objekt',
       'Temporary Token Types' => 'Temporäre Token-Typen',
       'Temporary Tokens' => 'Temporäre Tokens',
-      'Temporary failure!' => 'Vorübergehender Fehler!',
-      'Term ngrams for: %s.' => 'Term-N-Gramme für: %s.',
       'Terminate' => 'Beenden',
       'Terminate API Token' => 'API-Token beenden',
       'Terminate API Tokens' => 'API-Tokens beenden',
@@ -14309,24 +14940,13 @@ Nachdem Du Pygments installiert und aktiviert hast, sollte neu erzeugter Quellco
 WARNING: This method does what it claims on the label. If you call this method via the test console in the web UI, it will log you out!' => 'Alle Web-Anmeldesitzungen beenden. Wenn die Methode über OAuth aufgerufen wird, wird auch das aktuelle OAuth-Token beendet.
 
 WARNUNG: Diese Methode tut genau das, was auf dem Etikett steht. Wenn Du sie über die Testkonsole in der Weboberfläche aufrufst, wirst Du abgemeldet!',
-      'Terminated Tree' => 'Terminierter Baum',
-      'Terminating Tree' => 'Terminierender Baum',
       'Terminating process %d...' => 'Prozess %d wird beendet...',
-      'Terms corpus for: %s' => 'Termkorpus für: %s',
       'Test' => 'Test',
       'Test Automation Configuration' => 'Automatisierungskonfiguration testen',
       'Test Configuration' => 'Konfiguration testen',
       'Test Console' => 'Testkonsole',
       'Test Failures' => 'Test-Fehler',
-      'Test Mode' => 'Testmodus',
-      'Test Payments' => 'Testzahlungen',
       'Test Plan' => 'Testplan',
-      'Test Project %d' => 'Testprojekt %d',
-      'Test Project for %s' => 'Testprojekt für %s',
-      'Test Repo' => 'Test-Repository',
-      'Test Repo "%s"' => 'Repository "%s" testen',
-      'Test Space' => 'Testbereich',
-      'Test Task' => 'Testaufgabe',
       'Test User %s' => 'Testbenutzer %s',
       'Test Warnings' => 'Test-Warnungen',
       'Test Webhook' => 'Webhook testen',
@@ -14344,9 +14964,6 @@ WARNUNG: Diese Methode tut genau das, was auf dem Etikett steht. Wenn Du sie üb
       'Test rules which run when another Herald rule is created or updated.' => 'Regeln testen, die ausgeführt werden, wenn eine andere Herald-Regel erstellt oder aktualisiert wird.',
       'Test rules which run when outbound mail is being prepared for delivery.' => 'Regeln testen, die ausgeführt werden, wenn ausgehende Mail für die Zustellung vorbereitet wird.',
       'Test run complete. Transcript:' => 'Testlauf abgeschlossen. Ablaufprotokoll:',
-      'Test users cannot join project A, because B exists' => 'Testbenutzer können Projekt A nicht beitreten, weil B existiert',
-      'Test users cannot join project A, because C exists' => 'Testbenutzer können Projekt A nicht beitreten, weil C existiert',
-      'Test users cannot join project B, because C exists' => 'Testbenutzer können Projekt B nicht beitreten, weil C existiert',
       'Testing Utilities' => 'Testwerkzeuge',
       'Testing configuration for %s. This may take a moment if Drydock has to clone the repository for the first time.' => 'Konfiguration für %s wird getestet. Dies kann einen Moment dauern, wenn Drydock das Repository zum ersten Mal klonen muss.',
       'Testing for capability "%s" on an object ("%s") which does not support that capability.' => 'Fähigkeitsprüfung für „%s" auf einem Objekt („%s"), das diese Fähigkeit nicht unterstützt.',
@@ -14354,7 +14971,6 @@ WARNUNG: Diese Methode tut genau das, was auf dem Etikett steht. Wenn Du sie üb
       'Tests Passed' => 'Tests bestanden',
       'Tests Skipped' => 'Tests übersprungen',
       'Text' => 'Text',
-      'Text Body Truncated' => 'Textinhalt abgeschnitten',
       'Text Encoding' => 'Zeichenkodierung',
       'Text Message (SMS)' => 'Textnachricht (SMS)',
       'Text Panel' => 'Text-Panel',
@@ -14390,9 +15006,12 @@ To resolve this issue, remove all URIs from "feed.http-hooks".' => 'Die Option "
 Webhooks können in Herald konfiguriert werden.
 
 Um dieses Problem zu beheben, entferne alle URIs aus "feed.http-hooks".',
+      'The "phd.user" option is set to "%s", so %s runs repository commands as that user with "sudo". No "sudo" binary was found in PATH. Install sudo, or add its directory to "environment.append-paths".' => 'Die Option "phd.user" ist auf "%s" gesetzt, daher führt %s Repository-Befehle mit "sudo" als dieser Benutzer aus. Im PATH wurde kein "sudo"-Programm gefunden. Installiere sudo oder füge sein Verzeichnis zu "environment.append-paths" hinzu.',
+      'The "sudo" binary at "%s" is sudo-rs %s. %s needs sudo-rs %s or newer, because older releases do not support "--preserve-env=list" and run commands without the environment %s sets. Upgrade sudo-rs or install classic sudo.' => 'Das "sudo"-Programm unter "%s" ist sudo-rs %s. %s benötigt sudo-rs %s oder neuer, weil ältere Versionen "--preserve-env=list" nicht unterstützen und Befehle ohne die Umgebung ausführen, die %s setzt. Aktualisiere sudo-rs oder installiere das klassische sudo.',
       'The "xhprof" PHP extension is not available. Install xhprof to enable the XHProf console plugin. You can find instructions in the %s.' => 'Die PHP-Erweiterung "xhprof" ist nicht verfügbar. Installiere xhprof, um das XHProf-Konsolen-Plugin zu aktivieren. Eine Anleitung findest Du in der %s.',
       'The %s OAuth application has been disabled.' => 'Die %s-OAuth-Anwendung wurde deaktiviert.',
       'The %s action(s) you are taking have no effect:' => 'Die %s Aktion(en), die Du durchführst, haben keine Wirkung:',
+      'The %s and %s flags are mutually exclusive. You can not authenticate as both a user ("%s") and a device ("%s"). Specify one or the other, but not both.' => 'Die Flags %s und %s schließen sich gegenseitig aus. Du kannst Dich nicht gleichzeitig als Benutzer ("%s") und als Gerät ("%s") authentifizieren. Gib eines von beiden an, aber nicht beides.',
       'The %s policy of this object would no longer allow you to %s the object.' => 'Die %s-Richtlinie dieses Objekts würde Dir nicht mehr erlauben, das Objekt zu %s.',
       'The %s repository is not tracked.' => 'Das Repository %s wird nicht verfolgt.',
       'The %s repository is still importing.' => 'Das Repository %s wird noch importiert.',
@@ -14426,7 +15045,6 @@ Um dieses Problem zu beheben, entferne alle URIs aus "feed.http-hooks".',
 %s' => 'Die Asana-Workspaces, auf die dein verknüpftes Konto Zugriff hat:
 
 %s',
-      'The CVC code you entered is not a valid CVC code. Check that you entered it correctly. The CVC code is a 3-digit or 4-digit numeric code which usually appears on the back of the card.' => 'Der eingegebene CVC-Code ist kein gültiger CVC-Code. Prüfe, ob du ihn korrekt eingegeben hast. Der CVC-Code ist ein drei- oder vierstelliger Zahlencode, der sich normalerweise auf der Rückseite der Karte befindet.',
       'The Cloud' => 'Die Cloud',
       'The Differential revision list view age UI elements have been removed to simplify the interface.' => 'Die UI-Elemente zur Altersanzeige in der Differential-Revisionsliste wurden entfernt, um die Oberfläche zu vereinfachen.',
       'The Empire' => 'Das Imperium',
@@ -14434,6 +15052,7 @@ Um dieses Problem zu beheben, entferne alle URIs aus "feed.http-hooks".',
       'The HTTP parameter named "parameters" for this request is not a valid JSON parameter. JSON is required. Exception: %s' => 'Der HTTP-Parameter namens "parameters" für diese Anfrage ist kein gültiger JSON-Parameter. JSON ist erforderlich. Ausnahme: %s',
       'The HTTP referrer.' => 'Der HTTP-Referrer.',
       'The HTTP response code or process exit code.' => 'Der HTTP-Antwortcode oder Prozess-Exit-Code.',
+      'The ID of the SSH key which authenticated this request. This is used to allow logs to report when specific keys were used, to make it easier to manage credentials.' => 'Die ID des SSH-Schlüssels, mit dem diese Anfrage authentifiziert wurde. Damit können Protokolle festhalten, wann bestimmte Schlüssel verwendet wurden, was die Verwaltung von Zugangsdaten erleichtert.',
       'The ID of the current build.' => 'Die ID des aktuellen Builds.',
       'The Japanese word for cat is "kome", which is also the word for rice. Japanese cats love to eat rice, so the two are synonymous.' => 'Das japanische Wort für Katze ist „kome“, was zugleich Reis bedeutet. Japanische Katzen essen bekanntlich sehr gern Reis, daher ist das praktisch dasselbe.',
       'The LDAP authentication provider is not enabled.' => 'Der LDAP-Authentifizierungsanbieter ist nicht aktiviert.',
@@ -14479,6 +15098,7 @@ Du kannst dieses Problem bedenkenlos ignorieren, wenn Du keine Daten in ZIP-Arch
       'The PID of the server process.' => 'Die PID des Serverprozesses.',
       'The Python 2 Standard Library' => 'Die Python-2-Standardbibliothek',
       'The Python 3 Standard Library' => 'Die Python-3-Standardbibliothek',
+      'The Remarkup Editor' => 'Der Remarkup-Editor',
       'The Spanish word for cat is "cato". The biggest cat is called "el cato".' => 'Das spanische Wort für Katze ist „cato“. Die größte Katze heißt folgerichtig „el cato“.',
       'The Type of objects this policy can apply to. If set, this policy can only be applied to that type of objects, but can use Object Rules that apply to that object.
 
@@ -14499,8 +15119,6 @@ Möglicherweise muss die Benannte Richtlinie gespeichert und erneut bearbeitet w
       'The URL to shorten.' => 'Die zu kürzende URL.',
       'The VCS this repository uses ("git", "hg" or "svn").' => 'Das VCS, das dieses Repository verwendet („git", „hg" oder „svn").',
       'The World Burns' => 'Brennende Welten',
-      'The access link you have followed is out of date and no longer works.' => 'Der Link, dem du gefolgt bist, ist veraltet und funktioniert nicht mehr.',
-      'The account ("%s") for this subscription ("%s") has no members.' => 'Das Konto ("%s") für dieses Abonnement ("%s") hat keine Mitglieder.',
       'The account you are attempting to link is already linked to your account.' => 'Das Konto, das Du verknüpfen möchtest, ist bereits mit Deinem Konto verknüpft.',
       'The account you are attempting to log in with uses a nonexistent or disabled authentication provider (with key "%s"). An administrator may have recently disabled this provider.' => 'Das Konto, mit dem Du Dich anmelden möchtest, verwendet einen nicht vorhandenen oder deaktivierten Authentifizierungsanbieter (mit dem Schlüssel "%s"). Ein Administrator hat diesen Anbieter möglicherweise vor Kurzem deaktiviert.',
       'The account you are attempting to register or link is already linked to another user.' => 'Das Konto, das Du registrieren oder verknüpfen möchtest, ist bereits mit einem anderen Benutzer verknüpft.',
@@ -14509,7 +15127,6 @@ Möglicherweise muss die Benannte Richtlinie gespeichert und erneut bearbeitet w
       'The account you are attempting to register with uses an authentication provider ("%s") which does not allow registration. An administrator may have recently disabled registration with this provider.' => 'Das Konto, mit dem Du Dich registrieren möchtest, verwendet einen Authentifizierungsanbieter ("%s"), der keine Registrierung erlaubt. Möglicherweise hat ein Administrator die Registrierung über diesen Anbieter kürzlich deaktiviert.',
       'The address %s is configured to be used by an application.' => 'Die Adresse %s ist so konfiguriert, dass sie von einer Anwendung verwendet wird.',
       'The address %s is configured to be used by the %s Application.' => 'Die Adresse %s ist so konfiguriert, dass sie von der Anwendung %s verwendet wird.',
-      'The address can be no longer than %s characters.' => 'Die Adresse darf nicht länger als %s Zeichen sein.',
       'The address of the interface.' => 'Die Adresse der Schnittstelle.',
       'The alias can be no longer than %d characters.' => 'Der Alias darf nicht länger als %d Zeichen sein.',
       'The alias for the URL.' => 'Der Alias für die URL.',
@@ -14517,7 +15134,6 @@ Möglicherweise muss die Benannte Richtlinie gespeichert und erneut bearbeitet w
       'The alias you provided (%s) may only contain letters and numbers.' => 'Der angegebene Kurzname (%s) darf nur Buchstaben und Ziffern enthalten.',
       'The alias you provided (%s) must contain at least one letter.' => 'Der angegebene Kurzname (%s) muss mindestens einen Buchstaben enthalten.',
       'The application search engine "%s" is unknown.' => 'Die Anwendungssuchmaschine "%s" ist unbekannt.',
-      'The application that created this cart did not finish putting products in it. You can not checkout with an incomplete cart.' => 'Die Anwendung, die diesen Warenkorb erstellt hat, hat das Hinzufügen der Produkte nicht abgeschlossen. Du kannst mit einem unvollständigen Warenkorb nicht zur Kasse gehen.',
       'The artifact key.' => 'Der Artefaktschlüssel.',
       'The artifact type.' => 'Der Artefakttyp.',
       'The assignee of a task can always view and edit it.' => 'Der Bearbeiter einer Aufgabe kann sie immer ansehen und bearbeiten.',
@@ -14565,7 +15181,6 @@ Um die Basis-URI zu konfigurieren, führe den unten gezeigten Befehl aus.',
       'The base URI for this install is not configured. Many major features will not work properly until you configure it.' => 'Die Basis-URI für diese Installation ist nicht konfiguriert. Viele wichtige Funktionen werden nicht korrekt arbeiten, bis Du sie konfigurierst.',
       'The best available MYSQL implementation is now selected automatically.' => 'Die beste verfügbare MySQL-Implementierung wird jetzt automatisch ausgewählt.',
       'The best way to create a diff is to use the %s command-line tool.' => 'Der beste Weg, einen Diff zu erstellen, ist der %s Kommandozeilenwerkzeug.',
-      'The billing name can be no longer than %s characters.' => 'Der Abrechnungsname darf nicht länger als %s Zeichen sein.',
       'The blueprint which generated this resource.' => 'Die Blaupause, die diese Ressource erzeugt hat.',
       'The body of text of the document.' => 'Der Textinhalt des Dokuments.',
       'The bound service.' => 'Der gebundene Dienst.',
@@ -14584,15 +15199,11 @@ Um die Basis-URI zu konfigurieren, führe den unten gezeigten Befehl aus.',
       'The callsign "%s" is not a valid repository callsign. Callsigns may only contain UPPERCASE letters.' => 'Das Rufzeichen "%s" ist kein gültiges Repository-Rufzeichen. Rufzeichen dürfen nur GROSSBUCHSTABEN enthalten.',
       'The callsign "%s" is not a valid repository callsign. Callsigns must be no more than 32 bytes long.' => 'Das Rufzeichen "%s" ist kein gültiges Repository-Rufzeichen. Rufzeichen dürfen höchstens 32 Byte lang sein.',
       'The callsign of the repository.' => 'Das Rufzeichen des Repositorys.',
-      'The card expiration date is not a valid expiration date. Check that you entered it correctly. You can not add an expired card as a payment method.' => 'Das eingegebene Kartenablaufdatum ist kein gültiges Ablaufdatum. Prüfe, ob du es korrekt eingegeben hast. Eine abgelaufene Karte kann nicht als Zahlungsmethode hinzugefügt werden.',
-      'The card number you entered is not a valid card number. Check that you entered it correctly.' => 'Die eingegebene Kartennummer ist keine gültige Kartennummer. Prüfe, ob du sie korrekt eingegeben hast.',
       'The challenge token you are authenticating with is outside of the allowed time range. Either your system clock is out of whack or you\'re executing a replay attack.' => 'Das Challenge-Token, mit dem du dich authentifizierst, liegt außerhalb des zulässigen Zeitfensters. Entweder geht deine Systemuhr falsch oder du führst einen Replay-Angriff aus.',
       'The change you\'re attempting to push creates new, divergent heads for the branch \'%s\': %s. This is inadvisable and dangerous.' => 'Die Änderung, die Du zu pushen versuchst, erstellt neue, divergierende Heads für den Branch \'%s\': %s. Das ist nicht ratsam und gefährlich.',
       'The change you\'re attempting to push deletes the branch \'%s\'.' => 'Die Änderung, die Du zu pushen versuchst, löscht den Branch \'%s\'.',
       'The change you\'re attempting to push splits the head of branch \'%s\' into multiple heads: %s. This is inadvisable and dangerous.' => 'Die Änderung, die Du zu pushen versuchst, spaltet den Head des Branches \'%s\' in mehrere Heads auf: %s. Das ist nicht ratsam und gefährlich.',
       'The change you\'re attempting to push updates the branch \'%s\' from \'%s\' to \'%s\', but this is not a fast-forward. Pushes which rewrite published branch history are dangerous.' => 'Die Änderung, die Du zu pushen versuchst, aktualisiert den Branch \'%s\' von \'%s\' auf \'%s\', aber dies ist kein Fast-Forward. Pushes, die veröffentlichte Branch-Historie umschreiben, sind gefährlich.',
-      'The checkout process has been started, but an error occurred. You can cancel the order or contact the merchant for assistance.' => 'Der Bezahlvorgang wurde begonnen, aber es ist ein Fehler aufgetreten. Du kannst die Bestellung stornieren oder den Händler um Hilfe bitten.',
-      'The checkout process has been started, but not yet completed. You can continue checking out by clicking %s, or cancel the order, or contact the merchant for assistance.' => 'Der Bezahlvorgang wurde begonnen, aber noch nicht abgeschlossen. Du kannst ihn fortsetzen, indem du auf %s klickst, die Bestellung stornierst oder den Händler um Hilfe bittest.',
       'The chosen callsign or repository short name is already in use by another repository.' => 'Das gewählte Rufzeichen oder der gewählte Kurzname des Repositorys wird bereits von einem anderen Repository verwendet.',
       'The clone of this repository ("%s") on the local machine ("%s") could not be read. Ensure that the repository is in a location where the web server has read permissions.' => 'Der Clone dieses Repositorys ("%s") auf dem lokalen Rechner ("%s") konnte nicht gelesen werden. Sicherstellen, dass das Repository an einem Ort liegt, auf den der Webserver Lesezugriff hat.',
       'The command "!%s" is not a supported mail command. Valid commands for this object are: %s.' => 'Der Befehl "!%s" ist kein unterstützter Mail-Befehl. Gültige Befehle für dieses Objekt sind: %s.',
@@ -14676,7 +15287,7 @@ If this directory exists, make it readable to the webserver. You can also edit t
 Wenn das Verzeichnis existiert, mache es für den Webserver lesbar. Du kannst auch die untenstehende Konfiguration ändern und ein anderes Verzeichnis verwenden.',
       'The display name of the column.' => 'Anzeigename der Spalte.',
       'The document %s already exists. Do you want to edit it instead?' => 'Das Dokument %s existiert bereits. Möchtest du es stattdessen bearbeiten?',
-      'The email address "%s" is already attached to this account.' => 'Die E-Mail-Adresse "%s" ist bereits mit diesem Konto verknüpft.',
+      'The effective policy which this policy will behave like when selected as the policy for other objects.' => 'Die effektive Richtlinie, nach der sich diese Richtlinie verhält, wenn sie für andere Objekte als Richtlinie ausgewählt wird.',
       'The email address %s is now verified.' => 'Die E-Mail-Adresse %s ist jetzt verifiziert.',
       'The email address ("%s") associated with the external account is already in use by an existing %s account. Multiple %s accounts may not have the same email address, so you can not use this email address to register a new account.' => 'Die dem externen Konto zugeordnete E-Mail-Adresse ("%s") wird bereits von einem bestehenden %s-Konto verwendet. Mehrere %s-Konten dürfen nicht dieselbe E-Mail-Adresse haben, daher kannst Du diese E-Mail-Adresse nicht zur Registrierung eines neuen Kontos verwenden.',
       'The email address associated with this account ("%s") is already in use by an application and can not be used to register a new account. Choose a different, valid address.' => 'Die diesem Konto zugeordnete E-Mail-Adresse ("%s") wird bereits von einer Anwendung verwendet und kann nicht zur Registrierung eines neuen Kontos verwendet werden. Wähle eine andere, gültige Adresse.',
@@ -14685,7 +15296,6 @@ Wenn das Verzeichnis existiert, mache es für den Webserver lesbar. Du kannst au
       'The email address you just clicked a link from is already associated with a registered account (%s), but is not verified. Log in to that account to continue. If you can not log in, you can register a new account.' => 'Die E-Mail-Adresse, aus deren Nachricht Du gerade einen Link angeklickt hast, ist bereits einem registrierten Konto (%s) zugeordnet, aber noch nicht verifiziert. Melde Dich bei diesem Konto an, um fortzufahren. Wenn Du Dich nicht anmelden kannst, kannst Du ein neues Konto registrieren.',
       'The email address you just clicked a link from is already the primary email address for a registered account (%s). Log in to continue.' => 'Die E-Mail-Adresse, aus deren Nachricht Du gerade einen Link angeklickt hast, ist bereits die primäre E-Mail-Adresse eines registrierten Kontos (%s). Melde Dich an, um fortzufahren.',
       'The email address you just clicked a link from is already verified and associated with a registered account (%s). Log in to continue.' => 'Die E-Mail-Adresse, aus deren Nachricht Du gerade einen Link angeklickt hast, ist bereits verifiziert und einem registrierten Konto (%s) zugeordnet. Melde Dich an, um fortzufahren.',
-      'The email can be no longer than %s characters.' => 'Die E-Mail darf nicht länger als %s Zeichen sein.',
       'The email used by the signer.' => 'Die vom Unterzeichner verwendete Email.',
       'The email will contain a link that the user may use to log in to their account. This link bypasses authentication requirements and allows them to log in without credentials. Sending a copy of this email can be useful if the original was lost or never sent.' => 'Die E-Mail enthält einen Link, den der Benutzer zur Anmeldung bei seinem Konto verwenden kann. Dieser Link umgeht Authentifizierungsanforderungen und ermöglicht die Anmeldung ohne Zugangsdaten. Das Senden einer Kopie dieser E-Mail kann nützlich sein, wenn die ursprüngliche verloren ging oder nie gesendet wurde.',
       'The email will identify you as the sender. You may optionally include additional text in the mail body by specifying it below.' => 'Die E-Mail wird Dich als Absender ausweisen. Du kannst optional zusätzlichen Text im E-Mail-Text angeben, indem Du ihn unten eingibst.',
@@ -14724,6 +15334,7 @@ Wenn das Verzeichnis existiert, mache es für den Webserver lesbar. Du kannst au
       'The id of the OAuth client.' => 'Die ID des OAuth-Clients.',
       'The identifier %s is ambiguous and matches more than one commit.' => 'Der Bezeichner %s ist mehrdeutig und stimmt mit mehr als einem Commit überein.',
       'The indexing algorithm for the fulltext search index has been updated and the index needs to be rebuilt. Until you rebuild the index, global search (and other fulltext search) will not function correctly.' => 'Der Indexierungsalgorithmus für den Volltextsuchindex wurde aktualisiert und der Index muss neu aufgebaut werden. Bis Du den Index neu aufbaust, werden die globale Suche und andere Volltextsuchen nicht korrekt funktionieren.',
+      'The installation record for the extension `%s` is missing or broken - unable to upgrade.' => 'Der Installationseintrag für die Erweiterung `%s` fehlt oder ist beschädigt - Aktualisierung nicht möglich.',
       'The interface the service is bound to.' => 'Die Schnittstelle, an die der Dienst gebunden ist.',
       'The invite code in the link you clicked has already been accepted.' => 'Der Einladungscode im Link, auf den du geklickt hast, wurde bereits angenommen.',
       'The invite code in the link you clicked is invalid. Check that you followed the link correctly.' => 'Der Einladungscode in dem Link, auf den Du geklickt hast, ist ungültig. Prüfe, ob Du dem Link korrekt gefolgt bist.',
@@ -14731,9 +15342,7 @@ Wenn das Verzeichnis existiert, mache es für den Webserver lesbar. Du kannst au
       'The key which signed this request is associated with a disabled device ("%s").' => 'Der Schlüssel, der diese Anfrage signiert hat, ist einem deaktivierten Gerät ("%s") zugeordnet.',
       'The key which signed this request is not trusted. Only trusted keys can be used to sign API calls.' => 'Der Schlüssel, der diese Anfrage signiert hat, ist nicht vertrauenswürdig. Nur vertrauenswürdige Schlüssel dürfen zum Signieren von API-Aufrufen verwendet werden.',
       'The keyring stores master encryption keys. For help with configuring a keyring
-and encryption, see **[[ %s | Configuring Encryption ]]**.
-EOTEXT' => 'Der Schlüsselbund speichert Master-Verschlüsselungsschlüssel. Hilfe bei der Konfiguration von Schlüsselbund und Verschlüsselung findest Du unter **[[ %s | Configuring Encryption ]]**.
-EOTEXT',
+and encryption, see **[[ %s | Configuring Encryption ]]**.' => 'Der Schlüsselbund speichert Master-Verschlüsselungsschlüssel. Hilfe bei der Konfiguration von Schlüsselbund und Verschlüsselung findest Du unter **[[ %s | Configuring Encryption ]]**.',
       'The known issues with this old version are:' => 'Die bekannten Probleme mit dieser alten Version sind:',
       'The largest recorded cat was nearly 11 inches long from nose to tail.' => 'Die größte jemals gemessene Katze war von der Nase bis zur Schwanzspitze fast 28 Zentimeter lang.',
       'The link you followed to access this file is no longer valid. The visibility of the file may have changed after the link was generated.' => 'Der Link, dem du gefolgt bist, um auf diese Datei zuzugreifen, ist nicht mehr gültig. Die Sichtbarkeit der Datei hat sich möglicherweise nach der Erstellung des Links geändert.',
@@ -14810,8 +15419,8 @@ Build-Kandidaten befinden sich im Zustand "wird gebaut", bis alle Builds bestand
 
 Dieses Verhalten kann geändert werden, wenn nicht auf diesen Build gewartet werden soll oder es egal ist, ob er fehlschlägt.',
       'The owner of a revision can always view and edit it.' => 'Der Eigentümer einer Version kann sie immer ansehen und ändern.',
-      'The owner of an initiative can always view and edit it.' => 'Der Inhaber einer Initiative kann sie immer ansehen und bearbeiten.',
       'The package description.' => 'Die Paketbeschreibung.',
+      'The package is listed in the store as library `%s`, but the actual library downloaded is named `%s`. Depending on context, this may or may not be important.' => 'Das Paket ist im Store als Bibliothek `%s` gelistet, die tatsächlich heruntergeladene Bibliothek heißt aber `%s`. Je nach Kontext kann das wichtig sein oder auch nicht.',
       'The package key "%s" is already in use by another package provided by this publisher.' => 'Der Paketschlüssel "%s" wird bereits von einem anderen Paket dieses Softwareanbieters verwendet.',
       'The parent domain can be no longer than %s characters.' => 'Die übergeordnete Domain darf nicht länger als %s Zeichen sein.',
       'The parent site can be no longer than %s characters.' => 'Die übergeordnete Website darf nicht länger als %s Zeichen sein.',
@@ -14823,8 +15432,6 @@ Dieses Verhalten kann geändert werden, wenn nicht auf diesen Build gewartet wer
       'The path to the document.' => 'Der Pfad des Dokuments.',
       'The path you entered (%s) is not a valid wiki document path. Paths may not contain spaces or special characters.' => 'Der eingegebene Pfad (%s) ist kein gültiger Wiki-Dokumentenpfad. Pfade dürfen keine Leerzeichen oder Sonderzeichen enthalten.',
       'The pattern you searched for was not found in the content of any files.' => 'Das gesuchte Muster wurde in keiner Datei gefunden.',
-      'The payment method associated with this subscription is invalid or out of date, so it could not be automatically billed. Update the default payment method to enable automatic billing.' => 'Die diesem Abonnement zugeordnete Zahlungsmethode ist ungültig oder veraltet, daher konnte es nicht automatisch abgerechnet werden. Aktualisiere die Standard-Zahlungsmethode, um die automatische Abrechnung zu aktivieren.',
-      'The payment response for this charge attempt has already been processed.' => 'Die Zahlungsantwort für diesen Abbuchungsversuch wurde bereits verarbeitet.',
       'The person (or thing) that started this build.' => 'Die Person (oder das Ding), die diesen Build gestartet hat.',
       'The popular trivia game "World of Warcraft" features a race of cat people called the Khajiit.' => 'Das beliebte Trivia-Spiel "World of Warcraft" enthält ein Katzenvolk namens Khajiit.',
       'The port number of the interface.' => 'Die Portnummer der Schnittstelle.',
@@ -14975,15 +15582,6 @@ Dieses Verhalten kann geändert werden, wenn nicht auf diesen Build gewartet wer
       'The version "%s" already exists for this package. Each version must have a unique name.' => 'Die Version "%s" existiert für dieses Paket bereits. Jede Version muss einen eindeutigen Namen haben.',
       'The version control system this repository uses does not support named references, so you can not resolve or list repository refs in this repository.' => 'Das Versionskontrollsystem dieses Repositorys unterstützt keine benannten Referenzen. Daher können Repository-Refs hier nicht aufgelöst oder aufgelistet werden.',
       'The version control system, either "svn", "hg" or "git".' => 'Das Versionsverwaltungssystem, entweder "svn", "hg" oder "git".',
-      'The version of %s on this system is out of date and contains a major, widely disclosed vulnerability (the "Shellshock" vulnerability).
-
-Upgrade %s to a patched version.
-
-To learn more about how this issue affects this software, see %s.' => 'Die Version von %s auf diesem System ist veraltet und enthält eine schwerwiegende, weithin bekannte Sicherheitslücke (die "Shellshock"-Lücke).
-
-Aktualisiere %s auf eine gepatchte Version.
-
-Mehr darüber, wie sich dieses Problem auf diese Software auswirkt, findest Du unter %s.',
       'The way VCS activity is attributed %s user accounts has changed.' => 'Die Art, wie VCS-Aktivitäten %s-Benutzerkonten zugeordnet werden, hat sich geändert.',
       'The webserver\'s host name.' => 'Der Hostname des Webservers.',
       'The word "catastrophe" has no etymological relationship to the word "cat".' => 'Das Wort "Katastrophe" steht etymologisch in keinerlei Beziehung zum Wort "Katze".',
@@ -14995,7 +15593,6 @@ Mehr darüber, wie sich dieses Problem auf diese Software auswirkt, findest Du u
       'There are multiple chunks in byte range %d - %d.' => 'Im Byte-Bereich %d–%d gibt es mehrere Chunks.',
       'There are no API tokens to terminate.' => 'Keine API-Tokens zum Beenden vorhanden.',
       'There are no Diviner \'%s\' files anywhere beneath the current directory. Use \'%s\' to specify a documentation book to generate.' => 'Es gibt keine Diviner-\'%s\'-Dateien im aktuellen Verzeichnis. Mit \'%s\' ein Dokumentationsbuch zur Generierung angeben.',
-      'There are no billing email addresses associated with this account.' => 'Mit diesem Konto sind keine Rechnungs-E-Mail-Adressen verknüpft.',
       'There are no commits on %s that are not already on %s.' => 'Es gibt keine Commits auf %s, die nicht bereits auf %s vorhanden sind.',
       'There are no configured default registration providers.' => 'Es sind keine Standard-Registrierungsanbieter konfiguriert.',
       'There are no configured multi-factor providers.' => 'Keine Multi-Faktor-Anbieter konfiguriert.',
@@ -15004,8 +15601,6 @@ Mehr darüber, wie sich dieses Problem auf diese Software auswirkt, findest Du u
       'There are no matching sessions to terminate.' => 'Keine passenden Sitzungen zum Beenden vorhanden.',
       'There are no matching tokens to revoke.' => 'Es sind keine passenden Token zum Widerrufen vorhanden.',
       'There are no password hashers available which are usable for new passwords.' => 'Es sind keine Passwort-Hasher verfügbar, die für neue Passwörter verwendet werden können.',
-      'There are no payment methods associated with this account.' => 'Mit diesem Konto sind keine Zahlungsmethoden verknüpft.',
-      'There are no payment providers enabled that can add payment methods.' => 'Es sind keine Zahlungsanbieter aktiviert, die Zahlungsmethoden hinzufügen können.',
       'There are no registered session engine extensions.' => 'Keine registrierten Sitzungsengine-Erweiterungen vorhanden.',
       'There are no repositories on the selected device or service.' => 'Auf dem ausgewählten Gerät oder Dienst befinden sich keine Repositories.',
       'There are no repositories.' => 'Es gibt keine Repositories.',
@@ -15023,12 +15618,13 @@ Mehr darüber, wie sich dieses Problem auf diese Software auswirkt, findest Du u
       'There is no account associated with that email address.' => 'Es gibt kein Konto, daß mit dieser Email-Adresse verbunden wäre.',
       'There is no active query yet.' => 'Es gibt noch keine aktive Abfrage.',
       'There is no branch named "%s" in this repository.' => 'Es gibt keinen Branch namens "%s" in diesem Repository.',
+      'There is no configured database on host "%s". This command can only interact with configured databases.' => 'Auf Host "%s" ist keine Datenbank konfiguriert. Dieser Befehl kann nur mit konfigurierten Datenbanken arbeiten.',
+      'There is no configured database with ref "%s". This command can only interact with configured databases.' => 'Es ist keine Datenbank mit der Ref "%s" konfiguriert. Dieser Befehl kann nur mit konfigurierten Datenbanken arbeiten.',
       'There is no database storage initialized in the current storage namespace ("%s"). Use "bin/storage upgrade" to initialize storage or use "--namespace" to choose a different namespace.' => 'Im aktuellen Storage-Namespace ("%s") ist kein Datenbank-Storage initialisiert. Verwende "bin/storage upgrade", um den Storage zu initialisieren, oder "--namespace", um einen anderen Namespace auszuwählen.',
       'There is no document here, but you may create it.' => 'Es gibt hier kein Dokument, aber du kannst eines erstellen.',
       'There is no implementation available for artifacts of type "%s".' => 'Für Artefakte vom Typ "%s" ist keine Implementierung verfügbar.',
       'There is no known application setting with key "%s".' => 'Es gibt keine bekannte Anwendungseinstellung mit dem Schlüssel „%s".',
       'There is no matching repository.' => 'Es gibt kein passendes Repository.',
-      'There is no payment method associated with this subscription, so it could not be billed automatically. Add a default payment method to enable automatic billing.' => 'Diesem Abonnement ist keine Zahlungsmethode zugeordnet, daher konnte es nicht automatisch abgerechnet werden. Füge eine Standard-Zahlungsmethode hinzu, um die automatische Abrechnung zu aktivieren.',
       'There is no record of this lock being released.' => 'Es gibt keinen Eintrag über die Freigabe dieses Locks.',
       'There is nothing here.' => 'Hier gibt es nichts.',
       'There is some deprecated code found in the %s code-base.
@@ -15055,12 +15651,6 @@ Um dieses Problem zu lösen, kannst Du entweder:
 
 ',
       'There is some deprecated code found in the code-base.' => 'Im Code-Bestand wurde veralteter Code gefunden.',
-      'There was a technical error while trying to automatically bill this subscription: %s' => 'Beim Versuch, dieses Abonnement automatisch abzurechnen, ist ein technischer Fehler aufgetreten: %s',
-      'There was an error adding this payment method:' => 'Beim Hinzufügen dieser Zahlungsmethode ist ein Fehler aufgetreten:',
-      'There was an error decoding error information submitted by the client. Expected a JSON-encoded list of error codes, received: %s.' => 'Beim Dekodieren der vom Client übermittelten Fehlerinformationen ist ein Fehler aufgetreten. Erwartet wurde eine JSON-kodierte Liste von Fehlercodes, empfangen wurde: %s.',
-      'There was an error decoding token information submitted by the client. Expected a JSON-encoded token dictionary, received: %s.' => 'Beim Dekodieren der vom Client übermittelten Token-Informationen ist ein Fehler aufgetreten. Erwartet wurde ein JSON-kodiertes Token-Wörterbuch, empfangen wurde: %s.',
-      'There was an error with the payment token submitted by the client. Expected a valid dictionary, received: %s.' => 'Mit dem vom Client übermittelten Zahlungs-Token ist ein Fehler aufgetreten. Erwartet wurde ein gültiges Wörterbuch, empfangen wurde: %s.',
-      'There was an unexpected error (\'%s\') processing payment information.' => 'Beim Verarbeiten der Zahlungsinformationen ist ein unerwarteter Fehler aufgetreten (\'%s\').',
       'There was an unexpected error displaying the task graph. Use %s to browse parents or subtasks, or %s to show the graph.' => 'Beim Anzeigen des Aufgabengraphen ist ein unerwarteter Fehler aufgetreten. Verwende %s, um übergeordnete Aufgaben oder Unteraufgaben zu durchsuchen, oder %s, um den Graphen anzuzeigen.',
       'These %d configuration value(s) are related:' => 'Diese %d Konfigurationswert(e) sind verwandt:',
       'These %s inline comment(s) will be saved and published.' => 'Diese %s Inline-Kommentar(e) werden gespeichert und veröffentlicht.',
@@ -15078,6 +15668,7 @@ Um dieses Problem zu lösen, kannst Du entweder:
       'These repositories will be thawed:' => 'Diese Repositories werden aufgetaut:',
       'These rules are processed in order.' => 'Diese Regeln werden der Reihe nach abgearbeitet.',
       'These rules are processed in order:' => 'Diese Regeln werden in folgender Reihenfolge verarbeitet:',
+      'These standard credentials are separate from any administrative credentials provided to this command with __%s__ or __%s__, and must be configured correctly before you can proceed.' => 'Diese Standard-Zugangsdaten sind unabhängig von administrativen Zugangsdaten, die diesem Befehl mit __%s__ oder __%s__ übergeben werden, und müssen korrekt konfiguriert sein, bevor Du fortfahren kannst.',
       'They will be able to rejoin the room later.' => 'Er/Sie kann dem Raum später wieder beitreten.',
       'They will not be able to rejoin the room unless invited again.' => 'Die Person kann dem Raum nur wieder beitreten, wenn sie erneut eingeladen wird.',
       'Things before they were cool.' => 'Dinge im Entwurfsstadium (bevor sie richtig kewl waren)',
@@ -15097,8 +15688,6 @@ Um dieses Problem zu lösen, kannst Du entweder:
       'This Jupyter notebook does not specify any notebook cells.' => 'Dieses Jupyter-Notebook enthält keine Notebook-Zellen.',
       'This Jupyter notebook uses an unsupported version of the file format (found version %s, expected version 4).' => 'Dieses Jupyter-Notebook verwendet eine nicht unterstützte Version des Dateiformats (gefunden: Version %s, erwartet: Version 4).',
       'This One Is Purple' => 'Das hier ist Lila',
-      'This PDF iterator has no associated PDF generator.' => 'Dieser PDF-Iterator hat keinen zugehörigen PDF-Generator.',
-      'This PDF object is already registered with a PDF generator. You can not register an object with more than one generator.' => 'Dieses PDF-Objekt ist bereits bei einem PDF-Generator registriert. Du kannst ein Objekt nicht bei mehr als einem Generator registrieren.',
       'This PHID type does not correspond to a mailable object.' => 'Dieser PHID-Typ entspricht keinem mailbaren Objekt.',
       'This Repository Only' => 'Nur dieses Repository',
       'This URI does not have an associated credential.' => 'Dieser URI hat keine zugeordneten Zugangsdaten.',
@@ -15111,11 +15700,8 @@ Um dieses Problem zu lösen, kannst Du entweder:
       'This action does not support rules of type "%s".' => 'Diese Aktion unterstützt keine Regeln vom Typ "%s".',
       'This action has no effect on %s target(s): %s.' => 'Diese Aktion hat keine Wirkung auf %s Ziel(e): %s.',
       'This action has no effect.' => 'Diese Aktion hat keine Wirkung.',
-      'This action is permanent and can not be undone.' => 'Diese Aktion ist dauerhaft und kann nicht rückgängig gemacht werden.',
       'This action specifies no targets.' => 'Diese Aktion gibt keine Ziele an.',
       'This adapter can not trigger on objects.' => 'Dieser Adapter kann nicht auf Objekte reagieren.',
-      'This address will no longer receive email, and access links will no longer function.' => 'Diese Adresse erhält keine E-Mails mehr, und Zugriffslinks funktionieren nicht mehr.',
-      'This address will receive email again, and existing links to access order history will work again.' => 'Diese Adresse erhält wieder E-Mails, und vorhandene Links zur Bestellhistorie funktionieren wieder.',
       'This alias is already in use.' => 'Dieser Kurzname ist bereits vergeben.',
       'This ancient extension point has been replaced with other mechanisms, including "AphrontSite".' => 'Dieser alte Erweiterungspunkt wurde durch andere Mechanismen ersetzt, darunter "AphrontSite".',
       'This answer has been hidden.' => 'Diese Antwort wurde ausgeblendet.',
@@ -15184,6 +15770,7 @@ Um dieses Problem zu lösen, kannst Du entweder:
       'This command implementation ("%s") can not be applied to an item of type "%s".' => 'Diese Befehlsimplementierung ("%s") kann nicht auf ein Element vom Typ "%s" angewendet werden.',
       'This command implementation("%s") can not apply a command of a different type ("%s").' => 'Diese Befehlsimplementierung ("%s") kann keinen Befehl eines anderen Typs ("%s") anwenden.',
       'This command only operates on database masters, but the selected database hosts do not include any masters.' => 'Dieser Befehl arbeitet nur auf Datenbank-Mastern, aber die ausgewählten Datenbankhosts enthalten keine Master.',
+      'This command will:' => 'Dieser Befehl wird:',
       'This comment has been deleted.' => 'Dieser Kommentar wurde gelöscht',
       'This comment originally appeared on line %s, but that line does not exist in this version of the diff. It has been moved backward to the nearest line.' => 'Dieser Kommentar erschien ursprünglich in Zeile %s, aber diese Zeile existiert in dieser Version des Diffs nicht. Er wurde zur nächstgelegenen Zeile verschoben.',
       'This comment was made on a file which this file was moved to, but in a newer diff.' => 'Dieser Kommentar wurde zu einer Datei erstellt, in die diese Datei verschoben wurde, aber in einem neueren Diff.',
@@ -15306,15 +15893,11 @@ Um dieses Problem zu lösen, kannst Du entweder:
       'This domain can only be used to open URLs shortened using the Phurl application. The URL you are trying to access does not have a Phurl URL associated with it.' => 'Diese Domain kann nur zum Öffnen von URLs verwendet werden, die mit der Phurl-Anwendung gekürzt wurden. Der aufgerufenen URL ist keine Phurl-URL zugeordnet.',
       'This draft revision will be sent for review once %s build(s) pass: %s.' => 'Diese Entwurfsversion wird zur Überprüfung gesendet, sobald %s Build(s) erfolgreich sind: %s.',
       'This draft revision will not be submitted for review because %s build(s) failed: %s.' => 'Diese Entwurfsversion wird nicht zur Überprüfung eingereicht, da %s Build(s) fehlgeschlagen sind: %s.',
-      'This email address (%s) has been disabled and no longer has access to this payment account.' => 'Diese E-Mail-Adresse (%s) wurde deaktiviert und hat keinen Zugriff mehr auf dieses Zahlungskonto.',
-      'This email address (%s) has been permanently unsubscribed and no longer has access to this payment account.' => 'Diese E-Mail-Adresse (%s) wurde dauerhaft abgemeldet und hat keinen Zugriff mehr auf dieses Zahlungskonto.',
       'This email address (%s) is no longer your primary email address. Going forward, all email will be sent to your new primary email address (%s).' => 'Diese E-Mail-Adresse (%s) ist nicht mehr Deine primäre E-Mail-Adresse. Zukünftig wird alle E-Mail an Deine neue primäre E-Mail-Adresse (%s) gesendet.',
-      'This email address (%s) was added to a payment account (%s) by %s.' => 'Diese E-Mail-Adresse (%s) wurde von %s einem Zahlungskonto (%s) hinzugefügt.',
       'This email address has already been verified.' => 'Diese Email-Adresse wurde bereits bestätigt.',
       'This email address is already in use by a user. Choose a different address.' => 'Diese Email-Adresse wird bereits von einem Benutzer verwendet. Wähle eine andere Adresse.',
       'This email address is already in use.' => 'Diese Email-Adresse wird bereits verwendet.',
       'This email address is reserved. Choose a different address.' => 'Diese Email-Adresse ist reserviert. Wähle eine andere Adresse.',
-      'This email address was added to this payment account by: %s' => 'Diese E-Mail-Adresse wurde diesem Zahlungskonto hinzugefügt von: %s',
       'This email was sent from an email address ("%s") that is not associated with a registered user account. To interact via email, add this address to your account.' => 'Diese E-Mail wurde von einer E-Mail-Adresse ("%s") gesendet, die keinem registrierten Benutzerkonto zugeordnet ist. Um per E-Mail interagieren zu können, füge diese Adresse Deinem Konto hinzu.',
       'This endpoint supports these types of transactions. See below for detailed information about each transaction type.' => 'Dieser Endpunkt unterstützt diese Transaktionstypen. Weiter unten findest Du detaillierte Informationen zu jedem Transaktionstyp.',
       'This engine is used to edit Almanac bindings.' => 'Diese Engine wird zum Bearbeiten von Almanac-Bindungen verwendet.',
@@ -15367,6 +15950,7 @@ Um dieses Problem zu lösen, kannst Du entweder:
       'This event repeats every year.' => 'Dieses Ereignis wiederholt sich jährlich.',
       'This export has an invalid mode ("%s").' => 'Dieser Export hat einen ungültigen Modus („%s").',
       'This external (%s) does not appear in any tracked repository. It may exist in an untracked repository that Diffusion does not know about.' => 'Diese externe Referenz (%s) erscheint in keinem verfolgten Repository. Sie könnte in einem nicht verfolgten Repository existieren, das Diffusion nicht kennt.',
+      'This external account will be unlinked:' => 'Dieses externe Konto wird getrennt:',
       'This external reference matches multiple known commits.' => 'Diese externe Referenz stimmt mit mehreren bekannten Commits überein.',
       'This factor has been removed from your device, so this server can not send you a challenge. To continue, an administrator must strip this factor from your account.' => 'Dieser Faktor wurde von Deinem Gerät entfernt, daher kann Dir dieser Server keine Challenge senden. Um fortzufahren, muss ein Administrator diesen Faktor von Deinem Konto entfernen.',
       'This factor recently issued a challenge for a different workflow. Wait %s second(s) for the code to cycle, then try again.' => 'Dieser Faktor hat vor Kurzem eine Challenge für einen anderen Vorgang ausgestellt. Warte %s Sekunde(n), bis der Code wechselt, und versuche es dann erneut.',
@@ -15584,7 +16168,6 @@ Normalerweise bedeutet das //deine// Projekte. Wenn du jedoch eine Abfrage mit d
 %s' => 'Diese Funktion findet Ergebnisse, die mit keinem Projekt getaggt sind. Sie wird meistens verwendet, um Objekte zu finden, die durch das Raster gefallen und nicht ordentlich organisiert worden sind.
 
 %s',
-      'This generator has already emitted an iterator. You can not modify the PDF document after you begin writing it.' => 'Dieser Generator hat bereits einen Iterator ausgegeben. Du kannst das PDF-Dokument nicht mehr ändern, nachdem du mit dem Schreiben begonnen hast.',
       'This group has no available build steps.' => 'Diese Gruppe hat keine verfügbaren Build-Schritte.',
       'This host already has a registered private key ("%s"). Remove this key before registering the host, or use --force to overwrite it.' => 'Dieser Host hat bereits einen registrierten privaten Schlüssel ("%s"). Entferne diesen Schlüssel vor der Registrierung des Hosts oder verwende --force, um ihn zu überschreiben.',
       'This host already has a registered public key ("%s"). Remove this key before registering the host, or use --force to overwrite it.' => 'Dieser Host hat bereits einen registrierten öffentlichen Schlüssel ("%s"). Entferne diesen Schlüssel vor der Registrierung des Hosts oder verwende --force, um ihn zu überschreiben.',
@@ -15613,7 +16196,6 @@ Normalerweise bedeutet das //deine// Projekte. Wenn du jedoch eine Abfrage mit d
       'This install uses spaces to organize objects, but your account does not have access to any spaces.' => 'Diese Installation nutzt Zonen, um Objekte zu organisieren, Dein Konto hat jedoch keinen Zugriff auf irgendeine Zone.',
       'This interface is not documented.' => 'Dieses Interface ist nicht dokumentiert.',
       'This internal method must be invoked with a "repositoryPHIDs" constraint with exactly one value.' => 'Diese interne Methode muss mit einem "repositoryPHIDs"-Constraint mit genau einem Wert aufgerufen werden.',
-      'This invoice is ready for payment.' => 'Diese Rechnung ist zahlungsbereit.',
       'This is a binary file.' => 'Dies ist eine Binärdatei.',
       'This is a cluster service.' => 'Dies ist ein Cluster-Dienst.',
       'This is a directory.' => 'Dies ist ein Verzeichnis.',
@@ -15633,7 +16215,6 @@ Normalerweise bedeutet das //deine// Projekte. Wenn du jedoch eine Abfrage mit d
       'This is a symlink.' => 'Dies ist eine symbolische Verknüpfung.',
       'This is a terse test text message (from "%s").' => 'Dies ist eine kurze Test-SMS (von "%s").',
       'This is a test notification, sent at %s.' => 'Dies ist eine Test-Benachrichtigung, gesendet am %s.',
-      'This is a test payment provider.' => 'Dies ist ein Test-Zahlungsanbieter.',
       'This is a trigger rule with a unknown type ("%s").' => 'Dies ist eine Auslöser-Regel mit einem unbekannten Typ („%s").',
       'This is a trigger rule with a valid type ("%s") but an invalid value.' => 'Dies ist eine Auslöser-Regel mit einem gültigen Typ ("%s"), aber einem ungültigen Wert.',
       'This is a visual divider which you can use to separate sections in the menu. It does not have any configurable options.' => 'Dies ist ein visueller Trenner, mit dem du Abschnitte im Menü voneinander abgrenzen kannst. Er hat keine konfigurierbaren Optionen.',
@@ -15653,6 +16234,49 @@ Normalerweise bedeutet das //deine// Projekte. Wenn du jedoch eine Abfrage mit d
       'This is not a cluster repository.' => 'Dies ist kein Cluster-Repository.',
       'This is not a valid JSON document and can not be rendered as a Jupyter notebook: %s.' => 'Dies ist kein gültiges JSON-Dokument und kann nicht als Jupyter-Notebook gerendert werden: %s.',
       'This is now your primary email address (%s). Going forward, all email will be sent here.' => 'Dies ist jetzt Deine primäre E-Mail-Adresse (%s). Zukünftig wird alle E-Mail hierher gesendet.',
+      'This is some **remarkup text** using ~~exactly one style~~ //various styles//.
+
+  - Fruit
+    - Apple
+    - Banana
+    - Cherry
+  - Vegetables
+    1. Carrot
+    2. Celery
+
+NOTE: This is a note.
+
+(NOTE) This is also a note.
+
+WARNING: This is a warning.
+
+(WARNING) This is also a warning.
+
+IMPORTANT: This is not really important.
+
+(IMPORTANT) This isn\'t important either.
+' => 'Das ist etwas **Remarkup-Text** mit ~~genau einem Stil~~ //verschiedenen Stilen//.
+
+  - Obst
+    - Apfel
+    - Banane
+    - Kirsche
+  - Gemüse
+    1. Karotte
+    2. Sellerie
+
+NOTE: Das ist eine Notiz.
+
+(NOTE) Das ist auch eine Notiz.
+
+WARNING: Das ist eine Warnung.
+
+(WARNING) Das ist auch eine Warnung.
+
+IMPORTANT: Das ist nicht wirklich wichtig.
+
+(IMPORTANT) Das hier ist auch nicht wichtig.
+',
       'This is the default project profile image.' => 'Dies ist das Standard-Projektprofil-Bild.',
       'This is the only external login account linked to your account. If you remove it, you may no longer be able to log in.' => 'Dies ist das einzige externe Anmeldekonto, das mit Deinem Konto verknüpft ist. Wenn Du es entfernst, kannst Du Dich möglicherweise nicht mehr anmelden.',
       'This is very unusual and will leave you without any content on the home page. You should only do this if you are certain you know what you are doing.' => 'Dies ist sehr ungewöhnlich und lässt Dich ohne Inhalte auf der Startseite zurück. Du solltest das nur tun, wenn Du Dir absolut sicher bist, was Du tust.',
@@ -15662,7 +16286,6 @@ Normalerweise bedeutet das //deine// Projekte. Wenn du jedoch eine Abfrage mit d
       'This item does not support the specified command ("%s").' => 'Dieses Element unterstützt den angegebenen Befehl ("%s") nicht.',
       'This item is already set as the default item for this menu.' => 'Dieser Eintrag ist bereits als Vorgabe für dieses Menü festgelegt.',
       'This item type ("%s", of class "%s") can not update items.' => 'Dieser Elementtyp ("%s", der Klasse "%s") kann keine Elemente aktualisieren.',
-      'This iterator already has a generator. You can not modify the generator for a given iterator.' => 'Dieser Iterator hat bereits einen Generator. Du kannst den Generator für einen gegebenen Iterator nicht ändern.',
       'This job is already configured to run silently.' => 'Dieser Job ist bereits zum stillen Ausführen konfiguriert.',
       'This job is complete.' => 'Dieser Auftrag ist abgeschlossen.',
       'This job is running.' => 'Dieser Auftrag wird ausgeführt.',
@@ -15695,15 +16318,6 @@ Normalerweise bedeutet das //deine// Projekte. Wenn du jedoch eine Abfrage mit d
       'This may happen if there is a temporary network anomaly on the server side, like cosmic radiation or spooky ghosts. If this failure was caused by a transient service interruption, this server will recover momentarily.' => 'Das kann passieren, wenn es serverseitig eine vorübergehende Netzwerkanomalie gibt, etwa kosmische Strahlung oder gruselige Geister. Wenn dieser Fehler durch eine vorübergehende Dienstunterbrechung verursacht wurde, erholt sich der Server in Kürze.',
       'This menu currently has no items.' => 'Dieses Menü hat derzeit keine Einträge.',
       'This menu item is very important, and can not be disabled.' => 'Dieser Menüpunkt ist sehr wichtig und kann nicht deaktiviert werden.',
-      'This merchant accepts credit and debit cards via Stripe.' => 'Dieser Händler akzeptiert Kredit- und Debitkarten über Stripe.',
-      'This merchant accepts payments via PayPal.' => 'Dieser Händler akzeptiert Zahlungen über PayPal.',
-      'This merchant accepts test payments.' => 'Dieser Händler akzeptiert Testzahlungen.',
-      'This merchant already has a payment account configured with this provider.' => 'Für diesen Händler ist bereits ein Zahlungskonto mit diesem Anbieter konfiguriert.',
-      'This merchant can accept payments.' => 'Dieser Händler kann Zahlungen akzeptieren.',
-      'This merchant does not have any payment providers configured yet, so it can not accept payments. Add a provider.' => 'Für diesen Händler sind noch keine Zahlungsanbieter konfiguriert, daher kann er keine Zahlungen annehmen. Füge einen Anbieter hinzu.',
-      'This merchant has no payment providers.' => 'Dieser Händler hat keine Zahlungsanbieter.',
-      'This merchant is accepting live payments.' => 'Dieser Händler akzeptiert echte Zahlungen.',
-      'This merchant is accepting test payments.' => 'Dieser Händler akzeptiert Testzahlungen.',
       'This message has not been delivered yet, so delivery information is not available.' => 'Diese Nachricht wurde noch nicht zugestellt, daher sind keine Zustellungsinformationen verfügbar.',
       'This message has not been sent yet, so routing rules have not been computed.' => 'Diese Nachricht wurde noch nicht gesendet, daher wurden keine Weiterleitungsregeln berechnet.',
       'This message is a response to another email message, and this recipient received the original email message, so we are not sending them this substantially similar message (for example, the sender used "Reply All" instead of "Reply" in response to mail from this server).' => 'Diese Nachricht ist eine Antwort auf eine andere E-Mail, und dieser Empfänger hat die ursprüngliche E-Mail bereits erhalten. Deshalb wird diese inhaltlich weitgehend gleiche Nachricht nicht erneut an ihn gesendet (beispielsweise weil der Absender statt "Allen antworten" nur "Antworten" hätte verwenden sollen).',
@@ -15716,23 +16330,17 @@ Normalerweise bedeutet das //deine// Projekte. Wenn du jedoch eine Abfrage mit d
       'This method has been deprecated since %s in favor of token-based authentication.' => 'Diese Methode ist seit %s zugunsten der tokenbasierten Authentifizierung veraltet.',
       'This method is deprecated.' => 'Diese Methode ist veraltet.',
       'This method is frozen and will eventually be deprecated.' => 'Diese Methode ist eingefroren und wird schließlich als veraltet markiert.',
-      'This method is frozen and will eventually be deprecated. New code should use "conpherence.edit" instead.' => 'Diese Methode ist eingefroren und wird irgendwann veraltet sein. Neuer Code sollte stattdessen "conpherence.edit" verwenden.',
       'This method is frozen and will eventually be deprecated. New code should use "differential.diff.search" instead.' => 'Diese Methode ist eingefroren und wird voraussichtlich veraltet sein. Neuer Code sollte stattdessen "differential.diff.search" verwenden.',
       'This method is frozen and will eventually be deprecated. New code should use "differential.revision.edit" instead.' => 'Diese Methode ist eingefroren und wird voraussichtlich veraltet sein. Neuer Code sollte stattdessen "differential.revision.edit" verwenden.',
       'This method is frozen and will eventually be deprecated. New code should use "differential.revision.search" instead.' => 'Diese Methode ist eingefroren und wird voraussichtlich veraltet sein. Neuer Code sollte stattdessen "differential.revision.search" verwenden.',
       'This method is frozen and will eventually be deprecated. New code should use "diffusion.commit.search" instead.' => 'Diese Methode ist eingefroren und wird irgendwann veraltet sein. Neuer Code sollte stattdessen "diffusion.commit.search" verwenden.',
       'This method is frozen and will eventually be deprecated. New code should use "diffusion.repository.search" instead.' => 'Diese Methode ist eingefroren und wird irgendwann veraltet sein. Neuer Code sollte stattdessen "diffusion.repository.search" verwenden.',
       'This method is frozen and will eventually be deprecated. New code should use "maniphest.edit" instead.' => 'Diese Methode ist eingefroren und wird irgendwann als veraltet markiert. Neuer Code sollte stattdessen "maniphest.edit" verwenden.',
-      'This method is frozen and will eventually be deprecated. New code should use "maniphest.search" instead.' => 'Diese Methode ist eingefroren und wird irgendwann als veraltet markiert. Neuer Code sollte stattdessen "maniphest.search" verwenden.',
-      'This method is frozen and will eventually be deprecated. New code should use "maniphest.status.search" instead.' => 'Diese Methode ist eingefroren und wird irgendwann als veraltet markiert. Neuer Code sollte stattdessen "maniphest.status.search" verwenden.',
-      'This method is frozen and will eventually be deprecated. New code should use "phriction.content.search" instead.' => 'Diese Methode ist eingefroren und wird zu einem späteren Zeitpunkt entfernt. Neuer Code sollte stattdessen „phriction.content.search" verwenden.',
-      'This method is frozen and will eventually be deprecated. New code should use "phriction.document.search" instead.' => 'Diese Methode ist eingefroren und wird zu einem späteren Zeitpunkt entfernt. Neuer Code sollte stattdessen „phriction.document.search" verwenden.',
-      'This method is frozen and will eventually be deprecated. New code should use "project.edit" instead.' => 'Diese Methode ist eingefroren und wird irgendwann veraltet sein. Neuer Code sollte stattdessen "project.edit" verwenden.',
-      'This method is frozen and will eventually be deprecated. New code should use "project.search" instead.' => 'Diese Methode ist eingefroren und wird irgendwann veraltet sein. Neuer Code sollte stattdessen "project.search" verwenden.',
       'This method is frozen and will eventually be deprecated. New code should use "transaction.search" instead.' => 'Diese Methode ist eingefroren und wird irgendwann als veraltet markiert. Neuer Code sollte stattdessen "transaction.search" verwenden.',
       'This method is frozen and will eventually be deprecated. New code should use "user.search" instead.' => 'Diese Methode ist eingefroren und wird irgendwann veraltet sein. Neuer Code sollte stattdessen "user.search" verwenden.',
       'This method is new and unstable. Its interface is subject to change.' => 'Diese Methode ist neu und instabil. Ihre Schnittstelle kann sich ändern.',
       'This method is not documented.' => 'Diese Methode ist nicht dokumentiert.',
+      'This method requires authentication.' => 'Diese Methode erfordert Authentifizierung.',
       'This milestone has no tasks.' => 'Dieser Meilenstein hat keine Aufgaben.',
       'This mock will be closed.' => 'Dieser Mock wird geschlossen.',
       'This mock will become open again.' => 'Dieser Mock wird wieder geöffnet.',
@@ -15767,6 +16375,10 @@ Normalerweise bedeutet das //deine// Projekte. Wenn du jedoch eine Abfrage mit d
 You must enable DarkConsole by setting \'%s\' before this option will have any effect.' => 'Mit dieser Option kannst Du DarkConsole auf jeder Seite aktivieren, auch für nicht angemeldete Benutzer. Das ist nur dann wirklich sinnvoll, wenn Du etwas auf einer Seite ohne Anmeldung debuggen musst. In der Produktion solltest Du diese Option nicht aktivieren.
 
 Damit diese Option wirkt, musst Du zuerst DarkConsole über \'%s\' aktivieren.',
+      'This option allows you to make this service aware of database read replicas so
+it can monitor database health, spread load, and degrade gracefully to
+read-only mode in the event of a failure on the primary host. For help with
+configuring cluster databases, see **[[ %s | %s ]]** in the documentation.' => 'Mit dieser Option kann dieser Dienst über Datenbank-Lesereplikate informiert werden, damit er den Zustand der Datenbanken überwachen, Last verteilen und bei einem Ausfall des primären Hosts kontrolliert in den Nur-Lese-Modus wechseln kann. Hilfe zur Konfiguration von Cluster-Datenbanken findest Du in der Dokumentation unter **[[ %s | %s ]]**.',
       'This option allows you to stop this service from sending data to most external
 services: it will disable email, SMS, repository mirroring, remote builds,
 Doorkeeper writes, and webhooks.
@@ -15779,13 +16391,11 @@ higher confidence and less disruption.
 
 Without making use of this flag to silence the temporary test environment,
 users would receive duplicate email during the time the test instance and old
-production instance were both in operation.
-EOREMARKUP' => 'Mit dieser Option kannst Du verhindern, dass dieser Dienst Daten an die meisten externen Dienste sendet: E-Mail, SMS, Repository-Spiegelung, entfernte Builds, Doorkeeper-Schreibzugriffe und Webhooks werden deaktiviert.
+production instance were both in operation.' => 'Mit dieser Option kannst Du verhindern, dass dieser Dienst Daten an die meisten externen Dienste sendet: E-Mail, SMS, Repository-Spiegelung, entfernte Builds, Doorkeeper-Schreibzugriffe und Webhooks werden deaktiviert.
 
 Die Option ist dafür gedacht, eine Instanz zu exportieren, zu kopieren, zu importieren und in einer Testumgebung auszuführen, ohne Benutzer zu beeinträchtigen. Wenn Du zum Beispiel auf neue Hardware migrierst, kannst Du zunächst mit gesetzter Option eine Testmigration durchführen, prüfen, ob alles funktioniert, und erst später mit mehr Sicherheit und weniger Störung produktiv umschalten.
 
-Wenn Du diese Option nicht nutzt, um die temporäre Testumgebung stumm zu schalten, würden Benutzer in der Zeit, in der Testinstanz und alte Produktivinstanz gleichzeitig laufen, doppelte E-Mails erhalten.
-EOREMARKUP',
+Wenn Du diese Option nicht nutzt, um die temporäre Testumgebung stumm zu schalten, würden Benutzer in der Zeit, in der Testinstanz und alte Produktivinstanz gleichzeitig laufen, doppelte E-Mails erhalten.',
       'This option can help debug pages which are taking a very long time (more than 30 seconds) to render.
 
 If a page is slow to render (but taking less than 30 seconds), the best tools to use to figure out why it is slow are usually the DarkConsole service call profiler and XHProf.
@@ -15825,23 +16435,6 @@ Wenn Kontoinformationen automatisch aus einem anderen maßgeblichen System synch
       'This option is most commonly used to temporarily allow a major repository maintenance operation (like a history rewrite) to occur with minimal disruption to users.' => 'Diese Option wird am häufigsten verwendet, um vorübergehend eine größere Repository-Wartungsoperation (wie eine Verlaufsumschreibung) mit minimaler Beeinträchtigung der Benutzer durchzuführen.',
       'This option is not recognized. It may be misspelled.' => 'Diese Option wird nicht erkannt. Möglicherweise ist sie falsch geschrieben.',
       'This option will use Imagemagick to rescale images, so animated GIFs can be thumbnailed and set as profile pictures. Imagemagick must be installed and the "%s" or "%s" binary must be available to the webserver for this to work.' => 'Diese Option verwendet Imagemagick zum Skalieren von Bildern, damit animierte GIFs als Miniaturbilder verwendet und als Profilbilder gesetzt werden können. Imagemagick muss installiert sein und die Binärdatei "%s" oder "%s" muss für den Webserver verfügbar sein.',
-      'This order can not be cancelled because it has already been completed.' => 'Diese Bestellung kann nicht storniert werden, da sie bereits abgeschlossen wurde.',
-      'This order can not be cancelled because it has not been placed.' => 'Diese Bestellung kann nicht storniert werden, da sie noch nicht aufgegeben wurde.',
-      'This order can not be cancelled because the application has not finished building it yet.' => 'Diese Bestellung kann nicht storniert werden, weil die Anwendung ihre Erstellung noch nicht abgeschlossen hat.',
-      'This order can not be refunded because it has not been placed.' => 'Diese Bestellung kann nicht erstattet werden, da sie noch nicht aufgegeben wurde.',
-      'This order can not be refunded because the application has not finished building it yet.' => 'Diese Bestellung kann nicht erstattet werden, weil die Anwendung ihre Erstellung noch nicht abgeschlossen hat.',
-      'This order can not be voided because it is not an invoice.' => 'Diese Bestellung kann nicht storniert werden, da sie keine Rechnung ist.',
-      'This order can not be voided because it is not ready for payment.' => 'Diese Bestellung kann nicht storniert werden, da sie nicht zahlungsbereit ist.',
-      'This order does not need manual review, so you can not accept it.' => 'Diese Bestellung benötigt keine manuelle Überprüfung, daher kann sie nicht angenommen werden.',
-      'This order has been flagged for manual review. Review the order and choose %s to accept it or %s to reject it.' => 'Diese Bestellung wurde zur manuellen Prüfung markiert. Prüfe die Bestellung und wähle %s, um sie anzunehmen, oder %s, um sie abzulehnen.',
-      'This order has been flagged for manual review. You should review it carefully before accepting it.' => 'Diese Bestellung wurde zur manuellen Prüfung markiert. Du solltest sie sorgfältig prüfen, bevor du sie annimmst.',
-      'This order requires manual processing and will complete once the merchant accepts it.' => 'Diese Bestellung erfordert eine manuelle Bearbeitung und wird abgeschlossen, sobald der Händler sie annimmt.',
-      'This order was cancelled.' => 'Diese Bestellung wurde storniert.',
-      'This order was created.' => 'Diese Bestellung wurde erstellt.',
-      'This order was flagged for manual processing by the merchant.' => 'Diese Bestellung wurde vom Händler zur manuellen Bearbeitung markiert.',
-      'This order was invoiced.' => 'Diese Bestellung wurde fakturiert.',
-      'This order was put on hold until payment clears.' => 'Diese Bestellung wurde in die Warteschleife gelegt, bis die Zahlung abgewickelt ist.',
-      'This order was refunded.' => 'Diese Bestellung wurde erstattet.',
       'This package does not contain any paths yet. Use "Edit Paths" to add some.' => 'Dieses Paket enthält noch keine Pfade. Verwende "Pfade bearbeiten", um welche hinzuzufügen.',
       'This package has no open problem commits.' => 'Dieses Paket hat keine offenen Problemcommits.',
       'This package will be marked as archived.' => 'Dieses Paket wird als archiviert markiert.',
@@ -15870,10 +16463,6 @@ Wenn Kontoinformationen automatisch aus einem anderen maßgeblichen System synch
       'This path does not exist at %s. It was deleted in %s and last existed at %s.' => 'Dieser Pfad existiert bei %s nicht. Er wurde in %s gelöscht und war zuletzt bei %s vorhanden.',
       'This path was a submodule at %s.' => 'Dieser Pfad war ein Submodul bei %s.',
       'This path was an empty directory at %s.' => 'Dieser Pfad war ein leeres Verzeichnis bei %s.',
-      'This payment method is not the default payment method for any subscriptions.' => 'Diese Zahlungsmethode ist für kein Abonnement die Standard-Zahlungsmethode.',
-      'This payment method will be used to automatically pay future charges.' => 'Diese Zahlungsmethode wird für zukünftige automatische Zahlungen verwendet.',
-      'This payment method will no longer be charged automatically.' => 'Diese Zahlungsmethode wird nicht mehr automatisch belastet.',
-      'This payment provider is disabled.' => 'Dieser Zahlungsanbieter ist deaktiviert.',
       'This permission is very dangerous. %s' => 'Diese Berechtigung ist sehr gefährlich. %s',
       'This plan can not be run manually.' => 'Dieser Plan kann nicht manuell ausgeführt werden.',
       'This policy rule (of class "%s") does not have an associated object policy key.' => 'Diese Richtlinienregel (der Klasse „%s") hat keinen zugehörigen Objektrichtlinien-Schlüssel.',
@@ -15903,10 +16492,8 @@ Wenn Kontoinformationen automatisch aus einem anderen maßgeblichen System synch
       'This protocol does not support authentication.' => 'Dieses Protokoll unterstützt keine Authentifizierung.',
       'This provider ("%s") already exists, and you can not add more than one instance of it. You can edit the existing provider, or you can choose a different provider.' => 'Dieser Anbieter ("%s") existiert bereits, und Du kannst nicht mehr als eine Instanz davon hinzufügen. Du kannst den vorhandenen Anbieter bearbeiten oder einen anderen Anbieter wählen.',
       'This provider does not allow refreshing.' => 'Dieser Anbieter erlaubt keine Aktualisierung.',
-      'This provider does not require any special configuration.' => 'Dieser Anbieter benötigt keine besondere Konfiguration.',
       'This provider is not configured to allow linking.' => 'Dieser Anbieter ist nicht für das Verknüpfen konfiguriert.',
       'This public key is already associated with another user or device. Each key must unambiguously identify a single unique owner.' => 'Dieser öffentliche Schlüssel ist bereits einem anderen Benutzer oder Gerät zugeordnet. Jeder Schlüssel muss eindeutig genau einen Besitzer identifizieren.',
-      'This purchase has been completed.' => 'Dieser Kauf wurde abgeschlossen.',
       'This push didn\'t push any new commits.' => 'Dieser Push hat keine neuen Commits gepusht.',
       'This push was rejected by Herald push rule %s.
     Change: %s
@@ -15971,9 +16558,9 @@ Protokoll: %s',
       'This repository is configured to track only one subdirectory of the entire repository (\'%s\'), but you aren\'t looking at something in that subdirectory, so no information is available.' => 'Dieses Repository ist so konfiguriert, dass nur ein Unterverzeichnis (\'%s\') des gesamten Repositorys verfolgt wird. Du siehst jedoch keinen Inhalt aus diesem Unterverzeichnis, daher sind keine Informationen verfügbar.',
       'This repository is configured with default branch "%s"  but there is no branch with that name in this repository.' => 'Dieses Repository ist mit dem Standard-Branch "%s" konfiguriert, aber es gibt keinen Branch mit diesem Namen in diesem Repository.',
       'This repository is currently in read-only maintenance mode.' => 'Dieses Repository befindet sich derzeit im Nur-Lese-Wartungsmodus.',
+      'This repository is hosted.' => 'Dieses Repository wird gehostet.',
       'This repository is inactive.' => 'Dieses Repository ist inaktiv.',
       'This repository is not available over HTTP.' => 'Dieses Repository ist nicht über HTTP verfügbar.',
-      'This repository is observed.' => 'Dieses Repository wird beobachtet.',
       'This repository is read-only over HTTP.' => 'Dieses Repository ist über HTTP schreibgeschützt.',
       'This repository is read-only over SSH (tried to execute protocol command "%s").' => 'Dieses Repository ist über SSH schreibgeschützt (Versuch, Protokollbefehl "%s" auszuführen).',
       'This repository is read-only over SSH.' => 'Dieses Repository ist über SSH schreibgeschützt.',
@@ -16015,6 +16602,7 @@ Es ist auch möglich, wenn auch sehr unwahrscheinlich, dass ein anderes Netzwerk
 Anfragen müssen einen gültigen "Host"-Header enthalten.',
       'This request had an invalid CSRF token.' => 'Diese Anfrage enthielt ein ungültiges CSRF-Token.',
       'This request had no CSRF token.' => 'Diese Anfrage enthielt kein CSRF-Token.',
+      'This request has authenticated as a device ("%s"), but this device is disabled.' => 'Diese Anfrage hat sich als Gerät ("%s") authentifiziert, aber dieses Gerät ist deaktiviert.',
       'This request has timed out because you took too long to respond.' => 'Diese Anfrage ist abgelaufen, weil du zu lange zum Antworten gebraucht hast.',
       'This request improperly specifies an MFA challenge token ("%s") multiple times and can not be processed.' => 'Diese Anfrage gibt ein MFA-Challenge-Token ("%s") fehlerhaft mehrfach an und kann nicht verarbeitet werden.',
       'This request included an improperly formatted MFA challenge token and can not be processed.' => 'Diese Anfrage enthielt ein fehlerhaft formatiertes MFA-Challenge-Token und kann nicht verarbeitet werden.',
@@ -16032,21 +16620,19 @@ Es kann auch bedeuten, dass Dein Webserver oder ein anderes Netzwerkgerät wie e
 
 Anfragen müssen einen gültigen "Host"-Header enthalten.',
       'This request is authenticated as a cluster device, but is performing a write. Writes must be performed with a real user account.' => 'Diese Anfrage ist als Cluster-Gerät authentifiziert, führt aber einen Schreibvorgang durch. Schreibvorgänge müssen mit einem echten Benutzerkonto durchgeführt werden.',
+      'This request originates from outside of the cluster address range. Requests signed with a trusted device key must originate from trusted hosts.' => 'Diese Anfrage stammt von außerhalb des Cluster-Adressbereichs. Mit einem vertrauenswürdigen Geräteschlüssel signierte Anfragen müssen von vertrauenswürdigen Hosts stammen.',
       'This request originates from outside of the cluster address range. Requests signed with cluster API tokens must originate from within the cluster.' => 'Diese Anfrage stammt von außerhalb des Cluster-Adressbereichs. Mit Cluster-API-Tokens signierte Anfragen müssen innerhalb des Clusters entstehen.',
       'This request originates from outside of the cluster address range. Requests signed with trusted device keys must originate from within the cluster.' => 'Diese Anfrage stammt von außerhalb des Cluster-Adressbereichs. Mit vertrauenswürdigen Geräteschlüsseln signierte Anfragen müssen innerhalb des Clusters entstehen.',
       'This request reached a site which requires HTTPS, but the request is not marked as HTTPS.' => 'Diese Anfrage hat eine Website erreicht, die HTTPS erfordert, aber die Anfrage ist nicht als HTTPS markiert.',
       'This request was served from a replica database. Replica databases may lag behind the master, so very recent activity may not be reflected in the UI. This data will be restored if the master database is restored, but may have been lost if the master database has been reduced to a pile of ash.' => 'Diese Anfrage wurde von einer Replikat-Datenbank beantwortet. Replikat-Datenbanken können hinter dem Master zurückliegen, daher werden sehr aktuelle Aktivitäten in der UI möglicherweise noch nicht angezeigt. Diese Daten werden wiederhergestellt, wenn die Master-Datenbank wiederhergestellt wird, können aber verloren gegangen sein, falls die Master-Datenbank zu einem Haufen Asche reduziert wurde.',
       'This resource has no active leases.' => 'Diese Ressource hat keine aktiven Leases.',
-      'This revision already requires changes.' => 'Diese Version erfordert bereits Änderungen.',
       'This revision can not be accepted until the required legal agreements have been signed.' => 'Diese Version kann erst angenommen werden, wenn die erforderlichen rechtlichen Vereinbarungen unterzeichnet wurden.',
-      'This revision has already been abandoned.' => 'Diese Version wurde bereits zurückgezogen.',
       'This revision has already been closed.' => 'Diese Version ist bereits geschlossen.',
       'This revision has already been closed. Only open, accepted revisions may land.' => 'Diese Revision wurde bereits geschlossen. Nur offene, akzeptierte Revisionen können gelandet werden.',
       'This revision has already landed.' => 'Diese Revision wurde bereits gelandet.',
       'This revision has been abandoned. Only accepted revisions may land.' => 'Diese Revision wurde zurückgezogen. Nur akzeptierte Revisionen können gelandet werden.',
       'This revision has no diffs. Something has gone quite wrong.' => 'Diese Version hat keine Diffs. Irgendwas ist hier grundlegend schiefgelaufen.',
       'This revision has no indexed affected paths.' => 'Diese Version hat keine indizierten betroffenen Pfade.',
-      'This revision is already closed.' => 'Diese Version ist bereits geschlossen.',
       'This revision is already landing.' => 'Diese Revision wird bereits gelandet.',
       'This revision is currently a draft. You can leave comments, but no one will be notified until the revision is submitted for review.' => 'Diese Version ist derzeit ein Entwurf. Du kannst Kommentare hinterlassen, aber niemand wird benachrichtigt, bis die Version zur Überprüfung eingereicht wurde.',
       'This revision is not associated with a known repository. Only revisions associated with a tracked repository can be landed automatically.' => 'Diese Revision ist keinem bekannten Repository zugeordnet. Nur Revisionen, die einem verfolgten Repository zugeordnet sind, können automatisch gelandet werden.',
@@ -16091,6 +16677,8 @@ Anfragen müssen einen gültigen "Host"-Header enthalten.',
       'This schema has the wrong nullable setting.' => 'Dieses Schema hat die falsche Nullable-Einstellung.',
       'This schema is expected to exist, but does not.' => 'Dieses Schema sollte existieren, tut es aber nicht.',
       'This schema is not expected to exist.' => 'Dieses Schema sollte nicht existieren.',
+      'This script must be invoked with either the %s or %s flag.' => 'Dieses Skript muss entweder mit dem Flag %s oder %s aufgerufen werden.',
+      'This script was replaced with `%s`!.' => 'Dieses Skript wurde durch `%s` ersetzt!',
       'This script will unpublish all feed stories and notifications which a repository generated during import. This action can not be undone.' => 'Dieses Skript zieht alle Feed-Beiträge und Benachrichtigungen zurück, die ein Repository während des Imports erzeugt hat. Diese Aktion kann nicht rückgängig gemacht werden.',
       'This section should have multiple properties with the same name.' => 'Dieser Abschnitt soll mehrere Eigenschaften mit demselben Namen haben.',
       'This secure message is notifying you of a change to this object:' => 'Diese sichere Nachricht informiert Dich über eine Änderung an diesem Objekt:',
@@ -16255,6 +16843,7 @@ Der aktuelle PATH-Wert nach Anwendung der Konfiguration ist:
       'This submodule was deleted.' => 'Dieses Untermodul wurde gelöscht.',
       'This submodule was moved from %s.' => 'Dieses Untermodul wurde von %s hierher verschoben.',
       'This submodule was moved to %s.' => 'Dieses Untermodul wurde nach %s verschoben.',
+      'This sudo-rs release can not pass environment variables to repository commands. Upgrade to sudo-rs 0.2.7 or greater, or configure your server to use classic sudo.' => 'Diese sudo-rs-Version kann keine Umgebungsvariablen an Repository-Befehle übergeben. Aktualisiere auf sudo-rs 0.2.7 oder neuer, oder konfiguriere Deinen Server so, dass er das klassische sudo verwendet.',
       'This suggests your webserver is configured to decompress or mangle compressed requests.' => 'Das deutet darauf hin, dass Dein Webserver komprimierte Anfragen dekomprimiert oder anderweitig verfälscht.',
       'This symlink was added.' => 'Dieser Symlink wurde hinzugefügt.',
       'This symlink was copied from %s.' => 'Diese symbolische Verknüpfung wurde von %s hierher kopiert.',
@@ -16264,7 +16853,6 @@ Der aktuelle PATH-Wert nach Anwendung der Konfiguration ist:
       'This symlink was moved from %s.' => 'Diese symbolische Verknüpfung wurde %s hierher verschoben.',
       'This symlink was moved to %s.' => 'Diese symbolische Verknüpfung wurde nach %s verschoben.',
       'This system does not have the "%s" extension installed, so character encodings are not supported. Install "%s" to enable support.' => 'Auf diesem System ist die Erweiterung "%s" nicht installiert, daher werden Zeichenkodierungen nicht unterstützt. Installiere "%s", um die Unterstützung zu aktivieren.',
-      'This system has an unpatched version of Bash with a severe, widely disclosed vulnerability.' => 'Auf diesem System ist eine ungepatchte Version von Bash mit einer schwerwiegenden, weithin bekannten Sicherheitslücke installiert.',
       'This tab panel does not have any tabs yet.' => 'Dieses Tab-Panel hat noch keine Tabs.',
       'This tab panel does not have any tabs yet. Use "Add Tab..." to create or place a tab.' => 'Dieses Tab-Panel hat noch keine Tabs. Mit „Tab hinzufügen..." einen Tab erstellen oder hinzufügen.',
       'This table briefly describes available functions for this control. For details on a particular function, see the corresponding section below.' => 'Diese Tabelle beschreibt kurz die für dieses Steuerelement verfügbaren Funktionen. Details zu einer bestimmten Funktion findest Du im entsprechenden Abschnitt weiter unten.',
@@ -16318,7 +16906,6 @@ Der aktuelle PATH-Wert nach Anwendung der Konfiguration ist:
       'This workflow will generate a new SSH keypair, add the public key, and let you download the private key.' => 'Dieser Vorgang erzeugt ein neues SSH-Schlüsselpaar, fügt den öffentlichen Schlüssel hinzu und lässt Dich den privaten Schlüssel herunterladen.',
       'This workflow will send this user ("%s") a copy of the "Welcome to %s" email that users normally receive when their accounts are created by an administrator.' => 'Dieser Ablauf sendet diesem Benutzer ("%s") eine Kopie der "Willkommen bei %s"-E-Mail, die Benutzer normalerweise erhalten, wenn ihr Konto von einem Administrator erstellt wird.',
       'Thispropertylabelandpropertyvaluearequitelongandhavenospacestheydemonstratetheoverflowbehavioroftheelementorlackthereof.' => 'DieseEigenschaftenbezeichnungunddieserEigenschaftswertsindziemlichlangundhabenkeineLeerzeichensiezeigendasÜberlaufverhaltendesElementsoderdessenFehlen.',
-      'Three-Way Tree' => 'Drei-Wege-Baum',
       'Threshold must be greater than 0.0 and less than 1.0.' => 'Der Schwellenwert muss größer als 0.0 und kleiner als 1.0 sein.',
       'Throw Exception' => 'Ausnahme auslösen',
       'Throw In Trash' => 'In Papierkorb werfen',
@@ -16328,12 +16915,9 @@ Der aktuelle PATH-Wert nach Anwendung der Konfiguration ist:
       'Thumbgrid (100px)' => 'Miniaturansichtsgitter (100 px)',
       'Thumbnails are visible only to users who can view the original file.' => 'Miniaturbilder sind nur für Benutzer sichtbar, die die Originaldatei ansehen können.',
       'Thursday' => 'Donnerstag',
-      'Tick at 11:11:13 AM.' => 'Tick um 11:11:13 Uhr.',
-      'Tick at 11:12:13 AM.' => 'Tick um 11:12:13 Uhr.',
       'Time' => 'Zeit',
       'Time Format' => 'Zeitformat',
       'Time Spent' => 'Verbrauchte Zeit',
-      'Time formatting' => 'Zeitformatierung',
       'Timeline' => 'Zeitachse',
       'Timeline Icon' => 'Zeitleisten-Symbol',
       'Timeline View' => 'Zeitstrahl-Ansicht',
@@ -16358,7 +16942,6 @@ If you specify an invalid rsvp, the command is ignored. This command has no effe
 
 Bei einem ungültigen RSVP-Befehl wird dieser ignoriert. Der Befehl hat keine Wirkung, wenn kein RSVP angegeben wird.',
       'To Self' => 'An sich selbst',
-      'To access information about this payment account, follow a more recent link or ask a user with access to give you an updated link.' => 'Um auf Informationen zu diesem Zahlungskonto zuzugreifen, verwende einen neueren Link oder bitte einen Benutzer mit Zugriff, dir einen aktualisierten Link zu geben.',
       'To access repositories hosted on this server over HTTP, you must set a version control password. This password should be unique.
 
 This password applies to all repositories available over HTTP.' => 'Um auf diesem Server gehostete Repositories über HTTP zuzugreifen, muss ein Versionskontroll-Passwort festgelegt werden. Dieses Passwort sollte eindeutig sein.
@@ -16486,8 +17069,8 @@ https://github.com/settings/applications/new
 
 You should use these settings in your application:
 
-  - **URL:** Set this to your full domain with protocol. For this     server, the correct value is: `%s`
-  - **Callback URL**: Set this to: `%s`
+  - **Homepage URL:** Set this to your full domain with protocol.     For this server, the correct value is: `%s`
+  - **Authorization callback URL**: Set this to: `%s`
 
 
 Once you\'ve created an application, copy the **Client ID** and **Client Secret** into the fields above.' => 'Um GitHub OAuth zu konfigurieren, erstelle hier eine neue GitHub-Anwendung:
@@ -16496,8 +17079,8 @@ https://github.com/settings/applications/new
 
 Verwende in Deiner Anwendung diese Einstellungen:
 
-  - **URL:** Auf Deine vollständige Domain mit Protokoll setzen. Für     diesen Server ist der korrekte Wert: `%s`
-  - **Callback URL**: Darauf setzen: `%s`
+  - **Homepage URL:** Auf Deine vollständige Domain mit Protokoll setzen.     Für diesen Server ist der korrekte Wert: `%s`
+  - **Authorization callback URL**: Darauf setzen: `%s`
 
 
 Kopiere nach dem Erstellen der Anwendung die **Client ID** und das **Client Secret** in die Felder oben.',
@@ -16530,23 +17113,6 @@ Passe für Dein Projekt diese Konfiguration an:
 
 
 Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secret** aus der Google-Konsole in die Felder oben.',
-      'To configure PayPal, register or log into an existing account on [[https://paypal.com | paypal.com]] (for live payments) or [[https://sandbox.paypal.com | sandbox.paypal.com]] (for test payments). Once logged in:
-
-  - Navigate to {nav Tools > API Access}.
-  - Choose **View API Signature**.
-  - Copy the **API Username**, **API Password** and **Signature**     into the fields above.
-
-You can select whether the provider operates in test mode or accepts live payments using the **Mode** dropdown above.
-
-You can either use `sandbox.paypal.com` to retrieve test credentials, or `paypal.com` to retrieve live credentials.' => 'Um PayPal zu konfigurieren, registriere ein neues Konto oder melde dich bei einem bestehenden Konto auf [[https://paypal.com | paypal.com]] (für echte Zahlungen) oder [[https://sandbox.paypal.com | sandbox.paypal.com]] (für Testzahlungen) an. Nach der Anmeldung:
-
-  - Gehe zu {nav Tools > API Access}.
-  - Wähle **View API Signature**.
-  - Kopiere **API Username**, **API Password** und **Signature** in die obigen Felder.
-
-Über das Dropdown **Mode** oben kannst du auswählen, ob der Anbieter im Testmodus arbeitet oder echte Zahlungen annimmt.
-
-Du kannst entweder `sandbox.paypal.com` verwenden, um Test-Zugangsdaten abzurufen, oder `paypal.com`, um Zugangsdaten für echte Zahlungen abzurufen.',
       'To configure Slack OAuth, create a new application here:
 
 https://api.slack.com/docs/sign-in-with-slack#create_slack_app
@@ -16564,17 +17130,6 @@ Verwende beim Erstellen der Anwendung diese Einstellungen:
   - **Redirect URI:** Darauf setzen: `%s`
 
 Kopiere nach Abschluss der Konfiguration die **Client ID** und das **Client Secret** in die Felder oben. (Möglicherweise musst Du das Client Secret zuerst durch einen Klick auf \'New Secret\' erzeugen.)',
-      'To configure Stripe, register or log in to an existing account on [[https://stripe.com | stripe.com]]. Once logged in:
-
-  - Go to {nav icon=user, name=Your Account > Account Settings > API Keys}
-  - Copy the **Secret Key** and **Publishable Key** into the fields above.
-
-You can either use the test keys to add this provider in test mode, or the live keys to accept live payments.' => 'Um Stripe zu konfigurieren, registriere ein neues Konto oder melde dich bei einem bestehenden Konto auf [[https://stripe.com | stripe.com]] an. Nach der Anmeldung:
-
-  - Gehe zu {nav icon=user, name=Your Account > Account Settings > API Keys}
-  - Kopiere **Secret Key** und **Publishable Key** in die obigen Felder.
-
-Du kannst entweder die Testschlüssel verwenden, um diesen Anbieter im Testmodus hinzuzufügen, oder die Live-Schlüssel, um echte Zahlungen anzunehmen.',
       'To configure Twitch.tv OAuth, create a new application here:
 
 https://www.twitch.tv/settings/applications
@@ -16667,16 +17222,14 @@ most 256 times that many bytes.
 For example, a value of 100 means "inline patches if they are at not more than
 100 lines long and not more than 25,600 bytes large".
 
-By default, patches are not inlined.
-EOHELP' => 'Um Patches direkt in E-Mails einzufügen, diesen Parameter auf eine positive
-ganze Zahl setzen. Patches werden eingefügt, wenn sie maximal diese Anzahl
+By default, patches are not inlined.' => 'Um Patches direkt in E-Mails einzufügen, setze diese Option auf eine positive
+ganze Zahl. Patches werden eingefügt, wenn sie maximal diese Anzahl
 Zeilen und maximal das 256-fache dieser Zahl an Bytes haben.
 
 Ein Wert von 100 bedeutet z.B.: "Patches einfügen, wenn sie nicht mehr als
 100 Zeilen und nicht mehr als 25.600 Bytes groß sind".
 
-Standardmäßig werden Patches nicht eingefügt.
-EOHELP',
+Standardmäßig werden Patches nicht eingefügt.',
       'To invite users, enter their email addresses below. Separate addresses with commas or newlines.' => 'Um Benutzer einzuladen, gib ihre E-Mail-Adressen unten ein. Trenne die Adressen mit Kommas oder Zeilenumbrüchen.',
       'To learn more about how repositories are updated, read %s in the documentation.' => 'Um mehr darüber zu erfahren, wie Repositories aktualisiert werden, lese %s in der Dokumentation.',
       'To log in to your account for the first time, follow this link:' => 'Um Dich zum ersten Mal bei Deinem Konto anzumelden, folge diesem Link:',
@@ -16751,9 +17304,7 @@ Wenn das Ausführen des Builds eine Nebenwirkung wie das Deployen von Code hat, 
       'Token does not exist or has expired.' => 'Token existiert nicht oder ist abgelaufen.',
       'Token flavor.' => 'Art der Trophäe.',
       'Token replacement count exceeded limit!' => 'Anzahl der Token-Ersetzungen hat das Limit überschritten!',
-      'Token stem of "%s".' => 'Wortstamm von „%s".',
       'Token used' => 'Trophäe vergeben',
-      'Tokenization of "%s"' => 'Tokenisierung von „%s"',
       'Tokens' => 'Trophäen',
       'Tokens Given' => 'Vergebene Trophäen',
       'Tokens must have a name.' => 'Token müssen einen Namen haben.',
@@ -16781,7 +17332,6 @@ Wenn das Ausführen des Builds eine Nebenwirkung wie das Deployen von Code hat, 
       'Total' => 'Summe',
       'Total Chunks' => 'Gesamte Chunks',
       'Total Cost' => 'Gesamtkosten',
-      'Total Funding' => 'Gesamtfinanzierung',
       'Total Messages' => 'Meldungen gesamt',
       'Total Migrated Bytes: %s' => 'Insgesamt migrierte Bytes: %s',
       'Total Migrated Files: %s' => 'Insgesamt migrierte Dateien: %s',
@@ -16790,19 +17340,18 @@ Wenn das Ausführen des Builds eine Nebenwirkung wie das Deployen von Code hat, 
       'Touches Too Many Paths' => 'Berührt zu viele Pfade',
       'Track Only' => 'Nur verfolgen',
       'Track Time Spent' => 'Zeiterfassung',
-      'Track all branches by default.' => 'Standardmäßig alle Branches verfolgen.',
-      'Track listed branches.' => 'Aufgelistete Branches verfolgen.',
       'Track only these branches.' => 'Nur diese Branches verfolgen.',
       'Tracked %s' => 'Verbrauchte Zeit %s',
       'Tracked %s so far' => 'bisher %s erfasst',
       'Tracked: %s' => 'verbraucht von: %s',
-      'Trailing comments should not be dropped.' => 'Nachgestellte Kommentare sollten nicht verworfen werden.',
       'Trait' => 'Trait',
       'Transaction' => 'Transaktion',
       'Transaction %s (of type %s) has unexpected data, skipping.' => 'Transaktion %s (vom Typ %s) hat unerwartete Daten und wird übersprungen.',
       'Transaction ("%s", of type "%s") requires a handle ("%s") that it did not load.' => 'Die Transaktion ("%s", vom Typ "%s") benötigt ein Handle ("%s"), das sie nicht geladen hat.',
       'Transaction (of type "%s") has no effect.' => 'Transaktion (Typ „%s") hat keine Wirkung.',
       'Transaction Logs' => 'Transaktionsprotokolle',
+      'Transaction PHID' => 'Transaktions-PHID',
+      'Transaction PHID to show.' => 'Anzuzeigende Transaktions-PHID.',
       'Transaction Summary' => 'Transaktionszusammenfassung',
       'Transaction comment must not yet have a PHID!' => 'Der Transaktionskommentar darf noch keine PHID haben!',
       'Transaction edge data must either be the edge PHID or an edge specification dictionary.' => 'Die Edge-Daten einer Transaktion müssen entweder die Edge-PHID oder ein Dictionary mit einer Edge-Spezifikation sein.',
@@ -16813,6 +17362,7 @@ Wenn das Ausführen des Builds eine Nebenwirkung wie das Deployen von Code hat, 
       'Transaction requires handles and it did not load them.' => 'Die Transaktion benötigt Handles, hat sie aber nicht geladen.',
       'Transaction specifies both "afterPHID" and "afterPHIDs". Specify only "afterPHIDs".' => 'Die Transaktion gibt sowohl "afterPHID" als auch "afterPHIDs" an. Gib nur "afterPHIDs" an.',
       'Transaction specifies both "beforePHID" and "beforePHIDs". Specify only "beforePHIDs".' => 'Die Transaktion gibt sowohl "beforePHID" als auch "beforePHIDs" an. Gib nur "beforePHIDs" an.',
+      'Transaction type %s is deprecated as non-modular transactions. Found in transaction class `%s` for object of type `%s`. see %s.' => 'Der Transaktionstyp %s ist als nicht-modulare Transaktion veraltet. Gefunden in Transaktionsklasse `%s` für Objekt vom Typ `%s`. Siehe %s.',
       'Transaction type \'%s\' is missing an external apply implementation!' => 'Transaktionstyp „%s" hat keine externe Implementierung!',
       'Transaction type \'%s\' is missing an internal apply implementation!' => 'Transaktionstyp „%s" hat keine interne Implementierung!',
       'Transaction value when deleting Almanac properties must be a list of property names.' => 'Der Transaktionswert beim Löschen von Almanac-Eigenschaften muss eine Liste von Eigenschaftsnamen sein.',
@@ -16835,6 +17385,9 @@ Wenn das Ausführen des Builds eine Nebenwirkung wie das Deployen von Code hat, 
       'Treat Accepted Revisions as "Closed"' => 'Akzeptierte Versionen als "Geschlossen" behandeln',
       'Treat Accepted Revisions as "Open"' => 'Akzeptierte Versionen als "Offen" behandeln',
       'Treat all \'*.x.bak\' file as \'.x\'. NOTE: We map to capturing group 1 by specifying the mapping as \'1\'' => 'Alle Dateien vom Typ \'*.x.bak\' wie \'.x\' behandeln. HINWEIS: Wir verweisen auf die Capturing Group 1, indem wir das Mapping als \'1\' angeben.',
+      'Treating %s as an extension key
+' => 'Behandle %s als Erweiterungsschlüssel
+',
       'Tree' => 'Baum',
       'Triage' => 'Zu Sortieren',
       'Triaged' => 'Priorisiert',
@@ -16857,7 +17410,6 @@ Wenn das Ausführen des Builds eine Nebenwirkung wie das Deployen von Code hat, 
       'Trigger: %s' => 'Auslöser: %s',
       'Triggered a periodic update.' => 'Periodische Aktualisierung ausgelöst.',
       'Triggers' => 'Auslöser',
-      'Trim Apart: %s' => 'Getrennt trimmen: %s',
       'Triplets' => 'Drillinge',
       'Tropical Deep' => 'Tropisches Tiefblau',
       'Trouble logging in?' => 'Probleme beim Anmelden?',
@@ -16891,6 +17443,7 @@ Wenn das Ausführen des Builds eine Nebenwirkung wie das Deployen von Code hat, 
       'Trusted' => 'Vertrauenswürdig',
       'Trusting a public key gives anyone holding the corresponding private key complete, unrestricted access to all data. The private key will be able to sign requests that bypass policy and security checks.' => 'Wenn du einem öffentlichen Schlüssel vertraust, erhält jeder mit dem zugehörigen privaten Schlüssel vollständigen, uneingeschränkten Zugriff auf alle Daten. Mit dem privaten Schlüssel können Anfragen signiert werden, die Richtlinien- und Sicherheitsprüfungen umgehen.',
       'Try as you might, you find you can not disable your own account.' => 'So sehr Du es auch versuchst, Du kannst Dein eigenes Konto nicht deaktivieren.',
+      'Try to update all installed extensions.' => 'Versuchen, alle installierten Erweiterungen zu aktualisieren.',
       'Trying to %s with a lock!' => 'Es wird versucht, %s mit einem Lock auszuführen!',
       'Trying to acquire a lease on a resource which is in the wrong state: status must be "%s", actually "%s".' => 'Es wird versucht, eine Lease auf eine Ressource im falschen Zustand zu erwerben: Status muss "%s" sein, ist aber "%s".',
       'Trying to acquire an active lease on a pending resource. You can not immediately activate leases on resources which need time to start up.' => 'Es wird versucht, eine aktive Lease auf eine ausstehende Ressource zu erwerben. Leases auf Ressourcen, die zum Starten Zeit benötigen, können nicht sofort aktiviert werden.',
@@ -16901,7 +17454,6 @@ Wenn das Ausführen des Builds eine Nebenwirkung wie das Deployen von Code hat, 
       'Trying to activate a resource which has not yet been persisted.' => 'Es wird versucht, eine Ressource zu aktivieren, die noch nicht gespeichert wurde.',
       'Trying to activate lease ("%s") on a resource ("%s") in the wrong status ("%s").' => 'Es wird versucht, Lease ("%s") auf Ressource ("%s") mit falschem Status ("%s") zu aktivieren.',
       'Trying to activate lease with no resource.' => 'Es wird versucht, eine Lease ohne Ressource zu aktivieren.',
-      'Trying to add a new PDF Object child after already registering the object with a generator.' => 'Es wurde versucht, ein neues PDF-Objekt-Kindelement hinzuzufügen, nachdem das Objekt bereits bei einem Generator registriert wurde.',
       'Trying to add duplicate column "%s"!' => 'Versuch, doppelte Spalte "%s" hinzuzufügen!',
       'Trying to add duplicate database "%s"!' => 'Versuch, doppelte Datenbank "%s" hinzuzufügen!',
       'Trying to add duplicate key "%s"!' => 'Versuch, doppelten Schlüssel "%s" hinzuzufügen!',
@@ -16913,22 +17465,14 @@ Wenn das Ausführen des Builds eine Nebenwirkung wie das Deployen von Code hat, 
       'Trying to construct a dataset of type "%s", but this type is unknown. Supported types are: %s.' => 'Es wird versucht, ein Dataset vom Typ "%s" zu erstellen, aber dieser Typ ist unbekannt. Unterstützte Typen sind: %s.',
       'Trying to create a new sublist of an existing handle list, but PHID "%s" does not appear in the parent list.' => 'Es wird versucht, eine neue Unterliste einer vorhandenen Handle-Liste zu erstellen, aber die PHID "%s" kommt in der übergeordneten Liste nicht vor.',
       'Trying to forget lock "%s", but this connection does not remember that lock.' => 'Es wird versucht, Lock "%s" zu vergessen, aber diese Verbindung merkt sich diesen Lock nicht.',
-      'Trying to get index for object ("%s") which has not been registered with a generator.' => 'Es wurde versucht, den Index für ein Objekt ("%s") abzurufen, das nicht bei einem Generator registriert wurde.',
       'Trying to lease tasks selected in the leased phase! This is intended to be impossible.' => 'Es wird versucht, Aufgaben zu leasen, die in der geleasten Phase ausgewählt wurden. Das sollte unmöglich sein.',
       'Trying to mutate a %s, but this is not permitted; handle lists are immutable.' => 'Es wird versucht, ein %s zu verändern, aber das ist nicht erlaubt; Handle-Listen sind unveränderlich.',
-      'Trying to operate on unlike currencies ("%s" and "%s")!' => 'Versuch, mit unterschiedlichen Währungen zu operieren ("%s" und "%s")!',
       'Trying to queue a lease for activation without an authorizing object. Use "%s" to specify the PHID of the authorizing object. The authorizing object must be approved to use the allowed blueprints.' => 'Es wird versucht, eine Lease ohne autorisierendes Objekt zur Aktivierung zu stellen. Verwende "%s", um die PHID des autorisierenden Objekts anzugeben. Das autorisierende Objekt muss für die Nutzung der erlaubten Blaupausen genehmigt sein.',
       'Trying to queue a lease for activation without any allowed Blueprints. Use "%s" to specify allowed blueprints. The authorizing object must be approved to use the allowed blueprints.' => 'Es wird versucht, eine Lease ohne erlaubte Blaupausen zur Aktivierung zu stellen. Verwende "%s", um erlaubte Blaupausen anzugeben. Das autorisierende Objekt muss für die Nutzung der erlaubten Blaupausen genehmigt sein.',
       'Trying to read configuration "%s" before configuration has been initialized.' => 'Versuch, Konfiguration „%s" zu lesen, bevor die Konfiguration initialisiert wurde.',
-      'Trying to refund a charge which is already refunding!' => 'Versuch, eine Abbuchung zu erstatten, die bereits erstattet wird!',
-      'Trying to refund a refund!' => 'Versuch, eine Erstattung zu erstatten!',
-      'Trying to refund an uncharged charge!' => 'Versuch, eine nicht abgebuchte Abbuchung zu erstatten!',
-      'Trying to refund more money than remaining on charge!' => 'Versuch, mehr Geld zu erstatten, als auf der Abbuchung verbleibt!',
-      'Trying to refund non-positive amount of money!' => 'Versuch, einen nicht positiven Geldbetrag zu erstatten!',
       'Trying to remember lock "%s", but this lock has already been remembered.' => 'Es wird versucht, sich Lock "%s" zu merken, aber dieser Lock wurde bereits gemerkt.',
       'Trying to render a handle which does not exist!' => 'Versuch, einen nicht existierenden Handle zu rendern!',
       'Trying to retrieve markup field key "%s", but this feed story did not request it be rendered.' => 'Markup-Feldschlüssel "%s" wird abgerufen, aber dieser Feed-Beitrag hat kein Rendering angefordert.',
-      'Trying to save object with a currency column, but the column value is not a %s object.' => 'Es wurde versucht, ein Objekt mit einer Währungsspalte zu speichern, aber der Spaltenwert ist kein %s-Objekt.',
       'Trying to send an already-sent mail!' => 'Versuch, eine bereits gesendete Mail erneut zu senden!',
       'Trying to synchronize after write, but not holding a write lock!' => 'Synchronisierung nach Schreibvorgang versucht, aber keine Schreibsperre vorhanden!',
       'Trying to unpause an active multimeter!' => 'Versuch, ein aktives Multimeter fortzusetzen!',
@@ -17073,7 +17617,6 @@ Beachte, dass verschiedene Steuerelemente //unterschiedliche// Funktionen unters
       'Typeaheads' => 'Eingabevorschläge',
       'Typeaheads, tokenizers and tokens.' => 'Eingabevorschläge, Tokenizer und Token.',
       'Types' => 'Typen',
-      'Typoing "%s" should throw.' => 'Ein Tippfehler bei "%s" sollte eine Ausnahme auslösen.',
       'UIExamples' => 'UIExamples',
       'UNARCHIVING' => 'DEARCHIVIERUNG',
       'UNCHANGED' => 'UNVERÄNDERT',
@@ -17083,7 +17626,6 @@ Beachte, dass verschiedene Steuerelemente //unterschiedliche// Funktionen unters
       'UNLOCKING' => 'ENTSPERREN',
       'UNSAFE: Raw string ("%s") passed to query ("%s") for "%%Q" conversion. %%Q should be passed a query string.' => 'UNSAFE: Roh-String ("%s") wurde für die Konvertierung "%%Q" an die Abfrage ("%s") übergeben. An %%Q sollte ein Query-String übergeben werden.',
       'UNSAFE: Raw string ("%s") passed to query ("%s") subclause for "%%%s" conversion. Subclause conversions should be passed a list of PhutilQueryString objects.' => 'UNSAFE: Roh-String ("%s") wurde an die Unterklausel der Abfrage ("%s") für die Konvertierung "%%%s" übergeben. Unterklausel-Konvertierungen sollten eine Liste von PhutilQueryString-Objekten erhalten.',
-      'UNSUBSCRIBE' => 'ABMELDEN',
       'URI' => 'URI',
       'URI "%s" does not have an allowable protocol. Configure protocols in `%s`. Allowed protocols are: %s.' => 'URI "%s" hat kein zulässiges Protokoll. Protokolle in `%s` konfigurieren. Zulässige Protokolle sind: %s.',
       'URI "%s" is not a valid fetchable resource. A valid fetchable resource URI must specify a domain.' => 'URI „%s" ist keine gültige abrufbare Ressource. Eine gültige abrufbare Ressource muss eine Domain angeben.',
@@ -17125,11 +17667,9 @@ Beachte, dass verschiedene Steuerelemente //unterschiedliche// Funktionen unters
       'UTC%+d:%02d' => 'UTC%+d:%02d',
       'UTC+%s' => 'UTC+%s',
       'UTC-%s' => 'UTC-%s',
+      'UUIDs' => 'UUIDs',
       'Umbrella' => 'Dach',
-      'Unable to "getAccount()" before loading or setting account context.' => '"getAccount()" kann nicht aufgerufen werden, bevor der Kontokontext geladen oder gesetzt wurde.',
-      'Unable to "getMerchants()" before loading or setting account context.' => '"getMerchants()" kann nicht aufgerufen werden, bevor der Kontokontext geladen oder gesetzt wurde.',
       'Unable to Abort Build' => 'Build konnte nicht abgebrochen werden',
-      'Unable to Cancel Order' => 'Bestellung kann nicht storniert werden',
       'Unable to Connect to Notification Server' => 'Verbindung zum Benachrichtigungs-Server nicht möglich',
       'Unable to Continue' => 'Fortsetzen nicht möglich',
       'Unable to Create Workboard' => 'Arbeitsfläche konnte nicht erstellt werden',
@@ -17144,7 +17684,6 @@ Beachte, dass verschiedene Steuerelemente //unterschiedliche// Funktionen unters
       'Unable to Push' => 'Push nicht möglich',
       'Unable to Reach Any Database' => 'Keine Datenbank erreichbar',
       'Unable to Reach Master' => 'Master nicht erreichbar',
-      'Unable to Refund Order' => 'Bestellung kann nicht erstattet werden',
       'Unable to Render Dashboard' => 'Dashboard konnte nicht gerendert werden',
       'Unable to Resume Build' => 'Build konnte nicht fortgesetzt werden',
       'Unable to Retrieve History' => 'Verlauf konnte nicht abgerufen werden',
@@ -17152,7 +17691,6 @@ Beachte, dass verschiedene Steuerelemente //unterschiedliche// Funktionen unters
       'Unable to Send Command' => 'Befehl konnte nicht gesendet werden',
       'Unable to Verify Email' => 'E-Mail konnte nicht verifiziert werden',
       'Unable to Verify Signature' => 'Unterschrift kann nicht bestätigt werden',
-      'Unable to Void Invoice' => 'Rechnung kann nicht storniert werden',
       'Unable to access a required database or table. This almost always means that the user you are connecting with ("%s") does not have sufficient permissions granted in MySQL. You can use `bin/storage databases` to get a list of all databases permission is required on.' => 'Auf eine erforderliche Datenbank oder Tabelle kann nicht zugegriffen werden. Das bedeutet fast immer, dass der Benutzer, mit dem du dich verbindest ("%s"), in MySQL nicht über ausreichende Berechtigungen verfügt. Mit `bin/storage databases` kannst du eine Liste aller Datenbanken anzeigen, für die Berechtigungen erforderlich sind.',
       'Unable to acquire lease "%s" on any resource.' => 'Lease "%s" konnte auf keiner Ressource erworben werden.',
       'Unable to acquire slot locks.' => 'Slot-Sperren konnten nicht erworben werden.',
@@ -17162,12 +17700,13 @@ Beachte, dass verschiedene Steuerelemente //unterschiedliche// Funktionen unters
       'Unable to apply patch of type \'%s\'.' => 'Patch vom Typ \'%s\' kann nicht angewendet werden.',
       'Unable to build a new transaction for adapter object; it does not implement "%s".' => 'Neue Transaktion für Adapterobjekt konnte nicht erstellt werden; es implementiert "%s" nicht.',
       'Unable to build resource interface of type "%s".' => 'Ressourcenschnittstelle vom Typ "%s" konnte nicht erstellt werden.',
-      'Unable to calculate %s, this subscription has not been scheduled for billing yet. Wait for the trigger daemon to schedule the subscription.' => 'Berechnung von %s nicht möglich, dieses Abonnement wurde noch nicht zur Abrechnung eingeplant. Warte, bis der Trigger-Daemon das Abonnement einplant.',
       'Unable to change ownership of an identity file to daemon user "%s". Run this command as %s or root.' => 'Der Besitzer einer Identitätsdatei konnte nicht auf den Daemon-Benutzer "%s" geändert werden. Führe diesen Befehl als %s oder root aus.',
       'Unable to compute HMAC-SHA256 digest of message.' => 'HMAC-SHA256-Digest der Nachricht konnte nicht berechnet werden.',
       'Unable to compute chunked hash without real viewer!' => 'Chunk-Hash kann ohne echten Viewer nicht berechnet werden!',
       'Unable to compute integrity hash for file "%s": %s' => 'Integritäts-Hash für Datei "%s" kann nicht berechnet werden: %s',
       'Unable to connect to LDAP server (%s:%d).' => 'Verbindung zum LDAP-Server (%s:%d) nicht möglich.',
+      'Unable to connect to MySQL using the administrative credentials provided with the __%s__ and __%s__ flags. Check that you have entered them correctly.' => 'Mit den über die Flags __%s__ und __%s__ angegebenen administrativen Zugangsdaten konnte keine Verbindung zu MySQL hergestellt werden. Prüfe, ob Du sie korrekt eingegeben hast.',
+      'Unable to connect to MySQL using the configured credentials. You must configure standard credentials before you can upgrade storage. Run these commands to set up credentials:' => 'Mit den konfigurierten Zugangsdaten konnte keine Verbindung zu MySQL hergestellt werden. Du musst Standard-Zugangsdaten konfigurieren, bevor Du den Speicher aktualisieren kannst. Führe diese Befehle aus, um Zugangsdaten einzurichten:',
       'Unable to connect to MySQL!
 
 %s
@@ -17179,7 +17718,6 @@ Make sure databases connection information and MySQL are correctly configured.' 
 Stelle sicher, dass die Verbindungsinformationen zur Datenbank und MySQL korrekt konfiguriert sind.',
       'Unable to connect to master database ("%s"). This is a severe failure; your request did not complete.' => 'Verbindung zur Master-Datenbank ("%s") konnte nicht hergestellt werden. Das ist ein schwerwiegender Fehler, deine Anfrage wurde nicht abgeschlossen.',
       'Unable to connect to memcache server (%s:%d)!' => 'Verbindung zum Memcache-Server (%s:%d) konnte nicht hergestellt werden!',
-      'Unable to connect to payment provider:' => 'Verbindung zum Zahlungsanbieter nicht möglich:',
       'Unable to construct a date value from value of type "%s".' => 'Datumswert kann nicht aus einem Wert des Typs "%s" konstruiert werden.',
       'Unable to continue tracing the history of this file because this commit created the file.' => 'Der Dateiverlauf kann nicht weiter zurückverfolgt werden, da diese Datei in diesem Commit erstellt wurde.',
       'Unable to continue tracing the history of this file because this commit is the first commit in the repository.' => 'Der Dateiverlauf kann nicht weiter zurückverfolgt werden, da dies der erste Commit im Repository ist.',
@@ -17233,15 +17771,13 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unable to get image information with getimagesize(): %s' => 'Bildinformationen mit getimagesize() konnten nicht abgerufen werden: %s',
       'Unable to handle proxied service request. This device is not registered, so it can not identify local services. Register this device before sending requests here.' => 'Die weitergeleitete Dienstanfrage kann nicht verarbeitet werden. Dieses Gerät ist nicht registriert und kann daher lokale Dienste nicht identifizieren. Registriere dieses Gerät, bevor Du Anfragen hierher sendest.',
       'Unable to identify parent "%s"!' => 'Elternelement „%s" konnte nicht identifiziert werden!',
+      'Unable to identify remote address from the %s environment variable. Device authentication is accepted only from trusted sources.' => 'Die entfernte Adresse konnte nicht aus der Umgebungsvariable %s ermittelt werden. Geräteauthentifizierung wird nur aus vertrauenswürdigen Quellen akzeptiert.',
       'Unable to identify the protocol for URI "%s". URIs must be fully qualified and have an identifiable protocol.' => 'Das Protokoll für URI "%s" konnte nicht identifiziert werden. URIs müssen vollständig qualifiziert sein und ein erkennbares Protokoll haben.',
       'Unable to imagecolorallocatealpha() a new empty image: %s' => 'imagecolorallocatealpha() für ein neues leeres Bild nicht möglich: %s',
       'Unable to imagecreatetruecolor() a new empty image: %s' => 'imagecreatetruecolor() für ein neues leeres Bild nicht möglich: %s',
-      'Unable to imagefill() a new empty image: %s' => 'imagefill() für ein neues leeres Bild nicht möglich: %s',
-      'Unable to imagesavealpha() a new empty image: %s' => 'imagesavealpha() für ein neues leeres Bild nicht möglich: %s',
       'Unable to inflate log chunk!' => 'Log-Chunk konnte nicht entpackt werden!',
       'Unable to insert or update object of class %s, field \'%s\' has a non-scalar value.' => 'Objekt der Klasse %s kann nicht eingefügt oder aktualisiert werden, Feld \'%s\' hat einen nichtskalaren Wert.',
       'Unable to instantiate query class "%s": %s' => 'Abfrageklasse „%s" konnte nicht instanziiert werden: %s',
-      'Unable to load %s!' => '%s kann nicht geladen werden!',
       'Unable to load API token ("%s")!' => 'API-Token ("%s") konnte nicht geladen werden!',
       'Unable to load Almanac binding ("%s") for resource ("%s").' => 'Almanac-Bindung ("%s") für Ressource ("%s") konnte nicht geladen werden.',
       'Unable to load Calendar import with ID "%s".' => 'Kalender-Import mit ID "%s" konnte nicht geladen werden.',
@@ -17250,7 +17786,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unable to load Herald rule with ID or monogram "%s".' => 'Herald-Regel mit ID oder Monogramm "%s" konnte nicht geladen werden.',
       'Unable to load MySQL blob file \'%s\'!' => 'MySQL-Blob-Datei \'%s\' kann nicht geladen werden!',
       'Unable to load an email address for this PHID.' => 'Eine Email-Adresse für diese PHID konnte nicht geladen werden.',
-      'Unable to load any of the members of the account ("%s") for this subscription ("%s").' => 'Keines der Mitglieder des Kontos ("%s") für dieses Abonnement ("%s") konnte geladen werden.',
       'Unable to load build log "%s".' => 'Build-Protokoll "%s" konnte nicht geladen werden.',
       'Unable to load build target "%s".' => 'Build-Ziel "%s" konnte nicht geladen werden.',
       'Unable to load bulk job with ID "%s".' => 'Stapeljob mit der ID „%s" konnte nicht geladen werden.',
@@ -17273,7 +17808,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unable to load object "%s".' => 'Objekt „%s“ konnte nicht geladen werden.',
       'Unable to load object ("%s") for webhook request ("%s").' => 'Objekt ("%s") für Webhook-Anfrage ("%s") konnte nicht geladen werden.',
       'Unable to load object with PHID "%s"!' => 'Objekt mit PHID „%s" konnte nicht geladen werden!',
-      'Unable to load provider for charge!' => 'Anbieter für Abbuchung konnte nicht geladen werden!',
       'Unable to load query for transaction object "%s"!' => 'Abfrage für Transaktionsobjekt „%s" konnte nicht geladen werden!',
       'Unable to load replaced image ("%s"): %s' => 'Ersetztes Bild ("%s") konnte nicht geladen werden: %s',
       'Unable to load replacement image ("%s"): %s' => 'Ersatzbild ("%s") konnte nicht geladen werden: %s',
@@ -17282,7 +17816,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unable to load server status: this is not an admin server!' => 'Server-Status konnte nicht geladen werden: Dies ist kein Admin-Server!',
       'Unable to load specified object ("%s").' => 'Angegebenes Objekt ("%s") konnte nicht geladen werden.',
       'Unable to load specified webhook ("%s").' => 'Angegebener Webhook ("%s") konnte nicht geladen werden.',
-      'Unable to load subscription with PHID "%s".' => 'Abonnement mit PHID "%s" konnte nicht geladen werden.',
       'Unable to load symbol %s: this class does not exist.' => 'Symbol %s kann nicht geladen werden: Diese Klasse existiert nicht.',
       'Unable to load the file for this log. The file may have been destroyed.' => 'Die Datei für dieses Protokoll konnte nicht geladen werden. Die Datei wurde möglicherweise gelöscht.',
       'Unable to load transactions: %s.' => 'Transaktionen konnten nicht geladen werden: %s.',
@@ -17292,7 +17825,9 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unable to lock repository "%s": only clustered repositories may be locked.' => 'Repository "%s" kann nicht gesperrt werden: Nur geclusterte Repositories dürfen gesperrt werden.',
       'Unable to lock repository "%s": only hosted repositories may be locked.' => 'Repository "%s" kann nicht gesperrt werden: Nur gehostete Repositories dürfen gesperrt werden.',
       'Unable to lock repository "%s": only repositories that support clustering may be locked.' => 'Repository "%s" kann nicht gesperrt werden: Nur Repositories, die Clustering unterstützen, dürfen gesperrt werden.',
-      'Unable to make payment: %s' => 'Zahlung nicht möglich: %s',
+      'Unable to open stderr.' => 'Stderr kann nicht geöffnet werden.',
+      'Unable to open stdin.' => 'Stdin kann nicht geöffnet werden.',
+      'Unable to open stdout.' => 'Stdout kann nicht geöffnet werden.',
       'Unable to parse argument to "--until".' => 'Argument für "--until" konnte nicht verarbeitet werden.',
       'Unable to parse copy time limit, specify a positive number of seconds.' => 'Das Zeitlimit zum Kopieren konnte nicht geparst werden; gib eine positive Anzahl von Sekunden an.',
       'Unable to parse date "%s". Use a format like "%s".' => 'Datum "%s" konnte nicht geparst werden. Ein Format wie "%s" verwenden.',
@@ -17312,9 +17847,8 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unable to proxy this SSH request within the cluster: this device is not registered and has a missing device key (expected to find key at "%s").' => 'Diese SSH-Anfrage kann nicht innerhalb des Clusters weitergeleitet werden: Dieses Gerät ist nicht registriert und hat keinen Geräteschlüssel (Schlüssel wurde erwartet unter "%s").',
       'Unable to read device private key while attempting to make authenticated method call within the cluster. Use `%s` to register keys for this device. Exception: %s' => 'Der private Schlüssel des Geräts konnte beim Versuch, innerhalb des Clusters einen authentifizierten Methodenaufruf auszuführen, nicht gelesen werden. Verwende `%s`, um Schlüssel für dieses Gerät zu registrieren. Ausnahme: %s',
       'Unable to read device public key while attempting to make authenticated method call within the cluster. Use `%s` to register keys for this device. Exception: %s' => 'Der öffentliche Schlüssel des Geräts konnte beim Versuch, innerhalb des Clusters einen authentifizierten Methodenaufruf auszuführen, nicht gelesen werden. Verwende `%s`, um Schlüssel für dieses Gerät zu registrieren. Ausnahme: %s',
+      'Unable to read the %s file of the downloaded package - can\'t decide what the name the library is using.' => 'Die Datei %s des heruntergeladenen Pakets konnte nicht gelesen werden - es lässt sich nicht bestimmen, welchen Namen die Bibliothek verwendet.',
       'Unable to refresh token!' => 'Token konnte nicht erneuert werden!',
-      'Unable to refund charge; no Stripe chargeID!' => 'Abbuchung kann nicht erstattet werden; keine Stripe-Abbuchungs-ID!',
-      'Unable to refund some charges!' => 'Einige Abbuchungen konnten nicht erstattet werden!',
       'Unable to reload object that hasn\'t been loaded!' => 'Ein Objekt, das nicht geladen wurde, kann nicht neu geladen werden!',
       'Unable to render resource "%s", which has unknown type "%s".' => 'Ressource "%s" kann nicht gerendert werden, da der Typ "%s" unbekannt ist.',
       'Unable to render value for unknown field type ("%s").' => 'Wert für unbekannten Feldtyp ("%s") konnte nicht gerendert werden.',
@@ -17337,7 +17871,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unable to test client on an admin server!' => 'Client kann auf einem Admin-Server nicht getestet werden!',
       'Unable to test remote address against cluster whitelist: REMOTE_ADDR is not defined or not valid.' => 'Remote-Adresse kann nicht gegen die Cluster-Whitelist geprüft werden: REMOTE_ADDR ist nicht definiert oder ungültig.',
       'Unable to transform image: the imagecreatefromstring() function is not available. Install or enable the "gd" extension for PHP.' => 'Bild kann nicht transformiert werden: Die Funktion imagecreatefromstring() ist nicht verfügbar. Die PHP-Erweiterung "gd" installieren oder aktivieren.',
-      'Unable to update charge; no Stripe chargeID!' => 'Abbuchung kann nicht aktualisiert werden; keine Stripe-Abbuchungs-ID!',
       'Unable to upload file: the server is not configured with any writable storage engines.' => 'Datei kann nicht hochgeladen werden: Der Server ist mit keiner beschreibbaren Speicher-Engine konfiguriert.',
       'Unable to upload file: this file is too large for any configured storage engine.' => 'Datei kann nicht hochgeladen werden: Diese Datei ist zu groß für alle konfigurierten Speicher-Engines.',
       'Unable to upload file: this server is not configured with any storage engine which can store large files.' => 'Datei kann nicht hochgeladen werden: Dieser Server ist mit keiner Speicher-Engine konfiguriert, die große Dateien speichern kann.',
@@ -17370,14 +17903,11 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unexpected Error' => 'Unerwarteter Fehler',
       'Unexpected character ("%s") in edit string.' => 'Unerwartetes Zeichen ("%s") in Editier-Zeichenkette.',
       'Unexpected command structure, expected \'%s\'.' => 'Unerwartete Befehlsstruktur, \'%s\' erwartet.',
-      'Unexpected currency!' => 'Unerwartete Währung!',
       'Unexpected end of file.' => 'Unerwartetes Dateiende.',
-      'Unexpected events in file "%s" on test "%s"' => 'Unerwartete Ereignisse in Datei "%s" bei Test "%s"',
       'Unexpected failure while destroying lease ("%s").' => 'Unerwarteter Fehler beim Zerstören von Lease ("%s").',
       'Unexpected failure while destroying resource ("%s").' => 'Unerwarteter Fehler beim Zerstören von Ressource ("%s").',
       'Unexpected hint format at index "%s": %s' => 'Unerwartetes Hinweisformat bei Index „%s": %s',
       'Unexpected infinite loop in %s!' => 'Unerwartete Endlosschleife in %s!',
-      'Unexpected invitees in file "%s" on test "%s"' => 'Unerwartete Eingeladene in Datei "%s" bei Test "%s"',
       'Unexpected key "%s" in datetime dictionary, expected keys: %s.' => 'Unerwarteter Schlüssel "%s" im Datums-/Zeitwörterbuch, erwartete Schlüssel: %s.',
       'Unexpected key "%s" in duration dictionary, expected keys: %s.' => 'Unerwarteter Schlüssel "%s" im Dauerwörterbuch, erwartete Schlüssel: %s.',
       'Unexpected leading character "%s" at line index %s!' => 'Unerwartetes führendes Zeichen "%s" an Zeilenindex %s!',
@@ -17393,9 +17923,7 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
 %s' => 'Unerwartete Ausgabe:
 
 %s',
-      'Unexpected presence of user "%s" in file "%s" on test "%s"' => 'Unerwartete Anwesenheit von Benutzer "%s" in Datei "%s" bei Test "%s"',
       'Unexpected property "%s" in Javelin class definition!' => 'Unerwartete Eigenschaft „%s“ in der Javelin-Klassendefinition!',
-      'Unexpected result for "%s". <uri = %s, expect exception = %s>' => 'Unerwartetes Ergebnis für "%s". <uri = %s, erwartete Ausnahme = %s>',
       'Unexpected value "%s" in "%s" RRULE property: expected only integers.' => 'Unerwarteter Wert „%s" in der RRULE-Eigenschaft „%s": Nur Ganzzahlen erwartet.',
       'Unexpected value "%s" in "%s" RULE property: expected an integer.' => 'Unerwarteter Wert „%s" in der RULE-Eigenschaft „%s": Ganzzahl erwartet.',
       'Unfiltered' => 'Ungefiltert',
@@ -17419,7 +17947,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unit Test' => 'Unit-Test',
       'Unit Test (Permanent)' => 'Unit-Test (dauerhaft)',
       'Unit Test (Temporary)' => 'Unit-Test (temporär)',
-      'Unit Test User %d' => 'Testbenutzer %d',
       'Unit Tests' => 'Unit-Tests',
       'Unit test value.' => 'Unit-Test-Wert.',
       'Unit tests were skipped when generating these changes.' => 'Unit-Tests wurden bei der Erzeugung dieser Änderungen übersprungen.',
@@ -17479,7 +18006,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unknown build step field "%s"!' => 'Unbekanntes Build-Schrittfeld "%s"!',
       'Unknown cache format.' => 'Unbekanntes Cache-Format.',
       'Unknown capability \'%s\'!' => 'Unbekannte Fähigkeit \'%s\'!',
-      'Unknown cart status "%s"!' => 'Unbekannter Warenkorbstatus "%s"!',
       'Unknown change filter \'%s\'.' => 'Unbekannter Änderungsfilter \'%s\'.',
       'Unknown chunk encoding "%s"!' => 'Unbekannte Chunk-Kodierung "%s"!',
       'Unknown column type "%s"!' => 'Unbekannter Spaltentyp "%s"!',
@@ -17499,6 +18025,9 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unknown event: %s' => 'Unbekanntes Ereignis: %s',
       'Unknown export format ("%s").' => 'Unbekanntes Exportformat ("%s").',
       'Unknown export format ("%s"). Known formats are: %s.' => 'Unbekanntes Exportformat („%s"). Bekannte Formate sind: %s.',
+      'Unknown extension format `%s` - maybe upgrade %s first?
+' => 'Unbekanntes Erweiterungsformat `%s` - vielleicht zuerst %s aktualisieren?
+',
       'Unknown fact ("%s") for engine "%s".' => 'Unbekannter Fakt ("%s") für Engine "%s".',
       'Unknown failure reason: %s' => 'Unbekannter Fehlergrund: %s',
       'Unknown field list-item view style \'%s\'; valid styles are \'%s\', \'%s\'and \'%s\'.' => 'Unbekannter Ansichts-Stil \'%s\' für Feld-Listeneinträge; gültige Stile sind \'%s\', \'%s\' und \'%s\'.',
@@ -17511,6 +18040,7 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unknown hosted failed \'%s\'!' => 'Unbekannter Hosting-Fehler \'%s\'!',
       'Unknown import trigger frequency "%s".' => 'Unbekannte Import-Auslösehäufigkeit "%s".',
       'Unknown index type "%s"!' => 'Unbekannter Indextyp „%s"!',
+      'Unknown library format `%s`, not deleting from disk. Location was %s.' => 'Unbekanntes Bibliotheksformat `%s`, wird nicht von der Festplatte gelöscht. Ort war %s.',
       'Unknown log chunk encoding ("%s")!' => 'Unbekannte Log-Chunk-Kodierung ("%s")!',
       'Unknown mailer ("%s")!' => 'Unbekannter Mailer ("%s")!',
       'Unknown map "%s".' => 'Unbekannte Zuordnung "%s".',
@@ -17519,6 +18049,7 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unknown option "%s" in: %s' => 'Unbekannte Option "%s" in: %s',
       'Unknown order "%s"!' => 'Unbekannte Sortierung "%s"!',
       'Unknown order "%s".' => 'Unbekannte Sortierung "%s".',
+      'Unknown output format `%s`' => 'Unbekanntes Ausgabeformat `%s`',
       'Unknown parser state "%s".\\n' => 'Unbekannter Parserzustand "%s".\\n',
       'Unknown part type \'%s\'!' => 'Unbekannter Teiltyp \'%s\'!',
       'Unknown patch "%s" in "%s", expected ".php" or ".sql" or ".db" suffix.' => 'Unbekannter Patch "%s" in "%s", erwartet wurde die Endung ".php", ".sql" oder ".db".',
@@ -17527,12 +18058,12 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unknown primitive type \'%s\'!' => 'Unbekannter primitiver Typ \'%s\'!',
       'Unknown project status \'%s\'!' => 'Unbekannter Projektstatus „%s"!',
       'Unknown reason ("%s").' => 'Unbekannter Grund ("%s").',
-      'Unknown renderer type "%s"!' => 'Unbekannter Renderer-Typ "%s"!',
       'Unknown rendering target: %s' => 'Unbekanntes Rendering-Ziel: %s',
       'Unknown repository "%s"!' => 'Unbekanntes Repository „%s"!',
       'Unknown repository VCS type.' => 'Unbekannter VCS-Typ des Repositorys.',
       'Unknown repository operation target type "%s" (in target "%s").' => 'Unbekannter Repository-Operationszieltyp "%s" (in Ziel "%s").',
       'Unknown repository type "%s"!' => 'Unbekannter Repository-Typ „%s"!',
+      'Unknown repository type.' => 'Unbekannter Repository-Typ.',
       'Unknown request type.' => 'Unbekannter Anfragetyp.',
       'Unknown revision status filter constant "%s".' => 'Unbekannte Versionsstatus-Filterkonstante "%s".',
       'Unknown routing rule "%s".' => 'Unbekannte Weiterleitungsregel "%s".',
@@ -17551,7 +18082,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unknown status query \'%s\'!' => 'Unbekannte Statusabfrage \'%s\'!',
       'Unknown task status!' => 'Unbekannter Aufgabenstatus!',
       'Unknown type matched as image MIME type.' => 'Unbekannter Typ als Bild-MIME-Typ erkannt.',
-      'Unknown user spec \'%s\'.' => 'Unbekannte Benutzerspezifikation \'%s\'.',
       'Unknown version control system!' => 'Unbekanntes Versionskontrollsystem!',
       'Unknown version control system.' => 'Unbekanntes Versionskontrollsystem.',
       'Unknown view key "%s".' => 'Unbekannter Ansichtsschlüssel "%s".',
@@ -17563,7 +18093,13 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unlink Account' => 'Konto trennen',
       'Unlink External Account' => 'Externes Konto trennen',
       'Unlink Your Only Login Account?' => 'Einziges Anmeldekonto trennen?',
+      'Unlink an external account from a user account.' => 'Ein externes Konto von einem Benutzerkonto trennen.',
+      'Unlink external account from the specified user.' => 'Externes Konto vom angegebenen Benutzer trennen.',
+      'Unlink external account without prompting.' => 'Externes Konto ohne Nachfrage trennen.',
+      'Unlink the specific external account type.' => 'Den angegebenen externen Kontotyp trennen.',
+      'Unlink this external account?' => 'Dieses externe Konto trennen?',
       'Unlinked Account Instructions' => 'Hinweise für nicht verknüpfte Konten',
+      'Unlinking external account...' => 'Externes Konto wird getrennt...',
       'Unloadable Targets' => 'Nicht ladbare Ziele',
       'Unloaded Object \'%s\'' => 'Nicht geladenes Objekt \'%s\'',
       'Unlock Project' => 'Projekt entsperren',
@@ -17590,7 +18126,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unnamed Sample' => 'Unbenanntes Sample',
       'Unnamed Tab' => 'Unbenannter Tab',
       'Unnecessary Javelin Dependency' => 'Unnötige Javelin-Abhängigkeit',
-      'Unpaid Invoices' => 'Unbezahlte Rechnungen',
       'Unprotectable Repository' => 'Nicht schützbares Repository',
       'Unpublish' => 'Depublizieren',
       'Unpublish Post' => 'Beitrag depublizieren',
@@ -17621,7 +18156,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unsubmitted' => 'Nicht eingereicht',
       'Unsubmitted Comments' => 'Nicht eingereichte Kommentare',
       'Unsubscribe' => 'Nicht mehr mitlesen',
-      'Unsubscribed' => 'Abgemeldet',
       'Unsupported Project' => 'Nicht unterstütztes Projekt',
       'Unsupported Response Type' => 'Nicht unterstützter Antworttyp',
       'Unsupported VCS "%s"!' => 'Nicht unterstütztes VCS „%s"!',
@@ -17630,14 +18164,13 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Unsupported bulk edit type "%s".' => 'Nicht unterstützter Stapelbearbeitungstyp „%s".',
       'Unsupported character set "%s".' => 'Nicht unterstützter Zeichensatz "%s".',
       'Unsupported collation set "%s".' => 'Nicht unterstützte Kollation "%s".',
-      'Unsupported currency \'%s\'!' => 'Nicht unterstützte Währung \'%s\'!',
-      'Unsupported currency ("%s")!' => 'Nicht unterstützte Währung ("%s")!',
       'Unsupported data encoding.' => 'Nicht unterstützte Datenkodierung.',
       'Unsupported item action "%s".' => 'Nicht unterstützte Eintragsaktion „%s".',
       'Unsupported operator prefix "%s".' => 'Nicht unterstütztes Operatorpräfix „%s".',
       'Unsupported order "%s".' => 'Nicht unterstützte Reihenfolge "%s".',
       'Unsupported repository type "%s"!' => 'Nicht unterstützter Repository-Typ "%s"!',
       'Unsupported repository type!' => 'Nicht unterstützter Repository-Typ!',
+      'Unsupported sudo-rs Version' => 'Nicht unterstützte sudo-rs-Version',
       'Unsupported view type, possibles are: %s' => 'Nicht unterstützter Ansichtstyp, mögliche sind: %s',
       'Unsupported/Insecure "%s" Version' => 'Nicht unterstützte/unsichere "%s"-Version',
       'Unsynchronized' => 'Nicht synchronisiert',
@@ -17679,7 +18212,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Update Preview' => 'Vorschau aktualisieren',
       'Update Repository Now' => 'Repository jetzt aktualisieren',
       'Update Revision %s: %s' => 'Version %s aktualisieren: %s',
-      'Update Status' => 'Termin ändern',
       'Update Variable' => 'Variable aktualisieren',
       'Update __repository__. This performs the __pull__, __discover__, __refs__ and __mirror__ operations and is primarily an internal workflow.' => '__repository__ aktualisieren. Führt die Operationen __pull__, __discover__, __refs__ und __mirror__ aus und ist in erster Linie ein interner Ablauf.',
       'Update a Differential revision.' => 'Eine Differential-Version aktualisieren.',
@@ -17690,6 +18222,7 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Update an existing Maniphest task.' => 'Eine bestehende Maniphest-Aufgabe aktualisieren.',
       'Update an existing conpherence room.' => 'Einen bestehenden Conpherence-Chat ändern.',
       'Update commits to make their summary audit state reflect the state of their actual audit requests. This can fix inconsistencies in database state if audit requests have been mangled accidentally (or on purpose).' => 'Commits aktualisieren, damit ihr zusammengefasster Auditstatus den Status ihrer tatsächlichen Audit-Anfragen widerspiegelt. Dadurch lassen sich Inkonsistenzen im Datenbankzustand beheben, wenn Audit-Anfragen versehentlich (oder absichtlich) beschädigt wurden.',
+      'Update complete; Current version %s. Remember to run `%s` and restart the server!' => 'Aktualisierung abgeschlossen; aktuelle Version %s. Denk daran, `%s` auszuführen und den Server neu zu starten!',
       'Update configuration in the database instead of in local configuration.' => 'Konfiguration in der Datenbank statt in der lokalen Konfiguration aktualisieren.',
       'Update frequency constant.' => 'Aktualisierungshäufigkeitskonstante.',
       'Update has no effect.' => 'Aktualisierung hat keine Auswirkung.',
@@ -17714,7 +18247,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Updated search indexes for %s document(s).' => 'Suchindizes für %s Dokument(e) aktualisiert.',
       'Updates OK' => 'Aktualisierungen OK',
       'Updates from background processing in daemons.' => 'Aktualisierungen durch Hintergrundverarbeitung in Daemons.',
-      'Updates from subscriptions and payment processors.' => 'Aktualisierungen von Abonnements und Zahlungsabwicklern.',
       'Updating "%s" (%s)...' => '„%s" (%s) wird aktualisiert …',
       'Updating Build Targets' => 'Build-Ziele aktualisieren',
       'Updating Builds' => 'Builds aktualisieren',
@@ -17731,6 +18263,10 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Updoot In 5 Seconds' => 'Updoot in 5 Sekunden',
       'Upgrade MySQL Schema' => 'MySQL-Schema aktualisieren',
       'Upgrade database schemata.' => 'Datenbankschemata aktualisieren.',
+      'Upgrade to TLS after the initial binding to the LDAP server. You should use LDAPS instead if possible.' => 'Nach dem ersten Binden an den LDAP-Server auf TLS umschalten. Verwende nach Möglichkeit stattdessen LDAPS.',
+      'Upgrading extension "%s". Current version-hash %s.' => 'Aktualisiere Erweiterung "%s". Aktueller Versions-Hash: %s.',
+      'Upgrading extension %s ("%s"). Currently installed %s, upgrading to %s. Downloading from store %s' => 'Aktualisiere Erweiterung %s ("%s"). Derzeit installiert: %s, Aktualisierung auf %s. Download aus dem Store %s',
+      'Upgrading extensions of format "%s" is not supported.' => 'Das Aktualisieren von Erweiterungen im Format "%s" wird nicht unterstützt.',
       'Upgrading partial session of user with no session!' => 'Teilsitzung eines Benutzers ohne Sitzung wird aufgewertet!',
       'Upload' => 'Hochladen',
       'Upload %s from %s.' => '%s von %s hochladen.',
@@ -17738,10 +18274,8 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Upload File' => 'Datei hochladen',
       'Upload From Host' => 'Vom Host hochladen',
       'Upload Header' => 'Header hochladen',
-      'Upload Logo' => 'Logo hochladen',
       'Upload New Audio' => 'Neue Audiodatei hochladen',
       'Upload New Header' => 'Neuen Header hochladen',
-      'Upload New Logo' => 'Neues Logo hochladen',
       'Upload New Picture' => 'Neue Bilder hochladen',
       'Upload Picture' => 'Bild hochladen',
       'Upload Public Key' => 'Public Key Hochladen',
@@ -17761,7 +18295,10 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Uploading Image...' => 'Bild wird hochgeladen...',
       'Uptime' => 'Laufzeit',
       'Usage' => 'Verwendung',
+      'Usage: %s' => 'Verwendung: %s',
+      'Use "%s"' => '"%s" verwenden',
       'Use "--force" to force the index to update these documents.' => 'Verwende "--force", um die Aktualisierung des Index für diese Dokumente zu erzwingen.',
+      'Use "--host" or "--ref" to select a database, but not both.' => 'Entweder "--host" oder "--ref" verwenden, um eine Datenbank auszuwählen, aber nicht beides.',
       'Use "--id" or "--active" to select builds.' => '"--id" oder "--active" verwenden, um Builds auszuwählen.',
       'Use "--id" to choose a bulk job to make silent.' => '„--id" verwenden, um einen Stapeljob auszuwählen, der still ausgeführt werden soll.',
       'Use "--lease" to specify a lease.' => 'Mit "--lease" einen Lease angeben.',
@@ -17802,8 +18339,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Use HSTS' => 'HSTS verwenden',
       'Use High Contrast Colors' => 'Farben mit hohem Kontrast',
       'Use Icon and Color' => 'Symbol und Farbe verwenden',
-      'Use Larger Font Size' => 'Große Schrift',
-      'Use Logo' => 'Logo verwenden',
       'Use Maniphest to track bugs, features, todos, or anything else you need to get done. Tasks assigned to you will appear here.' => 'Verwende Maniphest, um Fehler, Features, Todos oder alles andere zu verfolgen, was erledigt werden muss. Dir zugewiesene Aufgaben erscheinen hier.',
       'Use Monospaced Font' => 'Monospace-Schrift verwenden',
       'Use Normal HTTP Redirects' => 'Normale HTTP-Weiterleitungen verwenden',
@@ -17819,18 +18354,54 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Use Red/Green (Deuteranopia) Colors' => 'Rot/Grün-Farben (Deuteranopie) verwenden',
       'Use Results' => 'Ergebnisse verwenden',
       'Use Standard Colors' => 'Standardfarben verwenden',
-      'Use TLS' => 'TLS verwenden',
+      'Use StartTLS' => 'StartTLS verwenden',
       'Use Unicode Glyphs: ⚙' => 'Unicode-Symbole: ⚙',
       'Use Variable-Width Font' => 'Proportionale Schrift verwenden',
       'Use XHPAST' => 'XHPAST verwenden',
+      'Use __password__ instead of the configured default.' => '__password__ statt des konfigurierten Standards verwenden.',
       'Use `%s` instead of this option.' => 'Stattdessen `%s` verwenden.',
+      'Use `order` to choose an ordering for the results.
+
+Either specify a single key from the builtin orders (these are a set of
+meaningful, high-level, human-readable orders) or specify a custom list of
+low-level columns.
+
+To use a high-level order, choose a builtin order from the table below
+and specify it like this:
+
+```lang=json, name="Choosing a Result Order"
+{
+  ...
+  "order": "newest",
+  ...
+}
+```
+
+These builtin orders are available:' => 'Mit `order` wählst Du eine Sortierung für die Ergebnisse.
+
+Gib entweder einen einzelnen Schlüssel aus den vordefinierten Sortierungen an (das sind
+aussagekräftige, übergeordnete, menschenlesbare Sortierungen) oder eine eigene Liste
+von Spalten auf niedriger Ebene.
+
+Um eine übergeordnete Sortierung zu verwenden, wähle eine vordefinierte Sortierung aus
+der folgenden Tabelle und gib sie so an:
+
+```lang=json, name="Choosing a Result Order"
+{
+  ...
+  "order": "newest",
+  ...
+}
+```
+
+Diese vordefinierten Sortierungen sind verfügbar:',
       'Use a specific configuration file instead of the default configuration.' => 'Eine bestimmte Konfigurationsdatei anstatt der Standardkonfiguration verwenden.',
+      'Use a specific name instead of the first part of the image name.' => 'Einen bestimmten Namen statt des ersten Teils des Bildnamens verwenden.',
       'Use constraint flags (like "--id" or "--class") to select which tasks to affect. Use "--help" for a list of supported constraint flags.' => 'Verwende Constraint-Flags (wie "--id" oder "--class"), um auszuwählen, welche Aufgaben betroffen sein sollen. Eine Liste der unterstützten Constraint-Flags findest du mit "--help".',
       'Use default behavior.' => 'Standardverhalten verwenden.',
-      'Use either %s or %s and %s to specify the billing range, but not both.' => 'Entweder %s oder %s und %s für den Abrechnungszeitraum angeben, aber nicht beides.',
       'Use flags to specify at least one edit to apply to the rule (for example, use "--disable" to disable a rule).' => 'Flags verwenden, um mindestens eine anzuwendende Änderung an der Regel anzugeben (z.B. "--disable" zum Deaktivieren einer Regel).',
-      'Use form-encoded data to submit parameters to Conduit endpoints. Sending a JSON-encoded body and setting \'Content-Type\': \'application/json\' is not currently supported.' => 'Verwende formularcodierte Daten, um Parameter an Conduit-Endpunkte zu übermitteln. Das Senden eines JSON-kodierten Bodys mit gesetztem \'Content-Type\': \'application/json\' wird derzeit nicht unterstützt.',
       'Use lowercase letters, digits, and periods. For example: %s' => 'Kleinbuchstaben, Ziffern und Punkte verwenden. Zum Beispiel: %s',
+      'Use namespace __namespace__ instead of the configured default (\'%s\'). This is an advanced feature used by unit tests; you should not normally use this flag.' => 'Namensraum __namespace__ statt des konfigurierten Standards (\'%s\') verwenden. Dies ist eine fortgeschrittene Funktion für Unit-Tests; normalerweise solltest Du dieses Flag nicht verwenden.',
       'Use one of "--id" or "--active" to select builds, but not both.' => 'Entweder "--id" oder "--active" verwenden, um Builds auszuwählen, aber nicht beides.',
       'Use specific endpoint' => 'Bestimmten Endpunkt verwenden',
       'Use tabs to switch between several other panels.' => 'Tabs verwenden, um zwischen verschiedenen anderen Panels zu wechseln.',
@@ -17855,6 +18426,7 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'Used on %s.' => 'Verwendet von %s.',
       'User' => 'Benutzer',
       'User "%s" is not a valid user.' => 'Benutzer "%s" ist kein gültiger Benutzer.',
+      'User "%s" was not found' => 'Benutzer "%s" wurde nicht gefunden',
       'User %s' => 'Benutzer %s',
       'User Account Settings' => 'Benutzerkontoeinstellungen',
       'User Account is Disabled' => 'Benutzerkonto ist deaktiviert',
@@ -17880,7 +18452,6 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'User PHID.' => 'Benutzer-PHID.',
       'User Picture' => 'Benutzerbild',
       'User Policies' => 'Benutzer-Policies',
-      'User Policy' => 'Benutzer-Richtlinie',
       'User Preferences' => 'Benutzereinstellungen',
       'User Profile' => 'Benutzerprofil',
       'User Profiles' => 'Benutzerprofile',
@@ -17893,6 +18464,7 @@ Wenn Du sicher bist, dass eine aktuelle Version von "%s" installiert ist und kor
       'User account is not permitted to use the API.' => 'Das Benutzerkonto darf die API nicht verwenden.',
       'User account to act on.' => 'Zu bearbeitendes Benutzerkonto.',
       'User cancelled operation.' => 'Benutzer hat den Vorgang abgebrochen.',
+      'User does not have an external account with provider "%s" configured.' => 'Der Benutzer hat kein externes Konto beim Anbieter "%s" konfiguriert.',
       'User does not own email!' => 'Dem Benutzer gehört diese Email-Adresse nicht!',
       'User has already been created!' => 'Benutzer wurde bereits erstellt!',
       'User has no primary email address!' => 'Benutzer hat keine primäre E-Mail-Adresse!',
@@ -17975,25 +18547,12 @@ Um den Neustart eines Builds zu verhindern, kann der erlaubte Zeitpunkt durch An
       'Valid Input' => 'Gültige Eingabe',
       'Valid Output' => 'Gültige Ausgabe',
       'Valid Setting' => 'Gültiger Wert',
-      'Valid fetchable remote URI: %s' => 'Gültige abrufbare Remote-URI: %s',
-      'Valid linkable remote URI: %s' => 'Gültige verlinkbare Remote-URI: %s',
-      'Valid local resource: %s' => 'Gültige lokale Ressource: %s',
       'Valid setting' => 'Gültiger Wert',
-      'Validate "%s"' => '"%s" validieren',
       'Validate that all locales and translations are properly constructed.' => 'Prüfen, dass alle Locales und Übersetzungen korrekt aufgebaut sind.',
       'Validating...' => 'Validierung...',
-      'Validation (https): %s' => 'Validierung (https): %s',
-      'Validation (params): %s' => 'Validierung (Parameter): %s',
       'Validation Errors' => 'Validierungsfehler',
       'Validation Failed' => 'Validierung fehlgeschlagen',
       'Validation errors:' => 'Validierungsfehler:',
-      'Validation of "%s"' => 'Validierung von "%s"',
-      'Validation of redirect URI \'%s\'' => 'Validierung der Umleitungs-URI \'%s\'',
-      'Validation of redirect URI \'%s\' relative to \'%s\'' => 'Validierung der Umleitungs-URI \'%s\' relativ zu \'%s\'',
-      'Validation of secondary redirect URI \'%s\' relative to \'%s\'' => 'Validierung der sekundären Umleitungs-URI \'%s\' relativ zu \'%s\'',
-      'Validity of \'%s\'.' => 'Gültigkeit von \'%s\'.',
-      'Validity of macro "%s"' => 'Gültigkeit von Makro "%s"',
-      'Validity of password "%s".' => 'Gültigkeit des Passworts „%s".',
       'Value' => 'Wert',
       'Value "%s" in RRULE "%s" parameter is invalid: it must be between %s and %s.' => 'Wert „%s" im RRULE-Parameter „%s" ist ungültig: Er muss zwischen %s und %s liegen.',
       'Value "%s" in RRULE "%s" parameter is invalid: it must not be zero.' => 'Wert „%s" im RRULE-Parameter „%s" ist ungültig: Er darf nicht null sein.',
@@ -18028,7 +18587,6 @@ Um den Neustart eines Builds zu verhindern, kann der erlaubte Zeitpunkt durch An
       'Variable value must be valid JSON.' => 'Variablenwert muss gültiges JSON sein.',
       'Variables' => 'Variablen',
       'Vary Subjects' => 'Betreffs variieren',
-      'Vast Wealth' => 'Enormer Reichtum',
       'Verbillion' => 'Verbillion',
       'Verification Email Sent' => 'Bestätigungsemail ist rausgegangen',
       'Verification code can not be regenerated after an invite is created.' => 'Der Verifizierungscode kann nicht mehr neu generiert werden, nachdem eine Einladung erstellt wurde.',
@@ -18037,6 +18595,7 @@ Um den Neustart eines Builds zu verhindern, kann der erlaubte Zeitpunkt durch An
       'Verified email addresses can not be reassigned.' => 'Verifizierte E-Mail-Adressen können nicht neu zugewiesen werden.',
       'Verified, Corporate' => 'Bestätigt, Firma',
       'Verified, Current' => 'Bestätigt, aktuell',
+      'Verified?' => 'Verifiziert?',
       'Verify' => 'Verifizieren',
       'Verify %s' => '%s verifizieren',
       'Verify Email' => 'Emailadresse verifizieren',
@@ -18083,19 +18642,13 @@ Um den Neustart eines Builds zu verhindern, kann der erlaubte Zeitpunkt durch An
       'View All %d Subscriber(s)' => 'Alle %d Mitleser anzeigen',
       'View All %s Files' => 'Alle %s Dateien ansehen',
       'View All Builds' => 'Alle Builds anzeigen',
-      'View All Charges' => 'Alle Abbuchungen anzeigen',
       'View All Files' => 'Alle Dateien ansehen',
-      'View All Invoices' => 'Alle Rechnungen anzeigen',
-      'View All Merchants' => 'Alle Händler zeigen',
-      'View All Orders' => 'Alle Aufträge zeigen',
       'View All Results' => 'Alle Ergebnisse anzeigen',
       'View All Rules' => 'Alle Regeln anzeigen',
-      'View All Subscriptions' => 'Alle Abonnements anzeigen',
       'View Alternatives' => 'Alternativen ansehen',
       'View As' => 'Anzeigen als',
       'View As Document Type...' => 'Als Dokumenttyp anzeigen...',
       'View As List' => 'Als Liste anzeigen',
-      'View Backers' => 'Unterstützer ansehen',
       'View Badge' => 'Trophäe anzeigen',
       'View Branches' => 'Branches ansehen',
       'View Build' => 'Build anzeigen',
@@ -18171,18 +18724,16 @@ Um den Neustart eines Builds zu verhindern, kann der erlaubte Zeitpunkt durch An
       'View status information for databases, caches, repositories, and other services.' => 'Statusinformationen zu Datenbanken, Caches, Repositories und anderen Diensten anzeigen.',
       'View/Sign Document' => 'Dokument anzeigen/unterschreiben',
       'Viewer' => 'Betrachter',
-      'Viewing As "%s"' => 'Anzeige als "%s"',
       'Vim' => 'Vim',
       'Violet' => 'Violett',
       'Visibility' => 'Sichtbarkeit',
       'Visible' => 'Sichtbar',
       'Visible Columns' => 'Sichtbare Spalten',
+      'Visible Side Menu' => 'Sichtbares Seitenmenü',
       'Visible To' => 'Sichtbar für',
       'Visit URL' => 'URL besuchen',
       'Visual PHP Parser' => 'Visueller PHP-Parser',
       'Visual Studio Code' => 'Visual Studio Code',
-      'Void Invoice' => 'Rechnung stornieren',
-      'Void Invoice?' => 'Rechnung stornieren?',
       'Voided' => 'Storniert',
       'Vote Type' => 'Abstimmungsart',
       'Voted' => 'Abgestimmt',
@@ -18193,6 +18744,81 @@ Um den Neustart eines Builds zu verhindern, kann der erlaubte Zeitpunkt durch An
       'WARNING' => 'WARNUNG',
       'WARNING: The "Track Only" feature is deprecated. Use "Fetch Refs" and "Permanent Refs" instead. This feature will be removed in a future version of this software.' => 'WARNUNG: Das Feature "Track Only" ist veraltet. Stattdessen "Fetch Refs" und "Permanent Refs" verwenden. Dieses Feature wird in einer zukünftigen Version dieser Software entfernt.',
       'WARNING: There are %s unapproved authorization(s)!' => 'WARNUNG: Es gibt %s nicht genehmigte Autorisierung(en)!',
+      'WARNING: This build step is new and experimental!
+
+To build **revisions** with Buildkite, they must:
+
+  - belong to a tracked repository;
+  - the repository must have a Staging Area configured;
+  - you must configure a Buildkite pipeline for that Staging Area; and
+  - you must configure the webhook described below.
+
+To build **commits** with Buildkite, they must:
+
+  - belong to a tracked repository;
+  - you must configure a Buildkite pipeline for that repository; and
+  - you must configure the webhook described below.
+
+Webhook Configuration
+=====================
+
+In {nav Settings} for your Organization in Buildkite, under
+{nav Notification Services}, add a new **Webhook Notification**.
+
+Use these settings:
+
+  - **Webhook URL**: %s
+  - **Token**: The "Webhook Token" field below and the "Token" field in
+    Buildkite should both be set to the same nonempty value (any random
+    secret). You can use copy/paste the value Buildkite generates into
+    this form.
+  - **Events**: Only **build.finish** needs to be active.
+
+Environment
+===========
+
+These variables will be available in the build environment:
+
+| Variable | Description |
+|----------|-------------|
+| `HARBORMASTER_BUILD_TARGET_PHID` | PHID of the Build Target. |' => 'WARNUNG: Dieser Build-Schritt ist neu und experimentell!
+
+Um **Revisionen** mit Buildkite zu bauen, müssen sie:
+
+  - zu einem verfolgten Repository gehören;
+  - das Repository muss eine Staging-Area konfiguriert haben;
+  - Du musst für diese Staging-Area eine Buildkite-Pipeline konfigurieren; und
+  - Du musst den unten beschriebenen Webhook konfigurieren.
+
+Um **Commits** mit Buildkite zu bauen, müssen sie:
+
+  - zu einem verfolgten Repository gehören;
+  - Du musst für dieses Repository eine Buildkite-Pipeline konfigurieren; und
+  - Du musst den unten beschriebenen Webhook konfigurieren.
+
+Webhook-Konfiguration
+=====================
+
+Füge in Buildkite unter {nav Settings} Deiner Organisation im Bereich
+{nav Notification Services} eine neue **Webhook Notification** hinzu.
+
+Verwende diese Einstellungen:
+
+  - **Webhook URL**: %s
+  - **Token**: Das Feld "Webhook Token" unten und das Feld "Token" in
+    Buildkite müssen beide auf denselben nicht leeren Wert gesetzt werden
+    (ein beliebiges zufälliges Geheimnis). Du kannst den von Buildkite
+    erzeugten Wert per Kopieren und Einfügen in dieses Formular übernehmen.
+  - **Events**: Nur **build.finish** muss aktiv sein.
+
+Umgebung
+========
+
+Diese Variablen stehen in der Build-Umgebung zur Verfügung:
+
+| Variable | Beschreibung |
+|----------|--------------|
+| `HARBORMASTER_BUILD_TARGET_PHID` | PHID des Build-Ziels. |',
       'WARNING: This build step is new and experimental!
 
 To build **revisions** with CircleCI, they must:
@@ -18228,8 +18854,7 @@ These variables will be available in the build environment:
 | Variable | Description |
 |----------|-------------|
 | `HARBORMASTER_BUILD_TARGET_PHID` | PHID of the Build Target.
-
-EOTEXT' => 'WARNUNG: Dieser Build-Schritt ist neu und experimentell!
+' => 'WARNUNG: Dieser Build-Schritt ist neu und experimentell!
 
 Um **Revisionen** mit CircleCI zu bauen, müssen sie:
 
@@ -18264,30 +18889,15 @@ Diese Variablen stehen in der Build-Umgebung zur Verfügung:
 | Variable | Beschreibung |
 |----------|--------------|
 | `HARBORMASTER_BUILD_TARGET_PHID` | PHID des Build-Ziels.
-
-EOTEXT',
-      'WARNING: This is a prototype option and the description below is currently pure
-fantasy.
-
-This option allows you to make this service aware of database read replicas so
-it can monitor database health, spread load, and degrade gracefully to
-read-only mode in the event of a failure on the primary host. For help with
-configuring cluster databases, see **[[ %s | %s ]]** in the documentation.
-EOTEXT' => 'WARNUNG: Dies ist eine Prototyp-Option, und die folgende Beschreibung ist derzeit reine Fantasie.
-
-Mit dieser Option kann dieser Dienst über Datenbank-Lesereplikate informiert werden, damit er den Zustand der Datenbanken überwachen, Last verteilen und bei einem Ausfall des primären Hosts kontrolliert in den Nur-Lese-Modus wechseln kann. Hilfe zur Konfiguration von Cluster-Datenbanken findest Du in der Dokumentation unter **[[ %s | %s ]]**.
-EOTEXT',
-      'WARNING: This is a prototype option and the description below is currently pure fantasy.
-
-Switch the service to read-only mode. In this mode, users will be unable to write new data. Normally, the cluster degrades into this mode automatically when it detects that the database master is unreachable, but you can activate it manually in order to perform maintenance or test configuration.' => 'WARNUNG: Dies ist eine Prototyp-Option, und die folgende Beschreibung ist derzeit reine Fantasie.
-
-Schalte den Dienst in den Nur-Lese-Modus. In diesem Modus können Benutzer keine neuen Daten schreiben. Normalerweise wechselt der Cluster automatisch in diesen Modus, wenn er erkennt, dass der Datenbank-Master nicht erreichbar ist, aber Du kannst ihn auch manuell aktivieren, um Wartungen durchzuführen oder die Konfiguration zu testen.',
+',
       'WARNING: This is a very advanced option, and only useful for hosting providers running multi-tenant clusters.
 
 If you provide an instance identifier here (normally by injecting it with a `%s`), the server will pass it to subprocesses and commit hooks in the `%s` environmental variable.' => 'WARNUNG: Dies ist eine sehr fortgeschrittene Option und nur für Hosting-Anbieter sinnvoll, die Multi-Tenant-Cluster betreiben.
 
 Wenn Du hier eine Instanzkennung angibst, normalerweise durch Injektion mit einem `%s`, übergibt der Server sie an Unterprozesse und Commit-Hooks in der Umgebungsvariable `%s`.',
+      'WARNING: This project has [[%s|%s open task(s) with no active project tags]]. Before archiving, consider closing the task(s) or adding active project tags to the task(s).' => 'WARNUNG: Dieses Projekt hat [[%s|%s offene Aufgabe(n) ohne aktive Projekt-Tags]]. Erwäge vor dem Archivieren, die Aufgabe(n) zu schließen oder ihnen aktive Projekt-Tags hinzuzufügen.',
       'WARNING: You have not configured any authentication providers yet, so your account has no login credentials. If you log out now, you will not be able to log back in normally.' => 'WARNUNG: Du hast noch keine Authentifizierungsanbieter konfiguriert, daher hat Dein Konto keine Anmeldedaten. Wenn Du Dich jetzt abmeldest, kannst Du Dich nicht mehr normal anmelden.',
+      'WHEN' => 'WANN',
       'WORKBOARD' => 'ARBEITSFLÄCHE',
       'Wait' => 'Warten',
       'Wait For Approval' => 'Warte auf Freischaltung',
@@ -18334,10 +18944,11 @@ Wenn Du hier eine Instanzkennung angibst, normalerweise durch Injektion mit eine
       'Warn When Landing' => 'Beim Landen warnen',
       'Warning' => 'Warnung',
       'Warning ("%s") while parsing ICS data (near line %s): %s' => 'Warnung ("%s") beim Parsen von ICS-Daten (nahe Zeile %s): %s',
+      'Warning - %s must implement `%s`. This method will become abstract in the near future.' => 'Warnung - %s muss `%s` implementieren. Diese Methode wird in naher Zukunft abstrakt.',
       'Warning: Draft Revision' => 'Warnung: Entwurfsversion',
       'Warning: Editing Inlines' => 'Warnung: Inline-Kommentare werden bearbeitet',
+      'Warning: We don\'t check what you\'re downloading. It can be anything. It has read/write access to anything %s has access to. be sure you trust it.' => 'Warnung: Wir prüfen nicht, was Du herunterlädst. Es kann alles Mögliche sein. Es hat Lese- und Schreibzugriff auf alles, worauf %s Zugriff hat. Stelle sicher, dass Du ihm vertraust.',
       'Warnings' => 'Warnungen',
-      'Warp to New Planet' => 'Warp zum neuen Planeten',
       'Watch Project' => 'Projekt beobachten',
       'Watch Project?' => 'Projekt beobachten?',
       'Watch for danger!' => 'Vorsicht ist die Mutter der Porzellankiste!',
@@ -18352,7 +18963,6 @@ Wenn Du hier eine Instanzkennung angibst, normalerweise durch Injektion mit eine
       'We didn\'t find a "%s" field in the commit message.' => 'Wir haben kein Feld "%s" in der Commit-Nachricht gefunden.',
       'We found a "%s" field with value "%s" in the commit message, and the domain on the URI matches this install, so we linked this commit to %s.' => 'Wir haben ein Feld "%s" mit dem Wert "%s" in der Commit-Nachricht gefunden, und die Domain der URI stimmt mit dieser Installation überein, daher wurde dieser Commit mit %s verknüpft.',
       'We found a "%s" field with value "%s" in the commit message, but the domain on this URI did not match the configured domain for this install, "%s", so we ignored it under the assumption that it refers to some third-party revision.' => 'Wir haben ein Feld "%s" mit dem Wert "%s" in der Commit-Nachricht gefunden, aber die Domain dieser URI stimmt nicht mit der konfigurierten Domain dieser Installation überein ("%s"), daher wurde sie ignoriert, da sie vermutlich auf eine externe Version verweist.',
-      'We should not be able to lease a task multiple times.' => 'Es sollte nicht möglich sein, eine Aufgabe mehrfach zu leasen.',
       'Weak' => 'Schwach',
       'Weak (Control Unowned Paths)' => 'Schwach (pfadlose Pfade kontrollieren)',
       'Weak (Package Watches Paths)' => 'Schwach (Paket beobachtet Pfade)',
@@ -18385,11 +18995,10 @@ Wenn Du hier eine Instanzkennung angibst, normalerweise durch Injektion mit eine
       'Week Starts On' => 'Die Woche startet mit',
       'Weekday "%s" is not a valid weekday constant. Valid constants are: %s.' => 'Wochentag „%s" ist kein gültiger Wochentag-Bezeichner. Gültige Bezeichner: %s.',
       'Weekly' => 'Wöchentlich',
-      'Weekly recurring event.' => 'Wöchentlich wiederkehrender Termin.',
-      'Weigh In' => 'Kommentar einwerfen',
       'Welcome' => 'Willkommen',
       'Welcome to %s' => 'Willkommen bei %s',
       'Welcome to %s!' => 'Willkommen bei %s!',
+      'Welcome to %s.' => 'Willkommen bei %s.',
       'Welcome to Audit' => 'Willkommen bei Audit',
       'Welcome to Conpherence' => 'Willkommen bei Conpherence',
       'Welcome to Diffusion' => 'Willkommen bei Diffusion',
@@ -18444,28 +19053,40 @@ of each approach are:
       thread.
     - Required if private reply-to addresses are configured.
     - Mail messages are sent in the language of user preference.
-
-EODOC' => 'Wenn eine Nachricht an mehrere Empfänger gesendet wird, zum Beispiel an mehrere Reviewer eines Code-Reviews, kann sie entweder als eine E-Mail an alle verschickt werden oder als separate E-Mails an jeden Benutzer. Die wichtigsten Vor- und Nachteile sind:
+' => 'Wenn eine Nachricht an mehrere Empfänger gesendet wird (zum Beispiel an mehrere Reviewer eines Code-Reviews), kann sie entweder als eine E-Mail an alle zugestellt werden (z.B. "To: alincoln, usgrant, htaft") oder als separate E-Mails an jeden Benutzer (z.B. "To: alincoln", "To: usgrant", "To: htaft"). Die wichtigsten Vor- und Nachteile beider Ansätze sind:
 
   - Eine E-Mail an alle:
-    - Das verletzt Policy-Kontrollen. Der Nachrichtentext wird ohne       Rücksicht auf Objekt-Policies erzeugt.
+    - Das verletzt Policy-Kontrollen. Der Nachrichtentext wird ohne
+      Rücksicht auf Objekt-Policies erzeugt.
     - Empfänger sehen To/Cc direkt auf einen Blick.
-    - Wenn Du Mailinglisten verwendest, bekommst Du keine Doppelzustellung,       wenn Du normaler Empfänger bist und zusätzlich über eine Mailingliste       im Cc stehst.
-    - Sauberes Threading ist schwerer zu erreichen und erfordert       wahrscheinlich, einige nützliche Optionen abzuschalten.
-    - Manchmal verwenden Benutzer "Allen antworten", wodurch E-Mails an       zu viele Empfänger gehen können. Die Software versucht, keine       Nachrichten doppelt zu senden, kann aber nicht jede verirrte E-Mail       verhindern.
+    - Wenn Du Mailinglisten verwendest, bekommst Du keine doppelten E-Mails,
+      wenn Du normaler Empfänger bist und zusätzlich über eine Mailingliste
+      im Cc stehst.
+    - Sauberes Threading ist schwerer zu erreichen und erfordert
+      wahrscheinlich, E-Mails durch Abschalten von Optionen weniger
+      nützlich zu machen.
+    - Manchmal verwenden Leute "Allen antworten", wodurch E-Mails an zu
+      viele Empfänger gehen können. Diese Software versucht, Benutzern, die
+      bereits eine ähnliche Nachricht erhalten haben, keine weitere E-Mail
+      zu senden, kann aber nicht jede verirrte E-Mail durch "Allen
+      antworten" verhindern.
     - Wird mit privater Reply-To-Adresse nicht unterstützt.
     - Nachrichten werden in der Standardübersetzung des Servers gesendet.
-    - E-Mails, die über sichere Kanäle zugestellt werden müssen, verraten       die Empfängerliste in den Headern "To" und "Cc".
+    - E-Mails, die über sichere Kanäle zugestellt werden müssen, verraten
+      die Empfängerliste in den Headern "To" und "Cc".
   - Eine E-Mail pro Benutzer:
-    - Policy-Kontrollen funktionieren korrekt und werden pro Benutzer       durchgesetzt.
+    - Policy-Kontrollen funktionieren korrekt und werden pro Benutzer
+      durchgesetzt.
     - Empfänger müssen in den Nachrichtentext schauen, um To/Cc zu sehen.
-    - Bei Mailinglisten kann es zu Doppelzustellungen kommen.
-    - Sauberes Threading ist einfacher, und Threading-Einstellungen können       pro Benutzer angepasst werden.
-    - "Allen antworten" sendet nie zusätzliche E-Mails an andere       Beteiligte des Threads.
+    - Wenn Du Mailinglisten verwendest, bekommen Empfänger manchmal doppelte
+      E-Mails.
+    - Sauberes Threading ist einfacher, und Threading-Einstellungen können
+      von jedem Benutzer angepasst werden.
+    - "Allen antworten" sendet nie zusätzliche E-Mails an andere Beteiligte
+      des Threads.
     - Erforderlich, wenn private Reply-To-Adressen konfiguriert sind.
     - Nachrichten werden in der vom Benutzer bevorzugten Sprache gesendet.
-
-EODOC',
+',
       'When a revision is updated, this software attempts to bring inline comments on the older version forward to the new changes. You can disable this behavior if you prefer comments stay anchored in one place.' => 'Wenn eine Revision aktualisiert wird, versucht Phorge, Inline-Kommentare der älteren Version auf die neuen Änderungen zu übertragen. Dieses Verhalten kann deaktiviert werden, wenn Kommentare an ihrem ursprünglichen Ort bleiben sollen.',
       'When a user attempts to `arc land` a revision and that revision has ongoing or failed builds, the default behavior of `arc` is to warn them about those builds and give them a chance to reconsider: they may want to wait for ongoing builds to complete, or fix failed builds before landing the change.
 
@@ -18571,17 +19192,149 @@ send email on behalf of the "From" domain. Practically, this means:
     email might vanish into SFP blackholes.
   - If your install is anything else, you\'re safer leaving this off, at least
     initially, since the risk in turning it on is that your outgoing mail will
-    never arrive.
-EODOC' => 'Wenn ein Benutzer eine Aktion ausführt, die eine E-Mail-Benachrichtigung auslöst, etwa einen Kommentar zu einer Differential-Revision, kann die "From"-Adresse entweder auf die E-Mail-Adresse des Benutzers gesetzt werden, etwa "alincoln@example.com", oder auf die Adresse "metamta.default-address".
+    never arrive.' => 'Wenn ein Benutzer eine Aktion ausführt, die eine E-Mail-Benachrichtigung auslöst (etwa einen Kommentar zu einer Differential-Revision), kann die "From"-Adresse entweder auf die E-Mail-Adresse des Benutzers gesetzt werden (etwa "alincoln@example.com") oder auf die Adresse aus "metamta.default-address".
 
 Für Benutzer ist es meist angenehmer, wenn als "From"-Header die echte Adresse des Benutzers verwendet wird, weil sich die Nachrichten in Mailprogrammen leichter organisieren lassen. Das funktioniert aber nur, wenn der Server berechtigt ist, E-Mails im Namen der "From"-Domain zu versenden. Praktisch heißt das:
 
-  - Wenn Du eine Installation für Example Corp betreibst, alle Benutzer     Firmenadressen wie @corp.example.com haben und alle Hosts, auf denen     diese Software läuft, berechtigt sind, E-Mails von corp.example.com zu     versenden, kannst Du diese Option aktivieren, um die Nutzung etwas     angenehmer zu machen.
-  - Wenn Du eine Installation für ein Open-Source-Projekt betreibst und     sich Deine Benutzer über Fremddienste registrieren und/oder private E-    Mail-Adressen verwenden, solltest Du diese Option wahrscheinlich nicht     aktivieren, weil sonst ausgehende E-Mails in SPF-Schwarzen Löchern     verschwinden können.
-  - Für alle anderen Installationen ist es sicherer, diese Option     zumindest zunächst deaktiviert zu lassen, weil eingeschaltete, aber     fehlerhaft zugestellte ausgehende E-Mail sonst möglicherweise nie     ankommt.
-EODOC',
+  - Wenn Du eine Installation für Example Corp betreibst, alle Benutzer
+    Firmenadressen unter @corp.example.com haben und alle Hosts, auf denen
+    diese Software läuft, berechtigt sind, E-Mails von corp.example.com zu
+    versenden, kannst Du diese Option aktivieren, um die Nutzung etwas
+    angenehmer zu machen.
+  - Wenn Du eine Installation für ein Open-Source-Projekt betreibst und sich
+    Deine Benutzer über Fremddienste registrieren und/oder private
+    E-Mail-Adressen verwenden, solltest Du diese Option wahrscheinlich nicht
+    aktivieren, sonst verschwindet womöglich Deine gesamte ausgehende E-Mail
+    in SPF-Schwarzen-Löchern.
+  - Bei allen anderen Installationen bist Du sicherer, wenn Du diese Option
+    zumindest anfangs deaktiviert lässt, denn das Risiko beim Einschalten
+    ist, dass Deine ausgehende E-Mail nie ankommt.',
       'When accepting a revision, you must accept on behalf of at least one reviewer.' => 'Beim Akzeptieren einer Version musst Du im Namen von mindestens einem Reviewer akzeptieren.',
       'When all of these conditions are met:' => 'Wenn alle dieser Bedingungen erfüllt sind:',
+      'When an object (like a task) is edited, the relevant application creates a
+"transaction" and applies it. This list of transactions on each object is the
+basis for essentially all edits and comments. Reviewing the transaction
+record allows you to see who edited an object, when, and how their edit changed
+things.
+
+One common reason to call this method is that you\'re implementing a webhook and
+just received a notification that an object has changed. See the Webhooks
+documentation for more detailed discussion of this use case.
+
+One Object Type at a Time
+=========================
+
+This API method can query transactions for any type of object which supports
+transactions, but only one type of object can be queried per call. For example:
+you can retrieve transactions affecting Tasks, or you can retrieve transactions
+affecting Revisions, but a single call can not retrieve both.
+
+This is a technical limitation arising because (among other reasons) there is
+no global ordering on transactions.
+
+To find transactions for a specific object (like a particular task), pass the
+object PHID or an appropriate object identifier (like `T123`) as an
+`objectIdentifier`.
+
+To find all transactions for an object type, pass the object type constant as
+an `objectType`. For example, the correct identifier for tasks is `TASK`. (You
+can quickly find an unknown type constant by looking at the PHID of an object
+of that type.)
+
+All supported values for `objectType`:
+
+%s
+
+Constraints
+===========
+
+These constraints are supported:
+
+  - `phids` //Optional list<phid>.// Find specific transactions by PHID. This
+    is most likely to be useful if you\'re responding to a webhook notification
+    and want to inspect only the related events.
+  - `authorPHIDs` //Optional list<phid>.// Find transactions with particular
+    authors.
+
+Transaction Format
+==================
+
+Each transaction has custom data describing what the transaction did. The
+format varies from transaction to transaction. The easiest way to figure out
+exactly what a particular transaction looks like is to make the associated kind
+of edit to a test object, then query that object.
+
+Not all transactions have data: by default, transactions have a `null` "type"
+and no additional data. This API does not expose raw transaction data because
+some of it is internal, oddly named, misspelled, confusing, not useful, or
+could create security or policy problems to expose directly.
+
+New transactions are exposed (with correctly spelled, comprehensible types and
+useful, reasonable fields) as we become aware of use cases for them.
+' => 'Wenn ein Objekt (etwa eine Aufgabe) bearbeitet wird, erzeugt die zuständige Anwendung
+eine "Transaktion" und wendet sie an. Diese Liste von Transaktionen an jedem Objekt ist
+die Grundlage für praktisch alle Bearbeitungen und Kommentare. Anhand des
+Transaktionsprotokolls kannst Du sehen, wer ein Objekt wann bearbeitet hat und was
+sich durch die Bearbeitung geändert hat.
+
+Ein häufiger Grund, diese Methode aufzurufen, ist, dass Du einen Webhook implementierst
+und gerade eine Benachrichtigung erhalten hast, dass sich ein Objekt geändert hat.
+Eine ausführlichere Behandlung dieses Anwendungsfalls findest Du in der
+Webhooks-Dokumentation.
+
+Ein Objekttyp pro Aufruf
+========================
+
+Diese API-Methode kann Transaktionen für jeden Objekttyp abfragen, der Transaktionen
+unterstützt, aber pro Aufruf kann nur ein Objekttyp abgefragt werden. Zum Beispiel:
+Du kannst Transaktionen zu Aufgaben abrufen oder Transaktionen zu Revisionen, aber
+ein einzelner Aufruf kann nicht beides abrufen.
+
+Das ist eine technische Einschränkung, die (unter anderem) daher rührt, dass es keine
+globale Reihenfolge der Transaktionen gibt.
+
+Um Transaktionen für ein bestimmtes Objekt (etwa eine bestimmte Aufgabe) zu finden,
+übergib die PHID des Objekts oder einen passenden Objektbezeichner (wie `T123`) als
+`objectIdentifier`.
+
+Um alle Transaktionen eines Objekttyps zu finden, übergib die Konstante des Objekttyps
+als `objectType`. Der korrekte Bezeichner für Aufgaben ist zum Beispiel `TASK`. (Eine
+unbekannte Typkonstante findest Du schnell, indem Du Dir die PHID eines Objekts dieses
+Typs ansiehst.)
+
+Alle unterstützten Werte für `objectType`:
+
+%s
+
+Einschränkungen
+===============
+
+Diese Einschränkungen werden unterstützt:
+
+  - `phids` //Optionale list<phid>.// Bestimmte Transaktionen anhand ihrer PHID finden.
+    Das ist vor allem nützlich, wenn Du auf eine Webhook-Benachrichtigung reagierst
+    und nur die zugehörigen Ereignisse untersuchen möchtest.
+  - `authorPHIDs` //Optionale list<phid>.// Transaktionen bestimmter Autoren
+    finden.
+
+Transaktionsformat
+==================
+
+Jede Transaktion hat eigene Daten, die beschreiben, was die Transaktion bewirkt hat.
+Das Format unterscheidet sich von Transaktion zu Transaktion. Am einfachsten findest
+Du heraus, wie eine bestimmte Transaktion genau aussieht, indem Du die entsprechende
+Bearbeitung an einem Testobjekt vornimmst und dieses Objekt dann abfragst.
+
+Nicht alle Transaktionen haben Daten: Standardmäßig haben Transaktionen einen
+"type" mit dem Wert `null` und keine weiteren Daten. Diese API legt keine
+Rohdaten von Transaktionen offen, weil manche davon intern, seltsam benannt, falsch
+geschrieben, verwirrend oder nutzlos sind oder bei direkter Offenlegung Sicherheits-
+oder Richtlinienprobleme verursachen könnten.
+
+Neue Transaktionen werden (mit korrekt geschriebenen, verständlichen Typen und
+nützlichen, sinnvollen Feldern) offengelegt, sobald wir Anwendungsfälle dafür
+kennenlernen.
+',
       'When any of these conditions are met:' => 'Wenn eine dieser Bedingungen erfüllt ist:',
       'When building a revision, abort copies of this build plan which are currently running against older diffs.' => 'Beim Bauen einer Revision laufende Kopien dieses Build-Plans, die gegen ältere Diffs laufen, abbrechen.',
       'When constructing clone URIs to show to users, Diffusion by default will not display a port assuming the default for your VCS. Explicitly declare when running on a non-standard port.' => 'Beim Erstellen von Clone-URIs für Benutzer zeigt Diffusion standardmäßig keinen Port an und geht vom Standard-Port des jeweiligen VCS aus. Bei Betrieb auf einem nicht-standardmäßigen Port sollte dieser hier explizit angegeben werden.',
@@ -18597,6 +19350,80 @@ EODOC',
       'When creating a service, set the type.' => 'Beim Erstellen eines Dienstes den Typ festlegen.',
       'When creating an artifact, you will choose an `artifactType` from this table. These types of artifacts are supported:' => 'Beim Erstellen eines Artefakts wird ein `artifactType` aus dieser Tabelle ausgewählt. Folgende Artefakttypen werden unterstützt:',
       'When creating an interface, set the device.' => 'Beim Erstellen einer Schnittstelle das Gerät festlegen.',
+      'When creating objects in the web interface, you can use HTTP parameters to
+prefill fields in the form. This allows you to quickly create a link to a
+form with some of the fields already filled in with default values.
+
+To prefill a form, start by finding the URI for the form you want to prefill.
+Do this by navigating to the relevant application, clicking the "Create" button
+for the type of object you want to create, and then copying the URI out of your
+browser\'s address bar. It will usually look something like this:
+
+```
+%s
+```
+
+However, `phorge.example.com` will be the domain where your copy of this
+software is installed, and `application/` will be the URI for an application.
+Some applications have multiple forms for creating objects or URIs that look a
+little different than this example, so the URI may not look exactly like this.
+
+To prefill the form, add properly encoded HTTP parameters to the URI. You
+should end up with something like this:
+
+```
+%s?title=Platypus&body=Ornithopter
+```
+
+If the form has `title` and `body` fields of the correct types, visiting this
+link will prefill those fields with the values "Platypus" and "Ornithopter"
+respectively.
+
+The rest of this document shows which parameters you can add to this form and
+how to format them.
+
+
+Supported Fields
+----------------
+
+This form supports these fields:
+' => 'Wenn Du Objekte in der Weboberfläche erstellst, kannst Du Felder im Formular über
+HTTP-Parameter vorausfüllen. So kannst Du schnell einen Link auf ein Formular erstellen,
+in dem einige Felder bereits mit Standardwerten ausgefüllt sind.
+
+Um ein Formular vorauszufüllen, suche zuerst die URI des gewünschten Formulars. Öffne
+dazu die betreffende Anwendung, klicke auf die Schaltfläche "Erstellen" für den
+Objekttyp, den Du erstellen möchtest, und kopiere dann die URI aus der Adressleiste
+Deines Browsers. Sie sieht normalerweise etwa so aus:
+
+```
+%s
+```
+
+Dabei ist `phorge.example.com` jedoch die Domain, unter der Deine Installation dieser
+Software läuft, und `application/` die URI einer Anwendung. Manche Anwendungen haben
+mehrere Formulare zum Erstellen von Objekten oder URIs, die etwas anders aussehen als
+in diesem Beispiel, die URI sieht also womöglich nicht genau so aus.
+
+Um das Formular vorauszufüllen, hänge korrekt kodierte HTTP-Parameter an die URI an.
+Das Ergebnis sollte etwa so aussehen:
+
+```
+%s?title=Platypus&body=Ornithopter
+```
+
+Wenn das Formular Felder `title` und `body` mit den passenden Typen hat, füllt der
+Aufruf dieses Links diese Felder mit den Werten "Platypus" bzw. "Ornithopter" vor.
+
+Der Rest dieses Dokuments zeigt, welche Parameter Du diesem Formular hinzufügen kannst
+und wie sie formatiert werden.
+
+
+Unterstützte Felder
+-------------------
+
+Dieses Formular unterstützt diese Felder:
+',
       'When deleting Almanac properties, each property name must be a string. The value at index "%s" is not a string.' => 'Beim Löschen von Almanac-Eigenschaften muss jeder Eigenschaftsname eine Zeichenkette sein. Der Wert am Index "%s" ist keine Zeichenkette.',
       'When email is sent, what format should the software use for users\' email
 addresses? Valid values are:
@@ -18605,15 +19432,13 @@ addresses? Valid values are:
  - `real`:  \'George Washington <gwashington@example.com>\'
  - `full`: \'gwashington (George Washington) <gwashington@example.com>\'
 
-The default is `full`.
-EODOC' => 'Welches Format soll diese Software beim Versenden von E-Mails für Benutzeradressen verwenden? Gültige Werte sind:
+The default is `full`.' => 'Welches Format soll diese Software beim Versenden von E-Mails für Benutzeradressen verwenden? Gültige Werte sind:
 
  - `short`: \'gwashington <gwashington@example.com>\'
  - `real`:  \'George Washington <gwashington@example.com>\'
  - `full`: \'gwashington (George Washington) <gwashington@example.com>\'
 
-Der Standardwert ist `full`.
-EODOC',
+Der Standardwert ist `full`.',
       'When hinting a commit ("%s") as rewritten, you must provide the commit it was rewritten into.' => 'Wenn Du für einen Commit ("%s") den Hinweis "rewritten" angibst, musst Du den Commit angeben, in den er umgeschrieben wurde.',
       'When hinting a commit ("%s") as unreadable, you must not provide a new commit ("%s").' => 'Wenn Du für einen Commit ("%s") den Hinweis "unreadable" angibst, darfst Du keinen neuen Commit ("%s") angeben.',
       'When it is prohibitively expensive or complex to attain a complete count of the items, you can select one extra item and set %s if it exists, creating an inexact pager.' => 'Wenn es unvertretbar teuer oder komplex ist, eine vollständige Anzahl der Elemente zu ermitteln, kannst Du ein zusätzliches Element auswählen und %s setzen, falls es existiert, um einen ungenauen Pager zu erzeugen.',
@@ -18632,8 +19457,7 @@ There are some nuances to the behavior:
     the active diff when it runs.
 
 Build results on outdated diffs often aren\'t very important, so this may
-reduce build queue load without any substantial cost.
-EOTEXT' => 'Wenn dieser Build-Schritt gegen eine Revision ausgeführt wird, bricht er
+reduce build queue load without any substantial cost.' => 'Wenn dieser Build-Schritt gegen eine Revision ausgeführt wird, bricht er
 ältere Kopien desselben Build-Plans ab, die gerade gegen ältere Diffs laufen.
 
 Es gibt einige Feinheiten beim Verhalten:
@@ -18644,8 +19468,7 @@ Es gibt einige Feinheiten beim Verhalten:
     nicht der aktive Diff ist, wenn er läuft.
 
 Build-Ergebnisse zu veralteten Diffs sind oft nicht sehr wichtig, daher
-kann dies die Build-Warteschlangenlast ohne wesentliche Kosten reduzieren.
-EOTEXT',
+kann dies die Build-Warteschlangenlast ohne wesentliche Kosten reduzieren.',
       'When selected as the policy for other objects, this policy will behave like the **Effective Policy**.
 
 **Visible To** and **Editable By** are the policies controlling access to the Named Policy itself.' => 'Wenn diese Richtlinie für andere Objekte ausgewählt wird, verhält sie sich wie die **Effektive Richtlinie**.
@@ -18656,14 +19479,60 @@ EOTEXT',
 After running `bin/auth unlock` and making your changes to the authentication provider config, you should run `bin/auth lock`.' => 'Wenn diese Option auf `true` gesetzt ist, kann die Konfiguration der Authentifizierungsanbieter für diese Instanz erst geändert werden, nachdem zuvor `bin/auth unlock` auf der Befehlszeile ausgeführt wurde. Das verringert die Sicherheitsauswirkungen eines kompromittierten Administratorkontos.
 
 Nachdem Du `bin/auth unlock` ausgeführt und Deine Änderungen vorgenommen hast, solltest Du `bin/auth lock` ausführen.',
-      'When specifying %s or %s, you must specify both arguments to define the beginning and end of the billing range.' => 'Wenn du %s oder %s angibst, musst du beide Argumente angeben, um Beginn und Ende des Abrechnungszeitraums festzulegen.',
       'When the diff was generated, the client was not able to determine which repository it belonged to, so the change was not pushed to staging. Changes must be pushed to staging before they can be landed from the web.' => 'Bei der Diff-Generierung konnte der Client nicht bestimmen, zu welchem Repository die Änderung gehört, daher wurde sie nicht in den Staging-Bereich gepusht. Änderungen müssen gepusht werden, bevor sie über das Web gelandet werden können.',
       'When this diff was generated, it was not pushed to staging for an unknown reason (the status code was "%s"). Changes must be pushed to staging before they can be landed from the web. The server may be running an out-of-date version of this software, and updating may provide more information about this error.' => 'Als dieser Diff erstellt wurde, wurde er aus einem unbekannten Grund nicht in den Staging-Bereich gepusht (der Statuscode war "%s"). Änderungen müssen in den Staging-Bereich gepusht werden, bevor sie über das Web gelandet werden können. Möglicherweise läuft auf dem Server eine veraltete Version dieser Software; ein Update könnte mehr Informationen zu diesem Fehler liefern.',
       'When this diff was generated, the client did not support staging areas for this version control system, so the change was not pushed to staging. Changes must be pushed to staging before they can be landed from the web. Updating the client may resolve this issue.' => 'Als dieser Diff erstellt wurde, unterstützte der Client für dieses Versionskontrollsystem keine Staging-Bereiche, daher wurde die Änderung nicht in den Staging-Bereich gepusht. Änderungen müssen in den Staging-Bereich gepusht werden, bevor sie über das Web gelandet werden können. Ein Update des Clients könnte dieses Problem beheben.',
       'When this diff was generated, the repository was not configured with a staging area, so the change was not pushed to staging. Changes must be pushed to staging before they can be landed from the web.' => 'Als dieser Diff erstellt wurde, war für das Repository kein Staging-Bereich konfiguriert, daher wurde die Änderung nicht in den Staging-Bereich gepusht. Änderungen müssen in den Staging-Bereich gepusht werden, bevor sie über das Web gelandet werden können.',
       'When this diff was generated, the server was running an older version of the software which did not support staging areas for this version control system, so the change was not pushed to staging. Changes must be pushed to staging before they can be landed from the web.' => 'Als dieser Diff erstellt wurde, lief auf dem Server eine ältere Version der Software, die für dieses Versionskontrollsystem keine Staging-Bereiche unterstützte, daher wurde die Änderung nicht in den Staging-Bereich gepusht. Änderungen müssen in den Staging-Bereich gepusht werden, bevor sie über das Web gelandet werden können.',
       'When this diff was generated, the server was running an older version of the software which did not support staging areas, so the change was not pushed to staging. Changes must be pushed to staging before they can be landed from the web.' => 'Als dieser Diff erstellt wurde, lief auf dem Server eine ältere Version der Software, die keine Staging-Bereiche unterstützte, daher wurde die Änderung nicht in den Staging-Bereich gepusht. Änderungen müssen in den Staging-Bereich gepusht werden, bevor sie über das Web gelandet werden können.',
-      'When this test fails, it means the Celerity resource map is out of date. Run `%s` to rebuild it.' => 'Wenn dieser Test fehlschlägt, ist die Celerity-Ressourcenkarte veraltet. Führe `%s` aus, um sie neu zu erzeugen.',
+      'When updating the paths for a package, pass a list of dictionaries like
+this as the `value` for the transaction:
+
+```lang=json, name="Example Paths Value"
+[
+  {
+    "repositoryPHID": "PHID-REPO-1234",
+    "path": "/path/to/directory/",
+    "excluded": false
+  },
+  {
+    "repositoryPHID": "PHID-REPO-1234",
+    "path": "/another/example/path/",
+    "excluded": false
+  }
+]
+```
+
+This transaction will set the paths to the list you provide, overwriting any
+previous paths.
+
+Generally, you will call `owners.search` first to get a list of current paths
+(which are provided in the same format), make changes, then update them by
+applying a transaction of this type.' => 'Wenn Du die Pfade eines Pakets aktualisierst, übergib eine Liste von
+Dictionaries wie diese als `value` der Transaktion:
+
+```lang=json, name="Example Paths Value"
+[
+  {
+    "repositoryPHID": "PHID-REPO-1234",
+    "path": "/path/to/directory/",
+    "excluded": false
+  },
+  {
+    "repositoryPHID": "PHID-REPO-1234",
+    "path": "/another/example/path/",
+    "excluded": false
+  }
+]
+```
+
+Diese Transaktion setzt die Pfade auf die von Dir angegebene Liste und
+überschreibt dabei alle bisherigen Pfade.
+
+In der Regel rufst Du zuerst `owners.search` auf, um eine Liste der aktuellen
+Pfade zu erhalten (die im selben Format geliefert werden), nimmst Änderungen
+vor und aktualisierst sie dann, indem Du eine Transaktion dieses Typs
+anwendest.',
       'When users add a factor for this provider, they are given this enrollment guidance by default:' => 'Wenn Benutzer einen Faktor für diesen Anbieter hinzufügen, wird ihnen standardmäßig diese Anleitung zur Einrichtung angezeigt:',
       'When users click the "Change Username" action on their profile pages but do not have the required permissions, they will be presented with a message explaining that they are not authorized to make the edit.
 
@@ -18721,6 +19590,10 @@ Du kannst das Limit auch erhöhen oder diesen Hinweis ignorieren und in Kauf neh
       'Wherever you go, there you are.' => 'Wohin Du auch gehst, dort bist Du.',
       'Whether or not this signature is an exemption' => 'Ob diese Unterschrift eine Ausnahme ist',
       'Whether signatures on this doc are required to use this install' => 'Ob Unterschriften auf diesem Dokument für die Verwendung dieser Installation erforderlich sind',
+      'Whether the Herald rule must match all (otherwise any) of the conditions in order to trigger.' => 'Ob zum Auslösen der Herald-Regel alle (andernfalls irgendeine) der Bedingungen erfüllt sein müssen.',
+      'Whether this Herald rule has been disabled.' => 'Ob diese Herald-Regel deaktiviert wurde.',
+      'Which type of Herald rule this is, Global, Personal, or Object.' => 'Art dieser Herald-Regel: Global, Persönlich oder Objekt.',
+      'Which type of objects this Herald rule applies to.' => 'Auf welche Art von Objekten diese Herald-Regel angewendet wird.',
       'While the lock is held: users will be unable to write to this repository, and you may safely perform working copy maintenance on this node in another terminal window.' => 'Solange die Sperre gehalten wird, können Benutzer nicht in dieses Repository schreiben, und Du kannst in einem anderen Terminalfenster auf diesem Knoten gefahrlos Wartung an der Arbeitskopie durchführen.',
       'Whitelist 1.2.*.*' => '1.2.*.* zulassen',
       'Whitelist 1.2.3.*' => '1.2.3.* zulassen',
@@ -18729,8 +19602,6 @@ Du kannst das Limit auch erhöhen oder diesen Hinweis ignorieren und in Kauf neh
       'Whitespace rendering is now handled automatically.' => 'Leerraumdarstellung wird jetzt automatisch gehandhabt.',
       'Who Should Sign?' => 'Wer muss unterschreiben?',
       'Whole Table' => 'Ganze Tabelle',
-      'Whole word rewrite with common prefix and suffix.' => 'Komplette Wortumschreibung mit gemeinsamem Präfix und Suffix.',
-      'Whole word rewrite with whitespace prefix and suffix.' => 'Komplette Wortumschreibung mit Leerraum-Präfix und -Suffix.',
       'Wide Masked' => 'Breit maskiert',
       'Wide Open Sky' => 'Weiter offener Himmel',
       'Wiki Document' => 'Wiki Dokument',
@@ -18763,13 +19634,9 @@ This can make mail more useful, but some clients have difficulty threading these
 | Betreffs nicht variieren | `[Maniphest] T123: Beispielaufgabe`
 
 Dies macht E-Mails nützlicher, kann aber das Threading in manchen Clients beeinträchtigen. Das Deaktivieren dieser Option kann das Threading verbessern, macht Betreffzeilen jedoch weniger aussagekräftig.',
-      'With Extended Policy' => 'Mit erweiterter Richtlinie',
-      'With Extended Policy + Edit' => 'Mit erweiterter Richtlinie + Bearbeiten',
       'With __--output__, overwrite the output file if it already exists.' => 'Mit __--output__ die Ausgabedatei überschreiben, wenn sie bereits existiert.',
       'With __--output__, write a compressed file to disk instead of a plaintext file.' => 'Mit __--output__ statt einer Klartextdatei eine komprimierte Datei auf die Platte schreiben.',
       'With __--output__, write to disk even if the file already exists.' => 'Mit __--output__ auch dann auf die Platte schreiben, wenn die Datei bereits existiert.',
-      'With afterPHIDs' => 'Mit afterPHIDs',
-      'With beforePHIDs' => 'Mit beforePHIDs',
       'Without \'%s\', this software can not test for the availability of other binaries.' => 'Ohne \'%s\' kann diese Software nicht prüfen, ob andere Binärdateien verfügbar sind.',
       'Without \'%s\', this software will not be able to generate or render diffs in multiple applications.' => 'Ohne \'%s\' kann diese Software in mehreren Anwendungen keine Diffs erzeugen oder darstellen.',
       'Without a configured timezone, PHP will emit warnings when working with dates, and dates and times may not display correctly.' => 'Ohne konfigurierte Zeitzone gibt PHP bei der Arbeit mit Datumswerten Warnungen aus, und Datum und Uhrzeit werden möglicherweise nicht korrekt angezeigt.',
@@ -18810,7 +19677,24 @@ Dies macht E-Mails nützlicher, kann aber das Threading in manchen Clients beein
       'Working on task %d (%s)...' => 'Arbeite an Aufgabe %d (%s)...',
       'Workspace ID' => 'Workspace-ID',
       'Workspace Name' => 'Workspace-Name',
+      'Would add `%s` to key `%s` in file %s' => 'Würde `%s` zum Schlüssel `%s` in Datei %s hinzufügen',
+      'Would copy `%s` to `%s` and add `%s` to LoadLibraries' => 'Würde `%s` nach `%s` kopieren und `%s` zu LoadLibraries hinzufügen',
+      'Would download and install \'%s\' as \'%s\'
+' => 'Würde \'%s\' als \'%s\' herunterladen und installieren
+',
       'Would drop database "%s" on host "%s".' => 'Würde Datenbank "%s" auf Host "%s" löschen.',
+      'Would remove `%s` from key `%s` in file %s' => 'Würde `%s` aus dem Schlüssel `%s` in Datei %s entfernen',
+      'Would remove library file %s' => 'Würde Bibliotheksdatei %s entfernen',
+      'Would run: 
+ $ cd %s
+$ %s
+' => 'Würde ausführen: 
+ $ cd %s
+$ %s
+',
+      'Would run: `%s` at %s
+' => 'Würde ausführen: `%s` in %s
+',
       'Would you like to decline this event?' => 'Würdest Du gerne die Teilnahme absagen?',
       'Would you like to join this event?' => 'Würdest Du gerne an diesem Termin teilnehmen?',
       'Would you like to use the path %s instead?' => 'Möchtest Du %s stattdessen verwenden?',
@@ -18864,7 +19748,6 @@ Dies macht E-Mails nützlicher, kann aber das Threading in manchen Clients beein
       'Y' => 'Y',
       'Y So Serious' => 'Warum so ernst?',
       'Yearly' => 'Jährlich',
-      'Yearly event.' => 'Jährlicher Termin.',
       'Yellow' => 'Gelb',
       'Yellow Medal' => 'Gelbe Medaille',
       'Yes' => 'Ja',
@@ -18891,14 +19774,12 @@ Dies macht E-Mails nützlicher, kann aber das Threading in manchen Clients beein
       'You are creating a new **standard** user account.' => 'Du erstellst ein neues **Standard**-Benutzerkonto.',
       'You are creating a new account linked to an existing external account.' => 'Du erstellst ein neues Konto, das mit einem bestehenden externen Konto verknüpft ist.',
       'You are currently editing %s inline comment(s) on this revision.' => 'Du bearbeitest derzeit %s Inline-Kommentar(e) zu dieser Version.',
-      'You are currently logged in as a user (%s) who has permission to manage the payment account, so you can continue to the updated link.' => 'Du bist derzeit als Benutzer (%s) angemeldet, der dieses Zahlungskonto verwalten darf, und kannst daher dem aktualisierten Link folgen.',
       'You are destroying an entire class of credentials. This may be very disruptive to users. You should normally do this only if you suspect there has been a widespread compromise which may have impacted everyone.' => 'Du vernichtest eine ganze Klasse von Zugangsdaten. Das kann für Benutzer sehr störend sein. Normalerweise solltest Du das nur tun, wenn Du einen umfassenden Sicherheitsvorfall vermutest, der alle betroffen haben könnte.',
       'You are editing the default values for this form.' => 'Du bearbeitest die Standardwerte für dieses Formular.',
       'You are logged in as %s, but the email address (%s) you just clicked a link from is already associated with another account (%s). You can log out to switch accounts, or verify the address and attach it to your current account. Attach email address %s to user account %s?' => 'Du bist als %s angemeldet, aber die E-Mail-Adresse (%s), aus deren Nachricht Du gerade einen Link angeklickt hast, ist bereits einem anderen Konto (%s) zugeordnet. Du kannst Dich abmelden, um das Konto zu wechseln, oder die Adresse verifizieren und Deinem aktuellen Konto zuordnen. Soll die E-Mail-Adresse %s dem Benutzerkonto %s zugeordnet werden?',
       'You are logged in as %s, but the email address you just clicked a link from is already the primary email address for another account (%s). Switch accounts, then try again.' => 'Du bist als %s angemeldet, aber die E-Mail-Adresse, aus deren Nachricht Du gerade einen Link angeklickt hast, ist bereits die primäre E-Mail-Adresse eines anderen Kontos (%s). Wechsle das Konto und versuche es dann erneut.',
       'You are logged in as %s, but the email address you just clicked a link from is already verified and associated with another account (%s). Switch accounts, then try again.' => 'Du bist als %s angemeldet, aber die E-Mail-Adresse, aus deren Nachricht Du gerade einen Link angeklickt hast, ist bereits verifiziert und einem anderen Konto (%s) zugeordnet. Wechsle das Konto und versuche es dann erneut.',
-      'You are making too many attempts to add payment methods in a short period of time.' => 'Du versuchst in zu kurzer Zeit zu oft, Zahlungsmethoden hinzuzufügen.',
-      'You are not a member of any payment accounts. Payment accounts are used to make purchases.' => 'Du bist Mitglied in keinem Zahlungskonto. Zahlungskonten werden verwendet, um Einkäufe zu tätigen.',
+      'You are logged in as %s.' => 'Du bist als %s angemeldet.',
       'You are not a project member, so you do not receive mail sent to members of this project.' => 'Du bist kein Projektmitglied und erhältst daher keine E-Mails, die an die Mitglieder dieses Projekts gesendet werden.',
       'You are not currently tracking time on this object.' => 'Du erfasst derzeit keine Zeit für dieses Objekt.',
       'You are not the author of this revision.' => 'Du bist nicht der Autor dieser Version.',
@@ -18910,7 +19791,6 @@ Dies macht E-Mails nützlicher, kann aber das Threading in manchen Clients beein
       'You are taking an action which requires you to enter high security.' => 'Du führst eine Aktion aus, die erhöhte Sicherheit erfordert.',
       'You are taking an action which requires you to provide multi-factor credentials.' => 'Du führst eine Aktion aus, bei der du Multi-Faktor-Zugangsdaten angeben musst.',
       'You are the last member, so you will never be able to rejoin the room.' => 'Du bist das letzte Mitglied — nach dem Verlassen kannst Du dem Raum nicht mehr beitreten.',
-      'You are trying to access this payment account as: %s' => 'Du versuchst, auf dieses Zahlungskonto zuzugreifen als: %s',
       'You are trying to act on this item from the wrong queue: it is currently in a different queue.' => 'Du versuchst, auf dieses Element aus der falschen Warteschlange zu agieren: Es befindet sich derzeit in einer anderen Warteschlange.',
       'You are trying to gain access to an account ("%s") that can not establish a web session.' => 'Du versuchst, Zugriff auf ein Konto ("%s") zu erhalten, das keine Web-Sitzung aufbauen kann.',
       'You are trying to run a daemon as a nonstandard user, and `%s` was not able to `%s` to the correct user. 
@@ -18919,18 +19799,11 @@ Use `%s` to run as a different user, pass `%s` to ignore this warning, or edit `
 Die Dämonen sind so konfiguriert, dass sie als "%s" laufen, aber der aktuelle Benutzer ist "%s". 
 Verwende `%s`, um als ein anderer Benutzer zu laufen, übergib `%s`, um diese Warnung zu ignorieren, oder bearbeite `%s`, um die Konfiguration zu ändern.',
       'You are trying to save some data to permanent storage, but the request your browser made included an incorrect token. Reload the page and try again. You may need to clear your cookies.' => 'Du versuchst, Daten dauerhaft zu speichern, aber die Anfrage deines Browsers enthielt ein falsches Token. Lade die Seite neu und versuche es erneut. Möglicherweise musst du deine Cookies löschen.',
-      'You are using an old version of MySQL (on host "%s") which has poor unicode support (it does not support the "utf8mb4" collation set). You will encounter limitations when working with some unicode data.
-
-We strongly recommend you upgrade to MySQL 5.5 or newer.' => 'Du verwendest auf dem Host "%s" eine alte Version von MySQL mit schlechter Unicode-Unterstützung; sie unterstützt den Kollationssatz "utf8mb4" nicht. Beim Umgang mit einigen Unicode-Daten wirst Du daher auf Einschränkungen stoßen.
-
-Wir empfehlen dringend ein Upgrade auf MySQL 5.5 oder neuer.',
-      'You are using an old version of MySQL (on host "%s"), and should upgrade.' => 'Du verwendest auf dem Host "%s" eine alte Version von MySQL und solltest ein Upgrade durchführen.',
       'You are using manual IDs. You must override the %s method to properly detect when to insert a new record.' => 'Du verwendest manuelle IDs. Du musst die Methode %s überschreiben, damit korrekt erkannt wird, wann ein neuer Datensatz eingefügt werden muss.',
       'You are viewing an older run of this build. %s' => 'Du siehst dir einen älteren Durchlauf dieses Builds an. %s',
       'You are viewing an older version of this document, as it appeared on %s.' => 'Du siehst dir gerade eine alte Version dieses Dokuments an, so wie es am %s aussah.',
       'You are viewing an unpublished draft of this document.' => 'Du siehst dir einen unveröffentlichten Entwurf dieses Dokuments an.',
       'You are viewing the current published version of this document.' => 'Du siehst die aktuelle veröffentlichte Version dieses Dokuments.',
-      'You are viewing this payment account as: %s' => 'Du siehst dieses Zahlungskonto als: %s',
       'You are watching this project and will receive mail about changes made to any related object.' => 'Du beobachtest dieses Projekt und erhältst E-Mails über Änderungen an verknüpften Objekten.',
       'You arrive at your destination, but there is nothing here.' => 'Du erreichst dein Ziel, aber hier ist nichts.',
       'You awake in a twisting maze of mirrors, all alike. You are likely to be eaten by a graph cycle. Should you escape alive, you resolve to be more careful about putting dashboard panels inside themselves.' => 'Du erwachst in einem verworrenen Spiegellabyrinth, alle gleich. Du wirst wahrscheinlich von einem Graphzyklus aufgefressen. Solltest du lebend entkommen, nimmst du dir vor, vorsichtiger zu sein beim Einbetten von Dashboard-Panelen in sich selbst.',
@@ -18959,23 +19832,158 @@ Wenn eine Aktualisierung mehrere Änderungen enthält (z. B. CCs hinzufügen, Au
 Diese Einstellungen gelten **nur** für Objekte, mit denen Du verbunden bist (z. B. Revisionen, bei denen Du Prüfer bist, oder Aufgaben, für die Du als CC eingetragen bist). Um E-Mail-Benachrichtigungen über neu erstellte Objekte zu erhalten, konfiguriere [[ /herald/ | Herald-Regeln ]].',
       'You can also paste a diff above, or upload a file containing a diff (for example, from %s, %s or %s).' => 'Du kannst auch einen Diff oben einfügen oder eine Datei mit einem Diff hochladen (zum Beispiel von %s, %s oder %s).',
       'You can also upload files by dragging and dropping them from your desktop onto this page or the home page.' => 'Du kannst Dateien auch hochladen, indem du sie vom Desktop auf diese Seite oder die Hauptseite ziehst.',
+      'You can apply custom constraints by passing a dictionary in `constraints`.
+This will let you search for specific sets of results (for example, you may
+want show only results with a certain state, status, or owner).
+
+
+If you specify both a `queryKey` and `constraints`, the builtin or saved query
+will be applied first as a starting point, then any additional values in
+`constraints` will be applied, overwriting the defaults from the original query.
+
+Different endpoints support different constraints. The constraints this method
+supports are detailed below. As an example, you might specify constraints like
+this:
+
+```lang=json, name="Example Custom Constraints"
+{
+  ...
+  "constraints": {
+    "authorPHIDs": ["PHID-USER-1111", "PHID-USER-2222"],
+    "flavors": ["cherry", "orange"],
+    ...
+  },
+  ...
+}
+```
+
+This API endpoint supports these constraints:' => 'Du kannst eigene Einschränkungen anwenden, indem Du ein Dictionary in `constraints`
+übergibst. Damit kannst Du nach bestimmten Ergebnismengen suchen (zum Beispiel
+nur Ergebnisse mit einem bestimmten Zustand, Status oder Besitzer anzeigen).
+
+
+Wenn Du sowohl einen `queryKey` als auch `constraints` angibst, wird zuerst die
+vordefinierte oder gespeicherte Abfrage als Ausgangspunkt angewendet, danach alle
+zusätzlichen Werte aus `constraints`, die die Vorgaben der ursprünglichen Abfrage
+überschreiben.
+
+Verschiedene Endpunkte unterstützen verschiedene Einschränkungen. Die Einschränkungen,
+die diese Methode unterstützt, sind unten aufgeführt. Als Beispiel könntest Du
+Einschränkungen so angeben:
+
+```lang=json, name="Example Custom Constraints"
+{
+  ...
+  "constraints": {
+    "authorPHIDs": ["PHID-USER-1111", "PHID-USER-2222"],
+    "flavors": ["cherry", "orange"],
+    ...
+  },
+  ...
+}
+```
+
+Dieser API-Endpunkt unterstützt diese Einschränkungen:',
       'You can change your date and time preferences in Settings.' => 'Datum- und Zeiteinstellungen können unter Einstellungen angepasst werden.',
+      'You can choose a builtin or saved query as a starting point for filtering
+results by selecting it with `queryKey`. If you don\'t specify a `queryKey`,
+the query will start with no constraints.
+
+For example, many applications have builtin queries like `"active"` or
+`"open"` to find only active or enabled results. To use a `queryKey`, specify
+it like this:
+
+```lang=json, name="Selecting a Builtin Query"
+{
+  ...
+  "queryKey": "active",
+  ...
+}
+```
+
+The table below shows the keys to use to select builtin queries and your
+saved queries, but you can also use **any** query you run via the web UI as a
+starting point. You can find the key for a query by examining the URI after
+running a normal search.
+
+You can use these keys to select builtin queries and your configured saved
+queries:' => 'Du kannst eine vordefinierte oder gespeicherte Abfrage als Ausgangspunkt für das
+Filtern der Ergebnisse wählen, indem Du sie mit `queryKey` auswählst. Wenn Du keinen
+`queryKey` angibst, beginnt die Abfrage ohne Einschränkungen.
+
+Viele Anwendungen haben zum Beispiel vordefinierte Abfragen wie `"active"` oder
+`"open"`, um nur aktive oder aktivierte Ergebnisse zu finden. Um einen `queryKey` zu
+verwenden, gib ihn so an:
+
+```lang=json, name="Selecting a Builtin Query"
+{
+  ...
+  "queryKey": "active",
+  ...
+}
+```
+
+Die folgende Tabelle zeigt die Schlüssel, mit denen Du vordefinierte Abfragen und
+Deine gespeicherten Abfragen auswählst, aber Du kannst auch **jede** Abfrage, die Du
+über die Weboberfläche ausführst, als Ausgangspunkt verwenden. Den Schlüssel einer
+Abfrage findest Du, indem Du nach einer normalen Suche die URI ansiehst.
+
+Mit diesen Schlüsseln kannst Du vordefinierte Abfragen und Deine konfigurierten
+gespeicherten Abfragen auswählen:',
+      'You can choose a low-level column order instead. To do this, provide a list
+of columns instead of a single key. This is an advanced feature.
+
+In a custom column order:
+
+  - each column may only be specified once;
+  - each column may be prefixed with `-` to invert the order;
+  - the last column must be a unique column, usually `id`; and
+  - no column other than the last may be unique.
+
+To use a low-level order, choose a sequence of columns and specify them like
+this:
+
+```lang=json, name="Using a Custom Order"
+{
+  ...
+  "order": ["color", "-name", "id"],
+  ...
+}
+```
+
+These low-level columns are available:' => 'Du kannst stattdessen auch eine Spaltensortierung auf niedriger Ebene wählen. Gib
+dazu statt eines einzelnen Schlüssels eine Liste von Spalten an. Dies ist eine
+Funktion für Fortgeschrittene.
+
+In einer eigenen Spaltensortierung:
+
+  - darf jede Spalte nur einmal angegeben werden;
+  - kann jeder Spalte ein `-` vorangestellt werden, um die Reihenfolge umzukehren;
+  - muss die letzte Spalte eindeutig sein, normalerweise `id`; und
+  - darf keine Spalte außer der letzten eindeutig sein.
+
+Um eine Sortierung auf niedriger Ebene zu verwenden, wähle eine Folge von Spalten und
+gib sie so an:
+
+```lang=json, name="Using a Custom Order"
+{
+  ...
+  "order": ["color", "-name", "id"],
+  ...
+}
+```
+
+Diese Spalten auf niedriger Ebene sind verfügbar:',
       'You can choose to use either a monospaced or variable-width font in textareas in the UI. Textareas are used for editing descriptions and writing comments, among other things.' => 'In Textfeldern der Oberfläche kann entweder eine Monospace- oder eine proportionale Schrift verwendet werden. Textfelder werden u. a. zum Bearbeiten von Beschreibungen und zum Schreiben von Kommentaren genutzt.',
       'You can continue to the file detail page to get more information and attempt to access the file.' => 'Du kannst zur Dateidetailseite wechseln, um mehr Informationen zu erhalten und auf die Datei zuzugreifen.',
       'You can continue to the file detail page to monitor the upload progress of the file.' => 'Du kannst zur Dateidetailseite wechseln, um den Upload-Fortschritt der Datei zu verfolgen.',
       'You can customize the font used when showing monospaced text, including source code. You should enter a valid CSS font declaration like: `13px Consolas`' => 'Die Schrift für Monospace-Darstellungen (z. B. Quellcode) kann angepasst werden. Gib eine gültige CSS-Schriftdeklaration ein, zum Beispiel: `13px Consolas`',
       'You can disable the "To:" and "Cc:" footers in mail if users prefer smaller
-messages.
-EODOC' => 'Du kannst die "To:"- und "Cc:"-Fußzeilen in E-Mails deaktivieren, wenn Benutzer kürzere Nachrichten bevorzugen.
-EODOC',
+messages.' => 'Du kannst die "To:"- und "Cc:"-Fußzeilen in E-Mails deaktivieren, wenn Benutzer kürzere Nachrichten bevorzugen.',
       'You can disable the email preference link in emails if users prefer smaller
-emails.
-EODOC' => 'Du kannst den Link zu den E-Mail-Einstellungen in E-Mails deaktivieren, wenn Benutzer kürzere Nachrichten bevorzugen.
-EODOC',
+emails.' => 'Du kannst den Link zu den E-Mail-Einstellungen in E-Mails deaktivieren, wenn Benutzer kürzere Nachrichten bevorzugen.',
       'You can disable the hints under "REPLY HANDLER ACTIONS" if users prefer
-smaller messages. The actions themselves will still work properly.
-EODOC' => 'Du kannst die Hinweise unter "REPLY HANDLER ACTIONS" deaktivieren, wenn Benutzer kürzere Nachrichten bevorzugen. Die Aktionen selbst funktionieren trotzdem weiterhin korrekt.
-EODOC',
+smaller messages. The actions themselves will still work properly.' => 'Du kannst die Hinweise unter "REPLY HANDLER ACTIONS" deaktivieren, wenn Benutzer kürzere Nachrichten bevorzugen. Die Aktionen selbst funktionieren trotzdem weiterhin korrekt.',
       'You can eat them.' => 'Man kann sie essen.',
       'You can find an Asana project ID by clicking the project in Asana and then examining the URL:
 
@@ -19023,7 +20031,6 @@ EODOC',
       'You can not attach an interface to a device which you do not have permission to edit.' => 'Du kannst eine Schnittstelle nicht an ein Gerät anhängen, für das du keine Bearbeitungsberechtigung hast.',
       'You can not attach an interface to a nonexistent or restricted device.' => 'Eine Schnittstelle kann nicht an ein nicht vorhandenes oder eingeschränktes Gerät angehängt werden.',
       'You can not attach audit authority for a user with no PHID.' => 'Du kannst keine Audit-Autorität für einen Benutzer ohne PHID vergeben.',
-      'You can not back a closed initiative.' => 'Eine geschlossene Initiative kann nicht unterstützt werden.',
       'You can not bind a nonexistent or restricted service.' => 'Ein nicht vorhandener oder eingeschränkter Dienst kann nicht gebunden werden.',
       'You can not bind a service to an invalid or restricted interface.' => 'Ein Dienst kann nicht an eine ungültige oder eingeschränkte Schnittstelle gebunden werden.',
       'You can not bind a service to the same interface multiple times.' => 'Ein Dienst kann nicht mehrfach an dieselbe Schnittstelle gebunden werden.',
@@ -19041,7 +20048,6 @@ EODOC',
       'You can not close this revision because it has not been accepted. Revisions must be accepted before they can be closed.' => 'Du kannst diese Version nicht schließen, da sie noch nicht akzeptiert wurde. Versionen müssen akzeptiert sein, bevor sie geschlossen werden können.',
       'You can not close this revision because you are not the author. You can only close revisions you own. You can change this behavior by adjusting the "%s" setting in Config.' => 'Du kannst diese Version nicht schließen, da Du nicht der Autor bist. Du kannst nur Versionen schließen, die Dir gehören. Dieses Verhalten kannst Du durch Anpassen der Einstellung "%s" in der Konfiguration ändern.',
       'You can not commandeer this revision because it has already been closed. You can only commandeer open or abandoned revisions.' => 'Du kannst diese Version nicht übernehmen, da sie bereits geschlossen ist. Du kannst nur offene oder zurückgezogene Versionen übernehmen.',
-      'You can not commandeer this revision because you already own it.' => 'Du kannst diese Version nicht übernehmen, da Du sie bereits besitzt.',
       'You can not commandeer this revision because you are already the author.' => 'Du kannst diese Version nicht übernehmen, da Du bereits der Autor bist.',
       'You can not create a document which does not have a parent.' => 'Es kann kein Dokument erstellt werden, das kein übergeordnetes Dokument hat.',
       'You can not create a relationship (of type "%s") to object "%s" because it is not the right type of object for this relationship.' => 'Du kannst keine Beziehung vom Typ "%s" zu Objekt "%s" erstellen, weil es nicht der richtige Objekttyp für diese Beziehung ist.',
@@ -19056,12 +20062,8 @@ EODOC',
       'You can not delete this interface because it is currently in use. One or more services are bound to it.' => 'Du kannst diese Schnittstelle nicht löschen, weil sie derzeit verwendet wird. Ein oder mehrere Dienste sind an sie gebunden.',
       'You can not deprecate or disable the last active MFA provider while "%s" is enabled, because new users would be unable to enroll in MFA. Disable the MFA requirement in Config, or create or enable another MFA provider first.' => 'Du kannst den letzten aktiven MFA-Anbieter nicht veralten lassen oder deaktivieren, solange "%s" aktiviert ist, weil neue Benutzer sich dann nicht für MFA registrieren könnten. Deaktiviere die MFA-Pflicht in Config oder erstelle bzw. aktiviere zuerst einen anderen MFA-Anbieter.',
       'You can not disable import of an ICS file because the entire import occurs immediately when you upload the file. There is no further activity to disable.' => 'Der Import einer ICS-Datei kann nicht deaktiviert werden, da der gesamte Import sofort beim Hochladen der Datei erfolgt. Es gibt keine weitere Aktivität, die deaktiviert werden könnte.',
-      'You can not disable this address because it has been permanently unsubscribed.' => 'Du kannst diese Adresse nicht deaktivieren, weil sie dauerhaft abgemeldet wurde.',
-      'You can not disabled this address because it is already disabled.' => 'Diese Adresse kann nicht deaktiviert werden, da sie bereits deaktiviert ist.',
       'You can not edit this comment because the conversation is locked.' => 'Du kannst diesen Kommentar nicht bearbeiten, weil die Konversation gesperrt ist.',
       'You can not enable or disable your own account.' => 'Du kannst Dein eigenes Konto nicht aktivieren oder deaktivieren.',
-      'You can not enable this address because it has been permanently unsubscribed.' => 'Du kannst diese Adresse nicht aktivieren, weil sie dauerhaft abgemeldet wurde.',
-      'You can not enable this address because it is already active.' => 'Diese Adresse kann nicht aktiviert werden, da sie bereits aktiv ist.',
       'You can not hide the default/backlog column on a board.' => 'Die Standard-/Rückstands-Spalte auf einer Arbeitsfläche kann nicht ausgeblendet werden.',
       'You can not import columns from that workboard because it has no importable columns.' => 'Aus dieser Arbeitsfläche können keine Spalten importiert werden, da sie keine importierbaren Spalten enthält.',
       'You can not import columns into this workboard because it already has columns. You can only import into an empty workboard.' => 'In diese Arbeitsfläche können keine Spalten importiert werden, da sie bereits Spalten enthält. Spalten können nur in eine leere Arbeitsfläche importiert werden.',
@@ -19098,20 +20100,14 @@ EODOC',
       'You can not process build log chunks unless the log lock is held.' => 'Build-Protokoll-Chunks können nur verarbeitet werden, wenn die Protokoll-Sperre gehalten wird.',
       'You can not put an interface on a nonexistent or restricted network.' => 'Eine Schnittstelle kann nicht in einem nicht vorhandenen oder eingeschränkten Netzwerk platziert werden.',
       'You can not query for inline comments without also querying for images.' => 'Inline-Kommentare können nicht ohne gleichzeitige Abfrage von Bildern abgefragt werden.',
-      'You can not query subscriptions for a merchant you do not control.' => 'Du kannst keine Abonnements für einen Händler abfragen, den du nicht kontrollierst.',
-      'You can not query subscriptions for an account you are not a member of.' => 'Du kannst keine Abonnements für ein Konto abfragen, dessen Mitglied du nicht bist.',
       'You can not raise a concern with this commit because you are the commit author. You can only raise concerns with commits you did not author.' => 'Du kannst bei diesem Commit keine Bedenken melden, weil du der Autor des Commits bist. Du kannst nur bei Commits Bedenken melden, die du nicht selbst verfasst hast.',
       'You can not raise a concern with this commit because you have already raised a concern with it.' => 'Du kannst bei diesem Commit keine Bedenken melden, weil du bereits Bedenken gemeldet hast.',
-      'You can not reclaim this revision because his revision is not abandoned.' => 'Du kannst diese Version nicht wieder einreichen, da sie nicht zurückgezogen wurde.',
       'You can not reclaim this revision because it has not been abandoned. Only abandoned revisions can be reclaimed.' => 'Du kannst diese Version nicht wieder einreichen, da sie nicht zurückgezogen wurde. Nur zurückgezogene Versionen können wieder eingereicht werden.',
       'You can not reclaim this revision because you are not the revision author. You can only reclaim revisions you own.' => 'Du kannst diese Version nicht wieder einreichen, da Du nicht der Versionsautor bist. Du kannst nur Versionen wieder einreichen, die Dir gehören.',
       'You can not remove the assignee of this task because it is locked and no one would be able to edit the task. Reassign the task or unlock it before removing the assignee.' => 'Du kannst den Bearbeiter dieser Aufgabe nicht entfernen, weil sie gesperrt ist und niemand in der Lage wäre, die Aufgabe zu bearbeiten. Weise die Aufgabe neu zu oder entsperre sie, bevor Du den Bearbeiter entfernst.',
       'You can not remove this comment because the conversation is locked.' => 'Du kannst diesen Kommentar nicht entfernen, weil die Konversation gesperrt ist.',
-      'You can not remove yourself as an account manager.' => 'Du kannst Dich nicht selbst als Konto-Manager entfernen.',
-      'You can not remove yourself as an merchant manager.' => 'Du kannst dich nicht selbst als Händlermanager entfernen.',
       'You can not reopen this revision because configuration prevents any revision from being reopened. You can change this behavior by adjusting the "%s" setting in Config.' => 'Du kannst diese Version nicht wieder öffnen, da die Konfiguration das Wiedereröffnen von Versionen verhindert. Dieses Verhalten kannst Du durch Anpassen der Einstellung "%s" in der Konfiguration ändern.',
       'You can not reopen this revision because it is not closed. Only closed revisions can be reopened.' => 'Du kannst diese Version nicht wieder öffnen, da sie nicht geschlossen ist. Nur geschlossene Versionen können wieder geöffnet werden.',
-      'You can not reopen this revision because this revision is not closed.' => 'Du kannst diese Version nicht wieder öffnen, da sie nicht geschlossen ist.',
       'You can not request changes to a draft revision.' => 'Du kannst keine Änderungen für eine Entwurfsversion anfordern.',
       'You can not request changes to this revision because it has already been closed. You can only request changes to open revisions.' => 'Du kannst keine Änderungen für diese Version anfordern, da sie bereits geschlossen ist. Nur für offene Versionen können Änderungen angefordert werden.',
       'You can not request changes to this revision because you are the revision author. You can only request changes to revisions you do not own.' => 'Du kannst keine Änderungen für diese Version anfordern, da Du der Versionsautor bist. Du kannst nur Änderungen für Versionen anfordern, die Dir nicht gehören.',
@@ -19159,7 +20155,6 @@ EODOC',
       'You can not use query constraint flags (like "--version", "--type", or a list of specific objects) with "--all".' => 'Du kannst Abfrage-Einschränkungsflags (wie "--version", "--type" oder eine Liste bestimmter Objekte) nicht zusammen mit "--all" verwenden.',
       'You can only abort some builds. Work will halt immediately on builds you can abort. Progress will be discarded, and builds must be completely restarted if you want them to complete.' => 'Es können nur manche Builds abgebrochen werden. Die Arbeit hält bei abbrechbaren Builds sofort an. Der Fortschritt wird verworfen und Builds müssen vollständig neu gestartet werden, wenn sie abgeschlossen werden sollen.',
       'You can only associate a credential ("%s") with a repository URI if it exists and you have permission to see it.' => 'Du kannst eine Zugangskennung ("%s") nur dann mit einer Repository-URI verknüpfen, wenn sie existiert und Du Leserechte dafür hast.',
-      'You can only generate a new quickstart file if MySQL supports the %s character set (available in MySQL 5.5 and newer). The configured server does not support %s.' => 'Du kannst nur dann eine neue Quickstart-Datei erzeugen, wenn MySQL den Zeichensatz %s unterstützt (verfügbar in MySQL 5.5 und neuer). Der konfigurierte Server unterstützt %s nicht.',
       'You can only pause some builds. Once the current steps complete, work will halt on builds you can pause. You can resume the builds later.' => 'Es können nur manche Builds angehalten werden. Sobald die aktuellen Schritte abgeschlossen sind, hält die Arbeit bei anhaltbaren Builds an. Die Builds können später fortgesetzt werden.',
       'You can only recover the username for one account.' => 'Es kann jeweils nur ein Konto wiederhergestellt werden.',
       'You can only restart some builds.' => 'Es können nur manche Builds neu gestartet werden.',
@@ -19195,23 +20190,22 @@ test and one failing test:
 
 ```lang=json
 %s
-```
-EOREMARKUP' => 'Unit-Testergebnisse beim Aktualisieren eines Build-Ziels melden. Am einfachsten werden alle Ergebnisse zusammen mit einer `pass`- oder `fail`-Nachricht übermittelt, es kann aber auch `work` für Zwischenergebnisse verwendet werden.
+```' => 'Du kannst Testergebnisse melden, wenn Du den Zustand eines Build-Ziels aktualisierst. Am einfachsten meldest Du alle Ergebnisse zusammen mit einer `pass`- oder `fail`-Nachricht, Du kannst aber auch eine `work`-Nachricht senden, um Zwischenergebnisse zu melden.
 
-Im `unit`-Parameter eine Liste von Ergebnis-Dictionaries mit diesen Schlüsseln übergeben:
 
-%s
-
-Der `result`-Parameter erkennt folgende Testergebnisse:
+Um Unit-Testergebnisse zu übermitteln, übergib eine Liste von Ergebnissen im Parameter `unit`. Jedes Ergebnis sollte ein Dictionary mit diesen Schlüsseln sein:
 
 %s
 
-Dies ist ein einfaches, gültiges Beispiel für den `unit`-Parameter. Es meldet einen erfolgreichen und einen fehlgeschlagenen Test:
+Der Parameter `result` erkennt folgende Testergebnisse:
+
+%s
+
+Dies ist ein einfacher, gültiger Wert für den Parameter `unit`. Er meldet einen erfolgreichen und einen fehlgeschlagenen Test:
 
 ```lang=json
 %s
-```
-EOREMARKUP',
+```',
       'You can respond to various application events by installing listeners, which will receive callbacks when interesting things occur. Specify a list of classes which extend PhabricatorEventListener here.' => 'Du kannst auf verschiedene Anwendungsereignisse reagieren, indem Du Listener installierst, die bei interessanten Vorgängen Callbacks erhalten. Gib hier eine Liste von Klassen an, die PhabricatorEventListener erweitern.',
       'You can restrict allowed email addresses to certain domains (like `yourcompany.com`) by setting a list of allowed domains here.
 
@@ -19270,18 +20264,18 @@ More broadly, you can not report build results directly to a Build or
 Buildable. Instead, report results to a Build Target.
 
 See below for a list of control commands.
+' => 'Mit dieser Methode (`harbormaster.sendmessage`) kannst Du Steuerbefehle an Build-Kandidaten und Builds senden.
 
-EOREMARKUP' => 'Diese Methode (`harbormaster.sendmessage`) verwenden, um Steuerbefehle an Build-Kandidaten und Builds zu senden.
+Gib den Build oder Build-Kandidaten, der den Steuerbefehl empfangen soll, über seine PHID im Parameter `receiver` an.
 
-Den Build oder den Build-Kandidaten, der den Steuerbefehl empfangen soll, durch Angabe seiner PHID im `receiver`-Parameter angeben.
+Einen Steuerbefehl an einen Build-Kandidaten zu senden, hat denselben Effekt, wie ihn an jeden Build dieses Build-Kandidaten zu senden. Eine "Pause"-Nachricht an einen Build-Kandidaten hält zum Beispiel alle Builds dieses Build-Kandidaten an (oder versucht es zumindest).
 
-Das Senden eines Steuerbefehls an einen Build-Kandidaten hat denselben Effekt wie das Senden an jeden Build dieses Build-Kandidaten.
+Beim Senden von Steuerbefehlen müssen die Parameter `unit` und `lint` dieser API-Methode weggelassen werden. Lint- oder Unit-Ergebnisse können weder direkt an einen Build oder Build-Kandidaten gemeldet noch zusammen mit einem Steuerbefehl übermittelt werden.
 
-Beim Senden von Steuerbefehlen müssen die `unit`- und `lint`-Parameter dieser API-Methode weggelassen werden. Build-Ergebnisse können nicht direkt an einen Build oder einen Build-Kandidaten gemeldet werden. Stattdessen Ergebnisse an ein Build-Ziel melden.
+Allgemeiner gesagt: Build-Ergebnisse können nicht direkt an einen Build oder Build-Kandidaten gemeldet werden. Melde Ergebnisse stattdessen an ein Build-Ziel.
 
-Siehe unten für eine Liste der Steuerbefehle.
-
-EOREMARKUP',
+Eine Liste der Steuerbefehle findest Du weiter unten.
+',
       'You can use this method to send control commands to Buildables and Builds.
 
 This table summarizes which object types may receive control commands:
@@ -19320,8 +20314,7 @@ You can send these commands:
 To send a command message, specify the PHID of the object you would like to
 receive the message using the `receiver` parameter, and specify the message
 type using the `type` parameter.
-
-EOREMARKUP' => 'Diese Methode verwenden, um Steuerbefehle an Build-Kandidaten und Builds zu senden.
+' => 'Mit dieser Methode kannst Du Steuerbefehle an Build-Kandidaten und Builds senden.
 
 Diese Tabelle fasst zusammen, welche Objekttypen Steuerbefehle empfangen können:
 
@@ -19333,41 +20326,135 @@ Diese Tabelle fasst zusammen, welche Objekttypen Steuerbefehle empfangen können
     <th>Beschreibung</th>
   </tr>
   <tr>
-    <td>Harbormaster Build-Kandidat</td>
+    <td>Harbormaster-Build-Kandidat</td>
     <td>`PHID-HMBB-...`</td>
     <td>{icon check color=green}</td>
     <td>Build-Kandidaten können Steuerbefehle empfangen.</td>
   </tr>
   <tr>
-    <td>Harbormaster Build</td>
+    <td>Harbormaster-Build</td>
     <td>`PHID-HMBD-...`</td>
     <td>{icon check color=green}</td>
     <td>Builds können Steuerbefehle empfangen.</td>
   </tr>
   <tr>
-    <td>Harbormaster Build Target</td>
+    <td>Harbormaster-Build-Ziel</td>
     <td>`PHID-HMBT-...`</td>
     <td>{icon times color=red}</td>
     <td>An Build-Ziele dürfen **KEINE** Steuerbefehle gesendet werden.</td>
   </tr>
 </table>
 
-Folgende Befehle können gesendet werden:
+Folgende Befehle kannst Du senden:
 
 %s
 
-Um eine Befehlsnachricht zu senden, die PHID des Zielobjekts im `receiver`-Parameter angeben und den Nachrichtentyp über den `type`-Parameter festlegen.
+Um eine Befehlsnachricht zu senden, gib die PHID des Objekts, das die Nachricht empfangen soll, im Parameter `receiver` an und lege den Nachrichtentyp über den Parameter `type` fest.
+',
+      'You can use this transaction type to create a task into a particular workboard
+column, or move an existing task between columns.
 
-EOREMARKUP',
+The transaction value can be specified in several forms. Some are simpler but
+less powerful, while others are more complex and more powerful.
+
+The simplest valid value is a single column PHID:
+
+```lang=json
+"PHID-PCOL-1111"
+```
+
+This will move the task into that column, or create the task into that column
+if you are creating a new task. If the task is currently on the board, it will
+be moved out of any exclusive columns. If the task is not currently on the
+board, it will be added to the board.
+
+You can also perform multiple moves at the same time by passing a list of
+PHIDs:
+
+```lang=json
+["PHID-PCOL-2222", "PHID-PCOL-3333"]
+```
+
+This is equivalent to performing each move individually.
+
+The most complex and most powerful form uses a dictionary to provide additional
+information about the move, including an optional specific position within the
+column.
+
+The target column should be identified as `columnPHID`, and you may select a
+position by passing either `beforePHIDs` or `afterPHIDs`, specifying the PHIDs
+of tasks currently in the column that you want to move this task before or
+after:
+
+```lang=json
+[
+  {
+    "columnPHID": "PHID-PCOL-4444",
+    "beforePHIDs": ["PHID-TASK-5555"]
+  }
+]
+```
+
+When you specify multiple PHIDs, the task will be moved adjacent to the first
+valid PHID found in either of the lists. This allows positional moves to
+generally work as users expect even if the client view of the board has fallen
+out of date and some of the nearby tasks have moved elsewhere.' => 'Mit diesem Transaktionstyp kannst Du eine Aufgabe direkt in einer bestimmten
+Spalte einer Arbeitsfläche erstellen oder eine bestehende Aufgabe zwischen
+Spalten verschieben.
+
+Der Transaktionswert kann in mehreren Formen angegeben werden. Einige sind
+einfacher, aber weniger mächtig, andere komplexer und dafür mächtiger.
+
+Der einfachste gültige Wert ist eine einzelne Spalten-PHID:
+
+```lang=json
+"PHID-PCOL-1111"
+```
+
+Damit wird die Aufgabe in diese Spalte verschoben bzw. beim Erstellen einer
+neuen Aufgabe direkt in dieser Spalte erstellt. Ist die Aufgabe bereits auf der
+Arbeitsfläche, wird sie aus allen exklusiven Spalten herausgenommen. Ist sie
+noch nicht auf der Arbeitsfläche, wird sie hinzugefügt.
+
+Du kannst auch mehrere Verschiebungen gleichzeitig ausführen, indem Du eine
+Liste von PHIDs übergibst:
+
+```lang=json
+["PHID-PCOL-2222", "PHID-PCOL-3333"]
+```
+
+Das entspricht dem einzelnen Ausführen jeder Verschiebung.
+
+Die komplexeste und mächtigste Form verwendet ein Dictionary, um zusätzliche
+Informationen zur Verschiebung anzugeben, darunter optional eine bestimmte
+Position innerhalb der Spalte.
+
+Die Zielspalte wird als `columnPHID` angegeben, und Du kannst eine Position
+wählen, indem Du entweder `beforePHIDs` oder `afterPHIDs` übergibst und darin
+die PHIDs der Aufgaben in der Spalte angibst, vor oder nach die diese Aufgabe
+verschoben werden soll:
+
+```lang=json
+[
+  {
+    "columnPHID": "PHID-PCOL-4444",
+    "beforePHIDs": ["PHID-TASK-5555"]
+  }
+]
+```
+
+Wenn Du mehrere PHIDs angibst, wird die Aufgabe neben die erste gültige PHID
+verschoben, die in einer der Listen gefunden wird. So funktionieren
+Positionsverschiebungen meist wie erwartet, selbst wenn die Ansicht der
+Arbeitsfläche im Client veraltet ist und einige der benachbarten Aufgaben
+inzwischen woanders liegen.',
       'You can usually install a PHP extension using %s, %s, or %s. A common package name is %s. Try commands like these:' => 'Eine PHP-Erweiterung lässt sich normalerweise mit %s, %s oder %s installieren. Ein häufiger Paketname ist %s. Versuche es mit Befehlen wie diesen:',
-      'You can view this account because you control %s merchant(s) it has a relationship with: %s.' => 'Du kannst dieses Konto ansehen, weil du %s Händler verwaltest, zu denen es eine Geschäftsbeziehung hat: %s.',
       'You can\'t ignore your problems forever, you know.' => 'Du kannst deine Probleme nicht ewig ignorieren, weißt du.Du kannst Deine Probleme nicht auf ewig vor Dir herschieben, das weißt Du?',
       'You canceled authentication.' => 'Du hast die Anmeldung abgebrochen.',
       'You cannot enable an enabled application.' => 'Du kannst eine bereits aktivierte Anwendung nicht erneut aktivieren.',
       'You currently have multi-factor authentication ("%s") which depends on your primary contact number. You must remove this authentication factor before you can designate a new primary contact number.' => 'Du verwendest derzeit Multi-Faktor-Authentifizierung ("%s"), die von Deiner primären Kontaktnummer abhängt. Du musst diesen Authentifizierungsfaktor entfernen, bevor Du eine neue primäre Kontaktnummer festlegen kannst.',
       'You currently have multi-factor authentication ("%s") which depends on your primary contact number. You must remove this authentication factor before you can modify or disable your primary contact number.' => 'Du verwendest derzeit Multi-Faktor-Authentifizierung ("%s"), die von Deiner primären Kontaktnummer abhängt. Du musst diesen Authentifizierungsfaktor entfernen, bevor Du Deine primäre Kontaktnummer ändern oder deaktivieren kannst.',
       'You denied this request. Wait %s second(s) to try again.' => 'Du hast diese Anfrage abgelehnt. %s Sekunde(n) warten, bevor du es erneut versuchst.',
-      'You do not control any merchant accounts. Merchant accounts are used to receive payments.' => 'Du verwaltest keine Händlerkonten. Händlerkonten werden verwendet, um Zahlungen zu empfangen.',
       'You do not currently have a VCS password set. If you set one, you can remove it here later.' => 'Du hast derzeit kein VCS-Passwort gesetzt. Wenn Du eines setzt, kannst Du es hier später entfernen.',
       'You do not have a linked account on this provider, and thus can not refresh it.' => 'Du hast bei diesem Anbieter kein verknüpftes Konto und kannst es deshalb nicht aktualisieren.',
       'You do not have access to OAuth authorizations.' => 'Du hast keinen Zugriff auf OAuth-Autorisierungen.',
@@ -19380,6 +20467,7 @@ EOREMARKUP',
       'You do not have authorization to call this method.' => 'Du bist nicht berechtigt, diese Methode aufzurufen.',
       'You do not have permission to access the Diffusion application, so you can not interact with repositories over SSH.' => 'Du hast keine Berechtigung, auf die Diffusion-Anwendung zuzugreifen, daher kannst Du nicht über SSH mit Repositories interagieren.',
       'You do not have permission to access this repository.' => 'Du hast keine Berechtigung, auf dieses Repository zuzugreifen.',
+      'You do not have permission to batch edit tasks.' => 'Du hast keine Berechtigung, Aufgaben per Stapelverarbeitung zu bearbeiten.',
       'You do not have permission to browse the user directory.' => 'Du hast keine Berechtigung, das Benutzerverzeichnis zu durchsuchen.',
       'You do not have permission to bulk edit tasks.' => 'Du hast keine Berechtigung, Aufgaben per Stapelverarbeitung zu bearbeiten.',
       'You do not have permission to configure forms for this application.' => 'Du hast keine Berechtigung, Formulare für diese Anwendung zu konfigurieren.',
@@ -19391,10 +20479,8 @@ EOREMARKUP',
       'You do not have permission to create Almanac services within the "%s" namespace.' => 'Du hast keine Berechtigung, Almanac-Dienste innerhalb des Namensraums "%s" zu erstellen.',
       'You do not have permission to create Almanac services.' => 'Du hast keine Berechtigung, Almanac-Dienste anzulegen.',
       'You do not have permission to create Drydock blueprints.' => 'Du hast keine Berechtigung, Drydock-Blaupausen zu erstellen.',
-      'You do not have permission to create Fund initiatives.' => 'Du hast keine Berechtigung, Fund-Initiativen zu erstellen.',
       'You do not have permission to create Harbormaster build plans.' => 'Du hast keine Berechtigung, Harbormaster-Build-Pläne zu erstellen.',
       'You do not have permission to create OAuth applications.' => 'Du hast keine Berechtigung, OAuth-Anwendungen zu erstellen.',
-      'You do not have permission to create Phortune merchant accounts.' => 'Du hast keine Berechtigung, Phortune-Händlerkonten zu erstellen.',
       'You do not have permission to create a Phurl URL.' => 'Du hast keine Berechtigung, eine Phurl-URL zu erstellen.',
       'You do not have permission to create a blog.' => 'Du hast keine Berechtigung, einen Blog zu erstellen.',
       'You do not have permission to create a countdown.' => 'Du hast keine Berechtigung, einen Countdown zu erstellen.',
@@ -19443,7 +20529,6 @@ EOREMARKUP',
       'You don\'t have any active tokens.' => 'Du hast keine aktiven Token.',
       'You enabled Elasticsearch but the index does not exist.' => 'Elasticsearch ist aktiviert, aber der Index existiert nicht.',
       'You enabled pygments but the %s script is not actually available, your %s is probably broken.' => 'Du hast Pygments aktiviert, aber das Skript %s ist tatsächlich nicht verfügbar. Dein %s ist wahrscheinlich defekt.',
-      'You have %d unpaid invoice(s).' => 'Du hast %d unbezahlte(n) Rechnung(en).',
       'You have \'%s\' enabled in your PHP configuration.
 
 This feature is "highly discouraged" by PHP\'s developers, and has been removed entirely in PHP8.This option is not compatible with this software. Disable \'%s\' in your PHP configuration to continue.' => 'In Deiner PHP-Konfiguration ist \'%s\' aktiviert.
@@ -19455,34 +20540,11 @@ This option is not compatible with this software. Remove \'%s\' from your config
 
 Diese Option ist mit dieser Software nicht kompatibel. Entferne \'%s\' aus Deiner Konfiguration, um fortzufahren.',
       'You have a cardiovascular system!' => 'Du hast ein Herz-Kreislauf-System!',
-      'You have a new invoice due.' => 'Du hast eine neue fällige Rechnung.',
       'You have already accepted this invitation.' => 'Du hast diese Einladung bereits angenommen.',
       'You have already answered this question. You can not answer twice, but you can edit your existing answer.' => 'Du hast diese Frage bereits beantwortet. Du kannst sie nicht zweimal beantworten, aber Du kannst Deine bereits bestehende Antwort jederzeit ändern.',
       'You have already signed this document!' => 'Du hast dieses Dokument bereits unterschrieben!',
       'You have an old version of Mercurial (%s) which has a severe command injection security vulnerability. The remote URI for this repository (%s) is potentially unsafe. Upgrade Mercurial to at least 3.2.4 to clone it.' => 'Du verwendest eine alte Mercurial-Version (%s), die eine schwerwiegende Sicherheitslücke zur Command Injection hat. Die Remote-URI dieses Repositorys (%s) ist potenziell unsicher. Aktualisiere Mercurial auf mindestens 3.2.4, bevor Du es klonst.',
-      'You have an old version of MySQL (older than 5.5) which does not support the utf8mb4 character set. We strongly recommend upgrading to 5.5 or newer.
-
-If you apply adjustments now and later update MySQL to 5.5 or newer, you\'ll need to apply adjustments again (and they will take a long time).
-
-You can exit this workflow, update MySQL now, and then run this workflow again. This is recommended, but may cause a lot of downtime right now.
-
-You can exit this workflow, continue using this software without applying adjustments, update MySQL at a later date, and then run this workflow again. This is also a good approach, and will let you delay downtime until later.
-
-You can proceed with this workflow, and then optionally update MySQL at a later date. After you do, you\'ll need to apply adjustments again.
-
-For more information, see "Managing Storage Adjustments" in the documentation.' => 'Du verwendest eine alte Version von MySQL (älter als 5.5), die den Zeichensatz utf8mb4 nicht unterstützt. Wir empfehlen dringend ein Upgrade auf 5.5 oder neuer.
-
-Wenn du Anpassungen jetzt anwendest und MySQL später auf 5.5 oder neuer aktualisierst, musst du die Anpassungen erneut anwenden (und das wird lange dauern).
-
-Du kannst diesen Workflow jetzt beenden, MySQL aktualisieren und den Workflow danach erneut ausführen. Das ist empfohlen, kann aber im Moment zu viel Downtime führen.
-
-Du kannst diesen Workflow auch beenden, diese Software zunächst ohne Anpassungen weiterverwenden, MySQL später aktualisieren und den Workflow dann erneut ausführen. Auch das ist ein guter Ansatz und erlaubt dir, die Downtime auf später zu verschieben.
-
-Du kannst mit diesem Workflow jetzt fortfahren und MySQL später optional aktualisieren. Danach musst du die Anpassungen erneut anwenden.
-
-Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dokumentation.',
       'You have at least one repository configured which uses this version control system. It will not work without the VCS binary.' => 'Du hast mindestens ein Repository konfiguriert, das dieses Versionsverwaltungssystem verwendet. Ohne das VCS-Programm wird es nicht funktionieren.',
-      'You have been charged, but processing could not be completed. You can cancel your order, or contact the merchant for assistance.' => 'Dir wurde der Betrag belastet, aber die Verarbeitung konnte nicht abgeschlossen werden. Du kannst deine Bestellung stornieren oder den Händler um Hilfe bitten.',
       'You have disabled mail. When mail is sent to project members, you will not receive a copy.' => 'Du hast E-Mail deaktiviert. Du erhältst keine Kopien von E-Mails an Projektmitglieder.',
       'You have enabled Imagemagick in your config, but the \'%s\' or \'%s\' binary is not in the webserver\'s %s. Disable imagemagick or make it available to the webserver.' => 'Du hast Imagemagick in Deiner Konfiguration aktiviert, aber die Programme \'%s\' oder \'%s\' befinden sich nicht im %s des Webservers. Deaktiviere Imagemagick oder mache es dem Webserver verfügbar.',
       'You have enabled pygments and the %s script is available, but does not seem to work.' => 'Du hast Pygments aktiviert, und das Skript %s ist verfügbar, scheint aber nicht zu funktionieren.',
@@ -19494,12 +20556,10 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You have made too many account recovery requests in a short period of time.' => 'Du hast innerhalb kurzer Zeit zu viele Anfragen zur Kontowiederherstellung gestellt.',
       'You have made too many invalid token requests recently. Wait before making more.' => 'Du hast in letzter Zeit zu viele ungültige Token-Anfragen gestellt. Warte, bevor du weitere stellst.',
       'You have no account setup issues.' => 'Dein Konto hat keine Einrichtungsprobleme.',
-      'You have no accounts!' => 'Du hast keine Konten!',
       'You have no draft posts.' => 'Du hast keine Entwurfs-Beiträge.',
       'You have no draft revisions.' => 'Du hast keine Entwurfsversionen.',
       'You have no linked accounts.' => 'Du hast keine verknüpften Konten.',
       'You have no notifications.' => 'Keine Benachrichtungen für Dich.',
-      'You have no unpaid invoices.' => 'Du hast keine unbezahlten Rechnungen.',
       'You have no unread notifications.' => 'Du hast keine ungelesenen Benachrichtigungen.',
       'You have no unresolved setup issues.' => 'Du hast keine ungelösten Setup-Probleme.',
       'You have not activated this enrollment in the Duo application on your phone yet. Complete activation, then click continue.' => 'Du hast diese Registrierung in der Duo-App auf Deinem Telefon noch nicht aktiviert. Schließe die Aktivierung ab und klicke dann auf Weiter.',
@@ -19510,18 +20570,19 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You have not configured an outbound SMS mailer. You must configure one before you can set up SMS. See: %s' => 'Du hast keinen ausgehenden SMS-Mailer konfiguriert. Du musst zuerst einen konfigurieren, bevor Du SMS einrichten kannst. Siehe: %s',
       'You have not configured any authentication providers yet. You should add a provider (like username/password, LDAP, or GitHub OAuth) so users can register and log in. You can add and configure providers using the Auth Application.' => 'Du hast noch keine Authentifizierungsanbieter konfiguriert. Du solltest einen Anbieter hinzufügen, etwa Benutzername/Passwort, LDAP oder GitHub OAuth, damit Benutzer sich registrieren und anmelden können. Anbieter können in der Auth-Anwendung hinzugefügt und konfiguriert werden.',
       'You have not configured any multi-factor providers yet.' => 'Du hast noch keine Multi-Faktor-Anbieter konfiguriert.',
-      'You have not established a relationship with any merchants yet. Create an order or subscription before adding payment methods.' => 'Du hast noch zu keinem Händler eine Geschäftsbeziehung aufgebaut. Erstelle vor dem Hinzufügen von Zahlungsmethoden eine Bestellung oder ein Abonnement.',
       'You have not initialized the database yet. You must initialize the database before you can adjust schemata. Run `%s` to initialize the database.' => 'Du hast die Datenbank noch nicht initialisiert. Du musst die Datenbank initialisieren, bevor du Schemata anpassen kannst. Führe `%s` aus, um die Datenbank zu initialisieren.',
       'You have not joined any rooms yet.' => 'Du bist noch keinem Raum beigetreten.',
       'You have not moved this object to any columns it is not already in.' => 'Du hast dieses Objekt nicht in neue Spalten verschoben.',
       'You have not selected any objects to edit.' => 'Du hast keine Objekte zur Bearbeitung ausgewählt.',
       'You have not set up any events for export from Calendar yet. See the documentation for instructions on how to get started.' => 'Es wurden noch keine Termine für den Kalender-Export eingerichtet. Anleitungen zum Einstieg finden sich in der Dokumentation.',
       'You have not signed this document yet.' => 'Du hast dieses Dokument noch nicht unterschrieben.',
+      'You have not specified a command to run. This means you are requesting an interactive shell, but this server does not provide interactive shells over SSH.' => 'Du hast keinen auszuführenden Befehl angegeben. Das bedeutet, dass Du eine interaktive Shell anforderst, aber dieser Server stellt über SSH keine interaktiven Shells bereit.',
       'You have not verified the email address for your account ("%s"). You must verify your email address before you can interact over email.' => 'Du hast die E-Mail-Adresse Deines Kontos ("%s") noch nicht bestätigt. Du musst Deine E-Mail-Adresse bestätigen, bevor Du per E-Mail interagieren kannst.',
       'You have permission to create and manage global rules.' => 'Du hast die Berechtigung globale Regeln zu erstellen und zu ändern.',
       'You have permission to create cluster services.' => 'Du hast die Berechtigung, Cluster-Dienste zu erstellen.',
       'You have selected multiple operation modes (%s). Choose a single mode to operate in.' => 'Mehrere Betriebsmodi wurden ausgewählt (%s). Einen einzigen Modus auswählen.',
       'You have some unresolved setup issues to take care of.' => 'Du hast einige ungelöste Setup-Probleme, die behoben werden müssen.',
+      'You have specified the command "%s", but that command is not supported by this server. As received by this server, your entire argument list was:' => 'Du hast den Befehl "%s" angegeben, aber dieser Befehl wird von diesem Server nicht unterstützt. So wie dieser Server sie empfangen hat, lautete Deine vollständige Argumentliste:',
       'You have surplus schemata (extra tables or columns which this software does not expect). For information on resolving these issues, see the "Surplus Schemata" section in the "Managing Storage Adjustments" article in the documentation.' => 'Du hast überschüssige Schemata (zusätzliche Tabellen oder Spalten, die diese Software nicht erwartet). Informationen zur Behebung dieser Probleme findest du im Abschnitt "Surplus Schemata" des Artikels "Managing Storage Adjustments" in der Dokumentation.',
       'You haven\'t added any SSH Public Keys.' => 'Du hast noch keine SSH Public Keys hinzugefügt.',
       'You haven\'t added any authentication factors to your account yet.' => 'Du hast noch keine Authentifizierungsfaktoren zu Deinem Konto hinzugefügt.',
@@ -19556,7 +20617,6 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You must choose a dashboard.' => 'Du musst ein Dashboard auswählen.',
       'You must choose a device to --promote or --demote.' => 'Du musst ein Gerät zum Befördern (--promote) oder Degradieren (--demote) wählen.',
       'You must choose a file to upload.' => 'Du musst eine Datei zum Hochladen auswählen.',
-      'You must choose a file when uploading a merchant logo.' => 'Du musst eine Datei auswählen, wenn Du ein Händlerlogo hochladen möchtest.',
       'You must choose a file when uploading a new blog header.' => 'Du musst eine Datei auswählen, wenn Du einen neuen Blog-Header hochlädst.',
       'You must choose a file when uploading a new blog picture.' => 'Du musst eine Datei auswählen, wenn Du ein neues Blog-Bild hochlädst.',
       'You must choose a file when uploading a new post header.' => 'Du musst eine Datei auswählen, wenn Du einen neuen Beitrags-Header hochlädst.',
@@ -19570,7 +20630,6 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You must choose a panel to add to the dashboard.' => 'Du musst ein Panel auswählen, das dem Dashboard hinzugefügt werden soll.',
       'You must choose a password or skip this step.' => 'Du musst ein Passwort wählen oder diesen Schritt überspringen.',
       'You must choose a password.' => 'Du mußt ein Passwort wählen',
-      'You must choose a payment method.' => 'Eine Zahlungsmethode auswählen.',
       'You must choose a policy.' => 'Du musst eine Richtlinie wählen.',
       'You must choose a project with a workboard.' => 'Du musst ein Projekt mit einer Arbeitsfläche auswählen.',
       'You must choose a project.' => 'Du musst ein Projekt auswählen.',
@@ -19603,9 +20662,7 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You must openBuildLog() before you can closeBuildLog().' => 'openBuildLog() muss vor closeBuildLog() aufgerufen werden.',
       'You must pass the user to %s.' => 'Du musst den Benutzer an %s übergeben.',
       'You must provide a %s in the dictionary!' => 'Du musst ein %s im Dictionary angeben!',
-      'You must provide a cost for this purchase.' => 'Einen Preis für diesen Kauf angeben.',
       'You must provide a name for this panel.' => 'Du musst einen Namen für dieses Panel angeben.',
-      'You must provide a name for this purchase.' => 'Einen Namen für diesen Kauf angeben.',
       'You must provide a revision title in the first line of your commit message.' => 'Du musst einen Versionstitel in der ersten Zeile Deiner Commit-Nachricht angeben.',
       'You must provide a test plan. Describe the actions you performed to verify the behavior of this change.' => 'Du musst einen Testplan angeben. Beschreibe die Maßnahmen, die Du durchgeführt hast, um das Verhalten dieser Änderung zu überprüfen.',
       'You must provide an email address.' => 'Du mußt eine Email-Adresse angeben.',
@@ -19632,7 +20689,6 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You must select a service type when creating a service.' => 'Du musst einen Diensttyp auswählen, wenn du einen Dienst erstellst.',
       'You must select a valid dashboard.' => 'Du musst ein gültiges Dashboard auswählen.',
       'You must select a valid panel.' => 'Du musst ein gültiges Panel auswählen.',
-      'You must select a valid provider type.' => 'Einen gültigen Anbietertyp auswählen.',
       'You must select an ".ics" URI to import.' => 'Zum Importieren muss eine „.ics"-URI ausgewählt werden.',
       'You must select an ".ics" file to import.' => 'Zum Importieren muss eine „.ics"-Datei ausgewählt werden.',
       'You must select at least one project tag to add.' => 'Du musst mindestens einen Projekt-Tag zum Hinzufügen auswählen.',
@@ -19644,18 +20700,15 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You must set a datasource to use a TokenizerControl.' => 'Du musst eine Datenquelle setzen, um ein TokenizerControl zu verwenden.',
       'You must set a name or a name prefix!' => 'Du musst einen Namen oder ein Namenspräfix festlegen!',
       'You must set the %s to render a %s.' => 'Du musst %s setzen, um ein %s zu rendern.',
-      'You must specify a merchant account you control as the recipient of funds from this initiative.' => 'Es muss ein von dir kontrolliertes Händlerkonto als Empfänger der Gelder aus dieser Initiative angegeben werden.',
       'You must specify a path prefix to move from with --from.' => 'Du musst ein Quell-Pfadpräfix mit --from angeben.',
       'You must specify a path prefix to move to with --to.' => 'Du musst ein Ziel-Pfadpräfix mit --to angeben.',
       'You must specify a room ID or room PHID to query transactions from.' => 'Eine Raum-ID oder Raum-PHID angeben, um Transaktionen abzufragen.',
       'You must specify a room id or room PHID to query transactions from.' => 'Eine Raum-ID oder Raum-PHID angeben, um Transaktionen abzufragen.',
       'You must specify a source path.' => 'Du musst einen Quellpfad angeben.',
       'You must specify a title.' => 'Du musst einen Titel angeben.',
-      'You must specify an account.' => 'Es muss ein Konto angegeben werden.',
       'You must specify an initial diff when creating a revision.' => 'Du musst beim Erstellen einer Version einen initialen Diff angeben.',
       'You must specify at least one daemon to start!' => 'Es muss mindestens ein Daemon zum Starten angegeben werden!',
       'You must specify data that actually updates the Conpherence.' => 'Daten angeben, die Conpherence tatsächlich aktualisieren.',
-      'You must specify how much money you want to contribute to the initiative.' => 'Es muss angegeben werden, wie viel Geld zur Initiative beigetragen werden soll.',
       'You must specify participant phids.' => 'Teilnehmer-PHIDs angeben.',
       'You must specify the email to verify.' => 'Die zu verifizierende E-Mail angeben.',
       'You must specify the path to a pkcs8 keyfile with %s.' => 'Den Pfad zur PKCS8-Schlüsseldatei mit %s angeben.',
@@ -19664,7 +20717,6 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You must specify which daemon to debug.' => 'Angeben, welcher Dämon debuggt werden soll.',
       'You must specify which daemon to launch.' => 'Angeben, welcher Dämon gestartet werden soll.',
       'You must start the daemons to send email, rebuild search indexes, and do other background processing.' => 'Du musst die Dämonen starten, um E-Mails zu versenden, Suchindizes neu aufzubauen und andere Hintergrundverarbeitung auszuführen.',
-      'You must title this invoice.' => 'Diese Rechnung muss einen Titel haben.',
       'You must use "--all" if you specify "--min-date".' => 'Du musst „--all" verwenden, wenn Du „--min-date" angibst.',
       'You must use "withSourcePHIDs()" to query edges.' => 'Du musst "withSourcePHIDs()" verwenden, um Edges abzufragen.',
       'You must verify your email address to log in. You should have a new email message with verification instructions in your inbox (%s).' => 'Du musst Deine E-Mail-Adresse verifizieren, um Dich anmelden zu können. In Deinem Posteingang (%s) sollte sich eine neue E-Mail mit den Verifizierungsanweisungen befinden.',
@@ -19673,6 +20725,7 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You must vote to see the results.' => 'Du mußt abstimmen, um die Ergebnisse sehen zu können.',
       'You reach the edge of the abyss.' => 'Du hast den Rand des Abgrunds erreicht.',
       'You recently provided a response to this factor. Responses may not be reused. Wait %s second(s) for the code to cycle, then try again.' => 'Du hast vor Kurzem bereits eine Antwort für diesen Faktor angegeben. Antworten dürfen nicht wiederverwendet werden. Warte %s Sekunde(n), bis der Code weitergeschaltet hat, und versuche es dann erneut.',
+      'You requested %s results per page, but the maximum page size is %s.' => 'Du hast %s Ergebnisse pro Seite angefordert, die maximale Seitengröße beträgt aber %s.',
       'You responded to this challenge correctly.' => 'Du hast diese Challenge korrekt beantwortet.',
       'You should upgrade this software.' => 'Diese Software sollte aktualisiert werden.',
       'You signed this document on %s.' => 'Du hast dieses Dokument am %s unterschrieben.',
@@ -19686,9 +20739,7 @@ Weitere Informationen findest du unter "Managing Storage Adjustments" in der Dok
       'You will be prompted to provide MFA when you submit.' => 'Du wirst beim Absenden aufgefordert, MFA anzugeben.',
       'You will be required to provide multi-factor credentials to comment or make changes.' => 'Du musst Mehrfaktor-Anmeldedaten angeben, um zu kommentieren oder Änderungen vorzunehmen.',
       'You will be required to provide multi-factor credentials to make changes.' => 'Du musst Mehrfaktor-Anmeldedaten angeben, um Änderungen vorzunehmen.',
-      'You will no longer be able to make payments using this payment method.' => 'Du kannst mit dieser Zahlungsmethode keine Zahlungen mehr vornehmen.',
       'You will no longer be able to use your %s account to log in.' => 'Du kannst Dein %s-Konto nicht mehr zum Anmelden verwenden.',
-      'You will no longer receive email and access links will no longer function.' => 'Du erhältst dann keine E-Mails mehr, und Zugriffslinks funktionieren nicht mehr.',
       'You will no longer receive email or notifications about every object associated with this project.' => 'Du erhältst keine E-Mails oder Benachrichtigungen mehr über Objekte, die mit diesem Projekt verknüpft sind.',
       'You will not be able to rejoin the room on your own, but someone else can invite you later.' => 'Du kannst dem Raum nicht selbst wieder beitreten, aber jemand anderes kann Dich später einladen.',
       'You will resign as a reviewer for this change.' => 'Du schmeißt als Reviewer für diese Änderung hin.',
@@ -19718,13 +20769,12 @@ You should disable this option in your %s file, in the %s section:
 Du solltest diese Option in Deiner Datei %s im Abschnitt %s deaktivieren:
 
 %s',
-      'Your Orders' => 'Deine Bestellungen',
       'Your PHP configuration selects an invalid timezone. Select a valid timezone.' => 'Deine PHP-Konfiguration wählt eine ungültige Zeitzone aus. Wähle eine gültige Zeitzone.',
       'Your PHP memory limit is configured in a way that may prevent you from uploading large files or handling large requests.' => 'Dein PHP-Speicherlimit ist so konfiguriert, dass es das Hochladen großer Dateien oder die Verarbeitung großer Anfragen verhindern könnte.',
-      'Your Subscriptions' => 'Deine Abonnements',
       'Your VCS password has been updated.' => 'Dein VCS-Passwort wurde aktualisiert.',
       'Your VCS password is currently hashed using an algorithm which is no longer available on this install.' => 'Dein VCS-Passwort wird derzeit mit einem Algorithmus gehasht, der in dieser Installation nicht mehr verfügbar ist.',
       'Your `%s` configuration contains a port number, but this usage is deprecated. Instead, put the port number in `%s`.' => 'Deine Konfiguration `%s` enthält eine Portnummer, aber diese Verwendung ist veraltet. Trage die Portnummer stattdessen in `%s` ein.',
+      'Your account ("%s") does not have permission to establish SSH sessions. Visit the web interface for more information.' => 'Dein Konto ("%s") hat keine Berechtigung, SSH-Sitzungen aufzubauen. Weitere Informationen findest Du in der Weboberfläche.',
       'Your account ("%s") has not been approved yet. You can not interact over email until your account is approved.' => 'Dein Konto ("%s") wurde noch nicht freigegeben. Du kannst erst per E-Mail interagieren, wenn Dein Konto freigegeben wurde.',
       'Your account ("%s") is disabled, so you can not interact with over email.' => 'Dein Konto ("%s") ist deaktiviert, daher kannst Du nicht per E-Mail interagieren.',
       'Your account does not currently have a password set. You can choose a password by performing a password reset.' => 'Für Dein Konto ist noch kein Passwort festgelegt. Du kannst über einen Passwort-Reset ein Passwort wählen.',
@@ -19755,8 +20805,32 @@ Um diesen Angriff zu verhindern, solltest Du die Authentifizierung konfigurieren
       'Your browser timezone (%s) differs from your profile timezone (%s). You can adjust your profile setting to match your browser, or ignore this conflict to keep your current profile setting.' => 'Die Browser-Zeitzone (%s) weicht von der Profil-Zeitzone (%s) ab. Du kannst die Profileinstellung an den Browser anpassen oder den Konflikt ignorieren, um die aktuelle Profileinstellung beizubehalten.',
       'Your browser timezone and profile timezone are now in agreement (%s).' => 'Die Zeitzone Deines Browsers und Deines Profils stimmen jetzt überein (%s).',
       'Your browser timezone setting differs from the timezone setting in your profile, click to reconcile.' => 'Die Zeitzoneneinstellung deines Browsers unterscheidet sich von der Zeitzoneneinstellung in deinem Profil. Klicke hier, um sie abzugleichen.',
-      'Your charge is on hold, for reasons?' => 'Deine Abbuchung ist aus Gründen in der Warteschleife?',
       'Your configuration fails to specify a server timezone. You can either set the PHP configuration value \'%s\' or the %s configuration value \'%s\' to specify one.' => 'In Deiner Konfiguration ist keine Server-Zeitzone angegeben. Du kannst dafür entweder den PHP-Konfigurationswert \'%s\' oder den Konfigurationswert %s \'%s\' setzen.',
+      'Your email to %s was not processed, because an error occurred while
+trying to handle it:
+
+%s
+
+-- Original Message Body -----------------------------------------------------
+
+%s
+
+-- Original Message Headers --------------------------------------------------
+
+%s
+' => 'Deine E-Mail an %s wurde nicht verarbeitet, weil bei der Verarbeitung ein
+Fehler aufgetreten ist:
+
+%s
+
+-- Ursprünglicher Nachrichtentext --------------------------------------------
+
+%s
+
+-- Ursprüngliche Nachrichten-Header -------------------------------------------
+
+%s
+',
       'Your install has no current setup issues to resolve.' => 'Deine Installation hat keine aktuellen Setup-Probleme zu lösen.',
       'Your invitations have been accepted. You will not be alone on this journey.' => 'Deine Einladungen wurden angenommen. Du wirst diese Reise nicht alleine antreten.',
       'Your login session is invalid, and clearing the session cookie was unsuccessful. Try clearing your browser cookies.' => 'Deine Anmeldesitzung ist ungültig, und das Löschen des Sitzungs-Cookies war nicht erfolgreich. Versuche, die Cookies Deines Browsers zu löschen.',
@@ -19803,13 +20877,11 @@ Deaktiviere diese Einstellung, um fortzufahren.',
       '[Diffusion]' => '[Diffusion]',
       '[File]' => '[Datei]',
       '[Herald]' => '[Herald]',
-      '[Invoice #%d] %s' => '[Rechnung #%d] %s',
       '[Legalpad]' => '[Legalpad]',
       '[Legalpad] Signature Verification' => '[Legalpad] Unterschriftenbestätigung',
       '[Macro]' => '[Makro]',
       '[Maniphest]' => '[Maniphest]',
       '[No Blog]' => '[Kein Blog]',
-      '[Order #%d] %s' => '[Bestellung #%d] %s',
       '[Package]' => '[Paket]',
       '[Paste]' => '[Paste]',
       '[Pholio]' => '[Pholio]',
@@ -19820,10 +20892,8 @@ Deaktiviere diese Einstellung, um fortzufahren.',
       '[Reminder]' => '[Erinnerung]',
       '[SSH Key]' => '[SSH-Schlüssel]',
       '`%s` not found in PATH.' => '`%s` nicht in PATH gefunden.',
-      'a.lincoln self-invite via verified email' => 'a.lincoln-Selbsteinladung per verifizierter E-Mail',
       'administrators' => 'Administratoren',
       'agoat' => 'agoat',
-      'alice invites a.lincoln via verified email' => 'alice lädt a.lincoln per verifizierter E-Mail ein',
       'all of' => 'alles davon trifft zu',
       'any of' => 'etwas davon trifft zu',
       'arc call-conduit' => 'arc call-conduit',
@@ -19843,6 +20913,7 @@ Deaktiviere diese Einstellung, um fortzufahren.',
       'by nearest end date' => 'nächst gelegener Endzeitpunkt',
       'by nearest start date' => 'nächst gelegener Startzeitpunkt',
       'cURL' => 'cURL',
+      'cURL (JSON)' => 'cURL (JSON)',
       'cat -A can find mice hiding in files.' => '`cat -A` findet Mäuse, die sich in Dateien verstecken.',
       'change creates ref' => 'Änderung erstellt Ref',
       'change deletes ref' => 'Änderung löscht Ref',
@@ -19852,18 +20923,22 @@ Deaktiviere diese Einstellung, um fortzufahren.',
       'contains' => 'enthält',
       'cos(x)' => 'cos(x)',
       'credential author' => 'Ersteller der Zugangsdaten',
+      'daemon executor' => 'Daemon-Ausführer',
       'daemon overseer' => 'Daemon-Überwacher',
       'dangerous change' => 'gefährliche Änderung',
       'data' => 'Daten',
+      'documentation generator' => 'Dokumentationsgenerator',
       'does not contain' => 'enthält nicht',
       'does not exist' => 'existiert nicht',
       'does not match regexp' => 'erfüllt RegExp nicht',
       'does not match:' => 'entspricht nicht:',
       'emails' => 'E-Mails',
+      'emit a test event' => 'ein Testereignis auslösen',
       'event' => 'Termin',
       'event host' => 'Gastgeber',
       'event invitees' => 'Mögliche Teilnehmer',
       'every time this rule matches:' => 'jedes Mal wenn diese Regel greift:',
+      'execute SSH requests' => 'SSH-Anfragen ausführen',
       'exists' => 'existiert',
       'export' => 'export',
       'extname' => 'Erweiterungsname',
@@ -19874,7 +20949,6 @@ Deaktiviere diese Einstellung, um fortzufahren.',
       'haiku. it is very bad.' => 'haiku. es ist sehr schlecht.',
       'has bit' => 'hat Bit',
       'here' => 'hier',
-      'i18n validation errors found!' => 'i18n-Validierungsfehler gefunden!',
       'if this rule did not match the last time:' => 'wenn diese Regel das letzte Mal nicht gegriffen hat:',
       'include all of' => 'enthält vollständig',
       'include any of' => 'enthält eines von',
@@ -19898,6 +20972,39 @@ Deaktiviere diese Einstellung, um fortzufahren.',
       'ldap.example.com' => 'ldap.example.com',
       'ldaps://ldaps.example.com/' => 'ldaps://ldaps.example.com/',
       'lipsum is a development and testing tool and may only be run on installs in developer mode. Enable "%s" in your configuration to enable lipsum.' => 'Lipsum ist ein Entwicklungs- und Testwerkzeug und darf nur auf Installationen im Entwicklermodus ausgeführt werden. Aktiviere "%s" in Deiner Konfiguration, um lipsum zu aktivieren.',
+      'load files as image macros' => 'Dateien als Bildmakros laden',
+      'manage Aphlict notification server' => 'Aphlict-Benachrichtigungsserver verwalten',
+      'manage Calendar' => 'Calendar verwalten',
+      'manage Conduit' => 'Conduit verwalten',
+      'manage Harbormaster' => 'Harbormaster verwalten',
+      'manage Herald' => 'Herald verwalten',
+      'manage Nuance' => 'Nuance verwalten',
+      'manage audits' => 'Prüfungen verwalten',
+      'manage authentication' => 'Authentifizierung verwalten',
+      'manage bulk jobs' => 'Massenaufgaben verwalten',
+      'manage cache' => 'Cache verwalten',
+      'manage celerity' => 'Celerity verwalten',
+      'manage configurations' => 'Konfigurationen verwalten',
+      'manage daemons' => 'Dämonen verwalten',
+      'manage drydock software resources' => 'Drydock-Software-Ressourcen verwalten',
+      'manage edges' => 'Verknüpfungen verwalten',
+      'manage fact configuration' => 'Fakten-Konfiguration verwalten',
+      'manage feed' => 'Chronik verwalten',
+      'manage files' => 'Dateien verwalten',
+      'manage garbage collectors' => 'Garbage-Collectoren verwalten',
+      'manage host directory' => 'Host-Verzeichnis verwalten',
+      'manage hunks' => 'Hunks verwalten',
+      'manage internationalization' => 'Internationalisierung verwalten',
+      'manage locks' => 'Sperren verwalten',
+      'manage mail' => 'Mail verwalten',
+      'manage policies' => 'Richtlinien verwalten',
+      'manage repositories' => 'Repositories verwalten',
+      'manage search' => 'Suche verwalten',
+      'manage storage and schemata' => 'Speicher und Schemata verwalten',
+      'manage task queue' => 'Aufgabenwarteschlange verwalten',
+      'manage transactions' => 'Transaktionen verwalten',
+      'manage triggers' => 'Auslöser verwalten',
+      'manage webhooks' => 'Webhooks verwalten',
       'matches regexp' => 'erfüllt RegExp',
       'matches regexp pair' => 'erfüllt RegExp-Paar',
       'matches:' => 'entspricht:',
@@ -19909,42 +21016,44 @@ Deaktiviere diese Einstellung, um fortzufahren.',
       'mysqli->real_connect() failed, but did not set an error code or emit a message.' => 'mysqli->real_connect() ist fehlgeschlagen, hat aber keinen Fehlercode gesetzt und keine Meldung ausgegeben.',
       'mysqli->real_connect() failed: %s' => 'mysqli->real_connect() ist fehlgeschlagen: %s',
       'name' => 'Name',
-      'newChunkedFile returns a PhabricatorFile' => 'newChunkedFile gibt ein PhabricatorFile zurück',
       'no such chart!' => 'Kein solches Diagramm!',
       'none' => 'keine',
-      'nothing' => 'nichts',
       'null' => 'null',
       'objectPHID inputs didn\'t match any known objects.' => 'Die objectPHID-Eingaben stimmen mit keinen bekannten Objekten überein.',
       'on %s' => 'am %s',
       'only the first time this rule matches:' => 'nur wenn diese Regel das erste Mal greift:',
+      'options' => 'Optionen',
       'or' => 'oder',
       'ou=People, dc=example, dc=com' => 'ou=People, dc=example, dc=com',
       'owner' => 'Eigentümer',
       'path/to/source.c' => 'pfad/zur/quelle.c',
+      'port' => 'Port',
       'project' => 'Projekt',
       'rXYZ, R123, D456, ...' => 'rXYZ, R123, D456, ...',
       'rXabcdef, PHID-DIFF-1234, ...' => 'rXabcdef, PHID-DIFF-1234, ...',
       'ref' => 'ref',
       'ref (git)' => 'Ref (git)',
       'ref:' => 'ref:',
+      'regenerate Emoji data sheets' => 'Emoji-Datenblätter neu erzeugen',
+      'remove objects' => 'Objekte entfernen',
       'reviewer' => 'Reviewer',
       'room participants' => 'Chat Teilnehmer',
       'rule' => 'Regel',
+      'save lint errors to database' => 'Lint-Fehler in der Datenbank speichern',
       'signers of legalpad documents' => 'Unterzeichner von Legalpad-Dokumenten',
       'sn' => 'sn',
       'stdout' => 'stdout',
       'subscribers' => 'Mitleser',
-      'subscription creation' => 'Abonnement-Erstellung',
+      'synthetic data generator' => 'Generator für synthetische Daten',
       'tag' => 'tag',
       'tag (git)' => 'Tag (git)',
       'tag:' => 'tag:',
       'task author' => 'Aufgabenautor',
-      'test %s value \'%s\' (from \'%s\' type %s)' => 'teste %s-Wert \'%s\' (von \'%s\', Typ %s)',
       'this is a pasta' => 'das ist eine Pasta',
       'today' => 'heute',
       'true' => 'wahr',
-      'user=%s, should_verify=%s' => 'user=%s, should_verify=%s',
-      'user=%s, verified=%s, primary=%s, should_verify=%s' => 'user=%s, verified=%s, primary=%s, should_verify=%s',
+      'usage: commit-hook <repository>' => 'Verwendung: commit-hook <repository>',
+      'usage: commit-hook <repository> <repo> <txn>' => 'Verwendung: commit-hook <repository> <repo> <txn>',
       'username' => 'Benutzername',
       'users' => 'Benutzer',
       'what did you expect?' => 'was hast Du erwartet?',
