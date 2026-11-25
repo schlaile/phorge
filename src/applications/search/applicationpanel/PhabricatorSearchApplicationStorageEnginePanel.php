@@ -14,7 +14,6 @@ final class PhabricatorSearchApplicationStorageEnginePanel
 
   public function buildConfigurationPagePanel() {
     $viewer = $this->getViewer();
-    $application = $this->getApplication();
 
     $services = PhabricatorSearchService::getAllServices();
 
@@ -78,12 +77,6 @@ final class PhabricatorSearchApplicationStorageEnginePanel
       ->appendChild($table);
 
     return $box;
-  }
-
-  public function handlePanelRequest(
-    AphrontRequest $request,
-    PhabricatorController $controller) {
-    return new Aphront404Response();
   }
 
 }

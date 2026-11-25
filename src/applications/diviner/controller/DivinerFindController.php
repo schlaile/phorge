@@ -41,7 +41,8 @@ final class DivinerFindController extends DivinerController {
       $query->withTypes(array($type));
     }
 
-    $query->withGhosts(false);
+    $query->withGhosts(false)
+          ->needAtoms(true);
 
     $name_query = clone $query;
 
@@ -67,7 +68,7 @@ final class DivinerFindController extends DivinerController {
 
     if (!$atoms) {
       $dialog = id(new AphrontDialogView())
-        ->setUser($viewer)
+        ->setViewer($viewer)
         ->setTitle(pht('Documentation Not Found'))
         ->appendChild(
           pht(
@@ -78,8 +79,9 @@ final class DivinerFindController extends DivinerController {
       return id(new AphrontDialogResponse())->setDialog($dialog);
     }
 
+    $atom = head($atoms);
+
     if (count($atoms) == 1 && $request->getBool('jump')) {
-      $atom = head($atoms);
       $atom_data = id(new DivinerLiveAtom())->loadOneWhere(
         'symbolPHID = %s',
         $atom->getPHID());
@@ -90,12 +92,15 @@ final class DivinerFindController extends DivinerController {
     }
 
     $list = $this->renderAtomList($atoms);
+    $list = msort($list, 'getTitle');
+
+    $box = id(new PHUIObjectBoxView())
+      ->setHeaderText(pht('Search Results for %s', $atom->getName()))
+      ->setObjectList($list);
 
     return $this->newPage()
       ->setTitle(array(pht('Find'), pht('"%s"', $query_text)))
-      ->appendChild(array(
-        $list,
-      ));
+      ->appendChild($box);
 
   }
 

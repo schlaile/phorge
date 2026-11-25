@@ -29,7 +29,6 @@ final class DoorkeeperAsanaFeedWorker extends DoorkeeperFeedWorker {
     $data = $story->getStoryData();
 
     $viewer = $this->getViewer();
-    $provider = $this->getProvider();
     $workspace_id = $this->getWorkspaceID();
 
     $object = $this->getStoryObject();
@@ -259,7 +258,6 @@ final class DoorkeeperAsanaFeedWorker extends DoorkeeperFeedWorker {
     // First, find all the object references in Phabricator for tasks that we
     // know about and import their objects from Asana.
     $sub_edges = $edges[$src_phid][$etype_sub];
-    $sub_refs = array();
     $subtask_data = $this->getAsanaSubtaskData($object);
     $have_phids = array();
 

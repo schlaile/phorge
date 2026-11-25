@@ -20,7 +20,6 @@ final class PhabricatorProjectBoardViewController
 
     $project = $this->getProject();
     $state = $this->getViewState();
-    $board_uri = $project->getWorkboardURI();
 
     $search_engine = $state->getSearchEngine();
     $query_key = $state->getQueryKey();
@@ -120,11 +119,13 @@ final class PhabricatorProjectBoardViewController
         ));
 
     $visible_columns = array();
+    $hidden_columns = 0;
     $column_phids = array();
     $visible_phids = array();
     foreach ($columns as $column) {
       if (!$state->getShowHidden()) {
         if ($column->isHidden()) {
+          $hidden_columns++;
           continue;
         }
       }
@@ -350,14 +351,10 @@ final class PhabricatorProjectBoardViewController
       $search_engine,
       $query_key);
 
-    $manage_menu = $this->buildManageMenu($project, $state->getShowHidden());
-
-    $header_link = phutil_tag(
-      'a',
-      array(
-        'href' => $this->getApplicationURI('profile/'.$project->getID().'/'),
-      ),
-      $project->getName());
+    $manage_menu = $this->buildManageMenu(
+      $project,
+      $state->getShowHidden(),
+      $hidden_columns);
 
     $board_box = id(new PHUIBoxView())
       ->appendChild($board)
@@ -451,8 +448,6 @@ final class PhabricatorProjectBoardViewController
 
       $items[] = $item;
     }
-
-    $id = $project->getID();
 
     $save_uri = $state->newWorkboardURI('default/sort/');
 
@@ -550,8 +545,6 @@ final class PhabricatorProjectBoardViewController
       $items[] = $item;
     }
 
-    $id = $project->getID();
-
     $filter_uri = $state->newWorkboardURI('filter/');
 
     $items[] = id(new PhabricatorActionView())
@@ -596,9 +589,13 @@ final class PhabricatorProjectBoardViewController
     return $filter_button;
   }
 
+  /**
+   * @return PHUIListItemView
+   */
   private function buildManageMenu(
     PhabricatorProject $project,
-    $show_hidden) {
+    bool $show_hidden,
+    int $hidden_columns) {
 
     $request = $this->getRequest();
     $viewer = $request->getUser();
@@ -640,7 +637,7 @@ final class PhabricatorProjectBoardViewController
       $hidden_uri = $state->newWorkboardURI()
         ->replaceQueryParam('hidden', 'true');
       $hidden_icon = 'fa-eye';
-      $hidden_text = pht('Show Hidden Columns');
+      $hidden_text = pht('Show Hidden Columns (%d)', $hidden_columns);
     }
 
     $manage_items[] = id(new PhabricatorActionView())
@@ -686,8 +683,10 @@ final class PhabricatorProjectBoardViewController
     return $manage_button;
   }
 
+  /**
+   * @return PHUIListItemView
+   */
   private function buildFullscreenMenu() {
-
     $up = id(new PHUIListItemView())
       ->setIcon('fa-arrows-alt')
       ->setHref('#')
@@ -704,6 +703,9 @@ final class PhabricatorProjectBoardViewController
     return $up;
   }
 
+  /**
+   * @return PHUIIconView
+   */
   private function buildColumnMenu(
     PhabricatorProject $project,
     PhabricatorProjectColumn $column) {

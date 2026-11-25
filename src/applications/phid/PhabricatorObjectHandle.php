@@ -35,11 +35,22 @@ final class PhabricatorObjectHandle
   private $capabilities = array();
   private $userIsEnrolledInMultiFactor = false;
 
+  public static function getInvalidHandle($maybe_phid) {
+    $type = phid_get_type($maybe_phid);
+    return id(new self())
+      ->setType($type)
+      ->setPHID($maybe_phid);
+  }
+
+
   public function setIcon($icon) {
     $this->icon = $icon;
     return $this;
   }
 
+  /**
+   * @return string|null
+   */
   public function getIcon() {
     if ($this->getPolicyFiltered()) {
       return 'fa-lock';
@@ -81,6 +92,9 @@ final class PhabricatorObjectHandle
     return 'blue';
   }
 
+  /**
+   * @return string|null
+   */
   public function getIconColor() {
     if ($this->tagColor) {
       return $this->tagColor;
@@ -101,6 +115,9 @@ final class PhabricatorObjectHandle
     return $this->getIcon();
   }
 
+  /**
+   * @return string|null
+   */
   public function getTypeIcon() {
     if ($this->getPHIDType()) {
       return $this->getPHIDType()->getTypeIcon();
@@ -331,10 +348,16 @@ final class PhabricatorObjectHandle
     return $this->complete;
   }
 
+  /**
+   * @return PhutilSafeHTML
+   */
   public function renderLink($name = null) {
     return $this->renderLinkWithAttributes($name, array());
   }
 
+  /**
+   * @return PhutilSafeHTML
+   */
   public function renderHovercardLink($name = null, $context_phid = null) {
     Javelin::initBehavior('phui-hovercards');
 
@@ -356,6 +379,9 @@ final class PhabricatorObjectHandle
     return $this->renderLinkWithAttributes($name, $attributes);
   }
 
+  /**
+   * @return PhutilSafeHTML
+   */
   private function renderLinkWithAttributes($name, array $attributes) {
     if ($name === null) {
       $name = $this->getLinkName();
@@ -406,6 +432,9 @@ final class PhabricatorObjectHandle
       array($circle, $icon, $name));
   }
 
+  /**
+   * @return PHUITagView
+   */
   public function renderTag() {
     return id(new PHUITagView())
       ->setType(PHUITagView::TYPE_SHADE)

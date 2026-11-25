@@ -25,8 +25,6 @@ final class PhabricatorUser
 
   const SESSION_TABLE = 'phabricator_session';
   const NAMETOKEN_TABLE = 'user_nametoken';
-  const MAXIMUM_USERNAME_LENGTH = 64;
-  const MAXIMUM_REALNAME_LENGTH = 256;
 
   protected $userName;
   protected $realName;
@@ -50,7 +48,6 @@ final class PhabricatorUser
 
   private $profile = null;
   private $availability = self::ATTACHABLE;
-  private $preferences = null;
   private $omnipotent = false;
   private $customFields = self::ATTACHABLE;
   private $badgePHIDs = self::ATTACHABLE;
@@ -165,11 +162,9 @@ final class PhabricatorUser
       return false;
     }
 
-    // Intracluster requests are permitted even if the user is logged out:
-    // in particular, public users are allowed to issue intracluster requests
-    // when browsing Diffusion.
-    if (PhabricatorEnv::isClusterRemoteAddress()) {
-      if (!$this->isLoggedIn()) {
+    if (!$this->isLoggedIn()) {
+      // Logged out users can have API sessions for public stuff.
+      if (PhabricatorEnv::getEnvConfig('policy.allow-public')) {
         return true;
       }
     }
@@ -450,6 +445,9 @@ final class PhabricatorUser
     return $this->getUserSetting(PhabricatorTranslationSetting::SETTINGKEY);
   }
 
+  /**
+   * @return string An identifier in a format like 'Continent/City' or 'UTC'.
+   */
   public function getTimezoneIdentifier() {
     return $this->getUserSetting(PhabricatorTimezoneSetting::SETTINGKEY);
   }
@@ -463,7 +461,7 @@ final class PhabricatorUser
     $cache = PhabricatorCaches::getMutableStructureCache();
 
     $settings = $cache->getKey($cache_key);
-    if (!$settings) {
+    if ($settings === null) {
       $preferences = PhabricatorUserPreferences::loadGlobalPreferences($this);
       $settings = $preferences->getPreferences();
       $cache->setKey($cache_key, $settings);
@@ -529,10 +527,12 @@ final class PhabricatorUser
   }
 
   public static function describeValidUsername($bad_username) {
-    if (strlen($bad_username) > self::MAXIMUM_USERNAME_LENGTH) {
+    $maximum_username_length = id(new self())
+      ->getColumnMaximumByteLength('userName');
+    if (strlen($bad_username) > $maximum_username_length) {
       return pht(
         'Usernames must have no more than %s characters.',
-         new PhutilNumber(self::MAXIMUM_USERNAME_LENGTH));
+         new PhutilNumber($maximum_username_length));
     }
     if (strpos($bad_username, ' ') !== false) {
       return pht('Usernames cannot contain spaces. Please replace them '.
@@ -555,7 +555,9 @@ final class PhabricatorUser
     //  - Unit tests, obviously.
     //  - describeValidUsername() method, above.
 
-    if (strlen($username) > self::MAXIMUM_USERNAME_LENGTH) {
+    $maximum_username_length = id(new self())
+      ->getColumnMaximumByteLength('userName');
+    if (strlen($username) > $maximum_username_length) {
       return false;
     }
 
@@ -563,13 +565,17 @@ final class PhabricatorUser
   }
 
   public static function describeValidRealName() {
+    $maximum_realname_length = id(new self())
+      ->getColumnMaximumByteLength('realName');
     return pht(
       'Real Name must have no more than %s characters.',
-      new PhutilNumber(self::MAXIMUM_REALNAME_LENGTH));
+      new PhutilNumber($maximum_realname_length));
   }
 
   public static function validateRealName($realname) {
-    return strlen($realname) <= self::MAXIMUM_REALNAME_LENGTH;
+    $maximum_realname_length = id(new self())
+      ->getColumnMaximumByteLength('realName');
+    return strlen($realname) <= $maximum_realname_length;
   }
 
   public static function getDefaultProfileImageURI() {
@@ -604,10 +610,16 @@ final class PhabricatorUser
     }
   }
 
+  /**
+   * @return DateTimeZone
+   */
   public function getTimeZone() {
     return new DateTimeZone($this->getTimezoneIdentifier());
   }
 
+  /**
+   * @return int Offset in minutes.
+   */
   public function getTimeZoneOffset() {
     $timezone = $this->getTimeZone();
     $now = new DateTime('@'.PhabricatorTime::getNow());
@@ -619,6 +631,10 @@ final class PhabricatorUser
     return $offset;
   }
 
+  /**
+   * @return int Offset in hours. Note that the value is rounded for timezones
+   * whose offset is not a full hour.
+   */
   public function getTimeZoneOffsetInHours() {
     $offset = $this->getTimeZoneOffset();
     $offset = (int)round($offset / 60);
@@ -1013,6 +1029,9 @@ final class PhabricatorUser
 /* -(  CSRF  )--------------------------------------------------------------- */
 
 
+  /**
+   * @return string|null
+   */
   public function getCSRFToken() {
     if ($this->isOmnipotent()) {
       // We may end up here when called from the daemons. The omnipotent user
@@ -1038,6 +1057,9 @@ final class PhabricatorUser
     return $this;
   }
 
+  /**
+   * @return PhabricatorAuthCSRFEngine
+   */
   private function newCSRFEngine() {
     if ($this->getPHID()) {
       $vec = $this->getPHID().$this->getAccountSecret();
@@ -1084,6 +1106,7 @@ final class PhabricatorUser
           return PhabricatorPolicies::POLICY_NOONE;
         }
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {
@@ -1407,7 +1430,7 @@ final class PhabricatorUser
 
 
   public function getCSSValue($variable_key) {
-    $preference = PhabricatorAccessibilitySetting::SETTINGKEY;
+    $preference = PhabricatorColorThemeSetting::SETTINGKEY;
     $key = $this->getUserSetting($preference);
 
     $postprocessor = CelerityPostprocessor::getPostprocessor($key);
@@ -1522,18 +1545,23 @@ final class PhabricatorUser
     PhabricatorAuthPasswordEngine $engine) {
 
     $list = array();
-    $list[] = $this->getUsername();
-    $list[] = $this->getRealName();
 
-    $emails = id(new PhabricatorUserEmail())->loadAllWhere(
-      'userPHID = %s',
-      $this->getPHID());
-    foreach ($emails as $email) {
-      $list[] = $email->getAddress();
+    $registration_data = $engine->getAdditionalPasswordBlocklistEntries();
+    if ($registration_data) {
+      $list = $registration_data;
+    } else {
+      $list[] = $this->getUsername();
+      $list[] = $this->getRealName();
+
+      $emails = id(new PhabricatorUserEmail())->loadAllWhere(
+        'userPHID = %s',
+        $this->getPHID());
+      foreach ($emails as $email) {
+        $list[] = $email->getAddress();
+      }
     }
 
     return $list;
   }
-
 
 }

@@ -8,6 +8,7 @@ final class PhabricatorAuthPasswordEngine
   private $object;
   private $passwordType;
   private $upgradeHashers = true;
+  private $additionalPasswordBlocklistEntries = array();
 
   public function setViewer(PhabricatorUser $viewer) {
     $this->viewer = $viewer;
@@ -52,6 +53,14 @@ final class PhabricatorAuthPasswordEngine
 
   public function getUpgradeHashers() {
     return $this->upgradeHashers;
+  }
+
+  public function setAdditionalPasswordBlocklistEntries($list) {
+    $this->additionalPasswordBlocklistEntries = $list;
+  }
+
+  public function getAdditionalPasswordBlocklistEntries() {
+    return $this->additionalPasswordBlocklistEntries;
   }
 
   public function checkNewPassword(
@@ -310,7 +319,6 @@ final class PhabricatorAuthPasswordEngine
   private function newQuery() {
     $viewer = $this->getViewer();
     $object = $this->getObject();
-    $password_type = $this->getPasswordType();
 
     return id(new PhabricatorAuthPasswordQuery())
       ->setViewer($viewer)

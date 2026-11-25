@@ -61,10 +61,6 @@ final class ManiphestEditEngine
     return $this->getApplication()->getApplicationURI('task/edit/');
   }
 
-  protected function getCommentViewHeaderText($object) {
-    return pht('Weigh In');
-  }
-
   protected function getCommentViewButtonText($object) {
     return pht('Set Sail for Adventure');
   }
@@ -177,7 +173,8 @@ EODOCS
           pht('List of columns to move the task to.'))
         ->setConduitDocumentation($column_documentation)
         ->setAliases(array('columnPHID', 'columns', 'columnPHIDs'))
-        ->setTransactionType(PhabricatorTransactions::TYPE_COLUMNS)
+        ->setTransactionType(
+          ManiphestTaskColumnTransaction::TRANSACTIONTYPE)
         ->setIsReorderable(false)
         ->setIsDefaultable(false)
         ->setIsLockable(false)

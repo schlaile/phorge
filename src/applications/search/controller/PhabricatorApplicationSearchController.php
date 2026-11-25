@@ -6,17 +6,7 @@ final class PhabricatorApplicationSearchController
   private $searchEngine;
   private $navigation;
   private $queryKey;
-  private $preface;
   private $activeQuery;
-
-  public function setPreface($preface) {
-    $this->preface = $preface;
-    return $this;
-  }
-
-  public function getPreface() {
-    return $this->preface;
-  }
 
   public function setQueryKey($query_key) {
     $this->queryKey = $query_key;
@@ -99,6 +89,7 @@ final class PhabricatorApplicationSearchController
     $parent = $this->getDelegatingController();
     $request = $this->getRequest();
     $user = $request->getUser();
+    /** @var PhabricatorApplicationSearchEngine */
     $engine = $this->getSearchEngine();
     $nav = $this->getNavigation();
     if (!$nav) {
@@ -172,10 +163,12 @@ final class PhabricatorApplicationSearchController
       }
     } else {
       $saved_query = $engine->buildSavedQueryFromRequest($request);
-
-      // Save the query to generate a query key, so "Save Custom Query..." and
-      // other features like "Bulk Edit" and "Export Data" work correctly.
-      $engine->saveQuery($saved_query);
+      // If the query key is null, there are no query parameters to save.
+      if ($query_key !== null) {
+        // Save the query to generate a query key, so "Save Custom Query..." and
+        // other features like "Bulk Edit" and "Export Data" work correctly.
+        $engine->saveQuery($saved_query);
+      }
     }
 
     $this->activeQuery = $saved_query;
@@ -210,10 +203,6 @@ final class PhabricatorApplicationSearchController
 
     $form->appendChild($submit);
     $body = array();
-
-    if ($this->getPreface()) {
-      $body[] = $this->getPreface();
-    }
 
     if ($named_query) {
       $title = $named_query->getQueryName();
@@ -311,6 +300,15 @@ final class PhabricatorApplicationSearchController
             $box->appendChild($this->newOverflowingView());
           }
 
+          $page_size = $engine->getPageSize($saved_query);
+          $requested_page_size = $engine->getRequestedPageSize($saved_query);
+          if ($requested_page_size > $page_size) {
+            $box->appendChild(
+              $this->newPageSizeClampedView(
+                $requested_page_size,
+                $page_size));
+          }
+
           if ($list->getContent()) {
             $box->appendChild($list->getContent());
           }
@@ -377,6 +375,8 @@ final class PhabricatorApplicationSearchController
       } catch (PhabricatorSearchConstraintException $ex) {
         $exec_errors[] = $ex->getMessage();
       } catch (PhabricatorInvalidQueryCursorException $ex) {
+        $exec_errors[] = $ex->getMessage();
+      } catch (DateMalformedStringException $ex) {
         $exec_errors[] = $ex->getMessage();
       }
 
@@ -871,6 +871,22 @@ final class PhabricatorApplicationSearchController
       ->addClass('dropdown');
   }
 
+  private function newPageSizeClampedView($requested, $max) {
+    $message = pht(
+      'You requested %s results per page, but the maximum page size is %s.',
+      new PhutilNumber($requested),
+      new PhutilNumber($max));
+
+    return id(new PHUIInfoView())
+      ->setSeverity(PHUIInfoView::SEVERITY_WARNING)
+      ->setFlush(true)
+      ->setTitle(pht('Page Size Limited'))
+      ->setErrors(
+        array(
+          $message,
+        ));
+  }
+
   private function newOverflowingView() {
     $message = pht(
       'The query matched more than one page of results. Results are '.
@@ -933,7 +949,7 @@ final class PhabricatorApplicationSearchController
     $request = $this->getRequest();
     $viewer = $request->getUser();
 
-    $is_dev = PhabricatorEnv::getEnvConfig('phabricator.developer-mode');
+    $is_dev = $viewer->getUserSetting(PhorgeDeveloperToolsSettings::SETTINGKEY);
 
     $engine = $this->getSearchEngine();
     $engine_class = get_class($engine);

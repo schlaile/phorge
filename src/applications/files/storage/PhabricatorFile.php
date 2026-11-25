@@ -762,6 +762,14 @@ final class PhabricatorFile extends PhabricatorFileDAO
       $ret = parent::delete();
     $this->saveTransaction();
 
+    // This clears APC only on this host. Other hosts keep the deleted
+    // builtin until their APC is cleared.
+    $builtin_key = $this->getBuiltinName();
+    if ($builtin_key !== null) {
+      PhabricatorCaches::getImmutableCache()->deleteKey(
+        self::getBuiltinCacheKey($builtin_key));
+    }
+
     $this->deleteFileDataIfUnused(
       $this->instantiateStorageEngine(),
       $this->getStorageEngine(),
@@ -805,7 +813,9 @@ final class PhabricatorFile extends PhabricatorFileDAO
     // instead of being able to deduplicate it.
 
     $hash = hash('sha256', $data, $raw_output = false);
-    if ($hash === false) {
+    // TODO: Remove condition check below once Phorge requires PHP 7.4.0, per
+    // https://www.php.net/manual/en/hash.installation.php
+    if (!$hash) {
       return null;
     }
 
@@ -917,6 +927,9 @@ final class PhabricatorFile extends PhabricatorFileDAO
     return '/'.$this->getMonogram();
   }
 
+  /**
+   * @return string
+   */
   public function getBestURI() {
     if ($this->isViewableInBrowser()) {
       return $this->getViewURI();
@@ -1239,14 +1252,37 @@ final class PhabricatorFile extends PhabricatorFileDAO
   public static function loadBuiltins(PhabricatorUser $user, array $builtins) {
     $builtins = mpull($builtins, null, 'getBuiltinFileKey');
 
-    // NOTE: Anyone is allowed to access builtin files.
+    // Builtin files look the same to every viewer, so share them across
+    // requests. delete() drops a deleted builtin from this cache.
+    $cache = PhabricatorCaches::getImmutableCache();
 
-    $files = id(new PhabricatorFileQuery())
-      ->setViewer(PhabricatorUser::getOmnipotentUser())
-      ->withBuiltinKeys(array_keys($builtins))
-      ->execute();
+    $cache_keys = array();
+    foreach ($builtins as $key => $builtin) {
+      $cache_keys[$key] = self::getBuiltinCacheKey($key);
+    }
+    $cached = $cache->getKeys($cache_keys);
 
     $results = array();
+    $need = array();
+    foreach ($cache_keys as $key => $cache_key) {
+      if (isset($cached[$cache_key])) {
+        $results[$key] = self::newBuiltinFromCacheValue($cached[$cache_key]);
+      } else {
+        $need[] = $key;
+      }
+    }
+
+    // NOTE: Anyone is allowed to access builtin files.
+
+    if ($need) {
+      $files = id(new PhabricatorFileQuery())
+        ->setViewer(PhabricatorUser::getOmnipotentUser())
+        ->withBuiltinKeys($need)
+        ->execute();
+    } else {
+      $files = array();
+    }
+
     foreach ($files as $file) {
       $builtin_key = $file->getBuiltinName();
       if ($builtin_key !== null) {
@@ -1254,7 +1290,6 @@ final class PhabricatorFile extends PhabricatorFileDAO
       }
     }
 
-    $build = array();
     foreach ($builtins as $key => $builtin) {
       if (isset($results[$key])) {
         continue;
@@ -1292,7 +1327,42 @@ final class PhabricatorFile extends PhabricatorFileDAO
       $results[$key] = $file;
     }
 
+    $new_values = array();
+    foreach ($need as $key) {
+      $new_values[$cache_keys[$key]] = self::newBuiltinCacheValue(
+        $results[$key]);
+    }
+    if ($new_values) {
+      $cache->setKeys($new_values);
+    }
+
     return $results;
+  }
+
+
+  private static function getBuiltinCacheKey($builtin_key) {
+    return 'files.builtin('.$builtin_key.')';
+  }
+
+  private static function newBuiltinCacheValue(PhabricatorFile $file) {
+    // The database cache only stores strings, so store the row as JSON.
+    // Values are stored as strings, as a database load returns them.
+    $row = $file->getAllLiskPropertyValues();
+    $file->willWriteData($row);
+    foreach ($row as $key => $value) {
+      if ($value !== null) {
+        $row[$key] = (string)$value;
+      }
+    }
+    return phutil_json_encode($row);
+  }
+
+  private static function newBuiltinFromCacheValue($value) {
+    return id(new self())
+      ->loadFromArray(phutil_json_decode($value))
+      ->attachObjectPHIDs(array())
+      ->attachObjects(array())
+      ->attachOriginalFile(null);
   }
 
 
@@ -1544,7 +1614,7 @@ final class PhabricatorFile extends PhabricatorFileDAO
    * This method is called both when creating a file from fresh data, and
    * when creating a new file which reuses existing storage.
    *
-   * @param map<string, mixed> $params Bag of parameters, see
+   * @param array<string, mixed> $params Bag of a map of parameters, see
    *   @{class:PhabricatorFile} for documentation.
    * @return $this
    */
@@ -1734,6 +1804,7 @@ final class PhabricatorFile extends PhabricatorFileDAO
       case PhabricatorPolicyCapability::CAN_EDIT:
         return PhabricatorPolicies::POLICY_NOONE;
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {

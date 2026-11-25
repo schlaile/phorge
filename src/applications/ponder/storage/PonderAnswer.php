@@ -25,10 +25,6 @@ final class PonderAnswer extends PonderDAO
   public static function initializeNewAnswer(
     PhabricatorUser $actor,
     PonderQuestion $question) {
-    $app = id(new PhabricatorApplicationQuery())
-      ->setViewer($actor)
-      ->withClasses(array(PhabricatorPonderApplication::class))
-      ->executeOne();
 
     return id(new self())
       ->setQuestionID($question->getID())
@@ -168,6 +164,7 @@ final class PonderAnswer extends PonderDAO
           PhabricatorPonderApplication::class);
         return $app->getPolicy(PonderModerateCapability::CAPABILITY);
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {
@@ -182,6 +179,8 @@ final class PonderAnswer extends PonderDAO
       case PhabricatorPolicyCapability::CAN_EDIT:
         return ($this->getAuthorPHID() == $viewer->getPHID());
     }
+
+    return false;
   }
 
 

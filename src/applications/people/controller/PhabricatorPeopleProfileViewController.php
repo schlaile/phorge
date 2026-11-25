@@ -25,8 +25,6 @@ final class PhabricatorPeopleProfileViewController
     $header = $this->buildProfileHeader();
 
     $properties = $this->buildPropertyView($user);
-    $name = $user->getUsername();
-
     $feed = $this->buildPeopleFeed($user, $viewer);
 
     $view_all = id(new PHUIButtonView())
@@ -282,7 +280,6 @@ final class PhabricatorPeopleProfileViewController
 
     $builder = new PhabricatorFeedBuilder($stories);
     $builder->setUser($viewer);
-    $builder->setShowHovercards(true);
     $builder->setNoDataString(pht('To begin on such a grand journey, '.
       'requires but just a single step.'));
     $view = $builder->buildView();

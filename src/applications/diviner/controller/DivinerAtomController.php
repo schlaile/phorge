@@ -37,6 +37,8 @@ final class DivinerAtomController extends DivinerController {
       ->needAtoms(true)
       ->needExtends(true)
       ->needChildren(true)
+      ->setOrder('newest')
+      ->setLimit(1)
       ->executeOne();
 
     if (!$symbol) {
@@ -152,7 +154,6 @@ final class DivinerAtomController extends DivinerController {
         foreach ($tasks as $spec) {
           $section->addContent(
             id(new PHUIHeaderView())
-              ->setNoBackground(true)
               ->setHeader($spec['title']));
 
           $task_methods = idx($methods_by_task, $spec['name'], array());
@@ -198,8 +199,7 @@ final class DivinerAtomController extends DivinerController {
 
       foreach ($methods as $spec) {
         $matom = last($spec['atoms']);
-        $method_header = id(new PHUIHeaderView())
-          ->setNoBackground(true);
+        $method_header = id(new PHUIHeaderView());
 
         $inherited = $spec['inherited'];
         if ($inherited) {

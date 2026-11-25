@@ -32,7 +32,6 @@ final class QueryFuture extends Future {
 
   private $conn;
   private $query;
-  private $id;
   private $async;
   private $profilerCallID;
 
@@ -47,7 +46,6 @@ final class QueryFuture extends Future {
     $this->query = vqsprintf($conn, $pattern, $args);
 
     self::$futures[] = $this;
-    $this->id = last_key(self::$futures);
   }
 
   public function isReady() {
@@ -79,9 +77,6 @@ final class QueryFuture extends Future {
 
     $this->processResults($this->conn->resolveAsyncQueries($conns, $asyncs));
 
-    if ($this->canResolve()) {
-      return true;
-    }
     return false;
   }
 

@@ -32,15 +32,7 @@ final class PhabricatorAuditEditor
   public function getTransactionTypes() {
     $types = parent::getTransactionTypes();
 
-    $types[] = PhabricatorTransactions::TYPE_COMMENT;
-    $types[] = PhabricatorTransactions::TYPE_EDGE;
     $types[] = PhabricatorTransactions::TYPE_INLINESTATE;
-
-    $types[] = PhabricatorAuditTransaction::TYPE_COMMIT;
-
-    // TODO: These will get modernized eventually, but that can happen one
-    // at a time later on.
-    $types[] = PhabricatorAuditActionConstants::INLINE;
 
     return $types;
   }
@@ -62,49 +54,12 @@ final class PhabricatorAuditEditor
     return parent::expandTransactions($object, $xactions);
   }
 
-  protected function transactionHasEffect(
-    PhabricatorLiskDAO $object,
-    PhabricatorApplicationTransaction $xaction) {
-
-    switch ($xaction->getTransactionType()) {
-      case PhabricatorAuditActionConstants::INLINE:
-        return $xaction->hasComment();
-    }
-
-    return parent::transactionHasEffect($object, $xaction);
-  }
-
-  protected function getCustomTransactionOldValue(
-    PhabricatorLiskDAO $object,
-    PhabricatorApplicationTransaction $xaction) {
-    switch ($xaction->getTransactionType()) {
-      case PhabricatorAuditActionConstants::INLINE:
-      case PhabricatorAuditTransaction::TYPE_COMMIT:
-        return null;
-    }
-
-    return parent::getCustomTransactionOldValue($object, $xaction);
-  }
-
-  protected function getCustomTransactionNewValue(
-    PhabricatorLiskDAO $object,
-    PhabricatorApplicationTransaction $xaction) {
-
-    switch ($xaction->getTransactionType()) {
-      case PhabricatorAuditActionConstants::INLINE:
-      case PhabricatorAuditTransaction::TYPE_COMMIT:
-        return $xaction->getNewValue();
-    }
-
-    return parent::getCustomTransactionNewValue($object, $xaction);
-  }
-
   protected function applyCustomInternalTransaction(
     PhabricatorLiskDAO $object,
     PhabricatorApplicationTransaction $xaction) {
 
     switch ($xaction->getTransactionType()) {
-      case PhabricatorAuditActionConstants::INLINE:
+      case PhorgeAuditCommitInlineCommentTransaction::TRANSACTIONTYPE:
         $comment = $xaction->getComment();
 
         $comment->setAttribute('editing', false);
@@ -112,8 +67,6 @@ final class PhabricatorAuditEditor
         PhabricatorVersionedDraft::purgeDrafts(
           $comment->getPHID(),
           $this->getActingAsPHID());
-        return;
-      case PhabricatorAuditTransaction::TYPE_COMMIT:
         return;
     }
 
@@ -125,9 +78,7 @@ final class PhabricatorAuditEditor
     PhabricatorApplicationTransaction $xaction) {
 
     switch ($xaction->getTransactionType()) {
-      case PhabricatorAuditTransaction::TYPE_COMMIT:
-        return;
-      case PhabricatorAuditActionConstants::INLINE:
+      case PhorgeAuditCommitInlineCommentTransaction::TRANSACTIONTYPE:
         $reply = $xaction->getComment()->getReplyToComment();
         if ($reply && !$reply->getHasReplies()) {
           $reply->setHasReplies(1)->save();
@@ -160,6 +111,10 @@ final class PhabricatorAuditEditor
     return parent::applyBuiltinExternalTransaction($object, $xaction);
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   * @param array<PhabricatorApplicationTransaction> $xactions
+   */
   protected function applyFinalEffects(
     PhabricatorLiskDAO $object,
     array $xactions) {
@@ -178,14 +133,10 @@ final class PhabricatorAuditEditor
     }
     $object->attachAudits($commit->getAudits());
 
-    $actor_phid = $this->getActingAsPHID();
-    $actor_is_author = ($object->getAuthorPHID()) &&
-      ($actor_phid == $object->getAuthorPHID());
-
     $import_status_flag = null;
     foreach ($xactions as $xaction) {
       switch ($xaction->getTransactionType()) {
-        case PhabricatorAuditTransaction::TYPE_COMMIT:
+        case PhorgeAuditCommitCommitTransaction::TRANSACTIONTYPE:
           $import_status_flag = PhabricatorRepositoryCommit::IMPORTED_PUBLISH;
           break;
       }
@@ -230,6 +181,10 @@ final class PhabricatorAuditEditor
     return $xactions;
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   * @param PhabricatorApplicationTransaction $xaction
+   */
   protected function expandTransaction(
     PhabricatorLiskDAO $object,
     PhabricatorApplicationTransaction $xaction) {
@@ -239,7 +194,7 @@ final class PhabricatorAuditEditor
     $xactions = parent::expandTransaction($object, $xaction);
 
     switch ($xaction->getTransactionType()) {
-      case PhabricatorAuditTransaction::TYPE_COMMIT:
+      case PhorgeAuditCommitCommitTransaction::TRANSACTIONTYPE:
         $phids = $this->getAuditRequestTransactionPHIDsFromCommitMessage(
           $object);
         if ($phids) {
@@ -318,7 +273,7 @@ final class PhabricatorAuditEditor
 
     foreach ($xactions as $xaction) {
       $type = $xaction->getTransactionType();
-      if ($type == PhabricatorAuditActionConstants::INLINE) {
+      if ($type == PhorgeAuditCommitInlineCommentTransaction::TRANSACTIONTYPE) {
         $tail[] = $xaction;
       } else {
         $head[] = $xaction;
@@ -332,6 +287,12 @@ final class PhabricatorAuditEditor
     return true;
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   * @param list<PhabricatorApplicationTransaction> $xactions Transactions
+   * @param array<PhabricatorTransactionRemarkupChange> $changes
+   * @param PhutilMarkupEngine $engine
+   */
   protected function expandCustomRemarkupBlockTransactions(
     PhabricatorLiskDAO $object,
     array $xactions,
@@ -352,7 +313,7 @@ final class PhabricatorAuditEditor
     $is_commit = false;
     foreach ($xactions as $xaction) {
       switch ($xaction->getTransactionType()) {
-        case PhabricatorAuditTransaction::TYPE_COMMIT:
+        case PhorgeAuditCommitCommitTransaction::TRANSACTIONTYPE:
           $is_commit = true;
           break;
       }
@@ -456,6 +417,9 @@ final class PhabricatorAuditEditor
     return 'diffusion-audit-'.$object->getPHID();
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   */
   protected function buildMailTemplate(PhabricatorLiskDAO $object) {
     $identifier = $object->getCommitIdentifier();
     $repository = $object->getRepository();
@@ -475,6 +439,9 @@ final class PhabricatorAuditEditor
     return $template;
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   */
   protected function getMailTo(PhabricatorLiskDAO $object) {
     $this->requireAuditors($object);
 
@@ -495,6 +462,9 @@ final class PhabricatorAuditEditor
     return $phids;
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   */
   protected function newMailUnexpandablePHIDs(PhabricatorLiskDAO $object) {
     $this->requireAuditors($object);
 
@@ -511,17 +481,22 @@ final class PhabricatorAuditEditor
 
   protected function getObjectLinkButtonLabelForMail(
     PhabricatorLiskDAO $object) {
+
     return pht('View Commit');
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   * @param list<PhabricatorApplicationTransaction> $xactions Transactions
+   */
   protected function buildMailBody(
     PhabricatorLiskDAO $object,
     array $xactions) {
 
     $body = parent::buildMailBody($object, $xactions);
 
-    $type_inline = PhabricatorAuditActionConstants::INLINE;
-    $type_push = PhabricatorAuditTransaction::TYPE_COMMIT;
+    $type_inline = PhorgeAuditCommitInlineCommentTransaction::TRANSACTIONTYPE;
+    $type_push = PhorgeAuditCommitCommitTransaction::TRANSACTIONTYPE;
 
     $is_commit = false;
     $inlines = array();
@@ -726,7 +701,7 @@ final class PhabricatorAuditEditor
 
     foreach ($xactions as $xaction) {
       switch ($xaction->getTransactionType()) {
-        case PhabricatorAuditTransaction::TYPE_COMMIT:
+        case PhorgeAuditCommitCommitTransaction::TRANSACTIONTYPE:
           $repository = $object->getRepository();
           $publisher = $repository->newPublisher();
           if (!$publisher->shouldPublishCommit($object)) {
@@ -747,6 +722,11 @@ final class PhabricatorAuditEditor
       ->setObject($object);
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   * @param HeraldCommitAdapter $adapter
+   * @param HeraldTranscript $transcript
+   */
   protected function didApplyHeraldRules(
     PhabricatorLiskDAO $object,
     HeraldAdapter $adapter,
@@ -768,6 +748,9 @@ final class PhabricatorAuditEditor
     return array();
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   */
   private function isCommitMostlyImported(PhabricatorLiskDAO $object) {
     $has_message = PhabricatorRepositoryCommit::IMPORTED_MESSAGE;
     $has_changes = PhabricatorRepositoryCommit::IMPORTED_CHANGE;
@@ -781,7 +764,10 @@ final class PhabricatorAuditEditor
     return $object->isPartiallyImported($mask);
   }
 
-
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   * @param list<PhabricatorApplicationTransaction> $xactions
+   */
   private function shouldPublishRepositoryActivity(
     PhabricatorLiskDAO $object,
     array $xactions) {
@@ -799,21 +785,36 @@ final class PhabricatorAuditEditor
     return $this->isCommitMostlyImported($object);
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   * @param list<PhabricatorApplicationTransaction> $xactions
+   */
   protected function shouldSendMail(
     PhabricatorLiskDAO $object,
     array $xactions) {
+
     return $this->shouldPublishRepositoryActivity($object, $xactions);
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   * @param list<PhabricatorApplicationTransaction> $xactions
+   */
   protected function shouldEnableMentions(
     PhabricatorLiskDAO $object,
     array $xactions) {
+
     return $this->shouldPublishRepositoryActivity($object, $xactions);
   }
 
+  /**
+   * @param PhabricatorRepositoryCommit $object
+   * @param list<PhabricatorApplicationTransaction> $xactions
+   */
   protected function shouldPublishFeedStory(
     PhabricatorLiskDAO $object,
     array $xactions) {
+
     return $this->shouldPublishRepositoryActivity($object, $xactions);
   }
 

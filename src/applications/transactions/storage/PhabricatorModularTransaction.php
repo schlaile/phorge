@@ -1,9 +1,5 @@
 <?php
 
-// TODO: Some "final" modifiers have been VERY TEMPORARILY moved aside to
-// allow DifferentialTransaction to extend this class without converting
-// fully to ModularTransactions.
-
 abstract class PhabricatorModularTransaction
   extends PhabricatorApplicationTransaction {
 
@@ -27,7 +23,8 @@ abstract class PhabricatorModularTransaction
   }
 
   /**
-  * @return PhabricatorModularTransactionType[]
+  * @return array<string, PhabricatorModularTransactionType>
+  *     keyed by transaction constant
   */
   public function newModularTransactionTypes() {
     $base_class = $this->getBaseTransactionClass();
@@ -43,6 +40,31 @@ abstract class PhabricatorModularTransaction
       ->setUniqueMethod('getTransactionTypeConstant')
       ->execute();
 
+    $types += $this->getExtraTransactionTypes();
+
+    return $types;
+  }
+
+  private function getExtraTransactionTypes() {
+    // This hack should be removed in T16728.
+    // (we don't even have an object here)
+    $types = array();
+    $phid_type = $this->getApplicationTransactionType();
+
+    if (!$phid_type) {
+      return $types;
+    }
+    $phid_type = PhabricatorPHIDType::getType($phid_type);
+    if (!$phid_type) {
+      return $types;
+    }
+    $object = $phid_type->newObject();
+
+    if ($object instanceof PhabricatorEditEngineSubtypeInterface) {
+      $types[] = new PhorgeCoreSubtypeTransaction();
+    }
+
+    $types = mpull($types, null, 'getTransactionTypeConstant');
     return $types;
   }
 
@@ -75,25 +97,38 @@ abstract class PhabricatorModularTransaction
       ->generateNewValue($object, $this->getNewValue());
   }
 
-  /* final */ public function shouldHide() {
-    if ($this->getTransactionImplementation()->shouldHide()) {
-      return true;
+  /**
+   * Should this transaction be hidden from all interfaces. See
+   * @{method:shouldHideForFeed}, @{method:shouldHideForMail} and
+   * @{method:shouldHideForNotifications} for individual interfaces. All those
+   * methods will fall-back to this one if a decision isn't made.
+   *
+   * @return bool|null `true` to hide the transaction, `false` to show it, and
+   * `null` to use default behavior of hiding empty transactions on object
+   * creation.
+   */
+  final public function shouldHide() {
+    $hide = $this->getTransactionImplementation()->shouldHide();
+    if ($hide !== null) {
+      return $hide;
     }
 
     return parent::shouldHide();
   }
 
   final public function shouldHideForFeed() {
-    if ($this->getTransactionImplementation()->shouldHideForFeed()) {
-      return true;
+    $hide = $this->getTransactionImplementation()->shouldHideForFeed();
+    if ($hide !== null) {
+      return $hide;
     }
 
     return parent::shouldHideForFeed();
   }
 
-  /* final */ public function shouldHideForMail(array $xactions) {
-    if ($this->getTransactionImplementation()->shouldHideForMail()) {
-      return true;
+  final public function shouldHideForMail(array $xactions) {
+    $hide = $this->getTransactionImplementation()->shouldHideForMail();
+    if ($hide !== null) {
+      return $hide;
     }
 
     return parent::shouldHideForMail($xactions);
@@ -110,7 +145,7 @@ abstract class PhabricatorModularTransaction
     return $hide;
   }
 
-  /* final */ public function getIcon() {
+  final public function getIcon() {
     $icon = $this->getTransactionImplementation()->getIcon();
     if ($icon !== null) {
       return $icon;
@@ -119,7 +154,7 @@ abstract class PhabricatorModularTransaction
     return parent::getIcon();
   }
 
-  /* final */ public function getTitle() {
+  final public function getTitle() {
     $title = $this->getTransactionImplementation()->getTitle();
     if ($title !== null) {
       return $title;
@@ -128,7 +163,7 @@ abstract class PhabricatorModularTransaction
     return parent::getTitle();
   }
 
-  /* final */ public function getActionName() {
+  final public function getActionName() {
     $action = $this->getTransactionImplementation()->getActionName();
     if ($action !== null) {
       return $action;
@@ -137,7 +172,7 @@ abstract class PhabricatorModularTransaction
     return parent::getActionName();
   }
 
-  /* final */ public function getActionStrength() {
+  final public function getActionStrength() {
     $strength = $this->getTransactionImplementation()->getActionStrength();
     if ($strength !== null) {
       return $strength;
@@ -146,7 +181,7 @@ abstract class PhabricatorModularTransaction
     return parent::getActionStrength();
   }
 
-  /* final */ public function getTitleForFeed() {
+  final public function getTitleForFeed() {
     $title = $this->getTransactionImplementation()->getTitleForFeed();
     if ($title !== null) {
       return $title;
@@ -155,7 +190,7 @@ abstract class PhabricatorModularTransaction
     return parent::getTitleForFeed();
   }
 
-  /* final */ public function getColor() {
+  final public function getColor() {
     $color = $this->getTransactionImplementation()->getColor();
     if ($color !== null) {
       return $color;
@@ -192,11 +227,24 @@ abstract class PhabricatorModularTransaction
     return $this->getTransactionImplementation()->newRemarkupChanges();
   }
 
-  /* final */ public function newWarningForTransactions(
+  final public function getNoEffectDescription() {
+    $description = $this->getTransactionImplementation()
+      ->getNoEffectDescription();
+    if ($description !== null) {
+      return $description;
+    }
+
+    return parent::getNoEffectDescription();
+  }
+
+  // TODO one day, define this method in a modular way. T16874
+  /* final public function newWarningForTransactions(
     $object,
     array $xactions) {
 
-    throw new PhutilMethodNotImplementedException();
+    return $this->getTransactionImplementation()
+      ->newWarningForTransactions($object, xactions);
   }
+  */
 
 }

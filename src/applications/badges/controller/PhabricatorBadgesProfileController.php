@@ -21,7 +21,6 @@ abstract class PhabricatorBadgesProfileController
   protected function buildHeaderView() {
     $viewer = $this->getViewer();
     $badge = $this->getBadge();
-    $id = $badge->getID();
 
     if ($badge->isArchived()) {
       $status_icon = 'fa-ban';
@@ -57,11 +56,6 @@ abstract class PhabricatorBadgesProfileController
     $viewer = $this->getViewer();
     $badge = $this->getBadge();
     $id = $badge->getID();
-
-    $can_edit = PhabricatorPolicyFilter::hasCapability(
-      $viewer,
-      $badge,
-      PhabricatorPolicyCapability::CAN_EDIT);
 
     $nav = id(new AphrontSideNavFilterView())
       ->setBaseURI(new PhutilURI($this->getApplicationURI()));

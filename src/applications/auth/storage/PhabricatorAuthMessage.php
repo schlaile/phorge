@@ -105,9 +105,10 @@ final class PhabricatorAuthMessage
     switch ($capability) {
       case PhabricatorPolicyCapability::CAN_VIEW:
         return PhabricatorPolicies::getMostOpenPolicy();
-      default:
-        return false;
+      case PhabricatorPolicyCapability::CAN_EDIT:
+        return PhabricatorPolicies::POLICY_ADMIN;
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {

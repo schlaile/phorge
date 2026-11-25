@@ -3,12 +3,16 @@
 abstract class DifferentialChangesetHTMLRenderer
   extends DifferentialChangesetRenderer {
 
+  /**
+   * @param string $key
+   * @return DifferentialChangesetHTMLRenderer A subclass of
+   *   DifferentialChangesetHTMLRenderer
+   */
   public static function getHTMLRendererByKey($key) {
     switch ($key) {
       case '1up':
         return new DifferentialChangesetOneUpRenderer();
       case '2up':
-      default:
         return new DifferentialChangesetTwoUpRenderer();
     }
     throw new Exception(pht('Unknown HTML renderer "%s"!', $key));

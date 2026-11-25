@@ -1,4 +1,0 @@
-{
-  "name": "pastebin",
-  "after": ["042.commentmetadata.sql"]
-}

@@ -1,12 +1,14 @@
 <?php
 
-final class PhorgeFlagFlaggedObjectCustomField extends PhabricatorCustomField {
+trait PhorgeFlagFlaggedObjectCustomField {
+  use PhorgeCustomFieldMetaTrait;
 
   private $flag;
 
   public function getFieldKey() {
     return 'flag:flag';
   }
+
   public function shouldAppearInPropertyView() {
     return false;
   }
@@ -19,9 +21,18 @@ final class PhorgeFlagFlaggedObjectCustomField extends PhabricatorCustomField {
     if (!$this->flag) {
       return;
     }
-    // I'm very open to improvements in the way a Flag is displayed
-    $icon = PhabricatorFlagColor::getIcon($this->flag->getColor());
-    $view->addIcon($icon);
+
+    $flag_class = PhabricatorFlagColor::getCSSClass($this->flag->getColor());
+    $icon = phutil_tag(
+      'div',
+      array(
+        'class' => 'phabricator-flag-icon '.$flag_class,
+        'aria-label' => pht(
+          'Flagged as %s',
+          PhabricatorFlagColor::getColorName($this->flag->getColor())),
+        ),
+      null);
+    $view->addHeadIcon($icon);
   }
 
 
@@ -34,12 +45,24 @@ final class PhorgeFlagFlaggedObjectCustomField extends PhabricatorCustomField {
     return $this;
   }
 
-  // The parent function is defined to return a PhabricatorCustomFieldStorage,
-  // but that assumes a DTO with a particular form; That doesn't apply here.
-  // Maybe the function needs to be re-defined with a suitable interface.
-  // For now, PhorgeFlagFlaggedObjectFieldStorage just duck-types into the
-  // right shape.
+  public function getValueForStorage() {
+    return null;
+  }
+
+  public function getFieldName() {
+    return pht('Flag');
+  }
+
+  public function getFieldDescription() {
+    return pht('Personal Flag color');
+  }
+
   public function newStorageObject() {
+    // The parent function is defined to return a PhabricatorCustomFieldStorage,
+    // but that assumes a DTO with a particular form; That doesn't apply here.
+    // Maybe the function needs to be re-defined with a suitable interface.
+    // For now, PhorgeFlagFlaggedObjectFieldStorage just duck-types into the
+    // right shape.
     return id(new PhorgeFlagFlaggedObjectFieldStorage())
       ->setViewer($this->getViewer());
   }

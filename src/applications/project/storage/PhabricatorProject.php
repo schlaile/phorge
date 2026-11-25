@@ -132,6 +132,7 @@ final class PhabricatorProject extends PhabricatorProjectDAO
       case PhabricatorPolicyCapability::CAN_JOIN:
         return $this->getJoinPolicy();
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {
@@ -378,14 +379,6 @@ final class PhabricatorProject extends PhabricatorProjectDAO
     return $this->assertAttached($this->slugs);
   }
 
-  public function getColor() {
-    if ($this->isArchived()) {
-      return PHUITagView::COLOR_DISABLED;
-    }
-
-    return $this->color;
-  }
-
   public function getURI() {
     $id = $this->getID();
     return "/project/view/{$id}/";
@@ -611,7 +604,11 @@ final class PhabricatorProject extends PhabricatorProjectDAO
   }
 
   public function getDisplayColor() {
-    if ($this->isMilestone() && !$this->isArchived()) {
+    if ($this->isArchived()) {
+      return PHUITagView::COLOR_DISABLED;
+    }
+
+    if ($this->isMilestone()) {
       return $this->getParentProject()->getColor();
     }
 
@@ -962,6 +959,8 @@ final class PhabricatorProject extends PhabricatorProjectDAO
         ->setAttachmentKey('watchers'),
       id(new PhabricatorProjectsAncestorsSearchEngineAttachment())
         ->setAttachmentKey('ancestors'),
+      id(new PhabricatorProjectsSlugsSearchEngineAttachment())
+        ->setAttachmentKey('slugs'),
     );
   }
 

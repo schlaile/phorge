@@ -4,7 +4,6 @@ final class PhabricatorFeedBuilder extends Phobject {
 
   private $user;
   private $stories;
-  private $hovercards = false;
   private $noDataString;
 
   /**
@@ -17,11 +16,6 @@ final class PhabricatorFeedBuilder extends Phobject {
 
   public function setUser(PhabricatorUser $user) {
     $this->user = $user;
-    return $this;
-  }
-
-  public function setShowHovercards($hover) {
-    $this->hovercards = $hover;
     return $this;
   }
 
@@ -42,8 +36,6 @@ final class PhabricatorFeedBuilder extends Phobject {
 
     $last_date = null;
     foreach ($stories as $story) {
-      $story->setHovercard($this->hovercards);
-
       $date = ucfirst(phabricator_relative_date($story->getEpoch(), $user));
 
       if ($date !== $last_date) {
@@ -63,7 +55,7 @@ final class PhabricatorFeedBuilder extends Phobject {
         $view = $story->renderView();
         $view->setViewer($user);
         $view = $view->render();
-      } catch (Exception $ex) {
+      } catch (Throwable $ex) {
         // If rendering failed for any reason, don't fail the entire feed,
         // just this one story.
         $view = id(new PHUIFeedStoryView())

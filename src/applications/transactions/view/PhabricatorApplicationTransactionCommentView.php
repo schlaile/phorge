@@ -14,7 +14,6 @@ final class PhabricatorApplicationTransactionCommentView
   private $requestURI;
   private $showPreview = true;
   private $object;
-  private $headerText;
   private $noPermission;
   private $fullWidth;
   private $infoView;
@@ -106,21 +105,25 @@ final class PhabricatorApplicationTransactionCommentView
     return $this->action;
   }
 
-  public function setHeaderText($text) {
-    $this->headerText = $text;
-    return $this;
-  }
-
   public function setFullWidth($fw) {
     $this->fullWidth = $fw;
     return $this;
   }
 
+  /**
+   * Set an info box to display below the "Add Action..." dropdown.
+   * @param PHUIInfoView $info_view
+   * @return this
+   */
   public function setInfoView(PHUIInfoView $info_view) {
     $this->infoView = $info_view;
     return $this;
   }
 
+  /**
+   * Get the info box to display below the "Add Action..." dropdown.
+   * @return PHUIInfoView|null
+   */
   public function getInfoView() {
     return $this->infoView;
   }
@@ -252,8 +255,6 @@ final class PhabricatorApplicationTransactionCommentView
         }
       }
     }
-
-    $data = array();
 
     $comment = $this->renderCommentPanel();
 
@@ -518,11 +519,6 @@ final class PhabricatorApplicationTransactionCommentView
           'viewData' => $view_data,
         ));
     }
-
-    $submit_button = id(new AphrontFormSubmitControl())
-      ->addClass('phui-comment-fullwidth-control')
-      ->addClass('phui-comment-submit-control')
-      ->setValue($this->getSubmitButtonName());
 
     $form
       ->appendChild($remarkup_control)

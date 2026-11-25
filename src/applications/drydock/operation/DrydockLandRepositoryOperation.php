@@ -60,14 +60,15 @@ final class DrydockLandRepositoryOperation
     return $merges;
   }
 
+  /**
+   * @param DrydockRepositoryOperation $operation
+   * @param DrydockCommandInterface $interface
+   */
   public function applyOperation(
     DrydockRepositoryOperation $operation,
     DrydockInterface $interface) {
-    $viewer = $this->getViewer();
-    $repository = $operation->getRepository();
 
-    $cmd = array();
-    $arg = array();
+    $viewer = $this->getViewer();
 
     $object = $operation->getObject();
     if ($object instanceof DifferentialRevision) {

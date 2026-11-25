@@ -238,6 +238,13 @@ final class CelerityDefaultPostprocessor
       'paste.border' => '#e9dbcd',
       'paste.highlight' => '#fdf3da',
 
+      // Age tint behind blame cells in Diffusion: HSV saturation and the
+      // value range from oldest to newest commit. The hue always runs from
+      // red (old) to green (new).
+      'blame.tint.saturation' => '0.25',
+      'blame.tint.value.min' => '0.92',
+      'blame.tint.value.max' => '1.00',
+
       // Background color for "most" themes.
       'page.background' => '#f3f5f7',
       'page.sidenav' => '#eaedf1',
@@ -247,12 +254,21 @@ final class CelerityDefaultPostprocessor
       'menu.profile.text.selected' => 'rgba(255,255,255,1)',
       'menu.profile.icon.disabled' => 'rgba(255,255,255,.4)',
 
+      // Main menu bar background for each "ui.header-color" option.
+      'menu.main.background.blindigo' => '#4a5f88',
+      'menu.main.background.dark' => '#171c20',
+      'menu.main.background.indigo' => '#2C1D4A',
+      'menu.main.background.red' => '#650404',
+      'menu.main.background.blue' => '#003965',
+      'menu.main.background.green' => '#124A1B',
+
       'menu.main.height' => '44px',
       'menu.profile.width' => '240px',
 
       'navigation-menu-selection-background' => 'rgba(0, 0, 0,.05)',
       'navigation-menu-hover-background' => 'rgba(0, 0, 0,.07)',
-      'workboard-column-background' => 'rgba(234, 230, 247, 0.85)',
+      'workboard-column-background-milestone' => 'rgba(234, 230, 247, 0.85)',
+      'workboard-column-disabled-card' => 'rgba(255,255,255,.67)',
       'form-inset-background' => '#f7f9fd',
 
       // Buttons

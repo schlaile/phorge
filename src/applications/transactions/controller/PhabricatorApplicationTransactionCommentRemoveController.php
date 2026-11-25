@@ -1,19 +1,13 @@
 <?php
 
 final class PhabricatorApplicationTransactionCommentRemoveController
-  extends PhabricatorApplicationTransactionController {
+  extends PhorgeSingleApplicationTransactionController {
 
-  public function handleRequest(AphrontRequest $request) {
+  protected function handleTransaction(
+    PhabricatorApplicationTransaction $xaction) {
+
     $viewer = $this->getViewer();
-    $phid = $request->getURIData('phid');
-
-    $xaction = id(new PhabricatorObjectQuery())
-      ->withPHIDs(array($phid))
-      ->setViewer($viewer)
-      ->executeOne();
-    if (!$xaction) {
-      return new Aphront404Response();
-    }
+    $request = $this->getRequest();
 
     if (!$xaction->getComment()) {
       return new Aphront404Response();
@@ -69,9 +63,6 @@ final class PhabricatorApplicationTransactionCommentRemoveController
         return id(new AphrontReloadResponse())->setURI($done_uri);
       }
     }
-
-    $form = id(new AphrontFormView())
-      ->setUser($viewer);
 
     $dialog = $this->newDialog()
       ->setTitle(pht('Remove Comment'));

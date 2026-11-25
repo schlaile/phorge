@@ -19,11 +19,6 @@ final class PhabricatorDashboardPanelViewController
       return new Aphront404Response();
     }
 
-    $can_edit = PhabricatorPolicyFilter::hasCapability(
-      $viewer,
-      $panel,
-      PhabricatorPolicyCapability::CAN_EDIT);
-
     $title = $panel->getMonogram().' '.$panel->getName();
     $crumbs = $this->buildApplicationCrumbs();
     $crumbs->addTextCrumb(
@@ -51,10 +46,6 @@ final class PhabricatorDashboardPanelViewController
       ->setEditMode(true)
       ->renderPanel();
 
-    $preview = id(new PHUIBoxView())
-      ->addClass('dashboard-preview-box')
-      ->appendChild($rendered_panel);
-
     $view = id(new PHUITwoColumnView())
       ->setHeader($header)
       ->setCurtain($curtain)
@@ -72,7 +63,6 @@ final class PhabricatorDashboardPanelViewController
 
   private function buildHeaderView(PhabricatorDashboardPanel $panel) {
     $viewer = $this->getViewer();
-    $id = $panel->getID();
 
     $header = id(new PHUIHeaderView())
       ->setViewer($viewer)

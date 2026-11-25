@@ -4,7 +4,6 @@
 
 .aphront-table-wrap {
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .aphront-table-view {
@@ -375,4 +374,8 @@ span.single-display-line-content {
   display: block;
   width: 180px;
   float: none;
+}
+
+.aphront-table-view td a[data-unit]::after {
+  content: " " attr(data-unit);
 }

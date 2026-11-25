@@ -47,7 +47,6 @@ abstract class DifferentialCoreCustomField
       $type,
       $xactions);
 
-    $transaction = null;
     foreach ($xactions as $xaction) {
       $value = $xaction->getNewValue();
       if ($this->isCoreFieldRequired()) {
@@ -76,6 +75,9 @@ abstract class DifferentialCoreCustomField
     return true;
   }
 
+  /**
+   * @param DifferentialRevision $object
+   */
   public function readValueFromObject(PhabricatorCustomFieldInterface $object) {
     if ($this->isCoreFieldRequired()) {
       $this->setFieldError(true);

@@ -49,10 +49,14 @@ final class PhabricatorMetaMTAApplicationEmailPanel
     return $box;
   }
 
+  /**
+   * @param AphrontRequest $request
+   * @param PhabricatorApplicationPanelController $controller
+   */
   public function handlePanelRequest(
     AphrontRequest $request,
     PhabricatorController $controller) {
-    $viewer = $request->getViewer();
+
     $application = $this->getApplication();
 
     $path = $request->getURIData('path');
@@ -81,9 +85,6 @@ final class PhabricatorMetaMTAApplicationEmailPanel
     $table = $this->buildEmailTable(
       $is_edit = true,
       $request->getInt('id'));
-
-    $form = id(new AphrontFormView())
-      ->setUser($viewer);
 
     $crumbs = $controller->buildPanelCrumbs($this);
     $crumbs->addTextCrumb(pht('Edit Application Emails'));

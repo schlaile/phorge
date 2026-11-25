@@ -30,6 +30,7 @@ final class ManiphestTask extends ManiphestDAO
 
   protected $status;
   protected $priority;
+  // Obsolete, see https://we.phorge.it/T16723
   protected $subpriority = 0;
 
   protected $title = '';
@@ -342,6 +343,7 @@ final class ManiphestTask extends ManiphestDAO
           return $this->getEditPolicy();
         }
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $user) {
@@ -521,6 +523,10 @@ final class ManiphestTask extends ManiphestDAO
     return array(
       id(new PhabricatorBoardColumnsSearchEngineAttachment())
         ->setAttachmentKey('columns'),
+      id(new ManiphestTaskDependsOnSearchEngineAttachment())
+        ->setAttachmentKey('dependsOn'),
+      id(new ManiphestTaskDependedOnBySearchEngineAttachment())
+        ->setAttachmentKey('dependedOnBy'),
     );
   }
 

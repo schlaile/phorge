@@ -107,7 +107,7 @@ abstract class PhabricatorEditEngine
    *
    * @param string $full_key 'Edit Engine Key/Form Key' string, e.g.
    *   'macro.image/default' or 'maniphest.task/5'
-   * @return array<string,string> Edit Engine Key and Form Key
+   * @return array{0: string, 1:string} Edit Engine Key and Form Key
    */
   public static function splitFullKey($full_key) {
     return explode('/', $full_key, 2);
@@ -145,6 +145,11 @@ abstract class PhabricatorEditEngine
 
   abstract public function getEngineApplicationClass();
   abstract protected function buildCustomEditFields($object);
+
+  public function getEditFieldsForConduit() {
+    $object = $this->newEditableObject();
+    return $this->buildCustomEditFields($object);
+  }
 
   public function getFieldsForConfig(
     PhabricatorEditEngineConfiguration $config) {
@@ -326,24 +331,8 @@ abstract class PhabricatorEditEngine
   /**
    * @task text
    */
-  protected function getCommentViewSeriousHeaderText($object) {
-    return pht('Take Action');
-  }
-
-
-  /**
-   * @task text
-   */
   protected function getCommentViewSeriousButtonText($object) {
     return pht('Submit');
-  }
-
-
-  /**
-   * @task text
-   */
-  protected function getCommentViewHeaderText($object) {
-    return $this->getCommentViewSeriousHeaderText($object);
   }
 
 
@@ -417,6 +406,11 @@ abstract class PhabricatorEditEngine
       ->withEngineKeys(array($this->getEngineKey()));
   }
 
+  /**
+   * @param PhabricatorEditEngineConfigurationQuery $query
+   * @param string|null $sort_method
+   * @return PhabricatorEditEngineConfiguration|null
+   */
   private function loadEditEngineConfigurationWithQuery(
     PhabricatorEditEngineConfigurationQuery $query,
     $sort_method) {
@@ -1152,7 +1146,7 @@ abstract class PhabricatorEditEngine
 
         if ($this->supportsSubtypes()) {
           $xactions[] = id(clone $template)
-            ->setTransactionType(PhabricatorTransactions::TYPE_SUBTYPE)
+            ->setTransactionType(PhorgeCoreSubtypeTransaction::TRANSACTIONTYPE)
             ->setNewValue($config->getSubtype());
         }
       }
@@ -1695,10 +1689,8 @@ abstract class PhabricatorEditEngine
     $is_serious = PhabricatorEnv::getEnvConfig('phabricator.serious-business');
 
     if ($is_serious) {
-      $header_text = $this->getCommentViewSeriousHeaderText($object);
       $button_text = $this->getCommentViewSeriousButtonText($object);
     } else {
-      $header_text = $this->getCommentViewHeaderText($object);
       $button_text = $this->getCommentViewButtonText($object);
     }
 
@@ -1713,7 +1705,6 @@ abstract class PhabricatorEditEngine
 
     $view = id(new PhabricatorApplicationTransactionCommentView())
       ->setViewer($viewer)
-      ->setHeaderText($header_text)
       ->setAction($comment_uri)
       ->setRequestURI(new PhutilURI($this->getObjectViewURI($object)))
       ->setRequiresMFA($requires_mfa)
@@ -2285,7 +2276,7 @@ abstract class PhabricatorEditEngine
    * @param ConduitAPIRequest $request The request.
    * @param array<array{type:string,value:mixed}> $xactions Raw conduit
    *                                              transactions.
-   * @param list<PhabricatorEditType> $types Supported edit types.
+   * @param array<string, PhabricatorEditType> $types Supported edit types.
    * @param PhabricatorApplicationTransaction $template Template transaction.
    * @return list<PhabricatorApplicationTransaction> Generated transactions.
    * @task conduit
@@ -2376,6 +2367,11 @@ abstract class PhabricatorEditEngine
     return $types;
   }
 
+  /**
+   * @return array<PhabricatorEditType> Array of subclasses of
+   *   PhabricatorEditType
+   * @task conduit
+   */
   public function getConduitEditTypes() {
     $config = $this->loadDefaultConfiguration();
     if (!$config) {
@@ -2387,6 +2383,12 @@ abstract class PhabricatorEditEngine
     return $this->getConduitEditTypesFromFields($fields);
   }
 
+  /**
+   * Get all EditEngines of all applications. (Use PhabricatorEditEngineQuery
+   * to get only EditEngines of installed applications installed.)
+   *
+   * @array<PhabricatorEditEngine>
+   */
   final public static function getAllEditEngines() {
     return id(new PhutilClassMapQuery())
       ->setAncestorClass(self::class)
@@ -2525,7 +2527,8 @@ abstract class PhabricatorEditEngine
       return $fields;
     }
 
-    if (!$this->getSelectedPage()) {
+    $selected_page = $this->getSelectedPage();
+    if (!$selected_page) {
       return $fields;
     }
 
@@ -2553,12 +2556,7 @@ abstract class PhabricatorEditEngine
       $page_map[$default_key][$field_key] = $field;
     }
 
-    $page = $this->getSelectedPage();
-    if (!$page) {
-      $page = head($pages);
-    }
-
-    $selected_key = $page->getKey();
+    $selected_key = $selected_page->getKey();
     return $page_map[$selected_key];
   }
 
@@ -2796,6 +2794,7 @@ abstract class PhabricatorEditEngine
       case PhabricatorPolicyCapability::CAN_EDIT:
         return $this->getCreateNewObjectPolicy();
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {

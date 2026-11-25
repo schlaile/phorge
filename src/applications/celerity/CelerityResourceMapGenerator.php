@@ -148,7 +148,7 @@ EOFILE;
    *
    * @param CelerityPhysicalResources $resources Resource map to find binary
    *                                  resources for.
-   * @return map<string, map<string, string>> Resource information map.
+   * @return array<string, array<string, string>> Resource information map.
    */
   private function rebuildBinaryResources(
     CelerityPhysicalResources $resources) {
@@ -175,7 +175,8 @@ EOFILE;
    *                                  resources for.
    * @param CelerityResourceTransformer $xformer Configured resource
    *                                    transformer.
-   * @return map<string, map<string, string>> Resource information map.
+   * @return array<string, array<string, string|array<string>>> Resource
+   *   information map.
    */
   private function rebuildTextResources(
     CelerityPhysicalResources $resources,
@@ -216,8 +217,8 @@ EOFILE;
    *
    * @param string $name Resource name.
    * @param string $data Resource data.
-   * @return array<string|null, list<string>|null> The `@provides` symbol and
-   *    the list of `@requires` symbols. If the resource is not part of the
+   * @return array{0: string|null, 1: list<string>|null} The `@provides` symbol
+   *    and the list of `@requires` symbols. If the resource is not part of the
    *    dependency graph, both are null.
    */
   private function getProvidesAndRequires($name, $data) {
@@ -257,7 +258,7 @@ EOFILE;
    * Check for dependency cycles in the resource graph. Raises an exception if
    * a cycle is detected.
    *
-   * @param map<string, list<string>> $nodes Map of `@provides` symbols to
+   * @param array<string, list<string>> $nodes Map of `@provides` symbols to
    *                                  their `@requires` symbols.
    * @return void
    */
@@ -282,9 +283,9 @@ EOFILE;
    * Build package specifications for a given resource source.
    *
    * @param CelerityPhysicalResources $resources Resource source to rebuild.
-   * @param map<string, string> $symbol_map Map of `@provides` to hashes.
-   * @param map<string, string> $reverse_map Map of hashes to resource names.
-   * @return map<string, map<string, string>> Package information maps.
+   * @param array<string, string> $symbol_map Map of `@provides` to hashes.
+   * @param array<string, string> $reverse_map Map of hashes to resource names.
+   * @return array<string, array<string, string>> Package information maps.
    */
   private function rebuildPackages(
     CelerityPhysicalResources $resources,

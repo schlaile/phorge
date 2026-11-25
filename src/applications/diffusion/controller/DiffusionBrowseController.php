@@ -280,8 +280,6 @@ final class DiffusionBrowseController extends DiffusionController {
     $drequest = $this->getDiffusionRequest();
     $repository = $drequest->getRepository();
 
-    $reason = $results->getReasonForEmptyResultSet();
-
     $this->buildActionButtons($drequest, true);
     $details = $this->buildPropertyView($drequest);
 
@@ -448,8 +446,6 @@ final class DiffusionBrowseController extends DiffusionController {
     $show_editor) {
 
     $viewer = $this->getViewer();
-    $base_uri = $this->getRequest()->getRequestURI();
-
     $repository = $drequest->getRepository();
     $path = $drequest->getPath();
     $line = nonempty((int)$drequest->getLine(), 1);
@@ -487,7 +483,7 @@ final class DiffusionBrowseController extends DiffusionController {
           ->setIcon('fa-pencil')
           ->setID('editor_link')
           ->setMetadata(array('template' => $editor_template))
-          ->setDisabled(!$editor_uri)
+          ->setDisabled(false)
           ->setColor(PHUIButtonView::GREY);
     }
 
@@ -903,7 +899,7 @@ final class DiffusionBrowseController extends DiffusionController {
       $tags = mpull($tags, null, 'getName');
       $tag = idx($tags, $symbolic);
 
-      if ($tag && strlen($tag->getMessage())) {
+      if ($tag && phutil_nonempty_string($tag->getMessage())) {
         $view->addSectionHeader(
           pht('Tag Content'), 'fa-tag');
         $view->addTextContent($this->markupText($tag->getMessage()));
@@ -926,8 +922,10 @@ final class DiffusionBrowseController extends DiffusionController {
 
     $recent = (PhabricatorTime::getNow() - phutil_units('30 days in seconds'));
 
-    $revisions = id(new DifferentialRevisionQuery())
-      ->setViewer($viewer)
+    $engine = id(new DifferentialRevisionSearchEngine())
+      ->setViewer($viewer);
+
+    $query = $engine->newQuery()
       ->withPaths(array($path))
       ->withRepositoryPHIDs(array($repository->getPHID()))
       ->withIsOpen(true)
@@ -935,21 +933,16 @@ final class DiffusionBrowseController extends DiffusionController {
       ->setOrder(DifferentialRevisionQuery::ORDER_MODIFIED)
       ->setLimit(10)
       ->needReviewers(true)
-      ->needFlags(true)
-      ->needDrafts(true)
-      ->execute();
+      ->needDrafts(true);
 
-    if (!$revisions) {
+    $results = $engine->executeQueryAndRender($query);
+    $list = $results->getContent();
+    if ($list->isEmpty()) {
       return null;
     }
 
     $header = id(new PHUIHeaderView())
       ->setHeader(pht('Recent Open Revisions'));
-
-    $list = id(new DifferentialRevisionListView())
-      ->setViewer($viewer)
-      ->setRevisions($revisions)
-      ->setNoBox(true);
 
     $view = id(new PHUIObjectBoxView())
       ->setHeader($header)

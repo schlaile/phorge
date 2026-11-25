@@ -26,7 +26,8 @@ abstract class ConduitAPIMethod
    * @task info
    */
   public function getMethodSummary() {
-    return $this->getMethodDescription();
+    return PhabricatorMarkupEngine::summarize(
+      $this->getMethodDescription());
   }
 
 
@@ -95,7 +96,21 @@ abstract class ConduitAPIMethod
 
   abstract protected function execute(ConduitAPIRequest $request);
 
+  /**
+   * Whether this endpoint can only be called internally.
+   *
+   * @return bool Defaults to false
+   */
   public function isInternalAPI() {
+    return false;
+  }
+
+  /**
+   * Whether this endpoint only reads data and does not write to the database.
+   *
+   * @return bool Defaults to false
+   */
+  public function isReadOnlyAPI() {
     return false;
   }
 
@@ -247,7 +262,11 @@ abstract class ConduitAPIMethod
   }
 
   /**
-   * Whether to require a session key for calling the API method.
+   * Whether to require a session key for calling the API method. This doesn't
+   * necessarily means require a logged-in user! See `shouldAllowPublic()` for
+   * that.
+   *
+   * Almost no Conduit Method should override this method.
    *
    * @return bool Defaults to true
    */
@@ -259,10 +278,10 @@ abstract class ConduitAPIMethod
    * Whether to allow public access. Related to the `policy.allow-public`
    * global setting and policies set for the corresponding application.
    *
-   * @return bool Defaults to false
+   * @return bool Defaults to "not shouldRequireAuthentication()", i.e. false.
    */
   public function shouldAllowPublic() {
-    return false;
+    return !$this->shouldRequireAuthentication();
   }
 
   /**

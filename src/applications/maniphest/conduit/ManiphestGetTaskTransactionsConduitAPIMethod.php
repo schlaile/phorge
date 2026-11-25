@@ -11,6 +11,10 @@ final class ManiphestGetTaskTransactionsConduitAPIMethod
     return pht('Retrieve Maniphest task transactions.');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   protected function defineParamTypes() {
     return array(
       'ids' => 'required list<int>',
@@ -19,6 +23,14 @@ final class ManiphestGetTaskTransactionsConduitAPIMethod
 
   protected function defineReturnType() {
     return 'nonempty list<dict<string, wild>>';
+  }
+
+  protected function defineErrorTypes() {
+    return array(
+      'ERR-BAD-IDS' => pht(
+        'Must pass an array of integer task IDs for parameter "%s".',
+        'ids'),
+    );
   }
 
   public function getMethodStatus() {
@@ -34,6 +46,10 @@ final class ManiphestGetTaskTransactionsConduitAPIMethod
   protected function execute(ConduitAPIRequest $request) {
     $results = array();
     $task_ids = $request->getValue('ids');
+
+    if (!is_array($task_ids) || !ctype_digit(implode('', $task_ids))) {
+      throw new ConduitException('ERR-BAD-IDS');
+    }
 
     if (!$task_ids) {
       return $results;

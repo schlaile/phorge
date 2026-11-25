@@ -35,6 +35,10 @@ final class PhabricatorPolicyQuery
     return $this;
   }
 
+  /**
+   * @return array<string, PhabricatorPolicy> A mapping of capability names
+   *   (e.g. 'view', 'edit', 'interact', 'diffusion.push', etc.) to policies.
+   */
   public static function loadPolicies(
     PhabricatorUser $viewer,
     PhabricatorPolicyInterface $object) {
@@ -73,6 +77,9 @@ final class PhabricatorPolicyQuery
     return $policies;
   }
 
+  /**
+   * @return array<string, PhabricatorPolicy>
+   */
   protected function loadPage() {
     if ($this->object && $this->phids) {
       throw new Exception(
@@ -166,7 +173,8 @@ final class PhabricatorPolicyQuery
 
       if ($handle_policies) {
         if ($this->needPolicyDetails) {
-          // We want these to display them later. Load anything the use can view
+          // We want these to display them later. Load anything the user can
+          // view
           $handles = id(new PhabricatorHandleQuery())
             ->setViewer($this->getViewer())
             ->setParentQuery($this)
@@ -248,16 +256,24 @@ final class PhabricatorPolicyQuery
     return $results;
   }
 
+  /**
+   * @param string $policy
+   * @return bool
+   */
   public static function isGlobalPolicy($policy) {
     $global_policies = self::getGlobalPolicies();
 
-    if (isset($global_policies[$policy])) {
+    if ($policy !== null && isset($global_policies[$policy])) {
       return true;
     }
 
     return false;
   }
 
+  /**
+   * @param string $policy
+   * @return PhabricatorPolicy
+   */
   public static function getGlobalPolicy($policy) {
     if (!self::isGlobalPolicy($policy)) {
       throw new Exception(pht("Policy '%s' is not a global policy!", $policy));
@@ -265,6 +281,9 @@ final class PhabricatorPolicyQuery
     return idx(self::getGlobalPolicies(), $policy);
   }
 
+  /**
+   * @return array<PhabricatorPolicy>
+   */
   private static function getGlobalPolicies() {
     static $constants = array(
       PhabricatorPolicies::POLICY_PUBLIC,
@@ -293,6 +312,9 @@ final class PhabricatorPolicyQuery
     return $results;
   }
 
+  /**
+   * @return string
+   */
   private static function getGlobalPolicyName($policy) {
     switch ($policy) {
       case PhabricatorPolicies::POLICY_PUBLIC:
@@ -308,6 +330,9 @@ final class PhabricatorPolicyQuery
     }
   }
 
+  /**
+   * @return string|null
+   */
   private static function getGlobalPolicyShortName($policy) {
     switch ($policy) {
       case PhabricatorPolicies::POLICY_PUBLIC:
@@ -317,6 +342,11 @@ final class PhabricatorPolicyQuery
     }
   }
 
+  /**
+   * @return array<string> Policy identifiers, for example 'public', 'no-one',
+   *   'PHID-PLCY-abcdefghijklmnopqrst', 'PHID-NPLC-abcdefghijklmnopqrst',
+   *   'PHID-PROJ-abcdefghijklmnopqrst', 'obj.calendar.event.invitees', etc.
+   */
   private function loadObjectPolicyPHIDs() {
     $phids = array();
     $viewer = $this->getViewer();
@@ -500,7 +530,7 @@ final class PhabricatorPolicyQuery
   }
 
   public static function getObjectPolicy($identifier) {
-    if (!self::isObjectPolicy($identifier)) {
+    if ($identifier === null || !self::isObjectPolicy($identifier)) {
       return null;
     }
 

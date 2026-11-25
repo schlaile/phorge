@@ -101,7 +101,7 @@ final class PHUICalendarListView extends AphrontTagView {
         $event_classes[] = 'event-cancelled';
       }
 
-      $tip = $event->getDateTimeSummary();
+      $tip = $event->getName()."\n".$event->getDateTimeSummary();
       $description = trim((string)$event->getDescription());
       if (phutil_nonempty_string($description)) {
         $tip = $tip.', '.$description;

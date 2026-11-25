@@ -40,121 +40,6 @@ final class ManiphestTransaction
     return parent::shouldGenerateOldValue();
   }
 
-  public function getRequiredHandlePHIDs() {
-    $phids = parent::getRequiredHandlePHIDs();
-
-    $new = $this->getNewValue();
-    $old = $this->getOldValue();
-
-    switch ($this->getTransactionType()) {
-      case ManiphestTaskOwnerTransaction::TRANSACTIONTYPE:
-        if ($new) {
-          $phids[] = $new;
-        }
-
-        if ($old) {
-          $phids[] = $old;
-        }
-        break;
-      case ManiphestTaskMergedIntoTransaction::TRANSACTIONTYPE:
-        $phids[] = $new;
-        break;
-      case ManiphestTaskMergedFromTransaction::TRANSACTIONTYPE:
-        $phids = array_merge($phids, $new);
-        break;
-      case ManiphestTaskEdgeTransaction::TRANSACTIONTYPE:
-        $phids = array_mergev(
-          array(
-            $phids,
-            array_keys(nonempty($old, array())),
-            array_keys(nonempty($new, array())),
-          ));
-        break;
-      case ManiphestTaskAttachTransaction::TRANSACTIONTYPE:
-        $old = nonempty($old, array());
-        $new = nonempty($new, array());
-        $phids = array_mergev(
-          array(
-            $phids,
-            array_keys(idx($new, 'FILE', array())),
-            array_keys(idx($old, 'FILE', array())),
-          ));
-        break;
-      case ManiphestTaskUnblockTransaction::TRANSACTIONTYPE:
-        foreach (array_keys($new) as $phid) {
-          $phids[] = $phid;
-        }
-        break;
-      case ManiphestTaskStatusTransaction::TRANSACTIONTYPE:
-        $commit_phid = $this->getMetadataValue('commitPHID');
-        if ($commit_phid) {
-          $phids[] = $commit_phid;
-        }
-        break;
-    }
-
-    return $phids;
-  }
-
-  public function getActionName() {
-    $old = $this->getOldValue();
-    $new = $this->getNewValue();
-    switch ($this->getTransactionType()) {
-      case PhabricatorTransactions::TYPE_COLUMNS:
-        return pht('Changed Project Column');
-    }
-
-    return parent::getActionName();
-  }
-
-  public function getIcon() {
-    switch ($this->getTransactionType()) {
-      case PhabricatorTransactions::TYPE_COLUMNS:
-        return 'fa-columns';
-    }
-
-    return parent::getIcon();
-  }
-
-
-  public function getTitle() {
-    $author_phid = $this->getAuthorPHID();
-
-    $old = $this->getOldValue();
-    $new = $this->getNewValue();
-
-    switch ($this->getTransactionType()) {
-      case PhabricatorTransactions::TYPE_SUBTYPE:
-        return pht(
-          '%s changed the subtype of this task from "%s" to "%s".',
-          $this->renderHandleLink($author_phid),
-          $this->renderSubtypeName($old),
-          $this->renderSubtypeName($new));
-    }
-
-    return parent::getTitle();
-  }
-
-  public function getTitleForFeed() {
-    $author_phid = $this->getAuthorPHID();
-    $object_phid = $this->getObjectPHID();
-
-    $old = $this->getOldValue();
-    $new = $this->getNewValue();
-
-    switch ($this->getTransactionType()) {
-      case PhabricatorTransactions::TYPE_SUBTYPE:
-        return pht(
-          '%s changed the subtype of %s from "%s" to "%s".',
-          $this->renderHandleLink($author_phid),
-          $this->renderHandleLink($object_phid),
-          $this->renderSubtypeName($old),
-          $this->renderSubtypeName($new));
-    }
-
-    return parent::getTitleForFeed();
-  }
-
   public function getMailTags() {
     $tags = array();
     switch ($this->getTransactionType()) {
@@ -184,7 +69,7 @@ final class ManiphestTransaction
       case ManiphestTaskUnblockTransaction::TRANSACTIONTYPE:
         $tags[] = self::MAILTAG_UNBLOCK;
         break;
-      case PhabricatorTransactions::TYPE_COLUMNS:
+      case ManiphestTaskColumnTransaction::TRANSACTIONTYPE:
         $tags[] = self::MAILTAG_COLUMN;
         break;
       case PhabricatorTransactions::TYPE_COMMENT:
@@ -195,30 +80,6 @@ final class ManiphestTransaction
         break;
     }
     return $tags;
-  }
-
-  public function getNoEffectDescription() {
-    switch ($this->getTransactionType()) {
-      case ManiphestTaskStatusTransaction::TRANSACTIONTYPE:
-        return pht('The task already has the selected status.');
-      case ManiphestTaskOwnerTransaction::TRANSACTIONTYPE:
-        return pht('The task already has the selected assignee.');
-      case ManiphestTaskPriorityTransaction::TRANSACTIONTYPE:
-        return pht('The task already has the selected priority.');
-    }
-
-    return parent::getNoEffectDescription();
-  }
-
-  public function renderSubtypeName($value) {
-    $object = $this->getObject();
-    $map = $object->newEditEngineSubtypeMap();
-
-    if (!$map->isValidSubtype($value)) {
-      return $value;
-    }
-
-    return $map->getSubtype($value)->getName();
   }
 
 }

@@ -77,7 +77,7 @@ final class ManiphestReportController extends ManiphestController {
    * The same thing on /project/reports/$id/ is handled by
    * PhabricatorProjectReportsController instead.
    *
-   * @return array<AphrontListFilterView, PHUIObjectBoxView>
+   * @return array{0: AphrontListFilterView, 1: PHUIObjectBoxView}
    */
   public function renderBurn() {
     $request = $this->getRequest();
@@ -180,7 +180,7 @@ final class ManiphestReportController extends ManiphestController {
   /**
    * Render all table cells in the "Open Tasks" table on /maniphest/report/*.
    *
-   * @return array<AphrontListFilterView,PHUIObjectBoxView>
+   * @return array{0: AphrontListFilterView, 1: PHUIObjectBoxView}
    */
   public function renderOpenTasks() {
     $request = $this->getRequest();
@@ -276,7 +276,6 @@ final class ManiphestReportController extends ManiphestController {
     Javelin::initBehavior('phabricator-tooltips', array());
 
     $rows = array();
-    $pri_total = array();
     foreach (array_merge($handles, array(null)) as $handle) {
       if ($handle) {
         if (($project_handle) &&
@@ -572,8 +571,8 @@ final class ManiphestReportController extends ManiphestController {
    * Used on /maniphest/report/user/ and /maniphest/report/project/ URIs.
    *
    * @param array<ManiphestTask> $tasks
-   * @return array<PhutilSafeHTML,int> HTML link markup and the timespan
-   *         (as epoch) since task creation
+   * @return array{0: PhutilSafeHTML|string, 1: PHUIObjectBoxView|int} HTML
+   *   link markup (or '-') and the timespan (as epoch) since task creation
    */
   private function renderOldest(array $tasks) {
     assert_instances_of($tasks, ManiphestTask::class);
@@ -592,13 +591,14 @@ final class ManiphestReportController extends ManiphestController {
     $oldest = $tasks[$oldest];
 
     $raw_age = (time() - $oldest->getDateCreated());
-    $age = number_format($raw_age / (24 * 60 * 60)).' d';
+    $age = number_format($raw_age / (24 * 60 * 60));
 
     $link = javelin_tag(
       'a',
       array(
         'href'  => '/T'.$oldest->getID(),
         'sigil' => 'has-tooltip',
+        'data-unit' => 'd',
         'meta'  => array(
           'tip' => 'T'.$oldest->getID().': '.$oldest->getTitle(),
         ),

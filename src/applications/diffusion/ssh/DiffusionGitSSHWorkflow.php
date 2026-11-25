@@ -168,10 +168,11 @@ abstract class DiffusionGitSSHWorkflow
             $ref->getDeviceName()));
       }
 
-      $command = PhabricatorDaemon::sudoCommandAsDaemonUser($command);
+      $env = $this->getEnvironment();
+      $command = PhabricatorDaemon::sudoCommandAsDaemonUser($command, $env);
 
       $future = id(new ExecFuture('%C', $command))
-        ->setEnv($this->getEnvironment());
+        ->setEnv($env);
 
       $this->didBeginRequest();
 
@@ -204,8 +205,6 @@ abstract class DiffusionGitSSHWorkflow
       // If we haven't bailed out yet, we'll retry the request with the next
       // service.
     }
-
-    throw new Exception(pht('Reached an unreachable place.'));
   }
 
   private function didBeginRequest() {

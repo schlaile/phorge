@@ -3,14 +3,12 @@
 final class PhabricatorRepositoryPublisherHoldReason
   extends Phobject {
 
-  private $key;
   private $spec;
 
   public static function newForHoldKey($key) {
     $spec = self::getSpecForHoldKey($key);
 
     $hold = new self();
-    $hold->key = $key;
     $hold->spec = $spec;
 
     return $hold;

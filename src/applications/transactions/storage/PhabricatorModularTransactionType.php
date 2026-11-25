@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * See also "Understanding Application Transaction Editors" in Diviner.
+ */
 abstract class PhabricatorModularTransactionType
   extends Phobject {
 
@@ -11,26 +14,48 @@ abstract class PhabricatorModularTransactionType
     return $this->getPhobjectClassConstant('TRANSACTIONTYPE');
   }
 
+  /**
+   * Return the current value of the object to be changed in the transaction.
+   */
   public function generateOldValue($object) {
     throw new PhutilMethodNotImplementedException();
   }
 
+  /**
+   * Return the new value of the object set via the transaction.
+   */
   public function generateNewValue($object, $value) {
     return $value;
   }
 
+  /**
+   * Logic checks which ensure that the changes are well-formed.
+   */
   public function validateTransactions($object, array $xactions) {
     return array();
   }
 
+  /**
+   * Apply internal effects by applying the new state to the object and other
+   * ancillary but closely related objects.
+   */
   public function applyInternalEffects($object, $value) {
     return;
   }
 
+  /**
+   * Apply effects which perform side effects on other objects, enqueue daemon
+   * jobs, mutations to caches, potentially talk to external services, etc.
+   */
   public function applyExternalEffects($object, $value) {
     return;
   }
 
+  /**
+   * React to the fact that the transaction has been applied successfully. This
+   * is typically used for notifying related applications of a change they need
+   * to respond to.
+   */
   public function didCommitTransaction($object, $value) {
     return;
   }
@@ -44,15 +69,15 @@ abstract class PhabricatorModularTransactionType
   }
 
   public function shouldHide() {
-    return false;
+    return null;
   }
 
   public function shouldHideForFeed() {
-    return false;
+    return null;
   }
 
   public function shouldHideForMail() {
-    return false;
+    return null;
   }
 
   public function shouldHideForNotifications() {
@@ -83,6 +108,10 @@ abstract class PhabricatorModularTransactionType
     return null;
   }
 
+  public function getNoEffectDescription() {
+    return null;
+  }
+
   public function hasChangeDetailView() {
     return false;
   }
@@ -103,11 +132,13 @@ abstract class PhabricatorModularTransactionType
     $object,
     PhabricatorApplicationTransaction $u,
     PhabricatorApplicationTransaction $v) {
+
     return null;
   }
 
   final public function setStorage(
     PhabricatorApplicationTransaction $xaction) {
+
     $this->storage = $xaction;
     return $this;
   }
@@ -121,7 +152,7 @@ abstract class PhabricatorModularTransactionType
     return $this;
   }
 
-  final protected function getViewer() {
+  final protected function getViewer(): PhabricatorUser {
     return $this->viewer;
   }
 
@@ -135,6 +166,7 @@ abstract class PhabricatorModularTransactionType
 
   final public function setEditor(
     PhabricatorApplicationTransactionEditor $editor) {
+
     $this->editor = $editor;
     return $this;
   }
@@ -182,7 +214,8 @@ abstract class PhabricatorModularTransactionType
 
   final protected function renderHandle($phid) {
     $viewer = $this->getViewer();
-    $display = $viewer->renderHandle($phid);
+    // Avoid PHP 8.5 complaints about null array keys if an object got destroyed
+    $display = $viewer->renderHandle($phid ?? '');
 
     if ($this->isTextMode()) {
       $display->setAsText(true);
@@ -335,7 +368,7 @@ abstract class PhabricatorModularTransactionType
   }
 
   /**
-   * Check whenever a new transaction's value is considered an "empty text"
+   * Check whenever a new transaction's value is considered an "empty text".
    * @param mixed $value    A string, null, an integer...
    * @param array $xactions Transactions
    */
@@ -388,6 +421,27 @@ abstract class PhabricatorModularTransactionType
     return $editor->getPHIDList($old, $new);
   }
 
+  final protected function purgeCommentDrafts() {
+    // the methods that handle comments (inline comments?) should be moved
+    // somewhere else, they're only here to allow migrating to modular xactions.
+    // Maybe even moved to PhabricatorApplicationTransactionEditor directly?
+    // They might only apply to inline comments.
+    $comment = $this->getStorage()->getComment();
+
+    $comment->setAttribute('editing', false);
+
+    PhabricatorVersionedDraft::purgeDrafts(
+      $comment->getPHID(),
+      $this->getActingAsPHID());
+  }
+
+  final protected function updateCommentReplyTo() {
+    $reply = $this->getStorage()->getComment()->getReplyToComment();
+    if ($reply) {
+      $reply->markHasReplies();
+    }
+  }
+
   public function getMetadataValue($key, $default = null) {
     return $this->getStorage()->getMetadataValue($key, $default);
   }
@@ -438,12 +492,14 @@ abstract class PhabricatorModularTransactionType
   public function getRequiredCapabilities(
     $object,
     PhabricatorApplicationTransaction $xaction) {
+
     return PhabricatorPolicyCapability::CAN_EDIT;
   }
 
   public function shouldTryMFA(
     $object,
     PhabricatorApplicationTransaction $xaction) {
+
     return false;
   }
 
@@ -478,11 +534,9 @@ abstract class PhabricatorModularTransactionType
     try {
       $storage->setRenderingTarget($target);
       $result = $this->getTitleForMail();
-    } catch (Exception $ex) {
+    } finally {
       $storage->setRenderingTarget($old_target);
-      throw $ex;
     }
-    $storage->setRenderingTarget($old_target);
 
     return $result;
   }
@@ -494,11 +548,9 @@ abstract class PhabricatorModularTransactionType
     try {
       $storage->setRenderingTarget($target);
       $result = $this->getBodyForMail();
-    } catch (Exception $ex) {
+    } finally {
       $storage->setRenderingTarget($old_target);
-      throw $ex;
     }
-    $storage->setRenderingTarget($old_target);
 
     return $result;
   }

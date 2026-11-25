@@ -143,13 +143,7 @@ final class AlmanacDeviceViewController
 
   private function buildSSHKeysTable(AlmanacDevice $device) {
     $viewer = $this->getViewer();
-    $id = $device->getID();
     $device_phid = $device->getPHID();
-
-    $can_edit = PhabricatorPolicyFilter::hasCapability(
-      $viewer,
-      $device,
-      PhabricatorPolicyCapability::CAN_EDIT);
 
     $keys = id(new PhabricatorAuthSSHKeyQuery())
       ->setViewer($viewer)
@@ -160,7 +154,6 @@ final class AlmanacDeviceViewController
     $table = id(new PhabricatorAuthSSHKeyTableView())
       ->setUser($viewer)
       ->setKeys($keys)
-      ->setCanEdit($can_edit)
       ->setShowID(true)
       ->setShowTrusted(true)
       ->setNoDataString(pht('This device has no associated SSH public keys.'));

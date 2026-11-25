@@ -6,9 +6,6 @@ final class PhabricatorAuthMessageListController
   public function handleRequest(AphrontRequest $request) {
     $viewer = $this->getViewer();
 
-    $can_manage = $this->hasApplicationCapability(
-      AuthManageProvidersCapability::CAPABILITY);
-
     $types = PhabricatorAuthMessageType::getAllMessageTypes();
 
     $messages = id(new PhabricatorAuthMessageQuery())
@@ -16,7 +13,8 @@ final class PhabricatorAuthMessageListController
       ->execute();
     $messages = mpull($messages, null, 'getMessageKey');
 
-    $list = new PHUIObjectItemListView();
+    $list = id(new PHUIObjectItemListView())
+      ->setViewer($viewer);
     foreach ($types as $type) {
       $message = idx($messages, $type->getMessageTypeKey());
 

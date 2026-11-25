@@ -7,6 +7,10 @@ final class DifferentialGetRevisionConduitAPIMethod
     return 'differential.getrevision';
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   public function getMethodStatus() {
     return self::METHOD_STATUS_DEPRECATED;
   }
@@ -39,8 +43,6 @@ final class DifferentialGetRevisionConduitAPIMethod
   }
 
   protected function execute(ConduitAPIRequest $request) {
-    $diff = null;
-
     $revision_id = $request->getValue('revision_id');
     $revision = id(new DifferentialRevisionQuery())
       ->withIDs(array($revision_id))

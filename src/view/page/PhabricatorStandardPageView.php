@@ -17,7 +17,6 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
   private $pageObjects = array();
   private $applicationMenu;
   private $showFooter = true;
-  private $showDurableColumn = true;
   private $quicksandConfig = array();
   private $tabs;
   private $crumbs;
@@ -76,11 +75,9 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     return $this;
   }
 
-  public function setShowDurableColumn($show) {
-    $this->showDurableColumn = $show;
-    return $this;
-  }
-
+  /**
+   * @return bool Whether to render a ConpherenceDurableColumnView
+   */
   public function getShowDurableColumn() {
     $request = $this->getRequest();
     if (!$request) {
@@ -184,7 +181,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
       $prefix = $this->getGlyph();
     } else {
       $application_name = $this->getApplicationName();
-      if (strlen($application_name)) {
+      if (phutil_nonempty_string($application_name)) {
         $prefix = '['.$application_name.']';
       }
     }
@@ -239,63 +236,66 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     Javelin::initBehavior('workflow', array());
 
     $user = $request->getUser();
-    if ($user) {
-      if ($user->isUserActivated()) {
-        // Only bother user about timezone offset if they have not set UTC
-        if ($user->getTimezoneIdentifier() !== 'UTC') {
-          $offset = $user->getTimeZoneOffset();
+    if ($user->isUserActivated()) {
+      // Only bother user about timezone offset if they have not set UTC
+      if ($user->getTimezoneIdentifier() !== 'UTC') {
+        $offset = $user->getTimeZoneOffset();
 
-          $ignore_key = PhabricatorTimezoneIgnoreOffsetSetting::SETTINGKEY;
-          $ignore = $user->getUserSetting($ignore_key);
+        $ignore_key = PhabricatorTimezoneIgnoreOffsetSetting::SETTINGKEY;
+        $ignore = $user->getUserSetting($ignore_key);
 
-          Javelin::initBehavior(
-            'detect-timezone',
-            array(
-              'offset' => $offset,
-              'uri' => '/settings/timezone/',
-              'message' => pht(
-                'Your browser timezone setting differs from the timezone '.
-                'setting in your profile, click to reconcile.'),
-              'ignoreKey' => $ignore_key,
-              'ignore' => $ignore,
-            ));
-        }
-
-        if ($user->getIsAdmin()) {
-          $server_https = $request->isHTTPS();
-          $server_protocol = $server_https ? 'HTTPS' : 'HTTP';
-          $client_protocol = $server_https ? 'HTTP' : 'HTTPS';
-
-          $doc_name = 'Configuring a Preamble Script';
-          $doc_href = PhabricatorEnv::getDoclink($doc_name);
-
-          Javelin::initBehavior(
-            'setup-check-https',
-            array(
-              'server_https' => $server_https,
-              'doc_name' => pht('See Documentation'),
-              'doc_href' => $doc_href,
-              'message' => pht(
-                'This server thinks you are using %s, but your '.
-                'client is convinced that it is using %s. This is a serious '.
-                'misconfiguration with subtle, but significant, consequences.',
-                $server_protocol, $client_protocol),
-            ));
-        }
+        Javelin::initBehavior(
+          'detect-timezone',
+          array(
+            'offset' => $offset,
+            'uri' => '/settings/timezone/',
+            'message' => pht(
+              'Your browser timezone setting differs from the timezone '.
+              'setting in your profile, click to reconcile.'),
+            'ignoreKey' => $ignore_key,
+            'ignore' => $ignore,
+          ));
       }
 
-      Javelin::initBehavior('lightbox-attachments');
+      if ($user->getIsAdmin()) {
+        $server_https = $request->isHTTPS();
+        $server_protocol = $server_https ? 'HTTPS' : 'HTTP';
+        $client_protocol = $server_https ? 'HTTP' : 'HTTPS';
+
+        $doc_name = 'Configuring a Preamble Script';
+        $doc_href = PhabricatorEnv::getDoclink($doc_name);
+
+        Javelin::initBehavior(
+          'setup-check-https',
+          array(
+            'server_https' => $server_https,
+            'doc_name' => pht('See Documentation'),
+            'doc_href' => $doc_href,
+            'message' => pht(
+              'This server thinks you are using %s, but your '.
+              'client is convinced that it is using %s. This is a serious '.
+              'misconfiguration with subtle, but significant, consequences.',
+              $server_protocol,
+              $client_protocol),
+          ));
+      }
     }
+
+    $buttons_pht = array(
+      'Download' => pht('Download'),
+      'Comment' => pht('Comment'),
+      'Close' => pht('Close'),
+    );
+    Javelin::initBehavior('lightbox-attachments', array(
+      'pht' => $buttons_pht,
+      ));
 
     Javelin::initBehavior('aphront-form-disable-on-submit');
     Javelin::initBehavior('toggle-class', array());
     Javelin::initBehavior('history-install');
     Javelin::initBehavior('phabricator-gesture');
 
-    $current_token = null;
-    if ($user) {
-      $current_token = $user->getCSRFToken();
-    }
+    $current_token = $user->getCSRFToken();
 
     Javelin::initBehavior(
       'refresh-csrf',
@@ -343,11 +343,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
         $this->getConsoleConfig());
     }
 
-    if ($user) {
-      $viewer = $user;
-    } else {
-      $viewer = new PhabricatorUser();
-    }
+    $viewer = $user;
 
     $menu = id(new PhabricatorMainMenuView())
       ->setViewer($viewer);
@@ -392,10 +388,8 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     $request = $this->getRequest();
     if ($request) {
       $user = $request->getUser();
-      if ($user) {
-        $monospaced = $user->getUserSetting(
-          PhabricatorMonospacedFontSetting::SETTINGKEY);
-      }
+      $monospaced = $user->getUserSetting(
+        PhabricatorMonospacedFontSetting::SETTINGKEY);
     }
 
     $response = CelerityAPI::getStaticResourceResponse();
@@ -453,11 +447,8 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
   }
 
   protected function getBody() {
-    $user = null;
     $request = $this->getRequest();
-    if ($request) {
-      $user = $request->getUser();
-    }
+    $user = $request->getUser();
 
     $header_chrome = null;
     if ($this->getShowChrome()) {
@@ -589,7 +580,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
       $with_protocol);
 
     if ($servers) {
-      if ($user && $user->isLoggedIn()) {
+      if ($user->isLoggedIn()) {
         // TODO: We could tell the browser about all the servers and let it
         // do random reconnects to improve reliability.
         shuffle($servers);
@@ -693,11 +684,12 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     return array(
       // NOTE: We use a generic label here to prevent input reflection
       // and mitigate compression attacks like BREACH. See discussion in
-      // T3684.
+      // https://web.archive.org/web/20240803154311/https://secure.phabricator.com/T3684
       'uri' => pht('Main Request'),
       'selected' => $tab,
       'visible'  => $visible,
       'headers' => $headers,
+      'readonlymode' => PhabricatorEnv::isReadOnly(),
     );
   }
 
@@ -760,9 +752,10 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     $foot = phutil_implode_html(" \xC2\xB7 ", $foot);
 
     return phutil_tag(
-      'div',
+      'footer',
       array(
         'class' => 'phabricator-standard-page-footer grouped',
+        'role' => 'contentinfo',
       ),
       $foot);
   }
@@ -860,8 +853,8 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
       $blacklist[] = $application->getQuicksandURIPatternBlacklist();
     }
 
-    // See T4340. Currently, Phortune and Auth both require pulling in external
-    // Javascript (for Stripe card management and Recaptcha, respectively).
+    // See T4340. Currently, Auth requires pulling in external
+    // Javascript (for Recaptcha).
     // This can put us in a position where the user loads a page with a
     // restrictive Content-Security-Policy, then uses Quicksand to navigate to
     // a page which needs to load external scripts. For now, just blacklist
@@ -869,7 +862,6 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     // significant by doing so.
 
     $blacklist[] = array(
-      '/phortune/.*',
       '/auth/.*',
     );
 
@@ -883,9 +875,6 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     }
 
     $user = $request->getUser();
-    if (!$user) {
-      return $default;
-    }
 
     return $user->getUserSetting($key);
   }

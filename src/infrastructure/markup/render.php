@@ -17,7 +17,8 @@
  * parameters.
  *
  * @param string $tag The name of the tag, like `a` or `div`.
- * @param map<string, string> $attributes (optional) A map of tag attributes.
+ * @param array<string|int, string|int|float|bool|array> $attributes (optional)
+ *   A map of tag attributes.
  * @param mixed $content (optional) Content to put in the tag.
  * @return PhutilSafeHTML Tag object.
  */
@@ -139,6 +140,9 @@ function phutil_escape_html($string) {
       $result .= phutil_escape_html($item);
     }
     return $result;
+  } else {
+    // Cast int, bool, float, PhutilCommandString, PhutilURI, etc.
+    $string = (string)$string;
   }
 
   return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
@@ -163,9 +167,12 @@ function phutil_safe_html($string) {
 
 /**
  * HTML safe version of `implode()`.
+ *
+ * @param mixed $glue An object, e.g. PhutilSafeHTML or PHUIIconView
+ * @param array<mixed> $pieces
  */
 function phutil_implode_html($glue, array $pieces) {
-  $glue = phutil_escape_html($glue);
+  $glue = (string)phutil_escape_html($glue);
 
   foreach ($pieces as $k => $piece) {
     $pieces[$k] = phutil_escape_html($piece);
@@ -177,6 +184,8 @@ function phutil_implode_html($glue, array $pieces) {
 /**
  * Format a HTML code. This function behaves like `sprintf()`, except that all
  * the normal conversions (like %s) will be properly escaped.
+ *
+ * @return PhutilSafeHTML
  */
 function hsprintf($html /* , ... */) {
   $args = func_get_args();

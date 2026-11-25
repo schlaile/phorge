@@ -47,6 +47,9 @@ final class PHUITagView extends AphrontTagView {
   private $contextObject;
   private $isExiled;
 
+  /**
+   * @param string $type One of the TYPE_* consts in PHUITagView
+   */
   public function setType($type) {
     $this->type = $type;
     switch ($type) {
@@ -60,18 +63,6 @@ final class PHUITagView extends AphrontTagView {
         $this->setBackgroundColor(self::COLOR_PERSON);
         break;
     }
-    return $this;
-  }
-
-  /**
-   * This method has been deprecated, use @{method:setColor} instead.
-   *
-   * @deprecated
-   */
-  public function setShade($shade) {
-    phlog(
-      pht('Deprecated call to setShade(), use setColor() instead.'));
-    $this->color = $shade;
     return $this;
   }
 

@@ -75,6 +75,9 @@ final class HeraldRuleQuery extends PhabricatorCursorPagedPolicyAwareQuery {
     return $this;
   }
 
+  /**
+   * @param array<string|null> PHIDs of objects on which to apply Herald rules
+   */
   public function needAppliedToPHIDs(array $phids) {
     $this->needAppliedToPHIDs = $phids;
     return $this;
@@ -161,6 +164,9 @@ final class HeraldRuleQuery extends PhabricatorCursorPagedPolicyAwareQuery {
 
       foreach ($rules as $rule) {
         foreach ($this->needAppliedToPHIDs as $phid) {
+          if (!$phid) {
+            continue;
+          }
           $rule->setRuleApplied(
             $phid,
             isset($map[$rule->getID()][$phid]));
@@ -335,6 +341,18 @@ final class HeraldRuleQuery extends PhabricatorCursorPagedPolicyAwareQuery {
 
   protected function getPrimaryTableAlias() {
     return 'rule';
+  }
+
+  protected function shouldGroupQueryResultRows() {
+    // A rule can affect several of the objects, and the edge join then
+    // returns it once for each of them.
+    if ($this->affectedObjectPHIDs !== null) {
+      if (count($this->affectedObjectPHIDs) > 1) {
+        return true;
+      }
+    }
+
+    return parent::shouldGroupQueryResultRows();
   }
 
 }

@@ -15,8 +15,6 @@ final class PhabricatorProjectProfileController
 
     $viewer = $request->getUser();
     $project = $this->getProject();
-    $id = $project->getID();
-    $picture = $project->getProfileImageURI();
     $icon = $project->getDisplayIconIcon();
     $icon_name = $project->getDisplayIconName();
     $tag = id(new PHUITagView())
@@ -35,15 +33,6 @@ final class PhabricatorProjectProfileController
       $header->setStatus('fa-check', 'bluegrey', pht('Active'));
     } else {
       $header->setStatus('fa-ban', 'red', pht('Archived'));
-    }
-
-    $can_edit = PhabricatorPolicyFilter::hasCapability(
-      $viewer,
-      $project,
-      PhabricatorPolicyCapability::CAN_EDIT);
-
-    if ($can_edit) {
-      $header->setImageEditURL($this->getApplicationURI("picture/{$id}/"));
     }
 
     $properties = $this->buildPropertyListView($project);
@@ -190,7 +179,6 @@ final class PhabricatorProjectProfileController
 
     $builder = new PhabricatorFeedBuilder($stories);
     $builder->setUser($this->getRequest()->getUser());
-    $builder->setShowHovercards(true);
     $view = $builder->buildView();
 
     return $view;

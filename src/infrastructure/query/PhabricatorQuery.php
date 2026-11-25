@@ -31,6 +31,7 @@ abstract class PhabricatorQuery extends Phobject {
 
   /**
    * @task format
+   * @return PhutilQueryString
    */
   protected function formatSelectClause(
     AphrontDatabaseConnection $conn,
@@ -63,6 +64,7 @@ abstract class PhabricatorQuery extends Phobject {
 
   /**
    * @task format
+   * @return PhutilQueryString
    */
   protected function formatHavingClause(
     AphrontDatabaseConnection $conn,
@@ -87,11 +89,17 @@ abstract class PhabricatorQuery extends Phobject {
         foreach ($this->flattenSubclause($part) as $subpart) {
           $result[] = $subpart;
         }
-      } else if (($part !== null) && strlen($part)) {
+      } else if (($part !== null) && strlen((string)$part)) {
         $result[] = $part;
       }
     }
     return $result;
+  }
+
+
+  public function getIsOverheated() {
+    // Only Policy-Aware queries can overheat.
+    return false;
   }
 
 }

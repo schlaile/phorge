@@ -456,9 +456,7 @@ abstract class PhabricatorController extends AphrontController {
     }
 
     $viewer = $this->getRequest()->getUser();
-    if ($viewer) {
-      $page->setViewer($viewer);
-    }
+    $page->setViewer($viewer);
 
     return $page;
   }
@@ -500,6 +498,13 @@ abstract class PhabricatorController extends AphrontController {
       $panels = PHUICurtainExtension::buildExtensionPanels($viewer, $object);
       foreach ($panels as $panel) {
         $curtain->addPanel($panel);
+      }
+
+      $actions = PHUIActionListExtension::buildExtensionActions(
+        $viewer,
+        $object);
+      foreach ($actions as $action) {
+        $action_list->addAction($action);
       }
     }
 

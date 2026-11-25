@@ -5,6 +5,10 @@ abstract class PhabricatorSearchEngineAPIMethod
 
   abstract public function newSearchEngine();
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   final public function getQueryMaps($query) {
     $maps = $this->getCustomQueryMaps($query);
 
@@ -43,6 +47,29 @@ abstract class PhabricatorSearchEngineAPIMethod
 
   final protected function defineReturnType() {
     return 'map<string, wild>';
+  }
+
+  protected function defineErrorTypes() {
+    return array(
+      'ERR-BAD-QUERYKEY' => pht(
+        'Invalid query for parameter "%s".',
+        'queryKey'),
+      'ERR-INVALID-CONSTRAINTS-FORMAT' => pht(
+        'Parameter "%s" must be a map of constraints.',
+        'constraints'),
+      'ERR-INVALID-CONSTRAINT' => pht(
+        'Parameter "%s" includes an invalid key.',
+        'constraints'),
+      'ERR-INVALID-ATTACHMENTS-FORMAT' => pht(
+        'Parameter "%s" must be a map of attachments.',
+        'attachments'),
+      'ERR-INVALID-ATTACHMENT' => pht(
+        'Parameter "%s" includes an invalid key.',
+        'attachments'),
+      'ERR-INVALID-PAGE-SIZE' => pht(
+        'Parameter "%s" is invalid.',
+        'limit'),
+    );
   }
 
   final protected function execute(ConduitAPIRequest $request) {

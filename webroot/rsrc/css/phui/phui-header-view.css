@@ -34,24 +34,6 @@
   vertical-align: middle;
 }
 
-body .phui-header-shell.phui-header-no-background {
-  background-color: transparent;
-  border: none;
-}
-
-body .phui-header-shell.phui-bleed-header {
-  background-color: #fff;
-  border-bottom: 1px solid {$thinblueborder};
-  width: auto;
-  margin: 16px;
-}
-
-body .phui-header-shell.phui-bleed-header
-  .phui-header-view {
-  padding: 8px 24px 8px 0;
-  color: {$darkbluetext};
-}
-
 details > summary.phui-header-shell {
   cursor: pointer;
   list-style: none;
@@ -88,17 +70,12 @@ details > summary.phui-header-shell::-webkit-details-marker {
 
 .phui-header-header {
   font-size: 16px;
-  line-height: 24px;
   color: {$darkbluetext};
 }
 
 .phui-header-header .phui-header-icon {
   margin-right: 8px;
   color: {$lightbluetext};
-
-  /* This allows the header text to be triple-clicked to select it in Firefox,
-     see T10905 for discussion. */
-  display: inline;
 }
 
 .phui-object-box .phui-header-tall .phui-header-header,
@@ -308,6 +285,10 @@ details > summary.phui-header-shell::-webkit-details-marker {
   border: none;
 }
 
+.phui-profile-header .phui-header-icon {
+  margin-right: 16px;
+}
+
 .phui-profile-header .phui-header-image {
   height: 80px;
   width: 80px;
@@ -322,7 +303,7 @@ details > summary.phui-header-shell::-webkit-details-marker {
 }
 
 .phui-profile-header.phui-header-shell .phui-header-header {
-  font-size: 24px;
+  font-size: 28px;
   color: {$blacktext};
 }
 

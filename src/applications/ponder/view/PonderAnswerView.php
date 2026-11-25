@@ -38,7 +38,6 @@ final class PonderAnswerView extends AphrontTagView {
     $answer = $this->answer;
     $viewer = $this->getUser();
     $status = $answer->getStatus();
-    $author_phid = $answer->getAuthorPHID();
     $actions = $this->buildAnswerActions();
     $handle = $this->handle;
     $id = $answer->getID();
@@ -123,7 +122,6 @@ final class PonderAnswerView extends AphrontTagView {
       ->setUser($viewer)
       ->setObject($answer)
       ->setShowPreview(false)
-      ->setHeaderText(pht('Answer Comment'))
       ->setAction("/ponder/answer/comment/{$id}/")
       ->setSubmitButtonName(pht('Comment'));
 

@@ -7,6 +7,10 @@ final class DifferentialGetRevisionCommentsConduitAPIMethod
     return 'differential.getrevisioncomments';
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   public function getMethodStatus() {
     return self::METHOD_STATUS_DEPRECATED;
   }
@@ -62,9 +66,7 @@ final class DifferentialGetRevisionCommentsConduitAPIMethod
       }
 
       $type = $xaction->getTransactionType();
-      if ($type == DifferentialTransaction::TYPE_ACTION) {
-        $action = $xaction->getNewValue();
-      } else if ($type == PhabricatorTransactions::TYPE_COMMENT) {
+      if ($type == PhabricatorTransactions::TYPE_COMMENT) {
         $action = 'comment';
       } else {
         $action = 'none';

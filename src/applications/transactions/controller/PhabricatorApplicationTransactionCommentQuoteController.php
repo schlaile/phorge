@@ -1,19 +1,13 @@
 <?php
 
 final class PhabricatorApplicationTransactionCommentQuoteController
-  extends PhabricatorApplicationTransactionController {
+  extends PhorgeSingleApplicationTransactionController {
 
-  public function handleRequest(AphrontRequest $request) {
+  protected function handleTransaction(
+    PhabricatorApplicationTransaction $xaction) {
+
     $viewer = $this->getViewer();
-    $phid = $request->getURIData('phid');
-
-    $xaction = id(new PhabricatorObjectQuery())
-      ->withPHIDs(array($phid))
-      ->setViewer($viewer)
-      ->executeOne();
-    if (!$xaction) {
-      return new Aphront404Response();
-    }
+    $request = $this->getRequest();
 
     if (!$xaction->getComment()) {
       return new Aphront404Response();
@@ -45,7 +39,7 @@ final class PhabricatorApplicationTransactionCommentQuoteController
       ->executeOne();
 
     $ref = $request->getStr('ref');
-    if (strlen($ref)) {
+    if (phutil_nonempty_string($ref)) {
       $quote = pht('In %s, %s wrote:', $ref, '@'.$author->getName());
     } else {
       $quote = pht('%s wrote:', '@'.$author->getName());

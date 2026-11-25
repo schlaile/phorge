@@ -29,6 +29,7 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
 
   /**
    * @task config
+   * @return string
    */
   public static function getDefaultStorageNamespace() {
     return PhabricatorEnv::getEnvConfig('storage.default-namespace');
@@ -36,10 +37,11 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
 
   /**
    * @task config
+   * @return string
    */
   public static function getStorageNamespace() {
     $namespace = end(self::$namespaceStack);
-    if (!strlen($namespace)) {
+    if (!phutil_nonempty_scalar($namespace)) {
       $namespace = self::getDefaultStorageNamespace();
     }
     if (!strlen($namespace)) {
@@ -54,15 +56,16 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
   }
 
   /**
+   * @return AphrontMySQLiDatabaseConnection|Exception
    * @task config
    */
   protected function establishLiveConnection($mode) {
     $namespace = self::getStorageNamespace();
     $database = $namespace.'_'.$this->getApplicationName();
 
-    $is_readonly = PhabricatorEnv::isReadOnly();
+    $env_is_readonly = PhabricatorEnv::isReadOnly();
 
-    if ($is_readonly && ($mode != 'r')) {
+    if ($env_is_readonly && ($mode != 'r')) {
       $this->raiseImproperWrite($database);
     }
 
@@ -71,17 +74,26 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
       $database,
       $mode);
 
-    // TODO: This should be testing if the mode is "r", but that would probably
-    // break a lot of things. Perform a more narrow test for readonly mode
-    // until we have greater certainty that this works correctly most of the
-    // time.
-    if ($is_readonly) {
+    // TODO: Setting the connection to readonly when the mode is "r" would
+    // probably break a lot of things. Temporarily throw a warning for readonly
+    // mode until we have greater certainty that this works correctly most of
+    // the time, per https://we.phorge.it/T16340. Once we're certain, remove
+    // all the WriteInReadOnlyConnection stuff and change the code below to
+    // if ($env_is_readonly || $mode == 'r') {$connection->setReadOnly(true);}
+    if ($mode == 'r') {
+      $connection->setWriteInReadOnlyConnection(true);
+    }
+
+    if ($env_is_readonly) {
       $connection->setReadOnly(true);
     }
 
     return $connection;
   }
 
+  /**
+   * @return AphrontMySQLiDatabaseConnection|Exception
+   */
   private function newClusterConnection($application, $database, $mode) {
     $master = PhabricatorDatabaseRef::getMasterDatabaseRefForApplication(
       $application);
@@ -135,6 +147,7 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
     $this->raiseUnreachable($database, $master_exception);
   }
 
+  /** @return never */
   private function raiseImproperWrite($database) {
     throw new PhabricatorClusterImproperWriteException(
       pht(
@@ -144,6 +157,7 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
         $database));
   }
 
+  /** @return never */
   private function raiseImpossibleWrite($database) {
     throw new PhabricatorClusterImpossibleWriteException(
       pht(
@@ -152,6 +166,7 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
         $database));
   }
 
+  /** @return never */
   private function raiseUnconfigured($database) {
     throw new Exception(
       pht(
@@ -160,6 +175,7 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
         $database));
   }
 
+  /** @return never */
   private function raiseUnreachable($database, ?Exception $proxy = null) {
     $message = pht(
       'Unable to establish a connection to any database host '.
@@ -177,7 +193,6 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
 
     throw new PhabricatorClusterStrandedException($message);
   }
-
 
   /**
    * Get the database table name
@@ -275,6 +290,14 @@ abstract class PhabricatorLiskDAO extends LiskDAO {
     return $result;
   }
 
+  /**
+   * Assert that a property has been attached.
+   *
+   * @template T of Object|array
+   * @param T|string $property Property value
+   * @return T Attached property value
+   * @throws PhabricatorDataNotAttachedException
+   */
   protected function assertAttached($property) {
     if ($property === self::ATTACHABLE) {
       throw new PhabricatorDataNotAttachedException($this);

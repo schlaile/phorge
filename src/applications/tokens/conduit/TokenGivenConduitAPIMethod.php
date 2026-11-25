@@ -10,6 +10,10 @@ final class TokenGivenConduitAPIMethod extends TokenConduitAPIMethod {
     return pht('Query tokens given to objects.');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   protected function defineParamTypes() {
     return array(
       'authorPHIDs' => 'list<phid>',
@@ -41,6 +45,7 @@ final class TokenGivenConduitAPIMethod extends TokenConduitAPIMethod {
       $query->withTokenPHIDs($token_phids);
     }
 
+    /** @var array<PhabricatorTokenGiven> $given */
     $given = $query->execute();
 
     return $this->buildTokenGivenDicts($given);

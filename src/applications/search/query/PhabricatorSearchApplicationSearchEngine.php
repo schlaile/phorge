@@ -95,12 +95,6 @@ final class PhabricatorSearchApplicationSearchEngine
     AphrontFormView $form,
     PhabricatorSavedQuery $saved) {
 
-    $options = array();
-    $author_value = null;
-    $owner_value = null;
-    $subscribers_value = null;
-    $project_value = null;
-
     $author_phids = $saved->getParameter('authorPHIDs', array());
     $owner_phids = $this->readOwnerPHIDs($saved);
     $subscriber_phids = $saved->getParameter('subscriberPHIDs', array());
@@ -266,20 +260,15 @@ final class PhabricatorSearchApplicationSearchEngine
     $fulltext_tokens = $result_set->getFulltextTokens();
 
     $viewer = $this->requireViewer();
-    $list = new PHUIObjectItemListView();
-    $list->setNoDataString(pht('No results found.'));
+    $list = id(new PHUIObjectItemListView())
+      ->setViewer($viewer)
+      ->setNoDataString(pht('No results found.'));
 
     if ($results) {
-      $objects = id(new PhabricatorObjectQuery())
-        ->setViewer($viewer)
-        ->withPHIDs(mpull($results, 'getPHID'))
-        ->execute();
-
-      foreach ($results as $phid => $handle) {
+      foreach ($results as $handle) {
         $view = id(new PhabricatorSearchResultView())
           ->setHandle($handle)
           ->setTokens($fulltext_tokens)
-          ->setObject(idx($objects, $phid))
           ->render();
         $list->addItem($view);
       }
@@ -293,13 +282,15 @@ final class PhabricatorSearchApplicationSearchEngine
       foreach ($fulltext_tokens as $token) {
         $fulltext_view[] = $token->newTag();
       }
+      $fulltext_tokens_length = count($fulltext_tokens);
       $fulltext_view = phutil_tag(
         'div',
         array(
           'class' => 'phui-fulltext-tokens',
         ),
         array(
-          pht('Searched For:'),
+          pht('Global Search Results For %s Term(s):',
+          new PhutilNumber($fulltext_tokens_length)),
           ' ',
           $fulltext_view,
         ));

@@ -11,8 +11,6 @@ final class PHUIHeaderView extends AphrontTagView {
   private $imageEditURL = null;
   private $subheader;
   private $headerIcon;
-  private $noBackground;
-  private $bleedHeader;
   private $profileHeader;
   private $tall;
   private $properties = array();
@@ -30,11 +28,6 @@ final class PHUIHeaderView extends AphrontTagView {
     return $this;
   }
 
-  public function setNoBackground($nada) {
-    $this->noBackground = $nada;
-    return $this;
-  }
-
   public function setTall($tall) {
     $this->tall = $tall;
     return $this;
@@ -45,16 +38,27 @@ final class PHUIHeaderView extends AphrontTagView {
     return $this;
   }
 
+  /**
+   * Set a header image.
+   */
   public function setImage($uri) {
     $this->image = $uri;
     return $this;
   }
 
+  /**
+   * Make the header image link to an URL.
+   * Only useful in combination with setImage().
+   */
   public function setImageURL($url) {
     $this->imageURL = $url;
     return $this;
   }
 
+  /**
+   * Make the header image link to an URL and show an "Edit" text on hovering.
+   * Only useful in combination with setImage().
+   */
   public function setImageEditURL($url) {
     $this->imageEditURL = $url;
     return $this;
@@ -62,11 +66,6 @@ final class PHUIHeaderView extends AphrontTagView {
 
   public function setSubheader($subheader) {
     $this->subheader = $subheader;
-    return $this;
-  }
-
-  public function setBleedHeader($bleed) {
-    $this->bleedHeader = $bleed;
     return $this;
   }
 
@@ -130,10 +129,10 @@ final class PHUIHeaderView extends AphrontTagView {
   /**
    * Render a tag (PHUITagView) in this header
    *
-   * @param string $name Text displayed in the tag
    * @param string $icon Icon in the tag
-   * @param string $color Tag color
-   * @return this
+   * @param string|null $color Tag color
+   * @param string $name Text displayed in the tag
+   * @return $this
    */
   public function setStatus($icon, $color, $name) {
 
@@ -155,8 +154,8 @@ final class PHUIHeaderView extends AphrontTagView {
   /**
    * Add a PHUITagView to this header showing "Updated..." with a timestamp
    *
-   * @param string $int Epoch value of current timestamp
-   * @return this
+   * @param int $epoch Epoch value of current timestamp
+   * @return $this
    */
   public function setEpoch($epoch) {
     $age = time() - $epoch;
@@ -198,14 +197,6 @@ final class PHUIHeaderView extends AphrontTagView {
 
     $classes = array();
     $classes[] = 'phui-header-shell';
-
-    if ($this->noBackground) {
-      $classes[] = 'phui-header-no-background';
-    }
-
-    if ($this->bleedHeader) {
-      $classes[] = 'phui-bleed-header';
-    }
 
     if ($this->profileHeader) {
       $classes[] = 'phui-profile-header';
@@ -280,13 +271,12 @@ final class PHUIHeaderView extends AphrontTagView {
       }
     }
 
-    $viewer = $this->getUser();
-
     $left = array();
     $right = array();
 
     $space_header = null;
-    if ($viewer) {
+    if ($this->policyObject) {
+      $viewer = $this->getViewer();
       $space_header = id(new PHUISpacesNamespaceContextView())
         ->setViewer($viewer)
         ->setObject($this->policyObject);
@@ -480,7 +470,6 @@ final class PHUIHeaderView extends AphrontTagView {
     // NOTE: We'll do this even if the viewer has access to only one space, and
     // show them information about the existence of spaces if they click
     // through.
-    $use_space_policy = false;
     if ($object instanceof PhabricatorSpacesInterface) {
       $space_phid = PhabricatorSpacesNamespaceQuery::getObjectSpacePHID(
         $object);
@@ -495,7 +484,6 @@ final class PHUIHeaderView extends AphrontTagView {
         if ($space_policy) {
           if ($space_policy->isStrongerThan($policy)) {
             $policy = $space_policy;
-            $use_space_policy = true;
           }
         }
       }

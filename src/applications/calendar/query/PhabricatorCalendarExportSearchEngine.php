@@ -74,7 +74,8 @@ final class PhabricatorCalendarExportSearchEngine
     assert_instances_of($exports, PhabricatorCalendarExport::class);
     $viewer = $this->requireViewer();
 
-    $list = new PHUIObjectItemListView();
+    $list = id(new PHUIObjectItemListView())
+      ->setViewer($viewer);
     foreach ($exports as $export) {
       $item = id(new PHUIObjectItemView())
         ->setViewer($viewer)
@@ -116,8 +117,6 @@ final class PhabricatorCalendarExportSearchEngine
       ->setHref($doc_href)
       ->setColor(PHUIButtonView::GREEN);
 
-    $icon = $this->getApplication()->getIcon();
-    $app_name =  $this->getApplication()->getName();
     $view = id(new PHUIBigInfoView())
       ->setIcon('fa-download')
       ->setTitle(pht('No Exports Configured'))

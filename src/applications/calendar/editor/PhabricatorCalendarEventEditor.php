@@ -36,6 +36,10 @@ final class PhabricatorCalendarEventEditor
     return $this->newIsAllDay;
   }
 
+  /**
+   * @param PhabricatorCalendarEvent $object
+   * @param list<PhabricatorApplicationTransaction> $xactions Transactions
+   */
   protected function applyInitialEffects(
     PhabricatorLiskDAO $object,
     array $xactions) {
@@ -120,6 +124,10 @@ final class PhabricatorCalendarEventEditor
   }
 
 
+  /**
+   * @param PhabricatorCalendarEvent $object
+   * @param list<PhabricatorApplicationTransaction> $xactions Transactions
+   */
   protected function applyFinalEffects(
     PhabricatorLiskDAO $object,
     array $xactions) {
@@ -236,6 +244,10 @@ final class PhabricatorCalendarEventEditor
     return $errors;
   }
 
+  /**
+   * @param PhabricatorCalendarEvent $object
+   * @param list<PhabricatorApplicationTransaction> $xactions Transactions
+   */
   protected function shouldPublishFeedStory(
     PhabricatorLiskDAO $object,
     array $xactions) {
@@ -251,6 +263,10 @@ final class PhabricatorCalendarEventEditor
     return true;
   }
 
+  /**
+   * @param PhabricatorCalendarEvent $object
+   * @param list<PhabricatorApplicationTransaction> $xactions Transactions
+   */
   protected function shouldSendMail(
     PhabricatorLiskDAO $object,
     array $xactions) {
@@ -316,6 +332,10 @@ final class PhabricatorCalendarEventEditor
       ->setSubject("{$monogram}: {$name}");
   }
 
+  /**
+   * @param PhabricatorCalendarEvent $object
+   * @param list<PhabricatorApplicationTransaction> $xactions Transactions
+   */
   protected function buildMailBody(
     PhabricatorLiskDAO $object,
     array $xactions) {

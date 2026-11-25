@@ -102,7 +102,7 @@ final class PhabricatorWorkboardViewState
   }
 
   /**
-   * @return string An URI like '/project/board/1/someaction/123/' or
+   * @return PhutilURI An URI like '/project/board/1/someaction/123/' or
    *   '/project/board/2/?order=priority&filter=assigned&hidden=true'
    */
   public function newWorkboardURI($path = null) {
@@ -112,7 +112,6 @@ final class PhabricatorWorkboardViewState
   }
 
   private function newURI($path) {
-    $project = $this->getProject();
     $uri = new PhutilURI($path);
 
     $request_order = $this->getOrder();

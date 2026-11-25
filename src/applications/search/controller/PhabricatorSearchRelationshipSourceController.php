@@ -90,7 +90,7 @@ final class PhabricatorSearchRelationshipSourceController
     $objects = id(new PhabricatorObjectQuery())
       ->setViewer($viewer)
       ->requireCapabilities($capabilities)
-      ->withTypes($query->getParameter('types'))
+      ->withTypes($types)
       ->withNames(array($match))
       ->execute();
 

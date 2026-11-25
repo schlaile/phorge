@@ -74,6 +74,9 @@ final class PhabricatorPolicyFilter extends Phobject {
       ->apply(array($object));
   }
 
+  /**
+   * @return bool
+   */
   public static function hasCapability(
     PhabricatorUser $user,
     PhabricatorPolicyInterface $object,
@@ -87,6 +90,9 @@ final class PhabricatorPolicyFilter extends Phobject {
     return (count($result) == 1);
   }
 
+  /**
+   * @return bool
+   */
   public static function canInteract(
     PhabricatorUser $user,
     PhabricatorPolicyInterface $object) {
@@ -351,7 +357,7 @@ final class PhabricatorPolicyFilter extends Phobject {
           $object = $ref_objects[$object_phid];
         }
 
-        $phid = $object->getPHID();
+        $phid = $object->getPHID() ?? '';
 
         $key_map[$phid][] = $extended_key;
         $objects_in[$phid] = $object;
@@ -448,6 +454,9 @@ final class PhabricatorPolicyFilter extends Phobject {
     return $result;
   }
 
+  /**
+   * @return bool
+   */
   private function checkCapability(
     PhabricatorPolicyInterface $object,
     $capability) {
@@ -627,7 +636,7 @@ final class PhabricatorPolicyFilter extends Phobject {
 
   private function loadCustomPolicies(array $map) {
     $viewer = $this->viewer;
-    $viewer_phid = $viewer->getPHID() ?? '';
+    $viewer_phid = $viewer->getPHID() ?? 'ANONYMOUS';
 
     $policy_query = id(new PhabricatorPolicyQuery())
       ->setViewer($viewer)
@@ -683,12 +692,15 @@ final class PhabricatorPolicyFilter extends Phobject {
     $this->customPolicies[$viewer_phid] += $custom_policies;
   }
 
+  /**
+   * @return bool
+   */
   private function checkCustomPolicy(
     $policy_phid,
     PhabricatorPolicyInterface $object) {
 
     $viewer = $this->viewer;
-    $viewer_phid = $viewer->getPHID() ?? '';
+    $viewer_phid = $viewer->getPHID() ?? 'ANONYMOUS';
 
     $policy = idx($this->customPolicies[$viewer_phid], $policy_phid);
     if (!$policy) {

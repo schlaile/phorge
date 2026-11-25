@@ -14,11 +14,15 @@ final class PhabricatorTransactions extends Phobject {
   const TYPE_INLINESTATE  = 'core:inlinestate';
   const TYPE_SPACE = 'core:space';
   const TYPE_CREATE = 'core:create';
-  const TYPE_COLUMNS = 'core:columns';
-  const TYPE_SUBTYPE = 'core:subtype';
-  const TYPE_HISTORY = 'core:history';
+
   const TYPE_MFA = 'core:mfa';
   const TYPE_FILE = 'core:file';
+
+  /** @deprecated move applicable code to ManiphestTaskColumnTransaction. */
+  const TYPE_COLUMNS = 'core:columns';
+
+  /** @deprecated move applicable code to PhorgeCoreSubtypeTransaction. */
+  const TYPE_SUBTYPE = 'core:subtype';
 
   const COLOR_RED         = 'red';
   const COLOR_ORANGE      = 'orange';

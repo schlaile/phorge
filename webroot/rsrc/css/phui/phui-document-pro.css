@@ -105,7 +105,7 @@ body.printable {
 }
 
 .phui-document-view-pro .phui-document-toc {
-  position: absolute;
+  position: absolute !important;
   top: 34px;
   left: -44px;
 }
@@ -245,6 +245,15 @@ span.visual-only.phui-icon-view.phui-font-fa.fa-users {
   .phui-document-view-pro .phabricator-remarkup-embed-image-wide img {
     max-width: inherit;
   }
+
+  .phui-document-view-pro .phui-document-toc {
+    position: sticky;
+  }
+
+  .phui-document-view-pro .phui-document-toc-list {
+    left: 20px;
+    top: 34px;
+  }
 }
 
 .phui-document-view-pro-box {
@@ -358,6 +367,10 @@ span.visual-only.phui-icon-view.phui-font-fa.fa-users {
     margin-left: 175px;
   }
 
+  .printable div.has-curtain div.phui-list-sidenav.phui-document-toc-list {
+    display: none;
+  }
+
   .device-desktop .has-curtain div.phui-document-content-view {
     display: block;
   }
@@ -386,5 +399,9 @@ span.visual-only.phui-icon-view.phui-font-fa.fa-users {
   div.phui-document-view-pro div.phui-document-toc-content
   span.visual-only.phui-icon-view.phui-font-fa {
     text-indent: 0px;
+  }
+
+  div.phui-document-view-pro .phui-info-view {
+    margin-left: 300px;
   }
 }

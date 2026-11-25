@@ -22,11 +22,9 @@ abstract class PhabricatorPeopleProfileController
     $crumbs = parent::buildApplicationCrumbs();
 
     $user = $this->getUser();
-    if ($user) {
-      $crumbs->addTextCrumb(
-        $user->getUsername(),
-        urisprintf('/p/%s/', $user->getUsername()));
-    }
+    $crumbs->addTextCrumb(
+      $user->getUsername(),
+      urisprintf('/p/%s/', $user->getUsername()));
 
     return $crumbs;
   }
@@ -36,7 +34,6 @@ abstract class PhabricatorPeopleProfileController
     $viewer = $this->getViewer();
 
     $profile = $user->loadUserProfile();
-    $picture = $user->getProfileImageURI();
 
     $profile_icon = PhabricatorPeopleIconSet::getIconIcon($profile->getIcon());
     $profile_title = $profile->getDisplayTitle();
@@ -87,7 +84,6 @@ abstract class PhabricatorPeopleProfileController
 
     $header = id(new PHUIHeaderView())
       ->setHeader($user->getFullName())
-      ->setImage($picture)
       ->setProfileHeader(true)
       ->addClass('people-profile-header');
 

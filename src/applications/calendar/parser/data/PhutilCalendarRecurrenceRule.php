@@ -38,7 +38,6 @@ final class PhutilCalendarRecurrenceRule
   private $setDays;
   private $setMonths;
   private $setWeeks;
-  private $setYears;
 
   private $stateSecond;
   private $stateMinute;
@@ -625,7 +624,6 @@ final class PhutilCalendarRecurrenceRule
     $this->setHours = array();
     $this->setDays = array();
     $this->setMonths = array();
-    $this->setYears = array();
 
     $this->stateSecond = null;
     $this->stateMinute = null;
@@ -927,12 +925,12 @@ final class PhutilCalendarRecurrenceRule
       // like a filter if FREQ=WEEKLY.
 
       $is_dynamic = $is_daily
+        || ($by_month && $is_weekly)
         || $is_weekly
         || $by_day
         || $by_monthday
         || $by_yearday
         || $by_weekno
-        || ($by_month && $is_weekly)
         || ($scale < self::SCALE_DAILY);
 
       if ($is_dynamic) {
@@ -1034,9 +1032,7 @@ final class PhutilCalendarRecurrenceRule
       return;
     }
 
-    $frequency = $this->getFrequency();
     $interval = $this->getInterval();
-    $scale = $this->getFrequencyScale();
     $by_weekno = $this->getByWeekNumber();
 
     while (!$this->setWeeks) {
@@ -1535,7 +1531,6 @@ final class PhutilCalendarRecurrenceRule
     }
 
     $result = array();
-    $seen = array();
 
     $ii = $cursor;
     while (true) {
@@ -1551,7 +1546,6 @@ final class PhutilCalendarRecurrenceRule
     }
 
     sort($result);
-    $result = array_values($result);
 
     return array($ii, $result);
   }

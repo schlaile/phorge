@@ -87,6 +87,11 @@ final class PhabricatorProfileMenuEditor
     return parent::applyCustomExternalTransaction($object, $xaction);
   }
 
+  /**
+   * @param PhabricatorProfileMenuItemConfiguration $object
+   * @param string $type
+   * @param list<PhabricatorApplicationTransaction> $xactions Transactions
+   */
   protected function validateTransaction(
     PhabricatorLiskDAO $object,
     $type,
@@ -103,13 +108,15 @@ final class PhabricatorProfileMenuEditor
         $key_map = array();
         foreach ($xactions as $xaction) {
           $xaction_key = $xaction->getMetadataValue('property.key');
-          $old = $this->getCustomTransactionOldValue($object, $xaction);
-          $new = $xaction->getNewValue();
-          $key_map[$xaction_key][] = array(
-            'xaction' => $xaction,
-            'old' => $old,
-            'new' => $new,
-          );
+          if ($xaction_key !== null) { // Dividers do not have a property.key.
+            $old = $this->getCustomTransactionOldValue($object, $xaction);
+            $new = $xaction->getNewValue();
+            $key_map[$xaction_key][] = array(
+              'xaction' => $xaction,
+              'old' => $old,
+              'new' => $new,
+            );
+          }
         }
 
         foreach ($object->validateTransactions($key_map) as $error) {

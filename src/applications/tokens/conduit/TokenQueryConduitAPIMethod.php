@@ -10,6 +10,10 @@ final class TokenQueryConduitAPIMethod extends TokenConduitAPIMethod {
     return pht('Query tokens.');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   protected function defineParamTypes() {
     return array();
   }
@@ -22,6 +26,7 @@ final class TokenQueryConduitAPIMethod extends TokenConduitAPIMethod {
     $query = id(new PhabricatorTokenQuery())
       ->setViewer($request->getUser());
 
+    /** @var array<PhabricatorToken> $tokens */
     $tokens = $query->execute();
 
     return $this->buildTokenDicts($tokens);

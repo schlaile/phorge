@@ -572,6 +572,10 @@ final class PhabricatorCalendarEvent extends PhabricatorCalendarDAO
     return ($this->instanceOfEventPHID !== null);
   }
 
+  /**
+   * @param PhabricatorUser $viewer
+   * @param bool $show_end
+   */
   public function renderEventDate(
     PhabricatorUser $viewer,
     $show_end) {
@@ -1140,6 +1144,9 @@ final class PhabricatorCalendarEvent extends PhabricatorCalendarDAO
   }
 
   public function getRSVPStatus($phid) {
+    if ($phid === null) {
+      return PhabricatorCalendarEventInvitee::STATUS_UNINVITED;
+    }
     // Check for an individual invitee record first.
     $invitees = $this->invitees;
     $invitees = mpull($invitees, null, 'getInviteePHID');
@@ -1229,6 +1236,7 @@ final class PhabricatorCalendarEvent extends PhabricatorCalendarDAO
           return $this->getEditPolicy();
         }
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {

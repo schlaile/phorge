@@ -8,7 +8,7 @@ final class CelerityDarkModePostprocessor
   }
 
   public function getPostprocessorName() {
-    return pht('Dark Mode (Experimental)');
+    return pht('Dark Mode');
   }
 
   public function buildVariables() {
@@ -222,6 +222,11 @@ final class CelerityDarkModePostprocessor
       'paste.border' => '#000000',
       'paste.highlight' => '#121212',
 
+      // Dark tints so the light blame text stays readable.
+      'blame.tint.saturation' => '0.40',
+      'blame.tint.value.min' => '0.28',
+      'blame.tint.value.max' => '0.42',
+
       // Background color for "most" themes.
       'page.background' => '#223246',
       'page.sidenav' => '#1c293b',
@@ -233,7 +238,8 @@ final class CelerityDarkModePostprocessor
 
       'navigation-menu-selection-background' => 'rgba(255, 255, 255,.2)',
       'navigation-menu-hover-background' => 'rgba(255,255,255,.1)',
-      'workboard-column-background' => 'rgba(60,90,120,.55)',
+      'workboard-column-background-milestone' => 'rgba(60,90,120,.55)',
+      'workboard-column-disabled-card' => 'rgba(90,150,210,.1)',
       'form-inset-background' => '#1c293b',
 
       // Buttons

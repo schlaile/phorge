@@ -33,8 +33,6 @@ final class HeraldTranscriptController extends HeraldController {
 
     $navigation = $this->newSideNavView($xscript, $view_key);
 
-    $object = $xscript->getObject();
-
     require_celerity_resource('herald-test-css');
     $content = array();
 
@@ -238,6 +236,7 @@ final class HeraldTranscriptController extends HeraldController {
     $action_map = mgroup($action_map, 'getRuleID');
 
     $rule_list = id(new PHUIObjectItemListView())
+      ->setViewer($viewer)
       ->setNoDataString(pht('No Herald rules applied to this object.'))
       ->setFlush(true);
 

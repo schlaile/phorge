@@ -12,7 +12,7 @@ final class PhabricatorProjectBoardReloadController
     }
 
     $order = $request->getStr('order');
-    if (!strlen($order)) {
+    if (!phutil_nonempty_string($order)) {
       $order = PhabricatorProjectColumnNaturalOrder::ORDERKEY;
     }
 
@@ -22,9 +22,6 @@ final class PhabricatorProjectBoardReloadController
 
     $project = $this->getProject();
     $state = $this->getViewState();
-    $board_uri = $state->newWorkboardURI();
-
-    $layout_engine = $state->getLayoutEngine();
 
     $board_phid = $project->getPHID();
 

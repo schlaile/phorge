@@ -28,8 +28,8 @@
  *     and @{method:loadCustomWorkerState}.
  *
  * This architecture isn't ideal, and we may eventually split this class into
- * "Editor" and "Publisher" parts to make it more robust. See T6367 for some
- * discussion and context.
+ * "Editor" and "Publisher" parts to make it more robust. See
+ * https://secure.phabricator.com/T6367 for some discussion and context.
  *
  * @task mail Sending Mail
  * @task feed Publishing Feed Stories
@@ -84,7 +84,6 @@ abstract class PhabricatorApplicationTransactionEditor
   private $webhookMap = array();
 
   private $transactionQueue = array();
-  private $sendHistory = false;
   private $shouldRequireMFA = false;
   private $hasRequiredMFA = false;
   private $request;
@@ -321,7 +320,7 @@ abstract class PhabricatorApplicationTransactionEditor
       $this->object = $object;
       $result = $this->getTransactionTypes();
       $this->object = $old;
-    } catch (Exception $ex) {
+    } catch (Throwable $ex) {
       $this->object = $old;
       throw $ex;
     }
@@ -332,16 +331,17 @@ abstract class PhabricatorApplicationTransactionEditor
     $types = array();
 
     $types[] = PhabricatorTransactions::TYPE_CREATE;
-    $types[] = PhabricatorTransactions::TYPE_HISTORY;
-
     $types[] = PhabricatorTransactions::TYPE_FILE;
 
     if ($this->object instanceof PhabricatorEditEngineSubtypeInterface) {
+      // TODO eventually remove all mentions of this transaction type from this
+      // class.
       $types[] = PhabricatorTransactions::TYPE_SUBTYPE;
     }
 
     if ($this->object instanceof PhabricatorSubscribableInterface) {
       $types[] = PhabricatorTransactions::TYPE_SUBSCRIBERS;
+      $types[] = PhabricatorTransactions::TYPE_EDGE;
     }
 
     if ($this->object instanceof PhabricatorCustomFieldInterface) {
@@ -504,12 +504,21 @@ abstract class PhabricatorApplicationTransactionEditor
 
     switch ($type) {
       case PhabricatorTransactions::TYPE_CREATE:
-      case PhabricatorTransactions::TYPE_HISTORY:
       case PhabricatorTransactions::TYPE_MFA:
       case PhabricatorTransactions::TYPE_COMMENT:
       case PhabricatorTransactions::TYPE_FILE:
         return null;
-      case PhabricatorTransactions::TYPE_SUBTYPE:
+      case PhorgeCoreSubtypeTransaction::TRANSACTIONTYPE:
+        // NOTE: I'm keeping TYPE_SUBTYPE handling here too in case there are
+        // any extensions that use it in the old format.
+        phlog(
+          pht(
+            'Transaction type %s is deprecated as non-modular transactions. '.
+            'Found in transaction class `%s` for object of type `%s`. see %s.',
+            'PhabricatorTransactions::TYPE_SUBTYPE',
+            get_class($xaction),
+            get_class($object),
+            'https://we.phorge.it/D27149'));
         return $object->getEditEngineSubtype();
       case PhabricatorTransactions::TYPE_SUBSCRIBERS:
         return array_values($this->subscribers);
@@ -609,8 +618,7 @@ abstract class PhabricatorApplicationTransactionEditor
       case PhabricatorTransactions::TYPE_INTERACT_POLICY:
       case PhabricatorTransactions::TYPE_TOKEN:
       case PhabricatorTransactions::TYPE_INLINESTATE:
-      case PhabricatorTransactions::TYPE_SUBTYPE:
-      case PhabricatorTransactions::TYPE_HISTORY:
+      case PhorgeCoreSubtypeTransaction::TRANSACTIONTYPE:
       case PhabricatorTransactions::TYPE_FILE:
         return $xaction->getNewValue();
       case PhabricatorTransactions::TYPE_MFA:
@@ -670,7 +678,6 @@ abstract class PhabricatorApplicationTransactionEditor
 
     switch ($xaction->getTransactionType()) {
       case PhabricatorTransactions::TYPE_CREATE:
-      case PhabricatorTransactions::TYPE_HISTORY:
         return true;
       case PhabricatorTransactions::TYPE_CUSTOMFIELD:
         $field = $this->getCustomFieldForTransaction($object, $xaction);
@@ -755,8 +762,7 @@ abstract class PhabricatorApplicationTransactionEditor
         $field = $this->getCustomFieldForTransaction($object, $xaction);
         return $field->applyApplicationTransactionInternalEffects($xaction);
       case PhabricatorTransactions::TYPE_CREATE:
-      case PhabricatorTransactions::TYPE_HISTORY:
-      case PhabricatorTransactions::TYPE_SUBTYPE:
+      case PhorgeCoreSubtypeTransaction::TRANSACTIONTYPE:
       case PhabricatorTransactions::TYPE_MFA:
       case PhabricatorTransactions::TYPE_TOKEN:
       case PhabricatorTransactions::TYPE_VIEW_POLICY:
@@ -820,8 +826,7 @@ abstract class PhabricatorApplicationTransactionEditor
         $field = $this->getCustomFieldForTransaction($object, $xaction);
         return $field->applyApplicationTransactionExternalEffects($xaction);
       case PhabricatorTransactions::TYPE_CREATE:
-      case PhabricatorTransactions::TYPE_HISTORY:
-      case PhabricatorTransactions::TYPE_SUBTYPE:
+      case PhorgeCoreSubtypeTransaction::TRANSACTIONTYPE:
       case PhabricatorTransactions::TYPE_MFA:
       case PhabricatorTransactions::TYPE_EDGE:
       case PhabricatorTransactions::TYPE_TOKEN:
@@ -890,7 +895,7 @@ abstract class PhabricatorApplicationTransactionEditor
       case PhabricatorTransactions::TYPE_SPACE:
         $object->setSpacePHID($xaction->getNewValue());
         break;
-      case PhabricatorTransactions::TYPE_SUBTYPE:
+      case PhorgeCoreSubtypeTransaction::TRANSACTIONTYPE:
         $object->setEditEngineSubtype($xaction->getNewValue());
         break;
     }
@@ -953,9 +958,6 @@ abstract class PhabricatorApplicationTransactionEditor
       case PhabricatorTransactions::TYPE_VIEW_POLICY:
       case PhabricatorTransactions::TYPE_SPACE:
         $this->scrambleFileSecrets($object);
-        break;
-      case PhabricatorTransactions::TYPE_HISTORY:
-        $this->sendHistory = true;
         break;
       case PhabricatorTransactions::TYPE_FILE:
         $this->applyFileTransaction($object, $xaction);
@@ -1695,13 +1697,6 @@ abstract class PhabricatorApplicationTransactionEditor
       $this->publishFeedStory($object, $xactions, $mailed);
     }
 
-    if ($this->sendHistory) {
-      $history_mail = $this->buildHistoryMail($object);
-      if ($history_mail) {
-        $messages[] = $history_mail;
-      }
-    }
-
     foreach ($this->newAuxiliaryMail($object, $xactions) as $message) {
       $messages[] = $message;
     }
@@ -1959,11 +1954,6 @@ abstract class PhabricatorApplicationTransactionEditor
         return null;
       case PhabricatorTransactions::TYPE_TOKEN:
         // TODO: This technically requires CAN_INTERACT, like comments.
-        return null;
-      case PhabricatorTransactions::TYPE_HISTORY:
-        // This is a special magic transaction which sends you history via
-        // email and is only partially supported in the upstream. You don't
-        // need any capabilities to apply it.
         return null;
       case PhabricatorTransactions::TYPE_MFA:
         // Signing a transaction group with MFA does not require permissions
@@ -2424,6 +2414,10 @@ abstract class PhabricatorApplicationTransactionEditor
     return $block_xactions;
   }
 
+  /**
+   * This extracts mentions(?), commands, etc from the body of comments into
+   * actual transactions.
+   */
   protected function expandCustomRemarkupBlockTransactions(
     PhabricatorLiskDAO $object,
     array $xactions,
@@ -2905,11 +2899,10 @@ abstract class PhabricatorApplicationTransactionEditor
           $xactions,
           $type);
         break;
-      case PhabricatorTransactions::TYPE_SUBTYPE:
+      case PhorgeCoreSubtypeTransaction::TRANSACTIONTYPE:
         $errors[] = $this->validateSubtypeTransactions(
           $object,
-          $xactions,
-          $type);
+          $xactions);
         break;
       case PhabricatorTransactions::TYPE_MFA:
         $errors[] = $this->validateMFATransactions(
@@ -3172,38 +3165,17 @@ abstract class PhabricatorApplicationTransactionEditor
 
   private function validateSubtypeTransactions(
     PhabricatorLiskDAO $object,
-    array $xactions,
-    $transaction_type) {
-    $errors = array();
+    array $xactions) {
 
-    $map = $object->newEditEngineSubtypeMap();
-    $old = $object->getEditEngineSubtype();
-    foreach ($xactions as $xaction) {
-      $new = $xaction->getNewValue();
-
-      if ($old == $new) {
-        continue;
-      }
-
-      if (!$map->isValidSubtype($new)) {
-        $errors[] = new PhabricatorApplicationTransactionValidationError(
-          $transaction_type,
-          pht('Invalid'),
-          pht(
-            'The subtype "%s" is not a valid subtype.',
-            $new),
-          $xaction);
-        continue;
-      }
-    }
-
-    return $errors;
+    return id(new PhorgeCoreSubtypeTransaction())
+      ->validateTransactions($object, $xactions);
   }
 
   private function validateMFATransactions(
     PhabricatorLiskDAO $object,
     array $xactions,
     $transaction_type) {
+
     $errors = array();
 
     $factors = id(new PhabricatorAuthFactorConfigQuery())
@@ -3243,6 +3215,9 @@ abstract class PhabricatorApplicationTransactionEditor
     return $errors;
   }
 
+  /**
+   * @return PhabricatorLiskDAO An enhanced copy of the input object
+   */
   protected function adjustObjectForPolicyChecks(
     PhabricatorLiskDAO $object,
     array $xactions) {
@@ -3909,7 +3884,7 @@ abstract class PhabricatorApplicationTransactionEditor
       // "alice added a comment." transaction in the header, like a normal
       // transaction.
 
-      // Some mail, like Differential undraft mail or "!history" mail, may
+      // Some mail, like Differential undraft mail, may
       // have two or more comments. In these cases, we'll put the first
       // "alice added a comment." transaction in the header normally, but
       // move the other transactions down so they provide context above the
@@ -4677,7 +4652,6 @@ abstract class PhabricatorApplicationTransactionEditor
       'mailMutedPHIDs',
       'webhookMap',
       'silent',
-      'sendHistory',
     );
   }
 
@@ -4686,9 +4660,9 @@ abstract class PhabricatorApplicationTransactionEditor
    *
    * See @{method:getCustomWorkerStateEncoding}.
    *
-   * @param map<string,mixed> $state Map of values to encode.
-   * @param map<string,string> $encodings Map of encodings to apply.
-   * @return map<string,mixed> Map of encoded values.
+   * @param array<string,mixed> $state Map of values to encode.
+   * @param array<string,string> $encodings Map of encodings to apply.
+   * @return array<string,mixed> Map of encoded values.
    *
    * @task workers
    */
@@ -4703,22 +4677,8 @@ abstract class PhabricatorApplicationTransactionEditor
           // The mechanics of this encoding (serialize + base64) are a little
           // awkward, but it allows us encode arrays and still be JSON-safe
           // with binary data.
-
           $value = @serialize($value);
-          if ($value === false) {
-            throw new Exception(
-              pht(
-                'Failed to serialize() value for key "%s".',
-                $key));
-          }
-
           $value = base64_encode($value);
-          if ($value === false) {
-            throw new Exception(
-              pht(
-                'Failed to base64 encode value for key "%s".',
-                $key));
-          }
           break;
       }
       $state[$key] = $value;
@@ -4733,9 +4693,9 @@ abstract class PhabricatorApplicationTransactionEditor
    *
    * See @{method:getCustomWorkerStateEncoding}.
    *
-   * @param map<string, mixed> $state Map of encoded values.
-   * @param map<string, string> $encodings Map of encodings.
-   * @return map<string, mixed> Map of decoded values.
+   * @param array<string, mixed> $state Map of encoded values.
+   * @param array<string, string> $encodings Map of encodings.
+   * @return array<string, mixed> Map of decoded values.
    *
    * @task workers
    */
@@ -5126,7 +5086,6 @@ abstract class PhabricatorApplicationTransactionEditor
     $this->stampTemplates = $this->newMailStampTemplates($object);
 
     $extensions = $this->newMailExtensions($object);
-    $stamps = array();
     foreach ($extensions as $extension) {
       $extension->newMailStamps($object, $xactions);
     }
@@ -5317,13 +5276,13 @@ abstract class PhabricatorApplicationTransactionEditor
   }
 
   /**
-   * This can only apply to Differential Revisions which are drafts.
+   * This can only apply to Differential Revisions.
    *
    * @return bool
    */
   private function hasWarnings($object, $xaction) {
     // TODO: For the moment, this is a very un-modular hack to support
-    // a small number of warnings related to draft revisions. See PHI433.
+    // a small number of warnings related to draft revisions. See T16874.
 
     if (!($object instanceof DifferentialRevision)) {
       return false;
@@ -5333,7 +5292,7 @@ abstract class PhabricatorApplicationTransactionEditor
 
     // TODO: This doesn't warn for inlines in Audit, even though they have
     // the same overall workflow.
-    if ($type === DifferentialTransaction::TYPE_INLINE) {
+    if ($type === DifferentialRevisionInlineTransaction::TRANSACTIONTYPE) {
       return (bool)$xaction->getComment()->getAttribute('editing', false);
     }
 
@@ -5362,37 +5321,6 @@ abstract class PhabricatorApplicationTransactionEditor
     }
 
     return true;
-  }
-
-  /**
-   * Get an entire object's history (via the "!history" email command)
-   */
-  private function buildHistoryMail(PhabricatorLiskDAO $object) {
-    $viewer = $this->requireActor();
-    $recipient_phid = $this->getActingAsPHID();
-
-    // Load every transaction so we can build a mail message with a complete
-    // history for the object.
-    $query = PhabricatorApplicationTransactionQuery::newQueryForObject($object);
-    $xactions = $query
-      ->setViewer($viewer)
-      ->withObjectPHIDs(array($object->getPHID()))
-      ->execute();
-    $xactions = array_reverse($xactions);
-
-    $mail_messages = $this->buildMailWithRecipients(
-      $object,
-      $xactions,
-      array($recipient_phid),
-      array(),
-      array());
-    $mail = head($mail_messages);
-
-    // Since the user explicitly requested "!history", force delivery of this
-    // message regardless of their other mail settings.
-    $mail->setForceDelivery(true);
-
-    return $mail;
   }
 
   public function newAutomaticInlineTransactions(
@@ -5761,8 +5689,7 @@ abstract class PhabricatorApplicationTransactionEditor
 
       $extension = id(clone $extension)
         ->setViewer($actor)
-        ->setEditor($this)
-        ->setObject($object);
+        ->setEditor($this);
 
       if (!$extension->supportsObject($this, $object)) {
         unset($extensions[$key]);

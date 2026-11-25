@@ -132,19 +132,17 @@ final class PhabricatorAuthRegisterController
 
       // If the account source provided an email, but another account already
       // has that email, just pretend we didn't get an email.
-      if ($default_email !== null) {
-        $same_email = id(new PhabricatorUserEmail())->loadOneWhere(
-          'address = %s',
-          $default_email);
-        if ($same_email) {
-          if ($invite) {
-            // We're allowing this to continue. The fact that we loaded the
-            // invite means that the address is nonprimary and unverified and
-            // we're OK to steal it.
-          } else {
-            $show_existing = $default_email;
-            $default_email = null;
-          }
+      $same_email = id(new PhabricatorUserEmail())->loadOneWhere(
+        'address = %s',
+        $default_email);
+      if ($same_email) {
+        if ($invite) {
+          // We're allowing this to continue. The fact that we loaded the
+          // invite means that the address is nonprimary and unverified and
+          // we're OK to steal it.
+        } else {
+          $show_existing = $default_email;
+          $default_email = null;
         }
       }
     }
@@ -313,6 +311,16 @@ final class PhabricatorAuthRegisterController
           ->setObject($user);
 
         try {
+          $request_parameters = array('username', 'realName', 'email');
+          $registration_data = array();
+          foreach ($request_parameters as $param) {
+            $value = $request->getStr($param);
+            if (phutil_nonempty_string($value)) {
+              $registration_data[] = $value;
+            }
+          }
+          $engine->setAdditionalPasswordBlocklistEntries($registration_data);
+
           $engine->checkNewPassword($password_envelope, $confirm_envelope);
           $e_password = null;
         } catch (PhabricatorAuthPasswordException $ex) {

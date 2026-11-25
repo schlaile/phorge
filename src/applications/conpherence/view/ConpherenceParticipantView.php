@@ -23,7 +23,10 @@ final class ConpherenceParticipantView extends AphrontView {
     $count = new PhutilNumber(count($participants));
     $handles = $conpherence->getHandles();
     $handles = array_intersect_key($handles, $participants);
-    $head_handles = array_select_keys($handles, array($viewer->getPHID()));
+    $head_handles = array();
+    if ($viewer->getPHID()) {
+      $head_handles = array_select_keys($handles, array($viewer->getPHID()));
+    }
     $handle_list = mpull($handles, 'getName');
     natcasesort($handle_list);
     $handles = mpull($handles, null, 'getName');
@@ -69,8 +72,9 @@ final class ConpherenceParticipantView extends AphrontView {
           phutil_tag(
             'a',
             array(
-              'class' => 'pic',
+              'class' => 'pic visual-only',
               'href' => $handle->getURI(),
+              'aria-hidden' => 'true',
             ),
             phutil_tag(
               'img',

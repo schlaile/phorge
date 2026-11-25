@@ -3,8 +3,12 @@
  */
 .conduit-api-example-code {
   margin: 16px;
-  white-space: pre;
+  white-space: pre-wrap;
   color: {$darkgreytext};
+}
+
+.conduit-api-command-prefix {
+  user-select: none;
 }
 
 .conduit-api-example-code strong {

@@ -9,6 +9,7 @@ abstract class DivinerController extends PhabricatorController {
 
   /**
    * @param array<DivinerLiveSymbol> $symbols
+   * @return array<DivinerBookItemView>
    */
   protected function renderAtomList(array $symbols) {
     assert_instances_of($symbols, DivinerLiveSymbol::class);
@@ -18,6 +19,9 @@ abstract class DivinerController extends PhabricatorController {
       switch ($symbol->getType()) {
         case DivinerAtom::TYPE_FUNCTION:
           $title = $symbol->getTitle().'()';
+          break;
+        case DivinerAtom::TYPE_METHOD:
+          $title = $symbol->getMethodClassname().'::'.$symbol->getTitle().'()';
           break;
         default:
           $title = $symbol->getTitle();

@@ -115,7 +115,8 @@ final class PhabricatorMetaMTAMailSearchEngine
 
     assert_instances_of($mails, PhabricatorMetaMTAMail::class);
     $viewer = $this->requireViewer();
-    $list = new PHUIObjectItemListView();
+    $list = id(new PHUIObjectItemListView())
+      ->setViewer($viewer);
 
     foreach ($mails as $mail) {
       if ($mail->hasSensitiveContent()) {

@@ -20,8 +20,6 @@ final class PhrictionHistoryController
       return new Aphront404Response();
     }
 
-    $current = $document->getContent();
-
     $pager = id(new AphrontCursorPagerView())
       ->readFromRequest($request);
 
@@ -30,14 +28,12 @@ final class PhrictionHistoryController
       ->withDocumentPHIDs(array($document->getPHID()))
       ->executeWithCursorPager($pager);
 
-    $author_phids = mpull($history, 'getAuthorPHID');
-    $handles = $viewer->loadHandles($author_phids);
-
     $max_version = (int)$document->getMaxVersion();
     $current_version = $document->getContent()->getVersion();
 
-    $list = new PHUIObjectItemListView();
-    $list->setFlush(true);
+    $list = id(new PHUIObjectItemListView())
+      ->setViewer($viewer)
+      ->setFlush(true);
     foreach ($history as $content) {
       $slug_uri = PhrictionDocument::getSlugURI($document->getSlug());
       $version = $content->getVersion();

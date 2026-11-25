@@ -131,12 +131,18 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
     return $this->newPagingMapFromPartialObject($object);
   }
 
+  /**
+   * @return array<string, int> Map of 'id' string to object ID
+   */
   protected function newPagingMapFromPartialObject($object) {
     return array(
       'id' => (int)$object->getID(),
     );
   }
 
+  /**
+   * @return string Cursor
+   */
   private function getExternalCursorStringForResult($object) {
     $cursor = $this->newExternalCursorStringForResult($object);
 
@@ -170,6 +176,9 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
     return $this;
   }
 
+  /**
+   * @return PhabricatorQueryCursor
+   */
   private function getInternalCursorObject() {
     return $this->internalCursorObject;
   }
@@ -180,6 +189,9 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
     return $this;
   }
 
+  /**
+   * @return PhabricatorQueryCursor
+   */
   private function getInternalCursorFromExternalCursor(
     $cursor_string) {
 
@@ -389,12 +401,12 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
 
     $this->setLimit($limit + 1);
 
-    $after_id = phutil_string_cast($pager->getAfterID());
-    $before_id = phutil_string_cast($pager->getBeforeID());
+    $after_id = $pager->getAfterID();
+    $before_id = $pager->getBeforeID();
 
-    if (phutil_nonempty_string($after_id)) {
+    if ($after_id) {
       $this->setExternalCursorString($after_id);
-    } else if (phutil_nonempty_string($before_id)) {
+    } else if ($before_id) {
       $this->setExternalCursorString($before_id);
       $this->setIsQueryOrderReversed(true);
     }
@@ -454,6 +466,7 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
 
   /**
    * @task clauses
+   * @return PhutilQueryString
    */
   protected function buildSelectClause(AphrontDatabaseConnection $conn) {
     $parts = $this->buildSelectClauseParts($conn);
@@ -724,8 +737,8 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
    * This method will then return a composable clause for inclusion in WHERE.
    *
    * @param AphrontDatabaseConnection $conn Connection query will execute on.
-   * @param list<map> $columns Column description dictionaries.
-   * @param map $options Additional construction options.
+   * @param list<array> $columns Column description dictionaries.
+   * @param array $options Map of additional construction options.
    * @return string Query clause.
    * @task paging
    */
@@ -763,7 +776,6 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
 
     $clauses = array();
     $accumulated = array();
-    $last_key = last_key($columns);
     foreach ($columns as $key => $column) {
       $type = $column['type'];
 
@@ -956,8 +968,8 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
    *
    * @phpstan-type BuiltinOrder array{name: string, vector: string[],
    *                                  aliases?: string[]}
-   * @return map<string,BuiltinOrder> Map from builtin order keys to
-   *                                    specification.
+   * @return array<string, array<string, list<string>|string>|BuiltinOrder> Map
+   *   from builtin order keys to specification.
    *
    * @task order
    */
@@ -1152,7 +1164,8 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
 
 
   /**
-   * @return array<string,array<string,string>> PhutilKeyValueCacheStack string
+   * @return array<string,array<string|bool,string|bool|null>>
+   *   PhutilKeyValueCacheStack string
    *   (e.g. 'id', 'rank', 'fulltext-created', 'fulltext-modified') and the
    *   cache value as an array, for example '{"table":"user","column":"id",
    *   "reverse":false,"type":"int","unique":true}' or '{"table":null,
@@ -1300,7 +1313,7 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
 
       $descending = true;
       if ($is_query_reversed) {
-        $descending = !$descending;
+        $descending = false;
       }
 
       if ($is_column_reversed) {
@@ -1673,7 +1686,7 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
    * constraints.
    *
    * @param AphrontDatabaseConnection $conn Connection executing the query.
-   * @return list<string> Where clause parts.
+   * @return list<PhutilQueryString> Where clause parts.
    * @task appsearch
    */
   protected function buildApplicationSearchWhereClause(
@@ -2052,7 +2065,7 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
 
       $value = $raw_token->getValue();
 
-      $length = count(phutil_utf8v($value));
+      $length = phutil_utf8_strlen($value);
 
       if ($raw_token->getOperator() == $op_sub) {
         $is_substring = true;
@@ -2475,7 +2488,7 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
       $this->ngrams[] = array(
         'index' => $index,
         'value' => $value,
-        'length' => count(phutil_utf8v($value)),
+        'length' => phutil_utf8_strlen($value),
       );
     }
 
@@ -2834,6 +2847,7 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
 
   /**
    * @task edgelogic
+   * @return array<PhutilQueryString>
    */
   public function buildEdgeLogicWhereClause(AphrontDatabaseConnection $conn) {
     $where = array();
@@ -2893,6 +2907,7 @@ abstract class PhabricatorCursorPagedPolicyAwareQuery
 
   /**
    * @task edgelogic
+   * @return array<PhutilQueryString>
    */
   public function buildEdgeLogicHavingClause(AphrontDatabaseConnection $conn) {
     $having = array();

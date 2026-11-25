@@ -17,6 +17,10 @@ final class ManiphestStatusSearchConduitAPIMethod
       'tasks.');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   protected function defineParamTypes() {
     return array();
   }
@@ -31,8 +35,13 @@ final class ManiphestStatusSearchConduitAPIMethod
 
   protected function execute(ConduitAPIRequest $request) {
     $config = PhabricatorEnv::getEnvConfig('maniphest.statuses');
+    $is_serious = PhabricatorEnv::getEnvConfig('phabricator.serious-business');
     $results = array();
     foreach ($config as $code => $status) {
+      // Hide silly statuses not available in serious business mode - T16607.
+      if ($is_serious && !empty($status['silly'])) {
+        continue;
+      }
       $stripped_status = array(
         'name' => $status['name'],
         'value' => $code,

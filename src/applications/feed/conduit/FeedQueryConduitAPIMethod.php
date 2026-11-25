@@ -10,6 +10,10 @@ final class FeedQueryConduitAPIMethod extends FeedConduitAPIMethod {
     return pht('Query the feed for stories');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   private function getDefaultLimit() {
     return 100;
   }
@@ -96,7 +100,7 @@ final class FeedQueryConduitAPIMethod extends FeedConduitAPIMethod {
 
         try {
           $view = $story->renderView();
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
           // When stories fail to render, just fail that story.
           phlog($ex);
           continue;

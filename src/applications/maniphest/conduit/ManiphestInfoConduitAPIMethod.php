@@ -10,14 +10,19 @@ final class ManiphestInfoConduitAPIMethod extends ManiphestConduitAPIMethod {
     return pht('Retrieve information about a Maniphest task, given its ID.');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   public function getMethodStatus() {
-    return self::METHOD_STATUS_FROZEN;
+    return self::METHOD_STATUS_DEPRECATED;
   }
 
   public function getMethodStatusDescription() {
     return pht(
-      'This method is frozen and will eventually be deprecated. New code '.
-      'should use "maniphest.search" instead.');
+      'This method has been deprecated since %s in favor of %s.',
+      '04/2026',
+      'maniphest.search');
   }
 
   protected function defineParamTypes() {

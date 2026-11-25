@@ -85,8 +85,6 @@ final class LegalpadDocumentQuery
   }
 
   protected function willFilterPage(array $documents) {
-    $viewer_phid = $this->getViewer()->getPHID();
-
     if ($this->needDocumentBodies) {
       $documents = $this->loadDocumentBodies($documents);
     }
@@ -99,27 +97,20 @@ final class LegalpadDocumentQuery
       $documents = $this->loadSignatures($documents);
     }
 
-    if ($this->needViewerSignatures) {
-      if ($documents) {
-        if ($viewer_phid) {
-          $signatures = id(new LegalpadDocumentSignatureQuery())
-            ->setViewer($this->getViewer())
-            ->withSignerPHIDs(array($viewer_phid))
-            ->withDocumentPHIDs(mpull($documents, 'getPHID'))
-            ->execute();
-          $signatures = mpull($signatures, null, 'getDocumentPHID');
-        } else {
-          $signatures = array();
-        }
+    if ($this->needViewerSignatures && $documents &&
+        $this->getViewer()->getPHID()) {
+      $signatures = id(new LegalpadDocumentSignatureQuery())
+        ->setViewer($this->getViewer())
+        ->withSignerPHIDs(array($this->getViewer()->getPHID()))
+        ->withDocumentPHIDs(mpull($documents, 'getPHID'))
+        ->execute();
+      $signatures = mpull($signatures, null, 'getDocumentPHID');
 
-        if ($viewer_phid) {
-          foreach ($documents as $document) {
-            $signature = idx($signatures, $document->getPHID());
-            $document->attachUserSignature(
-              $viewer_phid,
-              $signature);
-          }
-        }
+      foreach ($documents as $document) {
+        $signature = idx($signatures, $document->getPHID());
+        $document->attachUserSignature(
+          $this->getViewer()->getPHID(),
+          $signature);
       }
     }
 

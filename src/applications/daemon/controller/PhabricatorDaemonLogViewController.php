@@ -93,7 +93,6 @@ final class PhabricatorDaemonLogViewController
 
     $unknown_time = PhabricatorDaemonLogQuery::getTimeUntilUnknown();
     $dead_time = PhabricatorDaemonLogQuery::getTimeUntilDead();
-    $wait_time = PhutilDaemonHandle::getWaitBeforeRestart();
 
     $details = null;
     $status = $daemon->getStatus();
@@ -159,6 +158,7 @@ final class PhabricatorDaemonLogViewController
       phutil_tag(
         'textarea',
         array(
+          'readonly'  => '',
           'style'   => 'width: 100%; height: 12em;',
         ),
         $argv));

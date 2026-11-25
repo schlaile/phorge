@@ -136,13 +136,15 @@ final class PhabricatorLDAPAuthProvider extends PhabricatorAuthProvider {
     return $dialog;
   }
 
+  /**
+   * @return array{0: array<PhabricatorExternalAccountIdentifier>|null,
+   *   1: PhabricatorStandardPageView|null}
+   */
   public function processLoginRequest(
     PhabricatorAuthLoginController $controller) {
 
     $request = $controller->getRequest();
     $viewer = $request->getUser();
-    $response = null;
-    $account = null;
 
     $username = $request->getStr('ldap_username');
     $password = $request->getStr('ldap_password');
@@ -153,7 +155,7 @@ final class PhabricatorLDAPAuthProvider extends PhabricatorAuthProvider {
       $response = $controller->buildProviderPageResponse(
         $this,
         $this->renderLoginForm($request, 'login'));
-      return array($account, $response);
+      return array(null, $response);
     }
 
     if ($request->isFormPost()) {
@@ -169,20 +171,23 @@ final class PhabricatorLDAPAuthProvider extends PhabricatorAuthProvider {
         DarkConsoleErrorLogPluginAPI::enableDiscardMode();
           $identifiers = $adapter->getAccountIdentifiers();
         DarkConsoleErrorLogPluginAPI::disableDiscardMode();
+
+        return array(
+          $this->newExternalAccountForIdentifiers($identifiers),
+          null,
+        );
       } catch (PhutilAuthCredentialException $ex) {
         $response = $controller->buildProviderPageResponse(
           $this,
           $this->renderLoginForm($request, 'login'));
-        return array($account, $response);
+        return array(null, $response);
       } catch (Exception $ex) {
         // TODO: Make this cleaner.
         throw $ex;
       }
     }
 
-    $account = $this->newExternalAccountForIdentifiers($identifiers);
-
-    return array($account, $response);
+    return array(null, null);
   }
 
 
@@ -218,7 +223,7 @@ final class PhabricatorLDAPAuthProvider extends PhabricatorAuthProvider {
       self::KEY_REALNAME_ATTRIBUTES => pht('Realname Attributes'),
       self::KEY_VERSION => pht('LDAP Version'),
       self::KEY_REFERRALS => pht('Enable Referrals'),
-      self::KEY_START_TLS => pht('Use TLS'),
+      self::KEY_START_TLS => pht('Use StartTLS'),
       self::KEY_ACTIVEDIRECTORY_DOMAIN => pht('ActiveDirectory Domain'),
     );
   }
@@ -294,9 +299,11 @@ final class PhabricatorLDAPAuthProvider extends PhabricatorAuthProvider {
         pht('Example: %s',
           phutil_tag('tt', array(), pht('firstname, lastname'))),
       self::KEY_REFERRALS =>
-        pht('Follow referrals. Disable this for Windows AD 2003.'),
+        pht('Follow referrals. Disable this if you have known issues with '.
+          'referrals in Windows Active Directory.'),
       self::KEY_START_TLS =>
-        pht('Start TLS after binding to the LDAP server.'),
+        pht('Upgrade to TLS after the initial binding to the LDAP server. '.
+          'You should use LDAPS instead if possible.'),
       self::KEY_ALWAYS_SEARCH =>
         pht('Always bind and search, even without a username and password.'),
     );

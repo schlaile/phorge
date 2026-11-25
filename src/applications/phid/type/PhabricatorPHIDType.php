@@ -161,6 +161,11 @@ abstract class PhabricatorPHIDType extends Phobject {
       ->loadClasses($types);
   }
 
+  final public static function getType(string $type) {
+    $map = self::getTypes(array($type));
+    return idx($map, $type);
+  }
+
   private static function newClassMapQuery() {
     return id(new PhutilClassMapQuery())
       ->setAncestorClass(self::class)
@@ -212,6 +217,15 @@ abstract class PhabricatorPHIDType extends Phobject {
   }
 
 
+  final public function __toString() {
+    try {
+      return $this->getTypeConstant();
+    } catch (Throwable $ex) {
+      // Throwing from __toString before php 7.4 didn't provide a stack-trace.
+      return '????';
+    }
+  }
+
   /**
    * Get all PHID types of an application.
    *
@@ -220,8 +234,7 @@ abstract class PhabricatorPHIDType extends Phobject {
    * @return array<string, PhabricatorPHIDType> Map of constants of
    *   application.
    */
-  public static function getAllTypesForApplication(
-    string $application) {
+  public static function getAllTypesForApplication(string $application) {
     $all_types = self::getAllTypes();
 
     $application_types = array();
@@ -236,4 +249,5 @@ abstract class PhabricatorPHIDType extends Phobject {
 
     return $application_types;
   }
+
 }

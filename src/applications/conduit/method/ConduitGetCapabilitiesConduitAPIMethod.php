@@ -16,6 +16,10 @@ final class ConduitGetCapabilitiesConduitAPIMethod extends ConduitAPIMethod {
       'available on this server.');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   protected function defineParamTypes() {
     return array();
   }
@@ -48,6 +52,7 @@ final class ConduitGetCapabilitiesConduitAPIMethod extends ConduitAPIMethod {
       ),
       'input' => array(
         'json',
+        'json (params)',
         'urlencoded',
       ),
       'output' => array(

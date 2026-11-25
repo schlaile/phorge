@@ -323,7 +323,8 @@ final class PhabricatorCalendarEventSearchEngine
 
     assert_instances_of($events, PhabricatorCalendarEvent::class);
     $viewer = $this->requireViewer();
-    $list = new PHUIObjectItemListView();
+    $list = id(new PHUIObjectItemListView())
+      ->setViewer($viewer);
 
     foreach ($events as $event) {
       if ($event->getIsGhostEvent()) {
@@ -474,8 +475,6 @@ final class PhabricatorCalendarEventSearchEngine
 
     $day_view->setUser($viewer);
 
-    $phids = mpull($events, 'getHostPHID');
-
     foreach ($events as $event) {
       $can_edit = PhabricatorPolicyFilter::hasCapability(
         $viewer,
@@ -530,7 +529,7 @@ final class PhabricatorCalendarEventSearchEngine
    * @param string|null $range_start Epoch
    * @param string|null $range_end Epoch
    * @param string $display View, such as "month" or "day"
-   * @return array<string|int, string|int, string|int> YYYY, M, D
+   * @return array<string|int> Three values: YYYY, M, D
    */
   private function getDisplayYearAndMonthAndDay(
     $range_start,
@@ -617,8 +616,11 @@ final class PhabricatorCalendarEventSearchEngine
    */
   private function validateDate(AphrontFormDateControlValue $date) {
     if (!$date->isValid()) {
-      // TODO: Use DateMalformedStringException once we require PHP 8.3.0
-      throw new Exception(
+      // TODO: Use DateMalformedStringException once we require PHP 8.3.0,
+      // and also add that exception type to the list of catch conditions in
+      // PhabricatorApplicationSearchController::processSearchRequest() to
+      // avoid a raw exception instead of displaying a nice 'Query Errors' box.
+      throw new PhabricatorSearchConstraintException(
         pht('Invalid date or time value set as query value.'));
     }
   }

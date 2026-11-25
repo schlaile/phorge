@@ -95,6 +95,7 @@ final class PhabricatorOAuthServerClientSearchEngine
       ->setUser($viewer);
     foreach ($clients as $client) {
       $item = id(new PHUIObjectItemView())
+        ->setViewer($viewer)
         ->setObjectName(pht('Application %d', $client->getID()))
         ->setHeader($client->getName())
         ->setHref($client->getViewURI())

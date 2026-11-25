@@ -12,6 +12,19 @@ final class PhutilRemarkupEngineTestCase extends PhabricatorTestCase {
     }
   }
 
+  public function testReservedTokenByteIsStripped() {
+    $byte = PhutilRemarkupBlockStorage::MAGIC_BYTE;
+    $input = "```lang=\"x".$byte."1Z\"\nbody\n```\n";
+
+    $engine = $this->buildNewTestEngine();
+    $output = (string)$engine->markupText($input);
+
+    $this->assertEqual(
+      0,
+      substr_count($output, $byte),
+      pht('Rendered HTML must not contain the reserved token byte.'));
+  }
+
   private function markupText($markup_file) {
     $contents = Filesystem::readFile($markup_file);
     $file = basename($markup_file);
@@ -49,6 +62,11 @@ final class PhutilRemarkupEngineTestCase extends PhabricatorTestCase {
         $engine->setConfig('uri.base', 'http://www.example.com/');
         $engine->setConfig('uri.here', 'http://www.example.com/page/');
         break;
+
+      case 'error-handling.txt':
+        $engine->setConfig('test.silence-errors', true);
+        PhorgeErrorGeneratingRemarkupRule::$errorCount = 0;
+        break;
     }
 
     $actual_output = (string)$engine->markupText($input_remarkup);
@@ -73,6 +91,15 @@ final class PhutilRemarkupEngineTestCase extends PhabricatorTestCase {
       $expected_text,
       $actual_output,
       pht("Failed to markup text in file '%s'.", $file));
+
+    switch ($file) {
+      case 'error-handling.txt':
+        $this->assertEqual(
+          2,
+          PhorgeErrorGeneratingRemarkupRule::$errorCount,
+          pht("Error-generating rule didn't generate errors"));
+        break;
+    }
   }
 
   private function buildNewTestEngine() {
@@ -97,6 +124,7 @@ final class PhutilRemarkupEngineTestCase extends PhabricatorTestCase {
     $rules[] = new PhutilRemarkupDelRule();
     $rules[] = new PhutilRemarkupUnderlineRule();
     $rules[] = new PhutilRemarkupHighlightRule();
+    $rules[] = new PhorgeErrorGeneratingRemarkupRule();
 
     $blocks = array();
     $blocks[] = new PhutilRemarkupQuotesBlockRule();

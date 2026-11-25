@@ -14,24 +14,11 @@ final class PHUIIconExample extends PhabricatorUIExample {
     return pht('Catalogs');
   }
 
-  private function listTransforms() {
-    return array(
-      'ph-rotate-90',
-      'ph-rotate-180',
-      'ph-rotate-270',
-      'ph-flip-horizontal',
-      'ph-flip-vertical',
-      'ph-spin',
-    );
-  }
-
   public function renderExample() {
 
     $colors = PHUIIconView::getIconColors();
     $colors = array_merge(array(null), $colors);
     $fas = PHUIIconView::getIcons();
-
-    $trans = $this->listTransforms();
 
     $cicons = array();
     foreach ($colors as $color) {
@@ -114,13 +101,15 @@ final class PHUIIconExample extends PhabricatorUIExample {
           ->addClass(PHUI::MARGIN_SMALL_RIGHT);
     }
 
-    $circles = array('fa-pencil', 'fa-chevron-left', 'fa-chevron-right');
     $circleview = array();
+
+    $circles = array('fa-pencil', 'fa-chevron-left', 'fa-chevron-right');
     foreach ($circles as $circle) {
       $circleview[] =
         id(new PHUIIconCircleView())
           ->setIcon($circle)
           ->setHref('#')
+          ->setTitle($circle)
           ->addClass('mmr');
     }
 
@@ -131,6 +120,7 @@ final class PHUIIconExample extends PhabricatorUIExample {
           ->setIcon($circle)
           ->setSize(PHUIIconCircleView::MEDIUM)
           ->setHref('#')
+          ->setTitle($circle)
           ->addClass('mmr');
     }
 
@@ -147,6 +137,7 @@ final class PHUIIconExample extends PhabricatorUIExample {
             ->setState($state)
             ->setColor($colors[$i])
             ->setHref('#')
+            ->setTitle($circle)
             ->addClass('mmr');
       }
     }

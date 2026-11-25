@@ -43,7 +43,6 @@ final class ManiphestTaskQuery extends PhabricatorCursorPagedPolicyAwareQuery {
 
   private $statuses;
   private $priorities;
-  private $subpriorities;
 
   private $groupBy          = 'group-none';
   const GROUP_NONE          = 'group-none';
@@ -115,11 +114,6 @@ final class ManiphestTaskQuery extends PhabricatorCursorPagedPolicyAwareQuery {
 
   public function withPriorities(array $priorities) {
     $this->priorities = $priorities;
-    return $this;
-  }
-
-  public function withSubpriorities(array $subpriorities) {
-    $this->subpriorities = $subpriorities;
     return $this;
   }
 
@@ -714,6 +708,10 @@ final class ManiphestTaskQuery extends PhabricatorCursorPagedPolicyAwareQuery {
     }
 
     if ($this->parentTaskIDs !== null) {
+      if (!ctype_digit(implode('', $this->parentTaskIDs))) {
+        throw new PhutilSearchQueryCompilerSyntaxException(
+          pht('Task IDs must be integer numbers.'));
+      }
       $joins[] = qsprintf(
         $conn,
         'JOIN %T e_has_parent
@@ -729,6 +727,10 @@ final class ManiphestTaskQuery extends PhabricatorCursorPagedPolicyAwareQuery {
     }
 
     if ($this->subtaskIDs !== null) {
+      if (!ctype_digit(implode('', $this->subtaskIDs))) {
+        throw new PhutilSearchQueryCompilerSyntaxException(
+          pht('Task IDs must be integer numbers.'));
+      }
       $joins[] = qsprintf(
         $conn,
         'JOIN %T e_has_subtask
@@ -1013,9 +1015,14 @@ final class ManiphestTaskQuery extends PhabricatorCursorPagedPolicyAwareQuery {
     return $cursor_object;
   }
 
+  /**
+   * @param ManiphestTaskQuery $subquery
+   * @param PhabricatorQueryCursor $cursor
+   */
   protected function applyExternalCursorConstraintsToQuery(
     PhabricatorCursorPagedPolicyAwareQuery $subquery,
     $cursor) {
+
     list($task_id, $group_phid) = $this->parseCursor($cursor);
 
     $subquery->withIDs(array($task_id));

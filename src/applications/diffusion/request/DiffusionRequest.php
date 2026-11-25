@@ -23,7 +23,6 @@ abstract class DiffusionRequest extends Phobject {
   protected $repositoryCommitData;
 
   private $isClusterRequest = false;
-  private $initFromConduit = true;
   private $user;
   private $branchObject = false;
   private $refAlternatives;
@@ -56,7 +55,7 @@ abstract class DiffusionRequest extends Phobject {
    *   - `commit` Optional, commit identifier.
    *   - `line` Optional, line range.
    *
-   * @param   map                   $data See documentation.
+   * @param   array<string, mixed>   $data See documentation.
    * @return  DiffusionRequest|null New request object, or null if none is
    *   found.
    * @task new
@@ -205,7 +204,7 @@ abstract class DiffusionRequest extends Phobject {
   /**
    * Internal. Use @{method:newFromDictionary}, not this method.
    *
-   * @param map $data Map of parsed data.
+   * @param array $data Map of parsed data.
    * @return void
    * @task new
    */
@@ -218,7 +217,6 @@ abstract class DiffusionRequest extends Phobject {
 
     $this->path = idx($data, 'path');
     $this->line = idx($data, 'line');
-    $this->initFromConduit = idx($data, 'initFromConduit', true);
     $this->lint = idx($data, 'lint');
 
     $this->symbolicCommit = idx($data, 'commit');
@@ -470,7 +468,7 @@ abstract class DiffusionRequest extends Phobject {
    *
    * @param   string  $blob URI blob.
    * @param   bool    $supports_branches True if this VCS supports branches.
-   * @return  map     Parsed URI.
+   * @return  array   Components of the parsed URI.
    *
    * @task uri
    */

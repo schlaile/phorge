@@ -873,12 +873,15 @@ final class PhabricatorRepository extends PhabricatorRepositoryDAO
       return $default;
     }
 
-    $default_branches = array(
-      PhabricatorRepositoryType::REPOSITORY_TYPE_GIT        => 'master',
-      PhabricatorRepositoryType::REPOSITORY_TYPE_MERCURIAL  => 'default',
-    );
-
-    return idx($default_branches, $this->getVersionControlSystem());
+    $vcs = $this->getVersionControlSystem();
+    switch ($vcs) {
+      case PhabricatorRepositoryType::REPOSITORY_TYPE_GIT:
+        return PhabricatorEnv::getEnvConfig(
+          'diffusion.global-default-branch-git');
+      case PhabricatorRepositoryType::REPOSITORY_TYPE_MERCURIAL:
+        return PhabricatorEnv::getEnvConfig(
+          'diffusion.global-default-branch-mercurial');
+    }
   }
 
   public function getDefaultArcanistBranch() {
@@ -1793,7 +1796,8 @@ final class PhabricatorRepository extends PhabricatorRepositoryDAO
    * services, returning raw URIs.
    *
    * @param PhabricatorUser $viewer Viewing user.
-   * @param map<string, mixed> $options Constraints on selectable services.
+   * @param array<string, mixed> $options Map of constraints on selectable
+   *   services.
    * @return string|null URI, or `null` for local repositories.
    */
   public function getAlmanacServiceURI(
@@ -2519,16 +2523,19 @@ final class PhabricatorRepository extends PhabricatorRepositoryDAO
     return $service;
   }
 
+  /**
+   * @return $this
+   */
   public function markImporting() {
     $this->openTransaction();
       $this->beginReadLocking();
-        $repository = $this->reload();
-        $repository->setDetail('importing', true);
-        $repository->save();
+        $this->reload();
+        $this->setDetail('importing', true);
+        $this->save();
       $this->endReadLocking();
     $this->saveTransaction();
 
-    return $repository;
+    return $this;
   }
 
 
@@ -2618,6 +2625,7 @@ final class PhabricatorRepository extends PhabricatorRepositoryDAO
       case DiffusionPushCapability::CAPABILITY:
         return $this->getPushPolicy();
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $user) {
@@ -2794,6 +2802,13 @@ final class PhabricatorRepository extends PhabricatorRepositoryDAO
       'status' => $this->getStatus(),
       'isHosted' => $this->isHosted(),
       'isImporting' => (bool)$this->isImporting(),
+      'encoding' => $this->getDefaultTextEncoding(),
+      'staging' => array(
+        'supported' => $this->supportsStaging(),
+        'prefix' => 'phabricator',
+        'uri' => $this->getStagingURI(),
+      ),
+      'browseUri' => PhabricatorEnv::getProductionURI($this->getURI()),
       'almanacServicePHID' => $this->getAlmanacServicePHID(),
       'refRules' => array(
         'fetchRules' => $fetch_rules,

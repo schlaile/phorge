@@ -103,8 +103,12 @@ final class DiffusionCommitGraphView
     return $drequest->getRepository();
   }
 
+  /**
+   * @return PHUIObjectItemListView
+   */
   public function newObjectItemListView() {
-    $list_view = new PHUIObjectItemListView();
+    $list_view = id(new PHUIObjectItemListView())
+      ->setViewer($this->getViewer());
 
     $item_views = $this->newObjectItemViews();
     foreach ($item_views as $item_view) {
@@ -158,8 +162,6 @@ final class DiffusionCommitGraphView
 
     $items = $this->newHistoryItems();
     foreach ($items as $hash => $item) {
-      $content = array();
-
       $commit = $item['commit'];
 
       $commit_description = $this->getCommitDescription($commit);
@@ -300,6 +302,7 @@ final class DiffusionCommitGraphView
         $rows);
     } else {
       $table = id(new PHUIObjectItemListView())
+        ->setViewer($this->getViewer())
         ->setNoDataString($this->noDataString);
     }
 
@@ -503,8 +506,6 @@ final class DiffusionCommitGraphView
   }
 
   private function addBuildAction(PHUIObjectItemView $item, $hash) {
-    $is_disabled = true;
-
     $buildable = null;
 
     $commit = $this->getCommit($hash);

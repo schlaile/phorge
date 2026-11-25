@@ -196,6 +196,7 @@ abstract class PhabricatorApplicationTransaction
 
   public function attachComment(
     PhabricatorApplicationTransactionComment $comment) {
+
     $this->comment = $comment;
     $this->commentNotLoaded = false;
     return $this;
@@ -322,10 +323,18 @@ abstract class PhabricatorApplicationTransaction
     return $this;
   }
 
+  /**
+   * @return PhabricatorUser
+   */
   public function getViewer() {
     return $this->assertAttached($this->viewer);
   }
 
+  /**
+   * I'm pretty sure this method is not required for Modular transactions -
+   * those use `renderHandle` which does all the caching and loading
+   * automatically.
+   */
   public function getRequiredHandlePHIDs() {
     $phids = array();
 
@@ -352,15 +361,6 @@ abstract class PhabricatorApplicationTransaction
       case PhabricatorTransactions::TYPE_EDGE:
         $record = PhabricatorEdgeChangeRecord::newFromTransaction($this);
         $phids[] = $record->getChangedPHIDs();
-        break;
-      case PhabricatorTransactions::TYPE_COLUMNS:
-        foreach ($new as $move) {
-          $phids[] = array(
-            $move['columnPHID'],
-            $move['boardPHID'],
-          );
-          $phids[] = $move['fromColumnPHIDs'];
-        }
         break;
       case PhabricatorTransactions::TYPE_EDIT_POLICY:
       case PhabricatorTransactions::TYPE_VIEW_POLICY:
@@ -501,19 +501,17 @@ abstract class PhabricatorApplicationTransaction
       case PhabricatorTransactions::TYPE_INTERACT_POLICY:
         return 'fa-lock';
       case PhabricatorTransactions::TYPE_EDGE:
-        switch ($this->getMetadataValue('edge:type')) {
-          case DiffusionCommitRevertedByCommitEdgeType::EDGECONST:
-            return 'fa-undo';
-          case DiffusionCommitRevertsCommitEdgeType::EDGECONST:
-            return 'fa-ambulance';
+        $edge_type = $this->getMetadataValue('edge:type');
+        try {
+          $edge = PhabricatorEdgeType::getByConstant($edge_type);
+          return $edge->getTransactionIcon();
+        } catch (Throwable $ex) {
+          return 'fa-link';
         }
-        return 'fa-link';
       case PhabricatorTransactions::TYPE_TOKEN:
         return 'fa-trophy';
       case PhabricatorTransactions::TYPE_SPACE:
         return 'fa-th-large';
-      case PhabricatorTransactions::TYPE_COLUMNS:
-        return 'fa-columns';
       case PhabricatorTransactions::TYPE_MFA:
         return 'fa-vcard';
     }
@@ -599,11 +597,6 @@ abstract class PhabricatorApplicationTransaction
 
     $xaction_type = $this->getTransactionType();
 
-    // Always hide requests for object history.
-    if ($xaction_type === PhabricatorTransactions::TYPE_HISTORY) {
-      return true;
-    }
-
     // Always hide file attach/detach transactions.
     if ($xaction_type === PhabricatorTransactions::TYPE_FILE) {
       if ($this->getMetadataValue('attach.implicit')) {
@@ -623,8 +616,6 @@ abstract class PhabricatorApplicationTransaction
         case PhabricatorTransactions::TYPE_INTERACT_POLICY:
         case PhabricatorTransactions::TYPE_SPACE:
           break;
-        case PhabricatorTransactions::TYPE_SUBTYPE:
-          return true;
         default:
           $old = $this->getOldValue();
 
@@ -690,12 +681,9 @@ abstract class PhabricatorApplicationTransaction
           return $field->shouldHideInApplicationTransactions($this);
         }
         break;
-      case PhabricatorTransactions::TYPE_COLUMNS:
-        return !$this->getInterestingMoves($this->getNewValue());
       case PhabricatorTransactions::TYPE_EDGE:
         $edge_type = $this->getMetadataValue('edge:type');
         switch ($edge_type) {
-          case PhabricatorObjectMentionsObjectEdgeType::EDGECONST:
           case ManiphestTaskHasDuplicateTaskEdgeType::EDGECONST:
           case ManiphestTaskIsDuplicateOfTaskEdgeType::EDGECONST:
           case PhabricatorMutedEdgeType::EDGECONST:
@@ -705,6 +693,9 @@ abstract class PhabricatorApplicationTransaction
           case PhabricatorObjectMentionedByObjectEdgeType::EDGECONST:
             $record = PhabricatorEdgeChangeRecord::newFromTransaction($this);
             $add = $record->getAddedPHIDs();
+            if (!$add) {
+              return false;
+            }
             $add_value = reset($add);
             $add_handle = $this->getHandle($add_value);
             if ($add_handle->getPolicyFiltered()) {
@@ -712,6 +703,15 @@ abstract class PhabricatorApplicationTransaction
             }
             return false;
           default:
+            $all_edge_types = PhabricatorEdgeType::getAllTypes();
+            $edge_type_object = idx($all_edge_types, $edge_type);
+            if ($edge_type_object) {
+              $hide = $edge_type_object->shouldHideInApplicationTransactions(
+                $this);
+              if ($hide !== null) {
+                return $hide;
+              }
+            }
             break;
         }
         break;
@@ -837,7 +837,7 @@ abstract class PhabricatorApplicationTransaction
     try {
       $this->setRenderingTarget($new_target);
       $result = $this->getTitleForMail();
-    } catch (Exception $ex) {
+    } catch (Throwable $ex) {
       $this->setRenderingTarget($old_target);
       throw $ex;
     }
@@ -929,10 +929,6 @@ abstract class PhabricatorApplicationTransaction
         return pht('This object is already in that space.');
       case PhabricatorTransactions::TYPE_EDGE:
         return pht('Edges already exist; transaction has no effect.');
-      case PhabricatorTransactions::TYPE_COLUMNS:
-        return pht(
-          'You have not moved this object to any columns it is not '.
-          'already in.');
       case PhabricatorTransactions::TYPE_MFA:
         return pht(
           'You can not sign a transaction group that has no other '.
@@ -1192,7 +1188,7 @@ abstract class PhabricatorApplicationTransaction
 
         try {
           $type_obj = PhabricatorEdgeType::getByConstant($type);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
           // Recover somewhat gracefully from edge transactions which
           // we don't have the classes for.
           return pht(
@@ -1228,8 +1224,8 @@ abstract class PhabricatorApplicationTransaction
         if ($field) {
           return $field->getApplicationTransactionTitle($this);
         } else {
-          $developer_mode = 'phabricator.developer-mode';
-          $is_developer = PhabricatorEnv::getEnvConfig($developer_mode);
+          $is_developer = $this->getViewer()
+            ->getUserSetting(PhorgeDeveloperToolsSettings::SETTINGKEY);
           if ($is_developer) {
             return pht(
               '%s edited a custom field (with key "%s").',
@@ -1278,45 +1274,6 @@ abstract class PhabricatorApplicationTransaction
             new PhutilNumber($undone));
         }
 
-      case PhabricatorTransactions::TYPE_COLUMNS:
-        $moves = $this->getInterestingMoves($new);
-        if (count($moves) == 1) {
-          $move = head($moves);
-          $from_columns = $move['fromColumnPHIDs'];
-          $to_column = $move['columnPHID'];
-          $board_phid = $move['boardPHID'];
-          if (count($from_columns) == 1) {
-            return pht(
-              '%s moved this task from %s to %s on the %s board.',
-              $this->renderHandleLink($author_phid),
-              $this->renderHandleLink(head($from_columns)),
-              $this->renderHandleLink($to_column),
-              $this->renderHandleLink($board_phid));
-          } else {
-            return pht(
-              '%s moved this task to %s on the %s board.',
-              $this->renderHandleLink($author_phid),
-              $this->renderHandleLink($to_column),
-              $this->renderHandleLink($board_phid));
-          }
-        } else {
-          $fragments = array();
-          foreach ($moves as $move) {
-            $to_column = $move['columnPHID'];
-            $board_phid = $move['boardPHID'];
-            $fragments[] = pht(
-              '%s (%s)',
-              $this->renderHandleLink($board_phid),
-              $this->renderHandleLink($to_column));
-          }
-
-          return pht(
-            '%s moved this task on %s board(s): %s.',
-            $this->renderHandleLink($author_phid),
-            phutil_count($moves),
-            phutil_implode_html(', ', $fragments));
-        }
-
       case PhabricatorTransactions::TYPE_MFA:
         return pht(
           '%s signed these changes with MFA.',
@@ -1325,8 +1282,9 @@ abstract class PhabricatorApplicationTransaction
       default:
         // In developer mode, provide a better hint here about which string
         // we're missing.
-        $developer_mode = 'phabricator.developer-mode';
-        $is_developer = PhabricatorEnv::getEnvConfig($developer_mode);
+        $is_developer = $this->getViewer()
+          ->getUserSetting(PhorgeDeveloperToolsSettings::SETTINGKEY);
+
         if ($is_developer) {
           return pht(
             '%s edited this object (transaction type "%s").',
@@ -1448,48 +1406,6 @@ abstract class PhabricatorApplicationTransaction
             $this->renderHandleLink($object_phid));
         }
 
-      case PhabricatorTransactions::TYPE_COLUMNS:
-        $moves = $this->getInterestingMoves($new);
-        if (count($moves) == 1) {
-          $move = head($moves);
-          $from_columns = $move['fromColumnPHIDs'];
-          $to_column = $move['columnPHID'];
-          $board_phid = $move['boardPHID'];
-          if (count($from_columns) == 1) {
-            return pht(
-              '%s moved %s from %s to %s on the %s board.',
-              $this->renderHandleLink($author_phid),
-              $this->renderHandleLink($object_phid),
-              $this->renderHandleLink(head($from_columns)),
-              $this->renderHandleLink($to_column),
-              $this->renderHandleLink($board_phid));
-          } else {
-            return pht(
-              '%s moved %s to %s on the %s board.',
-              $this->renderHandleLink($author_phid),
-              $this->renderHandleLink($object_phid),
-              $this->renderHandleLink($to_column),
-              $this->renderHandleLink($board_phid));
-          }
-        } else {
-          $fragments = array();
-          foreach ($moves as $move) {
-            $to_column = $move['columnPHID'];
-            $board_phid = $move['boardPHID'];
-            $fragments[] = pht(
-              '%s (%s)',
-              $this->renderHandleLink($board_phid),
-              $this->renderHandleLink($to_column));
-          }
-
-          return pht(
-            '%s moved %s on %s board(s): %s.',
-            $this->renderHandleLink($author_phid),
-            $this->renderHandleLink($object_phid),
-            phutil_count($moves),
-            phutil_implode_html(', ', $fragments));
-        }
-
       case PhabricatorTransactions::TYPE_MFA:
         return null;
 
@@ -1527,7 +1443,7 @@ abstract class PhabricatorApplicationTransaction
     $remarkup = $this->getRemarkupBodyForFeed($story);
     if ($remarkup !== null) {
       $remarkup = PhabricatorMarkupEngine::summarize($remarkup);
-      return new PHUIRemarkupView($this->viewer, $remarkup);
+      return new PHUIRemarkupView($this->getViewer(), $remarkup);
     }
 
     $old = $this->getOldValue();
@@ -1674,8 +1590,9 @@ abstract class PhabricatorApplicationTransaction
     PhabricatorUser $viewer,
     $old,
     $new) {
+
     return id(new PhabricatorApplicationTransactionTextDiffDetailView())
-      ->setUser($viewer)
+      ->setViewer($viewer)
       ->setOldText($old)
       ->setNewText($new);
   }
@@ -1861,18 +1778,6 @@ abstract class PhabricatorApplicationTransaction
   }
 
 
-  private function getInterestingMoves(array $moves) {
-    // Remove moves which only shift the position of a task within a column.
-    foreach ($moves as $key => $move) {
-      $from_phids = array_fuse($move['fromColumnPHIDs']);
-      if (isset($from_phids[$move['columnPHID']])) {
-        unset($moves[$key]);
-      }
-    }
-
-    return $moves;
-  }
-
   private function getInterestingInlineStateChangeCounts() {
     // See PHI995. Newer inline state transactions have additional details
     // which we use to tailor the rendering behavior. These details are not
@@ -2005,6 +1910,7 @@ abstract class PhabricatorApplicationTransaction
       case PhabricatorPolicyCapability::CAN_EDIT:
         return $this->getEditPolicy();
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {

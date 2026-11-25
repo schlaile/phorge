@@ -5,6 +5,7 @@ final class HeraldRule extends HeraldDAO
     PhabricatorApplicationTransactionInterface,
     PhabricatorFlaggableInterface,
     PhabricatorPolicyInterface,
+    PhabricatorConduitResultInterface,
     PhabricatorDestructibleInterface,
     PhabricatorIndexableInterface,
     PhabricatorSubscribableInterface {
@@ -27,8 +28,8 @@ final class HeraldRule extends HeraldDAO
   private $ruleApplied = self::ATTACHABLE;
   private $validAuthor = self::ATTACHABLE;
   private $author = self::ATTACHABLE;
-  private $conditions;
-  private $actions;
+  private $conditions = self::ATTACHABLE;
+  private $actions = self::ATTACHABLE;
   private $triggerObject = self::ATTACHABLE;
 
   const REPEAT_EVERY = 'every';
@@ -73,6 +74,10 @@ final class HeraldRule extends HeraldDAO
     return $this->assertAttachedKey($this->ruleApplied, $phid);
   }
 
+  /**
+   * @param string|null $phid The PHID of an object
+   * @param bool $applied Whether the Herald rule was applied to the object
+   */
   public function setRuleApplied($phid, $applied) {
     if ($this->ruleApplied === self::ATTACHABLE) {
       $this->ruleApplied = array();
@@ -81,50 +86,31 @@ final class HeraldRule extends HeraldDAO
     return $this;
   }
 
-  public function loadConditions() {
-    if (!$this->getID()) {
-      return array();
-    }
-    return id(new HeraldCondition())->loadAllWhere(
-      'ruleID = %d',
-      $this->getID());
-  }
-
   /**
    * @param array<HeraldCondition> $conditions
    */
   public function attachConditions(array $conditions) {
-    assert_instances_of($conditions, HeraldCondition::class);
     $this->conditions = $conditions;
     return $this;
   }
 
+  /**
+   * @return array<HeraldCondition>
+   */
   public function getConditions() {
-    // TODO: validate conditions have been attached.
-    return $this->conditions;
-  }
-
-  public function loadActions() {
-    if (!$this->getID()) {
-      return array();
-    }
-    return id(new HeraldActionRecord())->loadAllWhere(
-      'ruleID = %d',
-      $this->getID());
+    return $this->assertAttached($this->conditions);
   }
 
   /**
    * @param array<HeraldActionRecord> $actions
    */
   public function attachActions(array $actions) {
-    // TODO: validate actions have been attached.
-    assert_instances_of($actions, HeraldActionRecord::class);
     $this->actions = $actions;
     return $this;
   }
 
   public function getActions() {
-    return $this->actions;
+    return $this->assertAttached($this->actions);
   }
 
   /**
@@ -430,6 +416,96 @@ final class HeraldRule extends HeraldDAO
     $this->openTransaction();
     $this->delete();
     $this->saveTransaction();
+  }
+
+  /* -(  PhabricatorConduitResultInterface  )-------------------------------- */
+
+  public function getFieldSpecificationsForConduit() {
+    return array(
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('ruleName')
+        ->setType('string')
+        ->setDescription(pht('Name of the Herald rule.')),
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('isDisabled')
+        ->setType('boolean')
+        ->setDescription(pht('Whether this Herald rule has been disabled.')),
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('ruleType')
+        ->setType('string')
+        ->setDescription(pht(
+          'Which type of Herald rule this is, Global, Personal, or Object.')),
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('contentType')
+        ->setType('string')
+        ->setDescription(pht(
+          'Which type of objects this Herald rule applies to.')),
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('authorPHID')
+        ->setType('string')
+        ->setDescription(pht(
+          'PHID of the user who authored this Herald rule.')),
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('conditionMatchAll')
+        ->setType('boolean')
+        ->setDescription(pht(
+          'Whether the Herald rule must match all (otherwise any) of the '.
+          'conditions in order to trigger.')),
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('actionRepetitionPolicy')
+        ->setType('string')
+        ->setDescription(pht(
+          'Action repetition policy. Can be "every" => Run every time the '.
+          'conditions match, "first" => Run the first time the conditions '.
+          'match, or "change" => Run every time the conditions change from '.
+          'not matching to matching.')),
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('conditions')
+        ->setType('list<map<string, wild>>')
+        ->setDescription(pht(
+          'List of conditions which this Herald rule must match in order to '.
+          'trigger.')),
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('actions')
+        ->setType('list<map<string, wild>>')
+        ->setDescription(pht('List of actions that this rule will trigger.')),
+    );
+  }
+
+  public function getFieldValuesForConduit() {
+    $conditions_list = array();
+    foreach ($this->getConditions() as $condition) {
+      $conditions_list[] = array(
+        'field' => $condition->getFieldName(),
+        'condition' => $condition->getFieldCondition(),
+        'value' => $condition->getValue(),
+      );
+    }
+
+    $actions_list = array();
+    foreach ($this->getActions() as $action) {
+      $actions_list[] = array(
+        'action' => $action->getAction(),
+        'target' => $action->getTarget(),
+      );
+    }
+
+
+    return array(
+      'ruleName' => $this->getName(),
+      'isDisabled' => $this->getIsDisabled(),
+      'ruleType' => $this->getRuleType(),
+      'contentType' => $this->getContentType(),
+      'authorPHID' => $this->getAuthorPHID(),
+      'conditionMatchAll' => $this->getMustMatchAll(),
+      'actionRepetitionPolicy' => $this->getRepetitionPolicy(),
+      'conditions' => $conditions_list,
+      'actions' => $actions_list,
+    );
+  }
+
+  public function getConduitSearchAttachments() {
+    return array();
   }
 
 }

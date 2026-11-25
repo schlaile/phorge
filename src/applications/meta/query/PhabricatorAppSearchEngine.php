@@ -187,6 +187,7 @@ final class PhabricatorAppSearchEngine
     array $all_applications,
     PhabricatorSavedQuery $query,
     array $handles) {
+
     assert_instances_of($all_applications, PhabricatorApplication::class);
 
     $all_applications = msort($all_applications, 'getName');
@@ -211,7 +212,8 @@ final class PhabricatorAppSearchEngine
           idx($group_names, $group, $group));
       }
 
-      $list = new PHUIObjectItemListView();
+      $list = id(new PHUIObjectItemListView())
+        ->setViewer($this->requireViewer());
 
       foreach ($applications as $application) {
         $icon = $application->getIcon();
@@ -223,7 +225,7 @@ final class PhabricatorAppSearchEngine
 
         $configure = id(new PHUIButtonView())
           ->setTag('a')
-          ->setIcon('fa-gears')
+          ->setIcon('fa-cogs')
           ->setHref('/applications/view/'.get_class($application).'/')
           ->setText(pht('Configure'))
           ->setColor(PHUIButtonView::GREY);

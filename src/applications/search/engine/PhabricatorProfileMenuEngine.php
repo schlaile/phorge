@@ -8,6 +8,7 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
   private $items;
   private $controller;
   private $editMode;
+  /** @var array<string> CSS classes */
   private $pageClasses = array();
   private $showContentCrumbs = true;
 
@@ -43,7 +44,7 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
   }
 
   /**
-   * @param $custom_phid A User PHID
+   * @param string $custom_phid A User PHID
    */
   public function setCustomPHID($custom_phid) {
     $this->customPHID = $custom_phid;
@@ -85,6 +86,9 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
     return $this->controller;
   }
 
+  /**
+   * @param string $class CSS class
+   */
   public function addContentPageClass($class) {
     $this->pageClasses[] = $class;
     return $this;
@@ -342,6 +346,9 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
     return $this->items;
   }
 
+  /**
+   * @param string $mode
+   */
   private function loadItems($mode) {
     $viewer = $this->getViewer();
     $object = $this->getProfileObject();
@@ -722,6 +729,7 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
       ));
 
     $list = id(new PHUIObjectItemListView())
+      ->setViewer($viewer)
       ->setID($list_id)
       ->setNoDataString(pht('This menu currently has no items.'));
 
@@ -797,7 +805,10 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
           $view->setHref($this->getItemURI("edit/{$id}/"));
           $hide_uri = $this->getItemURI("hide/{$id}/");
         } else {
-          $view->setHref($this->getItemURI("builtin/{$builtin_key}/"));
+          // Avoid a 404 link as "Edit Favorites" is not editable itself
+          if ($builtin_key !== self::ITEM_MANAGE) {
+            $view->setHref($this->getItemURI("builtin/{$builtin_key}/"));
+          }
           $hide_uri = $this->getItemURI("hide/{$builtin_key}/");
         }
 
@@ -1035,7 +1046,6 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
       $button = pht('Disable Menu Item');
     }
 
-    $v_visibility = $configuration->getVisibility();
     if ($request->isFormPost()) {
       if ($new_value === null) {
         $configuration->delete();
@@ -1220,6 +1230,16 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
     return $this;
   }
 
+  /**
+   * Sort the menu items.
+   *
+   * @param array<string,PhabricatorProfileMenuItemConfiguration> $items Map of
+   *   a constant (like 'home.dashboard', 'home.apps.label' or 'people.commits')
+   *   or a DividerItem or a Manage item or a PHID of a PhabricatorApplication
+   *   to a PhabricatorProfileMenuItemConfiguration object
+   * @param string $mode
+   * @return array<PhabricatorProfileMenuItemConfiguration>
+   */
   private function arrangeItems(array $items, $mode) {
     // Sort the items.
     $items = msortv($items, 'getSortVector');
@@ -1258,6 +1278,9 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
     return $items;
   }
 
+  /**
+   * @return PHUIInfoView
+   */
   final protected function newEmptyView($title, $message) {
     return id(new PHUIInfoView())
       ->setTitle($title)
@@ -1268,13 +1291,18 @@ abstract class PhabricatorProfileMenuEngine extends Phobject {
         ));
   }
 
+  /**
+   * @return PHUIInfoView
+   */
   protected function newNoContentView(array $items) {
     return $this->newEmptyView(
       pht('No Content'),
       pht('No visible menu items can render content.'));
   }
 
-
+  /**
+   * @return PhabricatorProfileMenuItemViewList
+   */
   final public function newProfileMenuItemViewList() {
     $items = $this->getItems();
 

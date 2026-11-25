@@ -219,8 +219,7 @@ final class PhrictionDocumentController
       }
 
       $page_title = $content->getTitle();
-      $properties = $this
-        ->buildPropertyListView($document, $content, $slug);
+      $properties = $this->buildPropertyListView($document, $content, $slug);
 
       $doc_status = $document->getStatus();
       $current_status = $content->getChangeType();
@@ -296,6 +295,7 @@ final class PhrictionDocumentController
     }
 
     $children = $this->renderDocumentChildren($slug);
+    $children = phutil_tag_div('phui-document-view-pro-box', $children);
 
     $action_list = null;
     $curtain = null;
@@ -318,7 +318,7 @@ final class PhrictionDocumentController
     }
 
     $header = id(new PHUIHeaderView())
-      ->setUser($viewer)
+      ->setViewer($viewer)
       ->setPolicyObject($document)
       ->setHeader($page_title);
 
@@ -353,6 +353,7 @@ final class PhrictionDocumentController
         array(
           $move_notice,
           $core_content,
+          $children,
         ));
 
     if ($curtain) {
@@ -383,13 +384,9 @@ final class PhrictionDocumentController
         array(
           $page_content,
           $prop_list,
-          phutil_tag(
-            'div',
+          phutil_tag_div(
+            'phui-document-view-pro-box',
             array(
-              'class' => 'phui-document-view-pro-box',
-            ),
-            array(
-              $children,
               $timeline,
               $comment_view,
             )),
@@ -405,7 +402,7 @@ final class PhrictionDocumentController
     $viewer = $this->getViewer();
 
     $view = id(new PHUIPropertyListView())
-      ->setUser($viewer);
+      ->setViewer($viewer);
 
     $view->addProperty(
       pht('Last Author'),
@@ -421,6 +418,7 @@ final class PhrictionDocumentController
   private function buildCurtain(
     PhrictionDocument $document,
     PhrictionContent $content) {
+
     $viewer = $this->getViewer();
 
     $can_edit = PhabricatorPolicyFilter::hasCapability(

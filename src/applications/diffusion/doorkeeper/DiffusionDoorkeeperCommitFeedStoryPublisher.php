@@ -3,7 +3,6 @@
 final class DiffusionDoorkeeperCommitFeedStoryPublisher
   extends DoorkeeperFeedStoryPublisher {
 
-  private $auditRequests;
   private $activePHIDs;
   private $passivePHIDs;
 
@@ -30,7 +29,7 @@ final class DiffusionDoorkeeperCommitFeedStoryPublisher
     $story = $this->getFeedStory();
     $xaction = $story->getPrimaryTransaction();
     switch ($xaction->getTransactionType()) {
-      case PhabricatorAuditActionConstants::ACTION:
+      case PhorgeAuditCommitActionTransaction::TRANSACTIONTYPE:
         switch ($xaction->getNewValue()) {
           case PhabricatorAuditActionConstants::CLOSE:
             return true;
@@ -111,7 +110,6 @@ final class DiffusionDoorkeeperCommitFeedStoryPublisher
 
     $this->activePHIDs = $active;
     $this->passivePHIDs = $passive;
-    $this->auditRequests = $requests;
 
     return $commit;
   }

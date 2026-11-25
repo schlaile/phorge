@@ -11,6 +11,10 @@ final class HarbormasterQueryAutotargetsConduitAPIMethod
     return pht('Load or create build autotargets.');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   protected function defineParamTypes() {
     return array(
       'objectPHID' => 'phid',
@@ -20,6 +24,19 @@ final class HarbormasterQueryAutotargetsConduitAPIMethod
 
   protected function defineReturnType() {
     return 'map<string, phid>';
+  }
+
+  protected function defineErrorTypes() {
+    return array(
+      'ERR-BAD-OBJECTPHID' => pht(
+        'No object exists with this "%s".',
+        'objectPHID'),
+      'ERR-NO-BUILDABLE-OBJECT' => pht(
+        'Object with this "%s" does not implement interface "%s". '.
+        'Autotargets may only be queried for buildable objects.',
+        'objectPHID',
+        HarbormasterBuildableInterface::class),
+    );
   }
 
   protected function execute(ConduitAPIRequest $request) {
@@ -35,19 +52,11 @@ final class HarbormasterQueryAutotargetsConduitAPIMethod
       ->withNames(array($phid))
       ->executeOne();
     if (!$object) {
-      throw new Exception(
-        pht(
-          'No such object "%s" exists.',
-          $phid));
+      throw new ConduitException('ERR-BAD-OBJECTPHID');
     }
 
     if (!($object instanceof HarbormasterBuildableInterface)) {
-      throw new Exception(
-        pht(
-          'Object "%s" does not implement interface "%s". Autotargets may '.
-          'only be queried for buildable objects.',
-          $phid,
-          'HarbormasterBuildableInterface'));
+      throw new ConduitException('ERR-NO-BUILDABLE-OBJECT');
     }
 
     $autotargets = $request->getValue('targetKeys', array());

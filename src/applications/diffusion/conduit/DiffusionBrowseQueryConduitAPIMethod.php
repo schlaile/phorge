@@ -13,6 +13,10 @@ final class DiffusionBrowseQueryConduitAPIMethod
       '(optional) commit.');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   protected function defineReturnType() {
     return 'array';
   }
@@ -41,7 +45,7 @@ final class DiffusionBrowseQueryConduitAPIMethod
       $path = null;
     }
 
-    $commit = $request->getValue('commit');
+    $commit = $request->getValue('commit', '');
     $offset = (int)$request->getValue('offset');
     $limit = (int)$request->getValue('limit');
     $result = $this->getEmptyResultSet();
@@ -88,7 +92,10 @@ final class DiffusionBrowseQueryConduitAPIMethod
         }
 
         $stderr = $e->getStderr();
-        if (preg_match('/^fatal: Not a valid object name/', $stderr)) {
+        // Newer git versions seem to differ in their stderr output. Cover both.
+        if (preg_match(
+            '/^fatal: (Not a valid object name|path .*? does not exist in)/',
+            $stderr)) {
           // Grab two logs, since the first one is when the object was deleted.
           list($stdout) = $repository->execxLocalCommand(
             'log -n2 %s %s -- %s',

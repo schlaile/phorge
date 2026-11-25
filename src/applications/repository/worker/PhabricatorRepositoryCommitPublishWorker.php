@@ -142,7 +142,7 @@ final class PhabricatorRepositoryCommitPublishWorker
     $xactions = array();
 
     $xactions[] = $commit->getApplicationTransactionTemplate()
-      ->setTransactionType(PhabricatorAuditTransaction::TYPE_COMMIT)
+      ->setTransactionType(PhorgeAuditCommitCommitTransaction::TRANSACTIONTYPE)
       ->setDateCreated($commit->getEpoch())
       ->setNewValue(
         array(
@@ -176,8 +176,6 @@ final class PhabricatorRepositoryCommitPublishWorker
     if (!$affected_packages) {
       return array();
     }
-
-    $data = $commit->getCommitData();
 
     $author_phid = $commit->getEffectiveAuthorPHID();
 

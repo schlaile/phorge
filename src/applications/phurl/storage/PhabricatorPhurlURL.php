@@ -105,7 +105,7 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
   }
 
   public function getRedirectURI() {
-    if (strlen($this->getAlias())) {
+    if (phutil_nonempty_string($this->getAlias())) {
       $path = '/u/'.$this->getAlias();
     } else {
       $path = '/u/'.$this->getID();
@@ -137,6 +137,7 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
       case PhabricatorPolicyCapability::CAN_EDIT:
         return $this->getEditPolicy();
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {

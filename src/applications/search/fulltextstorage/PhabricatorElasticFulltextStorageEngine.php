@@ -65,10 +65,6 @@ class PhabricatorElasticFulltextStorageEngine
 
     $type = $doc->getDocumentType();
     $phid = $doc->getPHID();
-    $handle = id(new PhabricatorHandleQuery())
-      ->setViewer(PhabricatorUser::getOmnipotentUser())
-      ->withPHIDs(array($phid))
-      ->executeOne();
 
     $timestamp_key = $this->getTimestampField();
 
@@ -416,8 +412,9 @@ class PhabricatorElasticFulltextStorageEngine
   /**
    * Recursively check if two Elasticsearch configuration arrays are equal
    *
-   * @param $actual
-   * @param $required array
+   * @param array $actual
+   * @param array $required
+   * @param string $path
    * @return bool
    */
   private function check($actual, $required, $path = '') {

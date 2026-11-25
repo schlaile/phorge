@@ -18,6 +18,7 @@ final class HeraldRuleController extends HeraldController {
             PhabricatorPolicyCapability::CAN_VIEW,
             PhabricatorPolicyCapability::CAN_EDIT,
           ))
+        ->needConditionsAndActions(true)
         ->executeOne();
       if (!$rule) {
         return new Aphront404Response();
@@ -26,14 +27,16 @@ final class HeraldRuleController extends HeraldController {
     } else {
       $new_uri = $this->getApplicationURI('new/');
 
-      $rule = new HeraldRule();
-      $rule->setAuthorPHID($viewer->getPHID());
-      $rule->setMustMatchAll(1);
+      $rule = id(new HeraldRule())
+        ->setAuthorPHID($viewer->getPHID())
+        ->setMustMatchAll(1)
+        ->attachActions(array())
+        ->attachConditions(array());
 
       $content_type = $request->getStr('content_type');
       $rule->setContentType($content_type);
 
-      $rule_type = $request->getStr('rule_type');
+      $rule_type = $request->getStr('rule_type', '');
       if (!isset($rule_type_map[$rule_type])) {
         return $this->newDialog()
           ->setTitle(pht('Invalid Rule Type'))
@@ -115,12 +118,6 @@ final class HeraldRuleController extends HeraldController {
     // conditions, etc.
     $rule->setConfigVersion($local_version);
 
-    $rule_conditions = $rule->loadConditions();
-    $rule_actions = $rule->loadActions();
-
-    $rule->attachConditions($rule_conditions);
-    $rule->attachActions($rule_actions);
-
     $e_name = true;
     $errors = array();
     if ($request->isFormPost() && $request->getStr('save')) {
@@ -143,7 +140,7 @@ final class HeraldRuleController extends HeraldController {
     $rule_type_name = $rule_type_map[$rule->getRuleType()];
 
     $form = id(new AphrontFormView())
-      ->setUser($viewer)
+      ->setViewer($viewer)
       ->setID('herald-rule-edit-form')
       ->addHiddenInput('content_type', $rule->getContentType())
       ->addHiddenInput('rule_type', $rule->getRuleType())

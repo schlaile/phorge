@@ -13,6 +13,10 @@ final class TransactionSearchConduitAPIMethod
       'or an entire object type.');
   }
 
+  public function isReadOnlyAPI() {
+    return true;
+  }
+
   protected function newDocumentationPages(PhabricatorUser $viewer) {
     $markup = pht(<<<EOREMARKUP
 When an object (like a task) is edited, the relevant application creates a
@@ -104,7 +108,38 @@ EOREMARKUP
   }
 
   protected function defineErrorTypes() {
-    return array();
+    return array(
+      'ERR-INVALID-CONSTRAINTS-FORMAT' => pht(
+          '"%s" must be a list of constraints.',
+          'constraints'),
+      'ERR-INVALID-PARAMETER' => pht(
+          'Must specify either parameter "%s" or parameter "%s".',
+          'objectType',
+          'objectIdentifier'),
+      'ERR-INVALID-PARAMETERS' => pht(
+          'Must not specify both parameter "%s" and parameter "%s".',
+          'objectType',
+          'objectIdentifier'),
+      'ERR-INVALID-OBJECT-PHID' => pht(
+          'Specified "%s" does not exist.',
+          'objectIdentifier'),
+      'ERR-INVALID-OBJECT-PHID-FORMAT' => pht(
+          '"%s" must be a string (PHID or object monogram).',
+          'objectIdentifier'),
+      'ERR-INVALID-OBJECT-TYPE' => pht(
+          'Specified "%s" does not exist. See the endpoint documentation '.
+          'for valid object types.',
+          'objectType'),
+      'ERR-INVALID-OBJECT-TYPE-FORMAT' => pht(
+          '"%s" must be a string.',
+          'objectType'),
+      'ERR-INVALID-CONSTRAINT-PHIDS-FORMAT' => pht(
+          '"%s" must be a non-empty list of transaction PHIDs.',
+          'phids'),
+      'ERR-INVALID-CONSTRAINT-AUTHORPHIDS-FORMAT' => pht(
+          '"%s" must be a non-empty list of author PHIDs.',
+          'authorPHIDs'),
+    );
   }
 
   protected function execute(ConduitAPIRequest $request) {
@@ -125,6 +160,15 @@ EOREMARKUP
     }
 
     $constraints = $request->getValue('constraints', array());
+    if (!is_array($constraints)) {
+      throw new ConduitException('ERR-INVALID-CONSTRAINTS-FORMAT');
+    }
+    // Handle invalid input ["foo"] which PHP treats as [0 => "foo"]
+    foreach ($constraints as $key => $value) {
+      if (is_int($key)) {
+        throw new ConduitException('ERR-INVALID-CONSTRAINTS-FORMAT');
+      }
+    }
 
     $xaction_query = $this->applyConstraints($constraints, $xaction_query);
 
@@ -157,24 +201,14 @@ EOREMARKUP
         continue;
       }
 
-      // TODO: Hack things so certain transactions which don't have a modular
-      // type yet can use a pseudotype until they modularize. Some day, we'll
-      // modularize everything and remove this.
-      switch ($xaction->getTransactionType()) {
-        case DifferentialTransaction::TYPE_INLINE:
-          $modular_template = new DifferentialRevisionInlineTransaction();
-          break;
-        default:
-          $modular_template = $xaction->getModularType();
-          break;
-      }
+      $modular_template = $xaction->getModularType();
 
       $modular_class = get_class($modular_template);
       if (!isset($modular_objects[$modular_class])) {
         try {
           $modular_object = newv($modular_class, array());
           $modular_objects[$modular_class] = $modular_object;
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
           continue;
         }
       }
@@ -260,11 +294,67 @@ EOREMARKUP
                 $type = 'projects';
                 $fields = $this->newEdgeTransactionFields($xaction);
                 break;
+              case ManiphestTaskDependsOnTaskEdgeType::EDGECONST:
+                $type = 'dependsOn';
+                $fields = $this->newEdgeTransactionFields($xaction);
+                break;
+              case ManiphestTaskDependedOnByTaskEdgeType::EDGECONST:
+                $type = 'dependedOnBy';
+                $fields = $this->newEdgeTransactionFields($xaction);
+                break;
+              case PhabricatorObjectMentionedByObjectEdgeType::EDGECONST:
+                $type = 'mentioned-in';
+                $fields = $this->newEdgeTransactionFields($xaction);
+                break;
+              case PhabricatorObjectMentionsObjectEdgeType::EDGECONST:
+                $type = 'mention';
+                $fields = $this->newEdgeTransactionFields($xaction);
+                break;
             }
             break;
           case PhabricatorTransactions::TYPE_SUBSCRIBERS:
             $type = 'subscribers';
             $fields = $this->newEdgeTransactionFields($xaction);
+            break;
+          case PhabricatorTransactions::TYPE_CUSTOMFIELD:
+            $type = 'core:customfield';
+            $fields = array(
+              $xaction->getMetadataValue('customfield:key') => array(
+                'old'  => $xaction->getOldValue(),
+                'new'  => $xaction->getNewValue(),
+              ),
+            );
+            break;
+          case PhabricatorTransactions::TYPE_EDIT_POLICY:
+            $type = 'core:edit-policy';
+            $fields = array(
+              'old'  => $xaction->getOldValue(),
+              'new'  => $xaction->getNewValue(),
+            );
+            break;
+          case PhabricatorTransactions::TYPE_VIEW_POLICY:
+            $type = 'core:view-policy';
+            $fields = array(
+              'old'  => $xaction->getOldValue(),
+              'new'  => $xaction->getNewValue(),
+            );
+            break;
+          case PhabricatorTransactions::TYPE_MFA:
+            $type = 'core:mfa';
+            break;
+          case PhabricatorTransactions::TYPE_SPACE:
+            $type = 'core:space';
+            $fields = array(
+              'old'  => $xaction->getOldValue(),
+              'new'  => $xaction->getNewValue(),
+            );
+            break;
+          case PhabricatorTransactions::TYPE_FILE:
+            $type = 'core:file';
+            $fields = array(
+              'old'  => $xaction->getOldValue(),
+              'new'  => $xaction->getNewValue(),
+            );
             break;
         }
       }
@@ -311,10 +401,7 @@ EOREMARKUP
     $with_phids = idx($constraints, 'phids');
 
     if ($with_phids === array()) {
-      throw new Exception(
-        pht(
-          'Constraint "phids" to "transaction.search" requires nonempty list, '.
-          'empty list provided.'));
+      throw new ConduitException('ERR-INVALID-CONSTRAINT-PHIDS-FORMAT');
     }
 
     if ($with_phids) {
@@ -323,10 +410,7 @@ EOREMARKUP
 
     $with_authors = idx($constraints, 'authorPHIDs');
     if ($with_authors === array()) {
-      throw new Exception(
-        pht(
-          'Constraint "authorPHIDs" to "transaction.search" requires '.
-          'nonempty list, empty list provided.'));
+      throw new ConduitException('ERR-INVALID-CONSTRAINT-AUTHORPHIDS-FORMAT');
     }
 
     if ($with_authors) {
@@ -371,27 +455,21 @@ EOREMARKUP
     $has_type = ($object_type !== null);
 
     if (!$has_type && !$has_identifier) {
-      throw new Exception(
-        pht(
-          'Calls to "transaction.search" must specify either an "objectType" '.
-          'or an "objectIdentifier".'));
-    } else if ($has_type && $has_identifier) {
-      throw new Exception(
-        pht(
-          'Calls to "transaction.search" must not specify both an '.
-          '"objectType" and an "objectIdentifier".'));
+      throw new ConduitException('ERR-INVALID-PARAMETER');
     }
 
     if ($has_type) {
+      if ($has_identifier) {
+        throw new ConduitException('ERR-INVALID-PARAMETERS');
+      }
+      if (!is_string($object_type)) {
+        throw new ConduitException('ERR-INVALID-OBJECT-TYPE-FORMAT');
+      }
+
       $all_types = PhabricatorPHIDType::getAllTypes();
 
       if (!isset($all_types[$object_type])) {
-        throw new Exception(
-          pht(
-            'In call to "transaction.search", specified "objectType" ("%s") '.
-            'is unknown. Valid object types are: %s.',
-            $object_type,
-            $this->getSupportedObjectTypeKeysImploded()));
+        throw new ConduitException('ERR-INVALID-OBJECT-TYPE');
       }
 
       $object = $all_types[$object_type]->newObject();
@@ -408,16 +486,16 @@ EOREMARKUP
             $this->getSupportedObjectTypeKeysImploded()));
       }
     } else {
+      if (!is_string($object_identifier)) {
+        throw new ConduitException('ERR-INVALID-OBJECT-PHID-FORMAT');
+      }
+
       $object = id(new PhabricatorObjectQuery())
         ->setViewer($viewer)
         ->withNames(array($object_identifier))
         ->executeOne();
       if (!$object) {
-        throw new Exception(
-          pht(
-            'In call to "transaction.search", specified "objectIdentifier" '.
-            '("%s") does not exist.',
-            $object_identifier));
+        throw new ConduitException('ERR-INVALID-OBJECT-PHID');
       }
     }
 

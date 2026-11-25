@@ -51,6 +51,10 @@ abstract class PhabricatorEdgeType extends Phobject {
     return false;
   }
 
+  public function shouldHideInApplicationTransactions($xaction) {
+    return null;
+  }
+
   public function getTransactionPreviewString($actor) {
     return pht(
       '%s edited edge metadata.',
@@ -78,6 +82,7 @@ abstract class PhabricatorEdgeType extends Phobject {
       $add_count,
       $add_edges);
   }
+
   /**
     * Returns a string representing how adding removing instances of this
     * edge should be rendered in history of an object.
@@ -126,6 +131,10 @@ abstract class PhabricatorEdgeType extends Phobject {
       $add_edges,
       $rem_count,
       $rem_edges);
+  }
+
+  public function getTransactionIcon() {
+    return 'fa-link';
   }
 
   /**

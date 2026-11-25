@@ -10,8 +10,10 @@ final class HeraldTranscript extends HeraldDAO
   protected $conditionTranscripts = array();
   protected $applyTranscripts = array();
 
+  /** @var int|string Epoch */
   protected $time;
   protected $host;
+  /** @var float|string Seconds */
   protected $duration;
 
   protected $objectPHID;
@@ -22,6 +24,12 @@ final class HeraldTranscript extends HeraldDAO
 
   const TABLE_SAVED_HEADER = 'herald_savedheader';
 
+  /**
+   * Create the mail header value which lists applied Herald rules.
+   *
+   * @return string A comma-separated list of Herald IDs wrapped in angle
+   *   brackets, or 'none'
+   */
   public function getXHeraldRulesHeader() {
     $ids = array();
     foreach ($this->applyTranscripts as $xscript) {
@@ -46,8 +54,16 @@ final class HeraldTranscript extends HeraldDAO
     return implode(', ', $ids);
   }
 
+  /**
+   * Save the Herald Rules mail header to the database. If the object already
+   * has a row, update the row to list all rules ever triggered for this object.
+   *
+   * @param string $phid PHID of the object on which Herald rules are applied
+   * @param string $header A comma-separated list of Herald IDs wrapped in angle
+   *   brackets, or 'none'
+   * @return string
+   */
   public static function saveXHeraldRulesHeader($phid, $header) {
-
     // Combine any existing header with the new header, listing all rules
     // which have ever triggered for this object.
     $header = self::combineXHeraldRulesHeaders(
@@ -65,8 +81,15 @@ final class HeraldTranscript extends HeraldDAO
     return $header;
   }
 
+  /**
+   * @param string|null $u A string like "none, <18>" or "<1>, <2>" or "none"
+   * @param string $v A string like "none, <18>" or "<1>, <2>" or "none"
+   * @return string
+   */
   private static function combineXHeraldRulesHeaders($u, $v) {
-    if ($u === null) {
+    // We did not find an existing row in the database for this object, or
+    // the existing row is 'none'. In any case, overwrite the row with $v.
+    if ($u === null || $u === 'none') {
       return $v;
     }
 
@@ -74,9 +97,31 @@ final class HeraldTranscript extends HeraldDAO
     $v = preg_split('/[, ]+/', $v);
 
     $combined = array_unique(array_filter(array_merge($u, $v)));
-    return implode(', ', $combined);
+    $filtered = self::stripNoneFromXHeraldRulesHeaders($combined);
+    return implode(', ', $filtered);
   }
 
+  /**
+   * Strip 'none' from the list of rules if other rules got applied since.
+   *
+   * @param array<string> $rules Rule integers in angle brackets (which can also
+   *   be or include up to one 'none' element)
+   * @return array<string> Rule integers in angle brackets, or a single 'none'
+   */
+  private static function stripNoneFromXHeraldRulesHeaders(array $rules) {
+    // Shortcut if it's only a single rule (which might be a 'none' to keep).
+    if (count($rules) === 1) {
+      return $rules;
+    }
+    return array_diff($rules, array('none'));
+  }
+
+  /**
+   * Load a Herald Rules mail header from the database.
+   *
+   * @param string $phid PHID of the object on which Herald rules are applied
+   * @return string|null
+   */
   public static function loadXHeraldRulesHeader($phid) {
     $header = queryfx_one(
       id(new self())->establishConnection('r'),
@@ -189,7 +234,7 @@ final class HeraldTranscript extends HeraldDAO
 
   public function getMetadataMap() {
     return array(
-      pht('Run At Epoch') => date('F jS, g:i:s A', $this->time),
+      pht('Run At Epoch') => date('F jS, g:i:s A', (int)$this->time),
       pht('Run On Host')  => $this->host,
       pht('Run Duration') => (int)(1000 * $this->duration).' ms',
     );
@@ -222,6 +267,7 @@ final class HeraldTranscript extends HeraldDAO
       case PhabricatorPolicyCapability::CAN_VIEW:
         return PhabricatorPolicies::POLICY_USER;
     }
+    return PhabricatorPolicies::getFallbackPolicy($capability);
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {

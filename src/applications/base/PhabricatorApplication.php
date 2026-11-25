@@ -156,7 +156,7 @@ abstract class PhabricatorApplication
    */
   final public function isFirstParty() {
     $where = id(new ReflectionClass($this))->getFileName();
-    $root = phutil_get_library_root('phabricator');
+    $root = phutil_get_library_root('phorge');
 
     if (!Filesystem::isDescendant($where, $root)) {
       return false;
@@ -185,8 +185,11 @@ abstract class PhabricatorApplication
     return null;
   }
 
+  /**
+   * @param string|PhutilURI $path
+   */
   final public function getApplicationURI($path = '') {
-    return $this->getBaseURI().ltrim($path, '/');
+    return $this->getBaseURI().ltrim((string)$path, '/');
   }
 
   public function getIcon() {
@@ -205,6 +208,9 @@ abstract class PhabricatorApplication
     return null;
   }
 
+  /**
+   * @return list<PhabricatorActionView>
+   */
   final public function getHelpMenuItems(PhabricatorUser $viewer) {
     $items = array();
 
@@ -245,7 +251,7 @@ abstract class PhabricatorApplication
       array_unshift($items, $divider);
     }
 
-    return array_values($items);
+    return $items;
   }
 
   public function getHelpDocumentationArticles(PhabricatorUser $viewer) {
@@ -313,6 +319,10 @@ abstract class PhabricatorApplication
 /* -(  Fact Integration  )--------------------------------------------------- */
 
 
+  /**
+   * @return list<LiskDAO> Instantiated object types of an application which
+   * support getting indexed by the Facts application.
+   */
   public function getFactObjectsForAnalysis() {
     return array();
   }
@@ -371,6 +381,9 @@ abstract class PhabricatorApplication
     return $selected;
   }
 
+  /**
+   * @return array<PhabricatorApplication>
+   */
   final public static function getAllApplications() {
     static $applications;
 
@@ -395,6 +408,9 @@ abstract class PhabricatorApplication
     return $applications;
   }
 
+  /**
+   * @return array<PhabricatorApplication>
+   */
   final public static function getAllInstalledApplications() {
     $all_applications = self::getAllApplications();
     $apps = array();
@@ -408,7 +424,6 @@ abstract class PhabricatorApplication
 
     return $apps;
   }
-
 
   /**
    * Determine if an application is enabled, by application class name.
@@ -474,6 +489,32 @@ abstract class PhabricatorApplication
 
     return $result;
   }
+
+  /**
+   * @template T
+   * @param array<T> $extensions
+   * @return array<T>
+   */
+  final public static function filterExtensionsByInstalledApplication(
+    array $extensions,
+    string $get_application_class,
+    PhabricatorUser $viewer) {
+
+    foreach ($extensions as $key => $extension) {
+      $application = call_user_func(array($extension, $get_application_class));
+
+      $has_application = self::isClassInstalledForViewer(
+        $application,
+        $viewer);
+
+      if (!$has_application) {
+        unset($extensions[$key]);
+      }
+    }
+
+    return $extensions;
+  }
+
 
 /* -(  PhabricatorPolicyInterface  )----------------------------------------- */
 

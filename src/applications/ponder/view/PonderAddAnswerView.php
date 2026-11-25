@@ -18,19 +18,6 @@ final class PonderAddAnswerView extends AphrontView {
   public function render() {
     $question = $this->question;
     $viewer = $this->getViewer();
-    $viewer_phid = $viewer->getPHID();
-
-    $authors = mpull($question->getAnswers(), null, 'getAuthorPHID');
-    if ($viewer_phid && isset($authors[$viewer_phid])) {
-      $view = id(new PHUIInfoView())
-        ->setSeverity(PHUIInfoView::SEVERITY_NOTICE)
-        ->setTitle(pht('Already Answered'))
-        ->appendChild(
-          pht(
-            'You have already answered this question. You can not answer '.
-            'twice, but you can edit your existing answer.'));
-      return phutil_tag_div('ponder-add-answer-view', $view);
-    }
 
     $info_panel = null;
     if ($question->getStatus() != PonderQuestionStatus::STATUS_OPEN) {
@@ -42,29 +29,41 @@ final class PonderAddAnswerView extends AphrontView {
              but you can still leave a new answer.'));
     }
 
-    $box_style = null;
     $header = id(new PHUIHeaderView())
       ->setHeader(pht('New Answer'))
       ->addClass('ponder-add-answer-header');
 
-    $form = new AphrontFormView();
-    $form
-      ->setViewer($viewer)
-      ->setAction($this->actionURI)
-      ->setWorkflow(true)
-      ->addHiddenInput('question_id', $question->getID())
-      ->appendChild(
-        id(new PhabricatorRemarkupControl())
-          ->setName('answer')
-          ->setLabel(pht('Answer'))
-          ->setError(true)
-          ->setID('answer-content')
-          ->setViewer($viewer))
-      ->appendChild(
-        id(new AphrontFormSubmitControl())
-          ->setValue(pht('Add Answer')));
+    if ($viewer->isLoggedIn()) {
+      $authors = mpull($question->getAnswers(), null, 'getAuthorPHID');
+      if (isset($authors[$viewer->getPHID()])) {
+        $view = id(new PHUIInfoView())
+          ->setSeverity(PHUIInfoView::SEVERITY_NOTICE)
+          ->setTitle(pht('Already Answered'))
+          ->appendChild(
+            pht(
+              'You have already answered this question. You can not answer '.
+              'twice, but you can edit your existing answer.'));
+        return phutil_tag_div('ponder-add-answer-view', $view);
+      }
 
-    if (!$viewer->isLoggedIn()) {
+      $form = id(new AphrontFormView())
+        ->setViewer($viewer)
+        ->setAction($this->actionURI)
+        ->setWorkflow(true)
+        ->addHiddenInput('question_id', $question->getID())
+        ->appendChild(
+          id(new PhabricatorRemarkupControl())
+            ->setName('answer')
+            ->setLabel(pht('Answer'))
+            ->setError(true)
+            ->setID('answer-content')
+            ->setViewer($viewer))
+        ->appendChild(
+          id(new AphrontFormSubmitControl())
+            ->setValue(pht('Add Answer')));
+
+    } else {
+
       $login_href = id(new PhutilURI('/auth/start/'))
           ->replaceQueryParam('next', '/Q'.$question->getID());
       $form = id(new PHUIFormLayoutView())
@@ -87,4 +86,5 @@ final class PonderAddAnswerView extends AphrontView {
 
     return array($header, $box);
   }
+
 }

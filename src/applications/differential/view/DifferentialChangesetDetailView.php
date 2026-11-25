@@ -138,8 +138,6 @@ final class DifferentialChangesetDetailView extends AphrontView {
 
     $display_filename = $changeset->getDisplayFilename();
     $display_icon = FileTypeIcon::getFileIcon($display_filename);
-    $icon = id(new PHUIIconView())
-      ->setIcon($display_icon);
 
     $changeset_id = $this->changeset->getID();
 
@@ -239,6 +237,7 @@ final class DifferentialChangesetDetailView extends AphrontView {
       ->setColor(PHUIButtonView::GREY)
       ->setIcon('fa-clipboard')
       ->setHref('#')
+      ->setAuralLabel(pht('Copy file path'))
       ->addSigil('clipboard-copy')
       ->addSigil('has-tooltip')
       ->setMetadata(

@@ -476,13 +476,13 @@ abstract class PhabricatorStandardCustomField
     $old = $xaction->getOldValue();
     $new = $xaction->getNewValue();
 
-    if (!$old) {
+    if ($old === null) {
       return pht(
         '%s set %s to %s.',
         $xaction->renderHandleLink($author_phid),
         $this->getFieldName(),
         $new);
-    } else if (!$new) {
+    } else if ($new === null) {
       return pht(
         '%s removed %s.',
         $xaction->renderHandleLink($author_phid),
@@ -555,7 +555,9 @@ abstract class PhabricatorStandardCustomField
     }
 
     $field_value = $this->getFieldValue();
-    if (($field_value !== null) && (strlen($field_value))) {
+    if ($field_value !== null &&
+        !is_array($field_value) &&
+        strlen($field_value)) {
       $document->addField($field_key, $field_value);
     }
   }
